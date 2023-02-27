@@ -1,0 +1,81 @@
+To refresh this file, delete it and run /reload command again! Last updated: Dec 1, 2022, 4:09:17 PM
+
+#c:biofuel
+- createaddition:flowing_bioethanol (from Create Crafts & Additions)
+- createaddition:bioethanol (from Create Crafts & Additions)
+
+#c:crude_oil
+
+#c:creosote
+
+#minecraft:water
+- minecraft:water (from Default)
+- minecraft:flowing_water (from Default)
+- create:flowing_honey (from Create)
+- create:honey (from Create)
+- create:flowing_chocolate (from Create)
+- create:chocolate (from Create)
+- indrev:coolant_still (from Industrial Revolution)
+- indrev:coolant_flowing (from Industrial Revolution)
+- indrev:sulfuric_acid_still (from Industrial Revolution)
+- indrev:sulfuric_acid_flowing (from Industrial Revolution)
+- indrev:toxic_mud_still (from Industrial Revolution)
+- indrev:toxic_mud_flowing (from Industrial Revolution)
+- milk:flowing_milk? (from Milk Lib)
+- milk:still_milk? (from Milk Lib)
+
+#ae2:blacklisted/annihilation_plane
+
+#c:plantoil
+- createaddition:flowing_seed_oil (from Create Crafts & Additions)
+- createaddition:seed_oil (from Create Crafts & Additions)
+
+#c:milk
+- milk:flowing_milk? (from Milk Lib)
+- milk:still_milk? (from Milk Lib)
+
+#c:tea
+- create:flowing_tea (from Create)
+- create:tea (from Create)
+
+#c:water
+- #minecraft:water? (from Fabric Convention Tags)
+
+#c:ethanol
+- createaddition:flowing_bioethanol (from Create Crafts & Additions)
+- createaddition:bioethanol (from Create Crafts & Additions)
+
+#c:lava
+- #minecraft:lava? (from Fabric Convention Tags)
+
+#minecraft:lava
+- minecraft:lava (from Default)
+- minecraft:flowing_lava (from Default)
+- indrev:molten_netherite_still (from Industrial Revolution)
+- indrev:molten_netherite_flowing (from Industrial Revolution)
+- indrev:molten_iron_still (from Industrial Revolution)
+- indrev:molten_iron_flowing (from Industrial Revolution)
+- indrev:molten_copper_still (from Industrial Revolution)
+- indrev:molten_copper_flowing (from Industrial Revolution)
+- indrev:molten_gold_still (from Industrial Revolution)
+- indrev:molten_gold_flowing (from Industrial Revolution)
+- indrev:molten_tin_still (from Industrial Revolution)
+- indrev:molten_tin_flowing (from Industrial Revolution)
+- indrev:molten_lead_still (from Industrial Revolution)
+- indrev:molten_lead_flowing (from Industrial Revolution)
+- indrev:molten_silver_still (from Industrial Revolution)
+- indrev:molten_silver_flowing (from Industrial Revolution)
+
+#create:bottomless/deny
+
+#c:honey
+- create:flowing_honey (from Create)
+- create:honey (from Create)
+
+#create:bottomless/allow
+- minecraft:water (from Create)
+- minecraft:lava (from Create)
+
+#c:chocolate
+- create:flowing_chocolate (from Create)
+- create:chocolate (from Create)

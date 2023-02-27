@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["twilightforest"]}],"ingredients":[{"item":"twilightforest:stripped_twilight_oak_log"}],"processingTime":50,"results":[{"count":4,"item":"twilightforest:twilight_oak_planks"}]}

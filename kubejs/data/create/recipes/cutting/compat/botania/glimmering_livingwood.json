@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["botania"]}],"ingredients":[{"item":"botania:glimmering_livingwood"}],"processingTime":50,"results":[{"item":"botania:glimmering_stripped_livingwood"}]}

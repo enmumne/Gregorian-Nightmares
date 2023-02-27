@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "geggy:block/j_stripped_log_top",
+    "side": "geggy:block/j_stripped_log"
+  }
+}

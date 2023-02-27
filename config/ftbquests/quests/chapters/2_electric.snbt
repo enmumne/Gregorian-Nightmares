@@ -1,0 +1,1111 @@
+{
+	id: "70D953F5E14DC035"
+	group: "113481E7A031FCFE"
+	order_index: 2
+	filename: "2_electric"
+	title: "2 - Biribiri"
+	icon: "modern_industrialization:assembler"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "The End of the Start"
+			x: 2.0d
+			y: 0.0d
+			shape: "gear"
+			description: [
+				"Now that you've got some base resources generating, it's time to work towards electricity. This chapter will walk you through the steps involved in getting your first machine hull and first set of electronic machines, as well as some more advanced Create machinery."
+				""
+				"Up until now you've mostly been managing items. In this chapter we'll see a lot more fluids involved in crafting, be sure to check the Storage tab to see some storage options for your fluids. "
+				""
+				"By the end of this chapter you'll have access to most basic machines, an electric quarry and oil drilling rig with even more resource generation options and a new source of power generation. Good Luck!"
+				""
+				"&o&d 2T : 0C if you're still around lemme show you how you make your first electricity :trollge:"
+				"&o&d : first you need a burning box to make heat as HU. This is a steel one."
+				"&o&d : then you need a boiler tank to use the heat to turn into steam"
+				"&o&d : then a steam turbine to turn the steam into rotational energy as RU"
+				"&o&d : then an electric dynamo to turn RU into EU"
+				"&o&3 2C : for *every* machine"
+				"&o&7 6N : just have centralized production"
+				"&o&d 2T : you can't centralize at this point lmao"
+				"&o&3 2C : nice joke"
+				"&o&7 6N : why not"
+				"&o&d 2T : because you can't make enough power to do that"
+				"&o&d : let alone transfer it"
+				"&o&3 2C : also reminder that electricity is mid/late game"
+				"&o&3 : like, EV equivalent or something"
+				"&o&d 2T : by the time you make LV power, you already have significant automation going"
+				"&o&7 6N : damn"
+				"&o&7 : i want to &lNOT&r &o&7play this mod even more now"
+				"&o&d 2T : it's really cool"
+				"&o&d : you just have to get into a different mindset for it lol"
+			]
+			dependencies: ["0CE2D04744434785"]
+			size: 2.0d
+			min_width: 370
+			id: "38B235167FCE0C80"
+			tasks: [{
+				id: "6B7C34E0A4F14328"
+				type: "checkmark"
+				title: "Electric Age Begins"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 3.0d
+			description: ["Get the wiremill up and running as soon as possible. You'll be using this pretty much the entire pack from here on out. To start with though you'll want some tin wires to get you through to your first few electric machines."]
+			dependencies: ["38B235167FCE0C80"]
+			id: "47168B3C491D0547"
+			tasks: [{
+				id: "4E24FFC5DDBB56B3"
+				type: "item"
+				item: "modern_industrialization:steel_wiremill"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 3.0d
+			description: ["Carbon dust isn't quite accessible yet, so you'll want to use some Coke Dust to get access to your first of many oil bucket. "]
+			dependencies: ["38B235167FCE0C80"]
+			id: "28B836571B0E67D1"
+			tasks: [
+				{
+					id: "3658AC071C8ADD0D"
+					type: "item"
+					item: "modern_industrialization:raw_synthetic_oil_bucket"
+				}
+				{
+					id: "4437133C43E6A7FC"
+					type: "item"
+					item: "modern_industrialization:synthetic_oil_bucket"
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: 6.0d
+			description: [
+				"Create belts use Create's rotational power to transport items along assembly lines. At this point you should revisit some of your old create lines and see if they are more automatable now that you've gained access to the transport belts."
+				""
+				"&o&a 39 : I just set up the beginnings of a mall... and I can't get bots running because I can't get a delivery of gearboxes. Because I can't get a delivery of Fenix. Because I can't get a delivery of antimony oxide. Because I have no coke for the BOF. Because my Red-hot-coke planation is stuttering. Because it's not getting enough coal. Because it's out 30 seconds after my coal trains arrive."
+				"&o&7 : is that factorio?"
+				"&o&a 39 : yeah?"
+				"&o&7 : we're playing minecraft here"
+				"&o&a 39 : oh."
+			]
+			dependencies: ["4BD4DC65BCF3C64A"]
+			min_width: 250
+			id: "74F4734C56873B9A"
+			tasks: [{
+				id: "280BE56EBA2CB324"
+				type: "item"
+				item: "create:belt_connector"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 4.5d
+			description: ["Combine the oil from the previous quest with some paper to get rubber. "]
+			dependencies: ["28B836571B0E67D1"]
+			id: "4BD4DC65BCF3C64A"
+			tasks: [{
+				id: "0FD7D748BA788C8E"
+				type: "item"
+				item: "modern_industrialization:rubber_sheet"
+			}]
+		}
+		{
+			title: "Cables"
+			x: 1.5d
+			y: 7.5d
+			description: [
+				"Cables are a very important as a crafting ingredient, but also in supplying power to the electronic machines you're eventually going to craft and use."
+				""
+				"There are 5 tiers of cables used throughout MI. They each have different power(EU) transfer rates so be sure to check REI for information. You'll learn more about the power system when it's time to set up your first electric machine."
+				""
+				"NOTE: You'll hear more about EU in the quests to come, but a quick note here that even though cables transfer EU, they can power any machine outside of MI as well."
+			]
+			dependencies: [
+				"47168B3C491D0547"
+				"74F4734C56873B9A"
+			]
+			min_width: 250
+			id: "276B9E79AF572E91"
+			tasks: [{
+				id: "68BD7BB024029C0F"
+				type: "item"
+				title: "Any #modern_industrialization:lv_cables"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "modern_industrialization:lv_cables"
+					}
+				}
+			}]
+		}
+		{
+			x: -0.5d
+			y: 12.0d
+			description: [
+				"Time to put it all together. This is an important milestone in the pack, your first circuit. Check REI to see how to set up the assembly line. Be sure to use mechanical belts and the weighted ejector to automate these. "
+				""
+				"You also have access to funnels and tunnels which can be filtered. A good way to get the completed version of the circuit off the assembly line."
+				""
+				"&o&7 6N : crafting circuits with create?"
+				"&o&7 6N : thats cursed"
+			]
+			dependencies: ["4AC4679E7BE6841E"]
+			min_width: 280
+			id: "46DAFA9EB2E0FA10"
+			tasks: [{
+				id: "2C301CC5C9ED0125"
+				type: "item"
+				item: "modern_industrialization:analog_circuit"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 10.5d
+			description: [
+				"Deployers are going to be used for each tier of MI circuit. You'll want 3 to start with."
+				""
+				"The weighted ejector is one of the more fun Create items. It uses rotational power to launch items to a predetermined point. If you're having trouble configuring, remember you can hold the W key when hovering over Create items to see how they work."
+				""
+				"&o&b 3K : Making the player use a screwdriver for integrated circuits adds nothing to gameplay"
+				"&o 1A : if you want QOL dont play with gregtech"
+				"&o 1A : play with thermal"
+				"&o 1A : play with enderio"
+				"&o&2 7N : I am of the opinion that you fundamentally cannot have realism in minecraft, it's a sandbox game that allows you to build a factory yourself from scratch and carry 80000 tons in your inv at once"
+				"&o 1A : but that doesnt mean you go out of your way to try to do stupid things"
+				"&o&9 2X : I've printed my own circuit boards and assembled them. I can assure you that screwdrivers aren't part of the equation"
+			]
+			dependencies: ["717E4973C497B4C7"]
+			min_width: 280
+			id: "4AC4679E7BE6841E"
+			tasks: [
+				{
+					id: "36BBC843FDE4FA20"
+					type: "item"
+					item: "create:deployer"
+					count: 3L
+				}
+				{
+					id: "731BEAF6B909CDD9"
+					type: "item"
+					item: "create:weighted_ejector"
+				}
+			]
+		}
+		{
+			x: -4.0d
+			y: 4.5d
+			description: ["To gain access to some more advanced Create machines, you'll want a steel mixer to mix up some brass dust. Smelt this up to get some create brass."]
+			dependencies: ["38B235167FCE0C80"]
+			id: "4611CABE90FC9DB9"
+			tasks: [{
+				id: "41A62C3517372B93"
+				type: "item"
+				item: "create:brass_ingot"
+			}]
+		}
+		{
+			title: "Circuit Components"
+			x: -2.0d
+			y: 9.0d
+			description: [
+				"These are the various components needed for crafting your first circuit."
+				""
+			]
+			dependencies: [
+				"4BD4DC65BCF3C64A"
+				"276B9E79AF572E91"
+			]
+			id: "717E4973C497B4C7"
+			tasks: [
+				{
+					id: "700F5B2D2BCDB5BA"
+					type: "item"
+					item: "modern_industrialization:capacitor"
+				}
+				{
+					id: "0FF2933237514192"
+					type: "item"
+					item: "modern_industrialization:copper_wire"
+				}
+				{
+					id: "2233FE467076F661"
+					type: "item"
+					item: "modern_industrialization:resistor"
+				}
+			]
+		}
+		{
+			title: "LV Power"
+			x: 1.5d
+			y: 13.5d
+			description: [
+				"LV Power will be your first tier of power available. Craft up a steam turbine \\& storage unit and use your previous steam infrastructure to generate EU. EU is the unit of measurement of power in MI. It is the main power system used in this pack."
+				""
+				"&o&a 85 : leave it on overnight lmao"
+				"&o&6 64 : Have you looked at energy prices recently"
+				"&o&6 : Can't just let my pc run all the time"
+				"&o&6 : I pay 90 cents /kWh I guarantee you that's the last thing I am gonna do"
+				"&o&d 79 : just craft more dynamos"
+				"&o&d : oh wait"
+			]
+			dependencies: ["5825BFEDB5F567B5"]
+			min_width: 250
+			id: "0E1CAD3AF8127A47"
+			tasks: [
+				{
+					id: "409EC0B62D3C36DB"
+					type: "item"
+					item: "modern_industrialization:lv_steam_turbine"
+				}
+				{
+					id: "2F2E90891144F9A0"
+					type: "item"
+					item: "modern_industrialization:lv_storage_unit"
+				}
+			]
+		}
+		{
+			x: 3.0d
+			y: 9.0d
+			dependencies: [
+				"276B9E79AF572E91"
+				"23D2B583DF5FA2E5"
+			]
+			id: "65EEE10D81CCC31E"
+			tasks: [{
+				id: "0D93552844CF5C21"
+				type: "item"
+				item: "modern_industrialization:redstone_battery"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 3.0d
+			description: ["Your Steel Quarry won't generate Antimony, so it's one of the few remaining ores you need to go mining for."]
+			dependencies: ["38B235167FCE0C80"]
+			id: "382C198D85803B4A"
+			tasks: [{
+				id: "522568F3BF16C4D4"
+				type: "item"
+				item: "modern_industrialization:antimony_dust"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 4.5d
+			description: ["Combine the Antimony with Lead to get Battery Alloy Dust. Another important material going forward as it'll be used in battery recipes."]
+			dependencies: ["382C198D85803B4A"]
+			id: "23D2B583DF5FA2E5"
+			tasks: [{
+				id: "67F253FC4F6F2DFF"
+				type: "item"
+				item: "modern_industrialization:battery_alloy_ingot"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 12.0d
+			description: [
+				"Similarly to Bronze and Steel machine casings, the Machine Hull is the basis for most electrical machines. Like cables, there are tiers of machine hulls depending on the caliber of machine you're trying to build"
+				""
+				"For now the basic machine hull will give you access to a wide array of electronic machines. Some machines are similar to the steam powered versions you've already encountered, the rest are brand new, unlocking recipes and crafting ingredients you previously didn't have access to."
+			]
+			dependencies: [
+				"46DAFA9EB2E0FA10"
+				"65EEE10D81CCC31E"
+			]
+			min_width: 250
+			id: "5825BFEDB5F567B5"
+			tasks: [{
+				id: "04AAABBCE4178F73"
+				type: "item"
+				item: "modern_industrialization:basic_machine_hull"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 15.0d
+			description: ["The Pump is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
+			dependencies: ["0E1CAD3AF8127A47"]
+			id: "57E82D11C30C6800"
+			tasks: [{
+				id: "7D153468409D684B"
+				type: "item"
+				item: "modern_industrialization:pump"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 15.0d
+			description: [
+				"The Motor is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."
+				""
+				"In addition, it can increase the speed of item transfer in MI pipes. Check REI for the increase rate per motor. Motors can be inserted in the item pipe GUI."
+			]
+			dependencies: ["0E1CAD3AF8127A47"]
+			id: "2D7EE6C2ABAEA7EF"
+			tasks: [{
+				id: "2F6B39AB726E1E08"
+				type: "item"
+				item: "modern_industrialization:motor"
+			}]
+		}
+		{
+			x: 2.5d
+			y: 18.0d
+			description: ["The conveyor is another ingredient in the Assembler"]
+			dependencies: ["03C555236DAB35BE"]
+			id: "259462BC8F000348"
+			tasks: [{
+				id: "142D5EBB002B2BDF"
+				type: "item"
+				item: "modern_industrialization:conveyor"
+			}]
+		}
+		{
+			x: 2.5d
+			y: 15.0d
+			description: ["The Piston is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
+			dependencies: ["0E1CAD3AF8127A47"]
+			id: "03E47F8E6224D02E"
+			tasks: [{
+				id: "5AF2CFB8AC1CA3A5"
+				type: "item"
+				item: "modern_industrialization:piston"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 18.0d
+			description: ["The Robot Arm is used for making the Assembler."]
+			dependencies: [
+				"03C555236DAB35BE"
+				"418499D5A20455C0"
+			]
+			id: "7990225BE2E2F02C"
+			tasks: [{
+				id: "4F5D3D17B056CB6B"
+				type: "item"
+				item: "modern_industrialization:robot_arm"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 19.0d
+			description: [
+				"The Assembler, one of the most important machines in the game. It has a lot of the recipes the regular crafting table handles, but can be inserted to and extracted from. It's your first opportunity to set up truly automated assembly lines."
+				""
+				"At this point things are only going to get more complicated, so we again recommend revising your factory up to this point and having at minimum, Machine Hulls, Analog Circuits, Motors, Pistons, Robot Arms and Conveyor Belts automated using the assembler."
+				""
+				"You should also have a steady supply of resources coming in from your quarry feeding the assembly lines themselves."
+				""
+				"NOTE: Input \\& Output slots in the assembler can be locked to ensure only items of that type can be put in that slot. Use this to your advantage. You may even want a good few assemblers to get your infrastructure off the ground. If not now, it'll happen eventually anyway."
+			]
+			dependencies: [
+				"259462BC8F000348"
+				"7990225BE2E2F02C"
+			]
+			min_width: 300
+			id: "777C8BA4044899FB"
+			tasks: [{
+				id: "5896A33CCC5E8B81"
+				type: "item"
+				item: "modern_industrialization:assembler"
+			}]
+		}
+		{
+			x: 6.5d
+			y: 15.5d
+			description: ["The compressor is similar to it's steam counterpart in that it can press ingots into plates."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "4FE8A514A26296D4"
+			tasks: [{
+				id: "35B24401F77AB0E0"
+				type: "item"
+				item: "modern_industrialization:electric_compressor"
+			}]
+		}
+		{
+			x: 8.5d
+			y: 15.5d
+			description: ["The cutting machine will make it easier and faster to create crafting components such as rods and rings. If you've got this already set up with the Create cutting machine or the steam powered version, it may wait for a while."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "3D45963530FD2849"
+			tasks: [{
+				id: "019CFB8AFDE54BF4"
+				type: "item"
+				item: "modern_industrialization:electric_cutting_machine"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 16.5d
+			description: ["The furnace is definitely cheaper than a vanilla furnace. Although it's probably slower than a Create \"furnace\" due to the fact it cannot batch smelt"]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "43703E7A86B45FC6"
+			tasks: [{
+				id: "56F4016C063FD344"
+				type: "item"
+				item: "modern_industrialization:electric_furnace"
+			}]
+		}
+		{
+			x: 8.5d
+			y: 17.5d
+			description: ["The electric macerator operates the same as it's steam counterpart, it grinds down ores with doubling, tripling and even more in some cases. Definitely worth the investment if you haven't done so already."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "6CC8C004F3DFFB05"
+			tasks: [{
+				id: "03940D228734A2F7"
+				type: "item"
+				item: "modern_industrialization:electric_macerator"
+			}]
+		}
+		{
+			x: 6.5d
+			y: 17.5d
+			description: ["The mixer also is the same as it's steam version. It may also be worth holding off crafting this as Create's mixing process will handle a lot of the same recipes."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "76991C74B879DD71"
+			tasks: [{
+				id: "2336F71DD34DDA58"
+				type: "item"
+				item: "modern_industrialization:electric_mixer"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 18.0d
+			description: ["The wiremill operates the same as it's steam counterpart."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "14E1E42977509547"
+			tasks: [{
+				id: "2A619FDFBE319287"
+				type: "item"
+				item: "modern_industrialization:electric_wiremill"
+			}]
+		}
+		{
+			title: "Component Crafting"
+			x: 1.5d
+			y: 16.5d
+			description: ["The previous components are integral ingredients in pretty much every useful machine going forward. Although you don't have access to AE2 \\& true autocrafting yet, there is a lot you can do with MI pipes and their filtering system. Try to keep a good stock of the components above and we advice batch crafting over crafting as needed. You'll use them eventually!"]
+			dependencies: [
+				"2D7EE6C2ABAEA7EF"
+				"57E82D11C30C6800"
+				"03E47F8E6224D02E"
+			]
+			min_width: 250
+			id: "03C555236DAB35BE"
+			tasks: [{
+				id: "792FD069693004F3"
+				type: "checkmark"
+				title: "Component Automation"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 16.5d
+			description: [
+				"This is a list of the important electronic machines. While they may seem to duplicate what's already set up using steam powered machines or Create machines, you'll eventually want to transition your steam machines to electronic. When you gain access to higher tier power, electronic machines can be overclocked and perform faster than the alternatives."
+				""
+			]
+			dependencies: ["03C555236DAB35BE"]
+			min_width: 250
+			id: "3CF74FA677DB3187"
+			tasks: [{
+				id: "463EF0848D16E712"
+				type: "checkmark"
+				title: "Electric Machines"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 15.0d
+			description: ["The packer is another electronic machine that may be optional in the early game. It compresses recipes similarly to 9x9 shaped crafting. Probably optional at this point in the game, but useful nonetheless."]
+			dependencies: ["3CF74FA677DB3187"]
+			id: "4647033242C8182D"
+			tasks: [
+				{
+					id: "6B738631D38B2835"
+					type: "item"
+					item: "modern_industrialization:electric_packer"
+				}
+				{
+					id: "5F497AD0348A3E31"
+					type: "item"
+					item: "modern_industrialization:electric_unpacker"
+				}
+			]
+		}
+		{
+			x: -4.0d
+			y: 9.0d
+			dependencies: [
+				"717E4973C497B4C7"
+				"4611CABE90FC9DB9"
+			]
+			id: "24F3AC19B2959B84"
+			tasks: [{
+				id: "053AEFA12D3DBECC"
+				type: "item"
+				item: "create:mechanical_crafter"
+				count: 9L
+			}]
+		}
+		{
+			x: 1.5d
+			y: 20.5d
+			description: [
+				"The Electric Blast Furnace(EBF) is the electric version of your steam blast furnace."
+				""
+				"You'll want Cupronickel coils to complete the EBF multiblock"
+				""
+				"&o&6 2Y : Blood roils through your veins as the harsh words of the townsfolk echo in your ears....they think you mad. But you are not merely a lunatic. You'll show them. You'll show them all! They will pay for their grave mistake. You merely need to use the &l&cAlloy Smelter&r&o&6 that you had devised before to create something...new."
+				""
+				"&o&6 : Cupronickel, you've decided to call it. Yes, that's a perfect name. The material has a lustrous brown sheen, darker than the mere copper that you had been working with previously. Perhaps darker in more ways than just appearance, as well. The Alloy Smelter was more powerful than you had imagined, and it almost scares you. But you are its master. It has to obey your every command. And in turn, metal obeys its command. You wondered how you might utilize this newfound power, when you realized. Everything in this world is made of cubes. That is for a reason, is it not? Yes...yes, this will do nicely, you think, cackling as a devious plan hatches in your twisted head. Perhaps this material will be more capable than you had previously imagined. If you can find a way to tightly pack wires of this new material into a cube, you should be able to harness its incredible power, bending the universe to your untouchable will. Hahahahahaha...you'll show them, alright. They will die regretting the day they ever doubted you!"
+				""
+				"&o : huh, I'm sorry but I have to say this. There's no alloy smelter in MI."
+				""
+				"&o&7 : Yeah... Imagine like nothing going wrong when you start messing with supra causal. Not gonna create problems in the continuum, &lAT ALL!"
+				""
+			]
+			dependencies: ["777C8BA4044899FB"]
+			min_width: 360
+			id: "049C15D562CA1774"
+			tasks: [{
+				id: "5DA4188412031FE8"
+				type: "item"
+				item: "modern_industrialization:electric_blast_furnace"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 22.0d
+			description: [
+				"There are several ways of obtaining Aluminum, so check REI to see which is more favorable for you. We assume you've encountered some Bauxite on your mining expeditions by now so for this quest you'll want to turn some Bauxite dust into aluminum in the EBF"
+				""
+				"NOTE: When you gather enough aluminum, you'll want to fast track toward cheaper Aluminum recipes as soon as you can. "
+				""
+				"&o&d 2T : gregtech 6, it's totally different from what you've been playing now"
+				"&o&7 6N : you dont really need a modpack for gt6"
+				"&o&d 2T : nothing is the same at all going from GT5(u)/CE(u) to GT6"
+				"&o&7 6N : its a mod"
+				"&o&7 : but it has enough features it could basically be a modpack"
+				"&o&d 2T : this is GT6's aluminium recipe. it's the gate to MV but also covers. MV in GT6 is as far as late HV in GCP."
+				"&o&b 66 : The fuck is a gu"
+				"&o&7 6N : generic unit"
+				"&o&d 2T : those two fluids in the recipe require Hydrogen Fluoride to make"
+				"&o&d : to get that... :trollge:"
+				"&o&d : you need to bathe fluorite in sulfuric acid"
+				"&o&7 6N : is the fluorine recycled"
+				"&o&d 2T : as much as possible"
+				"&o&d : it's lossy because it uses the irl ratios by mass and we can't have fractional mB"
+				"&o&d : making acids requires mixers"
+				"&o&d : mixers need stainless"
+				"&o&6 0C : oh okay"
+				"&o&6 : so is it harder, or just more complicated?"
+				"&o&d 2T : both"
+				"&o&d : autoclave bauxite with NaOH to get sodium aluminate. Bathe the aluminate in water to get Aluminium Hydroxide, then melt that into molten alumina"
+			]
+			dependencies: ["049C15D562CA1774"]
+			min_width: 340
+			id: "3889F5C3B7615BC4"
+			tasks: [
+				{
+					id: "2606DADC71ADA960"
+					type: "item"
+					item: "modern_industrialization:bauxite_dust"
+				}
+				{
+					id: "5393E7CF2C1DEBCD"
+					type: "item"
+					item: "modern_industrialization:aluminum_ingot"
+				}
+			]
+		}
+		{
+			title: "Infiniter Resources?"
+			icon: "modern_industrialization:electric_quarry"
+			x: -0.5d
+			y: 31.5d
+			description: ["At this point you have everything you need to start building your Electric Quarry. It'll allow you to continue drilling for the same resources as your steam quarry, along with accepting some higher tier drills for higher tier materials."]
+			dependencies: ["787420B3F07B9909"]
+			id: "76BC1ADA20B4475A"
+			tasks: [
+				{
+					id: "04A216BC17C5B84B"
+					type: "item"
+					item: "modern_industrialization:electric_quarry"
+				}
+				{
+					id: "255C341CC84BAE99"
+					type: "item"
+					item: "modern_industrialization:mv_energy_input_hatch"
+				}
+				{
+					id: "3DFF8AC9B40BC32C"
+					type: "item"
+					item: "modern_industrialization:aluminum_drill"
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: 25.0d
+			description: [
+				"Your second circuit. Congrats on getting this far. Another sequenced assembly line this chapter."
+				""
+				"You may already know this but it bears repeating, automate this line if you can because these circuits are the lifeblood of your machine \\& factories production."
+			]
+			dependencies: ["50522C08021350A6"]
+			min_width: 300
+			id: "5EDB45EE3EACD5E1"
+			tasks: [{
+				id: "068B409E486979DD"
+				type: "item"
+				item: "modern_industrialization:electronic_circuit"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 22.0d
+			description: [
+				"Quartz Dust can be obtained by running Diorite through the Crushing Wheel."
+				""
+				"Throw it in the EBF and you've got silicon."
+			]
+			dependencies: [
+				"049C15D562CA1774"
+				"2B2EF6D9FBEBF511"
+			]
+			id: "112F3AF89CBBAF63"
+			tasks: [
+				{
+					id: "7D5ED908EDBFB6B9"
+					type: "item"
+					item: "modern_industrialization:quartz_dust"
+				}
+				{
+					id: "6D444536669CB9DE"
+					type: "item"
+					item: "modern_industrialization:silicon_dust"
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: 23.5d
+			description: [
+				"The silicon battery is a crafting component used most commonly in Advanced Machine Hulls. The second tier of machine hull."
+				""
+				"They're also used in Building Gadgets so check out their section in Perks if you haven't already. It may be useful to craft these and start putting together a proper base if you haven't done so already."
+			]
+			dependencies: ["112F3AF89CBBAF63"]
+			id: "0E4467C81F04FE57"
+			tasks: [{
+				id: "69762A71CC73C701"
+				type: "item"
+				item: "modern_industrialization:silicon_battery"
+			}]
+		}
+		{
+			title: "Electronic Circuit Components"
+			x: 1.5d
+			y: 23.5d
+			description: ["These components are used in crafting electronic circuits. Similarly to Aluminum, you'll use regular steel plates until you get access to the chemical reactor, where you can double your output with a little bit of extra work."]
+			dependencies: [
+				"3889F5C3B7615BC4"
+				"112F3AF89CBBAF63"
+			]
+			id: "50522C08021350A6"
+			tasks: [
+				{
+					id: "19EAA8D321004C36"
+					type: "item"
+					item: "modern_industrialization:diode"
+				}
+				{
+					id: "7FB12F34F404F026"
+					type: "item"
+					item: "modern_industrialization:transistor"
+				}
+			]
+		}
+		{
+			x: 3.5d
+			y: 24.5d
+			description: [
+				"The Chemical Reactor will open up tons of different fluid recipes and several items as well. At this point in the pack however, it's main purpose at this early point in the pack is to produce the doped silicon plates for cheaper component recipes. "
+				"You'll need it for a lot more very soon however, so don't put this off for too long!"
+			]
+			dependencies: ["5EDB45EE3EACD5E1"]
+			id: "3BB6B056BD95F1A0"
+			tasks: [{
+				id: "5BF2083775D065F4"
+				type: "item"
+				item: "modern_industrialization:chemical_reactor"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 25.5d
+			description: [
+				"The Electrolyzer, similarly to the Chemical Reactor is an integral part of MI. Right now it can be used to produce Aluminum cheaper than you have been doing. Although this isn't required right away, the ratio is so much better it might as well be."
+				""
+				"&o&d 57 : I really love chemistry!"
+				"&o&4 0R : americium oganesson uranium sulfide"
+				"&o&d 57 : mmh, that sounds sus..."
+			]
+			dependencies: ["5EDB45EE3EACD5E1"]
+			min_width: 220
+			id: "7593BDF715A3AC99"
+			tasks: [{
+				id: "5CBBA33504CD5BAC"
+				type: "item"
+				item: "modern_industrialization:electrolyzer"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 27.5d
+			description: [
+				"The advanced machine hull is the second tier machine hull. It allows Electronic machines to start accepting MV power. To do this, hold a machine hull in your hand and Right Click on the machine you want to convert"
+				""
+				"If you've previously powered this machine using LV cables, those cables will disconnect. You now need to power the MV machine using MV cables and an MV Storage Unit. It just so happens we have a quest for that coming up!"
+				""
+				"NOTE: You may have noticed that the AE2 chapter has opened up even though there are some quests left on this page. In the short term, the rest of this chapter is optional, but highly recommended to complete sooner rather than later. There are machine upgrades, new power production and more here that you'll want to get into!"
+			]
+			dependencies: [
+				"0E4467C81F04FE57"
+				"5EDB45EE3EACD5E1"
+			]
+			min_width: 250
+			id: "07DB471F85ADCCDA"
+			tasks: [{
+				id: "253A32AF7715705A"
+				type: "item"
+				item: "modern_industrialization:advanced_machine_hull"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 29.5d
+			description: ["The MV storage unit stores and sends power through MV cables. Now that you're starting to upgrade your machines, you'll need at least one of these to store and feed power to those new machines"]
+			dependencies: ["07DB471F85ADCCDA"]
+			id: "787420B3F07B9909"
+			tasks: [{
+				id: "059D8819693F4884"
+				type: "item"
+				item: "modern_industrialization:mv_storage_unit"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 13.5d
+			description: ["The Polarizer is one of the first electrical machines you can craft. Although it's recipes are limited, it will save you a ton of redstone in crafting magnetic materials."]
+			dependencies: ["0E1CAD3AF8127A47"]
+			id: "109B835B228766E6"
+			tasks: [{
+				id: "00DC97E61250DF43"
+				type: "item"
+				item: "modern_industrialization:polarizer"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 31.5d
+			description: [
+				"Along with the Electric Quarry, there is also the Oil Drilling Rig. This is a multiblock similar to the Quarry, except it provides fluids instead of raw materials."
+				"You should get one up and running when you can and start storing some Crude Oil. As we'll see in the next few quests, crude oil can be distilled into many different fluids and refined for a new type of energy production"
+				""
+				"NOTE: This pack changes the way Quarry Drilling works by incorporating dirty drills and Create washing. The Oil Rig on the other hand works the same as standard MI so you may want to keep an eye on your drills to ensure they do not get consumed."
+			]
+			dependencies: ["787420B3F07B9909"]
+			min_width: 250
+			id: "4351AC5A552EC29C"
+			tasks: [{
+				id: "365364BA0FB404F0"
+				type: "item"
+				item: "modern_industrialization:oil_drilling_rig"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 36.0d
+			description: ["The Diesel Generator burns fuels and produces EU. Check REI once again to see which type of fuel you want to use."]
+			dependencies: ["124651D35EA90053"]
+			id: "6521325455CCCE5D"
+			tasks: [{
+				id: "2C30F048B38B4458"
+				type: "item"
+				item: "modern_industrialization:diesel_generator"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 34.5d
+			description: ["Crude Oil can give three different fuels from the distillery. However, the basic distillery has only one output slot. You can use REI to lock the output slot to the fuel you want. Have a look at the processing chains to see which one gives the best return in the Diesel Generator."]
+			dependencies: ["413D600339539350"]
+			id: "124651D35EA90053"
+			tasks: [{
+				id: "5F74532D259D4FFB"
+				type: "item"
+				item: "modern_industrialization:distillery"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 33.0d
+			description: [
+				"The Crude Oil is an important raw material you can use to produce many useful fluids."
+				""
+				"Use REI and the Power tab in this Quest book to see some options for Power production."
+			]
+			dependencies: ["4351AC5A552EC29C"]
+			id: "413D600339539350"
+			tasks: [{
+				id: "7733B7BF9EDCBC9C"
+				type: "item"
+				item: "modern_industrialization:crude_oil_bucket"
+			}]
+		}
+		{
+			title: "Cheaper Component Recipes"
+			x: 4.0d
+			y: 19.0d
+			description: ["Using Tin and Lead in a mixer will give you Soldering Alloy Dust. Convert this to fluid form in your blast furnace to get cheaper crafting recipes as using the Assembler"]
+			dependencies: ["777C8BA4044899FB"]
+			min_width: 250
+			id: "6F6A9490A0102B26"
+			tasks: [{
+				id: "3184FF030D168FE8"
+				type: "item"
+				item: "modern_industrialization:soldering_alloy_bucket"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 32.0d
+			description: ["In addition to new power production, Oil can also allow you to start fueling some Diesel tools from MI. If you've been using the Slime Sling to get around this whole time, then kudos to you! It's time for an upgrade now though."]
+			dependencies: ["413D600339539350"]
+			id: "4441E8BB7DC928B0"
+			tasks: [{
+				id: "7D17188F9296F8DD"
+				type: "item"
+				item: "modern_industrialization:diesel_jetpack"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 33.5d
+			description: [
+				"The Diesel mining drill is a nice upgrade to your current Steam Drill. Depending on the type of fuel you're using, your speeds will vary."
+				""
+				"Use Shift+Right Click to toggle between Fortune 3 and Silk touch."
+			]
+			dependencies: ["413D600339539350"]
+			id: "22B8B616F13E73BE"
+			tasks: [{
+				id: "78F12ED6DF41E8D9"
+				type: "item"
+				item: "modern_industrialization:diesel_mining_drill"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 32.0d
+			description: ["Rubber equipment is a must when using Jetpacks."]
+			dependencies: ["4441E8BB7DC928B0"]
+			id: "568822852483E34D"
+			tasks: [
+				{
+					id: "5035EA3A1A052A6A"
+					type: "item"
+					item: {
+						id: "modern_industrialization:rubber_helmet"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "1F336B534FB9D044"
+					type: "item"
+					item: {
+						id: "modern_industrialization:rubber_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: 34.5d
+			description: ["Polyethylene is required to start making upgrades for your MI machines. You may not need to do this right away, but eventually these will be required for some more advanced recipes. Besides that, faster is always better, right."]
+			dependencies: ["124651D35EA90053"]
+			optional: true
+			id: "350EE85AAE5FB778"
+			tasks: [{
+				id: "59C6652B4F5DB40D"
+				type: "item"
+				item: "modern_industrialization:polyethylene_bucket"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 34.5d
+			description: [
+				"The basic upgrade will allow +2EU/t per upgrade. You can stack up to 64 in a single machine."
+				""
+				"NOTE: To extract the upgrades from a machine again, Shift+Right Click with your crowbar."
+			]
+			dependencies: ["350EE85AAE5FB778"]
+			optional: true
+			id: "7DADC4A3DD64DEF3"
+			tasks: [{
+				id: "6B84D867CA1181A6"
+				type: "item"
+				item: "modern_industrialization:basic_upgrade"
+			}]
+		}
+		{
+			x: -4.5d
+			y: 34.5d
+			description: ["The Advanced Overclocker gives up to +8EU/t"]
+			dependencies: ["7DADC4A3DD64DEF3"]
+			optional: true
+			id: "0940AEEC91293AED"
+			tasks: [{
+				id: "2C0E3C34A7770268"
+				type: "item"
+				item: "modern_industrialization:advanced_upgrade"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 15.0d
+			description: ["The Create Crushing Wheel is needed to get quartz dust from Diorite. For everything else, it's less efficient than MI's macerator, but it also runs on Rotational Power, so basically free."]
+			dependencies: ["24F3AC19B2959B84"]
+			id: "2B2EF6D9FBEBF511"
+			tasks: [{
+				id: "63D3FD0195B218BA"
+				type: "item"
+				item: "create:crushing_wheel"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 15.0d
+			description: ["The Create mechanical arm serves two functions. One is as a crafting ingredient in the MI robot arm, which itself is a crafting ingredient. The other, more interesting use case is that it can be used to move items from one place to another using Rotational Power. Again, the ponder system explains it better than we ever could here."]
+			dependencies: ["46DAFA9EB2E0FA10"]
+			id: "418499D5A20455C0"
+			tasks: [{
+				id: "41B724DD50A03D11"
+				type: "item"
+				item: "create:mechanical_arm"
+			}]
+		}
+		{
+			x: -9.0d
+			y: 8.0d
+			description: ["The brass funnel can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
+			dependencies: ["24F3AC19B2959B84"]
+			id: "4527884A8FCB13FD"
+			tasks: [{
+				id: "6AF0B2A7A86B1978"
+				type: "item"
+				item: "create:brass_funnel"
+			}]
+		}
+		{
+			x: -9.0d
+			y: 9.0d
+			description: ["The brass tunnel can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
+			dependencies: ["24F3AC19B2959B84"]
+			id: "10E0647786BD0918"
+			tasks: [{
+				id: "09538317002519A3"
+				type: "item"
+				item: "create:brass_tunnel"
+			}]
+		}
+		{
+			x: -9.0d
+			y: 10.0d
+			description: ["The smart chute can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
+			dependencies: ["24F3AC19B2959B84"]
+			id: "42509339BDA59E10"
+			tasks: [{
+				id: "4C5B98E71AC7F528"
+				type: "item"
+				item: "create:smart_chute"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 27.5d
+			description: [
+				"The Crowbar will allow you to remove Machine Hulls from upgraded machines, downgrading them to LV again and returning the machine hull to you."
+				""
+				"&o : This now can be done at all times, and doesn't require tools."
+			]
+			dependencies: ["07DB471F85ADCCDA"]
+			id: "1078D95F17986878"
+			tasks: [{
+				id: "755BD17C17D16F17"
+				type: "item"
+				item: "modern_industrialization:crowbar"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 36.0d
+			description: ["You may not need this right away, but eventually you'll want a steady supply of dyes to color your different MI pipes. Benzene with any dye will create a copy of the dye without consuming the original ingredient, giving you an infinite supply!"]
+			dependencies: ["124651D35EA90053"]
+			id: "2DE70CA34DFD1B28"
+			tasks: [{
+				id: "2762E0FDF4E328A4"
+				type: "item"
+				item: "modern_industrialization:benzene_bucket"
+			}]
+		}
+		{
+			title: "Fabled Transmutation: From Lead to... Electrum"
+			x: 3.0d
+			y: 22.5d
+			description: [
+				"As a way to experiment what can or cannot be done, I've ported the gold processing line from TJ."
+				""
+				"In a early quest it was pointed out that no gold ore can be found in the world, same for the quarry. This follows TJ intended behavior."
+				""
+				"The gold nerf caused substantial repercussions on the progression. I've changed some recipes to avoid blocks, in any case there should be plenty of other sources for gold, like looting."
+				""
+				"What you should actually do at this point is setting up a processing line with electrolyzers and chemical reactors to obtain the proper yields."
+				"Since this is meant as a fun puzzle, no quests will detail this process. Especially because these recipes are manually added, so you only need to track the processing linearly. There's generally just one recipe for each step."
+				""
+				"But to build those chem reactors and electrolyzers... you'll need electrum. This by default. So I hope you set aside some gold dusts to jumpstart the process. I've decided to not touch any recipe there because the yields for electrum items are quite good."
+				""
+				"To make electrum dust in a mixer, you need silver and gold. Silver is also not available as an ore, but can be obtained by processing raw lead in a macerator."
+				"This was also left untouched."
+			]
+			min_width: 320
+			id: "034187DD42EEAA4E"
+			tasks: [{
+				id: "5D24A36778E18E14"
+				type: "checkmark"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

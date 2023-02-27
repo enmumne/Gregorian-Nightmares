@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["botania"]}],"ingredients":[{"item":"botania:stripped_dreamwood"}],"processingTime":50,"results":[{"count":4,"item":"botania:dreamwood_planks"}]}

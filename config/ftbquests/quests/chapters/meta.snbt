@@ -1,0 +1,255 @@
+{
+	id: "0408AFDB331C9DFF"
+	group: "4708CC84ABDF95FB"
+	order_index: 0
+	filename: "meta"
+	title: "Known Issues \\& Notes"
+	icon: "minecraft:writable_book"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			icon: "minecraft:writable_book"
+			x: -0.75d
+			y: 0.0d
+			description: [
+				"Since this is a Work in Progress, I'll add here various infos that are not part of the game progression."
+				""
+				"If I stick to the plan, the page will progressively populate while development continues..."
+				""
+				"&cYou can skip this whole page and jump to the main section of the questbook."
+			]
+			size: 1.5d
+			id: "126BEDB82177DA40"
+			tasks: [{
+				id: "64AA39C7A093CB41"
+				type: "checkmark"
+				title: "Info HUB"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -1.5d
+			shape: "square"
+			description: [
+				"Version 0.zero.0"
+				""
+				"Actually, the notation should work like this:"
+				""
+				"1.0.1.1"
+				""
+				"The first number refers to an official version of the modpack, but based on the Minecraft version it's based on. 1.18 = 1, 1.19 = 2"
+				""
+				"The second number indicates a major \"release\" version. This is intended as long term WIP, so the second number will stay at zero."
+				""
+				"The third number indicates a more substantial upgrade (hopefully positional quarries)."
+				""
+				"The fourth number indicates a minor version. The number will grow to double digits without affecting the others."
+				""
+				"The 1.19.3 specifically will start with \"A\", rather then a number. These are preliminar \"empty\" modpacks, collecting the mods that are updated. So letters will be used until the modpack can move to a proper numbered release. With 1.20 being close, it's possible that 1.19.3 will never materialize as a viable version, with mods skipping it. In general, I need at least Modern Industrialization and Create (and KubeJS + FTB Quests), to start a numbered version."
+			]
+			dependencies: ["126BEDB82177DA40"]
+			min_width: 250
+			id: "4C47D47EE969EE3D"
+			tasks: [{
+				id: "50E4746B0E2C739B"
+				type: "checkmark"
+				title: "Changelog"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -3.0d
+			shape: "square"
+			description: [
+				"- It's not rare that custom resources aren't properly loaded. They exhibit weird behaviors, like missing icons, or missing item names. If this happens, pressing F3+t usually fixes it. It's a shortcut to reload the assets without exiting the game."
+				""
+				"- REI sometimes shows icon corruption. This usually happens with the caching mode turned on. Click on the wheel at the side of the search bar, in the inventory screen. Display Settings > Caching Entry Rendering (toggle)"
+				""
+				"- Some mods don't play well with each other. For example Spectrum \"hides\" some blocks in the style of old Reika's Chromaticraft. But due to worldgen sometimes these special blocks stick out because they aren't adapted to the proper modded rock layer... Same for some ores. It happens especially in 1.18 due to rock layers added by Unearthed."
+				""
+				"- Sometimes in REI the buttons at the top to move between the recipe tabs stop working. Try using the mouse scroll wheel."
+				""
+				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power uncapped and with more slots. So some of those recipes have been moved to this other separate machine."
+				""
+				"&c- Version 2.0.0.4 and below had scripts almost completely broken due to KubeJS not loading them properly, and me unable to know since while editing they didn't exhibit any problem. The fix comes at the expense of some lag when the player logs in (and corresponding server message in chat). But finally things should start working as they were intended."
+			]
+			dependencies: ["126BEDB82177DA40"]
+			min_width: 340
+			id: "662B3BC2B20C38C1"
+			tasks: [{
+				id: "67A26182F35717FB"
+				type: "checkmark"
+				title: "Known Issues"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -1.5d
+			shape: "square"
+			description: [
+				"This modpack is largely &c&lUNTESTED&r."
+				""
+				"So why is it even out? Exactly."
+				""
+				"If you find problems of any kind, or want to complain about things, you can find me on discord, in most of the Greggy Minecraft channels."
+				""
+				"Or feel free to DM me your complaints. It should be &aTrystero#0063"
+				""
+				"Even better if you have some better technical skills than mine, so that we can crack the harder problems: the positional quarry system, for example."
+				""
+				"KubeJS worldgen is broken, and doesn't let me to place single ore blocks. That's one problem to solve. Then we'll need steam multiblocks, that are still unsupported in Modern Industrialization."
+				""
+				"No, I'm not opening a channel specifically for this modpack, because I don't think there's any interest for that, and I don't want to waste time to maintain such a thing."
+			]
+			dependencies: ["126BEDB82177DA40"]
+			min_width: 250
+			id: "7986F67BC1254200"
+			tasks: [{
+				id: "593A1EE551C12BCD"
+				type: "checkmark"
+				title: "Hi"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 2.0d
+			shape: "square"
+			description: [
+				"As per modpack description: you are free to use the scripts for your own ends. Use them, balance them, overhaul, laugh at them, or use them to learn. It's fine."
+				""
+				"But remember this important point:"
+				"The tech recipes are for the most part \"ported\" from Technlogical Journey, a modpack for 1.12.2, and the only one where Gregicality can be completed. Gregicality being a GT version that is focused generally on high end sci-fi tech, and convoluted long process chains."
+				""
+				"I don't have an education on chemistry, therefore I cannot start messing with the recipe details. So my work is mainly about cutting and remixing pieces that already exist, to find a good compromise or a new direction."
+				""
+				"This means that the scripts here don't begin with me, and when I say you can reuse them, or even the resources I've added, they might come with &atheir own baggage of preceeding authors&r. The stuff should still be in the public domain, anyway."
+				""
+			]
+			dependencies: ["126BEDB82177DA40"]
+			min_width: 250
+			id: "3739E56EC6B63120"
+			tasks: [{
+				id: "29D8EA271B6B10EE"
+				type: "checkmark"
+				title: "Dev"
+			}]
+		}
+		{
+			title: "Where stuff is"
+			x: 4.5d
+			y: 2.0d
+			description: [
+				"This modpack is untested. Outside of crashes, that can erratically happen in any modpack, the progression might break early because of an oversight. I plan to update frequently (we'll see if I'm able to...)."
+				""
+				"If you have enough patience, you could attempt trying to unfuck things yourself, especially if you come to hate some of the changes. A nerf could be easily at hand, changing a single script line."
+				""
+				"Or maybe you're just curious. Recipes aren't very complex to understand."
+				""
+				"So this is how the modpack works:"
+				""
+				"Due to some KubeJS failures, most assets are loaded through Paxi, a resource pack loader. You can find geggy_packy containing geghilarity and other stuff under &a/config/paxi/resourcepacks"
+				""
+				"Some other stuff can still be under &a/kubejs/assets/"
+				""
+				"&a/kubejs/startup_scripts&r contains those scripts where usually new items and blocks are defined."
+				""
+				"&a/kubejs/server_scripts&r instead contains most of everything else, especially recipes. But some stuff has its own individual .json and you find it inside &a/kubejs/data/"
+				""
+				"For some scripts, custom tools like the mortar, I had to use good old CraftTweaker, since KubeJS simply doesn't work. So you can find some more recipes under &a/scripts/"
+			]
+			dependencies: ["3739E56EC6B63120"]
+			min_width: 280
+			id: "68249176B50C0CBC"
+			tasks: [{
+				id: "4361FF1648E36E66"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 2.0d
+			shape: "square"
+			description: [
+				"To be clear:"
+				""
+				"Right now I've only changed some things in early game, and started to \"greggify\" MI. It will be a long process. The important part will be the transition to positional quarries (to replace the void ones that are default). But these require technical changes that I have to wait for. After that, I plan to add actual ore processing, so changes will run deep."
+				""
+				"On the MI side I ported some complex process chains from &cGregicality/TJ&r. These include the full Platinum group processing, mixed with the early Gold line. Titanium and Tungsten. Epoxy. Ammonia has a forced line that is even skipped in TJ, but mandatory here, along with a couple other minor shortcuts in TJ that have been removed here. None of these are well tested, and need to be actually be better plugged in the progression. 1.19 includes support for custom machines, that right now are the Alloy Smelter, Dehydrator, and Pyrolise Oven and Large Chemical Reactor to correctly replace recipes that have been instead adapted in 1.18. That's about 180+ added recipes, none of which really optional. These are all manual recipes, not generated. So when you see something showing up, it's because it's used somewhere."
+				""
+				"Plus, there are some deeply cutting changes for iron and steel, known as the IronGate, along with the BrickGate, where you'll have fun microcrafting a few brick types required for various things..."
+				""
+				"Create will likely receive a first overhaul soon."
+			]
+			dependencies: ["126BEDB82177DA40"]
+			min_width: 280
+			id: "0379ECB64AE8509A"
+			tasks: [{
+				id: "0BB647BEE35033E3"
+				type: "checkmark"
+				title: "Recipes"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 4.0d
+			description: [
+				"The stuff I manually added can be seen by searching for &a@geg&r in REI."
+				""
+				"Or @geg -bucket will filter the spammy buckets."
+				""
+				"The exception (on 1.19) are the custom machines that are instead under MI mod tag."
+			]
+			dependencies: ["0379ECB64AE8509A"]
+			id: "442D3EFA6C7EE816"
+			tasks: [{
+				id: "4227D98BF324CB99"
+				type: "checkmark"
+				title: "All the Gegs"
+			}]
+		}
+		{
+			title: "Performance Problems"
+			x: -6.0d
+			y: -3.0d
+			shape: "square"
+			subtitle: "Now with its own section!"
+			description: [
+				"- This modpack is quite heavy. Please be patient with world generation."
+				""
+				"In the past few days I've tried to figure out a substantial server \"freeze\". It seems the cause was in a library within the YTTR mod, and has been acknowledged by the author. I've now included a version of the library that should fix it."
+				""
+				"On the other hand I've also bumped into more lag while testing, and this was also due to a YTTR wasteland biome. In this case the biome itself is quite rare, and the lag limited to it, so it shouldn't be a major problem."
+			]
+			dependencies: ["662B3BC2B20C38C1"]
+			id: "7514B3ADC0AB20FB"
+			tasks: [{
+				id: "7F124AB7DD335A78"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: -0.7857142857142847d
+			y: -2.5d
+			shape: "gear"
+			description: [
+				"- It can happen under certain (hopefully rare) conditions that recipes aren't properly loaded. To make sure they are, look at the recipe to make a bed (white), if you don't see a different recipe from vanilla it means that recipes aren't loaded. Try \"/reload\" in chat, the game will freeze for a few seconds."
+				""
+				"- If a quest doesn't complete even if you have the items in the inventory, try logging out and back in. This problem happens sporadically and no one currently knows how to fix it. Not my fault here..."
+				""
+				"- When you create a new world you may notice that early on RAM gets filled up, creating some lag, even if you allocate 8Gb. During my tests RAM usage usually decreases after a few minutes to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more..."
+				""
+				"- The last few versions of REI (the mod where you check for items and recipes) can be wonky. Sometimes it doesn't let you type on the search field, or it doesn't show recipe if you hover on a item and press \"R\". In the first case just exit and re-enter the inventory. If instead you cannot open the recipe pages, just left click on one item, and then the keyboard shortcuts should work again."
+			]
+			size: 1.5d
+			min_width: 300
+			id: "608C7477E58ED48B"
+			tasks: [{
+				id: "695EA3F24D74C51B"
+				type: "checkmark"
+				title: "IMPORTANT PROBLEMS"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

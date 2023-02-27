@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["twilightforest"]}],"ingredients":[{"item":"twilightforest:time_wood"}],"processingTime":50,"results":[{"item":"twilightforest:stripped_time_wood"}]}

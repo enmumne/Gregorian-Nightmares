@@ -1,0 +1,7 @@
+{
+	chapter_groups: [
+		{ id: "113481E7A031FCFE", title: "Main" }
+		{ id: "0E7F30F354FA6BBD", title: "Progression" }
+		{ id: "4708CC84ABDF95FB", title: "All The Meta" }
+	]
+}

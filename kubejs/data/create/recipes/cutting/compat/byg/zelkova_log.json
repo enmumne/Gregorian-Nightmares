@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["byg"]}],"ingredients":[{"item":"byg:zelkova_log"}],"processingTime":50,"results":[{"item":"byg:stripped_zelkova_log"}]}

@@ -1,0 +1,671 @@
+{
+	id: "64AD7C263499355E"
+	group: "113481E7A031FCFE"
+	order_index: 1
+	filename: "1_steam"
+	title: "1 - Steam"
+	icon: "modern_industrialization:steel_machine_casing"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Infinite Resources?"
+			icon: "modern_industrialization:bronze_drill"
+			x: -21.0d
+			y: 18.0d
+			description: [
+				"The Quarry is an essential multiblock machine. It will generate increasingly valuable resources for you as you progress through the pack."
+				""
+				"The Quarry will consume the drill heads you feed it and output the dirty version of the drill head. This drill head can be washed using the Create Washer and fed back to the machine for re-use."
+				""
+				"You're going to get access to Create Belts immediately in the next chapter, so at that point it's well worth automating this to have a continuous supply of base ores and mob drops."
+				""
+				"NOTE: Now that you do have access to ore generation and mob drops, it may be worth looking at both the Storage \\& Perks tabs to figure out how to store the Quarry outputs and also how to put your mob drops to good use."
+				""
+				"&o&b 58 : when sceenshot describes it better than just a sentence aka (&luxv tier voidminer&r &bxddddd)"
+				"&o&b : what else in our reality can surpass the new horizons?"
+				"&o&4 27 : what the sus"
+				"&o&6 6G : is it like some stupid endgame multiblock or"
+				"&o&d 2T : it's to replace ore processing"
+				"&o&d : it's extremely endgame"
+				"&o&d : not in the pack yet I think?"
+				"&o&e 2L : Literally everyone who hates ore proc is a sinner fuck this shit"
+				"&o&d 2T : I think it's for the point where ore processing is insufficient for getting the amount of materials required"
+				"&o&d : I may be completely wrong about what they're using this multi for, but I remember ore processing being discussed the last time they said Eye of Harmony"
+				"&o&a 4J : i think gt should be simplified to one machine: The Waiting Machine"
+				"&o&9 8U : Hot take gt recipes do take way too long"
+				"&o&a 4J : GTNH is already ”The Waiting Game” by DreamMasterXXL"
+				"&o&a : it would be fitting to include The Waiting Machine"
+				"&o&a : \\\"He is the Master of Dreams, he knows our worst nightmares and he uses them to create a special hell for every one of us\\\" - Anonymous GTNH player"
+			]
+			dependencies: ["5DAA5DF264D1E559"]
+			min_width: 300
+			id: "0CE2D04744434785"
+			tasks: [
+				{
+					id: "49B89DFFEEC4A5A5"
+					type: "item"
+					item: "modern_industrialization:steam_quarry"
+				}
+				{
+					id: "2D1B94D203AA3EF9"
+					type: "item"
+					item: "kubejs:mob_slaughtering_drill"
+				}
+				{
+					id: "52413EE606389465"
+					type: "item"
+					item: "modern_industrialization:bronze_drill"
+				}
+			]
+		}
+		{
+			x: -21.0d
+			y: -4.0d
+			shape: "gear"
+			description: [
+				"So far, all of our \"power\" has been generated through Create's rotational force. Now that we've got access to some bronze, we can start producing steam to power some Modern Industrialization (MI) machines."
+				""
+				"This chapter will walk you through the first tier of machines. By the end you'll have access to Steel and a Quarry which will let you start generating basic resources and mob drops."
+				""
+				"&o&d 68 : my parrot died"
+				"&o&d : it ran into a steam pipe and boiled alive"
+				"&o&4 0R : rip"
+			]
+			dependencies: ["3F5ACCA0FDC6ADB6"]
+			size: 2.0d
+			min_width: 300
+			id: "738B86420BEFF68F"
+			tasks: [{
+				id: "57ED2B72555D8EE7"
+				type: "checkmark"
+				title: "Steam Age Begins"
+			}]
+		}
+		{
+			x: -22.261904761904752d
+			y: 7.869047619047606d
+			description: [
+				"Similarly to the Bronze Furnace, the compressor provides a way of creating items that, at this point, Create can do more efficiently. The press you've been using up until now can replace the compressor early game, but you'll eventually need it for plates that Create can't craft."
+				""
+				"The compressor is now required for two types of bricks, those you'll use for the Coke Oven, and the Fireclay bricks to be used on the Primitive Blast Furnace."
+				""
+				"This is also known as the BRICKGATE, coming right after the IronGate."
+				""
+				"These recipes have been brought to you with &clove&r."
+			]
+			dependencies: ["5E6DE2BFC757029E"]
+			id: "448718E321BE9E5A"
+			tasks: [{
+				id: "2235D4F38562E853"
+				type: "item"
+				item: "modern_industrialization:bronze_compressor"
+			}]
+		}
+		{
+			x: -20.119047619047613d
+			y: 6.035714285714285d
+			description: [
+				"The Macerator grinds ores and other materials down into dust form. If you've been using the Steam Drill (which you should be), then you'll be able to grind ores into their raw form, and those raw forms further down into dust. This will stretch your resources much further and help a lot in the early game before resource generation."
+				""
+				"You could probably create two of these machines, one for on demand processing and another for your ore processing after a mining trip. Eventually this processing chain will be used for your quarry output anyway, so it's well worth the investment."
+				""
+				"&o&7 64 : i’m only at utility science in my current game but i kinda want to start over with bz and 100x science"
+				"&o&6 58 : I see a lot of you guys playing with k2se and Bz... my question is: are you okay bro ?"
+				"&o&c 29 : Brevven's mods, adding lots of materials that tie into SE, but like, also clutter the core miner output with tons of different materials"
+				"&o&b 34 : I can feel the contempt for the players in these bz mods"
+				"&o&b : can't even make science without double smelting with a byproduct to handle... and oh you forgot to to make ammo for your pistol? good stuff"
+				"&o&3 86 : bro i thought brevens mods were for making se recipes easier"
+				"&o&3 : like substitutes for LDS"
+				"&o&c 29 : oh it substitutes the LDS recipe alright"
+				"&o&c : for a more complex version lmao"
+				"&o&b 34 : bz is a nightmare, not going to lie."
+				"&o&2 55 : It's good if you actually like byproducts and feedback loops."
+				"&o&b 34 : I love how almost every ore smelting is different"
+				"&o&2 55 : It's grown on me as well, but NGL needing 8 or so ingredients for some things never stops being daunting. And yeah, every ore is just a bit different with BZ."
+				""
+				"&o : tell that to GTCEu team, thinking the same ore processing for all ores is an improvement"
+			]
+			dependencies: ["5E6DE2BFC757029E"]
+			optional: true
+			min_width: 350
+			id: "39754E37B49FAC5E"
+			tasks: [{
+				id: "4E7C51FC1EB048FE"
+				type: "item"
+				item: "modern_industrialization:bronze_macerator"
+			}]
+		}
+		{
+			x: -26.0d
+			y: 9.0d
+			description: ["The cutting machine is another method of producing components such as Rods, Rings and Bolts. Create machines can only process some materials, so you'll eventually want one of these. In the early game you may be fine with the cutting saw though."]
+			dependencies: ["4747C0805A5670D3"]
+			id: "22C744931E1701EC"
+			tasks: [{
+				id: "7359DA1BBA9507DC"
+				type: "item"
+				item: "modern_industrialization:bronze_cutting_machine"
+			}]
+		}
+		{
+			icon: "modern_industrialization:bronze_mixer"
+			x: -24.5d
+			y: 7.5d
+			description: [
+				"The Mixer is going to become one of the most important machines in your factory at some point. For now though, it's main use will be mixing sand and water to create clay. This machine is eventually required so make a few if you have the resources to spare."
+				""
+				"Note that originally the mixer depended on the Macerator, to grind the materials into dusts."
+				""
+				"Since the Macerator might be gated poorly, now, you can find alternate ways to get the dusts you need..."
+				""
+				"I guarantee: you'll love it."
+				""
+				"Don't trust this quest, tho. You can skip on that clay thing, it doesn't seem to lead you anywhere. Just go harvest manually the clay, they tell me it's tons of fun."
+				""
+				"But if you don't want to follow my dear advices... You can try anyway, I guess. The path awaits you."
+			]
+			dependencies: ["448718E321BE9E5A"]
+			id: "787BBBEB11A4718D"
+			tasks: [{
+				id: "28F4D1A28151F071"
+				type: "item"
+				item: "modern_industrialization:bronze_mixer"
+			}]
+		}
+		{
+			icon: "modern_industrialization:coke_oven"
+			x: -21.0d
+			y: 9.0d
+			description: ["The Coke Oven will be your first multiblock. In this quest, we've provided the exact number of resources to get this machine up and running. You'll have the Coke Oven block itself which is the \"brain\" of the multiblock. Also some bricks and an Item Input Hatch to accept Coal Coke, an Item Output Hatch to output Coke Dust, a Fluid Input hatch to accept steam to power the machine and finally a fluid output hatch to output your first byproduct, Creosote."]
+			dependencies: [
+				"4A611684DE66157B"
+				"448718E321BE9E5A"
+			]
+			min_width: 300
+			id: "41BA783FD2C150D0"
+			tasks: [
+				{
+					id: "24C8E31E05A6FDE2"
+					type: "item"
+					item: "modern_industrialization:coke_oven"
+				}
+				{
+					id: "7823302947B30C1B"
+					type: "item"
+					item: "minecraft:bricks"
+					count: 21L
+				}
+				{
+					id: "522E7CFD0C5464C8"
+					type: "item"
+					item: "modern_industrialization:bronze_item_input_hatch"
+				}
+				{
+					id: "7E05E3333DE6CB89"
+					type: "item"
+					item: "modern_industrialization:bronze_item_output_hatch"
+				}
+				{
+					id: "1E75A0AABE7FD36D"
+					type: "item"
+					item: "modern_industrialization:bronze_fluid_input_hatch"
+				}
+				{
+					id: "791A9DA35B95C07C"
+					type: "item"
+					item: "modern_industrialization:bronze_fluid_output_hatch"
+				}
+			]
+		}
+		{
+			x: -21.0d
+			y: 3.0d
+			description: ["Remember to check the storage tab for some options on storing large amounts of fluids"]
+			dependencies: [
+				"145CDC1CA15F6E15"
+				"4B64A02AD447ABAB"
+			]
+			dependency_requirement: "one_completed"
+			id: "20B7DAB8194CA924"
+			tasks: [{
+				id: "12D37C6BE82BF25F"
+				type: "item"
+				item: "modern_industrialization:bronze_boiler"
+			}]
+		}
+		{
+			title: "Buckety Steam, no more"
+			x: -21.0d
+			y: 4.5d
+			description: [
+				"Your first steam bucket can be smelted from manually, or if you went the Create route, you can pump water directly to the boiler and provide it with fuel. Click the steam output with a bucket in order to complete this quest in that case."
+				""
+				"...But those were the old times."
+				""
+				"Due to the IronGate plaguing the early game, you can just bypass the quest and press the checkmark. To carry around liquids, find a better solution. Create fluid pipes should work. Maybe."
+			]
+			dependencies: ["20B7DAB8194CA924"]
+			id: "5E6DE2BFC757029E"
+			tasks: [{
+				id: "62B8134C8AECA3B5"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: -21.0d
+			y: 0.0d
+			description: ["The Bronze Machine casing is the first of many machine casings you'll be making. It gives access to Bronze Level MI machines."]
+			dependencies: ["1C663430E0BDDA98"]
+			id: "573F81D395D2F996"
+			tasks: [{
+				id: "4A2D6688C1EAF6C8"
+				type: "item"
+				item: "modern_industrialization:bronze_machine_casing"
+			}]
+		}
+		{
+			title: "Components"
+			x: -21.0d
+			y: -1.5d
+			description: [
+				"For your first set of components, you'll be relying on create machines. When you get access to bronze machine casings, you can build out Bronze Modern Industrialization machines."
+				""
+				"However, in some cases you may still want to use Create, it may be faster, cheaper or more efficient."
+			]
+			dependencies: ["738B86420BEFF68F"]
+			id: "1C663430E0BDDA98"
+			tasks: [
+				{
+					id: "50F15DA92AC3533F"
+					type: "item"
+					item: "modern_industrialization:bronze_rod"
+					count: 8L
+					only_from_crafting: false
+				}
+				{
+					id: "200588BAF478038F"
+					type: "item"
+					item: "modern_industrialization:bronze_bolt"
+					count: 8L
+					only_from_crafting: false
+				}
+				{
+					id: "7637CF501A3BCA9F"
+					type: "item"
+					item: "modern_industrialization:bronze_ring"
+					only_from_crafting: false
+				}
+				{
+					id: "45BF735791DD60E4"
+					type: "item"
+					item: "modern_industrialization:bronze_gear"
+				}
+			]
+		}
+		{
+			x: -19.0d
+			y: 4.5d
+			description: ["With Steam Power you can craft a furnace to smelt for free. The Create option however will still be faster and more efficient for now due to it's ability to bulk smelt items. Probably not worth it early game, but will become useful eventually when you get access to MI steel, electricity and upgrades"]
+			dependencies: ["5E6DE2BFC757029E"]
+			id: "6AF8A0C27A2FCF94"
+			tasks: [{
+				id: "023C1BB5F8F2606C"
+				type: "item"
+				item: "modern_industrialization:bronze_furnace"
+			}]
+		}
+		{
+			x: -22.0d
+			y: 1.5d
+			description: [
+				"To create steam, you'll need a steady supply of water. This can be done via MI's Water pump."
+				""
+				"The Bronze Water Pump requires steam to function, so you'll need to prime it with a bucket of steam manually. When you have access to the boiler, you should set up the boiler pumping steam back into the pump in order for the pump to become self-sufficient."
+				""
+				"&o : This is optional, as it requires glass."
+				""
+				"&o : You can come back here after the Primitive Blast Furnace and Steel."
+			]
+			dependencies: ["573F81D395D2F996"]
+			id: "4B64A02AD447ABAB"
+			tasks: [{
+				id: "1BDBA8CFDAE1F723"
+				type: "item"
+				item: "modern_industrialization:bronze_water_pump"
+			}]
+		}
+		{
+			x: -20.0d
+			y: 1.5d
+			description: [
+				"If there is a water pool with 10000+ source blocks nearby, you can use the Create pump to create an infinite water source basically for free."
+				""
+				"This requires you to be beside a larger body of water, but may be a more preferable way to get infinite water."
+			]
+			dependencies: ["573F81D395D2F996"]
+			id: "145CDC1CA15F6E15"
+			tasks: [
+				{
+					id: "215D5199C424F84A"
+					type: "item"
+					item: "create:mechanical_pump"
+				}
+				{
+					id: "67A066ADACD84A8D"
+					type: "item"
+					item: "create:hose_pulley"
+				}
+				{
+					id: "574486C6EA308EFF"
+					type: "item"
+					item: "create:fluid_pipe"
+				}
+			]
+		}
+		{
+			x: -23.0d
+			y: -1.5d
+			description: [
+				"The Wrench is a handy tool in MI. It can change the output side of your MI machines and down the line, it'll let you connect/disconnect item pipes, fluid pipes and cabling to each other."
+				""
+				"NOTE: Shift right clicking pipes and cables will insta-break them into your inventory, but you'll still need a pick to break MI machines faster."
+			]
+			dependencies: ["738B86420BEFF68F"]
+			id: "337F59E6BDB7D6BB"
+			tasks: [{
+				id: "3B232FE1DB924200"
+				type: "item"
+				item: "modern_industrialization:wrench"
+			}]
+		}
+		{
+			title: "Steam Blast Furnace"
+			x: -21.0d
+			y: 12.0d
+			description: ["The Steam Blast Furnace is used to cook Uncooked Steel Dust. It'll be worth your while to also create a fluid output hatch, down the line we're going to use this machine for some other processing too."]
+			dependencies: ["4571CCE5C6A7EFC9"]
+			id: "1DEDC34AE5197F09"
+			tasks: [
+				{
+					id: "5A2A6EEFEDB02408"
+					type: "item"
+					item: "modern_industrialization:fire_clay_bricks"
+					count: 37L
+				}
+				{
+					id: "5DB8C293947CD5D3"
+					type: "item"
+					item: "modern_industrialization:steam_blast_furnace"
+				}
+				{
+					id: "4D6713EE50074BA3"
+					type: "item"
+					item: "modern_industrialization:bronze_item_input_hatch"
+				}
+				{
+					id: "086507A2CD45F3CF"
+					type: "item"
+					item: "modern_industrialization:bronze_item_output_hatch"
+				}
+				{
+					id: "4F5B3FD34EC79678"
+					type: "item"
+					item: "modern_industrialization:bronze_fluid_output_hatch"
+				}
+			]
+		}
+		{
+			x: -23.0d
+			y: 9.0d
+			description: [
+				"Creosote is a byproduct of producing Coke Dust or Coal Coke. It can be refined to lubricant in the mixer, which is used in cutting machine recipes."
+				""
+				"&o&b 4L : I wish we could take a sip of the chemicals we make"
+				"&o&9 46 : mix some wurtz with molten zylon and degen rhenium"
+			]
+			dependencies: ["41BA783FD2C150D0"]
+			id: "274F91C7EC72D531"
+			tasks: [{
+				id: "657F5580C744EFB0"
+				type: "item"
+				item: "modern_industrialization:creosote_bucket"
+			}]
+		}
+		{
+			title: "The Revenge of the Pigs"
+			x: -21.0d
+			y: 10.5d
+			description: [
+				"Why all this effort to create Coke Dust. Not only is it a more efficient fuel, but it's one of the main ingredients in Uncooked Steel Dust. Combine Coke and Iron Dust in a Create or MI mixer to craft Uncooked Steel Dust. Almost there... but time for another multiblock"
+				""
+				"OOOPS!"
+				""
+				"There's one small problem..."
+				""
+				"You can't make the steel mix normally now. You have to use... pig iron."
+				""
+				"There's no respect for pigs these days."
+				""
+				"This shall be their revenge. The revenge of the pigs."
+			]
+			dependencies: ["41BA783FD2C150D0"]
+			id: "4571CCE5C6A7EFC9"
+			tasks: [
+				{
+					id: "18207DA6D499E9A6"
+					type: "item"
+					item: "modern_industrialization:coke_dust"
+				}
+				{
+					id: "2521D07EB0D9143F"
+					type: "item"
+					item: "modern_industrialization:uncooked_steel_dust"
+				}
+			]
+		}
+		{
+			x: -21.0d
+			y: 13.5d
+			description: ["Congratulations on your first steel ingot. Now that you've seen the crafting process for these, you'll want to automate as much of this as you can. You have access to item and fluid pipes which should make the process a lot easier. For Steel Tier Machines and the Quarry itself, you're going to need a lot so it's well worth going over your base right now to automate some parts of the process."]
+			dependencies: ["1DEDC34AE5197F09"]
+			min_width: 300
+			id: "19A98DE71EE34CAA"
+			tasks: [{
+				id: "750D838B7E2E5194"
+				type: "item"
+				item: "modern_industrialization:steel_ingot"
+			}]
+		}
+		{
+			x: -18.709523809523823d
+			y: 14.98809523809524d
+			description: ["You can start upgrading your bronze MI machines to steel at your leisure. Keep in mind, everything will eventually be moving to Electricity so only upgrade what you use often"]
+			dependencies: ["19A98DE71EE34CAA"]
+			id: "53E2133B32083387"
+			tasks: [{
+				id: "723041B77CF35E29"
+				type: "item"
+				item: "modern_industrialization:steel_upgrade"
+			}]
+		}
+		{
+			title: "Invar"
+			x: -20.623809523809527d
+			y: 15.016666666666673d
+			description: ["For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result"]
+			dependencies: ["19A98DE71EE34CAA"]
+			id: "5DAA5DF264D1E559"
+			tasks: [
+				{
+					id: "6BC244A4FA4C4DA0"
+					type: "item"
+					item: "modern_industrialization:invar_dust"
+				}
+				{
+					id: "298E1BE8F31E20F7"
+					type: "item"
+					item: "modern_industrialization:invar_ingot"
+				}
+			]
+		}
+		{
+			x: -22.5d
+			y: 15.5d
+			dependencies: [
+				"19A98DE71EE34CAA"
+				"5DAA5DF264D1E559"
+			]
+			id: "6D27859AE4185773"
+			tasks: [{
+				id: "5B41BA07CB1B8377"
+				type: "item"
+				item: "modern_industrialization:item_pipe"
+			}]
+		}
+		{
+			title: "Next Gen Cobble Gen"
+			x: -23.0d
+			y: 6.0d
+			description: ["You're going to need quite a bit of clay for the next few recipes. A useful way to get some is grind cobble down to sand and mix with water. While cobble itself is plentiful, this pack is about automation, so we've provided a nice cobblegen method to save you the mining hassle!"]
+			dependencies: [
+				"39754E37B49FAC5E"
+				"787BBBEB11A4718D"
+			]
+			dependency_requirement: "one_completed"
+			id: "1313C557BD3AB3D8"
+			tasks: [{
+				id: "7D2197ADE38FFCE4"
+				type: "item"
+				title: "Any #kibe:cobblestone_generators"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "kibe:cobblestone_generators"
+					}
+				}
+			}]
+		}
+		{
+			title: "Foregoing Cobbleworks"
+			x: -24.5d
+			y: 6.0d
+			description: ["Remember to check the Storage tab to get some storage options for your machine outputs"]
+			dependencies: ["1313C557BD3AB3D8"]
+			id: "29DB175B5496205E"
+			tasks: [
+				{
+					id: "5CDB860BA74525E1"
+					type: "item"
+					item: "minecraft:cobblestone"
+				}
+				{
+					id: "3E8DE70CE1CCD124"
+					type: "item"
+					item: "minecraft:gravel"
+				}
+				{
+					id: "239D084FB4AEAFB8"
+					type: "item"
+					item: "minecraft:sand"
+				}
+			]
+		}
+		{
+			x: -26.0d
+			y: 6.0d
+			dependencies: [
+				"29DB175B5496205E"
+				"787BBBEB11A4718D"
+			]
+			id: "1F2292593AA56656"
+			tasks: [{
+				id: "038669BEB7A7071F"
+				type: "item"
+				item: "minecraft:clay"
+			}]
+		}
+		{
+			x: -21.0d
+			y: 7.5d
+			description: [
+				"There are two ways you can go to create Coal Coke. You can drop Coal into the Coke Oven (quest below), or if you're macerating all your ores then you'll probably have some Coal Dust that can be dropped into the Coke Oven instead. Coal Dust is the intended route since you'll eventually need to grind down the coal coke anyway."
+				""
+				"&o : You aren't going to macerate these, are you?"
+				""
+				"&o : Go manual. You have the good old mortar. You'll have to start from tiny dusts."
+			]
+			dependencies: [
+				"39754E37B49FAC5E"
+				"1715FBF783F1B827"
+			]
+			dependency_requirement: "one_completed"
+			id: "4A611684DE66157B"
+			tasks: [{
+				id: "09231530907022D0"
+				type: "item"
+				item: "modern_industrialization:coal_dust"
+			}]
+		}
+		{
+			x: -24.5d
+			y: 9.0d
+			description: ["Lubricant is made by combining Creosote and Redstone Dust in a Mixer."]
+			dependencies: [
+				"787BBBEB11A4718D"
+				"274F91C7EC72D531"
+			]
+			id: "4747C0805A5670D3"
+			tasks: [{
+				id: "47E57F0FB8AFBCFB"
+				type: "item"
+				item: "modern_industrialization:lubricant_bucket"
+			}]
+		}
+		{
+			x: -19.0d
+			y: 7.5d
+			dependencies: ["4A611684DE66157B"]
+			id: "7960237A1360D9EA"
+			tasks: [{
+				id: "294B56A2E26CC1B4"
+				type: "item"
+				item: "create:schematicannon"
+			}]
+		}
+		{
+			x: -24.5d
+			y: 17.5d
+			description: ["Multiple MI pipes can be placed in the same position, they need to be different colors to do so though. To create different colored pipes, you'll need dyes. Dyes can be found in world for the time being. When you work your way through electricity, you'll eventually get access to the Distillery and a means of producing infinite dyes. You shouldn't need too many different colored pipes in the short term however, so consider this an FYI more than anything!"]
+			dependencies: ["6D27859AE4185773"]
+			min_width: 250
+			id: "75864282D1EC39E0"
+			tasks: [{
+				id: "37245BBB982A4DD3"
+				type: "checkmark"
+				title: "A Note on Pipes"
+			}]
+		}
+		{
+			x: -22.033333333333324d
+			y: 5.269047619047612d
+			description: [
+				"Another distortion of space-time!"
+				""
+				"Or maybe just bad design. In any case, the macerator is \"optional\", because you might not have a diamond pickaxe to mine the two diamonds required, due to the iron \"shortage\". Same for the lack of glass."
+				""
+				"Rejoice! The end is near!"
+				"(...this sounds bad)"
+			]
+			dependencies: ["5E6DE2BFC757029E"]
+			id: "1715FBF783F1B827"
+			tasks: [{
+				id: "72F793C1AEEFBE03"
+				type: "checkmark"
+				title: "IronGate bending reality"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

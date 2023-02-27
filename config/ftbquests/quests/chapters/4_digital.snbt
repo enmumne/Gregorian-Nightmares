@@ -1,0 +1,547 @@
+{
+	id: "1A07CED8FE463D6A"
+	group: "113481E7A031FCFE"
+	order_index: 4
+	filename: "4_digital"
+	title: "4 - Digital"
+	icon: "modern_industrialization:digital_circuit"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Material Madness"
+			x: -1.0d
+			y: -2.0d
+			shape: "gear"
+			description: [
+				"This quest becomes available early in the AE2 chapter. If you haven't set up some semblance of automation, the rest of the game is going to become pretty difficult, so we recommend finishing out that chapter before continuing."
+				""
+				"This chapter will take you into the digital age. Here the quests become less linear, the chemistry of MI becomes a lot more involved and the crafting becomes more detailed. You'll have more fluids to handle and lots of byproducts to route and manage. Check REI often as materials you've set up to make earlier in this pack may be cheaper with all this new technology you've unlocked."
+				""
+				"By the end of this Chapter, you'll have access to higher tier machine hulls, nether stars (which don't have too many uses in this pack) and Creative Power... sorta."
+			]
+			size: 2.0d
+			min_width: 250
+			id: "429CB6A97E6AA3A3"
+			tasks: [{
+				id: "3DE3E5F76064D867"
+				type: "checkmark"
+				title: "Scaling Up"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 5.5d
+			description: ["Stainless Steel Hot Ingots are made in the EBF. They're pretty useless as the hot version which is why you'll need a Vacuum Freezer to cool them to their regular form."]
+			dependencies: ["533780AE298FEB69"]
+			id: "4875A0C616E36BDB"
+			tasks: [{
+				id: "0816391E11EF1F0B"
+				type: "item"
+				item: "modern_industrialization:stainless_steel_hot_ingot"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 8.0d
+			description: ["Stainless Steel is a key ingredient in unlocking the next tier of Machine Hulls, allowing your machines to accept HV power."]
+			dependencies: ["0200CB385FAEE3B9"]
+			id: "2EFA4782FD878A82"
+			tasks: [{
+				id: "6C603EB2FA5216FD"
+				type: "item"
+				item: "modern_industrialization:stainless_steel_ingot"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 4.5d
+			description: ["Now that you've got your Chromium \\& Manganese dusts, process them into Stainless Steel."]
+			dependencies: ["068BBC0B8F9A1214"]
+			id: "533780AE298FEB69"
+			tasks: [{
+				id: "7AC9A9FC535C051F"
+				type: "item"
+				item: "modern_industrialization:stainless_steel_dust"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 6.5d
+			description: ["The Vacuum Freezer is a useful machine for cooling hot ingots. It's got some other uses too, be sure to check REI. One chain you may want to investigate is Rubber Sheets. It's a little in-depth but yields a lot of rubber."]
+			dependencies: ["4875A0C616E36BDB"]
+			id: "0200CB385FAEE3B9"
+			tasks: [{
+				id: "10872F1F0CEDC0B1"
+				type: "item"
+				item: "modern_industrialization:vacuum_freezer"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 11.0d
+			description: ["Another Circuit, another Sequenced Assembly line. It's important to note the MI gates have no bearing on redstone signals or wires. They are simply crafting components."]
+			dependencies: ["2070A48162B2F509"]
+			id: "672DCCEF4D7357DE"
+			tasks: [{
+				id: "60605BD29CFFF3AC"
+				type: "item"
+				item: "modern_industrialization:digital_circuit"
+			}]
+		}
+		{
+			title: "Infiniterer Resources?"
+			x: 1.0d
+			y: 11.0d
+			description: [
+				"The Stainless Steel Drill will provide access to Titanium and other ores that are do not spawn in world. "
+				""
+				"It can also be used in the Oil Rig to get Shale Oil."
+			]
+			dependencies: ["672DCCEF4D7357DE"]
+			id: "36E9B401FFD8F80D"
+			tasks: [{
+				id: "4624424F9701DC45"
+				type: "item"
+				item: "modern_industrialization:stainless_steel_drill"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 6.5d
+			description: ["Kanthal will become important for HV power transfer and a higher tier EBF"]
+			dependencies: ["0200CB385FAEE3B9"]
+			id: "5AA9997786007432"
+			tasks: [
+				{
+					id: "42295B33D6A199A0"
+					type: "item"
+					item: "modern_industrialization:kanthal_dust"
+				}
+				{
+					id: "31BC761C2AF7B7EA"
+					type: "item"
+					item: "modern_industrialization:kanthal_hot_ingot"
+				}
+				{
+					id: "56D43922E60A56FC"
+					type: "item"
+					item: "modern_industrialization:kanthal_ingot"
+				}
+			]
+		}
+		{
+			x: 1.0d
+			y: 16.0d
+			description: ["The Implosion Compressor uses Industrial TNT in pretty much all it's recipes. It can convert your Diamond Dusts to diamond, finally giving you that doubling ability. It's also the first machine used in some of the creative recipes. The first one is optional at the end of this chapter."]
+			dependencies: [
+				"0441C910B3660E65"
+				"3FC2C80B48ED5280"
+			]
+			id: "3D119C361DF21DDA"
+			tasks: [{
+				id: "16CDD13AC92013ED"
+				type: "item"
+				item: "modern_industrialization:implosion_compressor"
+			}]
+		}
+		{
+			x: -4.5d
+			y: 6.5d
+			description: ["The Sodium Battery is needed for HV Machine Hulls."]
+			dependencies: [
+				"0E0834FBB9FBF84B"
+				"3B2FC4AB58E9AD2F"
+			]
+			id: "61C47F729721A78F"
+			tasks: [{
+				id: "4F7DF1F7BCF96567"
+				type: "item"
+				item: "modern_industrialization:sodium_battery"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 3.0d
+			description: [
+				"Chromium Dust \\& Manganese Dust will be used to make Stainless Steel dust, an important material needed to progress to the next tier of Machine Hulls."
+				""
+				"To make Chromium Dust, you'll first need to make Chromium Tiny Dust in an Electrolyzer."
+				""
+				"To make Manganese Dust, you'll first need to make Manganese Tiny Dust in an Electrolyzer."
+			]
+			dependencies: [
+				"0E0834FBB9FBF84B"
+				"01D6BD77EE1474A1"
+			]
+			id: "068BBC0B8F9A1214"
+			tasks: [
+				{
+					id: "24F1D54BD5A10CE1"
+					type: "item"
+					item: "modern_industrialization:chromium_dust"
+				}
+				{
+					id: "0FCEA1905AFDE4C6"
+					type: "item"
+					item: "modern_industrialization:manganese_dust"
+				}
+			]
+		}
+		{
+			x: -3.5d
+			y: -0.5d
+			description: ["We hope with your Electric Quarry you have a healthy amount of Salt Ore available."]
+			dependencies: ["429CB6A97E6AA3A3"]
+			id: "45F791162C40DD7F"
+			tasks: [{
+				id: "1367064FE0243E34"
+				type: "item"
+				item: "modern_industrialization:salt_dust"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 1.0d
+			dependencies: ["45F791162C40DD7F"]
+			id: "3B2FC4AB58E9AD2F"
+			tasks: [{
+				id: "04E8554103B62C3B"
+				type: "item"
+				item: "modern_industrialization:sodium_dust"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 1.0d
+			description: [
+				"To get access to Chromium Dust, you'll need Hydrochloric Acid and some Chromium Crushed Dust"
+				""
+				"&o&c 0C: im so excited"
+				"&o&c 0C: infinite chlorine"
+				"&o&c 0C: ill basically be a god"
+				"&o&c 0C: next up on the agenda is getting to the moon"
+				"&o&e 83: btw at what point do you think a space station is possible"
+				"&o&7 43: not sure. never bothered"
+				"&o&a 74: why bother with space station, same as void world but needs oxygen and low gravity"
+			]
+			dependencies: [
+				"45F791162C40DD7F"
+				"5C4A63884B875CBE"
+			]
+			id: "0E0834FBB9FBF84B"
+			tasks: [
+				{
+					id: "6338BB5655C2BCA4"
+					type: "item"
+					item: "modern_industrialization:chlorine_bucket"
+				}
+				{
+					id: "52071283DA8154A3"
+					type: "item"
+					item: "modern_industrialization:chromium_crushed_dust"
+				}
+			]
+		}
+		{
+			x: -2.5d
+			y: -0.5d
+			description: ["If you switched to using Redstone to make Quartz dust earlier in the pack, you may have a good supply of Ruby Dust already. If not, time to do just that!"]
+			dependencies: ["429CB6A97E6AA3A3"]
+			id: "5C4A63884B875CBE"
+			tasks: [{
+				id: "748CF6EA658F6B52"
+				type: "item"
+				item: "modern_industrialization:ruby_dust"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 1.0d
+			description: ["Manganese Sulfuric Solution is used in creating the dust form. Sulfuric Acid is a byproduct so you can re-use it in making more solution."]
+			dependencies: [
+				"2D75B22191A582C3"
+				"3051064633B08C73"
+			]
+			id: "01D6BD77EE1474A1"
+			tasks: [{
+				id: "4D3C5D4ECAB1E774"
+				type: "item"
+				item: "modern_industrialization:manganese_sulfuric_solution_bucket"
+			}]
+		}
+		{
+			x: 0.5d
+			y: -0.5d
+			description: ["Manganese Crushed Dust can be made from Raw Iron. You might need to tap into that ore multiplying line you set up a long time ago."]
+			dependencies: ["429CB6A97E6AA3A3"]
+			id: "2D75B22191A582C3"
+			tasks: [{
+				id: "0C040CDAA9020FC5"
+				type: "item"
+				item: "modern_industrialization:manganese_crushed_dust"
+			}]
+		}
+		{
+			x: 2.0d
+			y: -0.5d
+			description: ["If you set up some oil processing previously, you may already have been storing some Sulfuric Acid. If not, time to start doing that. While you're at it, you should set up the new fuel processing lines to get extra power."]
+			dependencies: ["429CB6A97E6AA3A3"]
+			id: "3051064633B08C73"
+			tasks: [{
+				id: "3DE334F341EB75CA"
+				type: "item"
+				item: "modern_industrialization:sulfuric_acid_bucket"
+			}]
+		}
+		{
+			icon: "modern_industrialization:blastproof_alloy_plate"
+			x: 3.0d
+			y: 13.0d
+			description: ["Tungsten is the only new material as part of the blastproof alloy. You should have a steady supply of it coming through your Quarry by now."]
+			dependencies: ["595325D26FE49A6C"]
+			id: "0441C910B3660E65"
+			tasks: [
+				{
+					id: "4A05B5F5AFB49AB6"
+					type: "item"
+					item: "modern_industrialization:mixed_ingot_blastproof"
+				}
+				{
+					id: "4FE62D1A6048A47F"
+					type: "item"
+					item: "modern_industrialization:blastproof_alloy_plate"
+				}
+			]
+		}
+		{
+			x: -1.0d
+			y: 13.0d
+			description: ["The Turbo Machine Hull can turn your machines into HV machines. It'll also unlock some new recipes and provide multiblocks to improve some existing recipes and add interesting byproducts."]
+			dependencies: [
+				"61C47F729721A78F"
+				"672DCCEF4D7357DE"
+			]
+			id: "3FC2C80B48ED5280"
+			tasks: [{
+				id: "71B6558A2646F615"
+				type: "item"
+				item: "modern_industrialization:turbo_machine_hull"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 11.0d
+			description: [
+				"You may have some titanium from processing bauxite earlier in the pack, but it's time to scale up the production by using the Ores from the Stainless Steel Drill. Regardless of how you obtain the titanium, you'll need to blast it to get Hot Titanium Ingots. Those can then be processed in the Vacuum Cooler to get titanium ingots."
+				""
+				"&o: No."
+				""
+				"&o&7 : ...no?"
+				""
+				"&o : Titanium has been beautified. The process was changed, and you have two different lines to obtain it."
+				"&o : One is shorter, but with poor yields. The other is much better, but also more complex. If you care to set it up properly there's a nice loop at the end."
+			]
+			dependencies: [
+				"36E9B401FFD8F80D"
+				"01D6BD77EE1474A1"
+			]
+			id: "595325D26FE49A6C"
+			tasks: [
+				{
+					id: "7DE9385BF1007024"
+					type: "item"
+					item: "modern_industrialization:titanium_hot_ingot"
+				}
+				{
+					id: "49C3A757CA0C3809"
+					type: "item"
+					item: "modern_industrialization:titanium_ingot"
+				}
+			]
+		}
+		{
+			x: -1.0d
+			y: 9.5d
+			description: ["The Digital Circuit Board requires Polyethlyene which can be made using the Chromium you've just started making. If you worked on it as part of the optional quest in the Electric chapter, you may want to switch up processing now to the cheaper recipe."]
+			dependencies: ["2EFA4782FD878A82"]
+			id: "2070A48162B2F509"
+			tasks: [{
+				id: "35E85694D8D063E8"
+				type: "item"
+				item: "modern_industrialization:digital_circuit_board"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 14.5d
+			description: ["The Distillation Tower is a major milestone in your fluid processing. Up until now, you've been using Distilleries to process oil to one type fluid. With the Distillery Tower multiblock, you can get multiple fluids from Oil. Between Titanium being available and AE2 unlocked, you have access to some high capacity fluid tanks and storage options."]
+			dependencies: ["3FC2C80B48ED5280"]
+			id: "77BD77FB30BDA0BB"
+			tasks: [{
+				id: "15D27C8A1BD184E9"
+				type: "item"
+				item: "modern_industrialization:distillation_tower"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 18.0d
+			description: ["Industrial TNT is a crucial ingredient in all Implosion Compression crafting. It's relatively cheap to make after you put together the fluids from your Distilleries."]
+			dependencies: [
+				"590D362D195E3CA5"
+				"43C27E3C0125FD99"
+				"3D119C361DF21DDA"
+			]
+			id: "3DE51EF44AB9C9FC"
+			tasks: [{
+				id: "7F89B4CB9CFDF13B"
+				type: "item"
+				item: "modern_industrialization:industrial_tnt"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 16.0d
+			description: ["Use your new Pressurizer to convert Air Intakes to Liquid Air, which can be processed into Nitrogen along with some other very important byproducts."]
+			dependencies: ["60786127C01404EE"]
+			id: "43C27E3C0125FD99"
+			tasks: [
+				{
+					id: "6B6A6526431AC5C3"
+					type: "item"
+					item: "modern_industrialization:air_intake"
+				}
+				{
+					id: "5CE07CCE1CE2A486"
+					type: "item"
+					item: "modern_industrialization:nitrogen_bucket"
+				}
+			]
+		}
+		{
+			title: "Creative Power?"
+			icon: "create:creative_motor"
+			x: -1.0d
+			y: 22.0d
+			description: [
+				"The Creative Motor is accessible at this point in the pack. While it may not make a huge difference as your Create Power sources should be pretty well established at this point, it should make scaling up easier if you wish to do so. You can scroll the back of the Creative Motor to increase the rotation speed. The recipe itself is challenging and was designed to keep within the spirit of the Create mod itself."
+				""
+				"The Chromatic Compound can be made by mixing a stack of Andesite Alloy with some Styrene. The recipe itself is superheated, so you'll also need a Blaze Burner and a Blaze Cake. Be sure to check REI for both recipes, both should be attainable without too much work."
+				""
+				"Refined Radiance can then be crafted by passing the Chromatic Compound through a beacon light. The conversion will only happen if the compound is dropped in the world. Passing it through on a belt is not good enough for this challenge. Vacuum Hoppers are part of Kibe and are pretty useful for this challenge."
+			]
+			dependencies: ["5D39E684E40F483C"]
+			optional: true
+			min_width: 250
+			id: "44E6DBA07057B9E7"
+			tasks: [
+				{
+					id: "698FD6A92F6049EB"
+					type: "item"
+					item: {
+						id: "create:chromatic_compound"
+						Count: 1b
+						tag: { }
+					}
+				}
+				{
+					id: "56D924FED41AB2CC"
+					type: "item"
+					item: "create:refined_radiance"
+				}
+				{
+					id: "1F2333F0AC4E0B28"
+					type: "item"
+					item: "create:creative_motor"
+				}
+			]
+		}
+		{
+			x: -3.0d
+			y: 16.0d
+			description: ["Toulene can be one of the first fluids to get from your new fancy distillation tower. Be sure to keep a healthy supply of most fluids as coming into the end game, more and more will be introduced and required."]
+			dependencies: ["77BD77FB30BDA0BB"]
+			id: "590D362D195E3CA5"
+			tasks: [{
+				id: "4E55E4A29CCEF595"
+				type: "item"
+				item: "modern_industrialization:toluene_bucket"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 20.0d
+			description: [
+				"The Nether Star is an expensive, albeit important ingredient for only a few recipes in this pack. Probably not worth automating, but definitely worth the time crafting up a few of these."
+				""
+				"It can be used for the Creative Motor from Create, a Dank Null upgrade and finally, there are some Mechanical Crafting recipes which could lead you toward Creative Flight."
+				""
+				"Lots of fun rewards for getting this far!"
+			]
+			dependencies: ["3DE51EF44AB9C9FC"]
+			optional: true
+			min_width: 250
+			id: "5D39E684E40F483C"
+			tasks: [{
+				id: "483B47E9451D82C2"
+				type: "item"
+				item: "minecraft:nether_star"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 14.5d
+			description: ["The Pressurizer is required for liquid air, but it can also create pressurized steam or water which can be used as a more effienct source of EU in steam boilers. Be sure to check the Power tab if you want to use this."]
+			dependencies: ["3FC2C80B48ED5280"]
+			id: "60786127C01404EE"
+			tasks: [{
+				id: "10E3C7651F7EE95B"
+				type: "item"
+				item: "modern_industrialization:pressurizer"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 9.0d
+			description: ["The Turbo Upgrade will allow overclocking up to +32/t per upgrade."]
+			dependencies: ["672DCCEF4D7357DE"]
+			optional: true
+			id: "13A2DD95E5FF9274"
+			tasks: [{
+				id: "3E584E46200DE28C"
+				type: "item"
+				item: "modern_industrialization:turbo_upgrade"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 13.0d
+			description: ["With HV Power comes HV storage. "]
+			dependencies: ["3FC2C80B48ED5280"]
+			id: "2DB0D75BA37E9FF1"
+			tasks: [{
+				id: "61F219C1D7C7AE7A"
+				type: "item"
+				item: "modern_industrialization:hv_storage_unit"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 13.0d
+			description: [
+				"The Heat Exchanger, while not crucial, can process hot ingots much faster, while also giving off some byproducts. Check out REI to see if there are any you can make use of right away."
+				"HINT: In future, Argon will be an important fluid so you'll eventually need this."
+			]
+			dependencies: ["3FC2C80B48ED5280"]
+			optional: true
+			id: "75EA571B64E8BE22"
+			tasks: [{
+				id: "604D3DADB7D9324E"
+				type: "item"
+				item: "modern_industrialization:heat_exchanger"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

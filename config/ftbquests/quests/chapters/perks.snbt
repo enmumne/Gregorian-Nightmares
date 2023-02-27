@@ -1,0 +1,1237 @@
+{
+	id: "7B71323498ACBC65"
+	group: "0E7F30F354FA6BBD"
+	order_index: 0
+	filename: "perks"
+	title: "Perks"
+	icon: "minecraft:ender_pearl"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			description: [
+				"This is the Perks Chapter. As you progress through the modpack, you'll gain access to more materials that will in turn let you progress through this chapter. As you do, you'll unlock things like water breathing, more storage space and even creative flight (eventually)."
+				""
+				"Dig through the items here and figure out what you think would be most helpful to you. Check back often and craft up as much of it as you can."
+				""
+				"NOTE: There are less rewards here than through the main questline. These quests are more of an FYI vs actual quests you need to progress through. Nothing on this page is required to complete the pack."
+			]
+			size: 2.0d
+			min_width: 300
+			id: "6B76929C5447507B"
+			tasks: [{
+				id: "43E5AA3D8C586F67"
+				type: "checkmark"
+				title: "Welcome to Perks"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 0.0d
+			dependencies: [
+				"381151710C3DA0EA"
+				"6B76929C5447507B"
+			]
+			id: "05ACE6FF32CD55CC"
+			tasks: [{
+				id: "72F7F152E5AF3BE1"
+				type: "item"
+				item: "create:millstone"
+			}]
+		}
+		{
+			x: -4.5d
+			y: 1.0d
+			description: ["Cows and sheep drop bones, so no need to step out of peaceful mode if you don't want to."]
+			dependencies: ["05ACE6FF32CD55CC"]
+			id: "6F74256056AF3088"
+			tasks: [
+				{
+					id: "538488EE7432C66E"
+					type: "item"
+					item: "minecraft:bone"
+				}
+				{
+					id: "31F9E2FBFC6FAD43"
+					type: "item"
+					item: "minecraft:bone_meal"
+				}
+			]
+		}
+		{
+			x: -4.5d
+			y: -1.0d
+			description: ["Use shears to harvest tree leaves. Grind those down in a millstone to get green dye for slime."]
+			dependencies: ["05ACE6FF32CD55CC"]
+			id: "3AFA4AD5083CCE2F"
+			tasks: [
+				{
+					id: "6339E9DB08D3AE7C"
+					type: "item"
+					title: "Any #minecraft:leaves"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "minecraft:leaves"
+						}
+					}
+				}
+				{
+					id: "5C76D0FFBCB27530"
+					type: "item"
+					item: "minecraft:green_dye"
+				}
+			]
+		}
+		{
+			x: -4.5d
+			y: 0.0d
+			description: [
+				"Set up a small farm early to get wheat. Wheat can be turned into dough and is necessary to make slime balls."
+				""
+				"&o&c 6B : this isnt a factory"
+				"&o&c 6B : this is a taco bell"
+				"&o&c 6B : im not going to space and im not making a massive production line"
+				"&o&c 6B : im piggybacking off of others' progress"
+				"&o&c 6B : in return they get tacos"
+			]
+			dependencies: ["05ACE6FF32CD55CC"]
+			id: "4DB17A923CB1357F"
+			tasks: [
+				{
+					id: "55223DBB93C1F823"
+					type: "item"
+					item: "minecraft:wheat"
+				}
+				{
+					id: "7B4A6E7DF728CF96"
+					type: "item"
+					item: "create:wheat_flour"
+				}
+				{
+					id: "0914323526F0C253"
+					type: "item"
+					item: "create:dough"
+				}
+			]
+		}
+		{
+			x: -5.5d
+			y: -0.5d
+			description: ["Slime is used in a number of useful recipes in this pack. Most immediately it's used for crafting a lead to get some peaceful mobs on to your base. We suggest cows and sheep to start with. You'll get a healthy supply of bones, leather and wool from them."]
+			dependencies: [
+				"3AFA4AD5083CCE2F"
+				"4DB17A923CB1357F"
+			]
+			id: "40D971BEC503A980"
+			tasks: [{
+				id: "01FC681C6F08E0DA"
+				type: "item"
+				item: "minecraft:slime_ball"
+			}]
+		}
+		{
+			x: -8.5d
+			y: 0.5d
+			description: [
+				"Kibe is the base ingredient for a lot of the items from the incredible Kibe mod."
+				""
+				"Have a look in REI and here in the quest descriptions for the items you can make use of."
+			]
+			dependencies: [
+				"4DB17A923CB1357F"
+				"6F74256056AF3088"
+				"07B68B631F5BA5E0"
+			]
+			id: "7F71F5B8D4A4F561"
+			tasks: [{
+				id: "50796BACF623560D"
+				type: "item"
+				item: "kibe:kibe"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -2.5d
+			dependencies: [
+				"2611355310DAB5C2"
+				"6B76929C5447507B"
+			]
+			id: "7E85F4D28E175040"
+			tasks: [{
+				id: "279CD1BD61A1A378"
+				type: "item"
+				item: "create:mechanical_saw"
+			}]
+		}
+		{
+			x: -4.5d
+			y: -2.5d
+			dependencies: ["7E85F4D28E175040"]
+			id: "216F7578F148F358"
+			tasks: [{
+				id: "77E8EFF60350DAEA"
+				type: "item"
+				item: "modern_industrialization:gold_rod"
+			}]
+		}
+		{
+			x: -7.0d
+			y: -1.5d
+			description: ["The Golden Lead will allow you to pick up and transport peaceful mobs. Useful for early game cows and sheep."]
+			dependencies: [
+				"40D971BEC503A980"
+				"216F7578F148F358"
+			]
+			optional: true
+			id: "07B68B631F5BA5E0"
+			tasks: [
+				{
+					id: "7A959F882A1E944C"
+					type: "item"
+					item: "minecraft:lead"
+				}
+				{
+					id: "6A4D6B7AEB626ABD"
+					type: "item"
+					item: {
+						id: "kibe:golden_lasso"
+						Count: 1b
+						tag: { }
+					}
+				}
+			]
+		}
+		{
+			x: -11.5d
+			y: 0.5d
+			description: ["The Golden Kibe gives access to some fantastic early game QOL crafting recipes from the Kibe mod. Be sure to check out each quest and figure out if there's any you'd find useful."]
+			dependencies: ["7F71F5B8D4A4F561"]
+			id: "0CCECB1E825F0004"
+			tasks: [{
+				id: "33DEC1DF67B66C37"
+				type: "item"
+				item: "kibe:golden_kibe"
+			}]
+		}
+		{
+			x: -15.5d
+			y: 0.5d
+			description: ["Diamond Kibe onwards give access to Kibe Rings. While very useful, you should know that Kibe allows only one ring to be active at one time. So before you go swimming in lava or underwater caving, make sure the ring is enabled and the Kibe Ring's tooltip doesn't say \"Overflow\". Otherwise you're gonna have a bad time."]
+			dependencies: ["0CCECB1E825F0004"]
+			min_width: 300
+			id: "7FA68CDA564BE856"
+			tasks: [{
+				id: "63239D406C70BF11"
+				type: "item"
+				item: "kibe:diamond_kibe"
+			}]
+		}
+		{
+			x: -18.5d
+			y: 0.5d
+			description: ["The Cursed Kibe is a late game item that grants access to Creative Flight."]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "7D5B1FB1377BF423"
+			tasks: [{
+				id: "1C9EA53B4F4A8330"
+				type: "item"
+				item: "kibe:cursed_kibe"
+			}]
+		}
+		{
+			x: -9.5d
+			y: -1.5d
+			description: ["The magnet can attract items from a distance and is useful when mining."]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "6CF3F362AA7A0F12"
+			tasks: [{
+				id: "68125B0A09F82AC4"
+				type: "item"
+				item: "kibe:magnet"
+			}]
+		}
+		{
+			x: -12.0d
+			y: -1.5d
+			description: [
+				"The slime sling and boots make for very quick and handy travel. The sling will propel you into the air while the boots will eliminate fall damage and bounce you back up when you hit the ground from height."
+				"HINT: Pairs well with the Kibe Glider which is another quest on this page."
+			]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "441D73F53AA630BD"
+			tasks: [
+				{
+					id: "0785DBDD3BA40A96"
+					type: "item"
+					item: "kibe:slime_sling"
+				}
+				{
+					id: "144F9A96A2245747"
+					type: "item"
+					item: {
+						id: "kibe:slime_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: -10.5d
+			y: -1.5d
+			description: ["The Glider allows you to glide in the air, similar to an Elytra. Pair it with the Slime Sling and Boots to travel around quickly."]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "4B931D5FEE47A705"
+			tasks: [
+				{
+					id: "79B67CE9B28473A4"
+					type: "item"
+					item: "kibe:glider_left_wing"
+				}
+				{
+					id: "0E4363AD911BCB49"
+					type: "item"
+					item: "kibe:glider_right_wing"
+				}
+			]
+		}
+		{
+			x: -13.0d
+			y: 2.5d
+			description: ["The Cooler automatically consumes any food stored in it."]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "4281951E4950E3C7"
+			tasks: [{
+				id: "0FC15F72576A3712"
+				type: "item"
+				item: "kibe:cooler"
+			}]
+		}
+		{
+			x: -12.0d
+			y: 2.5d
+			description: [
+				"Time in a Bottle is one of the most useful items in the pack. It accumulates \"Time\" internally while in your inventory. Shift+Right Click on machines and blocks to speed up their tick rate. Craft this early and use it often!"
+				""
+				"NOTE: This works on most multiblocks too. Just accelerate the main machine block of the multiblock."
+			]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "59F48A5A1627B6E3"
+			tasks: [{
+				id: "596707AFE5D6811D"
+				type: "item"
+				item: {
+					id: "timeinabottle:time_in_a_bottle"
+					Count: 1b
+					tag: {
+						timeData: { }
+					}
+				}
+			}]
+		}
+		{
+			x: -10.5d
+			y: 2.5d
+			description: ["The XP drain stores any XP you have. Just place it in the world and stand on it. The tap will drop those XP orbs back out for you to pick up."]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "31C5D50E9638DDE4"
+			tasks: [
+				{
+					id: "09777DA20712D2AF"
+					type: "item"
+					item: "kibe:xp_drain"
+				}
+				{
+					id: "18FAAA1686D97332"
+					type: "item"
+					item: "kibe:xp_shower"
+				}
+			]
+		}
+		{
+			x: -15.5d
+			y: -1.5d
+			description: ["The Magma Ring gives fire resistance. No more gravestones in lava pools."]
+			dependencies: ["7FA68CDA564BE856"]
+			id: "664BAD1D9DB2CB38"
+			tasks: [{
+				id: "278D47A68A37DD66"
+				type: "item"
+				item: {
+					id: "kibe:magma_ring"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: -15.0d
+			y: 2.5d
+			description: ["The water ring allows you to breathe underwater."]
+			dependencies: ["7FA68CDA564BE856"]
+			id: "781374715B7A9FED"
+			tasks: [{
+				id: "2E12F2BCE0A370A0"
+				type: "item"
+				item: {
+					id: "kibe:water_ring"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: -16.0d
+			y: 2.5d
+			description: ["Tired of crafting torches? The light ring allows you to place down light sources for free. Super handy when mining."]
+			dependencies: ["7FA68CDA564BE856"]
+			id: "2B0ADD801EDFBFAA"
+			tasks: [{
+				id: "14B97EAAB8FB3ACB"
+				type: "item"
+				item: "kibe:light_ring"
+			}]
+		}
+		{
+			x: -18.5d
+			y: -1.5d
+			description: [
+				"The Angel Ring gives Creative Flight."
+				""
+				"&o&c 30 : If you give me a mega hypercore flushmasterinator so I can get more gigafarts to fuel my megashitter which launches super laser piss with enough DPS to kill the entire fucking country BEFORE I even go to the nether then what’s the freakin point man. I don’t mind if they balance themselves out but MineCraft is one of those games where you gotta have some sort of consistent progression"
+				"&o&3 0D : Reddit is a mod by vazkii"
+			]
+			dependencies: ["7D5B1FB1377BF423"]
+			min_width: 250
+			id: "2BD7FFF025651FBF"
+			tasks: [{
+				id: "73AD02E48E569982"
+				type: "item"
+				item: {
+					id: "kibe:angel_ring"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: 2.5d
+			y: 0.0d
+			description: [
+				"The mob slaughtering drill will give you mob drops without having to get your hands dirty"
+				""
+				"&o&b 65 : ...all mobs are meh, but who cares when they're all imaginary for imaginary MC versions"
+				"&o&e 38 : virgin mojang vs chad modders?"
+				"&o&c 47 : all the mobs are shit"
+				"&o&c 47 : all the updates are shit"
+				"&o&c 47 : they shouldve stopped updating after 1.16.5"
+				"&o&a 83 : 1.13 ruined Minecraft"
+				"&o&c 47 : 1.1 ruined minecraft"
+				"&o&b 65 : CAVES UPDATE? BACK IN MY DAY OUR CAVES UPDATE WAS YUNG'S BETTER CAVES"
+			]
+			dependencies: [
+				"6B76929C5447507B"
+				"0CE2D04744434785"
+			]
+			id: "00A856BF79735307"
+			tasks: [{
+				id: "17A18ABD5C00FA42"
+				type: "item"
+				item: "kubejs:mob_slaughtering_drill"
+			}]
+		}
+		{
+			title: "Mob Drops"
+			x: 4.5d
+			y: 0.0d
+			dependencies: ["00A856BF79735307"]
+			id: "3724FB5B3F7621B8"
+			tasks: [
+				{
+					id: "0FAC21E23963ACFC"
+					type: "item"
+					item: "minecraft:blaze_rod"
+				}
+				{
+					id: "0E5E6533EB9A50A7"
+					type: "item"
+					item: "minecraft:ender_pearl"
+				}
+			]
+		}
+		{
+			x: 4.5d
+			y: -2.0d
+			description: ["The Void Bucket can used to void fluids"]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "1E587ADB4B291521"
+			tasks: [{
+				id: "1BEF55709ACDAB51"
+				type: "item"
+				item: "kibe:void_bucket"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -1.5d
+			description: ["The Entangled Bucket provides access to the fluids of an Entangled Tank from your inventory."]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "2F4AE9F144F5E168"
+			tasks: [{
+				id: "45031AEC40AA4621"
+				type: "item"
+				item: "kibe:entangled_bucket"
+			}]
+		}
+		{
+			x: 6.0d
+			y: -0.5d
+			description: ["The Entangled Tank functions similarly to the Entangled Chest except with fluids."]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "778BB4209C698C93"
+			tasks: [{
+				id: "6EEDD634C71C2782"
+				type: "item"
+				item: "kibe:entangled_tank"
+			}]
+		}
+		{
+			x: 5.5d
+			y: 1.5d
+			description: ["The Entangled Bag works similarly to the Entangled Chest, except that it can be accessed from your inventory."]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "2DCAFE39A368433C"
+			tasks: [{
+				id: "7EAC68F30ED11A55"
+				type: "item"
+				item: "kibe:entangled_bag"
+			}]
+		}
+		{
+			x: 6.0d
+			y: 0.5d
+			description: [
+				"The Entangled Chest, when paired with another Entangled Chest on the same channel, allow you to share items between inventories."
+				""
+				"HINT: To change channels, you can color the Entangled chest using Kibe Runes."
+			]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "520CB800EADA6AA8"
+			tasks: [{
+				id: "7439F2CF304B1EB4"
+				type: "item"
+				item: "kibe:entangled_chest"
+			}]
+		}
+		{
+			title: "Kibe Elevators"
+			x: 4.5d
+			y: 2.0d
+			description: ["Elevator blocks, when placed above below each other can be used to travel up or down floors in your base. Simply place two blocks on different Y positions. To travel to the elevator block above, jump on the lower block. To travel to the block below, crouch on the block above."]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "3742B9EB275AEE42"
+			tasks: [{
+				id: "109682CF8D926AF0"
+				type: "item"
+				title: "Any #kibe:elevators"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "kibe:elevators"
+					}
+				}
+				count: 2L
+			}]
+		}
+		{
+			x: 7.0d
+			y: 0.0d
+			description: ["Kibe Runes are used to change channels on Kibe Entangled Storage."]
+			dependencies: ["3724FB5B3F7621B8"]
+			id: "069DD64C517EECBC"
+			tasks: [{
+				id: "01994DD68252BE3E"
+				type: "item"
+				title: "Any #kibe:runes"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "kibe:runes"
+					}
+				}
+			}]
+		}
+		{
+			x: -1.0d
+			y: -3.0d
+			description: [
+				"The Dank Storage mod allows you to hold mass amounts of several block types. Turn on voiding to discard extra of the stored item types. See it's REI tooltip for controls and information."
+				""
+				"It's also a very useful building tool."
+				""
+				"The Dank 1 has a stack limit of 256."
+			]
+			dependencies: ["1C4FE8C4327EA4CE"]
+			id: "65B3180DF44E9EA0"
+			tasks: [{
+				id: "6CDCCDFAE37CE612"
+				type: "item"
+				item: "dankstorage:dank_1"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -4.0d
+			description: ["The Dank 2 has a stack limit of 1024."]
+			dependencies: ["65B3180DF44E9EA0"]
+			id: "7B02BA35328AE6A3"
+			tasks: [{
+				id: "73705E8CCBF87B82"
+				type: "item"
+				item: "dankstorage:dank_2"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -5.0d
+			description: ["The Dank 3 has a stack limit of 4096"]
+			dependencies: ["7B02BA35328AE6A3"]
+			id: "587D243BF7830B52"
+			tasks: [{
+				id: "2FDFE66EEE26F4EF"
+				type: "item"
+				item: "dankstorage:dank_3"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -6.0d
+			description: ["The Dank 4 has a stack limit of 16384"]
+			dependencies: ["587D243BF7830B52"]
+			id: "2DEBC30360CDA4C1"
+			tasks: [{
+				id: "4AA1D89F94B3082C"
+				type: "item"
+				item: "dankstorage:dank_4"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -7.0d
+			description: ["The Dank 4 has a stack limit of 65536"]
+			dependencies: ["2DEBC30360CDA4C1"]
+			id: "318C570666FD43D2"
+			tasks: [{
+				id: "5F41E96F8525116D"
+				type: "item"
+				item: "dankstorage:dank_5"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -8.0d
+			description: ["The Dank 6 has a stack limit of 262144 and requires a Mechanical Crafter"]
+			dependencies: [
+				"318C570666FD43D2"
+				"1F830681776B2EA4"
+			]
+			id: "351714A3730F990A"
+			tasks: [{
+				id: "64EEF11929DE29FB"
+				type: "item"
+				item: "dankstorage:dank_6"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -9.0d
+			description: ["The Dank 7 has a stack limit of 2147483647, probably more than you'll ever need."]
+			dependencies: ["351714A3730F990A"]
+			id: "6199D6AF1EAD8A87"
+			tasks: [{
+				id: "48828216BF4D0CDE"
+				type: "item"
+				item: "dankstorage:dank_7"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -2.0d
+			description: ["Leather is required for early game inventory expansion. If you're having trouble getting some, craft up a Golden Lead and go grab some cows in the wild and start breeding."]
+			dependencies: ["6B76929C5447507B"]
+			id: "1C4FE8C4327EA4CE"
+			tasks: [{
+				id: "37D36500B2D2BF27"
+				type: "item"
+				item: "minecraft:leather"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -3.0d
+			description: [
+				"The INMIS mod provides equipabble backpacks which can be opened with a hotkey."
+				""
+				"Each tier here provides more storage space than the previous"
+			]
+			dependencies: ["1C4FE8C4327EA4CE"]
+			id: "0BD007FAC59C378E"
+			tasks: [{
+				id: "58CE2B15549CD703"
+				type: "item"
+				item: "inmis:frayed_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -4.0d
+			dependencies: ["0BD007FAC59C378E"]
+			id: "5E86A30D9911F422"
+			tasks: [{
+				id: "69FA601A9FF376EB"
+				type: "item"
+				item: "inmis:plated_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -5.0d
+			dependencies: ["5E86A30D9911F422"]
+			id: "52C518F6E5805C8E"
+			tasks: [{
+				id: "3E6B4C0BF83EF0F7"
+				type: "item"
+				item: "inmis:gilded_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -6.0d
+			dependencies: ["52C518F6E5805C8E"]
+			id: "6516680751BA036D"
+			tasks: [{
+				id: "636376899D9A4371"
+				type: "item"
+				item: "inmis:bejeweled_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -7.0d
+			dependencies: ["6516680751BA036D"]
+			id: "236F39D2B4BB1834"
+			tasks: [{
+				id: "5166114235DB75C3"
+				type: "item"
+				item: "inmis:blazing_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -8.0d
+			dependencies: ["236F39D2B4BB1834"]
+			id: "35A3B19E77336DDE"
+			tasks: [{
+				id: "5E636BB96AB98236"
+				type: "item"
+				item: "inmis:withered_backpack"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -9.0d
+			dependencies: ["35A3B19E77336DDE"]
+			id: "00ED9532C90F0158"
+			tasks: [{
+				id: "14B50F1BA1A0B810"
+				type: "item"
+				item: "inmis:endless_backpack"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -8.0d
+			description: ["The mechanical crafter is required for the higher tier Dank Storages"]
+			dependencies: [
+				"7E85F4D28E175040"
+				"24F3AC19B2959B84"
+			]
+			id: "1F830681776B2EA4"
+			tasks: [{
+				id: "141F1A7732EB1CD1"
+				type: "item"
+				item: "create:mechanical_crafter"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -4.0d
+			description: ["You can store your dank storages in a dock"]
+			dependencies: ["65B3180DF44E9EA0"]
+			id: "0B54A8DA4B022740"
+			tasks: [{
+				id: "5EBE1DE6777D7095"
+				type: "item"
+				item: "dankstorage:dock"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 7.0d
+			dependencies: ["6B76929C5447507B"]
+			id: "20576E61A4E4D4EA"
+			tasks: [{
+				id: "455B1E27EA5E7F5B"
+				type: "checkmark"
+				title: "Kibe"
+			}]
+		}
+		{
+			x: -13.0d
+			y: -1.5d
+			description: [
+				""
+				"Point the Escape Rope at the sky when you're deep in a mine and you'll warp to the surface."
+			]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "209DBC584AE14529"
+			tasks: [{
+				id: "0066332062433323"
+				type: "item"
+				item: {
+					id: "kibe:escape_rope"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: 7.0d
+			description: ["The Trash Can voids items, that's it!"]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "3D068FB07423E0F1"
+			tasks: [{
+				id: "646DD3D9749846D6"
+				type: "item"
+				item: "kibe:trash_can"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 7.0d
+			description: ["The Automatic Trash Can has a few uses. It can void items and fluids sent to it. It can also be used to void fluids in machines by right clicking the fluid slot with the Automatic Trash Can."]
+			dependencies: ["3D068FB07423E0F1"]
+			id: "4FE8E76BFE590215"
+			tasks: [{
+				id: "30C382FEE0F9EB8E"
+				type: "item"
+				item: "modern_industrialization:trash_can"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 6.0d
+			description: ["Similar to the Pocket Crafting Table, the Pocket Trash Can is a portable trash can you can access from your inventory to void items."]
+			dependencies: ["3D068FB07423E0F1"]
+			id: "1FE7CC18AF766F32"
+			tasks: [{
+				id: "329364BDD75924BB"
+				type: "item"
+				item: "kibe:pocket_trash_can"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 6.0d
+			description: ["The Pocket Crafting table is a Crafting Table you can access from your inventory. Handy if you're moving around the base and need to craft."]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "2D28E8DCDE7C9BB2"
+			tasks: [{
+				id: "3048795329C622FE"
+				type: "item"
+				item: "kibe:pocket_crafting_table"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 8.0d
+			description: ["The redstone timer emits a redstone signal on a configured interval. Place the block and right click any side to configure it."]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "54DC60F442BD557F"
+			tasks: [{
+				id: "17FAD462125CAC05"
+				type: "item"
+				item: "kibe:redstone_timer"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 8.5d
+			description: ["Conveyor belts are a way of moving things around your base. Not to be confused with Create belts, these can speed up entities on top of them. A handy way of moving around your base fast."]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "58D491D3D4DDE6A9"
+			tasks: [{
+				id: "5D0928B0C642228B"
+				type: "item"
+				item: "kibe:regular_conveyor_belt"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 9.5d
+			description: ["Faster version of the conveyor belt."]
+			dependencies: ["58D491D3D4DDE6A9"]
+			id: "1AF0D5F807FDEC70"
+			tasks: [{
+				id: "27A537CFAA9F2914"
+				type: "item"
+				item: "kibe:fast_conveyor_belt"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 10.5d
+			description: ["Fastest version of the conveyor belt."]
+			dependencies: ["1AF0D5F807FDEC70"]
+			id: "074DF676A71D1C29"
+			tasks: [{
+				id: "5B5B79C61A4A89E4"
+				type: "item"
+				item: "kibe:express_conveyor_belt"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 8.0d
+			description: ["The sleeping bag can be used to sleep anywhere without resetting your spawn point. Keep it in your inventory if you want to sleep through the night without returning to spawn."]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "32E4C9F67440F723"
+			tasks: [{
+				id: "315D05E522700C27"
+				type: "item"
+				item: "kibe:white_sleeping_bag"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 7.0d
+			description: ["The Drawbridge is a very cool way of creating bridges on demand. Put the block you want to place in it's inventory, provide it a redstone signal and watch it work! Turn it off again to retract the blocks."]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "4A1267A03753E837"
+			tasks: [{
+				id: "7257E5D235BC6424"
+				type: "item"
+				item: "kibe:drawbridge"
+			}]
+		}
+		{
+			x: -9.5d
+			y: 2.5d
+			description: [
+				"The Heater and Dehumidifier are handy blocks that manipulate the weather and environment blocks around you."
+				""
+				"The Heater will melt snow blocks in the vicinity."
+				""
+				"The Dehumidifier will stop snow and rain particlues in it's vicinity."
+			]
+			dependencies: ["0CCECB1E825F0004"]
+			id: "72077E33DA27381B"
+			tasks: [
+				{
+					id: "5688F670DF6E868A"
+					type: "item"
+					item: "kibe:heater"
+				}
+				{
+					id: "5491DFFCC749ABC6"
+					type: "item"
+					item: "kibe:dehumidifier"
+				}
+			]
+		}
+		{
+			x: -3.5d
+			y: 3.5d
+			description: ["The redstone alloy is the base ingredient for making wired redstones in the pack. "]
+			dependencies: ["6B76929C5447507B"]
+			id: "11C4220FEB131ADB"
+			tasks: [{
+				id: "4C9FCF5EA66483A3"
+				type: "item"
+				item: "wiredredstone:redstone_alloy_ingot"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 5.0d
+			description: ["Redstone Wires will carry a redstone signal through them, similar to vanilla redstone. They can be hooked up to different gates provided by the Wired Redstone mod, for all your cool automation and contraption needs."]
+			dependencies: ["11C4220FEB131ADB"]
+			id: "0AB50E78C770A756"
+			tasks: [{
+				id: "02BE58206A3C143D"
+				type: "item"
+				item: "wiredredstone:red_alloy_wire"
+			}]
+		}
+		{
+			title: "Redstone Gates"
+			x: -6.5d
+			y: 6.5d
+			description: ["These are the different gates provided by Wired Redstone. When holding them, you will see a preview of the orientation to help you figure out which way you want to face the block and route your redstone circuits."]
+			dependencies: ["0AB50E78C770A756"]
+			dependency_requirement: "one_completed"
+			id: "45FB5004659DDC68"
+			tasks: [
+				{
+					id: "3B6730615C6F5DC1"
+					type: "item"
+					item: "wiredredstone:gate_and"
+				}
+				{
+					id: "5F273D2670E9A32E"
+					type: "item"
+					item: "wiredredstone:gate_or"
+				}
+				{
+					id: "7011D4A924BBF36E"
+					type: "item"
+					item: "wiredredstone:gate_nand"
+				}
+				{
+					id: "166BFE0041991122"
+					type: "item"
+					item: "wiredredstone:gate_nor"
+				}
+				{
+					id: "00A8EB04C83C3981"
+					type: "item"
+					item: "wiredredstone:gate_not"
+				}
+			]
+		}
+		{
+			x: 3.0d
+			y: 3.5d
+			description: ["Builders wands will help you build and place blocks in the early game"]
+			dependencies: ["6B76929C5447507B"]
+			dependency_requirement: "one_completed"
+			id: "487AC8C1AEFF214F"
+			tasks: [
+				{
+					id: "71AA4DD8AEBE1CEF"
+					type: "item"
+					item: {
+						id: "wands:stone_wand"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "41C57265634A62EA"
+					type: "item"
+					item: {
+						id: "wands:iron_wand"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "3A7605EFCA0C4E35"
+					type: "item"
+					item: {
+						id: "wands:diamond_wand"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "002BBD4DE614FFEA"
+					type: "item"
+					item: {
+						id: "wands:netherite_wand"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 4.5d
+			y: 5.0d
+			description: [
+				"The Building Gadget is a handy tool for placing blocks in all sorts of patterns. Check your keybinds to see which button opens the nifty in-game configuration menu."
+				""
+				"NOTE: When you unlock electricity, you'll be able to charge the building gadget by right clicking on an MI power storage block. "
+			]
+			dependencies: ["487AC8C1AEFF214F"]
+			id: "008204329B73BE3D"
+			tasks: [{
+				id: "1A4997D1000D4E58"
+				type: "item"
+				item: {
+					id: "buildinggadgets:gadget_building"
+					Count: 1b
+					tag: {
+						state: {
+							state: {
+								Name: "minecraft:air"
+							}
+							data: { }
+							serializer: "buildinggadgets:dummy_serializer"
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 5.5d
+			y: 6.0d
+			description: ["The exchanging gadget will let you exchange the type of block you're looking at for the type of block you've configured. To configure the block to place, Shift+Right Click on the block."]
+			dependencies: ["008204329B73BE3D"]
+			id: "4ECBCE4AA547E51A"
+			tasks: [{
+				id: "5688B5DEAABD1CC4"
+				type: "item"
+				item: {
+					id: "buildinggadgets:gadget_exchanging"
+					Count: 1b
+					tag: {
+						state: {
+							state: {
+								Name: "minecraft:air"
+							}
+							data: { }
+							serializer: "buildinggadgets:dummy_serializer"
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 4.5d
+			y: 7.0d
+			description: ["The copy paste gadget lets you copy block placement patterns and paste them in other parts of your world."]
+			dependencies: ["008204329B73BE3D"]
+			id: "0D5094EA442C5248"
+			tasks: [{
+				id: "4F4F8EC205FED530"
+				type: "item"
+				item: {
+					id: "buildinggadgets:gadget_copy_paste"
+					Count: 1b
+					tag: {
+						"buildinggadgets:template_key": {
+							template_id: [I;
+								386656276
+								-1549972808
+								-1719416257
+								1485183493
+							]
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 6.5d
+			y: 5.0d
+			description: ["The Destruction Gadget is handy for voiding large areas of blocks instantly. Shift+Right Click to open it's range configuration."]
+			dependencies: ["008204329B73BE3D"]
+			id: "49A293CA35145D24"
+			tasks: [{
+				id: "73764630C9942DF4"
+				type: "item"
+				item: {
+					id: "buildinggadgets:gadget_destruction"
+					Count: 1b
+					tag: {
+						overlay: 1b
+						fuzzy: 1b
+					}
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: -3.0d
+			description: ["Powdered Obsidian is a gateway to some Create transportation systems."]
+			dependencies: ["6B76929C5447507B"]
+			id: "77D6BE732FEBFF33"
+			tasks: [
+				{
+					id: "16F325678D90C2E7"
+					type: "item"
+					item: "minecraft:obsidian"
+				}
+				{
+					id: "1019EC69B8A5F4F5"
+					type: "item"
+					item: "create:powdered_obsidian"
+				}
+			]
+		}
+		{
+			x: 5.0d
+			y: -5.0d
+			description: [
+				"Trains are the newest addition to the Create Mod. We'll give you some tracks to play with when you've crafted the key train components, the Train Casing \\& the Train Station."
+				""
+				"Place the train tracks down where you want the train to follow, then place the train casing on the track. Instead of the block you should see a train placed on track. For more in-depth info, check out the Ponder system."
+			]
+			dependencies: ["77D6BE732FEBFF33"]
+			id: "072EBBF73BD78052"
+			tasks: [
+				{
+					id: "695FB1CCCB74B995"
+					type: "item"
+					item: "create:railway_casing"
+				}
+				{
+					id: "45198074BE5C3B44"
+					type: "item"
+					item: "create:track_station"
+				}
+			]
+		}
+		{
+			x: -6.5d
+			y: 3.5d
+			description: ["The Scannable mod will allow you to scan for sets of ores or specific ores. Craft a few blank modules and store them in the items inventory for convienience."]
+			dependencies: ["6B76929C5447507B"]
+			id: "0E2EC487C33CCC8D"
+			tasks: [
+				{
+					id: "1E7F27B7D3E0D851"
+					type: "item"
+					item: "scannable:scanner"
+				}
+				{
+					id: "2C44843EE944768C"
+					type: "item"
+					item: "scannable:blank_module"
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+}

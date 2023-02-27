@@ -1,0 +1,1 @@
+{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["hexcasting"]}],"ingredients":[{"item":"hexcasting:akashic_wood_stripped"}],"processingTime":50,"results":[{"count":4,"item":"hexcasting:akashic_planks"}]}
