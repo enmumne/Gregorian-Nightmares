@@ -47,6 +47,96 @@
 			"results": [{"item": "modern_industrialization:gold_drill"}]
 	})
 	
+	event.custom({
+			"type": "create:splashing",
+			"ingredients": [{"item": "drilly:dirty_bronze_refined_drill"}],
+			"results": [{"item": "drilly:bronze_refined_drill"}]
+	})
+	event.custom({
+			"type": "create:splashing",
+			"ingredients": [{"item": "drilly:dirty_iron_refined_drill"}],
+			"results": [{"item": "drilly:iron_refined_drill"}]
+	})
+	
+	
+	event.recipes.modern_industrialization.quarry(256, 1200)
+        .itemIn("kubejs:osmium_drill")
+		.itemOut("kubejs:dirty_osmium_drill", 0.92)
+		.itemOut("2x geghilarity:naquadric_compound_ore",  0.35)
+        .dimension("end")
+		.id("quarry_naq")
+
+	event.custom({
+			"type": "create:splashing",
+			"ingredients": [{"item": "kubejs:dirty_osmium_drill"}],
+			"results": [{"item": "kubejs:osmium_drill"}]
+	})
+	
+	event.recipes.modern_industrialization.cutting_machine({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "geghilarity:osmium_rod", amount: 1}
+			
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 2}
+			
+		],
+		item_outputs: [	
+			{item: "geghilarity:osmium_bolt", amount: 2}
+		]
+	})
+	event.recipes.modern_industrialization.cutting_machine({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "geghilarity:osmium_ingot", amount: 1}
+			
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 2}
+			
+		],
+		item_outputs: [	
+			{item: "geghilarity:osmium_rod", amount: 2}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "geghilarity:double_osmium_plate", amount: 1},
+			{item: "geghilarity:osmium_curved_plate", amount: 2},
+			{item: "geghilarity:osmium_rod", amount: 1},
+			{item: "geghilarity:osmium_bolt", amount: 3},
+			{item: "modern_industrialization:titanium_gear", amount: 2}
+			
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:soldering_alloy", amount: 75}
+			
+		],
+		item_outputs: [	
+			{item: "geghilarity:osmium_drill_head", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:osmium_drill_head", amount: 1},
+			{item: "modern_industrialization:titanium_gear", amount: 2},
+			{item: "modern_industrialization:item_pipe", amount: 2},
+			{item: "modern_industrialization:large_advanced_motor", amount: 2},
+			{item: "modern_industrialization:platinum_cable", amount: 1},
+			{item: "modern_industrialization:processing_unit", amount: 1}
+			
+		],
+		item_outputs: [	
+			{item: "kubejs:osmium_drill", amount: 1}
+		]
+	})
 	
 	event.recipes.modern_industrialization.quarry(
 		{
@@ -59,7 +149,7 @@
 				{
 					item: "kubejs:dirty_aluminum_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					// AE2 1.19?????
@@ -71,7 +161,7 @@
 		}
 	)
 
-	// to remove
+	// to remove, moved to 8 LV
 	event.recipes.modern_industrialization.quarry(
 		{
 			eu: 8,
@@ -85,7 +175,7 @@
 				{
 					item: "kubejs:dirty_bronze_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					item: "minecraft:iron_ore",
@@ -179,7 +269,7 @@
 				{
 					item: "kubejs:dirty_copper_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.9
 				},
 				{
 					item: "minecraft:cobblestone",
@@ -239,7 +329,7 @@
 				{
 					item: "kubejs:dirty_gold_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.9
 				},
 				{
 					item: "minecraft:netherrack",
@@ -310,7 +400,7 @@
 				{
 					item: "kubejs:dirty_steel_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					item: "modern_industrialization:antimony_ore",
@@ -380,7 +470,7 @@
 				{
 					item: "kubejs:dirty_stainless_steel_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				// TEMP titanium, 10 0.015 to bauxite
 				{
@@ -435,7 +525,7 @@
 				{
 					item: "kubejs:dirty_titanium_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					item: "modern_industrialization:uranium_ore",
@@ -466,7 +556,7 @@
 				{
 					item: "kubejs:dirty_mob_slaughtering_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					item: "minecraft:blaze_rod",
@@ -512,7 +602,7 @@
 				{
 					item: "kubejs:dirty_andesite_alloy_drill",
 					amount: 1,
-					probability: 1
+					probability: 0.96
 				},
 				{
 					item: "create:zinc_ore",
@@ -583,8 +673,9 @@ ServerEvents.recipes(event => {
 		E: 'modern_industrialization:bronze_machine_casing'
 	})	
 
+	// experience to be replaced by mechanism, and embedded in it for early game processing chain
 	event.shaped('modern_industrialization:bronze_drill3', [
-		'BAB',
+		'BAF',
 		'CEC',
 		'BDB'
 	], {
@@ -592,25 +683,28 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:bronze_plate',
 		C: 'modern_industrialization:bronze_gear',
 		D: 'modern_industrialization:bronze_drill2',
-		E: 'modern_industrialization:bronze_machine_casing'
+		E: 'modern_industrialization:bronze_machine_casing',
+		F: 'create:precision_mechanism'
 	})	
 	
+	// same as above
 	event.shaped('modern_industrialization:steel_drill4', [
-		'BAB',
+		'BAF',
 		'CEC',
 		'BDB'
 	], {
 		A: 'drilly:whole_tier3_experience',
-		B: 'modern_industrialization:bronze_plate',
-		C: 'modern_industrialization:bronze_gear',
+		B: 'modern_industrialization:steel_plate',
+		C: 'modern_industrialization:steel_gear',
 		D: 'modern_industrialization:bronze_drill3',
-		E: 'modern_industrialization:steel_machine_casing'
+		E: 'modern_industrialization:steel_machine_casing',
+		F: 'create:precision_mechanism'
 	})
 	
 	event.shaped('drilly:copper_drill', [
-		' B ',
+		' D ',
 		'BCB',
-		' D '
+		' B '
 	], {
 		B: 'modern_industrialization:copper_plate',
 		C: 'create:cogwheel',
@@ -618,14 +712,49 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.shaped('drilly:bronze_base_drill', [
-		' B ',
+		' D ',
 		'BCB',
-		'ADA'
+		' B '
+	], {
+		B: 'modern_industrialization:bronze_plate',
+		C: 'modern_industrialization:bronze_gear',
+		D: 'create:mechanical_piston'
+	})
+	
+	event.shaped('drilly:bronze_refined_drill', [
+		'ADA',
+		'BCB',
+		' E '
 	], {
 		A: 'modern_industrialization:bronze_rod',
 		B: 'modern_industrialization:bronze_plate',
-		C: 'create:cogwheel',
-		D: 'create:mechanical_piston'
+		C: 'modern_industrialization:bronze_gear',
+		D: 'create:mechanical_piston',
+		E: 'modern_industrialization:bronze_curved_plate'
+	})
+	
+	event.shaped('drilly:iron_refined_drill', [
+		'ADA',
+		'BCB',
+		' E '
+	], {
+		A: 'modern_industrialization:iron_rod',
+		B: 'modern_industrialization:iron_plate',
+		C: 'modern_industrialization:iron_gear',
+		D: 'create:mechanical_piston',
+		E: 'geggy:iron_curved_plate'
+	})
+	
+	event.shaped('modern_industrialization:bronze_proto', [
+		'DED',
+		'DBD',
+		'CAC'
+	], {
+		A: 'minecraft:furnace',
+		B: 'create:fluid_tank',
+		C: 'create:fluid_pipe',
+		D: 'modern_industrialization:copper_plate',
+		E: 'modern_industrialization:copper_rotor'
 	})
 	
 
@@ -635,6 +764,7 @@ ServerEvents.recipes(event => {
 	event.recipes.modern_industrialization.drill1(2, 6000)
         .itemIn("drilly:copper_drill", 0.09)
 		.itemIn("drilly:drill_group1", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
         .itemOut("5x minecraft:raw_copper", 0.35)
         .itemOut("modern_industrialization:raw_tin",  0.25)
         .itemOut("minecraft:raw_iron", 0.07)
@@ -643,24 +773,11 @@ ServerEvents.recipes(event => {
         .dimension("overworld")
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("001_coppercore_slow")
-	
-	/*
-	event.recipes.modern_industrialization.drill1(1, 6000)
-        .itemIn("drilly:copper_drill", 0.09)
-		.itemIn("drilly:drill_group1", 0.00)
-        .itemOut("5x minecraft:raw_copper", 0.35)
-        .itemOut("modern_industrialization:raw_tin",  0.25)
-        .itemOut("minecraft:raw_iron", 0.07)
-		.itemOut("minecraft:coal", 0.08)
-		.itemOut("drilly:tiny_tier1_experience", 0.5)
-        .dimension("overworld")
-        .adjacentBlock("geggy:copper_corenode", "below")
-		.id("001_coppercore_slow")
-		*/
 		
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:copper_drill", 0.14) // 0.09
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("5x minecraft:raw_copper", 0.39) // +4
         .itemOut("modern_industrialization:raw_tin",  0.29) // +4
         .itemOut("minecraft:raw_iron", 0.08) // +1
@@ -669,11 +786,11 @@ ServerEvents.recipes(event => {
         .dimension("overworld")
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("009_coppercore_slow")	
-		
+	/*	
 	event.recipes.modern_industrialization.drill1(2, 3600)
-        .itemIn("drilly:copper_drill", 0.12)
+        .itemIn("drilly:copper_drill", 0.24)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("5x minecraft:raw_copper", 0.32)
 		.itemOut("modern_industrialization:raw_tin",  0.22)
 		.itemOut("minecraft:raw_iron", 0.10)
@@ -682,11 +799,11 @@ ServerEvents.recipes(event => {
         .dimension("overworld")
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("002_coppercore_fast")
-		
+	*/	
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:copper_drill", 0.17) // 0.12
+        .itemIn("drilly:copper_drill", 0.34) // 0.12
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("5x minecraft:raw_copper", 0.36)
 		.itemOut("modern_industrialization:raw_tin",  0.26)
 		.itemOut("minecraft:raw_iron", 0.11)
@@ -698,12 +815,12 @@ ServerEvents.recipes(event => {
 		
 	// copper/tin	
 
-	event.recipes.modern_industrialization.drill1(1, 6000)
+	event.recipes.modern_industrialization.drill1(2, 6000)
         .itemIn("drilly:copper_drill", 0.10)
 		.itemIn("drilly:drill_group1", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
         .itemOut("2x modern_industrialization:raw_tin", 0.35)
         .itemOut("minecraft:raw_copper",  0.20)
-        .itemOut("minecraft:raw_iron", 0.07)
 		.itemOut("minecraft:coal", 0.08)
 		.itemOut("2x minecraft:andesite", 0.12)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
@@ -711,40 +828,38 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("003_tincore_slow")
 		
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:copper_drill", 0.15)
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("2x modern_industrialization:raw_tin", 0.39)
         .itemOut("minecraft:raw_copper",  0.24)
-        .itemOut("minecraft:raw_iron", 0.08)
 		.itemOut("minecraft:coal", 0.09)
 		.itemOut("2x minecraft:andesite", 0.14) // +2
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("overworld")
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("011_tincore_slow")	
-		
+	/*	
 	event.recipes.modern_industrialization.drill1(2, 3600)
-        .itemIn("drilly:copper_drill", 0.13)
+        .itemIn("drilly:copper_drill", 0.26)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("2x modern_industrialization:raw_tin", 0.33)
 		.itemOut("minecraft:raw_copper",  0.18)
-		.itemOut("minecraft:raw_iron", 0.10)
 		.itemOut("minecraft:coal", 0.11)
 		.itemOut("2x minecraft:andesite", 0.10)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("004_tincore_fast")
-		
+	*/	
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:copper_drill", 0.18)
+        .itemIn("drilly:copper_drill", 0.36)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("2x modern_industrialization:raw_tin", 0.37)
 		.itemOut("minecraft:raw_copper",  0.22)
-		.itemOut("minecraft:raw_iron", 0.11)
 		.itemOut("minecraft:coal", 0.12)
 		.itemOut("2x minecraft:andesite", 0.12) // +2
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
@@ -754,47 +869,45 @@ ServerEvents.recipes(event => {
 		
 	// copper/coal			
 
-	event.recipes.modern_industrialization.drill1(1, 6000)
+	event.recipes.modern_industrialization.drill1(2, 6000)
         .itemIn("drilly:copper_drill", 0.08)
 		.itemIn("drilly:drill_group2", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
         .itemOut("5x minecraft:coal", 0.35)
         .itemOut("modern_industrialization:lignite_coal",  0.25)
-        .itemOut("minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("005_coalcore_slow")
 		
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:copper_drill", 0.13)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("5x minecraft:coal", 0.39)
         .itemOut("modern_industrialization:lignite_coal",  0.28) // +3
-        .itemOut("minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("013_coalcore_slow")	
-		
+	/*	
 	event.recipes.modern_industrialization.drill1(2, 3600)
-        .itemIn("drilly:copper_drill", 0.11)
+        .itemIn("drilly:copper_drill", 0.22)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("5x minecraft:coal", 0.32)
 		.itemOut("modern_industrialization:lignite_coal",  0.2)
-		.itemOut("minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("006_coalcore_fast")
-		
+	*/	
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:copper_drill", 0.16)
+        .itemIn("drilly:copper_drill", 0.32)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("5x minecraft:coal", 0.36)
 		.itemOut("modern_industrialization:lignite_coal",  0.23)
-		.itemOut("minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
@@ -802,57 +915,75 @@ ServerEvents.recipes(event => {
 
 	// copper/lignite	
 
-	event.recipes.modern_industrialization.drill1(1, 6000)
+	event.recipes.modern_industrialization.drill1(2, 6000)
         .itemIn("drilly:copper_drill", 0.07)
 		.itemIn("drilly:drill_group2", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
         .itemOut("4x modern_industrialization:lignite_coal",  0.35)
 		.itemOut("2x minecraft:andesite", 0.25)
-        .itemOut("minecraft:raw_iron", 0.06)
+        .itemOut("minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("007_lignitecore_slow")
 		
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:copper_drill", 0.12)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("4x modern_industrialization:lignite_coal",  0.39)
 		.itemOut("2x minecraft:andesite", 0.28) // +3
-        .itemOut("minecraft:raw_iron", 0.07)
+        .itemOut("minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("015_lignitecore_slow")	
-		
+	/*	
 	event.recipes.modern_industrialization.drill1(2, 3600)
-        .itemIn("drilly:copper_drill", 0.10)
+        .itemIn("drilly:copper_drill", 0.20)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("4x modern_industrialization:lignite_coal",  0.32)
 		.itemOut("2x minecraft:andesite", 0.22)
-		.itemOut("minecraft:raw_iron", 0.05)
+		.itemOut("minecraft:raw_iron", 0.02)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("008_lignitecore_fast")	
-
+	*/
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:copper_drill", 0.15)
+        .itemIn("drilly:copper_drill", 0.30)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("4x modern_industrialization:lignite_coal",  0.36)
 		.itemOut("2x minecraft:andesite", 0.25)
-		.itemOut("minecraft:raw_iron", 0.06)
+		.itemOut("minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
-		.id("016_lignitecore_fast")		
+		.id("016_lignitecore_fast")	
+
+	// QUARTZ early access
+	event.recipes.modern_industrialization.drill1(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.09)
+		.itemIn("drilly:drill_groupx", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
+		.itemOut("2x minecraft:quartz",  0.52)
+		.itemOut("1x minecraft:andesite", 0.24)
+		.itemOut("1x minecraft:basalt", 0.15)
+		.itemOut("1x minecraft:glowstone", 0.06)
+		.itemOut("1x geghilarity:precious_nugget", 0.2)
+		.itemOut("drilly:tiny_tier1_experience", 0.5)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("qea_quartzcore_slow")		
 		
 	// TIER 2/bronze1	
 		
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.09)
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("9x minecraft:raw_copper", 0.35)
         .itemOut("2x modern_industrialization:raw_tin",  0.25)
         .itemOut("2x minecraft:raw_iron", 0.07)
@@ -863,9 +994,9 @@ ServerEvents.recipes(event => {
 		.id("017_coppercore_slow")
 		
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.12)
+        .itemIn("drilly:bronze_base_drill", 0.24)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("9x minecraft:raw_copper", 0.32)
 		.itemOut("2x modern_industrialization:raw_tin",  0.22)
 		.itemOut("2x minecraft:raw_iron", 0.10)
@@ -875,12 +1006,12 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("018_coppercore_fast")
 
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.10)
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("4x modern_industrialization:raw_tin", 0.35)
         .itemOut("2x minecraft:raw_copper",  0.20)
-        .itemOut("2x minecraft:raw_iron", 0.07)
 		.itemOut("2x minecraft:coal", 0.08)
 		.itemOut("4x minecraft:andesite", 0.12)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
@@ -889,12 +1020,11 @@ ServerEvents.recipes(event => {
 		.id("019_tincore_slow")
 		
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.13)
+        .itemIn("drilly:bronze_base_drill", 0.26)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("4x modern_industrialization:raw_tin", 0.33)
 		.itemOut("2x minecraft:raw_copper",  0.18)
-		.itemOut("2x minecraft:raw_iron", 0.10)
 		.itemOut("2x minecraft:coal", 0.11)
 		.itemOut("4x minecraft:andesite", 0.10)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
@@ -902,57 +1032,108 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("020_tincore_fast")
 
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.08)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("9x minecraft:coal", 0.35)
         .itemOut("2x modern_industrialization:lignite_coal",  0.25)
-        .itemOut("2x minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("021_coalcore_slow")
 		
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.11)
+        .itemIn("drilly:bronze_base_drill", 0.22)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("9x minecraft:coal", 0.32)
 		.itemOut("2x modern_industrialization:lignite_coal",  0.2)
-		.itemOut("2x minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("022_coalcore_fast")
 
-	event.recipes.modern_industrialization.drill2(1, 6000)
+	event.recipes.modern_industrialization.drill2(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.07)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("8x modern_industrialization:lignite_coal",  0.35)
 		.itemOut("3x minecraft:andesite", 0.25)
-        .itemOut("2x minecraft:raw_iron", 0.06)
+        .itemOut("2x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("023_lignitecore_slow")
 		
 	event.recipes.modern_industrialization.drill2(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.10)
+        .itemIn("drilly:bronze_base_drill", 0.20)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("8x modern_industrialization:lignite_coal",  0.32)
 		.itemOut("3x minecraft:andesite", 0.22)
-		.itemOut("2x minecraft:raw_iron", 0.05)
+		.itemOut("2x minecraft:raw_iron", 0.02)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("024_lignitecore_fast")
 		
-	// TIER 3/bronze2	
+	event.recipes.modern_industrialization.drill2(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.09)
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("2x modern_industrialization:raw_lead",  0.2)
+		.itemOut("create:raw_zinc", 0.15)
+		.itemOut("drilly:tiny_tier2_experience", 0.35)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("024a_leadcore_slow")
+
+	event.recipes.modern_industrialization.drill2(2, 3600)
+        .itemIn("drilly:bronze_base_drill", 0.24)
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("2x modern_industrialization:raw_lead",  0.18)
+		.itemOut("create:raw_zinc", 0.14)
+		.itemOut("drilly:tiny_tier2_experience", 0.22)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("024b_leadcore_fast")	
+		
+	event.recipes.modern_industrialization.drill2(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.09)
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("3x minecraft:quartz",  0.52)
+		.itemOut("2x minecraft:andesite", 0.24)
+		.itemOut("1x minecraft:basalt", 0.30)
+		.itemOut("1x minecraft:glowstone", 0.12)
+		.itemOut("1x geghilarity:precious_nugget", 0.3)
+		.itemOut("drilly:tiny_tier2_experience", 0.35)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("024xa_quartzcore_slow")
+
+	event.recipes.modern_industrialization.drill2(2, 3600)
+        .itemIn("drilly:bronze_base_drill", 0.24)
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("3x minecraft:quartz",  0.48)
+		.itemOut("2x minecraft:andesite", 0.22)
+		.itemOut("1x minecraft:basalt", 0.28)
+		.itemOut("1x minecraft:glowstone", 0.1)
+		.itemOut("1x geghilarity:precious_nugget", 0.28)
+		.itemOut("drilly:tiny_tier2_experience", 0.22)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("024xb_quartzcore_fast")	
+		
+	// TIER 3/bronze1	
 	
-	event.recipes.modern_industrialization.drill3(1, 6000)
+	event.recipes.modern_industrialization.drill3(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.15) // +6
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("9x minecraft:raw_copper", 0.39) // +4
         .itemOut("2x modern_industrialization:raw_tin",  0.29) // +4
         .itemOut("2x minecraft:raw_iron", 0.08) // +1
@@ -963,9 +1144,9 @@ ServerEvents.recipes(event => {
 		.id("025_coppercore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.18)
+        .itemIn("drilly:bronze_base_drill", 0.36)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("9x minecraft:raw_copper", 0.36)
 		.itemOut("2x modern_industrialization:raw_tin",  0.26)
 		.itemOut("2x minecraft:raw_iron", 0.11)
@@ -975,12 +1156,12 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("026_coppercore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
+	event.recipes.modern_industrialization.drill3(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.16)
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("4x modern_industrialization:raw_tin", 0.39)
         .itemOut("2x minecraft:raw_copper",  0.26)
-        .itemOut("2x minecraft:raw_iron", 0.08)
 		.itemOut("2x minecraft:coal", 0.09)
 		.itemOut("4x minecraft:andesite", 0.14)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
@@ -989,12 +1170,11 @@ ServerEvents.recipes(event => {
 		.id("027_tincore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.16)
+        .itemIn("drilly:bronze_base_drill", 0.38)
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("4x modern_industrialization:raw_tin", 0.37)
 		.itemOut("2x minecraft:raw_copper",  0.24)
-		.itemOut("2x minecraft:raw_iron", 0.11)
 		.itemOut("2x minecraft:coal", 0.12)
 		.itemOut("4x minecraft:andesite", 0.12)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
@@ -1002,57 +1182,109 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("028_tincore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
+	event.recipes.modern_industrialization.drill3(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.14)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("9x minecraft:coal", 0.39)
         .itemOut("2x modern_industrialization:lignite_coal",  0.28)
-        .itemOut("2x minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("029_coalcore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.17)
+        .itemIn("drilly:bronze_base_drill", 0.34)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("9x minecraft:coal", 0.36)
 		.itemOut("2x modern_industrialization:lignite_coal",  0.28)
-		.itemOut("2x minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("030_coalcore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
+	event.recipes.modern_industrialization.drill3(2, 6000)
         .itemIn("drilly:bronze_base_drill", 0.13)
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
         .itemOut("8x modern_industrialization:lignite_coal",  0.39)
 		.itemOut("3x minecraft:andesite", 0.28)
-        .itemOut("2x minecraft:raw_iron", 0.07)
+        .itemOut("2x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("031_lignitecore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_base_drill", 0.16)
+        .itemIn("drilly:bronze_base_drill", 0.32)
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("8x modern_industrialization:lignite_coal",  0.36)
 		.itemOut("3x minecraft:andesite", 0.25)
-		.itemOut("2x minecraft:raw_iron", 0.06)
+		.itemOut("2x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("032_lignitecore_fast")
 		
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.15)
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("2x modern_industrialization:raw_lead",  0.24)
+		.itemOut("create:raw_zinc", 0.18)
+		.itemOut("drilly:tiny_tier2_experience", 0.35)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("032a_leadcore_slow")
+
+	event.recipes.modern_industrialization.drill3(2, 3600)
+        .itemIn("drilly:bronze_base_drill", 0.36)
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("2x modern_industrialization:raw_lead",  0.22)
+		.itemOut("create:raw_zinc", 0.17)
+		.itemOut("drilly:tiny_tier2_experience", 0.22)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("032b_leadcore_fast")	
+		
+	event.recipes.modern_industrialization.drill2(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.15)
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("3x minecraft:quartz",  0.58)
+		.itemOut("2x minecraft:andesite", 0.27)
+		.itemOut("1x minecraft:basalt", 0.33)
+		.itemOut("1x minecraft:glowstone", 0.15)
+		.itemOut("1x geghilarity:precious_nugget", 0.33)
+		.itemOut("drilly:tiny_tier2_experience", 0.35)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("032xa_quartzcore_slow")
+
+	event.recipes.modern_industrialization.drill2(2, 3600)
+        .itemIn("drilly:bronze_base_drill", 0.36)
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("3x minecraft:quartz",  0.54)
+		.itemOut("2x minecraft:andesite", 0.25)
+		.itemOut("1x minecraft:basalt", 0.31)
+		.itemOut("1x minecraft:glowstone", 0.13)
+		.itemOut("1x geghilarity:precious_nugget", 0.31)
+		.itemOut("drilly:tiny_tier2_experience", 0.22)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("032xb_quartzcore_fast")	
+		
 	// TIER 3/bronze2
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.15) // +6
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill") // +6
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.93)
         .itemOut("15x minecraft:raw_copper", 0.35) // +6
         .itemOut("3x modern_industrialization:raw_tin",  0.25) // +1
         .itemOut("3x minecraft:raw_iron", 0.07)
@@ -1063,9 +1295,10 @@ ServerEvents.recipes(event => {
 		.id("033_coppercore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.12)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.80)
 		.itemOut("15x minecraft:raw_copper", 0.32)
 		.itemOut("3x modern_industrialization:raw_tin",  0.22)
 		.itemOut("3x minecraft:raw_iron", 0.10)
@@ -1075,12 +1308,13 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("034_coppercore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.92)
         .itemOut("7x modern_industrialization:raw_tin", 0.35)
         .itemOut("3x minecraft:raw_copper",  0.20)
-        .itemOut("3x minecraft:raw_iron", 0.07)
 		.itemOut("3x minecraft:coal", 0.08)
 		.itemOut("5x minecraft:andesite", 0.12)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
@@ -1089,12 +1323,12 @@ ServerEvents.recipes(event => {
 		.id("035_tincore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.13)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.78)
 		.itemOut("7x modern_industrialization:raw_tin", 0.33)
 		.itemOut("3x minecraft:raw_copper",  0.18)
-		.itemOut("3x minecraft:raw_iron", 0.10)
 		.itemOut("3x minecraft:coal", 0.11)
 		.itemOut("5x minecraft:andesite", 0.10)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
@@ -1102,57 +1336,143 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("036_tincore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.08)
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.94)
         .itemOut("15x minecraft:coal", 0.35)
         .itemOut("3x modern_industrialization:lignite_coal",  0.25)
-        .itemOut("3x minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("037_coalcore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.11)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.82)
 		.itemOut("15x minecraft:coal", 0.32)
 		.itemOut("3x modern_industrialization:lignite_coal",  0.2)
-		.itemOut("3x minecraft:raw_iron", 0.1)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("038_coalcore_fast")
 
-	event.recipes.modern_industrialization.drill3(1, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.07)
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.95)
         .itemOut("12x modern_industrialization:lignite_coal",  0.35)
 		.itemOut("4x minecraft:andesite", 0.25)
-        .itemOut("3x minecraft:raw_iron", 0.06)
+        .itemOut("3x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("039_lignitecore_slow")
 		
 	event.recipes.modern_industrialization.drill3(2, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.84)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.32)
 		.itemOut("4x minecraft:andesite", 0.22)
-		.itemOut("3x minecraft:raw_iron", 0.05)
+		.itemOut("3x minecraft:raw_iron", 0.02)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("040_lignitecore_fast")	
 		
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.93)
+		.itemOut("3x modern_industrialization:raw_lead",  0.20)
+		.itemOut("2x create:raw_zinc", 0.15)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("040a_leadcore_slow")
+
+	event.recipes.modern_industrialization.drill3(2, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.8)
+		.itemOut("3x modern_industrialization:raw_lead",  0.18)
+		.itemOut("2x create:raw_zinc", 0.14)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("040b_leadcore_fast")
+		
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.93)
+		.itemOut("5x minecraft:quartz",  0.52)
+		.itemOut("3x minecraft:andesite", 0.24)
+		.itemOut("2x minecraft:basalt", 0.30)
+		.itemOut("2x minecraft:glowstone", 0.12)
+		.itemOut("2x geghilarity:precious_nugget", 0.3)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("040xa_quartzcore_slow")
+
+	event.recipes.modern_industrialization.drill3(2, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.8)
+		.itemOut("5x minecraft:quartz",  0.48)
+		.itemOut("3x minecraft:andesite", 0.22)
+		.itemOut("2x minecraft:basalt", 0.28)
+		.itemOut("2x minecraft:glowstone", 0.1)
+		.itemOut("2x geghilarity:precious_nugget", 0.28)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("040xb_quartzcore_fast")	
+
+	event.recipes.modern_industrialization.drill3(2, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.7)
+		.itemOut("5x minecraft:raw_iron",  0.15)
+		.itemOut("2x modern_industrialization:raw_tin", 0.15)
+		.itemOut("2x modern_industrialization:raw_nickel", 0.12)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("040c_ironcore_slow")
+
+	event.recipes.modern_industrialization.drill3(2, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.6)
+		.itemOut("5x minecraft:raw_iron",  0.13)
+		.itemOut("2x modern_industrialization:raw_tin", 0.12)
+		.itemOut("2x modern_industrialization:raw_nickel", 0.1)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("040d_ironcore_fast")	
+		
 	// tier 4/bronze2	
 	
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.15) // +6
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill") // +6
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.87)
         .itemOut("15x minecraft:raw_copper", 0.39) // +6
         .itemOut("3x modern_industrialization:raw_tin",  0.29) // +1
         .itemOut("3x minecraft:raw_iron", 0.08)
@@ -1162,10 +1482,11 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("041_coppercore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.12)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.66)
 		.itemOut("15x minecraft:raw_copper", 0.36)
 		.itemOut("3x modern_industrialization:raw_tin",  0.26)
 		.itemOut("3x minecraft:raw_iron", 0.11)
@@ -1175,12 +1496,13 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("042_coppercore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.86)
         .itemOut("7x modern_industrialization:raw_tin", 0.39)
         .itemOut("3x minecraft:raw_copper",  0.24)
-        .itemOut("3x minecraft:raw_iron", 0.08)
 		.itemOut("3x minecraft:coal", 0.09)
 		.itemOut("5x minecraft:andesite", 0.14)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
@@ -1188,13 +1510,13 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("043_tincore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.13)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.64)
 		.itemOut("7x modern_industrialization:raw_tin", 0.37)
 		.itemOut("3x minecraft:raw_copper",  0.24)
-		.itemOut("3x minecraft:raw_iron", 0.11)
 		.itemOut("3x minecraft:coal", 0.12)
 		.itemOut("5x minecraft:andesite", 0.12)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
@@ -1202,161 +1524,809 @@ ServerEvents.recipes(event => {
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("044_tincore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.08)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.88)
         .itemOut("15x minecraft:coal", 0.39)
         .itemOut("3x modern_industrialization:lignite_coal",  0.28)
-        .itemOut("3x minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("045_coalcore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.11)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.68)
 		.itemOut("15x minecraft:coal", 0.36)
 		.itemOut("3x modern_industrialization:lignite_coal",  0.23)
-		.itemOut("3x minecraft:raw_iron", 0.11)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("046_coalcore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.07)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.89)
         .itemOut("12x modern_industrialization:lignite_coal",  0.39)
 		.itemOut("4x minecraft:andesite", 0.28)
-        .itemOut("3x minecraft:raw_iron", 0.07)
+        .itemOut("3x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("047_lignitecore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.70)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.36)
 		.itemOut("4x minecraft:andesite", 0.25)
-		.itemOut("3x minecraft:raw_iron", 0.06)
+		.itemOut("3x minecraft:raw_iron", 0.03)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("048_lignitecore_fast")	
 		
-	// tier4/steelmix
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.87)
+		.itemOut("3x modern_industrialization:raw_lead",  0.24)
+		.itemOut("2x create:raw_zinc", 0.18)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("048a_leadcore_slow")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.15) // +6
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.66)
+		.itemOut("3x modern_industrialization:raw_lead",  0.22)
+		.itemOut("2x create:raw_zinc", 0.17)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("048b_leadcore_fast")	
+		
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.87)
+		.itemOut("5x minecraft:quartz",  0.58)
+		.itemOut("3x minecraft:andesite", 0.27)
+		.itemOut("2x minecraft:basalt", 0.33)
+		.itemOut("2x minecraft:glowstone", 0.15)
+		.itemOut("2x geghilarity:precious_nugget", 0.33)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("048xa_quartzcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.66)
+		.itemOut("5x minecraft:quartz",  0.54)
+		.itemOut("3x minecraft:andesite", 0.25)
+		.itemOut("2x minecraft:basalt", 0.31)
+		.itemOut("2x minecraft:glowstone", 0.13)
+		.itemOut("2x geghilarity:precious_nugget", 0.31)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("048xb_quartzcore_fast")	
+
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.65)
+		.itemOut("5x minecraft:raw_iron",  0.20)
+		.itemOut("2x modern_industrialization:raw_tin", 0.18)
+		.itemOut("2x modern_industrialization:raw_nickel", 0.15)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("048c_ironcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.45)
+		.itemOut("5x minecraft:raw_iron",  0.18)
+		.itemOut("2x modern_industrialization:raw_tin", 0.15)
+		.itemOut("2x modern_industrialization:raw_nickel", 0.13)
+		.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("048d_ironcore_fast")	
+		
+	// tier4/iron
+
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill") // +6
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
         .itemOut("20x minecraft:raw_copper", 0.35) // +5
         .itemOut("4x modern_industrialization:raw_tin",  0.25) // +1
         .itemOut("4x minecraft:raw_iron", 0.07)
 		.itemOut("4x minecraft:coal", 0.08)
-		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+		//.itemOut("drilly:tiny_tier4_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("049_coppercore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.12)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
 		.itemOut("20x minecraft:raw_copper", 0.32)
 		.itemOut("4x modern_industrialization:raw_tin",  0.22)
 		.itemOut("4x minecraft:raw_iron", 0.1)
 		.itemOut("4x minecraft:coal", 0.11)
-		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+		//.itemOut("drilly:tiny_tier4_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:copper_corenode", "below")
 		.id("050_coppercore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
         .itemOut("9x modern_industrialization:raw_tin", 0.35)
         .itemOut("4x minecraft:raw_copper",  0.20)
-        .itemOut("4x minecraft:raw_iron", 0.07)
 		.itemOut("4x minecraft:coal", 0.08)
 		.itemOut("6x minecraft:andesite", 0.12)
-		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+		//.itemOut("drilly:tiny_tier4_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("051_tincore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.13)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group1", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
 		.itemOut("9x modern_industrialization:raw_tin", 0.33)
 		.itemOut("4x minecraft:raw_copper",  0.18)
-		.itemOut("4x minecraft:raw_iron", 0.1)
 		.itemOut("4x minecraft:coal", 0.11)
 		.itemOut("6x minecraft:andesite", 0.1)
-		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+		//.itemOut("drilly:tiny_tier4_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:tin_corenode", "below")
 		.id("052_tincore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.08)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
         .itemOut("20x minecraft:coal", 0.35)
-        .itemOut("4x modern_industrialization:lignite_coal",  0.25)
-        .itemOut("4x minecraft:raw_iron", 0.1)
-		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .itemOut("4x modern_industrialization:lignite_coal", 0.25)
+		//.itemOut("drilly:tiny_tier4_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
 		.id("053_coalcore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.11)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
 		.itemOut("20x minecraft:coal", 0.32)
-		.itemOut("4x modern_industrialization:lignite_coal",  0.2)
-		.itemOut("4x minecraft:raw_iron", 0.1)
-		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+		.itemOut("4x modern_industrialization:lignite_coal", 0.2)
+		//.itemOut("drilly:tiny_tier4_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
 		.id("054_coalcore_fast")
 
-	event.recipes.modern_industrialization.drill3(2, 6000)
-        .itemIn("drilly:bronze_refined_drill", 0.07)
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-        .itemOut("15x modern_industrialization:lignite_coal",  0.35)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
+        .itemOut("15x modern_industrialization:lignite_coal", 0.35)
 		.itemOut("5x minecraft:andesite", 0.25)
-        .itemOut("4x minecraft:raw_iron", 0.06)
-		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .itemOut("4x minecraft:raw_iron", 0.03)
+		//.itemOut("drilly:tiny_tier4_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")
 		.id("055_lignitecore_slow")
 		
-	event.recipes.modern_industrialization.drill3(4, 3600)
-        .itemIn("drilly:bronze_refined_drill", 0.10)
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
 		.itemIn("drilly:drill_group2", 0.00)
-		.itemIn("minecraft:lever", 0.00)
-		.itemOut("15x modern_industrialization:lignite_coal",  0.32)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
+		.itemOut("15x modern_industrialization:lignite_coal", 0.32)
 		.itemOut("5x minecraft:andesite", 0.22)
-		.itemOut("4x minecraft:raw_iron", 0.05)
-		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+		.itemOut("4x minecraft:raw_iron", 0.02)
+		//.itemOut("drilly:tiny_tier4_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:lignite_corenode", "below")	
 		.id("056_lignitecore_fast")	
 		
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.87)
+		.itemOut("4x modern_industrialization:raw_lead", 0.20)
+		.itemOut("3x create:raw_zinc", 0.15)
+		//.itemOut("drilly:tiny_tier4_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("056a_leadcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.66)
+		.itemOut("4x modern_industrialization:raw_lead",  0.18)
+		.itemOut("3x create:raw_zinc", 0.14)
+		//.itemOut("drilly:tiny_tier4_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:lead_corenode", "below")	
+		.id("056b_leadcore_fast")
+
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.93)
+		.itemOut("7x minecraft:quartz",  0.52)
+		.itemOut("4x minecraft:andesite", 0.24)
+		.itemOut("3x minecraft:basalt", 0.30)
+		.itemOut("3x minecraft:glowstone", 0.12)
+		.itemOut("3x geghilarity:precious_nugget", 0.3)
+		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("056xa_quartzcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_groupx", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.8)
+		.itemOut("7x minecraft:quartz",  0.48)
+		.itemOut("4x minecraft:andesite", 0.22)
+		.itemOut("3x minecraft:basalt", 0.28)
+		.itemOut("3x minecraft:glowstone", 0.1)
+		.itemOut("3x geghilarity:precious_nugget", 0.28)
+		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("nether")
+        .adjacentBlock("geggy:quartz_corenode", "below")	
+		.id("056xb_quartzcore_fast")		
+		
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.65)
+		.itemOut("8x minecraft:raw_iron", 0.15)
+		.itemOut("4x modern_industrialization:raw_tin", 0.15)
+		.itemOut("4x modern_industrialization:raw_nickel", 0.12)
+		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("056c_ironcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group2", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.45)
+		.itemOut("8x minecraft:raw_iron",  0.13)
+		.itemOut("4x modern_industrialization:raw_tin", 0.12)
+		.itemOut("4x modern_industrialization:raw_nickel", 0.1)
+		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:iron_corenode", "below")	
+		.id("056d_ironcore_fast")	
+
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.65)
+		.itemOut("8x modern_industrialization:raw_nickel", 0.15)
+		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:nickel_corenode", "below")	
+		.id("056e_nickelcore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.45)
+		.itemOut("8x modern_industrialization:raw_nickel", 0.13)
+		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:nickel_corenode", "below")	
+		.id("056f_nickelcore_fast")	
+		
+	event.recipes.modern_industrialization.drill4(4, 6000)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.65)
+		.itemOut("8x create:raw_zinc", 0.15)
+		//.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:zinc_corenode", "below")	
+		.id("056g_zinccore_slow")
+
+	event.recipes.modern_industrialization.drill4(4, 3600)
+        .itemIn("drilly:iron_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		.itemIn("geggy:selector_2", 0.00)
+		.itemOut("drilly:dirty_iron_refined_drill", 0.45)
+		.itemOut("8x create:raw_zinc", 0.13)
+		//.itemOut("drilly:tiny_tier3_experience", 0.18)
+        .dimension("overworld")
+        .adjacentBlock("geggy:zinc_corenode", "below")	
+		.id("056h_zinccore_fast")		
+		
 	////////////////////////////////////////	bucket = 1000mb = 1/20tick = 16.6 min autonomy 1 bucket/ 2000 max tank
 	// 25 sec, 1000 steam bucket max recipe, 500 ticks
-	event.recipes.modern_industrialization.proto(2, 1000)
+	event.recipes.modern_industrialization.proto(2, 498)
         .itemIn("2x modern_industrialization:coal_tiny_dust")
 		.fluidIn("minecraft:water", 50)
-		.fluidOut("modern_industrialization:steam", 4050)
-		.id("protoboy")		
+		.fluidOut("modern_industrialization:steam", 2000)
+		.id("protoboy")	
+		
+	/// tier 1
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:coal_dust"}],
+			"results": [{"item": "modern_industrialization:coal_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:lignite_coal_dust"}],
+			"results": [{"item": "modern_industrialization:lignite_coal_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:copper_dust"}],
+			"results": [{"item": "modern_industrialization:copper_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:tin_dust"}],
+			"results": [{"item": "modern_industrialization:tin_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:quartz_dust"}],
+			"results": [{"item": "modern_industrialization:quartz_dust", "count": 5}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:iron_dust"}],
+			"results": [{"item": "modern_industrialization:iron_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:lead_dust"}],
+			"results": [{"item": "modern_industrialization:lead_dust", "count": 5}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "minecraft:redstone"}],
+			"results": [{"item": "minecraft:redstone", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:bauxite_dust"}],
+			"results": [{"item": "modern_industrialization:bauxite_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:salt_dust"}],
+			"results": [{"item": "modern_industrialization:salt_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "kubejs:zinc_dust"}],
+			"results": [{"item": "kubejs:zinc_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:nickel_dust"}],
+			"results": [{"item": "modern_industrialization:nickel_dust", "count": 5}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier1_experience"},{"item": "modern_industrialization:antimony_dust"}],
+			"results": [{"item": "modern_industrialization:antimony_dust", "count": 5}]
+	})
+	
+	/// tier 2
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:coal_dust"}],
+			"results": [{"item": "modern_industrialization:coal_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:lignite_coal_dust"}],
+			"results": [{"item": "modern_industrialization:lignite_coal_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:copper_dust"}],
+			"results": [{"item": "modern_industrialization:copper_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:tin_dust"}],
+			"results": [{"item": "modern_industrialization:tin_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:quartz_dust"}],
+			"results": [{"item": "modern_industrialization:quartz_dust", "count": 10}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:iron_dust"}],
+			"results": [{"item": "modern_industrialization:iron_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:lead_dust"}],
+			"results": [{"item": "modern_industrialization:lead_dust", "count": 10}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "minecraft:redstone"}],
+			"results": [{"item": "minecraft:redstone", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:bauxite_dust"}],
+			"results": [{"item": "modern_industrialization:bauxite_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:salt_dust"}],
+			"results": [{"item": "modern_industrialization:salt_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "kubejs:zinc_dust"}],
+			"results": [{"item": "kubejs:zinc_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:nickel_dust"}],
+			"results": [{"item": "modern_industrialization:nickel_dust", "count": 10}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier2_experience"},{"item": "modern_industrialization:antimony_dust"}],
+			"results": [{"item": "modern_industrialization:antimony_dust", "count": 10}]
+	})
+	
+	/// tier 3
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:coal_dust"}],
+			"results": [{"item": "modern_industrialization:coal_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:lignite_coal_dust"}],
+			"results": [{"item": "modern_industrialization:lignite_coal_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:copper_dust"}],
+			"results": [{"item": "modern_industrialization:copper_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:tin_dust"}],
+			"results": [{"item": "modern_industrialization:tin_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:quartz_dust"}],
+			"results": [{"item": "modern_industrialization:quartz_dust", "count": 15}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:iron_dust"}],
+			"results": [{"item": "modern_industrialization:iron_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:lead_dust"}],
+			"results": [{"item": "modern_industrialization:lead_dust", "count": 15}]
+	})	
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "minecraft:redstone"}],
+			"results": [{"item": "minecraft:redstone", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:bauxite_dust"}],
+			"results": [{"item": "modern_industrialization:bauxite_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:salt_dust"}],
+			"results": [{"item": "modern_industrialization:salt_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "kubejs:zinc_dust"}],
+			"results": [{"item": "kubejs:zinc_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:nickel_dust"}],
+			"results": [{"item": "modern_industrialization:nickel_dust", "count": 15}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"processingTime":6000,
+			"ingredients": [{"item": "drilly:whole_tier3_experience"},{"item": "modern_industrialization:antimony_dust"}],
+			"results": [{"item": "modern_industrialization:antimony_dust", "count": 15}]
+	})
 	
 
 	legacy_quarry_recipes(event)
 	
-})	
+})
+
+ServerEvents.tags('block', event => { 
+
+  event.add('minecraft:needs_iron_tool', 'geggy:iron_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:iron_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:copper_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:copper_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:tin_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:tin_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:coal_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:coal_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:antimony_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:antimony_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:bauxite_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:bauxite_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:lead_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:lead_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:lignite_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:lignite_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:mozanite_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:mozanite_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:nickel_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:nickel_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:zinc_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:zinc_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:salt_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:salt_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:tungsten_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:tungsten_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:uranium_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:uranium_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:precious_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:precious_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:redstone_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:redstone_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:quartz_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:quartz_corenode')
+  
+})
+
+ServerEvents.blockLootTables(event => {
+	
+  event.addBlock('geggy:iron_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('minecraft:raw_iron', 1, [12, 20]) 
+    })
+  })
+ 
+  event.addBlock('geggy:copper_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('minecraft:raw_copper', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:tin_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_tin', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:coal_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('minecraft:coal', 1, [12, 20]) 
+    })
+  })
+  
+  event.addBlock('geggy:antimony_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_antimony', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:bauxite_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:bauxite_dust', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:lead_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_lead', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:lignite_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:lignite_coal', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:mozanite_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:mozanite_dust', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:nickel_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_nickel', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:zinc_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('create:raw_zinc', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:salt_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:salt_dust', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:tungsten_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_tungsten', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:uranium_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('modern_industrialization:raw_uranium', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:precious_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 3 
+      pool.addItem('geghilarity:precious_nugget', 1, [28, 50]) 
+    })
+  })
+
+  event.addBlock('geggy:redstone_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('minecraft:redstone', 1, [12, 20]) 
+    })
+  })
+
+  event.addBlock('geggy:quartz_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('minecraft:quartz', 1, [12, 20]) 
+    })
+  })
+
+  // nether
+  event.addBlock('geggy:nether_precious_ore', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [2, 8]) 
+    })
+  })
+
+  event.addBlock('minecraft:gilded_blackstone', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [4, 16]) 
+    })
+  })	
+
+  event.addBlock('byg:blue_nether_gold_ore', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [4, 16]) 
+    })
+  }) 
+
+  event.addBlock('byg:brimstone_nether_gold_ore', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [4, 16]) 
+    })
+  })
+  
+}); 
+  

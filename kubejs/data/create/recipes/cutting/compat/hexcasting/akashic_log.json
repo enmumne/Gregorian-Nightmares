@@ -1,1 +1,0 @@
-{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["hexcasting"]}],"ingredients":[{"item":"hexcasting:akashic_log"}],"processingTime":50,"results":[{"item":"hexcasting:akashic_log_stripped"}]}

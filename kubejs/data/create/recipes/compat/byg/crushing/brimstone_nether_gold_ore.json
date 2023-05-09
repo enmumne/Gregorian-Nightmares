@@ -1,0 +1,31 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "byg"
+      ]
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "byg:brimstone_nether_gold_ore"
+    }
+  ],
+  "results": [
+    {
+      "item": "geghilarity:precious_nugget",
+      "count": 18
+    },
+    {
+      "item": "create:experience_nugget",
+      "chance": 0.75
+    },
+    {
+      "item": "byg:brimstone",
+      "chance": 0.125
+    }
+  ],
+  "processingTime": 350
+}

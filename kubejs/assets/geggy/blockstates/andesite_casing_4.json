@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "geggy:block/andesite_casing_4",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "geggy:block/andesite_casing_4",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "geggy:block/andesite_casing_4"
+    },
+    "facing=south": {
+      "model": "geggy:block/andesite_casing_4",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "geggy:block/andesite_casing_4"
+    },
+    "facing=west": {
+      "model": "geggy:block/andesite_casing_4",
+      "y": 270
+    }
+  }
+}

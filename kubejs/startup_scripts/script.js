@@ -38,6 +38,9 @@ StartupEvents.registry('item', event => {
 	event.create("dirty_gold_drill")
 	event.create("dirty_aluminum_drill")
 	event.create("dirty_titanium_drill")
+	
+	event.create("osmium_drill")
+	event.create("dirty_osmium_drill")
 })
 
 //onEvent('block.registry', event => {

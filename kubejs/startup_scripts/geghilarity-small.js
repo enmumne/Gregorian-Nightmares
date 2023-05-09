@@ -1,10 +1,11 @@
 StartupEvents.registry('item', event => {
 	
-	event.create('drilly:drill_group1').displayName('Group A token');
-	event.create('drilly:drill_group2').displayName('Group B token');
-	event.create('drilly:drill_group3').displayName('Group C token');
-	event.create('drilly:drill_group4').displayName('Group D token');
-	event.create('drilly:drill_group5').displayName('Group E token');
+	event.create('drilly:drill_group1').displayName('Group A token').fireResistant(true);
+	event.create('drilly:drill_group2').displayName('Group B token').fireResistant(true);
+	event.create('drilly:drill_group3').displayName('Group C token').fireResistant(true);
+	event.create('drilly:drill_group4').displayName('Group D token').fireResistant(true);
+	event.create('drilly:drill_group5').displayName('Group E token').fireResistant(true);
+	event.create('drilly:drill_groupx').displayName('Group X token').fireResistant(true);
 	
 	event.create('drilly:tiny_tier1_experience').displayName('Tiny Pile of Tier 1 Experience');
 	event.create('drilly:whole_tier1_experience').displayName('Tier 1 Experience');
@@ -24,6 +25,7 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:iron_base_drill').displayName('Basic Iron Drill');
 	event.create('drilly:iron_refined_drill').displayName('Refined Iron Drill');
 	event.create('drilly:iron_bulky_drill').displayName('Bulky Iron Drill');
+	event.create('drilly:steel_composite_drill').displayName('Composite Steel Drill');
 	event.create('drilly:steel_base_drill').displayName('Basic Steel Drill');
 	event.create('drilly:steel_refined_drill').displayName('Refined Steel Drill');
 	event.create('drilly:steel_bulky_drill').displayName('Bulky Steel Drill');
@@ -209,14 +211,14 @@ MIMachineEvents.registerMachines(event => {
 		"Calibrated Driller", "drill3", DRILL3, ["bronze"],
 		/* GUI CONFIGURATION */
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		170, event.progressBar(78, 32, "arrow"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
+		190, event.progressBar(78, 32, "arrow"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
 		/* SLOT CONFIGURATION */
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
-		4, 6, 0, 0,
+		4, 9, 0, 0,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 3, 2), fluids => {},
+		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 3, 3), fluids => {},
 		/* MODEL CONFIGURATION */
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,
@@ -228,14 +230,14 @@ MIMachineEvents.registerMachines(event => {
 		"Driller", "drill4", DRILL4, ["steel"],
 		/* GUI CONFIGURATION */
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		170, event.progressBar(78, 32, "arrow"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
+		190, event.progressBar(78, 32, "arrow"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
 		/* SLOT CONFIGURATION */
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
-		4, 6, 0, 0,
+		4, 9, 0, 0,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 3, 2), fluids => {},
+		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 3, 3), fluids => {},
 		/* MODEL CONFIGURATION */
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,

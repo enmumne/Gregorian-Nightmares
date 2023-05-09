@@ -1,0 +1,20 @@
+ServerEvents.recipes(event => {
+
+	event.shaped('expert_armor:create/copper_plate', [
+		'A A',
+		'   ',
+		'A A'
+	], {
+		A: 'minecraft:copper_ingot'
+	})
+	
+})
+
+ServerEvents.tags('item', event => { 
+  
+  event.add('c:ingots/fiery', 'twilightforest:fiery_ingot')
+  event.add('c:ingots/ironwood', 'twilightforest:ironwood_ingot')
+  event.add('c:ingots/knightmetal', 'twilightforest:knightmetal_ingot')
+  event.add('c:ingots/steeleaf', 'twilightforest:steeleaf_ingot')
+  
+});

@@ -1,15 +1,23 @@
 
 StartupEvents.registry('block', event => {
 
-event.create('geghilarity_fatmachines:ptfe_casing').material('wood').displayName('Chemically Inert PTFE Casing').hardness(3).tagBlock('minecraft:mineable/axe')
-event.create('geghilarity_fatmachines:ptfe_pipe_casing').material('wood').displayName('PTFE Pipe Casing').hardness(3).tagBlock('minecraft:mineable/axe')
-event.create('geghilarity_fatmachines:pyro_casing').material('wood').displayName('Pyro Casing').hardness(3).tagBlock('minecraft:mineable/axe')
+event.create('geghilarity_fatmachines:ptfe_casing').material('iron').displayName('Chemically Inert PTFE Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:ptfe_pipe_casing').material('iron').displayName('PTFE Pipe Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:pyro_casing').material('iron').displayName('Pyro Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
-event.create('geghilarity_fatmachines:nichrome_coil').material('wood').hardness(3).tagBlock('minecraft:mineable/axe')
-event.create('geghilarity_fatmachines:tungstensteel_coil').material('wood').hardness(3).tagBlock('minecraft:mineable/axe')
-event.create('geghilarity_fatmachines:hss-g_coil').material('wood').displayName('HSS-G Coil').hardness(3).tagBlock('minecraft:mineable/axe')
+event.create('geghilarity_fatmachines:nichrome_coil').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:tungstensteel_coil').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:hss-g_coil').material('iron').displayName('HSS-G Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:naquadah_coil').material('iron').displayName('Naquadah Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 })
+
+/*
+const $MachineRegistrationHelper = Java.loadClass('aztech.modern_industrialization.machines.init.MachineRegistrationHelper')
+const $ReiMachineRecipes = Java.loadClass('aztech.modern_industrialization.compat.rei.machines.ReiMachineRecipes')
+const $SteamCraftingMultiblockBlockEntity = Java.loadClass('aztech.modern_industrialization.machines.blockentities.multiblocks.SteamCraftingMultiblockBlockEntity')
+const $MachineCasings = Java.loadClass('aztech.modern_industrialization.machines.models.MachineCasings')
+*/
 
 let PYRO;
 let LCR;
@@ -17,6 +25,10 @@ let BF;
 let BF2;
 let BF3;
 let BF4;
+let BF5;
+
+let evaporation;
+let MINECLAY;
 
 MIMachineEvents.registerRecipeTypes(event => {
 	PYRO = event.register("pyro")
@@ -26,43 +38,123 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidOutputs(); // enable fluid outputs
 		
 	LCR = event.register("lcr")
-        .withItemInputs() // enable item inputs
-        .withItemOutputs() // enable item outputs
-        .withFluidInputs() // enable fluid inputs
-        .withFluidOutputs(); // enable fluid outputs
+        .withItemInputs() 
+        .withItemOutputs() 
+        .withFluidInputs() 
+        .withFluidOutputs(); 
 		
 	BF = event.register("blaster_furnace")
-        .withItemInputs() // enable item inputs
-        .withItemOutputs() // enable item outputs
-        .withFluidInputs() // enable fluid inputs
-        .withFluidOutputs(); // enable fluid outputs
+        .withItemInputs() 
+        .withItemOutputs()
+        .withFluidInputs() 
+        .withFluidOutputs(); 
 		
 	BF2 = event.register("blaster_furnace2")
-        .withItemInputs() // enable item inputs
-        .withItemOutputs() // enable item outputs
-        .withFluidInputs() // enable fluid inputs
-        .withFluidOutputs(); // enable fluid outputs
+        .withItemInputs() 
+        .withItemOutputs()
+        .withFluidInputs() 
+        .withFluidOutputs(); 
 
 	BF3 = event.register("blaster_furnace3")
-        .withItemInputs() // enable item inputs
-        .withItemOutputs() // enable item outputs
-        .withFluidInputs() // enable fluid inputs
-        .withFluidOutputs(); // enable fluid outputs
+        .withItemInputs() 
+        .withItemOutputs() 
+        .withFluidInputs() 
+        .withFluidOutputs(); 
 
 	BF4 = event.register("blaster_furnace4")
-        .withItemInputs() // enable item inputs
-        .withItemOutputs() // enable item outputs
-        .withFluidInputs() // enable fluid inputs
-        .withFluidOutputs(); // enable fluid outputs	
+        .withItemInputs() 
+        .withItemOutputs() 
+        .withFluidInputs() 
+        .withFluidOutputs(); 	
+		
+	BF5 = event.register("blaster_furnace5")
+        .withItemInputs() 
+        .withItemOutputs()
+        .withFluidInputs() 
+        .withFluidOutputs();
+
+    evaporation = event.register('evaporation')
+        .withFluidInputs()
+        .withItemInputs()
+        .withItemOutputs()
+
+    MINECLAY = event.register('mine_clay')
+        .withFluidInputs()
+        .withItemOutputs()		
 		
 
 });
 
-MIMachineEvents.registerCasings(event => event.register("pyro_casing"));
-MIMachineEvents.registerCasings(event => event.register("lcr_casing"));
+MIMachineEvents.registerCasings(event => {
+	event.register("pyro_casing")
+	event.register("lcr_casing")
+	event.register("mudbricks")
+});
 
 MIMachineEvents.registerMachines(event => {
-    const pyroHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output");
+	console.log('Registering machines')
+    
+    event.craftingSingleBlock(
+        'Evaporation Tank', 'evaporation_tank', evaporation, ['bronze'],
+        //GUI
+        -1, event.progressBar(98,33, 'extract'), event.efficiencyBar(48, 86), event.energyBar(14, 44),
+        // Slots (item i/o, fluid i/o)
+        1, 1, 1, 0,
+        8,
+        items => items.addSlots(70,35, 1, 1).addSlots(130, 35, 1, 1),
+        fluids => fluids.addSlots(50,35, 1, 1),
+        // Overlay
+        false, false, false
+    )
+
+    const clayQuarryCasing = 'mudbricks'
+    const clayQuarryHatches = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output");
+    const clayQuarryMud = event.memberOfBlock('minecraft:packed_mud')
+    const clayQuarryMudBricks = event.memberOfBlock('minecraft:mud_bricks')
+    const clayQuarryWall = event.memberOfBlock("minecraft:mud_brick_wall")
+    const clayQuarryBuilder = event.startShape(clayQuarryCasing)
+        .add(0, 1, 0, clayQuarryMudBricks, clayQuarryHatches)
+        .add(-1, 0, 1, clayQuarryMudBricks, clayQuarryHatches)
+        .add(-1, 0, 2, clayQuarryMudBricks, clayQuarryHatches)
+        .add(0, 0, 1, clayQuarryMudBricks, event.noHatch())
+        .add(0, 0, 2, clayQuarryMudBricks, clayQuarryHatches)
+        .add(1, 0, 1, clayQuarryMudBricks, clayQuarryHatches)
+        .add(1, 0, 2, clayQuarryMudBricks, clayQuarryHatches)
+        // walls
+        .add(-1, 0, 0, clayQuarryWall, event.noHatch())
+        .add(-1, 1, 0, clayQuarryWall, event.noHatch())
+        .add(1, 0, 0, clayQuarryWall, event.noHatch())
+        .add(1, 1, 0, clayQuarryWall, event.noHatch())
+        .add(-1, 1, 1, clayQuarryWall, event.noHatch())
+        .add(-1, 1, 2, clayQuarryWall, event.noHatch())
+        .add(0, 1, 2, clayQuarryWall, event.noHatch())
+        .add(1, 1, 1, clayQuarryWall, event.noHatch())
+        .add(1, 1, 2, clayQuarryWall, event.noHatch())
+    addAround(clayQuarryBuilder, 2, -1, clayQuarryMud, event.noHatch())
+	
+	const clayShape = clayQuarryBuilder.build();
+	
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Clay Quarry", "clay_quarry", MINECLAY, clayShape,
+        /* REI DISPLAY CONFIGURATION */
+        // REI progress bar
+        event.progressBar(94, 33, "extract"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlot(34, 55), fluidOutputs => fluidOutputs.addSlot(120, 55),
+        /* MODEL CONFIGUATION */
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "mudbricks", "clay_quarry", true, false, false,
+    );
+	
+
+    //registerSteamMultiblock('clay_quarry', 'Clay Quarry', clayQuarryBuilder.build(), mineClay, clayQuarryCasing)
+	
+	//////////////////
+	
+    const pyroHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
     const pyrocasing = event.memberOfBlock("geghilarity_fatmachines:pyro_casing");
     const cupronickelCoilMember = event.memberOfBlock("modern_industrialization:cupronickel_coil");
     const pyroShapeBuilder = event.startShape("pyro_casing");
@@ -398,6 +490,78 @@ MIMachineEvents.registerMachines(event => {
         "heatproof_machine_casing", "bf4", true, false, false,
     );
 	
+	const naqCoilMember = event.memberOfBlock("geghilarity_fatmachines:naquadah_coil");
+	const bf5ShapeBuilder = event.startShape("heatproof_machine_casing");
+	
+	
+	//top
+	bf5ShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
+	
+	bf5ShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
+	
+	bf5ShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
+	
+	//center
+	bf5ShapeBuilder.add(+1, 2, 2, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 2, 2, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(0, 2, 2, naqCoilMember, event.noHatch());
+	
+	bf5ShapeBuilder.add(+1, 2, 1, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 2, 1, naqCoilMember, event.noHatch());
+	
+	bf5ShapeBuilder.add(+1, 2, 0, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 2, 0, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(0, 2, 0, naqCoilMember, event.noHatch());
+	
+	bf5ShapeBuilder.add(+1, 1, 2, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 1, 2, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(0, 1, 2, naqCoilMember, event.noHatch());
+	
+	bf5ShapeBuilder.add(+1, 1, 1, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 1, 1, naqCoilMember, event.noHatch());
+	
+	bf5ShapeBuilder.add(+1, 1, 0, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(-1, 1, 0, naqCoilMember, event.noHatch());
+	bf5ShapeBuilder.add(0, 1, 0, naqCoilMember, event.noHatch());
+	
+	//base
+	bf5ShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
+	
+	bf5ShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
+	
+	bf5ShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
+	bf5ShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
+	
+	bf5ShapeBuilder.add(0, 0, 0, heatproofMember);
+
+    const bf5Shape = bf5ShapeBuilder.build();
+	
+	event.simpleElectricCraftingMultiBlock(
+        /* GENERAL PARAMETERS */
+        // English name, internal name, recipe type, multiblock shape
+        "Blaster Furnace (Naquadah)", "blaster_furnace5", BF5, bf5Shape,
+        /* REI DISPLAY CONFIGURATION */
+        // REI progress bar
+        event.progressBar(94, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 2, 1),
+        /* MODEL CONFIGUATION */
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "heatproof_machine_casing", "bf5", true, false, false,
+    );
+	
 	
 	//LCR
 	const lcrHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
@@ -463,6 +627,20 @@ MIMachineEvents.addMultiblockSlots("distillation_tower", event => {
 		event.fluidOutputs.addSlot(264, 35);
 	})
 	
-	
+/////////////////////////////	
 
 
+function registerSteamMultiblock(id, name, shape, recipeType, machineCasing) {
+    $MachineRegistrationHelper.registerMachine(name, id, bet => new $SteamCraftingMultiblockBlockEntity(bet, id, shape, recipeType))
+    $MachineRegistrationHelper.addMachineModel(id, machineCasing, $MachineCasings.get(machineCasing), false, false, false, false)
+    $ReiMachineRecipes.registerMultiblockShape(id, shape)
+}
+
+function addAround(builder, radius, height, block, hatches) {
+    for (let x = -radius; x <= radius; x++) {
+        for (let z = -radius; z <= radius; z++) {
+            //if (x == 0 && z == 0) continue;
+            builder.add(x, height, z, block, hatches)
+        }
+    }
+}

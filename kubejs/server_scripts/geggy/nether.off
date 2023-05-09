@@ -1,0 +1,26 @@
+ServerEvents.recipes(event => {
+	event.remove({id: 'byg:gold_ingot_from_smelting_brimstone_nether_gold_ore'})
+	event.remove({id: 'byg:gold_ingot_from_smelting_blue_nether_gold_ore'})
+	event.remove({id: 'byg:gold_ingot_from_blasting_brimstone_nether_gold_ore'})
+	event.remove({id: 'byg:gold_ingot_from_blasting_blue_nether_gold_ore'})
+	
+})
+
+
+ServerEvents.tags('block', event => {
+  event.remove('minecraft:gold_ores', 'byg:blue_nether_gold_ore')
+  event.remove('minecraft:gold_ores', 'byg:brimstone_nether_gold_ore')
+  event.remove('c:gold_ores', 'byg:blue_nether_gold_ore')
+  event.remove('c:gold_ores', 'byg:brimstone_nether_gold_ore')
+  event.remove('c:ores/gold_ores', 'byg:blue_nether_gold_ore')
+  event.remove('c:ores/gold_ores', 'byg:brimstone_nether_gold_ore')
+
+})
+
+ServerEvents.tags('item', event => {
+  event.remove('minecraft:gold_ores', 'byg:blue_nether_gold_ore')
+  event.remove('minecraft:gold_ores', 'byg:brimstone_nether_gold_ore')
+  event.remove('c:gold_ores', 'byg:blue_nether_gold_ore')
+  event.remove('c:gold_ores', 'byg:brimstone_nether_gold_ore')
+
+})

@@ -1,1 +1,0 @@
-{"type":"create:cutting","fabric:load_conditions":[{"condition":"fabric:all_mods_loaded","values":["botania"]}],"ingredients":[{"item":"botania:dreamwood_log"}],"processingTime":50,"results":[{"item":"botania:stripped_dreamwood_log"}]}

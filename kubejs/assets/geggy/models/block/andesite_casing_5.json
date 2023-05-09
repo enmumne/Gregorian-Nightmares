@@ -1,0 +1,12 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+		"particle": "create:block/andesite_casing",
+        "up": "geggy:block/andesite_block",
+        "down": "create:block/andesite_casing",
+        "north": "create:block/andesite_casing",
+        "south": "create:block/andesite_casing",
+        "east": "create:block/andesite_casing",
+        "west": "create:block/andesite_casing"
+    }
+}

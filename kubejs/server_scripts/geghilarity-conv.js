@@ -103,7 +103,38 @@ ServerEvents.recipes(event => {
 			item_outputs: [{item: "geghilarity:tungstate_dust", amount: 1}]})
 			
 	event.recipes.modern_industrialization.packer({eu: 3, duration: 100,item_inputs: [{item: "geghilarity:small_zinc_dust", amount: 4}],
-			item_outputs: [{item: "kubejs:zinc_dust", amount: 1}]})		
+			item_outputs: [{item: "kubejs:zinc_dust", amount: 1}]})
+
+	event.recipes.modern_industrialization.packer({eu: 3, duration: 100,item_inputs: [{item: "geghilarity:tiny_jasper_dust", amount: 9}],
+			item_outputs: [{item: "geghilarity:jasper_dust", amount: 1}]})	
+
+	event.remove({id: 'minecraft:gold_ingot_from_nuggets'})
+	event.remove({id: 'minecraft:gold_nugget'})
+	event.recipes.modern_industrialization.salloy({
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "minecraft:gold_ingot", amount: 1},
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "minecraft:gold_nugget", amount: 9}
+		]
+	})
+	event.recipes.modern_industrialization.salloy({
+		eu: 2,
+		duration: 200,
+		item_inputs: [
+			{item: "minecraft:gold_nugget", amount: 9},
+			{item: "geggy:mold_ingot", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "minecraft:gold_ingot", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/iron/packer/ingot'})
+	event.remove({id: 'modern_industrialization:materials/iron/unpacker/nugget'})
 	
 })
 

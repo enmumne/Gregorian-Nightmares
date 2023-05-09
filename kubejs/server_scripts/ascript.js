@@ -383,7 +383,7 @@ function qol_recipes(event) {
 		"kibe:magnet",
 		"kibe:slime_boots",
 		"kibe:slime_sling",
-		"timeinabottle:time_in_a_bottle",
+		//"timeinabottle:time_in_a_bottle",
 		"kibe:xp_shower",
 		"kibe:xp_drain",
 		"kibe:escape_rope",
@@ -420,18 +420,19 @@ function qol_recipes(event) {
 
 	event.custom({
 		type: "create:mixing",
+		"heatRequirement": "heated",
 		ingredients: [
 			//Item.of("minecraft:rotten_flesh", 20),
-			{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},
+			{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},{"item": "minecraft:rotten_flesh"},
 			//{count:20, "item": "minecraft:rotten_flesh"},
-			{amount: 8100, "fluid":"minecraft:water"}
+			{amount: 40500, "fluid":"minecraft:water"}
 			//Ingredient.of(Fluid.of("minecraft:water", fluid_volume_to_fabric(100))).toJson()
 		],
 		results: [{
 			"item":"minecraft:leather"
 			//Item.of("minecraft:leather").toResultJson()
 		}],
-		processingTime: 100
+		processingTime: 1200
 	})
 	
 
@@ -697,6 +698,11 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({
 		"type": "create:pressing",
+		"ingredients": [{ "item": "modern_industrialization:tin_ingot"}],
+		"results": [{"item": "modern_industrialization:tin_plate"}]
+	})
+	event.custom({
+		"type": "create:pressing",
 		"ingredients": [{"item": "minecraft:gold_ingot"}],
 		"results": [{"item": "modern_industrialization:gold_plate"}]
 	})
@@ -707,6 +713,22 @@ ServerEvents.recipes(event => {
 	})
 		
 	//	
+	
+	event.custom({
+		"type": "create:pressing",
+		"ingredients": [{"item": "modern_industrialization:iron_plate"}],
+		"results": [{"item": "geggy:iron_curved_plate"}]
+	})
+	event.recipes.modern_industrialization.compressor({
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "modern_industrialization:iron_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:iron_curved_plate", amount: 1}
+		]
+	})
 	
 	event.custom({
 		"type": "create:pressing",
@@ -939,6 +961,12 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "modern_industrialization:deepslate_tin_ore"}],
 			"results": [{"item": "modern_industrialization:raw_tin"},{"item": "modern_industrialization:raw_tin"}]
 	})
+	event.custom({
+			"type": "create:milling",
+			"processingTime":200,
+			"ingredients": [{"item": "minecraft:quartz"}],
+			"results": [{"item": "modern_industrialization:quartz_dust"}]
+	})
 	/*
 	event.recipes.createMilling(Item.of("minecraft:raw_iron", 2), "minecraft:iron_ore")
 	event.recipes.createMilling(Item.of("minecraft:raw_copper", 2), "minecraft:copper_ore")
@@ -996,27 +1024,27 @@ ServerEvents.recipes(event => {
 	event.custom({
 			"type": "create:cutting",
 			"ingredients": [{"item": "minecraft:iron_ingot"}],
-			"results": [{count: 2, "item": "modern_industrialization:iron_rod",}]
+			"results": [{"item": "modern_industrialization:iron_rod",}]
 	})
 	event.custom({
 			"type": "create:cutting",
 			"ingredients": [{"item": "minecraft:copper_ingot"}],
-			"results": [{count: 2, "item": "modern_industrialization:copper_rod"}]
+			"results": [{"item": "modern_industrialization:copper_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
 			"ingredients": [{"item": "minecraft:gold_ingot"}],
-			"results": [{count: 2, "item": "modern_industrialization:gold_rod"}]
+			"results": [{"item": "modern_industrialization:gold_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
 			"ingredients": [{"item": "modern_industrialization:tin_ingot"}],
-			"results": [{count: 2, "item": "modern_industrialization:tin_rod"}]
+			"results": [{"item": "modern_industrialization:tin_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
 			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
-			"results": [{count: 2, "item": "modern_industrialization:bronze_rod"}]
+			"results": [{"item": "modern_industrialization:bronze_rod"}]
 	})
 	/*
 	event.recipes.createCutting(Item.of("modern_industrialization:iron_rod", 2), "minecraft:iron_ingot")
@@ -1235,8 +1263,9 @@ ServerEvents.recipes(event => {
 			Ingredient.of("minecraft:dried_kelp", 1).toJson()
 		],
 		results: [
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson()
+			{count: 1, "item": "modern_industrialization:rubber_sheet"}
+			//Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
+			//Item.of("modern_industrialization:rubber_sheet", 1).toJson()
 		],
 		processingTime: 100
 	})
@@ -1415,7 +1444,7 @@ ServerEvents.recipes(event => {
 
 	event.recipes.modern_industrialization.mixer(
 		{
-			eu: 4,
+			eu: 2,
 			duration: 100,
 			item_inputs: [
 				{item: "modern_industrialization:copper_dust", amount: 1},
@@ -1426,7 +1455,15 @@ ServerEvents.recipes(event => {
 			]
 		}
 	) 
-	event.smelting("create:brass_ingot", ["kubejs:brass_dust"])
+	// restore create progression
+	//event.smelting("create:brass_ingot", ["kubejs:brass_dust"])
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"item": "modern_industrialization:copper_dust"},{"item": "kubejs:zinc_dust"}],
+			//"ingredients": [{count: 2, "item": "modern_industrialization:iron_dust"}, {"item": "modern_industrialization:nickel_dust"}],
+			"results": [{"item": "create:brass_ingot"}]
+	})
 
 	// deployer, mechanical arm & mechanical crafter
 	// for sean: there are shapeless recipes left out using the electron tube, since this is shaped only

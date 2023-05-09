@@ -52,9 +52,9 @@
 				""
 				"&m&o : The ratio is 2 andesite blocks and 1 quartz ore, to obtain 1 andesite alloy \"ingot\"."
 				""
-				"&m&o : This quest used to give a pair of Engineer's Goggles and a Create wrench. In the unfailing funny spirit of the modpack you'll have to make them yourself."
+				"&o : This quest used to give a pair of Engineer's Goggles and a Create wrench. In the unfailing funny spirit of the modpack you'll have to make them yourself."
 				""
-				"&m&o : For the goggles you'll need a couple of glass blocks. You might have noticed that you can't just smelt sand in a furnace."
+				"&o : For the goggles you'll need a couple of glass blocks. You might have noticed that you can't just smelt sand in a furnace."
 				""
 				"&o : Have fun. (for now andesite alloy has a simple crafting table recipe)"
 			]
@@ -81,7 +81,7 @@
 				""
 				"&o&b 3K: i wonder what is worse optimized"
 				"&o&b 3K: GTCE or 1.16"
-				"&o& 7: ...why are you asking that now?"
+				"&o&7 : ...why are you asking that now?"
 			]
 			dependencies: ["70A8D2F8C8462916"]
 			id: "3C1CE82F5A335B6C"
@@ -470,7 +470,7 @@
 			description: [
 				"If you read the modpack description then you know this is a (meanspirited) &lkitchen sink&r dumped on top of Incremental Industries. A pretty decent modpack that certainly didn't deserve the abuse done to it here. But the world is very, very old."
 				""
-				"The handful of quests here illustrate some means of dealing with the survival annoyances that were added."
+				"The handful of quests here illustrate some means of dealing with the survival annoyances that were added (and then removed)."
 				""
 				"Eventually, cockblocks will appear along the main tech progression, indicating integration of different mods and novel sidetracks to make everything spicier."
 				""
@@ -503,17 +503,19 @@
 			shape: "diamond"
 			subtitle: "delightful"
 			description: [
-				"There's temperature to deal with, but it's a bit dumb and there's not much leverage to tweak it."
+				"&mThere's temperature to deal with, but it's a bit dumb and there's not much leverage to tweak it."
 				""
-				"The bigger problem is probably heat. There's not much you can do. Wearing armor increases heat, same for running. Chilling under a tree should help a little bit."
+				"&mThe bigger problem is probably heat. There's not much you can do. Wearing armor increases heat, same for running. Chilling under a tree should help a little bit."
 				""
-				"I think temperature is set by biome. Lava doesn't seem to produce heat, and probably would be overkill to calculate. But a campfire actually does work and it immediately stops frost damage if you're close to it."
+				"&mI think temperature is set by biome. Lava doesn't seem to produce heat, and probably would be overkill to calculate. But a campfire actually does work and it immediately stops frost damage if you're close to it."
 				""
-				"I was able to grow some berry bushes underground when placed close to a campfire, so setting up a shelter down below should be a viable option even in cold biomes."
+				"&mI was able to grow some berry bushes underground when placed close to a campfire, so setting up a shelter down below should be a viable option even in cold biomes."
 				""
-				"Type &d@environmentz&r in REI for some crappy options. You should also be able to add fur to other types of armor, in the upgrade gear slot. Maybe."
+				"&mType &d@environmentz&r &min REI for some crappy options. You should also be able to add fur to other types of armor, in the upgrade gear slot. Maybe."
 				""
-				"Note: the mod is buggy. Make sure you are IN FRONT of a campfire. It seems the heating effect doesn't happen if you are on the side. The front is marked by a darker patch at the bottom."
+				"&mNote: the mod is buggy. Make sure you are IN FRONT of a campfire. It seems the heating effect doesn't happen if you are on the side. The front is marked by a darker patch at the bottom."
+				""
+				"Cold and heat mechanics disabled due to buggy mods and bad design. Might revisit in the future..."
 			]
 			dependencies: ["7EAD12FA44E40B6B"]
 			size: 1.5d
@@ -537,15 +539,17 @@
 			y: -12.5d
 			shape: "diamond"
 			description: [
-				"Dehydration. Like the above, the mod doesn't give much leverage to work with."
+				"&mDehydration. Like the above, the mod doesn't give much leverage to work with."
 				""
-				"The Campfire Cauldron goes on top of the campfire, but will need water from a bucket (or a glass flask) to be used. The wooden bucket from Kibe doesn't work, sorry (go complain to the mod authors, my requests usually fall in the void)."
+				"&mThe Campfire Cauldron goes on top of the campfire, but will need water from a bucket (or a glass flask) to be used. The wooden bucket from Kibe doesn't work, sorry (go complain to the mod authors, my requests usually fall in the void)."
 				""
-				"Once you have a leather flask, the upgrade to iron is simple enough (&o : well, not anymore&r)."
+				"&mOnce you have a leather flask, the upgrade to iron is simple enough (&o : well, not anymore&r)."
 				""
-				"Typing &d@dehydration&r in REI shows the predictable alternatives."
+				"&mTyping &d@dehydration&r &min REI shows the predictable alternatives."
 				""
-				"I'll keep tweaking values so that thirst is not annoying, but also not completely irrelevant (&o: glass is on the line to be nerfed&r)."
+				"&mI'll keep tweaking values so that thirst is not annoying, but also not completely irrelevant (&o : glass is on the line to be nerfed&r)."
+				""
+				"Along with cold and heat, thirst was also disabled. It wasn't playing well with the progression. Might also revisit in the future."
 				""
 				"&o&d 0Z : Pollution would be cool to have"
 				"&o&d 0Z : Drink water that is contaminated? Enjoy cholera"
@@ -616,13 +620,13 @@
 			description: [
 				"Expert armors and tools are two cursed mods that were on the chopping block since the first day I added them. They are still here tho."
 				""
-				"What this means is that, starting from iron, both armor and tools have very cursed recipes whose goal is to increase ingot requirements, plus some minimal microcrafting."
+				"What this means is that, starting from iron, both armor and tools have very cursed recipes whose goal is to increase ingot requirements, plus some minimal microcrafting. My plan is to extend the stone age to keep the player more vulnerable."
 				""
 				"(actually during my tests the real problem was finding granite, but heh)"
 				""
-				"Loot in chests should provide some backup, until nerfed. On the other hand I almost doubled all the durability for both items and armors, to compensate the pain of dealing with the crafting."
+				"Loot in chests should provide some backup, until nerfed. On the other hand, &aI almost doubled all the durability for both items and armors&r (applies to iron, gold, diamond and netherite), to compensate the pain of dealing with the crafting."
 				""
-				"Things will get worse... I'm just starting."
+				"&aAs a minor bonus, tools that break should drop a small amount of their original ingredients..."
 			]
 			dependencies: ["7EAD12FA44E40B6B"]
 			size: 1.5d
@@ -646,12 +650,14 @@
 			description: [
 				"Some mods are only compatible with &9REI&r, some other mods only with &cEMI&r."
 				""
-				"Rather than removing the mods, I added both REI and EMI, and they seem to play nicely enough despite the overlap. Make sure to check recipes in both if something doesn't look right. (the mod YTTR depends on EMI, for example, all MI stuff is REI instead)"
+				"Rather than removing the mods, I added both REI and EMI, and they seem to play nicely enough despite the overlap. Make sure to check recipes in both if something doesn't look right. (the mod YTTR depends on EMI, for example)"
 				""
 				"&7CTRL+O&r toggles REI on/off"
 				"&7CTRL+P&r toggles EMI on/off"
 				""
 				"You can redefine as you please."
+				""
+				"Due to some more conflicts, I've set EMI to use different keyboard shortcuts. Look for the key right under the default. so &9A&r>&cZ&r, &9R&r>&cF&r, &9U&r>&cJ&r"
 			]
 			dependencies: ["7EAD12FA44E40B6B"]
 			size: 1.5d
@@ -663,33 +669,6 @@
 			}]
 		}
 		{
-			x: -6.75d
-			y: -7.5d
-			subtitle: "is not a game"
-			description: [
-				"This quest has been rewritten a few times... After countless hours spent researching the problem."
-				""
-				"Due to a Minecraft bug and the way some mods defined seeds for each dimension, on every reload of the game the world seeds would get corruped, spreading and bouncing between all other dimensions, creating bad chunk borders."
-				""
-				"After a lot of testing the problem should be solved, and &bTerralith&r, &bIncendium&r, &bNullscape&r and &bAd Astra&r have been &arestored&r."
-				""
-				"The next two quests explain what I learned from the process, and how to troubleshoot and fix similar issues if they happen to happen."
-			]
-			size: 1.5d
-			min_width: 250
-			id: "340E42500D8C7FB8"
-			tasks: [{
-				id: "46F499C64937D880"
-				type: "checkmark"
-				title: "World of Conflicts"
-			}]
-			rewards: [{
-				id: "22FA65DE5CED2828"
-				type: "item"
-				item: "create:experience_nugget"
-			}]
-		}
-		{
 			icon: "artifacts:crystal_heart"
 			x: -4.5d
 			y: -11.72d
@@ -697,7 +676,7 @@
 			description: [
 				"I was forgetting this..."
 				""
-				"You'll notice that when you die and respawn, you won't have all 10 hearts and foodstuff restored, but only 7 (actually, this needs to be looked into, as it might be bugged)."
+				"You'll notice that when you die and respawn, you won't have all hearts and foodstuff restored, but only 7. ( &o: Note that you start the game with 6 hearts. You then increase this limit by half a heart for every 7 different types of food you eat, to a max of 20 hearts. &r)"
 				""
 				"This is the new default."
 				""
@@ -718,71 +697,6 @@
 				id: "2B9CD7CC4FD8C39B"
 				type: "checkmark"
 				title: "Mediocre solutions for a mediocre life"
-			}]
-		}
-		{
-			title: "NBT Explorer"
-			x: -5.0d
-			y: -7.5d
-			description: [
-				"Whenever mods tried to change a seed for a dimension, they'd cause the seed for another dimension to shift to a different value, or being set to zero. This made the problem &4tricky&r to troubleshoot, because you could explore as long you'd have liked without noticing something amiss."
-				""
-				"The problem would only show up when you fully reloaded and logged back in the game, and explored new chunks outside the area. Usually in dimensions other than the one triggering the actual problem."
-				""
-				"In order to fully see and understand what was going on I used a program: &dNBT Explorer&r. You can drag \\& drop the '&7level.dat&r' file from your saved game folder into the program."
-				""
-				"Dimensions and their seeds are stored into &7Data/WorldGenSettings/&r that's the general seed. Then inside every &7dimensions&r folder each one will have its own seed (all of these need to be the same number in 1.18 to avoid corruption)."
-				""
-				"This is a fast way to check for corruption because you can easily open &7level.dat&r and check the dimensions' seeds and track what happens to them on a full reload. You can also edit the file in case you remove some mods that leave behind events, and the world refuses to load."
-				""
-				"You can also, with some patience, fix a corrupted file by comparing it to a working one and 'backporting' manually those fields that are wrong. For example I repaired my world with more than a month of seed corruption by simply retrieving the correct seed from an old backup, and manually replace that value."
-				""
-				"&cIMPORTANT&r: You can open and edit the file while logged into the game, but the game needs to be paused in the ESC menu. Make sure to exit NBT Explorer completely before unpausing the game. And do not open the file before the game is paused, even if you don't edit it."
-				""
-				"&o&e 0A : dude, I don't read essays"
-			]
-			dependencies: ["340E42500D8C7FB8"]
-			min_width: 360
-			id: "7C6CF17C70194EE6"
-			tasks: [{
-				id: "3E943180FE7FD6C3"
-				type: "checkmark"
-				title: "rth"
-			}]
-		}
-		{
-			title: "MCA Selector"
-			x: -3.5d
-			y: -7.5d
-			subtitle: "brand new world"
-			description: [
-				"Another important tool is &dMCA Selector&r."
-				""
-				"After you open the program you can drag \\& drop your save game folder into it and select the dimension you want to edit. Doing so will show the world map just as in game."
-				""
-				"Then you can select with your mouse all the chunks that you want to delete, so that when you log back into the game they will generate from scratch (&7Menu > Selection > Delete selected chunks&r)."
-				""
-				"&cBEWARE&r: unlike NBT Explorer, this program has no explicit save function. So as soon you select the option to delete the chunks, they are gone."
-				""
-				"Also consider that if you don't restore the original seed then corrupted chunk borders will show up again. The terrain is only properly blended when all chunks are generated from the same seed. You can always delete the wrong chunks and fully regenerate."
-				""
-				"Using NBT Explorer along with this program, you can manually fix seeds and regenerate chunks that were corrupted. In my case the nether got so broken that the portal was doing nothing. But I was able to fully restore it by opening &7level.dat&r, delete the nether dimension, and restore each value by copying them manually from a good save game."
-				""
-				"This also works for troubleshooting whether or not biomes from different mods are correctly generating, and edit files accordingly to fix problems."
-				""
-				"Now you'd expect the modpack maker to do a good job, rather than you working to fix it. But it's always better to know than... not."
-				""
-				"&e&o 0A: Yeah, not reading that."
-				""
-				"&o&a 5Y : happy for you though"
-				"&o&a : or sorry that happened"
-			]
-			dependencies: ["7C6CF17C70194EE6"]
-			min_width: 350
-			id: "15D4473D6BE1932E"
-			tasks: [{
-				id: "213C24E67B82C471"
-				type: "checkmark"
 			}]
 		}
 		{
@@ -1075,7 +989,7 @@
 			y: -14.0d
 			shape: "pentagon"
 			description: [
-				"A chest."
+				"A chest. (this recipe used to be way worse)"
 				""
 				"&o&7 : yeah, I could see that."
 				""
@@ -1517,7 +1431,7 @@
 			description: [
 				"You might have noticed that no gold ore can be found in the world."
 				""
-				"This is by design. All the gold ores have been replaced with a &6suspicious&r \"precious ore\". "
+				"This is by design. All the gold ores have been replaced with a &csuspicious&r \"precious ore\". "
 				""
 				"You can smelt this material twice, for an insulting low yield: 1 gold nugget."
 				""
@@ -1566,17 +1480,17 @@
 				""
 				"But! You might have noticed that the iron ore you find doesn't get properly smelted in a furnace, as it used to."
 				""
-				"That one recipe is a bug, but I decided to keep it as a lesson to learn: you are NOT supposed to smelt single iron ores into one nugget."
+				"That one recipe is a bug, but I decided to keep it as a lesson to learn: &cyou are NOT supposed to smelt single iron ores into one nugget."
 				""
 				"We'll talk about this later, but for now you have to deal with this problem of not being able to produce iron ingots."
 				""
-				"Yet you still need 1 ingot for flint \\& steel, and surely you also want to be able to mine the obsidian for the portal..."
+				"Yet you still need flint \\& steel to open a portal (there's an alternate recipe, using a Tempered Brick), and surely you also want to be able to mine the obsidian for the portal..."
 				""
-				"Okay. I'm feeling generous. Here's 9 blocks of obsidian. Make em count."
+				"Okay. I'm feeling generous. Here's 9 blocks of obsidian. Make em count. (9 blocks aren't enough. You are meant to look for some obsidian to use as a base)"
 				""
 				"And do not expect me to hand you stuff for free again."
 				""
-				"&o(Right now loot tables are unedited and extremely generous. So it's very easy to find things, including diamond pickaxes. Eventually, the loot will be redone.)"
+				"&o(Right now loot tables are unedited and extremely generous. So it's very easy to find things, including diamond pickaxes. Eventually, the loot tables will be redone.)"
 			]
 			dependencies: [
 				"5CFBB8884435817C"
@@ -1584,12 +1498,26 @@
 			]
 			hide: true
 			dependency_requirement: "all_started"
-			min_width: 250
+			min_width: 280
 			id: "6B9684CB680D38D6"
-			tasks: [{
-				id: "06FA50EBF068D026"
-				type: "checkmark"
-			}]
+			tasks: [
+				{
+					id: "2F6931FD8E69D1FC"
+					type: "item"
+					item: "geggy:tempered_brick"
+				}
+				{
+					id: "2A465CC8DC25A019"
+					type: "item"
+					item: {
+						id: "minecraft:flint_and_steel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
 			rewards: [{
 				id: "5515013A229E6AB2"
 				type: "item"
@@ -1649,9 +1577,9 @@
 			x: -9.5d
 			y: -7.0d
 			description: [
-				"There's ALSO a vanilla blasting furnace recipe that actually produces 1 ingot from 1 iron dust."
+				"&mThere's ALSO a vanilla blasting furnace recipe that actually produces 1 ingot from 1 iron dust.&r Not anymore, Create blasting recipes remove all processing times, and can't be blacklisted in any way. A symbol of great game design."
 				""
-				"Problem is, it takes half an hour."
+				"&mProblem is, it takes half an hour."
 				""
 				"Again, when you see ridiculous recipes there are usually two possibilities:"
 				""
@@ -1659,9 +1587,12 @@
 				""
 				"2- You're not supposed to use the recipe, unless forced."
 				""
-				"In this case, the 30 hour recipe is in the unlikely situation where you still need an iron ingot for flint and steel. You got the obsidian, but you still need to open the portal. The recipe exists solely as a block prevention in extreme cases."
+				"&mIn this case, the 30m recipe is in the unlikely situation where you still need an iron ingot for flint and steel. You got the obsidian, but you still need to open the portal. The recipe exists solely as a block prevention in extreme cases."
+				""
+				"Look at the Quarry System section for additional notes on the intended early game progression. Just be aware that &cIron, Gold and Glass&r are gated by design (along with the MI macerator, moved to a later point)."
 			]
 			dependencies: ["6B9684CB680D38D6"]
+			min_width: 250
 			id: "5C8DA90A911378A4"
 			tasks: [{
 				id: "1999A95FDF63D986"

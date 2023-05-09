@@ -18,6 +18,8 @@
 				"If I stick to the plan, the page will progressively populate while development continues..."
 				""
 				"&cYou can skip this whole page and jump to the main section of the questbook."
+				""
+				"&ePlease remember that sometime the \"quest text\" is longer than what is shown, even if you can't see a scroll bar, and you can use the mouse wheel to scroll it."
 			]
 			size: 1.5d
 			id: "126BEDB82177DA40"
@@ -62,17 +64,16 @@
 			y: -3.0d
 			shape: "square"
 			description: [
-				"- It's not rare that custom resources aren't properly loaded. They exhibit weird behaviors, like missing icons, or missing item names. If this happens, pressing F3+t usually fixes it. It's a shortcut to reload the assets without exiting the game."
+				"- It's not rare that custom resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names. If this happens, pressing &aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
 				""
 				"- REI sometimes shows icon corruption. This usually happens with the caching mode turned on. Click on the wheel at the side of the search bar, in the inventory screen. Display Settings > Caching Entry Rendering (toggle)"
 				""
-				"- Some mods don't play well with each other. For example Spectrum \"hides\" some blocks in the style of old Reika's Chromaticraft. But due to worldgen sometimes these special blocks stick out because they aren't adapted to the proper modded rock layer... Same for some ores. It happens especially in 1.18 due to rock layers added by Unearthed."
+				"- Some mods don't play well with each other. For example Spectrum \"hides\" some blocks in the style of old Reika's Chromaticraft. But due to worldgen sometimes these special blocks stick out because they aren't adapted to the proper modded rock layer... Same for some ores. (Used to happen especially in 1.18 due to rock layers added by Unearthed.)"
 				""
 				"- Sometimes in REI the buttons at the top to move between the recipe tabs stop working. Try using the mouse scroll wheel."
 				""
 				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power uncapped and with more slots. So some of those recipes have been moved to this other separate machine."
 				""
-				"&c- Version 2.0.0.4 and below had scripts almost completely broken due to KubeJS not loading them properly, and me unable to know since while editing they didn't exhibit any problem. The fix comes at the expense of some lag when the player logs in (and corresponding server message in chat). But finally things should start working as they were intended."
 			]
 			dependencies: ["126BEDB82177DA40"]
 			min_width: 340
@@ -98,7 +99,7 @@
 				""
 				"Even better if you have some better technical skills than mine, so that we can crack the harder problems: the positional quarry system, for example."
 				""
-				"KubeJS worldgen is broken, and doesn't let me to place single ore blocks. That's one problem to solve. Then we'll need steam multiblocks, that are still unsupported in Modern Industrialization."
+				"KubeJS worldgen is broken, and doesn't let me to place single ore blocks. That's one problem to solve. Then we'll need steam multiblocks, that are still unsupported in Modern Industrialization. (This is old goal. The problems are still there, but the system's being developed with some workarounds now...)"
 				""
 				"No, I'm not opening a channel specifically for this modpack, because I don't think there's any interest for that, and I don't want to waste time to maintain such a thing."
 			]
@@ -156,7 +157,7 @@
 				""
 				"&a/kubejs/server_scripts&r instead contains most of everything else, especially recipes. But some stuff has its own individual .json and you find it inside &a/kubejs/data/"
 				""
-				"For some scripts, custom tools like the mortar, I had to use good old CraftTweaker, since KubeJS simply doesn't work. So you can find some more recipes under &a/scripts/"
+				"&mFor some scripts, custom tools like the mortar, I had to use good old CraftTweaker, since KubeJS simply doesn't work. So you can find some more recipes under &a/scripts/&r Currently CraftTweaker has been removed, scripts merged back into KubeJS."
 			]
 			dependencies: ["3739E56EC6B63120"]
 			min_width: 280
@@ -173,13 +174,13 @@
 			description: [
 				"To be clear:"
 				""
-				"Right now I've only changed some things in early game, and started to \"greggify\" MI. It will be a long process. The important part will be the transition to positional quarries (to replace the void ones that are default). But these require technical changes that I have to wait for. After that, I plan to add actual ore processing, so changes will run deep."
+				"The process of MI's \"greggification\" is ongoing, the current priority is adding unpolished \"bulk\". It will be a long process. The important part is the transition to positional quarries (to replace the void ones that are default). After that, I plan to add actual ore processing, so changes will run deep."
 				""
-				"On the MI side I ported some complex process chains from &cGregicality/TJ&r. These include the full Platinum group processing, mixed with the early Gold line. Titanium and Tungsten. Epoxy. Ammonia has a forced line that is even skipped in TJ, but mandatory here, along with a couple other minor shortcuts in TJ that have been removed here. None of these are well tested, and need to be actually be better plugged in the progression. 1.19 includes support for custom machines, that right now are the Alloy Smelter, Dehydrator, and Pyrolise Oven and Large Chemical Reactor to correctly replace recipes that have been instead adapted in 1.18. That's about 180+ added recipes, none of which really optional. These are all manual recipes, not generated. So when you see something showing up, it's because it's used somewhere."
+				"On the MI side I ported some complex process chains from &cGregicality/TJ&r. TJ = Technological Journey, the only modpack with the &cGregicality&r add-on playable. For those who don't know about it, it's a tech-only modpack that embraced very large processing lines and that significantly expanded the content of the high tiers, in a number of cases surpassing GTNH. About &m180+&r (now &m360+&r 420+) recipes have been ported, none of which really optional. These are all manual recipes, not generated. So when you see something showing up, it's because it's used somewhere."
 				""
-				"Plus, there are some deeply cutting changes for iron and steel, known as the IronGate, along with the BrickGate, where you'll have fun microcrafting a few brick types required for various things..."
+				"Create will likely receive a better overhaul at some point."
 				""
-				"Create will likely receive a first overhaul soon."
+				"A list of the \"main\" processing lines that have either been added or modified to achieve GT parity is available on that quest on the left."
 			]
 			dependencies: ["126BEDB82177DA40"]
 			min_width: 280
@@ -196,9 +197,9 @@
 			description: [
 				"The stuff I manually added can be seen by searching for &a@geg&r in REI."
 				""
-				"Or @geg -bucket will filter the spammy buckets."
-				""
 				"The exception (on 1.19) are the custom machines that are instead under MI mod tag."
+				""
+				"WIP quarry system can be partially under &a@drilly&r (some missing textures are indeed missing)"
 			]
 			dependencies: ["0379ECB64AE8509A"]
 			id: "442D3EFA6C7EE816"
@@ -219,7 +220,7 @@
 				""
 				"In the past few days I've tried to figure out a substantial server \"freeze\". It seems the cause was in a library within the YTTR mod, and has been acknowledged by the author. I've now included a version of the library that should fix it."
 				""
-				"On the other hand I've also bumped into more lag while testing, and this was also due to a YTTR wasteland biome. In this case the biome itself is quite rare, and the lag limited to it, so it shouldn't be a major problem."
+				"&mOn the other hand I've also bumped into more lag while testing, and this was also due to a YTTR wasteland biome. In this case the biome itself is quite rare, and the lag limited to it, so it shouldn't be a major problem.&r Wasteland biome now disabled."
 			]
 			dependencies: ["662B3BC2B20C38C1"]
 			id: "7514B3ADC0AB20FB"
@@ -233,13 +234,17 @@
 			y: -2.5d
 			shape: "gear"
 			description: [
-				"- It can happen under certain (hopefully rare) conditions that recipes aren't properly loaded. To make sure they are, look at the recipe to make a bed (white), if you don't see a different recipe from vanilla it means that recipes aren't loaded. Try \"/reload\" in chat, the game will freeze for a few seconds."
+				"- This version of the modpack is VERY HEAVY to run. It just sucks. I try improving things where I can, but please look into the &lLITE&r version that should now be available, for something reasonably playable. This one here is expected to choke."
+				""
+				"- &lLAG.&r Recipe reloading has been changed, so now when you log into the game recipes should have finished loading (twice). That means the loading itself will be quite long, please have patience."
+				""
+				"- It can happen under certain (hopefully rare) conditions that recipes STILL aren't properly loaded. To make sure they are, look at the recipe to make a bed (white), if you see the vanilla one then it means that recipes aren't loaded. Try \"&a/reload&r\" in chat, the game will freeze for a few seconds (again). The \"correct\" bed recipe requires carpets, not wool."
 				""
 				"- If a quest doesn't complete even if you have the items in the inventory, try logging out and back in. This problem happens sporadically and no one currently knows how to fix it. Not my fault here..."
 				""
-				"- When you create a new world you may notice that early on RAM gets filled up, creating some lag, even if you allocate 8Gb. During my tests RAM usage usually decreases after a few minutes to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more..."
+				"- When you create a new world you may notice that early on RAM gets filled up, creating &llag&r (yes, again), even if you allocate 8Gb. During my tests RAM usage usually decreases after some time to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more. (allocating more doesn't seem to help much...) The mod \"&cchipped&r\" by itself adds some memory overhead, so you can try removing that one."
 				""
-				"- The last few versions of REI (the mod where you check for items and recipes) can be wonky. Sometimes it doesn't let you type on the search field, or it doesn't show recipe if you hover on a item and press \"R\". In the first case just exit and re-enter the inventory. If instead you cannot open the recipe pages, just left click on one item, and then the keyboard shortcuts should work again."
+				"- In case of occasional, sudden crashes, they might be related either to the \"&cTinySkeletons&r\" or \"&cfrycparry&r\" mods, you can easily remove them for the /mods/ folder if you want. &mAnother mod that can add significant server lag and that could be removed is \"&cspiderstpo&r&m\" (cursed spiders AI being laggy)"
 			]
 			size: 1.5d
 			min_width: 300
@@ -248,6 +253,130 @@
 				id: "695EA3F24D74C51B"
 				type: "checkmark"
 				title: "IMPORTANT PROBLEMS"
+			}]
+		}
+		{
+			x: 4.0d
+			y: -4.0d
+			subtitle: "is not a game"
+			description: [
+				"This quest has been rewritten a few times... After countless hours spent researching the problem."
+				""
+				"Due to a Minecraft bug and the way some mods defined seeds for each dimension, on every reload of the game the world seeds would get corruped, spreading and bouncing between all other dimensions, creating bad chunk borders."
+				""
+				"After a lot of testing the problem should be solved, and &bTerralith&r, &bIncendium&r, &bNullscape&r and &bAd Astra&r have been &arestored&r."
+				""
+				"The next two quests explain what I learned from the process, and how to troubleshoot and fix similar issues if they happen to happen."
+			]
+			size: 1.5d
+			min_width: 250
+			id: "340E42500D8C7FB8"
+			tasks: [{
+				id: "46F499C64937D880"
+				type: "checkmark"
+				title: "World of Conflicts"
+			}]
+			rewards: [{
+				id: "22FA65DE5CED2828"
+				type: "item"
+				item: "create:experience_nugget"
+			}]
+		}
+		{
+			title: "NBT Explorer"
+			x: 5.75d
+			y: -4.0d
+			description: [
+				"Whenever mods tried to change a seed for a dimension, they'd cause the seed for another dimension to shift to a different value, or being set to zero. This made the problem &4tricky&r to troubleshoot, because you could explore as long you'd have liked without noticing something amiss."
+				""
+				"The problem would only show up when you fully reloaded and logged back in the game, and explored new chunks outside the area. Usually in dimensions other than the one triggering the actual problem."
+				""
+				"In order to fully see and understand what was going on I used a program: &dNBT Explorer&r. You can drag \\& drop the '&7level.dat&r' file from your saved game folder into the program."
+				""
+				"Dimensions and their seeds are stored into &7Data/WorldGenSettings/&r that's the general seed. Then inside every &7dimensions&r folder each one will have its own seed (all of these need to be the same number in 1.18 to avoid corruption)."
+				""
+				"This is a fast way to check for corruption because you can easily open &7level.dat&r and check the dimensions' seeds and track what happens to them on a full reload. You can also edit the file in case you remove some mods that leave behind events, and the world refuses to load."
+				""
+				"You can also, with some patience, fix a corrupted file by comparing it to a working one and 'backporting' manually those fields that are wrong. For example I repaired my world with more than a month of seed corruption by simply retrieving the correct seed from an old backup, and manually replace that value."
+				""
+				"&cIMPORTANT&r: You can open and edit the file while logged into the game, but the game needs to be paused in the ESC menu. Make sure to exit NBT Explorer completely before unpausing the game. And do not open the file before the game is paused, even if you don't edit it."
+				""
+				"&o&e 0A : dude, I don't read essays"
+			]
+			dependencies: ["340E42500D8C7FB8"]
+			min_width: 360
+			id: "7C6CF17C70194EE6"
+			tasks: [{
+				id: "3E943180FE7FD6C3"
+				type: "checkmark"
+				title: "rth"
+			}]
+		}
+		{
+			title: "MCA Selector"
+			x: 7.25d
+			y: -4.0d
+			subtitle: "brand new world"
+			description: [
+				"Another important tool is &dMCA Selector&r."
+				""
+				"After you open the program you can drag \\& drop your save game folder into it and select the dimension you want to edit. Doing so will show the world map just as in game."
+				""
+				"Then you can select with your mouse all the chunks that you want to delete, so that when you log back into the game they will generate from scratch (&7Menu > Selection > Delete selected chunks&r)."
+				""
+				"&cBEWARE&r: unlike NBT Explorer, this program has no explicit save function. So as soon you select the option to delete the chunks, they are gone."
+				""
+				"Also consider that if you don't restore the original seed then corrupted chunk borders will show up again. The terrain is only properly blended when all chunks are generated from the same seed. You can always delete the wrong chunks and fully regenerate."
+				""
+				"Using NBT Explorer along with this program, you can manually fix seeds and regenerate chunks that were corrupted. In my case the nether got so broken that the portal was doing nothing. But I was able to fully restore it by opening &7level.dat&r, delete the nether dimension, and restore each value by copying them manually from a good save game."
+				""
+				"This also works for troubleshooting whether or not biomes from different mods are correctly generating, and edit files accordingly to fix problems."
+				""
+				"Now you'd expect the modpack maker to do a good job, rather than you working to fix it. But it's always better to know than... not."
+				""
+				"&e&o 0A: Yeah, not reading that."
+				""
+				"&o&a 5Y : happy for you though"
+				"&o&a : or sorry that happened"
+			]
+			dependencies: ["7C6CF17C70194EE6"]
+			min_width: 350
+			id: "15D4473D6BE1932E"
+			tasks: [{
+				id: "213C24E67B82C471"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: -6.0d
+			y: 2.0d
+			description: [
+				"Quick list of ported processing (recipe parity with TJ/GTNH/Nomifactory hardmode):"
+				""
+				"- Early gold line (TJ)"
+				"- Full Platinum group (TJ/GTNH recipe parity)"
+				"- Hard Ammonia line (optional in TJ)"
+				"- Epoxy"
+				"- Complex titanium, tungsten and tungstensteel (TJ, with fewer skips)"
+				"- Vanadium line (removed from Nomifactory hardmode, preserved here)"
+				"- from Ethylene to PTFE (replaced MI parts)"
+				"- Long Indium line (TJ)"
+				"- All Naquadah up to Alloy (missing only UHV part). Joined and adapted some parts of Nomi hardmode, so that most of the three separate lines are now part of the same giant process."
+				"- Polybenzimidazole (TJ \\& GTNH)"
+				"- All coils up to Naquadah Alloy"
+				"- Custom Rhenium line (not currently existing on any public GT version, custom by PCM/SChroedinger, 50 recipes)"
+				""
+				"I list here the major changes that have a full processing done. These are still untested and in a number of cases they still need materials to be properly sourced, or an actual use for the finished products."
+				""
+				"Things need more work to be better integrated in MI overall progression. The current priority is still adding bulk. Adjustements and polish will come later."
+			]
+			dependencies: ["0379ECB64AE8509A"]
+			min_width: 290
+			id: "1BF5638879D266B8"
+			tasks: [{
+				id: "279B05B265ADE311"
+				type: "checkmark"
+				title: "Geghilarity"
 			}]
 		}
 	]

@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "fabric:load_conditions": [
+        {
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "ceramics"
+          ]
+        }
+      ],
+    {
+      "fabric:load_conditions": [
+        {
+          "condition": "porting_lib:true"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:blasting",
+        "cookingtime": 1000,
+        "experience": 0.3,
+        "ingredient": {
+          "item": "geggy:uncooked_seared_brick"
+        },
+        "result": "tconstruct:seared_brick"
+      }
+    }
+  ]
+}

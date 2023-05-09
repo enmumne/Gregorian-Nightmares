@@ -10,30 +10,27 @@ ServerEvents.tags('item', event => {
   event.add('forever', 'drilly:drill_group3')
   event.add('forever', 'drilly:drill_group4')
   event.add('forever', 'drilly:drill_group5')
+  event.add('forever', 'drilly:drill_groupx')
+  
+  event.add('selector', 'create:precision_mechanism')
+  event.add('selector', 'geggy:selector_1')
+  event.add('selector', 'geggy:selector_2')
+  event.add('selector', 'geggy:selector_3')
+  
+  event.add('c:tools/pickaxes', 'geggy:flint_pickaxe')
+  event.add('c:tools/pickaxes', 'geggy:bronze_pickaxe')
   
 });
 
 ServerEvents.tags('block', event => { 
 
-  //event.add('minecraft:needs_stone_tool', 'modern_industrialization:bronze_proto')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:pyro')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:blaster_furnace')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:blaster_furnace2')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:blaster_furnace3')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:blaster_furnace4')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:lcr')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:steel_dehy')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:electric_dehy')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:bronze_salloy')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:steel_salloy')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:electric_salloy')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:steel_fextract')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:electric_fextract')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:bronze_drill1')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:bronze_drill2')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:bronze_drill3')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:steel_drill4')
-  event.add('minecraft:mineable/pickaxe', 'modern_industrialization:bronze_proto')
+  //event.add('minecraft:mineable/pickaxe', 'modern_industrialization:pyro')
+  event.remove('needs_iron_tool', 'minecraft:redstone_ore')
+  event.remove('needs_iron_tool', 'minecraft:deepslate_redstone_ore')
+  event.add('needs_stone_tool', 'minecraft:redstone_ore')
+  event.add('needs_stone_tool', 'minecraft:deepslate_redstone_ore')
+  
+ 
   
 });  
   
@@ -50,7 +47,8 @@ ServerEvents.recipes(e => {
 //onEvent('recipes', event => {
 ServerEvents.recipes(event => {
 	
-	event.remove({type: 'minecraft:crafting_shapeless', output: '#minecraft:planks'})
+	//attempt
+	///////////event.remove({type: 'minecraft:crafting_shapeless', output: '#minecraft:planks'})
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:stick'})
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'farmersdelight:flint_knife'})
@@ -84,7 +82,7 @@ ServerEvents.recipes(event => {
 	event.remove({type: 'farmersdelight:cutting', output: '#minecraft:logs'})
 	
 	// bad wood nerf 1.19
-	event.shapeless('2x minecraft:oak_planks', ['#minecraft:logs'])
+	////////////event.shapeless('2x minecraft:oak_planks', ['#minecraft:logs'])
 	
 	
 	//Ingredient.of('#minecraft:logs').itemIds.forEach(item => {
@@ -277,6 +275,7 @@ event.custom (
 	event.remove({type: 'minecraft:crafting_shaped', output: 'farmersdelight:cutting_board'})
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:crafting_table'})
+	event.remove({type: 'minecraft:crafting_shaped', output: '#byg:crafting_table'})
 	event.remove({type: 'minecraft:crafting_shaped', output: '4x #c:wooden_chests'})
 	event.remove({type: 'minecraft:crafting_shaped', output: '#c:wooden_chests'})
 	
@@ -342,7 +341,7 @@ event.custom (
   ], {
     D: 'geggy:j_planks',
 	S: 'minecraft:flint',
-	U: '#c:stripped_logs'
+	U: 'minecraft:stick'
   })
 
   event.shaped('geggy:j_wooden_axe_head', [
@@ -366,6 +365,7 @@ event.custom (
   ], {
     S: '#minecraft:planks'
   })
+  /*
   event.shaped('geggy:j_stone_pickaxe_head', [
     'SSS',
     '   ',
@@ -373,13 +373,53 @@ event.custom (
   ], {
     S: '#minecraft:stone_tool_materials'
   })
+  */
+
+  // both expert & not
+  event.shapeless('minecraft:iron_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_iron_helmet'])
+  event.shapeless('minecraft:iron_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_iron_chestplate'])
+  event.shapeless('minecraft:iron_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_iron_leggings'])
+  event.shapeless('minecraft:iron_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_iron_boots'])
+  event.shapeless('minecraft:golden_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_gold_helmet'])
+  event.shapeless('minecraft:golden_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_gold_chestplate'])
+  event.shapeless('minecraft:golden_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_gold_leggings'])
+  event.shapeless('minecraft:golden_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_gold_boots'])
+  event.shapeless('minecraft:diamond_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_diamond_helmet'])
+  event.shapeless('minecraft:diamond_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_diamond_chestplate'])
+  event.shapeless('minecraft:diamond_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_diamond_leggings'])
+  event.shapeless('minecraft:diamond_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_diamond_boots'])
   
+  event.shaped('geggy:flint_pickaxe', [
+    'SS ',
+    'AS ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod'
+  })
+  event.shaped('geggy:unfired_pickaxe_mold', [
+    'AAA',
+    'ABA',
+    'AAA'
+  ], {
+    A: 'minecraft:clay_ball',
+	B: 'geggy:flint_pickaxe'
+  }).damageIngredient('geggy:flint_pickaxe')
+  event.shaped('geggy:bronze_pickaxe', [
+    ' S ',
+    ' A ',
+    ' B '
+  ], {
+    S: 'geggy:bronze_pickaxe_head',
+	A: 'geggy:j_tool_rod',
+	B: 'modern_industrialization:rubber_sheet'
+  })
   
   
   
 
-	event.shapeless('minecraft:wooden_pickaxe', ['geggy:j_wooden_pickaxe_head', 'geggy:j_tool_rod'])
-	event.shapeless('minecraft:stone_pickaxe', ['geggy:j_stone_pickaxe_head', 'geggy:j_tool_rod'])
+	//event.shapeless('minecraft:wooden_pickaxe', ['geggy:j_wooden_pickaxe_head', 'geggy:j_tool_rod'])
+	//event.shapeless('minecraft:stone_pickaxe', ['geggy:j_stone_pickaxe_head', 'geggy:j_tool_rod'])
 	event.shapeless('minecraft:wooden_axe', ['geggy:j_wooden_axe_head', 'geggy:j_tool_rod'])
 	event.shapeless('minecraft:stone_axe', ['geggy:j_stone_axe_head', 'geggy:j_tool_rod'])
 
@@ -401,6 +441,124 @@ event.custom({
     "amount" : 1
   }
 })	
+
+// LEATHER // leaves > dye > tannin > drain> wash > dry > leather > strips > labels
+
+	event.custom({
+  "type": "farmersdelight:cooking",
+  "container": {"item": "geggy:copper_can"},
+  "cookingtime": 900,
+  "experience": 0.1,
+  "ingredients": [
+    {"item": "minecraft:green_dye"},
+    {"item": "minecraft:green_dye"},
+    {"item": "minecraft:green_dye"},
+    {"item": "minecraft:green_dye"}
+  ],
+  "recipe_book_tab": "meals",
+  "result": {"item": "geggy:mulch_copper_can"}
+	})
+	event.custom({
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "geggy:mulch_copper_can"
+    }
+  ],
+  "results": [
+    {
+      "item": "geggy:copper_can"
+    },
+    {
+      "amount": 40500,
+      "fluid": "geggy:tannin"
+    }
+  ]
+	})
+
+	event.shaped('geggy:copper_can', [
+		'A A',
+		' A ',
+		'   '
+	], {
+		A: 'minecraft:copper_ingot'
+	})
+
+	event.remove({id: 'labels:label'})
+	event.shaped('4x labels:label', [
+		'BBB',
+		'BAB',
+		'BBB'
+	], {
+		A: 'geggy:mulch_copper_can',
+		B: 'minecraft:paper'
+	}).replaceIngredient('geggy:mulch_copper_can', 'geggy:copper_can')
+
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "minecraft:leather"},{"fluid": "geggy:tannin", "amount": 20250}],
+		"results": [{"item": "geggy:soaked_cured_leather"}]
+	})
+
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:soaked_cured_leather"}
+		],
+		"results": [
+			{"item": "geggy:damp_cured_leather"}
+		]	
+	})
+	event.custom({
+		"type": "minecraft:smoking",
+		"cookingtime": 500,
+		"experience": 0.0,
+		"ingredient": 
+			{"item": "geggy:damp_cured_leather"},
+		"result": 
+		{"item": "geggy:cured_leather"}
+		
+	})
+	event.shapeless('geggy:cured_leather_sheet', ['geggy:cured_leather', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.shapeless('2x geggy:cured_leather_strap', ['geggy:cured_leather_sheet', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.shapeless('2x geggy:cured_leather_cord', ['geggy:cured_leather_strap', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.remove({id: 'minecraft:leather_helmet'})
+	event.remove({id: 'minecraft:leather_chestplate'})
+	event.remove({id: 'minecraft:leather_leggings'})
+	event.remove({id: 'minecraft:leather_boots'})
+	event.shaped('minecraft:leather_helmet', [
+		'AAA',
+		'B B',
+		'   '
+	], {
+		A: 'geggy:cured_leather_sheet',
+		B: 'geggy:cured_leather_strap'
+	})
+	event.shaped('minecraft:leather_chestplate', [
+		'B B',
+		'AAA',
+		'AAA'
+	], {
+		A: 'geggy:cured_leather_sheet',
+		B: 'geggy:cured_leather_strap'
+	})
+	event.shaped('minecraft:leather_leggings', [
+		'ACA',
+		'A A',
+		'B B'
+	], {
+		A: 'geggy:cured_leather_sheet',
+		B: 'geggy:cured_leather_strap',
+		C: 'geggy:cured_leather_cord'
+	})
+	event.shaped('minecraft:leather_boots', [
+		'C C',
+		'A A',
+		'   '
+	], {
+		A: 'geggy:cured_leather_sheet',
+		C: 'geggy:cured_leather_cord'
+	})
 
 })
 
