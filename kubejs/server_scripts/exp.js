@@ -32,7 +32,7 @@ function machineRecipe(recipeType, eu, duration) { return event.recipes.modern_i
 
 
 event.shaped(MI('clay_quarry'), ['BBB','BPB','BRB'], {B:'minecraft:mud_bricks',P:'create:fluid_pipe',R:'create:propeller'})
-machineRecipe('mine_clay', 2, 900).itemOut('minecraft:clay_ball').fluidIn('minecraft:water', 2000)
+machineRecipe('mine_clay', 2, 900).itemOut('geggy:clay_copper_can').fluidIn('minecraft:water', 2000).itemIn('geggy:copper_can')
 
 
 

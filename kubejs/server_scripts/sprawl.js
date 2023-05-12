@@ -882,32 +882,6 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:materials/bronze/smelting/dust_to_ingot_blasting'})
 	event.blasting('modern_industrialization:bronze_ingot', 'modern_industrialization:bronze_dust').cookingTime(400)
 	
-	// temporary andesite
-	event.remove({id: 'modern_industrialization:vanilla_recipes/mixer/andesite'})
-	event.remove({type: 'minecraft:crafting_shapeless', output: 'create:andesite_alloy'})
-	event.remove({type: 'minecraft:crafting_shaped', output: 'create:andesite_alloy'})	
-	event.remove({type: "modern_industrialization:mixer", output: "create:andesite_alloy"})
-	event.remove({type: "create:mixing", output: "create:andesite_alloy"})
-	event.shaped('2x create:andesite_alloy', [
-		'AB ',
-		'BA ',
-		'   '
-	], {
-		A: 'minecraft:andesite',
-		B: 'modern_industrialization:quartz_dust'
-	})
-	event.recipes.modern_industrialization.salloy({
-		eu: 2,
-		duration: 200,
-		item_inputs: [
-			{item: "minecraft:andesite", amount: 2},
-			{item: "modern_industrialization:quartz_dust", amount: 2}
-		],
-		item_outputs: [
-			{item: "create:andesite_alloy", amount: 4}
-		]
-	})
-	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:bronze_mixer'})
 	event.shaped('modern_industrialization:bronze_mixer', [
 		'FCF',

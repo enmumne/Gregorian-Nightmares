@@ -16,6 +16,11 @@ event.add('geghilarity:sacred_platinoreum', '§7This plate is a lie. It is made 
 event.add('geggy:j_tool_rod', '§7DJ2 called and wants its recipe back.')
 event.add('geggy:j_planks', '§7For chests and crafting table.')
 
+event.add('minecraft:rotten_flesh', '§7Use shears on zombies to obtain, 3 attempts, 85% chance.')
+event.add('minecraft:rotten_flesh', '§7Process in a mixer to obtain leather.')
+
+event.add('geggy:gravel_dust', '§7From milling Andesite or Unrefined Clay.')
+
 event.add('drilly:drill_group1', '§7For tin and copper.')
 event.add('drilly:drill_group2', '§7For coal, iron and lignite.')
 event.add('drilly:drill_group3', '§7For lead, nickel and zinc.')

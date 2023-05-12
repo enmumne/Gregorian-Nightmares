@@ -64,7 +64,8 @@ MIMachineEvents.registerRecipeTypes(event => {
 		
 	SALLOY = event.register("salloy")
         .withItemInputs()
-        .withItemOutputs();
+        .withItemOutputs()
+		.withFluidInputs();
 		
 	FEXTRACT = event.register("fextract")
 		.withItemInputs()
@@ -134,14 +135,15 @@ MIMachineEvents.registerMachines(event => {
 		"Alloy Smelter", "salloy", SALLOY, ["bronze", "steel", "electric"],
 		/* GUI CONFIGURATION */
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		160, event.progressBar(78, 32, "furnace"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
+		185, event.progressBar(78, 32, "furnace"), event.efficiencyBar(48, 106), event.energyBar(14, 34),
 		/* SLOT CONFIGURATION */
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
-		2, 1, 0, 0,
+		2, 1, 1, 0,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlots(36, 35, 2, 1).addSlots(106, 35, 1, 1), fluids => {},
+		items => items.addSlots(36, 35, 2, 1).addSlots(106, 35, 1, 1), 
+		fluids => fluids.addSlot(36, 55),
 		/* MODEL CONFIGURATION */
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,

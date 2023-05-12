@@ -79,6 +79,7 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withItemOutputs()
 
     MINECLAY = event.register('mine_clay')
+		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
 		

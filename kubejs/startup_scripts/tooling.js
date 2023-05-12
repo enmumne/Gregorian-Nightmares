@@ -82,12 +82,12 @@ ItemEvents.modification(event => {
     })
 
     event.modify('minecraft:diamond_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(2500)
+        pickaxe.setMaxDamage(2000)
     })
 
 
     event.modify('minecraft:netherite_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(3200)
+        pickaxe.setMaxDamage(2500)
     })
 
 
@@ -102,12 +102,12 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:diamond_axe', axe => {
-        axe.setMaxDamage(2500)
+        axe.setMaxDamage(2000)
     })
 
 
     event.modify('minecraft:netherite_axe', axe => {
-        axe.setMaxDamage(3200)
+        axe.setMaxDamage(2500)
     })
 
 
@@ -121,12 +121,12 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:diamond_sword', sword => {
-        sword.setMaxDamage(2500)
+        sword.setMaxDamage(2000)
     })
 
 
     event.modify('minecraft:netherite_sword', sword => {
-        sword.setMaxDamage(3200)
+        sword.setMaxDamage(2500)
     })
 
 
@@ -142,12 +142,12 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:diamond_hoe', hoe => {
-        hoe.setMaxDamage(2500)
+        hoe.setMaxDamage(2000)
     })
 
 
     event.modify('minecraft:netherite_hoe', hoe => {
-        hoe.setMaxDamage(3200)
+        hoe.setMaxDamage(2500)
     })
 
 
@@ -163,12 +163,12 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:diamond_shovel', shovel => {
-        shovel.setMaxDamage(2500)
+        shovel.setMaxDamage(2000)
     })
 
 
     event.modify('minecraft:netherite_shovel', shovel => {
-        shovel.setMaxDamage(3200)
+        shovel.setMaxDamage(2500)
     })
 
 
@@ -274,7 +274,7 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:netherite_boots', boots => {
-        boots.setMaxDamage(720)
+        boots.setMaxDamage(680)
     })
 
 
@@ -441,6 +441,7 @@ event.create('geggy:unfinished_diamond_boots');
 event.create('geggy:incomplete_basic_hull');
 event.create('geggy:basic_hull');
 event.create('geggy:incomplete_basic_machine_hull');
+event.create('geggy:treated_planks');
 
 event.create('geggy:copper_can');
 event.create('geggy:mulch_copper_can');
@@ -450,6 +451,25 @@ event.create('geggy:cured_leather');
 event.create('geggy:cured_leather_sheet');
 event.create('geggy:cured_leather_strap');
 event.create('geggy:cured_leather_cord');
+
+event.create('geggy:mold_sword').displayName('Sword Mold');
+event.create('geggy:mold_pickaxe').displayName('Pickaxe Mold');
+event.create('geggy:mold_axe').displayName('Axe Mold');
+event.create('geggy:mold_shovel').displayName('Shovel Mold');
+event.create('geggy:mold_hoe').displayName('Hoe Mold');
+
+event.create('geggy:diamond_sword_head');
+event.create('geggy:diamond_pickaxe_head');
+event.create('geggy:diamond_axe_head');
+event.create('geggy:diamond_shovel_head');
+event.create('geggy:diamond_hoe_head');
+
+event.create('geggy:unrefined_clay');
+event.create('geggy:clay_copper_can').displayName('Clayed Copper Can');
+event.create('geggy:gravel_dust');
+event.create('geggy:andesite_dust');
+event.create('geggy:andesite_mix');
+
 
 
 /*
@@ -474,6 +494,16 @@ StartupEvents.registry('fluid', event => {
     .create('geggy:tannin')
   	//.displayName('Nitrogen Dioxide') 
 	.thinTexture(0x613E34)
+    .noBucket
+	
+	event
+    .create('geggy:molten_diamond')
+	.thinTexture(0x45DDCA)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_clay')
+	.thinTexture(0xA3ADC8)
     .noBucket
 	
 })	

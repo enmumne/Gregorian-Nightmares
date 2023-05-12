@@ -1,5 +1,36 @@
 ServerEvents.recipes(event => {
 	
+	event.remove({id: 'create:crafting/kinetics/millstone'})
+	event.shaped('create:millstone', [
+		'DAD',
+		'DBD',
+		'CCC'
+	], {
+		A: 'geggy:cogwheel',
+		B: 'create:andesite_casing',
+		C: 'minecraft:smooth_stone_slab',
+		D: 'minecraft:stone_button'
+	})
+	event.remove({id: 'create:crafting/kinetics/metal_bracket'})
+	event.shaped('2x create:metal_bracket', [
+		'AAA',
+		'BCB',
+		'   '
+	], {
+		A: 'modern_industrialization:steel_nugget',
+		B: 'modern_industrialization:steel_ingot',
+		C: 'create:andesite_alloy'
+	})
+	event.remove({id: 'create:crafting/kinetics/metal_girder'})
+	event.shaped('4x create:metal_girder', [
+		'AA ',
+		'BB ',
+		'CC '
+	], {
+		A: 'modern_industrialization:steel_plate',
+		B: 'modern_industrialization:steel_ingot',
+		C: 'create:andesite_alloy'
+	})
 	event.remove({id: 'create:crafting/kinetics/goggles'})
 	event.shaped('create:goggles', [
 		'AAA',
@@ -1046,6 +1077,17 @@ ServerEvents.recipes(event => {
 	  }
 	)
 	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:j_planks"},
+			{"amount": 20250, "fluid": "modern_industrialization:creosote",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:treated_planks"
+		}]
+	})
+	event.custom({
 		type: "create:sequenced_assembly",
 		ingredient: {"item": "minecraft:barrel"},
 		transitionalItem: {"item": "geggy:incomplete_extdw"},
@@ -1064,7 +1106,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw"},
-					{"item": "geggy:j_planks"}
+					{"item": "geggy:treated_planks"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw"
@@ -1107,7 +1149,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_d"},
-					{"item": "geggy:j_planks"}
+					{"item": "geggy:treated_planks"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_d"
@@ -1148,7 +1190,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_q"},
-					{"item": "geggy:j_planks"}
+					{"item": "geggy:treated_planks"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_q"
@@ -1196,6 +1238,118 @@ ServerEvents.recipes(event => {
 		]	
 	})
 	
+	// ANDESITE
+	// clay
+	event.custom({
+		"type": "create:emptying",
+		"ingredients": [
+			{"item": "geggy:clay_copper_can"}
+		],
+		"results": [
+			{"item": "geggy:copper_can"},
+			{"amount": 20250, "fluid": "geggy:liquid_clay"}
+		]
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"amount": 40500, "fluid": "geggy:liquid_clay"}
+		],
+		"results": [
+			{"item": "geggy:unrefined_clay"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "geggy:unrefined_clay"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"item": "geggy:clay_dust", "chance": 0.8},
+			{"item": "geggy:gravel_dust"}
+		]
+	})
+	event.shaped('minecraft:gravel', [
+		'AA ',
+		'AA ',
+		'   '
+	], {
+		A: 'geggy:gravel_dust'
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "geggy:gravel_dust"},{"item": "geggy:gravel_dust"},
+			{"item": "geggy:gravel_dust"},{"item": "geggy:gravel_dust"}
+		],
+		"results": [
+			{"item": "minecraft:gravel"}
+		]
+	})
+	event.custom({
+		"type": "create:pressing",
+		"ingredients": [
+			{"item": "geggy:clay_dust"}
+		],
+		"results": [
+			{"item": "minecraft:clay_ball"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:andesite"}
+		],
+		"processingTime": 200,
+		"results": [
+			{"item": "geggy:andesite_dust"},
+			{"item": "geggy:gravel_dust", "chance": 0.5}
+		]
+	})
+	event.shapeless('geggy:andesite_dust', ['minecraft:andesite', 'minecraft:andesite', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.remove({id: 'minecraft:polished_andesite_slab'})
+	event.shaped('3x minecraft:polished_andesite_slab', [
+		'AAA',
+		'   ',
+		'   '
+	], {
+		A: 'minecraft:polished_andesite'
+	})
+	event.remove({id: 'minecraft:smooth_stone_slab'})
+	event.shaped('3x minecraft:smooth_stone_slab', [
+		'AAA',
+		'   ',
+		'   '
+	], {
+		A: 'minecraft:smooth_stone'
+	})
 	
+	// ALLOY
+	event.remove({id: 'modern_industrialization:vanilla_recipes/mixer/andesite'})
+	event.remove({id: 'create:crafting/materials/andesite_alloy'})
+	event.remove({id: 'create:crafting/materials/andesite_alloy_from_zinc'})
+	event.remove({id: 'create:mixing/andesite_alloy'})
+	event.remove({id: 'create:mixing/andesite_alloy_from_zinc'})
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "geggy:andesite_dust"},{"item": "geggy:andesite_dust"},{"item": "geggy:clay_dust"},{"item": "modern_industrialization:quartz_dust"},{"item": "create:zinc_nugget"}],
+		"results": [{"item": "geggy:andesite_mix"}]
+	})
+	event.shaped('geggy:andesite_mix', [
+		'AAA',
+		'CBC',
+		'DDE'
+	], {
+		A: 'geggy:andesite_dust',
+		B: 'geggy:stone_mortar',
+		C: 'geggy:clay_dust',
+		D: 'modern_industrialization:quartz_dust',
+		E: 'create:zinc_nugget',
+	}).damageIngredient('geggy:stone_mortar')
+	event.blasting('create:andesite_alloy', 'geggy:andesite_mix').cookingTime(600)
+	
+	// remove gravel gen (recycle)
+	event.remove({id: 'create:milling/cobblestone'})
 
 })	

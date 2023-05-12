@@ -444,6 +444,27 @@ event.custom({
 
 // LEATHER // leaves > dye > tannin > drain> wash > dry > leather > strips > labels
 
+	event.remove({id: 'farmersdelight:cooking_pot'})
+	event.shaped('farmersdelight:cooking_pot', [
+		'BBB',
+		'ASA',
+		'AAA'
+	], {
+		A: 'geggy:tempered_brick',
+		B: 'geggy:primitive_brick',
+		S: 'kibe:water_wooden_bucket'
+	}).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+	
+	event.shaped('farmersdelight:cooking_pot', [
+		'BBB',
+		'ASA',
+		'AAA'
+	], {
+		A: 'geggy:tempered_brick',
+		B: 'geggy:primitive_brick',
+		S: 'minecraft:water_bucket'
+	}).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+
 	event.custom({
   "type": "farmersdelight:cooking",
   "container": {"item": "geggy:copper_can"},
@@ -520,8 +541,38 @@ event.custom({
 		
 	})
 	event.shapeless('geggy:cured_leather_sheet', ['geggy:cured_leather', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:cured_leather"}
+		],
+		processingTime: 80,
+		results: [{
+			"item": "geggy:cured_leather_sheet"
+		}]
+	})
 	event.shapeless('2x geggy:cured_leather_strap', ['geggy:cured_leather_sheet', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:cured_leather_sheet"}
+		],
+		processingTime: 80,
+		results: [{
+			"count": 2, "item": "geggy:cured_leather_strap"
+		}]
+	})
 	event.shapeless('2x geggy:cured_leather_cord', ['geggy:cured_leather_strap', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:cured_leather_strap"}
+		],
+		processingTime: 80,
+		results: [{
+			"count": 2, "item": "geggy:cured_leather_cord"
+		}]
+	})
 	event.remove({id: 'minecraft:leather_helmet'})
 	event.remove({id: 'minecraft:leather_chestplate'})
 	event.remove({id: 'minecraft:leather_leggings'})
@@ -559,6 +610,95 @@ event.custom({
 		A: 'geggy:cured_leather_sheet',
 		C: 'geggy:cured_leather_cord'
 	})
+	
+	// diamond nerf
+	event.remove({id: 'modern_industrialization:materials/diamond/compressor/main'})
+	event.remove({id: 'magick:diamond_dust_4'})
+	event.remove({id: 'magick:diamond_dust_4_exported_mi_cutting_machine'})
+	event.recipes.modern_industrialization.cutting_machine({
+		eu: 38,
+		duration: 800,
+		item_inputs: [ 
+			{item: "minecraft:diamond", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:diamond_plate", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "minecraft:iron_sword", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_sword", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "minecraft:iron_pickaxe", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_pickaxe", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "minecraft:iron_axe", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_axe", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "minecraft:iron_shovel", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_shovel", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "minecraft:iron_hoe", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_hoe", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.fextract({
+		eu: 38,
+		duration: 500,
+		item_inputs: [ 
+			{item: "minecraft:diamond", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_diamond", amount: 144}
+		]
+	})
+	
 
 })
 
