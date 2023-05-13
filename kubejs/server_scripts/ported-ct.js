@@ -1,6 +1,29 @@
 ServerEvents.recipes(event => {	
 	
-	event.shapeless('geggy:wooden_form', ['geggy:j_planks', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.shaped('geggy:pattern', [
+		'AC ',
+		'BA ',
+		'   '
+	], {
+		A: 'minecraft:stick',
+		B: 'geggy:j_planks',
+		C: 'minecraft:paper'
+	})
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:pattern"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/knives"},
+		"result": [
+			{ "item": "geggy:wooden_form", "count": 1}
+		],
+		"sound": "minecraft:item.axe.strip"
+	})
+	
+	//event.shapeless('geggy:wooden_form', ['geggy:j_planks', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
 	
 	event.shapeless('2x geggy:chad', ['minecraft:sugar_cane', 'minecraft:sugar_cane', 'minecraft:sugar_cane', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
@@ -27,6 +50,9 @@ ServerEvents.recipes(event => {
 	event.shapeless('modern_industrialization:coke_dust', ['modern_industrialization:coke', 'modern_industrialization:coke', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
 	event.shapeless('modern_industrialization:coal_dust', ['minecraft:coal', 'minecraft:coal', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	
+	//event.shapeless('modern_industrialization:copper_dust', ['minecraft:raw_copper', 'minecraft:raw_copper', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('kubejs:zinc_dust', ['create:raw_zinc', 'create:raw_zinc', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('2x modern_industrialization:quartz_dust', ['minecraft:quartz_block', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
@@ -48,6 +74,16 @@ ServerEvents.recipes(event => {
 	event.shapeless('modern_industrialization:iron_tiny_dust', ['minecraft:iron_nugget', 'minecraft:iron_nugget', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('geggy:primitive_brick_dust', ['geggy:primitive_brick', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	
+	event.shaped('6x modern_industrialization:copper_tiny_dust', [
+		'AAA',
+		'ABA',
+		'AAA'
+	], {
+		A: 'modern_industrialization:copper_nugget',
+		B: 'geggy:stone_mortar'
+	}).damageIngredient('geggy:stone_mortar')
+	// no need tin nuggets > dusts, already create milling available, post-cog pre-bronze
 
 	event.shaped('2x geggy:wrought_small_dust', [
 		'AAA',

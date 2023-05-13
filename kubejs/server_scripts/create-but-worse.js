@@ -1,5 +1,48 @@
 ServerEvents.recipes(event => {
 	
+	event.remove({id: 'create:crafting/kinetics/weighted_ejector'})
+	event.shaped('create:weighted_ejector', [
+		'AD ',
+		'BD ',
+		'CD '
+	], {
+		A: 'modern_industrialization:steel_plate',
+		B: 'create:depot',
+		C: 'modern_industrialization:steel_gear',
+		D: 'modern_industrialization:steel_ring'
+	})
+	
+	event.remove({id: 'create:crafting/kinetics/item_drain'})
+	event.shaped('create:item_drain', [
+		'BBB',
+		'BAB',
+		'BBB'
+	], {
+		A: 'create:copper_casing',
+		B: 'modern_industrialization:tin_rod'
+	})
+	
+	event.remove({id: 'create:crafting/kinetics/analog_lever'})
+	event.shaped('create:analog_lever', [
+		'C  ',
+		'B  ',
+		'A  '
+	], {
+		A: 'create:andesite_casing',
+		B: 'minecraft:stick',
+		C: 'create:andesite_alloy'
+	})
+	event.remove({id: 'create:crafting/kinetics/encased_fan'})
+	event.shaped('create:encased_fan', [
+		'DC ',
+		'AB ',
+		'DC '
+	], {
+		A: 'create:andesite_casing',
+		B: 'create:propeller',
+		C: 'geggy:cogwheel',
+		D: 'create:shaft'
+	})
 	event.remove({id: 'create:crafting/kinetics/millstone'})
 	event.shaped('create:millstone', [
 		'DAD',
@@ -55,8 +98,8 @@ ServerEvents.recipes(event => {
 	
 	event.remove({id: 'create:crafting/kinetics/depot'})
 	event.shaped('create:depot', [
-		'AB ',
-		'   ',
+		'A  ',
+		'B  ',
 		'   '
 	], {
 		A: 'modern_industrialization:lead_plate',
@@ -106,7 +149,7 @@ ServerEvents.recipes(event => {
 		'A  '
 	], {
 		A: '#minecraft:planks',
-		B: 'create:andesite_alloy'
+		B: 'create:shaft'
 	})
 	event.remove({id: 'create:crafting/kinetics/cogwheel'})
 	event.remove({id: 'create:deploying/cogwheel'})
@@ -1324,6 +1367,14 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'minecraft:smooth_stone'
 	})
+	event.remove({id: 'minecraft:polished_blackstone_slab'})
+	event.shaped('3x minecraft:polished_blackstone_slab', [
+		'AAA',
+		'   ',
+		'   '
+	], {
+		A: 'minecraft:polished_blackstone'
+	})
 	
 	// ALLOY
 	event.remove({id: 'modern_industrialization:vanilla_recipes/mixer/andesite'})
@@ -1351,5 +1402,105 @@ ServerEvents.recipes(event => {
 	
 	// remove gravel gen (recycle)
 	event.remove({id: 'create:milling/cobblestone'})
-
+	
+	// cursed bronze
+	event.remove({id: 'modern_industrialization:materials/bronze/craft/ingot_from_nugget'})
+	event.remove({id: 'modern_industrialization:materials/bronze/craft/nugget_from_ingot'})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"amount": 11664, "fluid": "geghilarity:molten_bronze"}
+		],
+		"results": [
+			{"item": "modern_industrialization:bronze_ingot"}
+		]
+	})
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "modern_industrialization:bronze_ingot"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{ "item": "modern_industrialization:bronze_nugget", "count": 6},
+			{"chance": 0.5, "count": 3, "item": "modern_industrialization:bronze_nugget"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
+			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
+			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
+			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
+			{"item": "modern_industrialization:bronze_nugget"}
+		],
+		"results": [
+			{"item": "modern_industrialization:bronze_ingot"}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/copper/craft/ingot_from_nugget'})
+	event.remove({id: 'modern_industrialization:materials/copper/craft/nugget_from_ingot'})
+	event.remove({id: 'create:crafting/materials/copper_ingot'})
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "minecraft:copper_ingot"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{ "item": "modern_industrialization:copper_nugget", "count": 6},
+			{"chance": 0.5, "count": 3, "item": "modern_industrialization:copper_nugget"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
+			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
+			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
+			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
+			{"item": "modern_industrialization:copper_nugget"}
+		],
+		"results": [
+			{"item": "minecraft:copper_ingot"}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/tin/craft/ingot_from_nugget'})
+	event.remove({id: 'modern_industrialization:materials/tin/craft/nugget_from_ingot'})
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "modern_industrialization:tin_ingot"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{ "item": "modern_industrialization:tin_nugget", "count": 6},
+			{"chance": 0.5, "count": 3, "item": "modern_industrialization:tin_nugget"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "modern_industrialization:tin_nugget"},{"item": "modern_industrialization:tin_nugget"},
+			{"item": "modern_industrialization:tin_nugget"},{"item": "modern_industrialization:tin_nugget"},
+			{"item": "modern_industrialization:tin_nugget"},{"item": "modern_industrialization:tin_nugget"},
+			{"item": "modern_industrialization:tin_nugget"},{"item": "modern_industrialization:tin_nugget"},
+			{"item": "modern_industrialization:tin_nugget"}
+		],
+		"results": [
+			{"item": "modern_industrialization:tin_ingot"}
+		]
+	})
 })	

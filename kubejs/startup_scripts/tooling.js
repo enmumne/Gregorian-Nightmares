@@ -442,6 +442,7 @@ event.create('geggy:incomplete_basic_hull');
 event.create('geggy:basic_hull');
 event.create('geggy:incomplete_basic_machine_hull');
 event.create('geggy:treated_planks');
+event.create('geggy:pattern');
 
 event.create('geggy:copper_can');
 event.create('geggy:mulch_copper_can');

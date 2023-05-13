@@ -880,7 +880,7 @@ ServerEvents.recipes(event => {
 	// bronze nerf
 	event.remove({id: 'modern_industrialization:materials/bronze/smelting/dust_to_ingot_smelting'})
 	event.remove({id: 'modern_industrialization:materials/bronze/smelting/dust_to_ingot_blasting'})
-	event.blasting('modern_industrialization:bronze_ingot', 'modern_industrialization:bronze_dust').cookingTime(400)
+	//event.blasting('modern_industrialization:bronze_ingot', 'modern_industrialization:bronze_dust').cookingTime(400)
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:bronze_mixer'})
 	event.shaped('modern_industrialization:bronze_mixer', [
@@ -1301,6 +1301,16 @@ ServerEvents.recipes(event => {
 			{item: "minecraft:iron_ingot", amount: 1}
 		]
 	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 1,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:bronze_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:bronze_ingot", amount: 1}
+		]
+	})
 	
 	event.smelting('geggy:tempered_brick', 'geggy:unfired_tempered_brick').cookingTime(1800)
 	event.remove({id: 'minecraft:blast_furnace'})
@@ -1354,11 +1364,12 @@ ServerEvents.recipes(event => {
 	event.shaped('create:mechanical_saw', [
 		' B ',
 		'BDB',
-		' C '
+		'ECE'
 	], {
 		B: 'geggy:sharp_plate',
 		C: 'create:andesite_casing',
-		D: 'modern_industrialization:lead_ingot'
+		D: 'modern_industrialization:lead_ingot',
+		E: 'geggy:cogwheel'
 	})
 	
 	event.shaped('minecraft:stonecutter', [
@@ -1402,7 +1413,7 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'minecraft:polished_blackstone_slab',
 		B: 'create:andesite_casing',
-		C: 'create:shaft'
+		C: 'create:piston_extension_pole'
 	})
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:mechanical_piston"})
