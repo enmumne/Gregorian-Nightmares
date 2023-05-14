@@ -342,12 +342,14 @@ ServerEvents.recipes(event => {
 	
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'create:fluid_pipe'})
+	// rubber?
 	event.shaped('2x create:fluid_pipe', [
 		'AAA',
-		'   ',
+		'BBB',
 		'AAA'
 	], {
-		A: 'modern_industrialization:copper_curved_plate'
+		A: 'modern_industrialization:copper_curved_plate',
+		B: 'minecraft:dried_kelp'
 	})
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: '#modern_industrialization:item_pipes'})
@@ -1399,11 +1401,12 @@ ServerEvents.recipes(event => {
 	})
 	event.shaped('create:whisk', [
 		' B ',
-		' B ',
+		' C ',
 		'AAA'
 	], {
 		A: 'geggy:sharp_plate',
-		B: 'create:shaft'
+		B: 'create:shaft',
+		C: 'create:andesite_alloy'
 	})
 	
 	event.shaped('create:mechanical_press', [

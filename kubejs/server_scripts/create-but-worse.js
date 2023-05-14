@@ -1127,7 +1127,7 @@ ServerEvents.recipes(event => {
 			"nbt": {}}
 		],
 		results: [{
-			"item": "geggy:treated_planks"
+			"item": "geggy:treated_plank"
 		}]
 	})
 	event.custom({
@@ -1149,7 +1149,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw"},
-					{"item": "geggy:treated_planks"}
+					{"item": "geggy:treated_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw"
@@ -1192,7 +1192,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_d"},
-					{"item": "geggy:treated_planks"}
+					{"item": "geggy:treated_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_d"
@@ -1233,7 +1233,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_q"},
-					{"item": "geggy:treated_planks"}
+					{"item": "geggy:treated_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_q"

@@ -699,6 +699,15 @@ event.custom({
 		]
 	})
 	
+	event.remove({id: 'minecraft:shield'})
+	event.shaped('minecraft:shield', [
+		'AAA',
+		'ABA',
+		' A '
+	], {
+		A: 'geggy:treated_plank',
+		B: 'createdeco:netherite_sheet'
+	})
 
 })
 

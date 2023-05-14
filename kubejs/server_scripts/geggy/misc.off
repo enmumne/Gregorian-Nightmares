@@ -8,6 +8,20 @@ ServerEvents.recipes(event => {
 		A: 'minecraft:copper_ingot'
 	})
 	
+	event.remove({id: 'betternether:shield'})
+	event.remove({id: 'bclib:tag_shield'})
+	
+	event.remove({id: 'twilightforest:equipment/knightmetal_shield'})
+	event.shaped('twilightforest:knightmetal_shield', [
+		'AAA',
+		'BCB',
+		' C '
+	], {
+		A: 'twilightforest:knightmetal_ingot',
+		B: 'twilightforest:towerwood',
+		C: 'modern_industrialization:titanium_ring'
+	})
+	
 })
 
 ServerEvents.tags('item', event => { 
