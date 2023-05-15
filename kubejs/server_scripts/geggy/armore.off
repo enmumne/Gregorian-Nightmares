@@ -193,6 +193,29 @@ ServerEvents.recipes(event => {
 	})
 	
 	// expert_weapons:dull_diamond_axe_head 5 hoe 3 pickaxe 4 shovel 1 sword 2
+	event.remove({id: 'expert_weapons:crafting_table/diamond/dull_diamond_blade'})
+	event.remove({id: 'expert_weapons:crafting_table/diamond/dull_diamond_shovel_head'})
+	event.remove({id: 'expert_weapons:crafting_table/diamond/dull_diamond_axe_head'})
+	event.remove({id: 'expert_weapons:crafting_table/diamond/dull_diamond_pickaxe_head'})
+	event.remove({id: 'expert_weapons:crafting_table/diamond/dull_diamond_hoe_head'})
+	event.remove({id: 'expert_weapons:crafting_table/diamond/diamond_guard'})
+	event.shaped('expert_weapons:diamond_guard', [
+		'ABA',
+		'   ',
+		'   '
+	], {
+		A: 'minecraft:iron_ingot',
+		B: 'minecraft:diamond'
+	})
+	event.remove({id: 'expert_weapons:crafting_table/netherite/netherite_guard'})
+	event.shaped('expert_weapons:netherite_guard', [
+		'ABA',
+		'   ',
+		'   '
+	], {
+		A: 'modern_industrialization:steel_ingot',
+		B: 'minecraft:netherite_ingot'
+	})
 	event.recipes.modern_industrialization.salloy({
 		eu: 32,
 		duration: 600,
@@ -203,7 +226,7 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_sword", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
-			{item: "expert_weapons:dull_diamond_sword_head", amount: 1}
+			{item: "expert_weapons:dull_diamond_blade", amount: 1}
 		]
 	})
 	event.recipes.modern_industrialization.salloy({

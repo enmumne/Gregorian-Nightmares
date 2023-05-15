@@ -268,7 +268,7 @@
 
 [ExtraRecipes]
 	#If true, adds a blast furnace recipe for smelting raw ore blocks into ore blocks.
-	"Ore block from raw ore block" = true
+	"Ore block from raw ore block" = false
 	#If true, adds a recipe for Gilded Blackstone using gold nuggets and blackstone.
 	"Gilded Blackstone" = true
 	#If true, adds a recipe for the Trident using a heart of the sea, prismarine shards and crystals.
@@ -282,13 +282,13 @@
 	#If true, adds a recipe for turning quartz blocks back into quartz.
 	"Quartz from quartz blocks" = true
 	#If true, adds a recipe for turning clay blocks back into clay balls.
-	"Clay balls from clay blocks" = true
+	"Clay balls from clay blocks" = false
 	#If true, adds a recipe for Soul Torches using soul sand/soul soil and sticks.
 	"Simpler Soul Torch" = true
 	#If true, adds a shapeless recipe for bread.
-	"Shapeless bread" = true
+	"Shapeless bread" = false
 	#If true, adds a shapeless recipe for paper.
-	"Shapeless paper" = true
+	"Shapeless paper" = false
 	#If true, adds a recipe for crafting bundles from leather.
 	"Bundle from leather" = true
 

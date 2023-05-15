@@ -3,7 +3,7 @@
     "mod_enabled": true,
     "controls": {
       "switch_roll_and_yaw": false,
-      "invert_pitch": false,
+      "invert_pitch": true,
       "momentum_based_mouse": false,
       "show_momentum_widget": true,
       "activation_behaviour": "VANILLA"
@@ -20,6 +20,11 @@
     }
   },
   "sensitivity": {
+    "smoothing": {
+      "smoothing_pitch": 1.0,
+      "smoothing_yaw": 0.4,
+      "smoothing_roll": 1.0
+    },
     "desktop": {
       "pitch": 1.0,
       "yaw": 0.4,

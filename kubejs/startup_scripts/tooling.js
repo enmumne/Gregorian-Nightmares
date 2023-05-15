@@ -405,11 +405,11 @@ event.create('geggy:holed_large_copper_dented');
 event.create('geggy:incomplete_large_copper_dented');
 
 //////////////
-event.create('geggy:incomplete_empty_blaze_burner');
+event.create('geggy:incomplete_empty_blaze_burner'); ///
 event.create('geggy:hot_steel_ingot');
 event.create('geggy:incomplete_steel_ingot');
-event.create('geggy:tempered_rod');
-event.create('geggy:tempered_plate');
+event.create('geggy:blackened_rod');
+event.create('geggy:blackened_plate');
 event.create('geggy:compressed_netherrack');
 event.create('geggy:incomplete_compressed_netherrack');
 event.create('geggy:incomplete_copper_casing');
@@ -419,6 +419,7 @@ event.create('geggy:unfired_pickaxe_mold');
 event.create('geggy:pickaxe_mold');
 event.create('geggy:filled_pickaxe_mold');
 event.create('geggy:bronze_pickaxe_head');
+/////////////
 event.create('geggy:incomplete_chest');
 event.create('geggy:incomplete_toolbox');
 event.create('geggy:incomplete_barrel');
@@ -471,6 +472,16 @@ event.create('geggy:gravel_dust');
 event.create('geggy:andesite_dust');
 event.create('geggy:andesite_mix');
 
+event.create('geggy:flax_fiber');
+event.create('geggy:dried_fiber');
+event.create('geggy:fiber_pulp');
+event.create('geggy:filtered_pulp');
+event.create('geggy:fiber_pressed');
+event.create('geggy:twine');
+event.create('geggy:linen');
+
+event.create('geggy:chadded_copper_can').displayName('Chad Copper Can')
+
 
 
 /*
@@ -505,6 +516,11 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geggy:liquid_clay')
 	.thinTexture(0xA3ADC8)
+    .noBucket
+	
+	event
+    .create('geggy:fiber_pulpy')
+	.thinTexture(0xC3BDAE)
     .noBucket
 	
 })	

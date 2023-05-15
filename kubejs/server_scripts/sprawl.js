@@ -95,35 +95,124 @@ ServerEvents.recipes(event => {
 		S: 'geggy:j_planks'
 	})
 	
-	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:paper'})
-	event.remove({type: 'minecraft:crafting_shapeless', output: 'minecraft:paper'})
+	event.remove({id: 'minecraft:paper'})
 	
-	event.shaped('2x minecraft:paper', [
+	event.shaped('2x geggy:fiber_pressed', [
 		' A ',
 		'SSS',
 		' A '
 	], {
 		A: '#minecraft:slabs',
-		S: 'geggy:chad'
+		S: 'geggy:filtered_pulp'
 	}).keepIngredient(1).keepIngredient(7)
 	
-	event.shaped('2x minecraft:paper', [
-		'AAA',
-		'ASA',
-		'AAA'
+	// paper & string new
+	
+	event.remove({id: 'supplementaries:strings'})
+	event.remove({id: 'create:compat/supplementaries/milling/flax'})
+	event.remove({id: 'supplementaries:doormat_2'})
+	event.remove({id: 'immersive_weathering:paper_from_birch_bark'})
+	event.remove({id: 'farmersdelight:paper_from_tree_bark'})
+	event.shaped('supplementaries:doormat', [
+		'AA ',
+		'   ',
+		'   '
 	], {
-		A: 'geggy:wood_pulp',
+		A: 'geggy:linen'
+	})
+	event.shapeless('supplementaries:flax_seeds', ['supplementaries:wild_flax', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('geggy:flax_fiber', ['supplementaries:flax'])
+	
+	event.custom({
+		"type": "minecraft:campfire_cooking",
+		"ingredient": 
+			{"item": "geggy:flax_fiber"},
+		"result": "geggy:dried_fiber",
+		"cookingtime": 200
+	})
+	
+	event.shaped('geggy:twine', [
+		'AA ',
+		'AA ',
+		'   '
+	], {
+		A: 'geggy:dried_fiber'
+	})
+	
+	// sails
+	event.shaped('geggy:linen', [
+		'AA ',
+		'AA ',
+		'   '
+	], {
+		A: 'geggy:twine'
+	})
+	
+	// pulp for paper	
+	event.shaped('geggy:fiber_pulp', [
+		' A ',
+		'BSB',
+		' A '
+	], {
+		A: 'geggy:dried_fiber',
+		B: 'geggy:chad',
+		S: 'minecraft:water_bucket'
+	}).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+	event.shaped('geggy:fiber_pulp', [
+		' A ',
+		'BSB',
+		' A '
+	], {
+		A: 'geggy:dried_fiber',
+		B: 'geggy:chad',
 		S: 'kibe:water_wooden_bucket'
 	}).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
 	
-	event.shaped('2x minecraft:paper', [
-		'AAA',
-		'ASA',
-		'AAA'
-	], {
-		A: 'geggy:wood_pulp',
-		S: 'minecraft:water_bucket'
-	}).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:fiber_pulp"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"item": "create:filter"},
+		"result": [
+			{ "item": "geggy:filtered_pulp", "count": 1}
+		]//,
+		//"sound": "minecraft:item.axe.strip"
+	})
+	
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:linen"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"item": "minecraft:shears"},
+		"result": [
+			{ "item": "minecraft:string", "count": 2}
+		]//,
+		//"sound": "minecraft:item.axe.strip"
+	})
+	
+	
+	
+	
+	
+	
+
+	
+	event.custom({
+	"type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "geggy:fiber_pressed"
+  },
+  "result": "minecraft:paper",
+  "cookingtime": 600
+	})
+	
+
 	
 	// GROUT START
 	// GROUT START
@@ -1818,11 +1907,6 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "minecraft:sugar_cane"}],
 			"results": [{"item": "geggy:chad"}]
 	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "geggy:chad"}],
-			"results": [{"item": "minecraft:paper"}]
-	})
 	event.recipes.modern_industrialization.mixer({
 		eu: 2,
 		duration: 100,
@@ -1834,7 +1918,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.recipes.modern_industrialization.compressor({
-		eu: 2,
+		eu: 38,
 		duration: 100,
 		item_inputs: [
 			{item: "geggy:chad", amount: 1}

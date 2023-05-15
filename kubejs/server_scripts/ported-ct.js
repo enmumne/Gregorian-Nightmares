@@ -12,7 +12,7 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "farmersdelight:cutting",
 		"ingredients": [
-			{"item": "geggy:pattern"}
+			{"item": "geggy:j_planks"}
 		],
 		"tool": 
 			{"type": "farmersdelight:tool",

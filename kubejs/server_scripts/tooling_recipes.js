@@ -538,7 +538,6 @@ event.custom({
 			{"item": "geggy:damp_cured_leather"},
 		"result": 
 		{"item": "geggy:cured_leather"}
-		
 	})
 	event.shapeless('geggy:cured_leather_sheet', ['geggy:cured_leather', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
 	event.custom({

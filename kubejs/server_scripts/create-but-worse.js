@@ -431,7 +431,7 @@ ServerEvents.recipes(event => {
 	// blaze mixer section, sequence with steel, crafting table tin + blaze rod
 	
 	event.remove({id: 'create:crafting/kinetics/empty_blaze_burner'})
-	event.shaped('geggy:tempered_rod', [
+	event.shaped('geggy:blackened_rod', [
 		'AB ',
 		'   ',
 		'   '
@@ -440,13 +440,13 @@ ServerEvents.recipes(event => {
 		B: 'minecraft:blaze_rod'
 
 	})
-	event.shaped('geggy:tempered_plate', [
-		'AB ',
-		'   ',
-		'   '
+	event.shaped('geggy:blackened_plate', [
+		'B B',
+		' A ',
+		'B B'
 	], {
 		A: 'modern_industrialization:tin_plate',
-		B: 'minecraft:blaze_rod'
+		B: 'minecraft:blaze_powder'
 
 	})
 	event.custom({
@@ -484,9 +484,9 @@ ServerEvents.recipes(event => {
 		'ABA',
 		'CCC'
 	], {
-		A: 'geggy:tempered_rod',
+		A: 'geggy:blackened_rod',
 		B: 'geggy:compressed_netherrack',
-		C: 'geggy:tempered_plate'
+		C: 'geggy:blackened_plate'
 	})
 	event.custom({
 		type: "create:sequenced_assembly",
@@ -1403,6 +1403,9 @@ ServerEvents.recipes(event => {
 	// remove gravel gen (recycle)
 	event.remove({id: 'create:milling/cobblestone'})
 	
+	// iron nugget crafting table
+	event.remove({id: 'minecraft:iron_nugget'})
+	
 	// cursed bronze
 	event.remove({id: 'modern_industrialization:materials/bronze/craft/ingot_from_nugget'})
 	event.remove({id: 'modern_industrialization:materials/bronze/craft/nugget_from_ingot'})
@@ -1503,4 +1506,53 @@ ServerEvents.recipes(event => {
 			{"item": "modern_industrialization:tin_ingot"}
 		]
 	})
+	
+	// paper
+	event.custom({
+		"type": "minecraft:smoking",
+		"cookingtime": 150,
+		"experience": 0.0,
+		"ingredient": 
+			{"item": "geggy:flax_fiber"},
+		"result": 
+		{"item": "geggy:dried_fiber"}
+	})
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "geggy:chad"},{"item": "geggy:chad"},{"item": "geggy:dried_fiber"},{"item": "geggy:dried_fiber"},{"item": "geggy:copper_can"},{"fluid": "minecraft:water", amount: 20250}],
+		"results": [{"item": "geggy:chadded_copper_can"}]
+	})
+	event.custom({
+		"type": "create:emptying",
+		"ingredients": [
+			{"item": "geggy:chadded_copper_can"}
+		],
+		"results": [
+			{"item": "geggy:copper_can"},
+			{"amount": 40500, "fluid": "geggy:fiber_pulpy"}
+		]
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"amount": 20250, "fluid": "geggy:fiber_pulpy"}
+		],
+		"results": [
+			{"item": "geggy:fiber_pressed"}
+		]
+	})
+	event.custom({
+		"type": "minecraft:smoking",
+		"cookingtime": 300,
+		"experience": 0.0,
+		"ingredient": 
+			{"item": "geggy:fiber_pressed"},
+		"result": 
+		{"item": "minecraft:paper"}
+	})
+	
+	
+	
+	
+	
 })	
