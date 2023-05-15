@@ -1513,7 +1513,7 @@ ServerEvents.recipes(event => {
 		"cookingtime": 150,
 		"experience": 0.0,
 		"ingredient": 
-			{"item": "geggy:flax_fiber"},
+			{"item": "geggy:fiber"},
 		"result": 
 		{"item": "geggy:dried_fiber"}
 	})

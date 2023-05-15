@@ -121,12 +121,12 @@ ServerEvents.recipes(event => {
 		A: 'geggy:linen'
 	})
 	event.shapeless('supplementaries:flax_seeds', ['supplementaries:wild_flax', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
-	event.shapeless('geggy:flax_fiber', ['supplementaries:flax'])
+	event.shapeless('geggy:fiber', ['supplementaries:flax'])
 	
 	event.custom({
 		"type": "minecraft:campfire_cooking",
 		"ingredient": 
-			{"item": "geggy:flax_fiber"},
+			{"item": "geggy:fiber"},
 		"result": "geggy:dried_fiber",
 		"cookingtime": 200
 	})
@@ -196,7 +196,22 @@ ServerEvents.recipes(event => {
 		//"sound": "minecraft:item.axe.strip"
 	})
 	
+	// wheat > fiber
 	
+	event.shapeless('geggy:straw', ['minecraft:wheat', 'minecraft:shears']).damageIngredient('minecraft:shears')
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:straw"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"item": "create:filter"},
+		"result": [
+			{ "item": "geggy:fiber", "count": 1, "chance": 0.1}
+		]//,
+		//"sound": "minecraft:item.axe.strip"
+	})
 	
 	
 	

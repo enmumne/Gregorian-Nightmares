@@ -472,7 +472,8 @@ event.create('geggy:gravel_dust');
 event.create('geggy:andesite_dust');
 event.create('geggy:andesite_mix');
 
-event.create('geggy:flax_fiber');
+event.create('geggy:straw');
+event.create('geggy:fiber');
 event.create('geggy:dried_fiber');
 event.create('geggy:fiber_pulp');
 event.create('geggy:filtered_pulp');
