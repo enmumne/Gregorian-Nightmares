@@ -1,21 +1,22 @@
 {
-	id: "2864189457ACAB51"
-	group: "0E7F30F354FA6BBD"
-	order_index: 1
-	filename: "power_progression"
-	title: "Power"
-	icon: "create:gearbox"
-	default_quest_shape: ""
+	quest_links: [ ]
 	default_hide_dependency_lines: false
+	group: "0E7F30F354FA6BBD"
+	id: "2864189457ACAB51"
+	filename: "power_progression"
+	default_quest_shape: ""
+	icon: "create:gearbox"
+	title: "Power"
+	order_index: 1
 	quests: [
 		{
+			size: 1.5d
+			description: ["This extra chapter is more of a guide to power generation throughout the pack. There are no descriptions or quest rewards here, just progression guidance through each age."]
 			x: 0.0d
+			id: "518C7C486A6D5ECF"
 			y: 0.0d
 			shape: "gear"
-			description: ["This extra chapter is more of a guide to power generation throughout the pack. There are no descriptions or quest rewards here, just progression guidance through each age."]
-			size: 1.5d
 			min_width: 250
-			id: "518C7C486A6D5ECF"
 			tasks: [{
 				id: "54451DF512E6AF70"
 				type: "checkmark"
@@ -23,8 +24,11 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: 0.0d
+			tasks: [{
+				id: "60589E11FDA36591"
+				type: "item"
+				item: "modern_industrialization:bronze_ingot"
+			}]
 			description: [
 				"&o&6 3L : guys, should i go for stargate?"
 				"&o&7 6S : Sure, see you in 20 years"
@@ -32,264 +36,263 @@
 			]
 			dependencies: ["029DAB2FA01296D3"]
 			id: "01DE17BB09F6BA2B"
-			tasks: [{
-				id: "60589E11FDA36591"
-				type: "item"
-				item: "modern_industrialization:bronze_ingot"
-			}]
+			y: 0.0d
+			x: 4.5d
 		}
 		{
-			x: 4.5d
-			y: -2.0d
-			dependencies: ["01DE17BB09F6BA2B"]
-			id: "70DDC7E150E847B1"
 			tasks: [{
 				id: "52E9C5D5487F20D4"
 				type: "item"
 				item: "modern_industrialization:bronze_boiler"
 			}]
+			dependencies: ["01DE17BB09F6BA2B"]
+			id: "70DDC7E150E847B1"
+			y: -2.0d
+			x: 4.5d
 		}
 		{
-			x: 2.5d
-			y: 0.0d
-			dependencies: ["518C7C486A6D5ECF"]
-			id: "029DAB2FA01296D3"
 			tasks: [{
 				id: "03291B60DC3846DD"
 				type: "item"
 				item: "modern_industrialization:steam_bucket"
 			}]
+			dependencies: ["518C7C486A6D5ECF"]
+			id: "029DAB2FA01296D3"
+			y: 0.0d
+			x: 2.5d
 		}
 		{
-			x: 6.5d
-			y: 0.0d
-			dependencies: ["01DE17BB09F6BA2B"]
-			id: "132E08A89C116AD7"
 			tasks: [{
 				id: "5ADD440A4417A39E"
 				type: "item"
 				item: "modern_industrialization:steel_ingot"
 			}]
+			dependencies: ["01DE17BB09F6BA2B"]
+			id: "132E08A89C116AD7"
+			y: 0.0d
+			x: 6.5d
 		}
 		{
-			x: 6.5d
-			y: -2.0d
-			dependencies: ["132E08A89C116AD7"]
-			id: "18C294B89245ADF6"
 			tasks: [{
 				id: "45CF7C208C5A26BB"
 				type: "item"
 				item: "modern_industrialization:steel_boiler"
 			}]
+			dependencies: ["132E08A89C116AD7"]
+			id: "18C294B89245ADF6"
+			y: -2.0d
+			x: 6.5d
 		}
 		{
-			x: 8.5d
-			y: 0.0d
-			subtitle: "Low Violence"
-			dependencies: ["132E08A89C116AD7"]
-			id: "6AE785D7216AC285"
 			tasks: [{
 				id: "3C8C508E3E66A9E5"
 				type: "item"
 				item: "modern_industrialization:basic_machine_hull"
 			}]
+			dependencies: ["132E08A89C116AD7"]
+			subtitle: "Low Violence"
+			id: "6AE785D7216AC285"
+			y: 0.0d
+			x: 8.5d
 		}
 		{
-			x: 8.5d
-			y: -2.0d
-			dependencies: ["6AE785D7216AC285"]
-			id: "030C2BFBF7ABDE40"
 			tasks: [{
 				id: "1B3E3EFB21870E50"
 				type: "item"
 				item: "modern_industrialization:lv_steam_turbine"
 			}]
+			dependencies: ["6AE785D7216AC285"]
+			id: "030C2BFBF7ABDE40"
+			y: -2.0d
+			x: 8.5d
 		}
 		{
-			x: 8.5d
-			y: 1.5d
-			dependencies: ["6AE785D7216AC285"]
-			id: "1004DCD0122BF63A"
 			tasks: [{
 				id: "762EE789F4D31D04"
 				type: "item"
 				item: "modern_industrialization:lv_storage_unit"
 			}]
+			dependencies: ["6AE785D7216AC285"]
+			id: "1004DCD0122BF63A"
+			y: 1.5d
+			x: 8.5d
 		}
 		{
-			x: 11.5d
-			y: 0.0d
-			subtitle: "Medium Violence"
-			dependencies: ["6AE785D7216AC285"]
-			id: "661D80085A9EBA2C"
 			tasks: [{
 				id: "5A34D8D29B5C3FE9"
 				type: "item"
 				item: "modern_industrialization:advanced_machine_hull"
 			}]
+			dependencies: ["6AE785D7216AC285"]
+			subtitle: "Medium Violence"
+			id: "661D80085A9EBA2C"
+			y: 0.0d
+			x: 11.5d
 		}
 		{
-			x: 10.5d
-			y: -2.0d
-			dependencies: ["661D80085A9EBA2C"]
-			id: "517EEC44846151C1"
 			tasks: [{
 				id: "02C85DACF165599C"
 				type: "item"
 				item: "modern_industrialization:mv_steam_turbine"
 			}]
+			dependencies: ["661D80085A9EBA2C"]
+			id: "517EEC44846151C1"
+			y: -2.0d
+			x: 10.5d
 		}
 		{
-			x: 11.5d
-			y: 1.5d
-			dependencies: ["661D80085A9EBA2C"]
-			id: "3C6EADE43DFE06FC"
 			tasks: [{
 				id: "126491E74E6161F8"
 				type: "item"
 				item: "modern_industrialization:mv_storage_unit"
 			}]
+			dependencies: ["661D80085A9EBA2C"]
+			id: "3C6EADE43DFE06FC"
+			y: 1.5d
+			x: 11.5d
 		}
 		{
-			x: 12.5d
-			y: -2.0d
-			dependencies: ["661D80085A9EBA2C"]
-			id: "487C3685FC42F344"
 			tasks: [{
 				id: "16C21FD617010E8C"
 				type: "item"
 				item: "modern_industrialization:diesel_generator"
 			}]
+			dependencies: ["661D80085A9EBA2C"]
+			id: "487C3685FC42F344"
+			y: -2.0d
+			x: 12.5d
 		}
 		{
-			x: 12.5d
-			y: -4.0d
-			dependencies: ["487C3685FC42F344"]
-			id: "2917E4514306E2D0"
 			tasks: [{
 				id: "7D1D396C87642D24"
 				type: "item"
 				item: "modern_industrialization:crude_oil_bucket"
 			}]
+			dependencies: ["487C3685FC42F344"]
+			id: "2917E4514306E2D0"
+			y: -4.0d
+			x: 12.5d
 		}
 		{
-			x: 11.5d
-			y: -6.0d
-			dependencies: ["2917E4514306E2D0"]
-			id: "3365ECDCF5068B9F"
 			tasks: [{
 				id: "7322A4B528C737E7"
 				type: "item"
 				item: "modern_industrialization:light_fuel_bucket"
 			}]
+			dependencies: ["2917E4514306E2D0"]
+			id: "3365ECDCF5068B9F"
+			y: -6.0d
+			x: 11.5d
 		}
 		{
-			x: 13.5d
-			y: -6.0d
-			dependencies: ["2917E4514306E2D0"]
-			id: "5240813039986CC4"
 			tasks: [{
 				id: "7B34CECFAF9D3A60"
 				type: "item"
 				item: "modern_industrialization:heavy_fuel_bucket"
 			}]
+			dependencies: ["2917E4514306E2D0"]
+			id: "5240813039986CC4"
+			y: -6.0d
+			x: 13.5d
 		}
 		{
-			x: 12.5d
-			y: -8.0d
-			dependencies: [
-				"3365ECDCF5068B9F"
-				"5240813039986CC4"
-			]
-			id: "5EBA19D998ED882B"
 			tasks: [{
 				id: "2350674ADEA0E862"
 				type: "item"
 				item: "modern_industrialization:diesel_bucket"
 			}]
+			dependencies: [
+				"3365ECDCF5068B9F"
+				"5240813039986CC4"
+			]
+			id: "5EBA19D998ED882B"
+			y: -8.0d
+			x: 12.5d
 		}
 		{
-			x: 4.5d
-			y: 1.5d
-			dependencies: ["01DE17BB09F6BA2B"]
-			id: "7E815A2B55A97FCA"
 			tasks: [{
 				id: "382155B0A442CB38"
 				type: "item"
 				item: "modern_industrialization:bronze_tank"
 			}]
+			dependencies: ["01DE17BB09F6BA2B"]
+			id: "7E815A2B55A97FCA"
+			y: 1.5d
+			x: 4.5d
 		}
 		{
-			x: 6.5d
-			y: 1.5d
-			dependencies: ["132E08A89C116AD7"]
-			id: "0A9F42585E0AEEEE"
 			tasks: [{
 				id: "4C30BF648E4E21F4"
 				type: "item"
 				item: "modern_industrialization:steel_tank"
 			}]
+			dependencies: ["132E08A89C116AD7"]
+			id: "0A9F42585E0AEEEE"
+			y: 1.5d
+			x: 6.5d
 		}
 		{
-			x: 16.0d
-			y: 0.0d
-			subtitle: "High Violence"
-			dependencies: ["661D80085A9EBA2C"]
-			id: "4943C715A710038A"
 			tasks: [{
 				id: "058520E61F8B3488"
 				type: "item"
 				item: "modern_industrialization:turbo_machine_hull"
 			}]
+			dependencies: ["661D80085A9EBA2C"]
+			subtitle: "High Violence"
+			id: "4943C715A710038A"
+			y: 0.0d
+			x: 16.0d
 		}
 		{
-			x: 16.0d
-			y: 1.5d
-			dependencies: ["4943C715A710038A"]
-			id: "4030A5C77FF0133F"
 			tasks: [{
 				id: "6F4633F65F247400"
 				type: "item"
 				item: "modern_industrialization:hv_storage_unit"
 			}]
+			dependencies: ["4943C715A710038A"]
+			id: "4030A5C77FF0133F"
+			y: 1.5d
+			x: 16.0d
 		}
 		{
-			x: 17.0d
-			y: -2.0d
-			dependencies: ["4943C715A710038A"]
-			id: "3F7737DF38D5E430"
 			tasks: [{
 				id: "67D6B7C51D56BCA1"
 				type: "item"
 				item: "modern_industrialization:turbo_diesel_generator"
 			}]
+			dependencies: ["4943C715A710038A"]
+			id: "3F7737DF38D5E430"
+			y: -2.0d
+			x: 17.0d
 		}
 		{
-			x: 15.0d
-			y: -2.0d
-			dependencies: ["4943C715A710038A"]
-			id: "3A58E522C646D3B6"
 			tasks: [{
 				id: "289639BED8519A2E"
 				type: "item"
 				item: "modern_industrialization:hv_steam_turbine"
 			}]
+			dependencies: ["4943C715A710038A"]
+			id: "3A58E522C646D3B6"
+			y: -2.0d
+			x: 15.0d
 		}
 		{
-			x: 16.0d
-			y: -2.0d
-			dependencies: ["4943C715A710038A"]
-			id: "5C51529AB774035D"
 			tasks: [{
 				id: "3458DD17F3393436"
 				type: "item"
 				item: "modern_industrialization:large_steam_turbine"
 			}]
+			dependencies: ["4943C715A710038A"]
+			id: "5C51529AB774035D"
+			y: -2.0d
+			x: 16.0d
 		}
 		{
-			x: 19.5d
-			y: 0.0d
-			subtitle: "Extensive Violence"
+			tasks: [{
+				id: "2CB49CBA385BA6BE"
+				type: "item"
+				item: "modern_industrialization:highly_advanced_machine_hull"
+			}]
 			description: [
 				""
 				"&o&6 7F : gtnh isnt even that bad pre LuV"
@@ -316,52 +319,53 @@
 				"&o&b : to actually have fun"
 				"&o&d 5Y : Yea the idea behind the design is that most ppl don’t like early game so we give tools to push past it"
 			]
-			dependencies: ["4943C715A710038A"]
-			min_width: 280
 			id: "61ED49635423BC86"
-			tasks: [{
-				id: "2CB49CBA385BA6BE"
-				type: "item"
-				item: "modern_industrialization:highly_advanced_machine_hull"
-			}]
+			x: 19.5d
+			y: 0.0d
+			min_width: 280
+			subtitle: "Extensive Violence"
+			dependencies: ["4943C715A710038A"]
 		}
 		{
-			x: 19.5d
-			y: 1.5d
-			dependencies: ["61ED49635423BC86"]
-			id: "402CF7F64ADA5257"
 			tasks: [{
 				id: "4FB401FFD33EB474"
 				type: "item"
 				item: "modern_industrialization:ev_storage_unit"
 			}]
+			dependencies: ["61ED49635423BC86"]
+			id: "402CF7F64ADA5257"
+			y: 1.5d
+			x: 19.5d
 		}
 		{
-			x: 22.5d
-			y: 0.0d
-			subtitle: "Ultra Violence"
-			dependencies: ["61ED49635423BC86"]
-			id: "740D7C5250A5510E"
 			tasks: [{
 				id: "6365A203FB729844"
 				type: "item"
 				item: "modern_industrialization:quantum_machine_hull"
 			}]
+			dependencies: ["61ED49635423BC86"]
+			subtitle: "Ultra Violence"
+			id: "740D7C5250A5510E"
+			y: 0.0d
+			x: 22.5d
 		}
 		{
-			x: 22.5d
-			y: 1.5d
-			dependencies: ["740D7C5250A5510E"]
-			id: "40F65174F97A0018"
 			tasks: [{
 				id: "6E7E7214335193EB"
 				type: "item"
 				item: "modern_industrialization:superconductor_storage_unit"
 			}]
+			dependencies: ["740D7C5250A5510E"]
+			id: "40F65174F97A0018"
+			y: 1.5d
+			x: 22.5d
 		}
 		{
-			x: 22.5d
-			y: -2.0d
+			tasks: [{
+				id: "471E88606E9A1026"
+				type: "item"
+				item: "modern_industrialization:fusion_reactor"
+			}]
 			description: [
 				"&o&7 0C : im beginning to automate some things now"
 				"&o&7 0C : greg would be proud"
@@ -381,85 +385,85 @@
 				"&o&7 0C : Its easy"
 				"&o&7 0C : automation is for nerds anyways"
 			]
-			dependencies: ["740D7C5250A5510E"]
-			min_width: 230
 			id: "3DDD9532A12535EF"
-			tasks: [{
-				id: "471E88606E9A1026"
-				type: "item"
-				item: "modern_industrialization:fusion_reactor"
-			}]
+			x: 22.5d
+			y: -2.0d
+			min_width: 230
+			dependencies: ["740D7C5250A5510E"]
 		}
 		{
-			x: 22.5d
-			y: -4.0d
-			dependencies: ["3DDD9532A12535EF"]
-			id: "514236C6F761B42D"
 			tasks: [{
 				id: "799887702BE0D9A6"
 				type: "item"
 				item: "modern_industrialization:plasma_turbine"
 			}]
+			dependencies: ["3DDD9532A12535EF"]
+			id: "514236C6F761B42D"
+			y: -4.0d
+			x: 22.5d
 		}
 		{
-			x: 22.5d
-			y: -6.0d
-			description: ["&o&7 0C : im trying to figure out how to use the interfaces rn"]
-			dependencies: ["514236C6F761B42D"]
-			id: "761BB45EE5BD7756"
 			tasks: [{
 				id: "16E598B570E35921"
 				type: "item"
 				item: "modern_industrialization:helium_plasma_bucket"
 			}]
+			description: ["&o&7 0C : im trying to figure out how to use the interfaces rn"]
+			dependencies: ["514236C6F761B42D"]
+			id: "761BB45EE5BD7756"
+			y: -6.0d
+			x: 22.5d
 		}
 		{
-			x: 4.5d
-			y: -4.0d
-			dependencies: ["70DDC7E150E847B1"]
-			id: "5590F160C7EA6AC5"
 			tasks: [{
 				id: "43C4C632960DA4D7"
 				type: "item"
 				item: "modern_industrialization:large_steam_boiler"
 			}]
+			dependencies: ["70DDC7E150E847B1"]
+			id: "5590F160C7EA6AC5"
+			y: -4.0d
+			x: 4.5d
 		}
 		{
-			x: 4.5d
-			y: -6.0d
-			dependencies: ["5590F160C7EA6AC5"]
-			id: "12DA580E2F7BC708"
 			tasks: [{
 				id: "0DA5DBA8C1586DBB"
 				type: "item"
 				item: "modern_industrialization:advanced_large_steam_boiler"
 			}]
+			dependencies: ["5590F160C7EA6AC5"]
+			id: "12DA580E2F7BC708"
+			y: -6.0d
+			x: 4.5d
 		}
 		{
-			x: 4.5d
-			y: -8.0d
-			dependencies: ["12DA580E2F7BC708"]
-			id: "069C5C1DCE3D6D68"
 			tasks: [{
 				id: "07F9932196F1AC97"
 				type: "item"
 				item: "modern_industrialization:high_pressure_large_steam_boiler"
 			}]
+			dependencies: ["12DA580E2F7BC708"]
+			id: "069C5C1DCE3D6D68"
+			y: -8.0d
+			x: 4.5d
 		}
 		{
-			x: 4.5d
-			y: -10.0d
-			dependencies: ["069C5C1DCE3D6D68"]
-			id: "7ED1DADA4F19C29D"
 			tasks: [{
 				id: "292193149B84F52C"
 				type: "item"
 				item: "modern_industrialization:high_pressure_advanced_large_steam_boiler"
 			}]
+			dependencies: ["069C5C1DCE3D6D68"]
+			id: "7ED1DADA4F19C29D"
+			y: -10.0d
+			x: 4.5d
 		}
 		{
-			x: 18.5d
-			y: -2.0d
+			tasks: [{
+				id: "3293E103BB89CDCB"
+				type: "item"
+				item: "modern_industrialization:nuclear_reactor"
+			}]
 			description: [
 				""
 				"&o&3 9S : Is there by any chance any person in this server with a degree related to nuclear physics"
@@ -473,6 +477,7 @@
 				"&o&7 2W : The main pieces of overhaul reactors that are definitely not realistic are the heat sink puzzle, neutron flux mechanics, and the various heat multiplier and efficiency bonuses/penalties"
 				"&o&7 : The only thing I know for sure can definitely be improved without making things too annoying for the average player is the overfluxing mechanic, which currently has the weird effect of reducing the efficiency of the cell without modifying its heat output"
 				"&o&7 : Stuff like the placement puzzle is defo at odds with how the designing a reactor’s heat dissipation is actually done, but I think it’s a worthwhile gamification"
+				"{@pagebreak}"
 				"&o&4 49 : what's the purpose for alternating flux wires? do they transfer HV flux across a longer distance?"
 				"&o&7 2W : My idea was pretty much based on the very crude simplification that the cross-section for fission is a very simple monotonically decreasing function of neutron energy"
 				"&o&7 : The actual maths NCO uses is just one particular example of that"
@@ -487,70 +492,66 @@
 				"&o&3 9S : Can you tell me about ReactorCraft?"
 				"&o&e 68 : Hope you like 1.7"
 			]
-			dependencies: ["61ED49635423BC86"]
-			min_width: 450
 			id: "7DB0E5EE64D0BD1F"
-			tasks: [{
-				id: "3293E103BB89CDCB"
-				type: "item"
-				item: "modern_industrialization:nuclear_reactor"
-			}]
+			x: 18.5d
+			y: -2.0d
+			min_width: 450
+			dependencies: ["61ED49635423BC86"]
 		}
 		{
-			x: 20.5d
-			y: -2.0d
-			dependencies: ["61ED49635423BC86"]
-			id: "240415C2C2464C32"
 			tasks: [{
 				id: "0099772626BC68E5"
 				type: "item"
 				item: "modern_industrialization:large_diesel_generator"
 			}]
+			dependencies: ["61ED49635423BC86"]
+			id: "240415C2C2464C32"
+			y: -2.0d
+			x: 20.5d
 		}
 		{
-			x: 8.5d
-			y: -4.0d
-			dependencies: ["030C2BFBF7ABDE40"]
-			id: "150DDD2F38682163"
 			tasks: [{
 				id: "57FE69B311BDDC2A"
 				type: "item"
 				item: "modern_industrialization:large_steam_boiler"
 			}]
+			dependencies: ["030C2BFBF7ABDE40"]
+			id: "150DDD2F38682163"
+			y: -4.0d
+			x: 8.5d
 		}
 		{
-			x: 10.5d
-			y: -4.0d
-			dependencies: ["517EEC44846151C1"]
-			id: "0651D859C4A51F3A"
 			tasks: [{
 				id: "7FB0747F2259FB76"
 				type: "item"
 				item: "modern_industrialization:advanced_large_steam_boiler"
 			}]
+			dependencies: ["517EEC44846151C1"]
+			id: "0651D859C4A51F3A"
+			y: -4.0d
+			x: 10.5d
 		}
 		{
-			x: 15.0d
-			y: -4.0d
-			dependencies: ["3A58E522C646D3B6"]
-			id: "239BD25BEC029162"
 			tasks: [{
 				id: "1B0F669C4C0614DA"
 				type: "item"
 				item: "modern_industrialization:high_pressure_large_steam_boiler"
 			}]
+			dependencies: ["3A58E522C646D3B6"]
+			id: "239BD25BEC029162"
+			y: -4.0d
+			x: 15.0d
 		}
 		{
-			x: 18.5d
-			y: -4.0d
-			dependencies: ["7DB0E5EE64D0BD1F"]
-			id: "4C325878966A7B32"
 			tasks: [{
 				id: "5875996CBE8775AE"
 				type: "item"
 				item: "modern_industrialization:high_pressure_advanced_large_steam_boiler"
 			}]
+			dependencies: ["7DB0E5EE64D0BD1F"]
+			id: "4C325878966A7B32"
+			y: -4.0d
+			x: 18.5d
 		}
 	]
-	quest_links: [ ]
 }

@@ -1327,7 +1327,8 @@ ServerEvents.recipes(event => {
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:iron_ingot'})
 	event.remove({type: 'minecraft:smelting', output: 'minecraft:iron_ingot'})
 	event.remove({type: 'minecraft:blasting', output: 'minecraft:iron_ingot'})
-	event.smelting('minecraft:iron_nugget', 'minecraft:raw_iron').cookingTime(900)
+	event.smelting('minecraft:iron_nugget', 'minecraft:raw_iron').cookingTime(1800) // 90 sec
+	event.smelting('minecraft:iron_nugget', 'create:crushed_iron_ore').cookingTime(1200) // 60 sec
 	event.remove({type: 'minecraft:blasting', output: 'minecraft:iron_ingot'})
 	
 	event.recipes.modern_industrialization.salloy({

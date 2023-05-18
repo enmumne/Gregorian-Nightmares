@@ -319,9 +319,9 @@ event.create('geggy:j_wooden_axe_head').displayName('Wooden Axe Head');
 event.create('geggy:j_stone_pickaxe_head').displayName('Stone Pickaxe Head');
 event.create('geggy:j_stone_axe_head').displayName('Stone Axe Head');
 
-event.create('geggy:wooden_form', 'basic').displayName('Wooden Form').maxDamage(100);
+event.create('geggy:wooden_form', 'basic').displayName('Wooden Form').maxDamage(128);
 //event.create('geggy:stone_bowl').displayName('Stone Bowl');
-event.create('geggy:stone_mortar', 'basic').displayName('Stone Mortar').maxDamage(100);
+event.create('geggy:stone_mortar', 'basic').displayName('Stone Mortar').maxDamage(128);
 event.create('geggy:soft_hammer', 'basic').displayName('Soft Hammer').maxDamage(50);
 
 event.create('geggy:wood_pulp').displayName('Wood Pulp');
@@ -477,7 +477,7 @@ event.create('geggy:fiber');
 event.create('geggy:dried_fiber');
 event.create('geggy:fiber_pulp');
 event.create('geggy:filtered_pulp');
-event.create('geggy:fiber_pressed');
+event.create('geggy:fiber_pressed').displayName('Pressed Fiber');
 event.create('geggy:twine');
 event.create('geggy:linen');
 

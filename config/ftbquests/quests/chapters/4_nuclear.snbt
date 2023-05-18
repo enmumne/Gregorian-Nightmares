@@ -1,26 +1,27 @@
 {
-	id: "7A2B736D9D590BD1"
-	group: "113481E7A031FCFE"
-	order_index: 5
-	filename: "5_nuclear"
-	title: "5 - No clear"
-	icon: "modern_industrialization:nuclear_reactor"
-	default_quest_shape: ""
+	quest_links: [ ]
 	default_hide_dependency_lines: false
+	group: "113481E7A031FCFE"
+	id: "7A2B736D9D590BD1"
+	filename: "4_nuclear"
+	default_quest_shape: ""
+	icon: "modern_industrialization:nuclear_reactor"
+	title: "4 - No clear"
+	order_index: 5
 	quests: [
 		{
-			x: 0.0d
-			y: 0.0d
-			shape: "gear"
+			size: 2.0d
 			description: [
 				"This chapter guides you along the process of getting Nuclear Energy up and running. MI's Nuclear Reactor setups are quite in-depth and require some thought to put together. Once you have the necessary ingredients, there will be a task attempting to explain the system, but you may need to venture out to Discord or otherwise to figure out the most efficient setups."
 				""
 				"Until then, lets get started on the materials."
 			]
-			dependencies: ["3DE51EF44AB9C9FC"]
-			size: 2.0d
-			min_width: 250
 			id: "01D6AC4F7E958022"
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			min_width: 250
+			dependencies: ["3DE51EF44AB9C9FC"]
 			tasks: [{
 				id: "27F9AF8ED6ED7A69"
 				type: "checkmark"
@@ -28,8 +29,11 @@
 			}]
 		}
 		{
-			x: -2.5d
-			y: 12.0d
+			tasks: [{
+				id: "22254518B09C9FDF"
+				type: "item"
+				item: "modern_industrialization:nuclear_reactor"
+			}]
 			description: [
 				"The Nuclear Reactor will be the most powerful EU generation process in the game. It can produce 100s of times more power than Diesel. It is a multiblock that comes in many shapes and setups. Unlike other modpacks, the Nuclear Reactor will not explode or emit any sort of radiation. This is to encourage experimentation with different setups. However, due to the high cost of crafting materials, you may want to jump into Creative mode in order to experiment and arrive at the perfect setup for your base. For details on how the Nuclear Reactor works, see the MI book. There is a lot that goes into it, more than what can be explained here."
 				""
@@ -51,21 +55,21 @@
 				"&o&c 8H : by \"reactor\" i really mean tinfoil ball of uranium"
 				"&o&c 8H : actually i think it was thorium"
 			]
+			id: "76487F82BBFA5075"
+			x: -2.5d
+			y: 12.0d
+			min_width: 350
 			dependencies: [
 				"641BBE67303180F3"
 				"0C66F966DA74B196"
 			]
-			min_width: 350
-			id: "76487F82BBFA5075"
-			tasks: [{
-				id: "22254518B09C9FDF"
-				type: "item"
-				item: "modern_industrialization:nuclear_reactor"
-			}]
 		}
 		{
-			x: 0.0d
-			y: 7.5d
+			tasks: [{
+				id: "248A849A58E47AEA"
+				type: "item"
+				item: "modern_industrialization:processing_unit"
+			}]
 			description: [
 				"No sequenced assembly for this tier of circuit. Although the assembly line is still a challenging one."
 				""
@@ -80,152 +84,132 @@
 				"&o&c 2C : i took a lot of inspiration from the PGS"
 				"&o&7 18 : i love dictatorships"
 			]
+			id: "3B01367632B175B9"
+			x: 0.0d
+			y: 7.5d
+			min_width: 230
 			dependencies: [
 				"52E636EA5ED4E7EC"
 				"799576C70AF81E45"
 			]
-			min_width: 230
-			id: "3B01367632B175B9"
-			tasks: [{
-				id: "248A849A58E47AEA"
-				type: "item"
-				item: "modern_industrialization:processing_unit"
-			}]
 		}
 		{
-			x: -3.5d
-			y: 7.5d
+			tasks: [{
+				id: "026B0A0D3DEE48BD"
+				type: "item"
+				item: "modern_industrialization:nuclear_alloy_plate"
+			}]
 			description: ["With Cadmium \\& Beryllium set up, you should be good to make Nuclear Alloy Plates."]
 			dependencies: [
 				"420DE6978970C743"
 				"64C43E369B82F589"
 			]
 			id: "0C66F966DA74B196"
-			tasks: [{
-				id: "026B0A0D3DEE48BD"
-				type: "item"
-				item: "modern_industrialization:nuclear_alloy_plate"
-			}]
+			y: 7.5d
+			x: -3.5d
 		}
 		{
-			x: -4.5d
-			y: 2.5d
-			description: ["You can get Beryllium Dust from Emeralds. They are the main blocker in creating Nuclear Alloy Plating which is required for your reactor."]
-			dependencies: ["01D6AC4F7E958022"]
-			id: "420DE6978970C743"
 			tasks: [{
 				id: "581B84CFAF33E9E7"
 				type: "item"
 				item: "modern_industrialization:beryllium_ingot"
 			}]
+			description: ["You can get Beryllium Dust from Emeralds. They are the main blocker in creating Nuclear Alloy Plating which is required for your reactor."]
+			dependencies: ["01D6AC4F7E958022"]
+			id: "420DE6978970C743"
+			y: 2.5d
+			x: -4.5d
 		}
 		{
-			x: -2.0d
-			y: 2.5d
-			description: ["Cadmium can be made from Mozanite. You should have a steady supply coming from your Quarry."]
-			dependencies: ["01D6AC4F7E958022"]
-			id: "64C43E369B82F589"
 			tasks: [{
 				id: "496827DED04C2B00"
 				type: "item"
 				item: "modern_industrialization:cadmium_ingot"
 			}]
+			description: ["Cadmium can be made from Mozanite. You should have a steady supply coming from your Quarry."]
+			dependencies: ["01D6AC4F7E958022"]
+			id: "64C43E369B82F589"
+			y: 2.5d
+			x: -2.0d
 		}
 		{
-			x: -1.0d
-			y: 5.0d
+			tasks: [{
+				id: "77FA55F6771D8A7F"
+				type: "item"
+				item: "modern_industrialization:cadmium_battery"
+			}]
 			description: ["Cadmium Batteries are the next tier of battery, required for the Processing Unit and some EV Power recipes."]
 			dependencies: [
 				"64C43E369B82F589"
 				"74D18B47E10BEAA4"
 			]
 			id: "52E636EA5ED4E7EC"
-			tasks: [{
-				id: "77FA55F6771D8A7F"
-				type: "item"
-				item: "modern_industrialization:cadmium_battery"
-			}]
+			y: 5.0d
+			x: -1.0d
 		}
 		{
-			x: 0.0d
-			y: 2.5d
-			description: ["Annealed Copper can be made from it's hot form. This comes from regular copper and hydrogen."]
-			dependencies: ["01D6AC4F7E958022"]
-			id: "74D18B47E10BEAA4"
 			tasks: [{
 				id: "1085F51EDFAC4D62"
 				type: "item"
 				item: "modern_industrialization:annealed_copper_ingot"
 			}]
+			description: ["Annealed Copper can be made from it's hot form. This comes from regular copper and hydrogen."]
+			dependencies: ["01D6AC4F7E958022"]
+			id: "74D18B47E10BEAA4"
+			y: 2.5d
+			x: 0.0d
 		}
 		{
-			x: 0.0d
-			y: 9.5d
-			description: ["Highly Advanced Machine Hulls upgrade your machines to EV tier."]
-			dependencies: ["3B01367632B175B9"]
-			id: "641BBE67303180F3"
 			tasks: [{
 				id: "25EB871F1A76E08D"
 				type: "item"
 				item: "modern_industrialization:highly_advanced_machine_hull"
 			}]
+			description: ["Highly Advanced Machine Hulls upgrade your machines to EV tier."]
+			dependencies: ["3B01367632B175B9"]
+			id: "641BBE67303180F3"
+			y: 9.5d
+			x: 0.0d
 		}
 		{
-			title: "Infinitest Resources?"
-			x: 1.5d
-			y: 7.5d
-			description: ["The Titanium Drill will give you access to Uranium and Iridium. Although Uranium can be mined, Iridium Ore can only be acquired through the Quarry."]
-			dependencies: ["3B01367632B175B9"]
-			id: "032743D5800AAD8E"
 			tasks: [{
 				id: "6109415EABC49D05"
 				type: "item"
 				item: "modern_industrialization:titanium_drill"
 			}]
+			description: ["The Titanium Drill will give you access to Uranium and Iridium. Although Uranium can be mined, Iridium Ore can only be acquired through the Quarry."]
+			id: "032743D5800AAD8E"
+			x: 1.5d
+			y: 7.5d
+			title: "Infinitest Resources?"
+			dependencies: ["3B01367632B175B9"]
 		}
 		{
-			x: 2.0d
-			y: 9.5d
-			description: ["You know the drill by now. Store your EV power here."]
-			dependencies: ["641BBE67303180F3"]
-			id: "548DE85B3E96EB94"
 			tasks: [{
 				id: "6B95021A54EED783"
 				type: "item"
 				item: "modern_industrialization:ev_storage_unit"
 			}]
+			description: ["You know the drill by now. Store your EV power here."]
+			dependencies: ["641BBE67303180F3"]
+			id: "548DE85B3E96EB94"
+			y: 9.5d
+			x: 2.0d
 		}
 		{
-			x: -1.5d
-			y: 7.5d
-			description: ["The Highly Advanced Upgrade provides +128EU\\t per upgrade. It also brings you one step closer to the Quantum Upgrade and the Endgame!"]
-			dependencies: ["3B01367632B175B9"]
-			optional: true
-			id: "52355DD756FD3D8E"
 			tasks: [{
 				id: "35D54089FAF9BAFF"
 				type: "item"
 				item: "modern_industrialization:highly_advanced_upgrade"
 			}]
+			description: ["The Highly Advanced Upgrade provides +128EU\\t per upgrade. It also brings you one step closer to the Quantum Upgrade and the Endgame!"]
+			id: "52355DD756FD3D8E"
+			x: -1.5d
+			y: 7.5d
+			dependencies: ["3B01367632B175B9"]
+			optional: true
 		}
 		{
-			title: "Creative AE2"
-			x: -2.5d
-			y: 15.5d
-			description: [
-				"After you've set up your Nuclear Reactor and let it run for a while, you should have some depleted Uranium Fuel Rods. There are other uses in MI for these, but one thing you can do to put them to use is Crafting some Creative AE2 Storage Cells. Like the Creative Motor, these may not make a huge difference in your infrastructure at this point, but it should reduce some crafting from time to time to widen your storage capabilities."
-				""
-				"&o&7 46 : im still an LV noob"
-				"&o&7 46 : i have a total of like 4 machines and 5 wires connecting them"
-				"&o&c 2C : ah, i remember when i was like you youngins"
-				"&o&c 2C : what voltage is humanity at?"
-			]
-			dependencies: [
-				"76487F82BBFA5075"
-				"6EBE83755BD839AF"
-			]
-			min_width: 250
-			id: "6EAF6E36810D3C54"
 			tasks: [
 				{
 					id: "3E9AB8D1FCEE9561"
@@ -238,14 +222,25 @@
 					item: "ae2:creative_fluid_cell"
 				}
 			]
+			description: [
+				"After you've set up your Nuclear Reactor and let it run for a while, you should have some depleted Uranium Fuel Rods. There are other uses in MI for these, but one thing you can do to put them to use is Crafting some Creative AE2 Storage Cells. Like the Creative Motor, these may not make a huge difference in your infrastructure at this point, but it should reduce some crafting from time to time to widen your storage capabilities."
+				""
+				"&o&7 46 : im still an LV noob"
+				"&o&7 46 : i have a total of like 4 machines and 5 wires connecting them"
+				"&o&c 2C : ah, i remember when i was like you youngins"
+				"&o&c 2C : what voltage is humanity at?"
+			]
+			id: "6EAF6E36810D3C54"
+			x: -2.5d
+			y: 15.5d
+			title: "Creative AE2"
+			min_width: 250
+			dependencies: [
+				"76487F82BBFA5075"
+				"6EBE83755BD839AF"
+			]
 		}
 		{
-			icon: "modern_industrialization:platinum_ingot"
-			x: 2.5d
-			y: 2.5d
-			description: ["Platinum Ingots have a relatively complex processing chain compared to other ingots. Raw Platinum needs to be put in a Chemical Reactor with Sulfuric Acid and then put in an Electrolyzer. The sulfuric acid is again somewhat reusable so keep that in mind when setting up the line."]
-			dependencies: ["01D6AC4F7E958022"]
-			id: "799576C70AF81E45"
 			tasks: [
 				{
 					id: "1E308F126E5BBEFE"
@@ -263,10 +258,19 @@
 					item: "modern_industrialization:platinum_ingot"
 				}
 			]
+			description: ["Platinum Ingots have a relatively complex processing chain compared to other ingots. Raw Platinum needs to be put in a Chemical Reactor with Sulfuric Acid and then put in an Electrolyzer. The sulfuric acid is again somewhat reusable so keep that in mind when setting up the line."]
+			icon: "modern_industrialization:platinum_ingot"
+			id: "799576C70AF81E45"
+			x: 2.5d
+			y: 2.5d
+			dependencies: ["01D6AC4F7E958022"]
 		}
 		{
-			x: 0.0d
-			y: 14.0d
+			tasks: [{
+				id: "212A1F0A6DFA5A42"
+				type: "item"
+				item: "ae2:quantum_entangled_singularity"
+			}]
 			description: [
 				"To create the Quantum Entangled Singularity, drop a Singularity and Ender Dust on the ground and create an explosion."
 				""
@@ -276,26 +280,13 @@
 				"&o&c 2C : and yknow what"
 				"&o&c 2C : thats fine"
 			]
-			dependencies: ["1B3B244BA28A54D3"]
-			min_width: 220
 			id: "6EBE83755BD839AF"
-			tasks: [{
-				id: "212A1F0A6DFA5A42"
-				type: "item"
-				item: "ae2:quantum_entangled_singularity"
-			}]
+			x: 0.0d
+			y: 14.0d
+			min_width: 220
+			dependencies: ["1B3B244BA28A54D3"]
 		}
 		{
-			x: 0.0d
-			y: 12.0d
-			description: [
-				"The Matter Condenser will be used for most endgame recipes. Feed 256k of any item to the Condenser and put an AE2 storage component to output a Singularity."
-				""
-				"HINT: Cobblestone generators are your friend here. "
-			]
-			dependencies: ["641BBE67303180F3"]
-			min_width: 250
-			id: "1B3B244BA28A54D3"
 			tasks: [
 				{
 					id: "5C402C80B6E163BA"
@@ -308,7 +299,16 @@
 					item: "ae2:singularity"
 				}
 			]
+			description: [
+				"The Matter Condenser will be used for most endgame recipes. Feed 256k of any item to the Condenser and put an AE2 storage component to output a Singularity."
+				""
+				"HINT: Cobblestone generators are your friend here. "
+			]
+			id: "1B3B244BA28A54D3"
+			x: 0.0d
+			y: 12.0d
+			min_width: 250
+			dependencies: ["641BBE67303180F3"]
 		}
 	]
-	quest_links: [ ]
 }

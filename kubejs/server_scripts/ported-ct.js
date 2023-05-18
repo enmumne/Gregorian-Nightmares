@@ -56,7 +56,7 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('2x modern_industrialization:quartz_dust', ['minecraft:quartz_block', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
-	event.shapeless('2x modern_industrialization:iron_tiny_dust', ['create:crushed_iron_ore', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('modern_industrialization:iron_tiny_dust', ['create:crushed_iron_ore', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shaped('geggy:unfinished_bucket', [
 		'A A',
@@ -68,7 +68,7 @@ ServerEvents.recipes(event => {
 	}).damageIngredient('geggy:wooden_form')
 
 	// 1.19 grout > geggy
-	event.shapeless('2x geggy:uncooked_primitive_brick', ['geggy:craut', 'geggy:kelp_dust', 'geggy:wooden_form']).damageIngredient('geggy:wooden_form')
+	event.shapeless('geggy:uncooked_primitive_brick', ['geggy:craut', 'geggy:kelp_dust', 'geggy:wooden_form']).damageIngredient('geggy:wooden_form')
 
 	//iron curse
 	event.shapeless('modern_industrialization:iron_tiny_dust', ['minecraft:iron_nugget', 'minecraft:iron_nugget', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
@@ -124,6 +124,9 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:gravel',
 		D: '#c:sand'
 	}).damageIngredient('geggy:wooden_form')
+	
+	event.remove({id: 'create:crafting/materials/sand_paper'})
+	event.shapeless('create:sand_paper', ['geggy:quartz_sand', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 
 });	

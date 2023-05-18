@@ -4,6 +4,9 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'byg:gold_ingot_from_blasting_brimstone_nether_gold_ore'})
 	event.remove({id: 'byg:gold_ingot_from_blasting_blue_nether_gold_ore'})
 	
+	event.remove({id: 'betternether:paper'})
+	event.remove({id: 'betterend:paper'})
+	
 })
 
 

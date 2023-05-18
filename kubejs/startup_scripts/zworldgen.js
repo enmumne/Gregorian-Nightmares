@@ -115,7 +115,7 @@ let andesiteblock5 = event.create('geggy:andesite_casing_5').material('stone').d
 	"textures": {
 		"0": "create:block/cogwheel_axis",
 		"3": "create:block/axis_top",
-		"1_2": "create:block/cogwheel",
+		"1_2": "geggy:block/cogwheel",
 		"particle": "block/stripped_spruce_log_top"
 	},
 	"elements": [

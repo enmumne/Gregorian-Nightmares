@@ -494,6 +494,26 @@ ServerEvents.recipes(event => {
 		transitionalItem: {"item": "geggy:incomplete_empty_blaze_burner"},
 		sequence: [
 			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_empty_blaze_burner"},
+					{"item": "modern_industrialization:steel_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_empty_blaze_burner"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_empty_blaze_burner"},
+					{"item": "modern_industrialization:steel_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_empty_blaze_burner"
+				}]
+			},
+			{
 				type: "create:pressing",
 				ingredients: [
 					{"item": "geggy:incomplete_empty_blaze_burner"}
@@ -502,26 +522,6 @@ ServerEvents.recipes(event => {
 					"item": "geggy:incomplete_empty_blaze_burner"
 				}]
 		  	},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_empty_blaze_burner"},
-					{"item": "modern_industrialization:steel_plate"}
-				],
-				results: [{
-					"item": "geggy:incomplete_empty_blaze_burner"
-				}]
-			},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_empty_blaze_burner"},
-					{"item": "modern_industrialization:steel_plate"}
-				],
-				results: [{
-					"item": "geggy:incomplete_empty_blaze_burner"
-				}]
-			},
 			{
 				type: "create:deploying",
 				ingredients: [
@@ -1551,8 +1551,57 @@ ServerEvents.recipes(event => {
 		{"item": "minecraft:paper"}
 	})
 	
+	// sails
+	event.remove({id: 'create:crafting/kinetics/white_sail'})
+	event.shaped('create:white_sail', [
+		'AB ',
+		'BC ',
+		'   '
+	], {
+		A: 'geggy:linen',
+		B: 'minecraft:stick',
+		C: 'create:andesite_alloy'
+	})
+	event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
+	event.shaped('create:windmill_bearing', [
+		'A  ',
+		'BD ',
+		'C  '
+	], {
+		A: '#minecraft:wooden_slabs',
+		B: 'create:andesite_casing',
+		C: 'create:piston_extension_pole',
+		D: 'create:cogwheel'
+	})
 	
+	// iron apocalypse
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "minecraft:raw_iron"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{ "item": "create:crushed_iron_ore", "count": 1},
+			{"chance": 0.8, "count": 1, "item": "create:crushed_iron_ore"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
 	
+	// cursed brass
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},
+			{"item": "kubejs:zinc_dust"},{"item": "kubejs:zinc_dust"},
+			{"item": "minecraft:blaze_powder"}
+		],
+		"results": [
+			{"count": 2, "item": "create:brass_ingot"}
+		]
+	})
 	
 	
 })	

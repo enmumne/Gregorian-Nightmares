@@ -878,9 +878,15 @@ ServerEvents.recipes(event => {
 	
 	event.custom({
 			"type": "create:milling",
-			"processingTime":200,
+			"processingTime":250,
 			"ingredients": [{"item": "minecraft:raw_iron"}],
-			"results": [{"item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50}]
+			"results": [{"count": 2, "item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50}]
+	})
+	event.custom({
+			"type": "create:milling",
+			"processingTime":200,
+			"ingredients": [{"item": "create:crushed_iron_ore"}],
+			"results": [{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust", "chance": 0.8}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -1552,6 +1558,9 @@ ServerEvents.recipes(event => {
 	// remove ae2 standard silicon recipe and add MI silicon press recipe
 	event.remove({mod: "ae2", output: "ae2:inscriber"})
 	event.remove({id: "ae2:inscriber/silicon_print"})
+	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon"})
+	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon_from_ingot"})
+	// temp lol gated
 	event.recipes.ae2.inscriber({
 		"type": "ae2:inscriber",
 		"mode": "inscribe",
@@ -1563,7 +1572,7 @@ ServerEvents.recipes(event => {
 			"item": "ae2:silicon_press",
 			},
 			"middle": {
-				"item": "modern_industrialization:silicon_ingot"
+				"item": "geghilarity:rhenium_ingot"
 			}
 		}
 	});
