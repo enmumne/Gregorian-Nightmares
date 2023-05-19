@@ -1631,7 +1631,7 @@
 				""
 				"Throw a copper ingot in the free space right below it. If everything works correctly and your aim was good, the machine will start moving and the ingot will turn to a plate. Nicely done."
 				""
-				"Don't repeat it, or the copper plate will then turn into a curved copper plate, that you'll use to craft pipes... But if you do, worry not, repeat again and you can turn the curved plate back into a straight one."
+				"Don't repeat it, or the copper plate will then turn into a curved copper plate, that you'll use to craft pipes... But if you do, worry not, repeat again and you can turn the bent plate back into a straight one."
 				""
 				"Using a Create Depot as a base for the items can be even simpler, since you can place perfectly items on it by just right clicking. But as you can see in the recipe, a Depot requires a lead plate. And so you'll first need to use this press to turn a lead ingot into that."
 			]
@@ -1640,7 +1640,7 @@
 			x: -11.0d
 			y: -2.0d
 			shape: "rsquare"
-			title: "Platitudes"
+			title: "Platitudes and Bent Cops"
 			min_width: 290
 			dependencies: ["4190D1E5372DF336"]
 		}
@@ -1665,6 +1665,8 @@
 				""
 				"{@pagebreak}"
 				"The recipe for the Mechanical Press adds two problems. The first is about a suspicious \"&aInternal Cogwheel&r\" looking like the one from Create, and the second is producing those &aSharp Plates&r that are made with lead plate joined with iron nuggets."
+				""
+				"&7Note: if you see repeated lines in tooltips, press F3+t to fix."
 				""
 				"The difference between a legit Create cogwheel and this one, is that the legit one has a very convoluted crafting process, whereas this one here has the easier classic recipe."
 				""
@@ -1791,6 +1793,178 @@
 			min_width: 250
 			dependencies: ["753F20F4B28BEFDF"]
 			hide: true
+		}
+		{
+			tasks: [
+				{
+					id: "5A77119C290F451B"
+					type: "item"
+					item: "minecraft:blaze_powder"
+				}
+				{
+					id: "617455B474B5358D"
+					type: "item"
+					item: "create:brass_hand"
+				}
+			]
+			description: [
+				"If you have Sand Paper you can now polish the Rose Quartz, itself requiring some redstone and more of that Nether Quartz. With all that you can craft the &aElectron Tube&r, another step on the way to a Deployer done. You only need Brass for the brass hand..."
+				""
+				"No, I didn't mean a trip to the Nether to retrive more quartz. What you're meant to do here is a little trickier."
+				""
+				"Brass is an alloy, much like Bronze. To obtain it, you need copper and zinc. Nothing surprising here, you find both of these by looking for their ores scattered plentifully (?) around the underworld."
+				""
+				"But they need to be blended in a Mixer. A Mixer that needs to be heated, in a peculiar way. And then itself needing a cogwheel to be powered."
+				""
+				"As you could figure out, this create a circular dependency: we were trying to get to a Millstone, requiring a Cogwheel, requiring a Deployer, requiring Brass... requiring a Mixer, requiring a Cogwheel to operate."
+				""
+				"{@pagebreak}"
+				"For that reason you have to use a non-standard recipe that will provide just enough brass to jumpstart the process and produce one deployer."
+				""
+				"You will need to obtain one single &aBlaze Rod&r from fighting Blazes in the Nether. Using it on a crafting table will return a couple of &aBlaze Powder&r pieces."
+				""
+				"Look then for a Compacting recipe. Compating means using a Press, that you already have, along with a Basin. Then you throw in the right ingredients and power the press. The Basin itself has a simple recipe, requiring Andesite Alloy."
+				""
+				"1 Copper Dust + 1 Zinc Dust + 1 Blaze Powder = 2 Brass Ingots"
+				""
+				"Since 1 Blaze Rod gives 2 Blaze Powders, it means you have enough for 4 Brass Ingots. Use them in a press to obtain 4 &aBrass Plates&r. Crafting a Brass hand is just another simple step now..."
+				""
+				"But, if you need further assistance, move to page 3."
+				""
+				"{@pagebreak}"
+				"Haven't you had enough of these long winded descriptions?"
+				""
+				"Getting those dusts could require figuring out a path to them. For Zinc it should be straighforward. You don't have a Millstone to grind the raw ore, but you can always rely on a mortar on a crafting table for worse yields."
+				""
+				"For Copper Dust it's slightly different. If you look up the recipe for the dust, nothing seems to show up that you have access at the moment. This is an &cIMPORTANT&r lesson for when you'll deal with more complex recipes and processing, so it can be useful to learn your way through more devious recipes."
+				""
+				"In this case, just move one step back from Copper Tiny Dusts. A recipe with a mortar from 8 Copper Nuggets to 6 Tiny Dusts should show up. It not ideal but when you have 9 Tiny Copper Dusts you can then join them and obtain the one full dust you were looking for."
+				""
+				"The lesson here is that in some cases some materials will be obtained from dusts, rather than ingots, and from processing small dusts or nuggets in some cases. So if something doesn't seem craftable, try to look further into these byproducts and see if another path opens up."
+				""
+				""
+				"{@pagebreak}"
+				"Page 4? Really?"
+				""
+				"You don't know how to get Copper Nuggets?"
+				""
+				"Once again, Ingot on a Cutting Board, and a pickaxe. It should be familiar at this point."
+			]
+			id: "17B14C7E48CA3D28"
+			icon: "minecraft:blaze_powder"
+			x: -12.5d
+			y: -5.0d
+			shape: "rsquare"
+			title: "Do you fancy another trip to the Nether?"
+			min_width: 280
+			dependencies: ["58F339F993A004C9"]
+		}
+		{
+			tasks: [
+				{
+					id: "420D57274BC254A7"
+					type: "item"
+					item: "create:deployer"
+				}
+				{
+					id: "6233D07716E25F90"
+					type: "item"
+					item: "create:wrench"
+				}
+			]
+			description: [
+				"A breath of fresh air, away from hell, maybe."
+				""
+				"You should have all you need to obtain one deployer. It will suck for proper automation and all the steps ahead, but just one will be enough until you can start accelerating more and more..."
+				""
+				"Since a deployer deploys, you need to hand it the things deployable. The middle finger is deplorable, but look more closely, this one only deploys."
+				""
+				"Are you ready?"
+				""
+				"Why are you swearing? I can hear you distinctly from this other dimension. What? Are you saying that you cannot \"&7fu**ing&r\" orient it so that it points straight down, no matter how many times you try?"
+				""
+				"Well, I guess crafting a Create Wrench could make your life easier. Just some copper plates, and that cogwheel is the simple kind."
+				""
+				"While holding the wrench, just aim at the side of the Deployer and by right clicking you can turn it around as many times you want."
+			]
+			id: "3B152DF5786096DA"
+			icon: "create:deployer"
+			x: -14.0d
+			y: -5.0d
+			shape: "rsquare"
+			title: "Deployer Enjoyer"
+			min_width: 250
+			dependencies: ["17B14C7E48CA3D28"]
+		}
+		{
+			tasks: [{
+				id: "6F227D948E02A915"
+				type: "item"
+			}]
+			id: "24C6F46269CB96C4"
+			shape: "rsquare"
+			y: -5.0d
+			x: -15.5d
+		}
+		{
+			tasks: [{
+				id: "1BF3CD1765FD983A"
+				type: "item"
+			}]
+			id: "7944A0F4BEDBE0C9"
+			shape: "rsquare"
+			y: -3.5d
+			x: -15.5d
+		}
+		{
+			tasks: [{
+				id: "098D0CAECBF78961"
+				type: "item"
+			}]
+			id: "51B4B0B7D05BB2D8"
+			shape: "rsquare"
+			y: -2.0d
+			x: -15.5d
+		}
+		{
+			tasks: [{
+				id: "044620236091F9A8"
+				type: "item"
+			}]
+			id: "0E638BFDB7D2E9FB"
+			shape: "rsquare"
+			y: -2.0d
+			x: -14.0d
+		}
+		{
+			tasks: [{
+				id: "7F9FB01353443114"
+				type: "item"
+			}]
+			id: "22E0AA6D5F01D190"
+			shape: "rsquare"
+			y: -0.5d
+			x: -14.0d
+		}
+		{
+			tasks: [{
+				id: "14E6A1EA0F0BECA0"
+				type: "item"
+			}]
+			id: "5FFF72B2A36A5A95"
+			shape: "rsquare"
+			y: -0.5d
+			x: -12.5d
+		}
+		{
+			tasks: [{
+				id: "56CD4C7473A05530"
+				type: "item"
+			}]
+			id: "60B2EE6591C28C1E"
+			shape: "rsquare"
+			y: -0.5d
+			x: -11.0d
 		}
 	]
 }

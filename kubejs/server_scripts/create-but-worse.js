@@ -1594,14 +1594,16 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:compacting",
 		"ingredients": [
-			{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},
-			{"item": "kubejs:zinc_dust"},{"item": "kubejs:zinc_dust"},
+			{"item": "modern_industrialization:copper_dust"},
+			{"item": "kubejs:zinc_dust"},
 			{"item": "minecraft:blaze_powder"}
 		],
 		"results": [
 			{"count": 2, "item": "create:brass_ingot"}
 		]
 	})
+	
+	event.remove({id: 'create:crafting/materials/copper_nugget'})
 	
 	
 })	

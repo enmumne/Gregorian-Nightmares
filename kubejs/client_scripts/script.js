@@ -161,3 +161,9 @@ const HID = [
  REIEvents.hide('item', (event) => {
     HID.forEach(id => event.hide(id));
 });
+
+//ClientEvents.loggedIn(e => e.server.runCommandSilent('/kubejs reload client_scripts'))
+
+ClientEvents.loggedIn(event => event.server.schedule(10, event.server, function(callback) {
+    callback.server.runCommandSilent(`execute as ${event.player.name.text} run kubejs reload client_scripts`)
+  })

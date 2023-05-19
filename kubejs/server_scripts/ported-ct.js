@@ -55,6 +55,9 @@ ServerEvents.recipes(event => {
 	event.shapeless('kubejs:zinc_dust', ['create:raw_zinc', 'create:raw_zinc', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('2x modern_industrialization:quartz_dust', ['minecraft:quartz_block', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	
+	event.remove({id: 'minecraft:bone_meal'})
+	event.shapeless('minecraft:bone_meal', ['minecraft:bone', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('modern_industrialization:iron_tiny_dust', ['create:crushed_iron_ore', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 

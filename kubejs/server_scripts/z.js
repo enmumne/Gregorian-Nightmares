@@ -7,7 +7,7 @@ PlayerEvents.loggedIn(event => {
 });	
 
 ServerEvents.loaded(e => e.server.runCommandSilent('reload'))
-ServerEvents.loaded(e => e.server.runCommandSilent('/kubejs reload client_scripts'))
+//ServerEvents.loaded(e => e.server.runCommandSilent('/kubejs reload client_scripts'))
 
 ServerEvents.loaded(event => {	
 	event.server.schedule(8000, () => { 
