@@ -442,7 +442,8 @@ event.create('geggy:unfinished_diamond_boots');
 event.create('geggy:incomplete_basic_hull');
 event.create('geggy:basic_hull');
 event.create('geggy:incomplete_basic_machine_hull');
-event.create('geggy:treated_plank');
+event.create('geggy:treated_plank'); // tannin
+event.create('geggy:hardened_plank'); // creosote
 event.create('geggy:pattern');
 
 event.create('geggy:copper_can');

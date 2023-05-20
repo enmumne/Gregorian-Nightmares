@@ -1,5 +1,15 @@
 ServerEvents.recipes(event => {
 	
+	event.remove({id: 'create:crafting/kinetics/water_wheel'})
+	event.shaped('create:water_wheel', [
+		'AAA',
+		'ABA',
+		'AAA'
+	], {
+		A: 'geggy:hardened_plank',
+		B: 'create:large_cogwheel'
+	})
+	
 	event.remove({id: 'create:crafting/kinetics/weighted_ejector'})
 	event.shaped('create:weighted_ejector', [
 		'AD ',
@@ -91,7 +101,7 @@ ServerEvents.recipes(event => {
 		'AB ',
 		' C '
 	], {
-		A: 'modern_industrialization:copper_plate',
+		A: 'create:brass_sheet',
 		B: 'geggy:cogwheel',
 		C: 'minecraft:stick'
 	})
@@ -806,7 +816,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_gearbox"},
-					{"item": "geggy:j_planks"}
+					{"item": "geggy:treated_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_gearbox"
@@ -987,7 +997,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_toolbox"},
-					{"item": "minecraft:leather"}
+					{"item": "geggy:cured_leather_sheet"}
 				],
 				results: [{
 					"item": "geggy:incomplete_toolbox"
@@ -1009,7 +1019,7 @@ ServerEvents.recipes(event => {
 		'AAA'
 	], {
 		A: '#minecraft:wooden_slabs',
-		B: 'geggy:j_planks',
+		B: 'geggy:treated_plank',
 		C: 'minecraft:chest'
 	})
 	event.remove({id: 'extended_drawers:single_drawer'})	
@@ -1105,7 +1115,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_barrel"},
-					{"item": "geggy:j_planks"}
+					{"item": "geggy:treated_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_barrel"
@@ -1119,17 +1129,6 @@ ServerEvents.recipes(event => {
 		loops: 2
 	  }
 	)
-	event.custom({
-		type: "create:filling",
-		ingredients: [
-			{"item": "geggy:j_planks"},
-			{"amount": 20250, "fluid": "modern_industrialization:creosote",
-			"nbt": {}}
-		],
-		results: [{
-			"item": "geggy:treated_plank"
-		}]
-	})
 	event.custom({
 		type: "create:sequenced_assembly",
 		ingredient: {"item": "minecraft:barrel"},
@@ -1149,7 +1148,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw"},
-					{"item": "geggy:treated_plank"}
+					{"item": "geggy:hardened_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw"
@@ -1192,7 +1191,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_d"},
-					{"item": "geggy:treated_plank"}
+					{"item": "geggy:hardened_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_d"
@@ -1233,7 +1232,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_extdw_q"},
-					{"item": "geggy:treated_plank"}
+					{"item": "geggy:hardened_plank"}
 				],
 				results: [{
 					"item": "geggy:incomplete_extdw_q"
@@ -1265,6 +1264,38 @@ ServerEvents.recipes(event => {
 		loops: 2
 	  }
 	)
+	
+	event.shaped('geggy:treated_plank', [
+		'AS ',
+		'   ',
+		'   '
+	], {
+		A: 'geggy:j_planks',
+		S: 'geggy:mulch_copper_can'
+	}).replaceIngredient('geggy:mulch_copper_can', 'geggy:copper_can')
+	
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:j_planks"},
+			{"amount": 20250, "fluid": "geggy:tannin",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:treated_plank"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:treated_plank"},
+			{"amount": 40500, "fluid": "modern_industrialization:creosote",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:hardened_plank"
+		}]
+	})
 	
 	event.remove({id: 'minecraft:andesite'})
 	event.remove({id: 'create:crushing/diorite'})
@@ -1605,5 +1636,27 @@ ServerEvents.recipes(event => {
 	
 	event.remove({id: 'create:crafting/materials/copper_nugget'})
 	
-	
+	// coal
+	event.remove({id: 'create:milling/coal'})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:coal"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"item": "modern_industrialization:coal_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "modern_industrialization:coal_dust"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"count": 2, "item": "minecraft:black_dye"},
+			{"chance": 0.1, "item": "minecraft:gray_dye"}
+		]
+	})
 })	

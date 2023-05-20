@@ -1131,7 +1131,7 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'modern_industrialization:copper_plate',
 		B: 'modern_industrialization:copper_rod',
-		C: '#c:wooden_barrels'
+		C: 'minecraft:barrel'
 	})
 	
 	
@@ -1526,14 +1526,16 @@ ServerEvents.recipes(event => {
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:mechanical_piston"})
 	event.shaped('create:mechanical_piston', [
-		' A ',
-		'DBD',
-		' C '
+		'FAF',
+		'FCF',
+		'DBE'
 	], {
 		A: '#minecraft:wooden_slabs',
 		B: 'create:andesite_casing',
 		C: 'create:piston_extension_pole',
-		D: 'create:cogwheel'
+		D: 'create:cogwheel',
+		E: 'geggy:cogwheel',
+		F: 'minecraft:iron_nugget'
 	})
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:shaft"})
@@ -1706,12 +1708,8 @@ ServerEvents.recipes(event => {
 	*/
 	
 	//***
-	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:brown_toolbox'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
-	//event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:goggles'}, '#c:gold_plates', 'create:brass_sheet')
 	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:steam_engine'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
 	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:steam_whistle'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
-	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:weighted_ejector'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
-	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:wrench'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
 	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:capacitor'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
 	
 	event.remove({type: "modern_industrialization:mixer", output: "modern_industrialization:rubber_sheet"})

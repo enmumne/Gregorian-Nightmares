@@ -707,6 +707,17 @@ event.custom({
 		A: 'geggy:treated_plank',
 		B: 'createdeco:netherite_sheet'
 	})
+	
+	event.remove({id: 'inmis:frayed_backpack'})
+	event.shaped('inmis:frayed_backpack', [
+		'C C',
+		'BAB',
+		'BBB'
+	], {
+		A: 'minecraft:chest',
+		B: 'geggy:cured_leather_sheet',
+		C: 'geggy:cured_leather_strap'
+	})
 
 })
 
