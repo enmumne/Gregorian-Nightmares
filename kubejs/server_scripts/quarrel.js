@@ -650,15 +650,17 @@ ServerEvents.recipes(event => {
 		A: 'drilly:tiny_tier3_experience'
 	})
 
+	// driller
 	event.shaped('modern_industrialization:bronze_drill1', [
 		'BCB',
 		'ADA',
-		'BDB'
+		'BEB'
 	], {
 		A: 'modern_industrialization:copper_rod',
 		B: 'modern_industrialization:copper_plate',
 		C: 'modern_industrialization:copper_gear',
-		D: 'create:cogwheel'
+		D: 'create:cogwheel',
+		E: 'create:mechanical_piston'
 	})
 
 	event.shaped('modern_industrialization:bronze_drill2', [
@@ -702,13 +704,12 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.shaped('drilly:copper_drill', [
-		' D ',
 		'BCB',
-		' B '
+		' B ',
+		'   '
 	], {
 		B: 'modern_industrialization:copper_plate',
-		C: 'create:cogwheel',
-		D: 'create:mechanical_piston'
+		C: 'create:cogwheel'
 	})
 	
 	event.shaped('drilly:bronze_base_drill', [

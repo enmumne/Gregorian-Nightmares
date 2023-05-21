@@ -469,7 +469,7 @@ event.custom({
   "type": "farmersdelight:cooking",
   "container": {"item": "geggy:copper_can"},
   "cookingtime": 900,
-  "experience": 0.1,
+  "experience": 0.0,
   "ingredients": [
     {"item": "minecraft:green_dye"},
     {"item": "minecraft:green_dye"},
@@ -717,6 +717,23 @@ event.custom({
 		A: 'minecraft:chest',
 		B: 'geggy:cured_leather_sheet',
 		C: 'geggy:cured_leather_strap'
+	})
+	
+	event.custom({
+  "type": "farmersdelight:cooking",
+  //"container": {"item": "geggy:copper_can"},
+  "cookingtime": 1100,
+  "experience": 0.0,
+  "ingredients": [
+    {"item": "minecraft:seagrass"},
+    {"item": "minecraft:seagrass"},
+    {"item": "minecraft:seagrass"},
+	{"item": "minecraft:seagrass"},
+	{"item": "minecraft:seagrass"},
+    {"item": "minecraft:seagrass"}
+  ],
+  "recipe_book_tab": "meals",
+  "result": {"item": "minecraft:dried_kelp"}
 	})
 
 })

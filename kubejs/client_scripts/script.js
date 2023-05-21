@@ -153,6 +153,7 @@ Ingredient.of('@chipped').stacks.forEach(item => {
 */
 
 const HID = [
+ "vinery:cooking_pot",
  "create:copper_sheet",
  "create:iron_sheet",
  "create:golden_sheet"
@@ -162,8 +163,11 @@ const HID = [
     HID.forEach(id => event.hide(id));
 });
 
+REIEvents.removeCategories(event => {
+    event.remove('vinery:cooking_pot_display')
+	event.remove('vinery:cooking_pot')
+})
+
 //ClientEvents.loggedIn(e => e.server.runCommandSilent('/kubejs reload client_scripts'))
 
-ClientEvents.loggedIn(event => event.server.schedule(10, event.server, function(callback) {
-    callback.server.runCommandSilent(`execute as ${event.player.name.text} run kubejs reload client_scripts`)
-  })
+//ClientEvents.loggedIn(event => event.server.schedule(10, event.server, function(callback) {callback.server.runCommandSilent(`execute as ${event.player.name.text} run kubejs reload client_scripts`)}))

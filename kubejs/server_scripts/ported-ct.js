@@ -129,7 +129,7 @@ ServerEvents.recipes(event => {
 	}).damageIngredient('geggy:wooden_form')
 	
 	event.remove({id: 'create:crafting/materials/sand_paper'})
-	event.shapeless('create:sand_paper', ['geggy:quartz_sand', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('create:sand_paper', ['geggy:quartz_sand', 'minecraft:paper'])
 
 
 });	

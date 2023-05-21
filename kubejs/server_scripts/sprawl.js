@@ -447,7 +447,7 @@ ServerEvents.recipes(event => {
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'create:fluid_pipe'})
 	// rubber?
-	event.shaped('2x create:fluid_pipe', [
+	event.shaped('create:fluid_pipe', [
 		'AAA',
 		'BBB',
 		'AAA'

@@ -22,6 +22,8 @@ ServerEvents.recipes(event => {
 		C: 'modern_industrialization:titanium_ring'
 	})
 	
+	event.remove({id: 'vinery:cooking_pot'})
+	
 })
 
 ServerEvents.tags('item', event => { 

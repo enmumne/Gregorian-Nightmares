@@ -1,19 +1,16 @@
 {
-	id: "3E7D504604C837F5"
-	group: "113481E7A031FCFE"
-	order_index: 0
-	filename: "0_getting_started"
-	title: "0 - Getting Started"
-	icon: "modern_industrialization:bronze_ingot"
-	default_quest_shape: ""
+	quest_links: [ ]
 	default_hide_dependency_lines: false
+	group: "113481E7A031FCFE"
+	id: "3E7D504604C837F5"
+	filename: "0_getting_started"
+	default_quest_shape: ""
+	icon: "modern_industrialization:bronze_ingot"
+	title: "0 - Getting Started"
+	order_index: 0
 	quests: [
 		{
-			title: "Welcome to..."
-			x: -11.0d
-			y: -10.0d
-			shape: "gear"
-			subtitle: "Let's (not) get started"
+			size: 2.0d
 			description: [
 				"Welcome to &mIncremental Industries&r"
 				"&lGregorian Nightmares&r"
@@ -36,26 +33,31 @@
 				""
 				"&o 1Y : people like to overcomplicate things"
 			]
-			dependency_requirement: "all_started"
-			size: 2.0d
-			min_width: 295
-			id: "5CFBB8884435817C"
-			tasks: [{
-				id: "4323277D953D266E"
-				type: "checkmark"
-				title: "Welcome To <ModPack>"
-			}]
 			rewards: [{
 				id: "7185A4B0DA14CD8D"
 				type: "item"
 				item: "campanion:marshmallow_on_a_stick"
 			}]
+			id: "5CFBB8884435817C"
+			x: -11.0d
+			y: -10.0d
+			shape: "gear"
+			title: "Welcome to..."
+			min_width: 295
+			subtitle: "Let's (not) get started"
+			dependency_requirement: "all_started"
+			tasks: [{
+				id: "4323277D953D266E"
+				type: "checkmark"
+				title: "Welcome To <ModPack>"
+			}]
 		}
 		{
-			title: "Creative Start?"
-			x: -11.0d
-			y: -5.0d
-			shape: "rsquare"
+			tasks: [{
+				id: "1280EB9DC37D9111"
+				type: "item"
+				item: "create:andesite_alloy"
+			}]
 			description: [
 				"As you can see, the first piece of andesite alloy requires a vanilla blast furnace. Going back one step from there gives you only one option at this stage, the crafting table recipe for Andesite Mix."
 				""
@@ -69,23 +71,25 @@
 				""
 				"All these ingredients will be automated and become infinite. But there's more work to do to get to that point."
 			]
-			hide_dependency_lines: false
+			id: "2AA1EEE014DA1E02"
+			x: -11.0d
+			y: -5.0d
+			shape: "rsquare"
+			title: "Creative Start?"
+			min_width: 280
 			dependencies: [
 				"0BDA0B805FF4FD59"
 				"497612DF4D0FB9DE"
 			]
-			min_width: 280
-			id: "2AA1EEE014DA1E02"
-			tasks: [{
-				id: "1280EB9DC37D9111"
-				type: "item"
-				item: "create:andesite_alloy"
-			}]
+			hide_dependency_lines: false
 		}
 		{
-			title: "Bronze Age"
-			x: -12.0d
-			y: 8.0d
+			tasks: [{
+				id: "7E7C2DA6226063E5"
+				type: "item"
+				item: "modern_industrialization:bronze_dust"
+				only_from_crafting: false
+			}]
 			description: [
 				"Your first bit of Bronze. There will be many more. Smelt this up and let's get into it"
 				""
@@ -97,42 +101,24 @@
 				"&o&b 3K : its insane"
 				"&o&9 2X : 3k explaining for the 4000th time why a 300 hour long pack is harder without realizing his 1.16 mod knowledge is big bad"
 			]
-			min_width: 250
 			id: "4611AB2F817DA820"
-			tasks: [{
-				id: "7E7C2DA6226063E5"
-				type: "item"
-				item: "modern_industrialization:bronze_dust"
-				only_from_crafting: false
-			}]
-		}
-		{
-			x: -16.5d
-			y: 12.5d
-			description: ["The Large Cogwheel and smaller cogwheel can be used in tandem to increase the rotation speed of your machines. Be warned, this comes at an increased stress cost."]
-			id: "580227C9AB62F86F"
-			tasks: [{
-				id: "77185CACE1E7FB82"
-				type: "item"
-				item: "create:large_cogwheel"
-			}]
-		}
-		{
-			x: -8.5d
+			x: -11.0d
 			y: 5.5d
-			description: ["The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."]
-			id: "3F422B244183BD83"
+			title: "Bronze Age"
+			min_width: 250
+		}
+		{
 			tasks: [{
 				id: "73F472A3E2ECDDB7"
 				type: "item"
 				item: "create:brown_toolbox"
 			}]
+			description: ["The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."]
+			id: "3F422B244183BD83"
+			y: 5.5d
+			x: -9.5d
 		}
 		{
-			x: -18.5d
-			y: 13.0d
-			description: ["The Gearbox \\& Vertical Gearbox can be used to change Rotational Force direction"]
-			id: "73F0DC22524529D9"
 			tasks: [
 				{
 					id: "1E90809FA717CDA8"
@@ -145,44 +131,51 @@
 					item: "create:vertical_gearbox"
 				}
 			]
+			description: ["The Gearbox \\& Vertical Gearbox can be used to change Rotational Force direction"]
+			id: "73F0DC22524529D9"
+			y: 13.0d
+			x: -18.5d
 		}
 		{
-			x: -18.5d
-			y: 16.0d
-			description: ["A Chute has an open top and will funnel items through and into the inventory attached below it. It's useful for funnelling input into machines and inventories"]
-			id: "539F0CA78D206B98"
 			tasks: [{
 				id: "3CFC032F26C639AF"
 				type: "item"
 				item: "create:chute"
 			}]
+			description: ["A Chute has an open top and will funnel items through and into the inventory attached below it. It's useful for funnelling input into machines and inventories"]
+			id: "539F0CA78D206B98"
+			y: 16.0d
+			x: -18.5d
 		}
 		{
-			x: -19.0d
-			y: 15.0d
-			description: ["Funnels can extract and intake items from adjacent machines and inventories. Since you don't have access to Create belts until a later time, these will mostly be useful to extract items."]
-			id: "391A4FA878936698"
 			tasks: [{
 				id: "6F7D90D80AFDFF23"
 				type: "item"
 				item: "create:andesite_funnel"
 			}]
+			description: ["Funnels can extract and intake items from adjacent machines and inventories. Since you don't have access to Create belts until a later time, these will mostly be useful to extract items."]
+			id: "391A4FA878936698"
+			y: 15.0d
+			x: -19.0d
 		}
 		{
-			title: "Smelting?"
-			x: -10.0d
-			y: 8.0d
-			description: ["You can use a normal furnace for your smelting needs, but Create's smelting will let you smelt entire stacks at once, along with being completely free once set up"]
-			id: "27E9070B623F2ACD"
 			tasks: [{
 				id: "12B3C5F2D4F0F5EA"
 				type: "item"
 				item: "create:encased_fan"
 			}]
+			description: ["You can use a normal furnace for your smelting needs, but Create's smelting will let you smelt entire stacks at once, along with being completely free once set up"]
+			id: "27E9070B623F2ACD"
+			y: 0.5d
+			x: -17.5d
+			title: "Smelting?"
 		}
 		{
-			x: -11.0d
-			y: 10.0d
+			tasks: [{
+				id: "4AC299B0ABFC9230"
+				type: "item"
+				item: "modern_industrialization:bronze_ingot"
+			}]
 			description: [
 				"You can use the furnace for this but you'll need a steady supply of coal. We suggest setting up a small assembly line that takes copper and tin and produces bronze ingots"
 				""
@@ -215,66 +208,49 @@
 				"&o&b 3K : ok then write your own GTCEu addon"
 				"&o 1A : no"
 			]
-			dependencies: [
-				"4611AB2F817DA820"
-				"27E9070B623F2ACD"
-			]
-			min_width: 300
 			id: "3F5ACCA0FDC6ADB6"
-			tasks: [{
-				id: "4AC299B0ABFC9230"
-				type: "item"
-				item: "modern_industrialization:bronze_ingot"
-			}]
+			x: -11.0d
+			y: 7.0d
+			min_width: 300
+			dependencies: ["4611AB2F817DA820"]
 		}
 		{
-			title: "Pick Begone!"
-			x: -6.5d
-			y: 4.5d
-			description: [
-				"The Steam Mining Drill is a great early game mining tool. It mines in a 3x3 area with silk touch. It has no durability and runs on water and fuel (coal \\& lignite coal work well, so does charcoal)."
-				""
-				"&oThis recipe has been especially tweaked to show how much I appreciate quality of life accessories, like this 3x3 drill :)"
-			]
-			dependencies: ["2611355310DAB5C2"]
-			id: "3A451808F8F4534A"
 			tasks: [{
 				id: "0E802747E1501266"
 				type: "item"
 				item: "modern_industrialization:steam_mining_drill"
 			}]
+			description: [
+				"The Steam Mining Drill is a great early game mining tool. It mines in a 3x3 area with silk touch. It has no durability and runs on water and fuel (coal \\& lignite coal work well, so does charcoal)."
+				""
+				"&oThis recipe has been especially tweaked to show how much I appreciate quality of life accessories, like this 3x3 drill :)"
+			]
+			id: "3A451808F8F4534A"
+			y: 4.0d
+			x: -9.5d
+			title: "Pick Begone!"
 		}
 		{
-			x: -8.5d
-			y: 4.5d
-			description: ["You don't need the mechanical saw until a little later in the Steam Age, but now is a great time to start on it, as it'll give you the materials you need to craft the Steam Mining Drill"]
-			id: "2611355310DAB5C2"
 			tasks: [{
-				id: "226185376E21ECAA"
+				id: "763ECD15B43D173D"
 				type: "item"
-				item: "create:mechanical_saw"
+				item: "create:portable_storage_interface"
 			}]
-		}
-		{
-			x: -19.0d
-			y: 14.0d
 			description: [
 				"The Portable Storage Interface can be used to extract items from your larger contraptions. Place them one block apart and if there is inventory in your moving Create contraption, the interface will transfer them to somewhere you can access."
 				""
 				"Again, the Ponder (W) menu is useful to see exactly how this works."
 			]
 			id: "6A86346D8E55517B"
-			tasks: [{
-				id: "763ECD15B43D173D"
-				type: "item"
-				item: "create:portable_storage_interface"
-			}]
+			y: 14.0d
+			x: -19.0d
 		}
 		{
-			title: "Charcoal?"
-			x: -8.5d
-			y: 8.0d
-			subtitle: "lol, nope"
+			tasks: [{
+				id: "234F5003136A8A3F"
+				type: "item"
+				item: "minecraft:charcoal"
+			}]
 			description: [
 				"We suggest making some way of automating fuel for the next chapter. The Create saw along with the fan is a great way to make Charcoal."
 				""
@@ -285,19 +261,14 @@
 				"    &o&d2T: greg"
 				"        &o&55T: greg"
 			]
-			dependencies: ["27E9070B623F2ACD"]
 			id: "5FDC22D8DFEAC954"
-			tasks: [{
-				id: "234F5003136A8A3F"
-				type: "item"
-				item: "minecraft:charcoal"
-			}]
+			x: -19.0d
+			y: 0.5d
+			title: "Charcoal?"
+			subtitle: "lol, nope"
+			dependencies: ["27E9070B623F2ACD"]
 		}
 		{
-			x: -16.5d
-			y: 16.5d
-			dependencies: ["20576E61A4E4D4EA"]
-			id: "0F9C7A99C293B6C4"
 			tasks: [{
 				id: "00D8C19C85EEA178"
 				type: "item"
@@ -309,24 +280,24 @@
 					}
 				}
 			}]
+			dependencies: ["20576E61A4E4D4EA"]
+			id: "0F9C7A99C293B6C4"
+			y: 16.5d
+			x: -16.5d
 		}
 		{
-			x: -17.5d
-			y: 16.5d
-			description: ["The Andesite Tunnel is used to cover belts. When it has an adjacent belt it will split one item off to the side."]
-			id: "569D853685B7C667"
 			tasks: [{
 				id: "144BC18BCB0049B2"
 				type: "item"
 				item: "create:andesite_tunnel"
 			}]
+			description: ["The Andesite Tunnel is used to cover belts. When it has an adjacent belt it will split one item off to the side."]
+			id: "569D853685B7C667"
+			y: 16.5d
+			x: -17.5d
 		}
 		{
-			title: "Dehehe... WHAT?!"
-			icon: "dehydration:campfire_cauldron"
-			x: -6.071428571428612d
-			y: -14.0d
-			shape: "diamond"
+			size: 1.5d
 			description: [
 				"&mDehydration. Like the above, the mod doesn't give much leverage to work with."
 				""
@@ -345,9 +316,18 @@
 				"&o&d : Enjoy cholera"
 				"&o&3 2C : that reminds me of journey beyond the abyss or 1,000 years after the apocalypse"
 			]
-			size: 1.5d
-			min_width: 250
 			id: "7BF2997B1E193587"
+			icon: "dehydration:campfire_cauldron"
+			x: -7.5d
+			y: -14.5d
+			shape: "diamond"
+			title: "Dehehe... WHAT?!"
+			min_width: 250
+			rewards: [{
+				id: "7CB8D2F8138E59D6"
+				type: "item"
+				item: "minecraft:poisonous_potato"
+			}]
 			tasks: [
 				{
 					id: "359D56AA1ABFCDED"
@@ -360,25 +340,9 @@
 					item: "dehydration:leather_flask"
 				}
 			]
-			rewards: [{
-				id: "7CB8D2F8138E59D6"
-				type: "item"
-				item: "minecraft:poisonous_potato"
-			}]
 		}
 		{
-			title: "Cursed Recipes"
-			icon: {
-				id: "minecraft:iron_chestplate"
-				Count: 1b
-				tag: {
-					Damage: 0
-				}
-			}
-			x: -6.071428571428612d
-			y: -12.5d
-			shape: "diamond"
-			subtitle: "made by a madman"
+			size: 1.5d
 			description: [
 				"[&4&lHEAVY &rversion only]"
 				""
@@ -392,9 +356,20 @@
 				""
 				"&aAs a minor bonus, tools that break should drop a small amount of their original ingredients..."
 			]
-			size: 1.5d
-			min_width: 250
 			id: "452458790435E9AF"
+			icon: {
+				id: "minecraft:iron_chestplate"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -7.5d
+			y: -13.0d
+			shape: "diamond"
+			title: "Cursed Recipes"
+			min_width: 250
+			subtitle: "made by a madman"
 			tasks: [{
 				id: "4A59550717ACE281"
 				type: "item"
@@ -408,10 +383,7 @@
 			}]
 		}
 		{
-			x: -8.5d
-			y: -13.226190476190453d
-			shape: "gear"
-			subtitle: "(no it's not)"
+			size: 1.2d
 			description: [
 				"Some mods are only compatible with &9REI&r, some other mods only with &cEMI&r."
 				""
@@ -426,9 +398,12 @@
 				""
 				"If a Create recipe has more than one output then it will not be indexed in REI. It means that if you try to backtrack by pressing R on a item that is produced as a second or third output, it will not bring you to that recipe."
 			]
-			size: 1.5d
-			min_width: 260
 			id: "6F49A64224735D34"
+			x: -9.0202380952381d
+			y: -10.520238095238106d
+			shape: "gear"
+			min_width: 260
+			subtitle: "(no it's not)"
 			tasks: [{
 				id: "34C736F257406C38"
 				type: "checkmark"
@@ -436,10 +411,7 @@
 			}]
 		}
 		{
-			icon: "artifacts:crystal_heart"
-			x: -4.571428571428612d
-			y: -13.22d
-			shape: "circle"
+			size: 1.5d
 			description: [
 				"[&4&lHEAVY &rversion only]"
 				""
@@ -460,8 +432,11 @@
 				"&7&o : that's... overkill"
 				"&o 1Y : we need a better version of minecraft"
 			]
-			size: 1.5d
+			icon: "artifacts:crystal_heart"
+			x: -6.0d
 			id: "037725534E2B6CE9"
+			y: -13.72d
+			shape: "circle"
 			tasks: [{
 				id: "2B9CD7CC4FD8C39B"
 				type: "checkmark"
@@ -469,10 +444,11 @@
 			}]
 		}
 		{
-			title: "WTF is going on here?!"
-			x: -18.75d
-			y: -16.5d
-			shape: "pentagon"
+			tasks: [{
+				id: "3E407C49704C28DD"
+				type: "item"
+				item: "minecraft:crafting_table"
+			}]
 			description: [
 				"I'm learning KubeJS."
 				""
@@ -497,25 +473,32 @@
 				"&o&5 5Z : NH is quite literally just funny numbers costs with funny numbers time"
 				"&o&4 0R : NEW HORIZONS difficulty is hard as &lsex!"
 			]
+			id: "6BBD07ADB9DCB8B2"
+			x: -18.75d
+			y: -16.5d
+			shape: "pentagon"
+			title: "WTF is going on here?!"
+			min_width: 250
+			dependency_requirement: "one_started"
 			dependencies: [
 				"5CFBB8884435817C"
 				"3015A2B3854CC10E"
 			]
 			hide: true
-			dependency_requirement: "one_started"
-			min_width: 250
-			id: "6BBD07ADB9DCB8B2"
-			tasks: [{
-				id: "3E407C49704C28DD"
-				type: "item"
-				item: "minecraft:crafting_table"
-			}]
 		}
 		{
-			title: "Cockblocked! HA!"
-			icon: "minecraft:quartz"
-			x: -8.0d
-			y: -6.5d
+			tasks: [
+				{
+					id: "6252B0041C001419"
+					type: "item"
+					item: "minecraft:quartz"
+				}
+				{
+					id: "77C19073F3A61B67"
+					type: "item"
+					item: "minecraft:andesite"
+				}
+			]
 			description: [
 				"Obviously, the world has gone wrong."
 				""
@@ -534,41 +517,21 @@
 				"&o&2 3F : is ftb inferno any good?"
 				"&o&c 81 : tried to play it on my server, got spawned above bedrock :("
 			]
-			hide_dependency_lines: false
-			dependencies: ["497612DF4D0FB9DE"]
-			hide: true
-			min_width: 220
 			id: "0BDA0B805FF4FD59"
-			tasks: [
-				{
-					id: "6252B0041C001419"
-					type: "item"
-					item: "minecraft:quartz"
-				}
-				{
-					id: "77C19073F3A61B67"
-					type: "item"
-					item: "minecraft:andesite"
-				}
-			]
+			icon: "minecraft:quartz"
+			x: -8.0d
+			y: -6.5d
+			title: "Cockblocked! HA!"
+			min_width: 220
+			dependencies: ["497612DF4D0FB9DE"]
+			hide_dependency_lines: false
+			hide: true
 		}
 		{
-			title: "Ok."
-			icon: "minecraft:oak_log"
-			x: -21.0d
-			y: -15.0d
-			subtitle: "What am I doing here, all alone?"
-			description: [
-				"Punch wood, get log."
-				""
-				"&o&7 : dude, I know that..."
-			]
-			hide_dependency_lines: true
 			min_required_dependencies: 1
-			dependencies: ["5CFBB8884435817C"]
-			hide: true
-			dependency_requirement: "all_started"
-			id: "3557AEBD30450E5D"
+			x: -21.0d
+			icon: "minecraft:oak_log"
+			subtitle: "What am I doing here, all alone?"
 			tasks: [{
 				id: "5FB83ABD86BBC6A5"
 				type: "item"
@@ -581,12 +544,26 @@
 					}
 				}
 			}]
+			description: [
+				"Punch wood, get log."
+				""
+				"&o&7 : dude, I know that..."
+			]
+			id: "3557AEBD30450E5D"
+			y: -15.0d
+			title: "Ok."
+			dependencies: ["5CFBB8884435817C"]
+			dependency_requirement: "all_started"
+			hide_dependency_lines: true
+			hide: true
 		}
 		{
-			title: "Oh dear, here we go..."
-			icon: "minecraft:oak_planks"
-			x: -16.5d
-			y: -17.0d
+			tasks: [{
+				id: "3C6BCF5DF1928648"
+				type: "item"
+				title: "Any #minecraft:planks"
+				item: "minecraft:oak_planks"
+			}]
 			description: [
 				"1 wood = 2 planks"
 				"Exactly as it should be."
@@ -597,65 +574,50 @@
 				"&o : you wouldn't get game design even if it hit you right in the face. Trust the vision."
 				"&o&7 : I'm only seeing planks and... is that a stick over there? Don't tell me you've made a quest for crafting sticks..."
 			]
+			id: "6F0BF3804B41E7A6"
+			icon: "minecraft:oak_planks"
+			x: -16.5d
+			y: -17.0d
+			title: "Oh dear, here we go..."
+			min_width: 220
 			dependencies: ["3557AEBD30450E5D"]
 			hide: true
-			min_width: 220
-			id: "6F0BF3804B41E7A6"
-			tasks: [{
-				id: "3C6BCF5DF1928648"
-				type: "item"
-				title: "Any #minecraft:planks"
-				item: "minecraft:oak_planks"
-			}]
 		}
 		{
-			x: -21.0d
-			y: -18.0d
-			description: [
-				"2 planks = 2 sticks"
-				""
-				"&o&7 : just... wow. We're reaching a new standard of questbook quality here."
-			]
-			dependencies: ["6F0BF3804B41E7A6"]
-			hide: true
-			id: "6FFA150BA93195E4"
 			tasks: [{
 				id: "210272D84ADB5E42"
 				type: "item"
 				item: "minecraft:stick"
 			}]
+			description: [
+				"2 planks = 2 sticks"
+				""
+				"&o&7 : just... wow. We're reaching a new standard of questbook quality here."
+			]
+			id: "6FFA150BA93195E4"
+			x: -21.0d
+			y: -18.0d
+			dependencies: ["6F0BF3804B41E7A6"]
+			hide: true
 		}
 		{
-			x: -18.0d
-			y: -14.0d
-			description: [
-				"2 sticks = 1 Tool Rod"
-				""
-				"&o&7 : what's even the point?"
-			]
-			dependencies: ["6FFA150BA93195E4"]
-			hide: true
-			id: "79DE3D8A73C88BD6"
 			tasks: [{
 				id: "0C16D6FABF4A7CD3"
 				type: "item"
 				item: "geggy:j_tool_rod"
 			}]
+			description: [
+				"2 sticks = 1 Tool Rod"
+				""
+				"&o&7 : what's even the point?"
+			]
+			id: "79DE3D8A73C88BD6"
+			x: -18.0d
+			y: -14.0d
+			dependencies: ["6FFA150BA93195E4"]
+			hide: true
 		}
 		{
-			x: -17.5d
-			y: -18.5d
-			description: [
-				"3 planks = Axe Head"
-				"Axe Head + Tool Rod, join them."
-				""
-				"(this is where you start using JEI/REI, click on the axe icon, then click on the axe head, or press 'R' while hovering with the mouse pointer, to see that recipe)"
-				""
-				"&o&7 : I'm so squirmy to see what's next I'm losing my pants."
-			]
-			dependencies: ["79DE3D8A73C88BD6"]
-			hide: true
-			id: "76FA2CC95FF1420B"
 			tasks: [{
 				id: "10301F929C16A3A6"
 				type: "item"
@@ -667,42 +629,39 @@
 					}
 				}
 			}]
+			description: [
+				"3 planks = Axe Head"
+				"Axe Head + Tool Rod, join them."
+				""
+				"(this is where you start using JEI/REI, click on the axe icon, then click on the axe head, or press 'R' while hovering with the mouse pointer, to see that recipe)"
+				""
+				"&o&7 : I'm so squirmy to see what's next I'm losing my pants."
+			]
+			id: "76FA2CC95FF1420B"
+			x: -17.5d
+			y: -18.5d
+			dependencies: ["79DE3D8A73C88BD6"]
+			hide: true
 		}
 		{
-			title: "COCKBLOCKED BY FARMER'S DELIGHT"
-			x: -21.5d
-			y: -16.5d
-			description: [
-				"You'll need a Cutting Board to make a Crafting Table."
-				""
-				"&o&7 : ...why?&r"
-			]
-			dependencies: ["76FA2CC95FF1420B"]
-			hide: true
-			id: "34572F21E4C80346"
 			tasks: [{
 				id: "72A90C3B5E675CB3"
 				type: "item"
 				item: "farmersdelight:cutting_board"
 			}]
+			description: [
+				"You'll need a Cutting Board to make a Crafting Table."
+				""
+				"&o&7 : ...why?&r"
+			]
+			id: "34572F21E4C80346"
+			x: -21.5d
+			y: -16.5d
+			title: "COCKBLOCKED BY FARMER'S DELIGHT"
+			dependencies: ["76FA2CC95FF1420B"]
+			hide: true
 		}
 		{
-			title: "Strippin'"
-			icon: "minecraft:stripped_oak_log"
-			x: -16.5d
-			y: -15.5d
-			description: [
-				"Place a log on the Cutting Board, then right click with an axe to get a stripped log and some bark (that you can use as fuel)."
-				""
-				"&o&7 : I can do that even without a Cutting Board, what's the point, again?!&r"
-				"&o : things to do."
-				"&7&o : places to see?"
-				"&o : yes"
-				"&7&o : ...oh."
-			]
-			dependencies: ["34572F21E4C80346"]
-			hide: true
-			id: "165A10191FA903DD"
 			tasks: [{
 				id: "237FEB2AC791E968"
 				type: "item"
@@ -715,10 +674,29 @@
 					}
 				}
 			}]
+			description: [
+				"Place a log on the Cutting Board, then right click with an axe to get a stripped log and some bark (that you can use as fuel)."
+				""
+				"&o&7 : I can do that even without a Cutting Board, what's the point, again?!&r"
+				"&o : things to do."
+				"&7&o : places to see?"
+				"&o : yes"
+				"&7&o : ...oh."
+			]
+			id: "165A10191FA903DD"
+			icon: "minecraft:stripped_oak_log"
+			x: -16.5d
+			y: -15.5d
+			title: "Strippin'"
+			dependencies: ["34572F21E4C80346"]
+			hide: true
 		}
 		{
-			x: -19.5d
-			y: -19.0d
+			tasks: [{
+				id: "6E9FAC2A5C28BBF8"
+				type: "item"
+				item: "geggy:j_planks"
+			}]
 			description: [
 				"Place the stripped log back on the Cutting Board, right click with an axe again to obtain two Prepared Planks."
 				""
@@ -727,20 +705,19 @@
 				""
 				"&o&7 : I feel like all my life was in preparation for this."
 			]
+			id: "43A7D246F7B435A6"
+			x: -19.5d
+			y: -19.0d
+			min_width: 220
 			dependencies: ["165A10191FA903DD"]
 			hide: true
-			min_width: 220
-			id: "43A7D246F7B435A6"
-			tasks: [{
-				id: "6E9FAC2A5C28BBF8"
-				type: "item"
-				item: "geggy:j_planks"
-			}]
 		}
 		{
-			x: -20.0d
-			y: -14.0d
-			subtitle: "Almost... done."
+			tasks: [{
+				id: "0B823F7B1F8EB66E"
+				type: "item"
+				item: "geggy:j_crafting_top"
+			}]
 			description: [
 				"Two Prepared Planks + two pieces of flint."
 				""
@@ -748,25 +725,25 @@
 				"&o : you can't count. It's not a pentagram."
 				"&o&7 : anyway, I could see that coming, gtnh can't have all the flint to itself."
 			]
-			dependencies: ["43A7D246F7B435A6"]
-			hide: true
-			min_width: 220
 			id: "3015A2B3854CC10E"
-			tasks: [{
-				id: "0B823F7B1F8EB66E"
-				type: "item"
-				item: "geggy:j_crafting_top"
-			}]
+			x: -20.0d
+			y: -14.0d
 			rewards: [{
 				id: "0126BD149E88E3D8"
 				type: "item"
 				item: "create:experience_nugget"
 			}]
+			min_width: 220
+			subtitle: "Almost... done."
+			dependencies: ["43A7D246F7B435A6"]
+			hide: true
 		}
 		{
-			x: -13.5d
-			y: -14.0d
-			shape: "pentagon"
+			tasks: [{
+				id: "01A11F253D76DDB0"
+				type: "item"
+				item: "minecraft:chest"
+			}]
 			description: [
 				"A chest. "
 				"(this recipe used to be way worse)"
@@ -775,21 +752,20 @@
 				""
 				"&o&7 : ...and no, I can't unsee that recipe now. It's a crime against all things minecraft."
 			]
-			hide_dependency_lines: true
-			dependencies: ["6BBD07ADB9DCB8B2"]
-			hide: true
 			id: "66B6D3512DDEBFFE"
-			tasks: [{
-				id: "01A11F253D76DDB0"
-				type: "item"
-				item: "minecraft:chest"
-			}]
+			x: -13.5d
+			y: -14.0d
+			shape: "pentagon"
+			dependencies: ["6BBD07ADB9DCB8B2"]
+			hide_dependency_lines: true
+			hide: true
 		}
 		{
-			title: "What's this thing appearing up here, now?"
-			x: -12.014285714285712d
-			y: -18.069047619047602d
-			shape: "pentagon"
+			tasks: [{
+				id: "3D8A23947A277C64"
+				type: "item"
+				item: "minecraft:furnace"
+			}]
 			description: [
 				"Look around for an icon with a knife. "
 				"Start there."
@@ -799,25 +775,24 @@
 				"&o : you literally need to go to hell to make Create."
 				"&7&o : Is that an aphorism or a spoiler?"
 			]
-			hide_dependency_lines: false
+			id: "4777D48B96D99CD0"
+			x: -12.014285714285712d
+			y: -18.069047619047602d
+			shape: "pentagon"
+			title: "What's this thing appearing up here, now?"
+			dependency_requirement: "one_started"
 			dependencies: [
 				"6BBD07ADB9DCB8B2"
 				"0B4A9C5659D78537"
 			]
+			hide_dependency_lines: false
 			hide: true
-			dependency_requirement: "one_started"
-			id: "4777D48B96D99CD0"
-			tasks: [{
-				id: "3D8A23947A277C64"
-				type: "item"
-				item: "minecraft:furnace"
-			}]
 		}
 		{
-			title: "Paper?"
-			x: -12.871428571428567d
-			y: -19.969047619047615d
-			subtitle: "What about it?"
+			tasks: [{
+				id: "5F6C7998060D62BD"
+				type: "checkmark"
+			}]
 			description: [
 				"After you got chad, you can make paper (stone slabs are not consumed)."
 				""
@@ -833,35 +808,17 @@
 				"&o : by design. That's because there are so many resource sinks for wood. And sugar cane has its use."
 				"&o : but that too has been nerfed. No more crafting table recipe, only mixer."
 			]
-			hide_dependency_lines: false
-			dependencies: ["0530C317BE58A21B"]
-			hide: true
-			min_width: 250
 			id: "54622889F00864A4"
-			tasks: [{
-				id: "5F6C7998060D62BD"
-				type: "checkmark"
-			}]
+			x: -12.871428571428567d
+			y: -19.969047619047615d
+			title: "Paper?"
+			min_width: 250
+			subtitle: "What about it?"
+			dependencies: ["0530C317BE58A21B"]
+			hide_dependency_lines: false
+			hide: true
 		}
 		{
-			x: -13.108333333333348d
-			y: -15.98809523809524d
-			description: [
-				"Yes, we continue here. To make a furnace you need a flint knife."
-				""
-				"&o&7 : just... No."
-				"&o&7 : To make a furnace you definitely *DON'T* need a flint knife."
-				"&o : Will you please shut up? I can't do anything if you keep yapping with that annoying voice."
-				"&o&7 : I'm just wondering what's the point of a flint knife, why have you added it? You can't even cut grass with it, like in GT6."
-				"&o : I haven't *added* it. It's in Farmer's Delight, it would be a crime not to use it."
-				"&o&7 : What has... Farmer's Delight done to you that you keep putting it everywhere?"
-				"&o : I said &lSHUT UP&r!"
-			]
-			hide_dependency_lines: true
-			dependencies: ["6BBD07ADB9DCB8B2"]
-			hide: true
-			min_width: 230
-			id: "2888DCF41B2A221A"
 			tasks: [{
 				id: "5264D1DD0919E50C"
 				type: "item"
@@ -873,11 +830,31 @@
 					}
 				}
 			}]
+			description: [
+				"Yes, we continue here. To make a furnace you need a flint knife."
+				""
+				"&o&7 : just... No."
+				"&o&7 : To make a furnace you definitely *DON'T* need a flint knife."
+				"&o : Will you please shut up? I can't do anything if you keep yapping with that annoying voice."
+				"&o&7 : I'm just wondering what's the point of a flint knife, why have you added it? You can't even cut grass with it, like in GT6."
+				"&o : I haven't *added* it. It's in Farmer's Delight, it would be a crime not to use it."
+				"&o&7 : What has... Farmer's Delight done to you that you keep putting it everywhere?"
+				"&o : I said &lSHUT UP&r!"
+			]
+			id: "2888DCF41B2A221A"
+			x: -13.108333333333348d
+			y: -15.98809523809524d
+			min_width: 230
+			dependencies: ["6BBD07ADB9DCB8B2"]
+			hide_dependency_lines: true
+			hide: true
 		}
 		{
-			title: "Chad, is that you?"
-			x: -10.858333333333341d
-			y: -15.98809523809524d
+			tasks: [{
+				id: "715B56D41A1FF8C2"
+				type: "item"
+				item: "geggy:chad"
+			}]
 			description: [
 				"To make paper, you need to make chad."
 				""
@@ -885,31 +862,15 @@
 				"&o : that isn't funny as you think"
 				"&7&o : I'm just breaking the tension here"
 			]
-			hide_dependency_lines: false
-			dependencies: ["41F34B3B70A485C1"]
-			hide: true
 			id: "0530C317BE58A21B"
-			tasks: [{
-				id: "715B56D41A1FF8C2"
-				type: "item"
-				item: "geggy:chad"
-			}]
+			x: -10.858333333333341d
+			y: -15.98809523809524d
+			title: "Chad, is that you?"
+			dependencies: ["41F34B3B70A485C1"]
+			hide_dependency_lines: false
+			hide: true
 		}
 		{
-			x: -11.286904761904772d
-			y: -19.988095238095248d
-			description: [
-				"But before you can make a furnace, you need to make paper."
-				"And to make paper, you need a mortar."
-				""
-				"&o&7 : This is a thrilling experience. "
-				"&o&7 : first the flint knife. Now... Paper?!"
-				"&o : The world is very, very old."
-				"&7&o : And full of..."
-			]
-			dependencies: ["2888DCF41B2A221A"]
-			hide: true
-			id: "41F34B3B70A485C1"
 			tasks: [{
 				id: "36A485D73A874F16"
 				type: "item"
@@ -921,11 +882,26 @@
 					}
 				}
 			}]
+			description: [
+				"But before you can make a furnace, you need to make paper."
+				"And to make paper, you need a mortar."
+				""
+				"&o&7 : This is a thrilling experience. "
+				"&o&7 : first the flint knife. Now... Paper?!"
+				"&o : The world is very, very old."
+				"&7&o : And full of..."
+			]
+			id: "41F34B3B70A485C1"
+			x: -11.286904761904772d
+			y: -19.988095238095248d
+			dependencies: ["2888DCF41B2A221A"]
+			hide: true
 		}
 		{
-			title: "Mr. Tinkers Destruct"
-			x: -10.0d
-			y: -17.0d
+			tasks: [{
+				id: "12EC2BF0222C4B40"
+				type: "checkmark"
+			}]
 			description: [
 				"With paper, you can make a pattern."
 				""
@@ -943,27 +919,15 @@
 				"&o : Well, Efesto got trapped in the curse of 1.18. But I have scripts ready. You'll need steel for the starter bricks."
 				"&7&o : ... what's even the point?"
 			]
+			id: "40DA390043B4CA76"
+			x: -10.0d
+			y: -17.0d
+			title: "Mr. Tinkers Destruct"
+			min_width: 250
 			dependencies: ["54622889F00864A4"]
 			hide: true
-			min_width: 250
-			id: "40DA390043B4CA76"
-			tasks: [{
-				id: "12EC2BF0222C4B40"
-				type: "checkmark"
-			}]
 		}
 		{
-			x: -14.322619047619064d
-			y: -18.095238095238102d
-			description: [
-				"With a &mpattern&r prepared plank and a flint knife, you can make a wooden form."
-				""
-				"&7&o : AH, I KNEW! It's all coming back!"
-				"&7&o : ...actually I didn't. I think I'm falling asleep."
-			]
-			dependencies: ["40DA390043B4CA76"]
-			hide: true
-			id: "16F0EF20B2204EDA"
 			tasks: [{
 				id: "030A347C3BB4CB84"
 				type: "item"
@@ -975,10 +939,24 @@
 					}
 				}
 			}]
+			description: [
+				"With a &mpattern&r prepared plank and a flint knife, you can make a wooden form."
+				""
+				"&7&o : AH, I KNEW! It's all coming back!"
+				"&7&o : ...actually I didn't. I think I'm falling asleep."
+			]
+			id: "16F0EF20B2204EDA"
+			x: -14.322619047619064d
+			y: -18.095238095238102d
+			dependencies: ["40DA390043B4CA76"]
+			hide: true
 		}
 		{
-			x: -10.048809523809538d
-			y: -19.19047619047619d
+			tasks: [{
+				id: "5AF829F9222DF3A1"
+				type: "item"
+				item: "geggy:clay_dust"
+			}]
 			description: [
 				"Use the mortar to make some Clay dust from Clay."
 				""
@@ -990,49 +968,48 @@
 				"Get those clay balls, then craft them back into a block, and use that."
 				""
 			]
+			id: "31383C5328C516B1"
+			x: -10.048809523809538d
+			y: -19.19047619047619d
 			dependencies: ["16F0EF20B2204EDA"]
 			hide: true
-			id: "31383C5328C516B1"
-			tasks: [{
-				id: "5AF829F9222DF3A1"
-				type: "item"
-				item: "geggy:clay_dust"
-			}]
 		}
 		{
-			x: -11.929761904761925d
-			y: -15.666666666666679d
-			description: [
-				"You should have a couple of chests already (there's a quest somewhere around here), so set aside some Clay Dust for later."
-				""
-				"The next step is making a campfire."
-			]
-			dependencies: ["31383C5328C516B1"]
-			hide: true
-			id: "4916F052DDF6C3DF"
 			tasks: [{
 				id: "6CE2586671A2E0C8"
 				type: "item"
 				item: "minecraft:campfire"
 			}]
+			description: [
+				"You should have a couple of chests already (there's a quest somewhere around here), so set aside some Clay Dust for later."
+				""
+				"The next step is making a campfire."
+			]
+			id: "4916F052DDF6C3DF"
+			x: -11.929761904761925d
+			y: -15.666666666666679d
+			dependencies: ["31383C5328C516B1"]
+			hide: true
 		}
 		{
-			x: -13.858333333333348d
-			y: -19.095238095238102d
-			description: ["Use the campfire to dry some kelp."]
-			dependencies: ["4916F052DDF6C3DF"]
-			hide: true
-			id: "53CE0D8808793265"
 			tasks: [{
 				id: "37721539C3AF8ECF"
 				type: "item"
 				item: "minecraft:dried_kelp"
 			}]
+			description: ["Use the campfire to dry some kelp."]
+			id: "53CE0D8808793265"
+			x: -13.858333333333348d
+			y: -19.095238095238102d
+			dependencies: ["4916F052DDF6C3DF"]
+			hide: true
 		}
 		{
-			title: "Groot."
-			x: -9.608333333333341d
-			y: -18.095238095238102d
+			tasks: [{
+				id: "5EA75C45579B62AE"
+				type: "item"
+				item: "geggy:craut"
+			}]
 			description: [
 				"Set aside the kelp."
 				""
@@ -1046,18 +1023,19 @@
 				"&7&o : Well, you made a mistake. I've never needed kelp to make grout."
 				"&o : Yeah, now you do."
 			]
+			id: "1EFA3AF251DABA65"
+			x: -9.608333333333341d
+			y: -18.095238095238102d
+			title: "Groot."
 			dependencies: ["53CE0D8808793265"]
 			hide: true
-			id: "1EFA3AF251DABA65"
-			tasks: [{
-				id: "5EA75C45579B62AE"
-				type: "item"
-				item: "geggy:craut"
-			}]
 		}
 		{
-			x: -14.0d
-			y: -17.0d
+			tasks: [{
+				id: "1D519B2945DE42F8"
+				type: "item"
+				item: "geggy:uncooked_primitive_brick"
+			}]
 			description: [
 				"Now it's time to bring it all together."
 				""
@@ -1071,18 +1049,18 @@
 				"&o : That's why I'm in charge, and you aren't. "
 				"&o : Batch crafting is a curse, not a wonder. The world is already decaying without our help."
 			]
+			id: "0B4A9C5659D78537"
+			x: -14.0d
+			y: -17.0d
 			dependencies: ["1EFA3AF251DABA65"]
 			hide: true
-			id: "0B4A9C5659D78537"
-			tasks: [{
-				id: "1D519B2945DE42F8"
-				type: "item"
-				item: "geggy:uncooked_primitive_brick"
-			}]
 		}
 		{
-			x: -16.5d
-			y: -22.0d
+			tasks: [{
+				id: "3D4AFBDE1AED56F6"
+				type: "item"
+				item: "minecraft:blast_furnace"
+			}]
 			description: [
 				"Eventally, you'll be able to make a (vanilla) Blast Furnace ...But no, not with iron. We have a complex relationship with iron here. You'll see when you're ready."
 				""
@@ -1092,31 +1070,31 @@
 				"&o&7 : look at this mess underneath."
 				"&o : cope."
 			]
-			hide_dependency_lines: false
-			dependencies: ["4777D48B96D99CD0"]
-			hide: true
 			id: "255A21597101A1FA"
-			tasks: [{
-				id: "3D4AFBDE1AED56F6"
-				type: "item"
-				item: "minecraft:blast_furnace"
-			}]
+			x: -16.5d
+			y: -22.0d
+			dependencies: ["4777D48B96D99CD0"]
+			hide_dependency_lines: false
+			hide: true
 		}
 		{
-			x: -23.05952380952379d
-			y: -10.047619047619037d
-			description: ["Dead end."]
-			dependencies: ["255A21597101A1FA"]
-			id: "75AFFD24DACBAAC5"
 			tasks: [{
 				id: "4EBC97B7970E13BB"
 				type: "item"
 				item: "tconstruct:seared_bricks"
 			}]
+			description: ["Dead end."]
+			dependencies: ["255A21597101A1FA"]
+			id: "75AFFD24DACBAAC5"
+			y: -10.047619047619037d
+			x: -23.05952380952379d
 		}
 		{
-			x: -7.0d
-			y: -21.0d
+			tasks: [{
+				id: "5EFC8CE804543E4D"
+				type: "item"
+				item: "kibe:wooden_bucket"
+			}]
 			description: [
 				"You'll need water, but you can't smelt iron without a furnace, to make a bucket. "
 				""
@@ -1126,18 +1104,18 @@
 				""
 				"&7&o : that's an understatement."
 			]
+			id: "3CA44DF3CBBB1978"
+			x: -7.0d
+			y: -21.0d
 			dependencies: ["53CE0D8808793265"]
 			hide: true
-			id: "3CA44DF3CBBB1978"
-			tasks: [{
-				id: "5EFC8CE804543E4D"
-				type: "item"
-				item: "kibe:wooden_bucket"
-			}]
 		}
 		{
-			x: -12.928571428571423d
-			y: -23.369047619047617d
+			tasks: [{
+				id: "5D141FC50AF885A3"
+				type: "checkmark"
+				title: "story time"
+			}]
 			description: [
 				"&o&7 : you still haven't explained to me why you put kelp in the recipe for the furnace"
 				"&o : well, it should be obvious."
@@ -1154,24 +1132,20 @@
 				"&7&o : yeah... Yeah."
 				"&7&o : I'd rather play Nomifactory."
 			]
-			dependencies: ["4777D48B96D99CD0"]
-			hide: true
-			min_width: 300
 			id: "624A482271DFCDF5"
-			tasks: [{
-				id: "5D141FC50AF885A3"
-				type: "checkmark"
-				title: "story time"
-			}]
+			x: -12.928571428571423d
+			y: -23.369047619047617d
 			rewards: [{
 				id: "646364B2492C799C"
 				type: "item"
 				item: "create:experience_nugget"
 			}]
+			min_width: 300
+			dependencies: ["4777D48B96D99CD0"]
+			hide: true
 		}
 		{
-			x: -4.5d
-			y: -0.5d
+			min_width: 300
 			description: [
 				"Batch crafting is discouraged! Say &lNO&r to batch crafting!"
 				""
@@ -1190,8 +1164,9 @@
 				"&o&3 76 : in jail!"
 				"&o&6 24 : to the gulag!"
 			]
-			min_width: 300
 			id: "0A45060F0B7EB159"
+			y: 2.5d
+			x: -8.0d
 			tasks: [{
 				id: "54820673D22A13F2"
 				type: "checkmark"
@@ -1199,9 +1174,7 @@
 			}]
 		}
 		{
-			title: "Design Note n.1602bis"
-			x: -3.119047619047606d
-			y: -0.4880952380952408d
+			size: 0.8d
 			description: [
 				""
 				"Batch crafting is a solution to a problem that generated at a lower level."
@@ -1211,10 +1184,12 @@
 				""
 				"Good luck batch crafting plates on a anvil."
 			]
-			dependencies: ["0A45060F0B7EB159"]
-			size: 0.8d
-			min_width: 250
 			id: "5E24FDC85EE535F9"
+			x: -6.619047619047606d
+			y: 2.511904761904759d
+			title: "Design Note n.1602bis"
+			min_width: 250
+			dependencies: ["0A45060F0B7EB159"]
 			tasks: [{
 				id: "3FDD0FC05C032E17"
 				type: "checkmark"
@@ -1222,9 +1197,10 @@
 			}]
 		}
 		{
-			title: "A suspicious ore"
-			x: -9.5d
-			y: -8.0d
+			tasks: [{
+				id: "6DECDA3DC9CFFC30"
+				type: "checkmark"
+			}]
 			description: [
 				"No gold ore should be able to be found in the world."
 				""
@@ -1240,17 +1216,19 @@
 				""
 				"&eIron, Gold and Glass&r are gated by design (along with the MI macerator, moved to a later point)."
 			]
-			dependencies: ["497612DF4D0FB9DE"]
-			min_width: 250
 			id: "73211F9811A64087"
-			tasks: [{
-				id: "6DECDA3DC9CFFC30"
-				type: "checkmark"
-			}]
+			x: -9.5d
+			y: -8.0d
+			title: "A suspicious ore"
+			min_width: 250
+			dependencies: ["497612DF4D0FB9DE"]
 		}
 		{
-			x: -13.008333333333319d
-			y: -10.56547619047619d
+			tasks: [{
+				id: "27E3BF0A995AB0AD"
+				type: "checkmark"
+				title: "JEI/REI/EMI/WHY"
+			}]
 			description: [
 				"Quick guide to JEI/REI/EMI. Item list on the right, bookmarks to the left, search bar at the bottom."
 				""
@@ -1266,29 +1244,34 @@
 				"Remember that EMI is set to use different shortcuts, the key immediately under the default:"
 				"&9A&r>&cZ&r, &9R&r>&cF&r, &9U&r>&cJ&r"
 			]
-			hide_dependency_lines: true
+			id: "5CE0514DEC09071E"
+			x: -13.008333333333319d
+			y: -10.56547619047619d
+			min_width: 220
 			dependencies: ["79DE3D8A73C88BD6"]
+			hide_dependency_lines: true
 			hide: true
 			optional: true
-			min_width: 220
-			id: "5CE0514DEC09071E"
-			tasks: [{
-				id: "27E3BF0A995AB0AD"
-				type: "checkmark"
-				title: "JEI/REI/EMI/WHY"
-			}]
 		}
 		{
-			title: "All the fun, from the beginning"
-			icon: {
-				id: "minecraft:flint_and_steel"
-				Count: 1b
-				tag: {
-					Damage: 0
+			tasks: [
+				{
+					id: "2F6931FD8E69D1FC"
+					type: "item"
+					item: "geggy:tempered_brick"
 				}
-			}
-			x: -9.5d
-			y: -6.5d
+				{
+					id: "2A465CC8DC25A019"
+					type: "item"
+					item: {
+						id: "minecraft:flint_and_steel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
 			description: [
 				"So you need to go to the Nether..."
 				""
@@ -1309,54 +1292,32 @@
 				""
 				"&o(I've started editing loot tables, so progression is a little more \"enforced\", even if it may still be easy finding ways around it. I patch up the holes as I find them but following the progression here should make sure you can move through things as they were designed.)"
 			]
-			dependencies: [
-				"0BDA0B805FF4FD59"
-				"497612DF4D0FB9DE"
-			]
-			hide: true
-			dependency_requirement: "all_started"
-			min_width: 280
-			id: "6B9684CB680D38D6"
-			tasks: [
-				{
-					id: "2F6931FD8E69D1FC"
-					type: "item"
-					item: "geggy:tempered_brick"
-				}
-				{
-					id: "2A465CC8DC25A019"
-					type: "item"
-					item: {
-						id: "minecraft:flint_and_steel"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-			]
 			rewards: [{
 				id: "5515013A229E6AB2"
 				type: "item"
 				item: "minecraft:obsidian"
 				count: 9
 			}]
+			id: "6B9684CB680D38D6"
+			icon: {
+				id: "minecraft:flint_and_steel"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -9.5d
+			y: -6.5d
+			title: "All the fun, from the beginning"
+			min_width: 280
+			dependency_requirement: "all_started"
+			dependencies: [
+				"0BDA0B805FF4FD59"
+				"497612DF4D0FB9DE"
+			]
+			hide: true
 		}
 		{
-			title: "I'm Pacific!"
-			x: -15.0d
-			y: -15.5d
-			description: [
-				"Please don't kill poor sheep."
-				""
-				"Now that you have a flint kinfe, you can have shears without needing iron ingots."
-				""
-				"The bed recipe only requires 3 carpets, so two blocks of wool will be enough."
-			]
-			dependencies: ["2888DCF41B2A221A"]
-			hide: true
-			dependency_requirement: "one_completed"
-			id: "107FA73E711158C2"
 			tasks: [
 				{
 					id: "16002D8C3D19A780"
@@ -1375,12 +1336,33 @@
 					item: "minecraft:white_bed"
 				}
 			]
+			description: [
+				"Please don't kill poor sheep."
+				""
+				"Now that you have a flint kinfe, you can have shears without needing iron ingots."
+				""
+				"The bed recipe only requires 3 carpets, so two blocks of wool will be enough."
+			]
+			id: "107FA73E711158C2"
+			x: -15.0d
+			y: -15.5d
+			title: "I'm Pacific!"
+			dependencies: ["2888DCF41B2A221A"]
+			dependency_requirement: "one_completed"
+			hide: true
 		}
 		{
-			title: "A Tool"
-			x: -11.0d
-			y: -8.0d
-			shape: "rsquare"
+			tasks: [{
+				id: "6BF7EE731EE02335"
+				type: "item"
+				item: {
+					id: "geggy:flint_pickaxe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
 			description: [
 				"Wood and stone pickaxes have been removed. Unless you find some loot and want to stick with the plan, don't expect to use iron, or anything better."
 				""
@@ -1394,20 +1376,13 @@
 				""
 				"&o&e 0A : a suggestion: don't fall into a bush"
 			]
-			dependencies: ["5CFBB8884435817C"]
-			min_width: 250
 			id: "497612DF4D0FB9DE"
-			tasks: [{
-				id: "6BF7EE731EE02335"
-				type: "item"
-				item: {
-					id: "geggy:flint_pickaxe"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
+			x: -11.0d
+			y: -8.0d
+			shape: "rsquare"
+			title: "A Tool"
+			min_width: 250
+			dependencies: ["5CFBB8884435817C"]
 		}
 		{
 			x: -6.5d
@@ -1419,11 +1394,18 @@
 			}]
 		}
 		{
-			title: "A fun Block"
-			icon: "create:andesite_casing"
-			x: -11.0d
-			y: -3.5d
-			shape: "rsquare"
+			tasks: [
+				{
+					id: "6AEE5539A0D5B123"
+					type: "item"
+					item: "geggy:andesite_block"
+				}
+				{
+					id: "79C2E8109F328400"
+					type: "item"
+					item: "create:andesite_casing"
+				}
+			]
 			description: [
 				"Well, if you're here it means you (hopefully) survived a trip to the Nether and got out with enough resources."
 				""
@@ -1437,46 +1419,16 @@
 				""
 				"Start crafting an Andesite Alloy Block (4x andesite alloy). Then you need 6 prepared planks. One for each face, that you can manually apply by right clicking on the block while holding the planks."
 			]
-			dependencies: ["2AA1EEE014DA1E02"]
-			min_width: 250
 			id: "4190D1E5372DF336"
-			tasks: [
-				{
-					id: "6AEE5539A0D5B123"
-					type: "item"
-					item: "geggy:andesite_block"
-				}
-				{
-					id: "79C2E8109F328400"
-					type: "item"
-					item: "create:andesite_casing"
-				}
-			]
+			icon: "create:andesite_casing"
+			x: -11.0d
+			y: -3.5d
+			shape: "rsquare"
+			title: "A fun Block"
+			min_width: 250
+			dependencies: ["2AA1EEE014DA1E02"]
 		}
 		{
-			title: "Straight and Bent Cops"
-			icon: "create:mechanical_press"
-			x: -11.0d
-			y: -2.0d
-			shape: "rsquare"
-			description: [
-				"The recipe here should be straightforward, but since you have no access to iron, you need to obtain some &7blackstone."
-				""
-				"Once this is done, you can place the Mechanical Press in the world and immediately start using it. During this initial phase Create machines can be powered \"manually\"."
-				""
-				"Make sure there's one empty block under the Press so that it can work. Then look at the side of the machine and you'll find a square shape. Right click on it while holding a Hand Crank to place it. Done."
-				""
-				"Now, by right clicking on the crank you just placed (or shift + right click, to go in the opposite direction, which will be useful in other cases), you can manually \"power\" the machine to do what it was meant to do."
-				""
-				"Throw a copper ingot in the free space right below it. If everything works correctly and your aim was good, the machine will start moving and the ingot will turn to a plate. Nicely done."
-				""
-				"Don't repeat it, or the copper plate will then turn into a curved copper plate, that you'll use to craft pipes... But if you do, worry not, repeat again and you can turn the bent plate back into a straight one."
-				""
-				"Using a Create Depot as a base for the items can be even simpler, since you can place perfectly items on it by just right clicking. But as you can see in the recipe, a Depot requires a lead plate. And so you'll first need to use this press to turn a lead ingot into that."
-			]
-			dependencies: ["4190D1E5372DF336"]
-			min_width: 290
-			id: "76324EBCE6826F33"
 			tasks: [
 				{
 					id: "00FC5125D212182D"
@@ -1494,12 +1446,36 @@
 					item: "modern_industrialization:copper_plate"
 				}
 			]
-		}
-		{
-			title: "Bleeding and Edgy"
-			x: -12.5d
+			description: [
+				"The recipe here should be straightforward, but since you have no access to iron, you need to obtain some &7blackstone."
+				""
+				"Once this is done, you can place the Mechanical Press in the world and immediately start using it. During this initial phase Create machines can be powered \"manually\"."
+				""
+				"Make sure there's one empty block under the Press so that it can work. Then look at the side of the machine and you'll find a square shape. Right click on it while holding a Hand Crank to place it. Done."
+				""
+				"Now, by right clicking on the crank you just placed (or shift + right click, to go in the opposite direction, which will be useful in other cases), you can manually \"power\" the machine to do what it was meant to do."
+				""
+				"Throw a copper ingot in the free space right below it. If everything works correctly and your aim was good, the machine will start moving and the ingot will turn to a plate. Nicely done."
+				""
+				"Don't repeat it, or the copper plate will then turn into a curved copper plate, that you'll use to craft pipes... But if you do, worry not, repeat again and you can turn the bent plate back into a straight one."
+				""
+				"Using a Create Depot as a base for the items can be even simpler, since you can place perfectly items on it by just right clicking. But as you can see in the recipe, a Depot requires a lead plate. And so you'll first need to use this press to turn a lead ingot into that."
+			]
+			id: "76324EBCE6826F33"
+			icon: "create:mechanical_press"
+			x: -11.0d
 			y: -2.0d
 			shape: "rsquare"
+			title: "Straight and Bent Cops"
+			min_width: 290
+			dependencies: ["4190D1E5372DF336"]
+		}
+		{
+			tasks: [{
+				id: "69E7F591B86CEA56"
+				type: "item"
+				item: "create:mechanical_saw"
+			}]
 			description: [
 				"One step to the side. Why?"
 				""
@@ -1535,27 +1511,38 @@
 				""
 				"The next target shall be a Create Millstone. That will offer better yields for crushing things and will also be necessary to move toward actual automation..."
 			]
-			dependencies: ["76324EBCE6826F33"]
-			min_width: 280
 			id: "753F20F4B28BEFDF"
-			tasks: [{
-				id: "69E7F591B86CEA56"
-				type: "item"
-				item: "create:mechanical_saw"
-			}]
+			x: -12.5d
+			y: -2.0d
+			shape: "rsquare"
+			title: "Bleeding and Edgy"
+			min_width: 280
+			dependencies: ["76324EBCE6826F33"]
 		}
 		{
-			title: "Papers, please"
-			icon: {
-				id: "create:sand_paper"
-				Count: 1b
-				tag: {
-					Damage: 0
+			tasks: [
+				{
+					id: "697368EA5B9DFA54"
+					type: "item"
+					item: "supplementaries:flax"
 				}
-			}
-			x: -12.5d
-			y: -3.5d
-			shape: "rsquare"
+				{
+					id: "746C203F027020FE"
+					type: "item"
+					item: "minecraft:sugar_cane"
+				}
+				{
+					id: "51C46CB41537684D"
+					type: "item"
+					item: {
+						id: "create:sand_paper"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
 			description: [
 				"In the previous quest the target for a Millstone was set, but here comes a convoluted spin."
 				""
@@ -1580,57 +1567,26 @@
 				"You should now know all the steps to get all the way to Sand Paper, plus an additional step, since you need to craft &aQuartz Sand&r by using a mortar and a block of sand. Quartz Sand will be eventually used for Glass... But that's not something to worry about at this point."
 				" "
 			]
+			id: "58F339F993A004C9"
+			icon: {
+				id: "create:sand_paper"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -12.5d
+			y: -3.5d
+			shape: "rsquare"
+			title: "Papers, please"
+			min_width: 290
+			dependency_requirement: "one_completed"
 			dependencies: [
 				"753F20F4B28BEFDF"
 				"19FD1994E315F00F"
 			]
-			dependency_requirement: "one_completed"
-			min_width: 290
-			id: "58F339F993A004C9"
-			tasks: [
-				{
-					id: "697368EA5B9DFA54"
-					type: "item"
-					item: "supplementaries:flax"
-				}
-				{
-					id: "746C203F027020FE"
-					type: "item"
-					item: "minecraft:sugar_cane"
-				}
-				{
-					id: "51C46CB41537684D"
-					type: "item"
-					item: {
-						id: "create:sand_paper"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-			]
 		}
 		{
-			title: "Farmers' Revolt"
-			icon: "minecraft:wheat"
-			x: -14.0d
-			y: -3.5d
-			description: [
-				"The \"&cPapers, please&r\" quest actually lies to you."
-				""
-				"You don't need flax. You can simply use the very commonly available Wheat as replacement."
-				""
-				"Use shears with wheat on a crafting table to obtain &aStraw&r. Then use the Filter to get Fiber... Well, that's only a 10% chance."
-				""
-				"But we'll take advantage of this path here to show something else useful. Once you get the Dried Fiber you open up the path to make paper, but if you instead place 4 dried fibers on their own on the crafting table, you get &aTwine&r."
-				""
-				"Twine x 4 produces &aLinen&r, and this will be very useful because you'll need it for Create Sails, and build Windmills for automated power. For now, you can use the linen with shears, on a cutting board, to produce &astrings&r. "
-			]
-			dependencies: ["753F20F4B28BEFDF"]
-			hide: true
-			min_width: 250
-			id: "19FD1994E315F00F"
 			tasks: [
 				{
 					id: "597339FD7F08AC76"
@@ -1644,13 +1600,39 @@
 					count: 2L
 				}
 			]
+			description: [
+				"The \"&cPapers, please&r\" quest actually lies to you."
+				""
+				"You don't need flax. You can simply use the very commonly available Wheat as replacement."
+				""
+				"Use shears with wheat on a crafting table to obtain &aStraw&r. Then use the Filter to get Fiber... Well, that's only a 10% chance."
+				""
+				"But we'll take advantage of this path here to show something else useful. Once you get the Dried Fiber you open up the path to make paper, but if you instead place 4 dried fibers on their own on the crafting table, you get &aTwine&r."
+				""
+				"Twine x 4 produces &aLinen&r, and this will be very useful because you'll need it for Create Sails, and build Windmills for automated power. For now, you can use the linen with shears, on a cutting board, to produce &astrings&r. "
+			]
+			id: "19FD1994E315F00F"
+			icon: "minecraft:wheat"
+			x: -14.0d
+			y: -3.5d
+			title: "Farmers' Revolt"
+			min_width: 250
+			dependencies: ["753F20F4B28BEFDF"]
+			hide: true
 		}
 		{
-			title: "Do you fancy another trip to the Nether?"
-			icon: "minecraft:blaze_powder"
-			x: -12.5d
-			y: -5.0d
-			shape: "rsquare"
+			tasks: [
+				{
+					id: "5A77119C290F451B"
+					type: "item"
+					item: "minecraft:blaze_powder"
+				}
+				{
+					id: "617455B474B5358D"
+					type: "item"
+					item: "create:brass_hand"
+				}
+			]
 			description: [
 				"If you have Sand Paper you can now polish the Rose Quartz, itself requiring some redstone and more of that Nether Quartz. With all that you can craft the &aElectron Tube&r, another step on the way to a Deployer done. You only need Brass for the brass hand..."
 				""
@@ -1694,28 +1676,21 @@
 				""
 				"Once again, Ingot on a Cutting Board, and a pickaxe. It should be familiar at this point."
 			]
-			dependencies: ["58F339F993A004C9"]
-			min_width: 280
 			id: "17B14C7E48CA3D28"
-			tasks: [
-				{
-					id: "5A77119C290F451B"
-					type: "item"
-					item: "minecraft:blaze_powder"
-				}
-				{
-					id: "617455B474B5358D"
-					type: "item"
-					item: "create:brass_hand"
-				}
-			]
-		}
-		{
-			title: "Deployer Enjoyer"
-			icon: "create:deployer"
-			x: -14.0d
+			icon: "minecraft:blaze_powder"
+			x: -12.5d
 			y: -5.0d
 			shape: "rsquare"
+			title: "Do you fancy another trip to the Nether?"
+			min_width: 280
+			dependencies: ["58F339F993A004C9"]
+		}
+		{
+			tasks: [{
+				id: "420D57274BC254A7"
+				type: "item"
+				item: "create:deployer"
+			}]
 			description: [
 				"A breath of fresh air, away from hell, maybe."
 				""
@@ -1731,20 +1706,21 @@
 				""
 				"Don't deploy the deployer just yet, the next quest will tell you a trick on how to correctly employ it."
 			]
-			dependencies: ["17B14C7E48CA3D28"]
-			min_width: 270
 			id: "3B152DF5786096DA"
-			tasks: [{
-				id: "420D57274BC254A7"
-				type: "item"
-				item: "create:deployer"
-			}]
-		}
-		{
-			title: "Unpaid Job"
-			x: -15.5d
+			icon: "create:deployer"
+			x: -14.0d
 			y: -5.0d
 			shape: "rsquare"
+			title: "Deployer Enjoyer"
+			min_width: 270
+			dependencies: ["17B14C7E48CA3D28"]
+		}
+		{
+			tasks: [{
+				id: "6F2144238C4C9655"
+				type: "item"
+				item: "geggy:small_copper_frame"
+			}]
 			description: [
 				"Time to start putting some things together and making progress toward a first Cogwheel."
 				""
@@ -1785,21 +1761,21 @@
 				""
 				" "
 			]
-			min_required_dependencies: 4
-			dependencies: ["3B152DF5786096DA"]
-			min_width: 295
 			id: "24C6F46269CB96C4"
-			tasks: [{
-				id: "6F2144238C4C9655"
-				type: "item"
-				item: "geggy:small_copper_frame"
-			}]
+			min_required_dependencies: 4
+			x: -15.5d
+			y: -5.0d
+			shape: "rsquare"
+			title: "Unpaid Job"
+			min_width: 295
+			dependencies: ["3B152DF5786096DA"]
 		}
 		{
-			title: "Welcome to 4th millennium BC"
-			x: -15.5d
-			y: -3.5d
-			shape: "rsquare"
+			tasks: [{
+				id: "0C44DD3D58C49447"
+				type: "item"
+				item: "create:cogwheel"
+			}]
 			description: [
 				"You have a wheel! Well, not just yet, but this quest here should easily guide you there."
 				""
@@ -1811,19 +1787,20 @@
 				""
 				"You got wheels."
 			]
-			dependencies: ["24C6F46269CB96C4"]
-			min_width: 260
 			id: "7944A0F4BEDBE0C9"
-			tasks: [{
-				id: "0C44DD3D58C49447"
-				type: "item"
-				item: "create:cogwheel"
-			}]
+			x: -15.5d
+			y: -3.5d
+			shape: "rsquare"
+			title: "Welcome to 4th millennium BC"
+			min_width: 260
+			dependencies: ["24C6F46269CB96C4"]
 		}
 		{
-			x: -14.0d
-			y: -2.0d
-			shape: "rsquare"
+			tasks: [{
+				id: "6DE1EBFA8D45A10B"
+				type: "item"
+				item: "create:millstone"
+			}]
 			description: [
 				"Back on track."
 				""
@@ -1846,19 +1823,20 @@
 				""
 				"No, you cannot obtain gravel from cobblestone."
 			]
-			dependencies: ["7944A0F4BEDBE0C9"]
-			min_width: 260
 			id: "0E638BFDB7D2E9FB"
-			tasks: [{
-				id: "6DE1EBFA8D45A10B"
-				type: "item"
-				item: "create:millstone"
-			}]
+			x: -14.0d
+			y: -2.0d
+			shape: "rsquare"
+			title: "Can you feel the grind?"
+			min_width: 260
+			dependencies: ["7944A0F4BEDBE0C9"]
 		}
 		{
-			x: -12.5d
-			y: -0.5d
-			shape: "rsquare"
+			tasks: [{
+				id: "0F2077F962B23CB3"
+				type: "item"
+				item: "create:mechanical_mixer"
+			}]
 			description: [
 				"You have better yields on andesite alloy now, but there's another easy step that can slice resource costs almost in half again: a Mechanical Mixer."
 				""
@@ -1872,19 +1850,20 @@
 				""
 				"The goal will be assigning a single purpose to every machine, but for automation you'll need both automated power (instead of the manual hand crank) and something to move fluids and items around."
 			]
-			dependencies: ["0E638BFDB7D2E9FB"]
-			min_width: 280
 			id: "5FFF72B2A36A5A95"
-			tasks: [{
-				id: "0F2077F962B23CB3"
-				type: "item"
-				item: "create:mechanical_mixer"
-			}]
-		}
-		{
-			x: -11.0d
+			x: -12.5d
 			y: -0.5d
 			shape: "rsquare"
+			title: "Unlimited Blade Works"
+			min_width: 280
+			dependencies: ["0E638BFDB7D2E9FB"]
+		}
+		{
+			tasks: [{
+				id: "5EA92C7854756FA6"
+				type: "item"
+				item: "create:large_cogwheel"
+			}]
 			description: [
 				"As you can see, we're back on the main progression."
 				""
@@ -1894,29 +1873,19 @@
 				""
 				"But the quarry system itself needs power. So you'll have to solve it no matter the path you choose."
 				""
-				"&aLarge Cogwheels&r have a different crafting process than small ones, but mostly the same. You will have to produce four quadrants separately and then join them."
+				"&aLarge Cogwheels&r have a different crafting process than small ones, but mostly the same. You will have to produce four quadrants separately and then join them. These are useful along with small ones to change the speed ratios."
+				""
+				"While small cogwheels connect to each other only side by side, large + small connect only diagonally. Going from a large cogwheel to small doubles the speed, as the \"ponder\" screen says. Large cogwheels then connect to each other only at 45 degrees, letting you change the axis of the shaft."
 			]
-			dependencies: ["5FFF72B2A36A5A95"]
-			min_width: 280
 			id: "60B2EE6591C28C1E"
-			tasks: [{
-				id: "5EA92C7854756FA6"
-				type: "item"
-				item: "create:large_cogwheel"
-			}]
+			x: -11.0d
+			y: -0.5d
+			shape: "rsquare"
+			title: "Sister Act"
+			min_width: 280
+			dependencies: ["5FFF72B2A36A5A95"]
 		}
 		{
-			icon: "create:windmill_bearing"
-			x: -11.0d
-			y: 1.0d
-			shape: "rsquare"
-			description: [
-				"The &aWhite Sails&r will require &aLinen&r. There was a quest that explained how to get that, either from whear or, much better, flax."
-				""
-				"Putting all this together will provide you a natural and infinite power source, that you will be using even for the quarries. No water wheel at this point, because crafting it requires some hardened wood planks, and you need Creosote oil for that. You won't have it until you have a Coke Oven running..."
-			]
-			dependencies: ["60B2EE6591C28C1E"]
-			id: "62C683BE3EFE075E"
 			tasks: [
 				{
 					id: "38B85D48F690A5E5"
@@ -1929,18 +1898,338 @@
 					item: "create:white_sail"
 				}
 			]
+			description: [
+				"The &aWhite Sails&r will require &aLinen&r. There was a quest that explained how to get that, either from wheat or, much better, flax."
+				""
+				"Putting all this together will provide you a natural and infinite power source, that you will be using even for the quarries. "
+				""
+				"No water wheel at this point, because crafting it requires some hardened wood planks, and you need Creosote oil for that. You won't have it until you have a Coke Oven running..."
+				""
+				"The quest on the right linked to this one will give you the technical details to use the system. Beware, it looks simpler than it actually is..."
+				""
+				"{@pagebreak}"
+			]
+			id: "62C683BE3EFE075E"
+			icon: "create:windmill_bearing"
+			x: -11.0d
+			y: 1.0d
+			shape: "rsquare"
+			title: "Merry-Go-Round"
+			min_width: 260
+			dependencies: ["60B2EE6591C28C1E"]
 		}
 		{
+			tasks: [
+				{
+					id: "48AB5878D28B3526"
+					type: "item"
+					item: "create:fluid_pipe"
+				}
+				{
+					id: "0783DA1F7103F072"
+					type: "item"
+					item: "create:mechanical_pump"
+				}
+			]
+			description: [
+				"Almost there."
+				""
+				"Before you can start producing resources from infinite ore nodes you need one last piece: how to deal with fluids. And a way to jumpstart steam."
+				""
+				"One side of the problem is already solved. To move fluids around at this stage you will use Create &aFluid Pipes&r. The recipe is already available since it requires some bent cops and dried kelp."
+				""
+				"&7(note that there might be an alternate way of obtaining kelp, we'll see this later)&r"
+				""
+				"Those pipes on their own don't do anything. To properly operate they need e &aMechanical Pump&r. But this too is already accessible to you."
+				""
+				"The missing piece is that a Primitive Driller (Tier 1 quarry) requires a Create Fluid Tank to be crafted. The fluid tank then requires a vanilla Barrel. But the barrel requires a couple of Treated Planks..."
+				""
+				"...So here's another quick sideways detour that will complete your &mtechnological&r primitive initiation:"
+				"&6&lleather processing&r "
+				""
+				"(?!)"
+			]
+			id: "71D9F926F78BD55D"
+			icon: "create:fluid_pipe"
+			x: -11.0d
+			y: 2.5d
+			shape: "rsquare"
+			title: "Fluidified Progression"
+			min_width: 280
+			dependencies: ["62C683BE3EFE075E"]
+		}
+		{
+			tasks: [{
+				id: "5E328397895585E9"
+				type: "checkmark"
+			}]
+			description: [
+				"And so here we are."
+				""
+				"Technically you can skip the leather processing, because what you have already lets you craft fluid pipes, a mechanical pump, and jumpstart steam to get things moving."
+				""
+				"Leather processing will hand you some worthwhile tools, like barrels to store stuff, a fluid tank, labels... and some leather armor, I guess. Plus, you also get a \"Spout\", which is another Create contraption you can use to automate some recipes."
+				""
+				"All this stuff together will give you the freedom to start charting your very own personal progression. No more handholding. You can now decide your own priorities and how to develop your base."
+				""
+				"This quest here is to direct you to a different page: &dThe Quarry System&r will explain everything about infinite ore nodes and how to extract all the ores you need."
+			]
+			id: "58D363F8AFFD66E9"
+			x: -11.0d
+			y: 4.0d
+			min_width: 260
+			dependencies: [
+				"71D9F926F78BD55D"
+				"3E57AD2B900DBA6E"
+			]
+			dependency_requirement: "one_completed"
+		}
+		{
+			tasks: [{
+				id: "6CEC37C3F54523BE"
+				type: "item"
+				item: "create:empty_blaze_burner"
+			}]
+			description: [
+				"These quests are becoming nonsense. Why is there a Blaze Burner here?"
+				""
+				"Because we're going all in."
+				""
+				"If you look up the uses for rotten flesh, you can see there's a convenient mixer recipe, where for 5 pieces of rotten flesh, plus a bit of water, you get one piece of leather. Isn't this what you were looking for?"
+				""
+				"Indeed. The problem is that the mixer needs to be heated. See that thing under it."
+				""
+				"We've previously skipped this part by using a crafting table recipe and some Blaze Powder. But... it's time now."
+				""
+				"You have to go to the Nether again, and fight not a Blaze once... But enough time to collect TWELVE Blaze Rods."
+				""
+				"The recipe for an Empty Blaze Burner has two options. One is a sequence, but it requires steel, which is currently out of grasp. There's no way to get there without going through a Bronze phase. So you need the crafting table recipe, and to get those &aBlackened Rods and Plates&r you need Blaze Rods and Powders."
+				""
+				"Then you'll need to capture a Blaze within the empty blaze burner, by holding it and right-clicking, either over a Blaze or its spawner..."
+			]
+			id: "00EE168D743B5C31"
+			x: -14.0d
+			y: 2.5d
+			shape: "rsquare"
+			min_width: 280
+			dependencies: ["50338EDD235DA6B2"]
+			optional: true
+		}
+		{
+			tasks: [
+				{
+					id: "6C25A22079D996D5"
+					type: "item"
+					item: "minecraft:green_dye"
+				}
+				{
+					id: "66BCDE7AF9CD639C"
+					type: "item"
+					item: "farmersdelight:cooking_pot"
+				}
+				{
+					id: "717F940F17080371"
+					type: "item"
+					item: "geggy:mulch_copper_can"
+				}
+			]
+			description: [
+				"Time for more shears action, the most useful tool."
+				""
+				"Collect some random leaves from trees, we found an handy use for them. Yes, leaves."
+				""
+				"Once you have them put them in a Millstone and grind them, you should obtain &aGreen Dye&r."
+				""
+				"To use those dyes you'll need a &aCooking Pot&r... That will give you some horror flashback about those cursed bricks, I'm sorry. Remember you have a millstone now and can spare some resources while making them."
+				""
+				"Put the cooking pot over a campfire and you'll be all set."
+				""
+				"Get a &aCopper Can&r (three copper ingots) and put it inside the pot along with six green dyes, same as the recipe says. If everything works correctly, you should obtain a &aMulch Copper Can&r."
+			]
+			id: "03EF27D44D13A9D8"
+			icon: "farmersdelight:cooking_pot"
 			x: -12.5d
 			y: 1.0d
 			shape: "rsquare"
-			id: "71D9F926F78BD55D"
+			min_width: 280
+			dependencies: ["50338EDD235DA6B2"]
+		}
+		{
 			tasks: [{
-				id: "533777F12F2E787B"
+				id: "69A137CD56B58FD4"
+				type: "checkmark"
+			}]
+			description: [
+				"In a previous quest you crafted a large cogwheel and learned going from large to small doubles its rotational speed. If you look at the tooltip of one Create machine, you'll see it has a certain &dRPM&r requirement, or it won't work."
+				""
+				"The hand crank you used up to this point produces 32 RPM, which is just enough for most machines. But you'll have to be mindful of speed when you want to automate that power, for example by using a windmill."
+				""
+				"The windmill is easy to build. As long you attach some sails to it, it will spin. The way those sails are arranged, or their angle, is functionally meaningless. Just arrange them in a way that pleases you. The important aspect is how much RPM they generate."
+				""
+				"...And it's not much. You get just &e1 RPM for 8 sails&r. You cannot use more 128 of them. That means that even a huge and maxed contraption would only produce a disappointing total of 16 RPM. For example, a single Mixer requires 32 to work. So it's obvious you won't go very far with this system. Right?"
+				""
+				"Wrong. The next page will explain how to break this limit."
+				""
+				"{@pagebreak}"
+				"Once again, the trick is in those two cogwheel types."
+				""
+				"You've probably figured out that if linking a large to a small cogwheel you get double speed. But if you then add another small one to the large... the speed returns to its original value. So it's a one time only speed up."
+				""
+				"But only if you think in one dimension. You need to mentally expand. You need to think &lACROSS&r the spectrum. Laws of physics are meant to be broken."
+				""
+				"Think of what might happen if, rather than keep adding cogwheels one next to the other, you plug one onto the same axis. You aren't following?"
+				""
+				"Cogwheels turn on their central axis. In fact you can extend them at will, by just piling up more shafts. That's actually how you move power and deliver it somewhere else. What you should think now is, just within the rules you already know: what happens if a LARGE cogwheel shares the same shaft/pivot of a small one?"
+				""
+				"Yeah... Because that part's fixed. It turns at the speed of the cogwheel attached to it."
+				""
+				"Let's waste yet another page on this..."
+				""
+				"{@pagebreak}"
+				"Let's say that you built a windmill with just 8 sails, and it produces 1 RPM accordingly to our rules. You attach a large cogwheel right under it, and it will share the same speed. Now you link the large to a small. And, again by the rules, you get double the speed. So 2 RPM."
+				""
+				"Now let's move ACROSS. Extend the small cogwheel shaft and place onto that same pivot a large cogwheel. So that small and large are, like, one under the other, stacked. If they share the same shaft and speed then it means this large cogwheel will turn at 2 RPM."
+				""
+				"And what happens if you now link another small cogwheel to the 2 RPM large one? Speed doubles going large to small, right? Exactly. You now have 4 RPM. Even if you started from just 1."
+				""
+				"It goes without saying that as long you're willing to spam these cogwheels, and have space to place them, &dyou can increase power production for \"free\"&r."
+				""
+				"With rotational speed doubling every time, powering some machines becomes a reasonable goal. As long you have resources..."
+				""
+				"But we need another page for an additional note."
+				""
+				"{@pagebreak}"
+				"While sails are easy to produce, they require tons of andesite alloy. Cogwheels are more efficient in cost and value, but their processing is more complex. That's why you should start automating production."
+				""
+				"Yet, production isn't the only limit, and there's an additional aspect that plays a role."
+				""
+				"Power doesn't scale infinitely, but it's \"capped\" through a different system called \"&cstress\"&r. You don't need to... stress much over this, since your initial contrapitions will be simple enough that they should easily stay within the limit."
+				""
+				"Let's just say that every machine and thing you add onto the same speed \"network\" contributes to an overall stress. If you add too much, all together. It will become overstessed and stop working."
+				""
+				"What you should keep in mind, is that the amount of sails you add not only increases the initial RPM, but also the stress capacity of the network:"
+				"&eFor every 8 sails you get to spend 512 additional stress units&r."
+				""
+				"Therefore, try adding more sails if you hit that ceiling."
+				""
+				" "
+			]
+			id: "6490A6DBDBCFBEAC"
+			x: -9.5d
+			y: 1.0d
+			title: "Infinite Power, infinite grind"
+			min_width: 280
+			dependencies: ["62C683BE3EFE075E"]
+		}
+		{
+			tasks: [{
+				id: "1FC411646B15CDBF"
 				type: "item"
 				item: "minecraft:rotten_flesh"
 			}]
+			description: [
+				"Why does a leather chain start with rotten flesh?"
+				""
+				"Because you are now vegan, and shouldn't harm those poor animals."
+				""
+				"What? Are you saying that zombies also deserves their non-life and that goes against vegan principles? Well, zombies aren't animals, they are monsters. These are the rules here. You do you."
+				""
+				"You don't technically need to kill the zombies. They drop the rotten flesh just as usual, but if you use &ashears&r and right click on them you have a 85% chance of taking a piece of flesh off them. Only up to three times. Then it stops working. And no, sadly zombies do not regenerate their missing flesh."
+			]
+			x: -12.5d
+			id: "50338EDD235DA6B2"
+			y: 2.5d
+			shape: "rsquare"
+			min_width: 260
+			dependencies: ["71D9F926F78BD55D"]
+		}
+		{
+			tasks: [{
+				id: "72AEB1B2B09B78B8"
+				type: "item"
+				item: "labels:label"
+			}]
+			dependencies: ["03EF27D44D13A9D8"]
+			id: "164DC6F4E74C0403"
+			shape: "rsquare"
+			y: 1.0d
+			x: -14.0d
+		}
+		{
+			tasks: [{
+				id: "43C4DF8D777DB662"
+				type: "item"
+				item: "geggy:treated_plank"
+			}]
+			icon: "minecraft:barrel"
+			x: -14.0d
+			id: "452FA12909D423D5"
+			y: -0.5d
+			shape: "rsquare"
+			dependencies: ["03EF27D44D13A9D8"]
+		}
+		{
+			tasks: [{
+				id: "4EDCA44AE64756C4"
+				type: "item"
+				item: "create:spout"
+			}]
+			x: -15.5d
+			id: "086A654DA1EA6DA9"
+			y: -0.5d
+			shape: "rsquare"
+			dependencies: ["452FA12909D423D5"]
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "2886496D9998E131"
+				type: "item"
+				item: "create:item_drain"
+			}]
+			x: -15.5d
+			id: "01BC3CBCD4210960"
+			y: 1.0d
+			shape: "rsquare"
+			dependencies: ["086A654DA1EA6DA9"]
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "522A40AB9503E7BC"
+				type: "item"
+				item: "geggy:soaked_cured_leather"
+			}]
+			x: -15.5d
+			id: "007EB72E4C55E041"
+			y: 2.5d
+			shape: "rsquare"
+			dependencies: ["01BC3CBCD4210960"]
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "316C68D2D46E2E62"
+				type: "item"
+				item: "create:encased_fan"
+			}]
+			dependencies: ["007EB72E4C55E041"]
+			id: "3585BCAE077ABB36"
+			y: 4.0d
+			x: -14.0d
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "632C126E22810049"
+				type: "item"
+				item: "geggy:cured_leather"
+			}]
+			dependencies: ["3585BCAE077ABB36"]
+			id: "3E57AD2B900DBA6E"
+			y: 4.0d
+			x: -12.5d
+			optional: true
 		}
 	]
-	quest_links: [ ]
 }

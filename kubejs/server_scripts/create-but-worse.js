@@ -1643,7 +1643,7 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "minecraft:coal"}
 		],
-		"processingTime": 100,
+		"processingTime": 300,
 		"results": [
 			{"item": "modern_industrialization:coal_dust"}
 		]
@@ -1653,10 +1653,45 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "modern_industrialization:coal_dust"}
 		],
-		"processingTime": 100,
+		"processingTime": 200,
 		"results": [
 			{"count": 2, "item": "minecraft:black_dye"},
 			{"chance": 0.1, "item": "minecraft:gray_dye"}
 		]
 	})
+	
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "geggy:primitive_brick"}
+		],
+		"processingTime": 500,
+		"results": [
+			{"count": 2, "item": "geggy:primitive_brick_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:dried_kelp"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"count": 1, "item": "geggy:kelp_dust"},
+			{"chance": 0.5, "item": "geggy:kelp_dust"}
+		]
+	})
+	
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"tag": "c:sand"}
+		],
+		"processingTime": 80,
+		"results": [
+			{"count": 1, "item": "geggy:quartz_sand"},
+			{"chance": 0.75, "item": "geggy:quartz_sand"}
+		]
+	})
+	
 })	
