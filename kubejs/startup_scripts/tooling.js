@@ -483,6 +483,9 @@ event.create('geggy:twine');
 event.create('geggy:linen');
 
 event.create('geggy:chadded_copper_can').displayName('Chad Copper Can')
+event.create('geggy:limestone_dust');
+event.create('geggy:incomplete_bronze_gear');
+event.create('geggy:incomplete_iron_gear');
 
 
 

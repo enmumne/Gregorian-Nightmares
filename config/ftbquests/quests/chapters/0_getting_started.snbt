@@ -160,18 +160,6 @@
 		}
 		{
 			tasks: [{
-				id: "12B3C5F2D4F0F5EA"
-				type: "item"
-				item: "create:encased_fan"
-			}]
-			description: ["You can use a normal furnace for your smelting needs, but Create's smelting will let you smelt entire stacks at once, along with being completely free once set up"]
-			id: "27E9070B623F2ACD"
-			y: 0.5d
-			x: -17.5d
-			title: "Smelting?"
-		}
-		{
-			tasks: [{
 				id: "4AC299B0ABFC9230"
 				type: "item"
 				item: "modern_industrialization:bronze_ingot"
@@ -262,11 +250,12 @@
 				"        &o&55T: greg"
 			]
 			id: "5FDC22D8DFEAC954"
-			x: -19.0d
-			y: 0.5d
+			x: -15.5d
+			y: 4.0d
 			title: "Charcoal?"
 			subtitle: "lol, nope"
-			dependencies: ["27E9070B623F2ACD"]
+			dependencies: ["3585BCAE077ABB36"]
+			optional: true
 		}
 		{
 			tasks: [{
@@ -1940,7 +1929,7 @@
 				""
 				"&7(note that there might be an alternate way of obtaining kelp, we'll see this later)&r"
 				""
-				"Those pipes on their own don't do anything. To properly operate they need e &aMechanical Pump&r. But this too is already accessible to you."
+				"Those pipes on their own don't do anything. To properly operate they need a &aMechanical Pump&r. But this too is already accessible to you."
 				""
 				"The missing piece is that a Primitive Driller (Tier 1 quarry) requires a Create Fluid Tank to be crafted. The fluid tank then requires a vanilla Barrel. But the barrel requires a couple of Treated Planks..."
 				""
@@ -1970,7 +1959,7 @@
 				""
 				"Leather processing will hand you some worthwhile tools, like barrels to store stuff, a fluid tank, labels... and some leather armor, I guess. Plus, you also get a \"Spout\", which is another Create contraption you can use to automate some recipes."
 				""
-				"All this stuff together will give you the freedom to start charting your very own personal progression. No more handholding. You can now decide your own priorities and how to develop your base."
+				"All this together will give you the freedom to start charting your very own personal progression. No more handholding. You can now decide your own priorities and how to develop your base."
 				""
 				"This quest here is to direct you to a different page: &dThe Quarry System&r will explain everything about infinite ore nodes and how to extract all the ores you need."
 			]
@@ -2036,7 +2025,7 @@
 			description: [
 				"Time for more shears action, the most useful tool."
 				""
-				"Collect some random leaves from trees, we found an handy use for them. Yes, leaves."
+				"Collect some random leaves from trees, we found a convenient use for them. Yes, leaves."
 				""
 				"Once you have them put them in a Millstone and grind them, you should obtain &aGreen Dye&r."
 				""
@@ -2135,6 +2124,8 @@
 				"What? Are you saying that zombies also deserves their non-life and that goes against vegan principles? Well, zombies aren't animals, they are monsters. These are the rules here. You do you."
 				""
 				"You don't technically need to kill the zombies. They drop the rotten flesh just as usual, but if you use &ashears&r and right click on them you have a 85% chance of taking a piece of flesh off them. Only up to three times. Then it stops working. And no, sadly zombies do not regenerate their missing flesh."
+				""
+				"You can't of course use shears after they are completely dead, because the bodies obviously go poof."
 			]
 			x: -12.5d
 			id: "50338EDD235DA6B2"
@@ -2149,23 +2140,58 @@
 				type: "item"
 				item: "labels:label"
 			}]
-			dependencies: ["03EF27D44D13A9D8"]
+			description: [
+				"The Mulch Copper Can can be used directly on a crafting table with a bunch of paper to get... &alabels&r!"
+				""
+				"You don't know what these are? &eShift + right click&r and you can put them pretty much over any block. You can use them on chests and barrels to organize your inventory."
+				""
+				"They are quite handy because you can interact with the block behind directly."
+				""
+				"You can then retrieve them with a left click. With shift + right click again after they are placed, you \"paint\" the object you're holding over the label."
+				""
+				"With a dye you can color them, with Glow Ink Sacks you make them glow, and with a feather you can toggle a text label."
+				""
+				"These can be useful until you can make some proper Storage Drawers, which require Creosote Oil."
+			]
 			id: "164DC6F4E74C0403"
-			shape: "rsquare"
-			y: 1.0d
 			x: -14.0d
+			y: 1.0d
+			shape: "rsquare"
+			title: "OCD"
+			min_width: 250
+			dependencies: ["03EF27D44D13A9D8"]
+			optional: true
 		}
 		{
-			tasks: [{
-				id: "43C4DF8D777DB662"
-				type: "item"
-				item: "geggy:treated_plank"
-			}]
+			tasks: [
+				{
+					id: "43C4DF8D777DB662"
+					type: "item"
+					item: "geggy:treated_plank"
+				}
+				{
+					id: "023C420D1E0220BB"
+					type: "item"
+					item: "minecraft:barrel"
+				}
+			]
+			description: [
+				"&eTreated Planks&r are meant to be automated with the use of a Create \"Spout\", that you'll have to make soon."
+				""
+				"But this is once again a type of circular dependency, because to craft the Spout you'll need a Create Tank, itself requiring a Barrel, itself requiring a Treated Plank."
+				""
+				"This time the alternate recipe is simple: a Prepared Plank + Mulch Copper Can."
+				""
+				"You are now able to craft Barrels, which is the last requirement on the way to the first tier quarries. The next few quests, all the way to the proper return to the main progression, are set as optional."
+				""
+				"This is the part when you can start making choices. The spout especially is useful if you want to start automating things rather than keeping doing manual work. But automation at this stage still requires tons of materials to set up. The more pieces you add, the speedier it will become. "
+			]
+			id: "452FA12909D423D5"
 			icon: "minecraft:barrel"
 			x: -14.0d
-			id: "452FA12909D423D5"
 			y: -0.5d
 			shape: "rsquare"
+			min_width: 250
 			dependencies: ["03EF27D44D13A9D8"]
 		}
 		{

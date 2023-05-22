@@ -1948,8 +1948,8 @@ ServerEvents.recipes(event => {
 		eu: 2,
 		duration: 600,
 		item_inputs : [
-			{item: "modern_industrialization:uncooked_steel_dust", amount: 1}//,
-			//{item: "geggy:selector_1", probability: 0.0}
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 1},
+			{item: "geggy:limestone_dust", amount: 1}
 		],
 		item_outputs :
 		[

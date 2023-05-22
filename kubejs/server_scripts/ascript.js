@@ -712,13 +712,7 @@ ServerEvents.recipes(event => {
 		"results": [{"item": "modern_industrialization:bronze_plate"}]
 	})
 		
-	//	
-	
-	event.custom({
-		"type": "create:pressing",
-		"ingredients": [{"item": "modern_industrialization:iron_plate"}],
-		"results": [{"item": "geggy:iron_curved_plate"}]
-	})
+
 	event.recipes.modern_industrialization.compressor({
 		eu: 2,
 		duration: 100,

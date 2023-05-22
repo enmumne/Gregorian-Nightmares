@@ -1694,4 +1694,161 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "create:limestone"}
+		],
+		"processingTime": 300,
+		"results": [
+			{"count": 4, "item": "geggy:limestone_dust"},
+			{"chance": 0.75, "count": 2, "item": "geggy:limestone_dust"}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/bronze/craft/ring'})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:bronze_ring"},
+		transitionalItem: {"item": "geggy:incomplete_bronze_gear"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"},
+					{"item": "modern_industrialization:bronze_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"},
+					{"item": "modern_industrialization:bronze_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+		  	},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"},
+					{"item": "modern_industrialization:bronze_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"},
+					{"item": "modern_industrialization:bronze_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_bronze_gear"}
+				],
+				results: [{
+					"item": "geggy:incomplete_bronze_gear"
+				}]
+		  	}
+		],
+		results: [{
+			"item": "modern_industrialization:bronze_gear"
+		}],
+		loops: 2
+	  }
+	)
+	
+	event.remove({id: 'modern_industrialization:materials/iron/craft/ring'})
+	event.remove({id: 'modern_industrialization:materials/iron/craft/gear'})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:iron_ring"},
+		transitionalItem: {"item": "geggy:incomplete_iron_gear"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"},
+					{"item": "modern_industrialization:iron_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"},
+					{"item": "modern_industrialization:iron_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+		  	},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"},
+					{"item": "modern_industrialization:iron_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"},
+					{"item": "modern_industrialization:iron_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_iron_gear"}
+				],
+				results: [{
+					"item": "geggy:incomplete_iron_gear"
+				}]
+		  	}
+		],
+		results: [{
+			"item": "modern_industrialization:iron_gear"
+		}],
+		loops: 2
+	  }
+	)
+	
 })	
