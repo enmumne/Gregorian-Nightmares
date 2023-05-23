@@ -1409,13 +1409,24 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.recipes.modern_industrialization.blast_furnace({
-		eu: 1,
+		eu: 2,
 		duration: 200,
 		item_inputs: [
 			{item: "modern_industrialization:bronze_dust", amount: 1}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:bronze_ingot", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.salloy({
+		eu: 38,
+		duration: 200,
+		item_inputs: [
+			{item: "minecraft:copper_ingot", amount: 3},
+			{item: "modern_industrialization:tin_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:bronze_ingot", amount: 4}
 		]
 	})
 	
@@ -1460,9 +1471,9 @@ ServerEvents.recipes(event => {
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:chute"})
 	event.shaped('create:chute', [
-		'AAA',
+		' A ',
 		'ABA',
-		'AAA'
+		' A '
 	], {
 		A: 'create:andesite_alloy',
 		B: 'modern_industrialization:tin_plate'
@@ -1565,7 +1576,17 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.remove({id: "create:crafting/logistics/andesite_funnel"})
-	event.shaped('2x create:andesite_funnel', [
+	event.shaped('create:andesite_funnel', [
+		'AAA',
+		'ABA',
+		'   '
+	], {
+		A: 'create:andesite_alloy',
+		B: 'minecraft:dried_kelp'
+	})
+	
+	event.remove({id: "create:crafting/logistics/andesite_tunnel"})
+	event.shaped('create:andesite_tunnel', [
 		'AAA',
 		'ABA',
 		'   '
@@ -2185,7 +2206,7 @@ event.shaped('modern_industrialization:packer_double_ingot_template', [
 		B: 'modern_industrialization:steel_ingot'
 	})	
 	
-
+event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 
 
 	

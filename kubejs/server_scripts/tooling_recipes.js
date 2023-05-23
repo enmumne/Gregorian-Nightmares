@@ -539,7 +539,19 @@ event.custom({
 		"result": 
 		{"item": "geggy:cured_leather"}
 	})
-	event.shapeless('geggy:cured_leather_sheet', ['geggy:cured_leather', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:cured_leather"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/knives"},
+		"result": [
+			{ "item": "geggy:cured_leather_sheet", "count": 1}
+		],
+		"sound": "minecraft:item.axe.strip"
+	})
 	event.custom({
 		type: "create:cutting",
 		ingredients: [
@@ -550,7 +562,19 @@ event.custom({
 			"item": "geggy:cured_leather_sheet"
 		}]
 	})
-	event.shapeless('2x geggy:cured_leather_strap', ['geggy:cured_leather_sheet', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:cured_leather_sheet"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/knives"},
+		"result": [
+			{ "item": "geggy:cured_leather_strap", "count": 2}
+		],
+		"sound": "minecraft:item.axe.strip"
+	})
 	event.custom({
 		type: "create:cutting",
 		ingredients: [
@@ -561,7 +585,19 @@ event.custom({
 			"count": 2, "item": "geggy:cured_leather_strap"
 		}]
 	})
-	event.shapeless('2x geggy:cured_leather_cord', ['geggy:cured_leather_strap', 'farmersdelight:flint_knife']).damageIngredient('farmersdelight:flint_knife')
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:cured_leather_strap"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/knives"},
+		"result": [
+			{ "item": "geggy:cured_leather_cord", "count": 2}
+		],
+		"sound": "minecraft:item.axe.strip"
+	})
 	event.custom({
 		type: "create:cutting",
 		ingredients: [

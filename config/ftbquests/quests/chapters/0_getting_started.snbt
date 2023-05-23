@@ -14,7 +14,8 @@
 			description: [
 				"Welcome to &mIncremental Industries&r"
 				"&lGregorian Nightmares&r"
-				"also known as GregTech Zero Fun. "
+				"also known as GregTech Zero,"
+				"aka, GregTech Zero Fun. "
 				""
 				"&o&7You were borne into this world so that you won't get out. It's a cage to keep you in. A cage of your own making."
 				""
@@ -23,8 +24,6 @@
 				"&7&oI will only give you one keyword: &r&0&lpentazygon"
 				""
 				"This page will guide you through the early game progression, as it's been shuffled and can feel convoluted. Don't expect quest rewards, the questbook is a guide. Everything you obtain will come from the world and you actions in it. Excluding some rare exceptions."
-				""
-				"The convention used here is that on the left you have practical quests and goals, on the right some explanations about why things have been designed that way."
 				""
 				"If you hear intrusive voices while reading through this questbook, don't worry: sequential time has been decaying."
 				""
@@ -91,7 +90,9 @@
 				only_from_crafting: false
 			}]
 			description: [
-				"Your first bit of Bronze. There will be many more. Smelt this up and let's get into it"
+				"At some point you'll feel ready for Bronze."
+				""
+				"It's certainly simpler than lots of stuff you've faced up to this point. You can use the millstone to grind both copper and tin raw ores into their dusts. Then 3 copper dusts + 1 tin dust are placed into a mixer to obtain 4 &eBronze Dusts&r. A classic."
 				""
 				"&o&b 3K : i think i have come to the conclusion that every non GTNH pack is easier than E6E"
 				"&o&b 3K : well, 99% of them"
@@ -104,8 +105,10 @@
 			id: "4611AB2F817DA820"
 			x: -11.0d
 			y: 5.5d
+			shape: "rsquare"
 			title: "Bronze Age"
 			min_width: 250
+			dependencies: ["58D363F8AFFD66E9"]
 		}
 		{
 			tasks: [{
@@ -116,7 +119,7 @@
 			description: ["The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."]
 			id: "3F422B244183BD83"
 			y: 5.5d
-			x: -9.5d
+			x: -3.5d
 		}
 		{
 			tasks: [
@@ -131,10 +134,18 @@
 					item: "create:vertical_gearbox"
 				}
 			]
-			description: ["The Gearbox \\& Vertical Gearbox can be used to change Rotational Force direction"]
+			description: [
+				"The Gearbox \\& Vertical Gearbox can be used to change Rotational Force direction."
+				""
+				"Enjoy the edited recipe."
+			]
 			id: "73F0DC22524529D9"
-			y: 13.0d
-			x: -18.5d
+			icon: "create:gearbox"
+			x: -20.0d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
 			tasks: [{
@@ -142,10 +153,19 @@
 				type: "item"
 				item: "create:chute"
 			}]
-			description: ["A Chute has an open top and will funnel items through and into the inventory attached below it. It's useful for funnelling input into machines and inventories"]
+			description: [
+				"A Chute has an open top and will funnel items through and into the inventory attached below it. It's useful for funnelling input into machines and inventories."
+				""
+				"Can be set up diagonally by placing a second one to one side of the first."
+				""
+				"Use wrench for alternate see-through version."
+			]
 			id: "539F0CA78D206B98"
-			y: 16.0d
-			x: -18.5d
+			x: -17.0d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
 			tasks: [{
@@ -153,23 +173,33 @@
 				type: "item"
 				item: "create:andesite_funnel"
 			}]
-			description: ["Funnels can extract and intake items from adjacent machines and inventories. Since you don't have access to Create belts until a later time, these will mostly be useful to extract items."]
+			description: ["Funnels can extract and intake items from adjacent machines and inventories."]
 			id: "391A4FA878936698"
-			y: 15.0d
-			x: -19.0d
+			x: -15.5d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
-			tasks: [{
-				id: "4AC299B0ABFC9230"
-				type: "item"
-				item: "modern_industrialization:bronze_ingot"
-			}]
+			size: 1.5d
 			description: [
-				"You can use the furnace for this but you'll need a steady supply of coal. We suggest setting up a small assembly line that takes copper and tin and produces bronze ingots"
+				"The old description used to say:"
+				"&oYou can use the furnace for this but you'll need a steady supply of coal. We suggest setting up a small assembly line that takes copper and tin and produces bronze ingots."
 				""
-				"Congratulations, you've got your first Bronze Ingot. Time to move on to the Steam chapter to start with your first few Modern Industrialization machines"
-				"From here on, recipes will become more expensive, expansive and complex. We recommend crafting more than you need, as often as you can. You'll eventually use everything up as you progress through the pack"
+				"Of course the path to obtain a &eBronze Ingot&r has been slightly cursed."
 				""
+				"The dust cannot be smelted until the Steam Blast Furnace. I hope you set up at least one blaze burner for a mixer, because you need 5 bronze dusts and melt them."
+				""
+				"Once in molten form, you can move that fluidified bronze into a basin, and turn it into a bronze ingot with a press."
+				""
+				"Well... You can theoretically skip the heated mixer. You can still break the dust into tiny dusts, then smelt them into nuggets. Then use a press to compact 9 nuggets into an ingot. I mean, it's not the reasonable thing to do. I'm just saying this so that you become familiar with the way recipes can be set up, and navigate them."
+				""
+				"Ancient history continues here:"
+				"&oCongratulations, you've got your first Bronze Ingot. Time to move on to the Steam chapter to start with your first few Modern Industrialization machines."
+				"&oFrom here on, recipes will become more expensive, expansive and complex. We recommend crafting more than you need, as often as you can. You'll eventually use everything up as you progress through the pack."
+				""
+				"{@pagebreak}"
 				"&6&o 7F : we need proper ore processing first"
 				"&o&6 7F : and ore gen"
 				"&o 1A : take inspiration from gt6 at least..."
@@ -201,6 +231,11 @@
 			y: 7.0d
 			min_width: 300
 			dependencies: ["4611AB2F817DA820"]
+			tasks: [{
+				id: "4AC299B0ABFC9230"
+				type: "item"
+				item: "modern_industrialization:bronze_ingot"
+			}]
 		}
 		{
 			tasks: [{
@@ -214,7 +249,7 @@
 				"&oThis recipe has been especially tweaked to show how much I appreciate quality of life accessories, like this 3x3 drill :)"
 			]
 			id: "3A451808F8F4534A"
-			y: 4.0d
+			y: 5.5d
 			x: -9.5d
 			title: "Pick Begone!"
 		}
@@ -230,8 +265,11 @@
 				"Again, the Ponder (W) menu is useful to see exactly how this works."
 			]
 			id: "6A86346D8E55517B"
-			y: 14.0d
-			x: -19.0d
+			x: -18.5d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
 			tasks: [{
@@ -240,6 +278,8 @@
 				item: "minecraft:charcoal"
 			}]
 			description: [
+				"Convenient old quest, here, from a different age:"
+				""
 				"We suggest making some way of automating fuel for the next chapter. The Create saw along with the fan is a great way to make Charcoal."
 				""
 				"&o: (Yeah, if only I didn't disable the recipe to gate it at the Coke Oven.)"
@@ -269,10 +309,17 @@
 					}
 				}
 			}]
-			dependencies: ["20576E61A4E4D4EA"]
+			description: [
+				"This row of quests on the left are leftovers from the old questbook, since these parts aren't strictly required for progression."
+				""
+				"The filter here has been used before non-conventionally for fiber and paper, but it has its own use within Create since you can add and set up filters on the Create machines and have more control on their recipes."
+			]
 			id: "0F9C7A99C293B6C4"
-			y: 16.5d
-			x: -16.5d
+			x: -12.5d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
 			tasks: [{
@@ -282,13 +329,16 @@
 			}]
 			description: ["The Andesite Tunnel is used to cover belts. When it has an adjacent belt it will split one item off to the side."]
 			id: "569D853685B7C667"
-			y: 16.5d
-			x: -17.5d
+			x: -14.0d
+			y: 5.5d
+			dependencies: ["58D363F8AFFD66E9"]
+			hide_dependency_lines: true
+			optional: true
 		}
 		{
 			size: 1.5d
 			description: [
-				"&mDehydration. Like the above, the mod doesn't give much leverage to work with."
+				"Dehydration. &mThe mod doesn't give much leverage to work with."
 				""
 				"&mThe Campfire Cauldron goes on top of the campfire, but will need water from a bucket (or a glass flask) to be used. The wooden bucket from Kibe doesn't work, sorry (go complain to the mod authors, my requests usually fall in the void)."
 				""
@@ -298,7 +348,7 @@
 				""
 				"&mI'll keep tweaking values so that thirst is not annoying, but also not completely irrelevant (&o : glass is on the line to be nerfed&r)."
 				""
-				"Along with cold and heat, thirst was also disabled. It wasn't playing well with the progression. Might revisit in the future."
+				"Along with cold and heat, &athirst&r was also disabled. It wasn't playing well with the progression. Might revisit in the future."
 				""
 				"&o&d 0Z : Pollution would be cool to have"
 				"&o&d : Drink water that is contaminated? "
@@ -307,8 +357,8 @@
 			]
 			id: "7BF2997B1E193587"
 			icon: "dehydration:campfire_cauldron"
-			x: -7.5d
-			y: -14.5d
+			x: -17.0d
+			y: -8.0d
 			shape: "diamond"
 			title: "Dehehe... WHAT?!"
 			min_width: 250
@@ -339,11 +389,11 @@
 				""
 				"What this means is that, starting from iron, both armor and tools have very cursed recipes whose goal is to increase ingot requirements, plus some minimal microcrafting. My plan is to extend the stone age to keep the player more vulnerable."
 				""
-				"(actually during my tests the real problem was finding granite, but heh)"
+				"(actually during my early tests the real problem was finding granite, but heh)"
 				""
 				"Loot in chests should provide some backup, until nerfed. On the other hand, &aI almost doubled all the durability for both items and armors&r (applies to iron, gold, diamond and netherite), to compensate the pain of dealing with the crafting."
 				""
-				"&aAs a minor bonus, tools that break should drop a small amount of their original ingredients..."
+				"&aAs a minor bonus, tools that break should drop a small amount of their original material..."
 			]
 			id: "452458790435E9AF"
 			icon: {
@@ -353,8 +403,8 @@
 					Damage: 0
 				}
 			}
-			x: -7.5d
-			y: -13.0d
+			x: -14.0d
+			y: -8.0d
 			shape: "diamond"
 			title: "Cursed Recipes"
 			min_width: 250
@@ -385,7 +435,7 @@
 				""
 				"Due to some more conflicts, I've set EMI to use different keyboard shortcuts. Look for the key right under the default. so &9A&r>&cZ&r, &9R&r>&cF&r, &9U&r>&cJ&r"
 				""
-				"If a Create recipe has more than one output then it will not be indexed in REI. It means that if you try to backtrack by pressing R on a item that is produced as a second or third output, it will not bring you to that recipe."
+				"If a Create recipe has more than one output then it will not be indexed in REI. It means that if you try to backtrack by pressing \"r\" on a item that is produced as a second or third output, it will not bring you to that recipe."
 			]
 			id: "6F49A64224735D34"
 			x: -9.0202380952381d
@@ -406,7 +456,7 @@
 				""
 				"I was forgetting this..."
 				""
-				"When you die and respawn, you won't have all hearts and foodstuff restored, but only 7. "
+				"When you die and respawn, you won't have all hearts and foodstuff restored, but only a maximum of 7. "
 				"( &o: Note that you start the game with 6 hearts. You then increase this limit by half a heart for every 7 different types of food you eat, to a max of 20 hearts. &r)"
 				""
 				"This is the new default."
@@ -422,9 +472,9 @@
 				"&o 1Y : we need a better version of minecraft"
 			]
 			icon: "artifacts:crystal_heart"
-			x: -6.0d
+			x: -15.5d
 			id: "037725534E2B6CE9"
-			y: -13.72d
+			y: -8.5d
 			shape: "circle"
 			tasks: [{
 				id: "2B9CD7CC4FD8C39B"
@@ -1959,13 +2009,14 @@
 				""
 				"Leather processing will hand you some worthwhile tools, like barrels to store stuff, a fluid tank, labels... and some leather armor, I guess. Plus, you also get a \"Spout\", which is another Create contraption you can use to automate some recipes."
 				""
-				"All this together will give you the freedom to start charting your very own personal progression. No more handholding. You can now decide your own priorities and how to develop your base."
+				"All this together will give you the freedom to start charting your very own personal progression. No more so much handholding. You can now decide your own priorities and how to develop your base."
 				""
 				"This quest here is to direct you to a different page: &dThe Quarry System&r will explain everything about infinite ore nodes and how to extract all the ores you need."
 			]
 			id: "58D363F8AFFD66E9"
 			x: -11.0d
 			y: 4.0d
+			title: "Pivot"
 			min_width: 260
 			dependencies: [
 				"71D9F926F78BD55D"
@@ -2176,7 +2227,7 @@
 				}
 			]
 			description: [
-				"&eTreated Planks&r are meant to be automated with the use of a Create \"Spout\", that you'll have to make soon."
+				"&eTreated Planks&r are meant to be automated with the use of a Create \"Spout\"."
 				""
 				"But this is once again a type of circular dependency, because to craft the Spout you'll need a Create Tank, itself requiring a Barrel, itself requiring a Treated Plank."
 				""
@@ -2185,6 +2236,8 @@
 				"You are now able to craft Barrels, which is the last requirement on the way to the first tier quarries. The next few quests, all the way to the proper return to the main progression, are set as optional."
 				""
 				"This is the part when you can start making choices. The spout especially is useful if you want to start automating things rather than keeping doing manual work. But automation at this stage still requires tons of materials to set up. The more pieces you add, the speedier it will become. "
+				""
+				"Note that starting from vanilla chests, going through barrels and then drawers, the whole process can be automated through sequences."
 			]
 			id: "452FA12909D423D5"
 			icon: "minecraft:barrel"
@@ -2200,10 +2253,24 @@
 				type: "item"
 				item: "create:spout"
 			}]
-			x: -15.5d
+			description: [
+				"This part is optional and from the next step until the end of this branch we continue leather processing."
+				""
+				"With the possibility to craft a vanilla barrel comes the possibility to craft a Create &eSpout&r."
+				""
+				"The recipe is a manual application (right-click) of &eCopper Casing&r to a Create Tank. The tank was the part requiring a barrel."
+				""
+				"The copper casing itself is yet another sequence, itself starting from andesite casing. Let's welcome sequences mixed with nested recipes... All the fun, just for you."
+				""
+				"Note that with a cooking pot you can now cook &eSeagrass&r turning it into dried kelp. Seagrass is all over the place, but the recipe isn't very convenient, due to its long time."
+				""
+				"The spout itself, as the name says, is used to spurt liquid into something else. For example it can fill buckets, but it will be also used in recipe sequences where fluids are involved. So if you wanted to automate treated planks you could use a spout. But you still miss a step, to extract the tannin fluid from the mulch copper can..."
+			]
 			id: "086A654DA1EA6DA9"
+			x: -15.5d
 			y: -0.5d
 			shape: "rsquare"
+			min_width: 260
 			dependencies: ["452FA12909D423D5"]
 			optional: true
 		}
@@ -2213,10 +2280,24 @@
 				type: "item"
 				item: "create:item_drain"
 			}]
-			x: -15.5d
+			description: [
+				"Phase 2 of leather processing."
+				""
+				"This part is tricky just because there's a technical hiccup if you use REI. If you look up the recipes for a treated plank you can see there are two options. The crafting table recipe you've already used, and one with a spout, using a &eTannin&r fluid..."
+				""
+				"Buf if you press \"r\" on tannin... it doesn't seem obtainable. It only leads you to a dead end with a spout recipe to fill a bucket."
+				""
+				"This is just a problem of REI: in some cases the \"outputs\" of a recipe aren't indexed, only the main one is. You could always verify these cases by checking EMI, since it doesn't have this problem."
+				""
+				"The &eItem Drain&r is what you use here. You right click with the mulch copper can on the item drain, and the liquid tannin it contains will fill the drain, whereas the copper can will become empty, so that you can reuse and refill it."
+				""
+				"Once the fluid is in the item drain, you can extract and move it around as usual with fluid pipes + mechanical pump. So, if you use pipes you can move the liquid tannin from the item drain and then into a spout, and then use the spout to produce treated planks."
+			]
 			id: "01BC3CBCD4210960"
+			x: -15.5d
 			y: 1.0d
 			shape: "rsquare"
+			min_width: 280
 			dependencies: ["086A654DA1EA6DA9"]
 			optional: true
 		}
@@ -2226,6 +2307,13 @@
 				type: "item"
 				item: "geggy:soaked_cured_leather"
 			}]
+			description: [
+				"Tannin isn't only used for labels and prepared planks, but also for &eCured Leather&r, coming out soaked from a mixer in this case."
+				""
+				"Again, fluid pipe + mechanical pump can move the liquid tannin from inside the drain into a basin (for the mixer)."
+				""
+				"Enjoy a tidy and short quest for once."
+			]
 			x: -15.5d
 			id: "007EB72E4C55E041"
 			y: 2.5d
@@ -2234,15 +2322,36 @@
 			optional: true
 		}
 		{
-			tasks: [{
-				id: "316C68D2D46E2E62"
-				type: "item"
-				item: "create:encased_fan"
-			}]
-			dependencies: ["007EB72E4C55E041"]
+			tasks: [
+				{
+					id: "316C68D2D46E2E62"
+					type: "item"
+					item: "create:encased_fan"
+				}
+				{
+					id: "7030FF2A4F35508A"
+					type: "item"
+					item: "geggy:damp_cured_leather"
+				}
+			]
+			description: [
+				"Once you have the Soaked Cured Leather you have to wash it. Just another silly step to amuse you."
+				""
+				"The &eEncased Fan&r has multiple uses depending what you place in front of it: if it's a block of &dwater&r then in \"washes\", if it's a block of &dlava&r, it \"smelts/blasts\", if it's just a &dfire&r, it \"smokes\", and there's even an option for a soul fire."
+				""
+				"Place the encased fan, which can be powered by hand crank as usual, and leave at least two open spaces in the front. Close the other side with some other block. In the space immediately in front of the fan you need to place the \"effect\" you want. Like a block of water. Or lava. For the smoke effect a campfire will also work. Then toss the item you want to use for the recipe in the other space you left open."
+				""
+				"Since fluids like water and lava spread around messily, if you dig a single hole to the side from the spot where you placed the fluid (source), the fluid will neatly slide directly into that hole. Without making a mess everywhere else."
+				""
+				"Also check the way you rotate the thing, because the fan can both push and pull (and it can also be used to move things)."
+			]
 			id: "3585BCAE077ABB36"
-			y: 4.0d
+			icon: "create:encased_fan"
 			x: -14.0d
+			y: 4.0d
+			shape: "rsquare"
+			min_width: 250
+			dependencies: ["007EB72E4C55E041"]
 			optional: true
 		}
 		{
@@ -2251,10 +2360,54 @@
 				type: "item"
 				item: "geggy:cured_leather"
 			}]
-			dependencies: ["3585BCAE077ABB36"]
+			description: [
+				"Use a smoker, or fan behind a fire, to dry the cured leather."
+				""
+				"This isn't the end of this path. To use the cured leather you can cut it in smaller parts, either with a knife (cutting board) or again using the mechanical saw."
+				"&eCured Leather > Cured Leather Sheet"
+				"&eCured Leather Sheet > 2x Cured Leather Strap"
+				"&eCured Leather Strap > 2x Cured Leather Cord"
+				""
+				"A leather armor piece will need a combination of these parts. But you may be wondering who the hell makes leather armor, right? Well..."
+				""
+				"Not only it still takes some time before you get access to iron and better. But even when you do, all iron and diamond armor pieces require a layer of leather armor underneath. Meaning that if you want to craft a chestplate, you need to craft a &eLeather Tunic&r (with cured leather), and only then join it with a gold/iron/diamond chestplate."
+				""
+				"Now take a moment to look behind. All that you've done..."
+				""
+				"A flint pickaxe and leather armor! We're making huge strides forward on the progression, right?!"
+			]
 			id: "3E57AD2B900DBA6E"
-			y: 4.0d
 			x: -12.5d
+			y: 4.0d
+			shape: "rsquare"
+			min_width: 260
+			dependencies: ["3585BCAE077ABB36"]
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "5B24BF20F8C26E7B"
+				type: "item"
+				item: "create:belt_connector"
+			}]
+			description: [
+				"Oh, I got distracted with all these things about fluids that I completely forgot about solid items."
+				""
+				"You can of course craft &eMechanical Belts&r to carry stuff around. Much like fluid pipes, these too require power to move. You can place a hand crank directly on a shaft but if you are doing manual work then you could just pick up and deliver the items yourself..."
+				""
+				"You can't place a belt directly. first place a shaft horizontally at the starting point, and another at the end. Then, while holding belts, right click on the shaft. There should be red particles. Move over to aim at the other end, and particles should turn green. Right click again and the belt will be placed."
+				""
+				"Holding a wrench and right clicking on the side of the last block of a belt will shorten it. If you right click while holding a belt, you'll extend it by one instead."
+				""
+				"The material \"cost\" of a belt doesn't depend on its length, but the maximum is 10 blocks."
+			]
+			id: "22FAA2382818DE74"
+			x: -15.5d
+			y: -2.0d
+			shape: "rsquare"
+			title: "Almost Factorio"
+			min_width: 250
+			dependencies: ["452FA12909D423D5"]
 			optional: true
 		}
 	]

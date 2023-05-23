@@ -151,7 +151,7 @@
 			description: ["The cutting machine is another method of producing components such as Rods, Rings and Bolts. Create machines can only process some materials, so you'll eventually want one of these. In the early game you may be fine with the cutting saw though."]
 			dependencies: ["4747C0805A5670D3"]
 			id: "22C744931E1701EC"
-			y: 9.0d
+			y: 8.5d
 			x: -26.0d
 		}
 		{
@@ -175,8 +175,8 @@
 			]
 			icon: "modern_industrialization:bronze_mixer"
 			id: "787BBBEB11A4718D"
-			x: -24.5d
-			y: 7.5d
+			x: -24.52261904761906d
+			y: 7.18928571428571d
 			min_width: 250
 			dependencies: ["448718E321BE9E5A"]
 		}
@@ -440,8 +440,8 @@
 			]
 			dependencies: ["41BA783FD2C150D0"]
 			id: "274F91C7EC72D531"
-			y: 9.0d
-			x: -23.0d
+			y: 10.0d
+			x: -22.5d
 		}
 		{
 			tasks: [
@@ -481,12 +481,16 @@
 				type: "item"
 				item: "modern_industrialization:steel_ingot"
 			}]
-			description: ["Congratulations on your first steel ingot. Now that you've seen the crafting process for these, you'll want to automate as much of this as you can. You have access to item and fluid pipes which should make the process a lot easier. For Steel Tier Machines and the Quarry itself, you're going to need a lot so it's well worth going over your base right now to automate some parts of the process."]
+			description: [
+				"Congratulations on your first steel ingot. Now that you've seen the crafting process for these, you'll want to automate as much of this as you can. You have access to item and fluid pipes which should make the process a lot easier. For Steel Tier Machines and the Quarry itself, you're going to need a lot so it's well worth going over your base right now to automate some parts of the process."
+				""
+				"&o : Note that the recipe for steel not only was tweaked insofar ingredients were involved, but also for output processing. So look at the recipe sequence to see how to turn the steel \"&ehot ingot&r\" into an usable one."
+			]
 			id: "19A98DE71EE34CAA"
 			x: -20.98809523809524d
 			y: 15.649999999999999d
 			min_width: 300
-			dependencies: ["1DEDC34AE5197F09"]
+			dependencies: ["1CCAE2EACCB9921B"]
 		}
 		{
 			tasks: [{
@@ -636,7 +640,7 @@
 				"274F91C7EC72D531"
 			]
 			id: "4747C0805A5670D3"
-			y: 9.0d
+			y: 8.5d
 			x: -24.5d
 		}
 		{
@@ -700,6 +704,29 @@
 			y: 9.435714285714269d
 			x: -20.095238095238095d
 			title: "Automated Clay Production"
+		}
+		{
+			tasks: [{
+				id: "22203C96C119B187"
+				type: "item"
+				item: "geggy:limestone_dust"
+			}]
+			description: [
+				"Ew."
+				""
+				"While using limestone in the production of steel is somewhat \"realistic\"... the way limestone itself can be generated definitely &lis not&r."
+				""
+				"Following Create standard, a block of limestone generates from the interaction of lava with... honey."
+				""
+				"Fluid honey &ebee&rhaves much like water and lava, so after it has been placed it can flow into lava, and at the point where they meet a limestone block will be generated. Harvest it, and this can be repeated endlessly."
+				""
+				"Therefore, enjoy infinite limestone and the minor hassle of using it in steel production: use a millstone to turn it into dust with a generous recipe."
+			]
+			id: "1CCAE2EACCB9921B"
+			x: -22.0d
+			y: 15.0d
+			min_width: 250
+			dependencies: ["1DEDC34AE5197F09"]
 		}
 	]
 }
