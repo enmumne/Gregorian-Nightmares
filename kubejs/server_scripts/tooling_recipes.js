@@ -20,6 +20,9 @@ ServerEvents.tags('item', event => {
   event.add('c:tools/pickaxes', 'geggy:flint_pickaxe')
   event.add('c:tools/pickaxes', 'geggy:bronze_pickaxe')
   
+  event.add('boiler_fuel', 'modern_industrialization:coal_tiny_dust')
+  event.add('boiler_fuel', 'modern_industrialization:lignite_coal_tiny_dust')
+  
 });
 
 ServerEvents.tags('block', event => { 

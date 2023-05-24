@@ -111,17 +111,6 @@
 			dependencies: ["58D363F8AFFD66E9"]
 		}
 		{
-			tasks: [{
-				id: "73F472A3E2ECDDB7"
-				type: "item"
-				item: "create:brown_toolbox"
-			}]
-			description: ["The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."]
-			id: "3F422B244183BD83"
-			y: 5.5d
-			x: -3.5d
-		}
-		{
 			tasks: [
 				{
 					id: "1E90809FA717CDA8"
@@ -1254,6 +1243,8 @@
 				"Raw iron ore also smelts only down to 1 nugget."
 				""
 				"&eIron, Gold and Glass&r are gated by design (along with the MI macerator, moved to a later point)."
+				""
+				"&o : Not yet done, diamond ores will only have 30% of dropping a diamond. They'll drop shards instead. That can be melted later and reformed."
 			]
 			id: "73211F9811A64087"
 			x: -9.5d
@@ -1463,7 +1454,7 @@
 			x: -11.0d
 			y: -3.5d
 			shape: "rsquare"
-			title: "A fun Block"
+			title: "A fun block"
 			min_width: 250
 			dependencies: ["2AA1EEE014DA1E02"]
 		}
@@ -2035,7 +2026,7 @@
 				""
 				"Because we're going all in."
 				""
-				"If you look up the uses for rotten flesh, you can see there's a convenient mixer recipe, where for 5 pieces of rotten flesh, plus a bit of water, you get one piece of leather. Isn't this what you were looking for?"
+				"If you look up the uses for rotten flesh, you can see there's a convenient mixer recipe, where for 5 pieces of rotten flesh, plus a bit of water (you can use Kibe's wooden bucket), you get one piece of leather. Isn't this what you were looking for?"
 				""
 				"Indeed. The problem is that the mixer needs to be heated. See that thing under it."
 				""
@@ -2051,6 +2042,7 @@
 			x: -14.0d
 			y: 2.5d
 			shape: "rsquare"
+			title: "Party Hard"
 			min_width: 280
 			dependencies: ["50338EDD235DA6B2"]
 			optional: true
@@ -2091,6 +2083,7 @@
 			x: -12.5d
 			y: 1.0d
 			shape: "rsquare"
+			title: "What's cooking?"
 			min_width: 280
 			dependencies: ["50338EDD235DA6B2"]
 		}
@@ -2160,6 +2153,7 @@
 			title: "Infinite Power, infinite grind"
 			min_width: 280
 			dependencies: ["62C683BE3EFE075E"]
+			optional: true
 		}
 		{
 			tasks: [{
@@ -2178,10 +2172,11 @@
 				""
 				"You can't of course use shears after they are completely dead, because the bodies obviously go poof."
 			]
-			x: -12.5d
 			id: "50338EDD235DA6B2"
+			x: -12.5d
 			y: 2.5d
 			shape: "rsquare"
+			title: "Zombie Veganism"
 			min_width: 260
 			dependencies: ["71D9F926F78BD55D"]
 		}
@@ -2244,6 +2239,7 @@
 			x: -14.0d
 			y: -0.5d
 			shape: "rsquare"
+			title: "BARRELS!"
 			min_width: 250
 			dependencies: ["03EF27D44D13A9D8"]
 		}
@@ -2270,6 +2266,7 @@
 			x: -15.5d
 			y: -0.5d
 			shape: "rsquare"
+			title: "The Spitter"
 			min_width: 260
 			dependencies: ["452FA12909D423D5"]
 			optional: true
@@ -2297,6 +2294,7 @@
 			x: -15.5d
 			y: 1.0d
 			shape: "rsquare"
+			title: "Draining the will to live"
 			min_width: 280
 			dependencies: ["086A654DA1EA6DA9"]
 			optional: true
@@ -2314,10 +2312,11 @@
 				""
 				"Enjoy a tidy and short quest for once."
 			]
-			x: -15.5d
 			id: "007EB72E4C55E041"
+			x: -15.5d
 			y: 2.5d
 			shape: "rsquare"
+			title: "I do not care anymore"
 			dependencies: ["01BC3CBCD4210960"]
 			optional: true
 		}
@@ -2339,7 +2338,7 @@
 				""
 				"The &eEncased Fan&r has multiple uses depending what you place in front of it: if it's a block of &dwater&r then in \"washes\", if it's a block of &dlava&r, it \"smelts/blasts\", if it's just a &dfire&r, it \"smokes\", and there's even an option for a soul fire."
 				""
-				"Place the encased fan, which can be powered by hand crank as usual, and leave at least two open spaces in the front. Close the other side with some other block. In the space immediately in front of the fan you need to place the \"effect\" you want. Like a block of water. Or lava. For the smoke effect a campfire will also work. Then toss the item you want to use for the recipe in the other space you left open."
+				"Place the encased fan, which can be powered by hand crank as usual, and leave at least two open spaces in the front. Close the opposite side with some other block. In the space immediately in front of the fan you need to place the \"effect\" you want. Like a block of water. Or lava. For the smoke effect a campfire will also work. Then toss the item you want to use for the recipe in the other space you left open."
 				""
 				"Since fluids like water and lava spread around messily, if you dig a single hole to the side from the spot where you placed the fluid (source), the fluid will neatly slide directly into that hole. Without making a mess everywhere else."
 				""
@@ -2350,6 +2349,7 @@
 			x: -14.0d
 			y: 4.0d
 			shape: "rsquare"
+			title: "Created \\& Balanced"
 			min_width: 250
 			dependencies: ["007EB72E4C55E041"]
 			optional: true
@@ -2380,6 +2380,7 @@
 			x: -12.5d
 			y: 4.0d
 			shape: "rsquare"
+			title: "Full Armor"
 			min_width: 260
 			dependencies: ["3585BCAE077ABB36"]
 			optional: true
@@ -2400,6 +2401,8 @@
 				"Holding a wrench and right clicking on the side of the last block of a belt will shorten it. If you right click while holding a belt, you'll extend it by one instead."
 				""
 				"The material \"cost\" of a belt doesn't depend on its length, but the maximum is 10 blocks."
+				""
+				"&o : Last minute, the recipe has been significantly cursed."
 			]
 			id: "22FAA2382818DE74"
 			x: -15.5d
@@ -2409,6 +2412,96 @@
 			min_width: 250
 			dependencies: ["452FA12909D423D5"]
 			optional: true
+		}
+		{
+			tasks: [{
+				id: "680E5E998CD5FC01"
+				type: "item"
+				item: "create:hose_pulley"
+			}]
+			description: [
+				"Create Hose Pulley can be used to drain bodies of water or other fluids, including lava."
+				""
+				"The only rule is that if it's pulling for a source that has more that 10.000 blocks, then it's considering infinite. Otherwise it will actually drain the pool, starting from the top."
+			]
+			id: "58C8073B0213BF3F"
+			x: -17.0d
+			y: 1.0d
+			dependencies: ["01BC3CBCD4210960"]
+			hide_dependency_lines: true
+			optional: true
+		}
+		{
+			tasks: [{
+				id: "25E494528790377E"
+				type: "item"
+				item: "modern_industrialization:bronze_evaporation_tank"
+			}]
+			description: [
+				"The Bronze Evaporation Tank can be used to more easily produce &ePacked Mud&r."
+				""
+				"Why would you need packed mud? For the Clay Quarry multiblock."
+				""
+				"It will be necessary if you want to start produce Andesite Alloy, and to have easier access to Coke Ovens and Steam Blast Furnaces."
+				""
+				"(This will use steam and mud, look to the Quarry page for a way to produce steam very early.)"
+			]
+			dependencies: ["3F5ACCA0FDC6ADB6"]
+			id: "7FA13ECB870F1FDE"
+			y: 8.5d
+			x: -11.0d
+		}
+		{
+			tasks: [{
+				id: "76D81364C145575C"
+				type: "item"
+				item: "modern_industrialization:clay_quarry"
+			}]
+			description: [
+				"Craft a Bronze Wrench."
+				""
+				"After you made the Clay Quarry controller and placed it in the world, holding the wrench will show you an outline for how the multiblock needs to be arranged."
+				""
+				"To check instead the number of blocks and their type, look again for the controller recipe, and a tab with a bronze wrench icon. That will show you what you need to build."
+				""
+				"Consider that it's not 100% accurate: you'll need to replace some of the blocks of the structure with hatches. To get stuff in and out. When you deal with multiblocks you only use the controller to check if the structure was formed correctly."
+				""
+				"The Clay Quarry only has one recipe. But as you can see it needs:"
+				"- One &eBronze Fluid Input Hatch&r (for Steam)"
+				"- One &eBronze Fluid Input Hatch&r (for the water)"
+				"- One &eBronze Item Input Hatch&r (for the copper can)"
+				"- One &eBronze Item Output Hatch&r (for the Clayed Copper Can)"
+				""
+				"That means you can remove 4 mud bricks from the structure."
+			]
+			id: "169A250A599D706D"
+			x: -9.5d
+			y: 8.5d
+			min_width: 280
+			dependencies: ["7FA13ECB870F1FDE"]
+		}
+		{
+			tasks: [{
+				id: "2E823406142704C5"
+				type: "checkmark"
+			}]
+			description: [
+				"With the Clay Quarry built, using renewable water and steam, you solved another piece for the automation of Andesite Alloy."
+				""
+				"Clay coming from this quarry, Zinc and Quartz from their own ore quarries, what's left is Andesite."
+				""
+				"Andesite can be made in a mixer, with two flint pieces, one gravel block and some lava, it's a Create vanilla recipe. Since lava is renewable in some ways, and flint comes from crushing gravel, you just need a way to renew gravel as well."
+				""
+				"No, you can't crush cobblestone into gravel. But the process of producing clay from the quarry is very wasteful, and generates gravel dust as a byproduct. The same happens when you crush andesite into dust."
+				""
+				"The ratios and timings need more testing, but you should be more or less able to pack that gravel dust back into gravel blocks, and then loop it to produce more andesite..."
+			]
+			id: "6DF00170BEE642CB"
+			x: -8.0d
+			y: 8.5d
+			title: "Almost Automated"
+			min_width: 250
+			dependencies: ["169A250A599D706D"]
 		}
 	]
 }

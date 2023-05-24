@@ -1,5 +1,34 @@
 ServerEvents.recipes(event => {
 	
+	event.shaped('create:crafting/kinetics/mechanical_plough', [
+		'CCC',
+		'BBB',
+		' A '
+	], {
+		A: 'create:andesite_casing',
+		C: 'geggy:sharp_plate',
+		B: 'create:andesite_alloy'
+	})
+	event.shaped('create:crafting/kinetics/mechanical_harvester', [
+		'DCD',
+		'BCB',
+		' A '
+	], {
+		A: 'create:andesite_casing',
+		B: 'geggy:cogwheel',
+		C: 'geggy:sharp_plate',
+		D: 'create:andesite_alloy'
+	})
+	event.shaped('create:crafting/kinetics/mechanical_drill', [
+		' C ',
+		'CBC',
+		' A '
+	], {
+		A: 'create:andesite_casing',
+		B: 'create:shaft',
+		C: 'geggy:sharp_plate'
+	})
+	
 	event.remove({id: 'create:crafting/kinetics/water_wheel'})
 	event.shaped('create:water_wheel', [
 		'AAA',
@@ -109,11 +138,12 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'create:crafting/kinetics/depot'})
 	event.shaped('create:depot', [
 		'A  ',
-		'B  ',
-		'   '
+		'C  ',
+		'B  '
 	], {
 		A: 'modern_industrialization:lead_plate',
-		B: 'create:andesite_casing'
+		B: 'create:andesite_casing',
+		C: 'modern_industrialization:tin_ring'
 	})
 	
 	event.remove({id: 'create:crafting/kinetics/mechanical_mixer'})
@@ -659,7 +689,7 @@ ServerEvents.recipes(event => {
 				ingredients: [
 					{"item": "geggy:incomplete_brass_casing"},
 					// 81 = 1
-					{"amount": 17982, "fluid": "modern_industrialization:synthetic_oil"}
+					{"amount": 12150, "fluid": "modern_industrialization:synthetic_oil"}
 				],
 				results: [{
 					"item": "geggy:incomplete_brass_casing"
@@ -1338,9 +1368,9 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "geggy:unrefined_clay"}
 		],
-		"processingTime": 100,
+		"processingTime": 150,
 		"results": [
-			{"item": "geggy:clay_dust", "chance": 0.8},
+			{"item": "geggy:clay_dust", "chance": 0.08},
 			{"item": "geggy:gravel_dust"}
 		]
 	})
@@ -1378,7 +1408,8 @@ ServerEvents.recipes(event => {
 		"processingTime": 200,
 		"results": [
 			{"item": "geggy:andesite_dust"},
-			{"item": "geggy:gravel_dust", "chance": 0.5}
+			{"item": "geggy:andesite_dust", "chance": 0.5},
+			{"count": 8, "item": "geggy:gravel_dust", "chance": 0.8}
 		]
 	})
 	event.shapeless('geggy:andesite_dust', ['minecraft:andesite', 'minecraft:andesite', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
@@ -1706,6 +1737,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	event.remove({id: 'modern_industrialization:materials/tin/craft/ring'})
+	event.remove({id: 'modern_industrialization:materials/bronze/craft/gear'})
 	event.remove({id: 'modern_industrialization:materials/bronze/craft/ring'})
 	event.custom({
 		type: "create:sequenced_assembly",
@@ -1850,5 +1883,39 @@ ServerEvents.recipes(event => {
 		loops: 2
 	  }
 	)
+	
+	// rubber
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "modern_industrialization:lignite_coal"}
+		],
+		"processingTime": 200,
+		"results": [
+			{"count": 1, "item": "modern_industrialization:lignite_coal_crushed_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "modern_industrialization:lignite_coal_crushed_dust"}
+		],
+		"results": [
+			{"item": "modern_industrialization:lignite_coal_dust"},
+			{"chance": 0.75, "count": 3, "item": "modern_industrialization:sulfur_tiny_dust"}
+		]	
+	})
+	event.custom({
+		type: "create:mixing",
+		ingredients: [
+			{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "minecraft:dandelion"},{"item": "modern_industrialization:sulfur_tiny_dust"},
+			{amount: 250, "fluid":"minecraft:water"}
+		],
+		results: [{
+			"count": 6, "item":"geggy:rubber_pulp"
+		}],
+		processingTime: 400
+	})
+	event.smelting('geggy:heathed_rubber', 'geggy:rubber_pulp').cookingTime(100)
 	
 })	

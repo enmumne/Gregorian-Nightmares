@@ -837,6 +837,13 @@ ServerEvents.recipes(event => {
 	event.custom({
 			"type": "create:milling",
 			"processingTime":200,
+			"ingredients": [{"item": "minecraft:flint"}],
+			"results": [{"item": "geggy:flint_dust"}]
+	})
+	
+	event.custom({
+			"type": "create:milling",
+			"processingTime":200,
 			"ingredients": [{"item": "minecraft:iron_ore"}],
 			"results": [{"item": "minecraft:raw_iron"},{"item": "minecraft:raw_iron"}]
 	})
@@ -1226,7 +1233,7 @@ ServerEvents.recipes(event => {
 	// ELECTRIC AGE
 	// create belts
 	event.remove({mod: "create", output: "create:belt_connector"})
-	event.shaped("6x create:belt_connector", [
+	event.shaped("create:belt_connector", [
 		"RRR",
 		"RRR",
 		"   "
@@ -1240,27 +1247,22 @@ ServerEvents.recipes(event => {
 		type: "create:compacting",
 		ingredients: [
 		// changed to kelp from paper
-			Ingredient.of("minecraft:dried_kelp", 1).toJson(),
-			Ingredient.of("minecraft:dried_kelp", 1).toJson(),
+			Ingredient.of("geggy:heated_rubber", 1).toJson(),
+			Ingredient.of("geggy:heated_rubber", 1).toJson(),
 			Fluid.of("modern_industrialization:synthetic_oil", fluid_volume_to_fabric(111.11)).toJson()
 		],
 		results: [
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			Item.of("modern_industrialization:rubber_sheet", 1).toJson()
+		{"count" : 6, "item": "modern_industrialization:rubber_sheet"}
 		],
 		processingTime: 100
 	})
 	
 	event.custom({
-		type: "create:compacting",
+		type: "create:pressing",
 		ingredients: [
 		// changed to kelp from paper
-			Ingredient.of("minecraft:dried_kelp", 1).toJson(),
-			Ingredient.of("minecraft:dried_kelp", 1).toJson()
+			Ingredient.of("geggy:heated_rubber", 1).toJson(),
+			Ingredient.of("geggy:heated_rubber", 1).toJson()
 		],
 		results: [
 			{count: 1, "item": "modern_industrialization:rubber_sheet"}

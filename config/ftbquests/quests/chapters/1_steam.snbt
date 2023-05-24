@@ -217,8 +217,8 @@
 			description: ["The Coke Oven will be your first multiblock. In this quest, we've provided the exact number of resources to get this machine up and running. You'll have the Coke Oven block itself which is the \"brain\" of the multiblock. Also some bricks and an Item Input Hatch to accept Coal Coke, an Item Output Hatch to output Coke Dust, a Fluid Input hatch to accept steam to power the machine and finally a fluid output hatch to output your first byproduct, Creosote."]
 			icon: "modern_industrialization:coke_oven"
 			id: "41BA783FD2C150D0"
-			x: -20.98809523809524d
-			y: 11.149999999999999d
+			x: -21.0d
+			y: 11.0d
 			min_width: 300
 			dependencies: [
 				"4A611684DE66157B"
@@ -420,6 +420,7 @@
 				}
 			]
 			description: ["The Steam Blast Furnace is used to cook Uncooked Steel Dust. It'll be worth your while to also create a fluid output hatch, down the line we're going to use this machine for some other processing too."]
+			icon: "modern_industrialization:steam_blast_furnace"
 			id: "1DEDC34AE5197F09"
 			x: -20.98809523809524d
 			y: 14.149999999999999d
@@ -469,6 +470,7 @@
 				""
 				"This shall be their revenge. The revenge of the pigs."
 			]
+			icon: "modern_industrialization:uncooked_steel_dust"
 			id: "4571CCE5C6A7EFC9"
 			x: -20.98809523809524d
 			y: 12.649999999999999d
@@ -518,6 +520,7 @@
 				}
 			]
 			description: ["For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result"]
+			icon: "modern_industrialization:invar_ingot"
 			id: "5DAA5DF264D1E559"
 			x: -20.611904761904768d
 			y: 17.16666666666667d
@@ -644,15 +647,14 @@
 			x: -24.5d
 		}
 		{
+			x: -18.0d
+			y: 15.5d
+			id: "7960237A1360D9EA"
 			tasks: [{
 				id: "294B56A2E26CC1B4"
 				type: "item"
 				item: "create:schematicannon"
 			}]
-			dependencies: ["4A611684DE66157B"]
-			id: "7960237A1360D9EA"
-			y: 7.5d
-			x: -19.0d
 		}
 		{
 			tasks: [{
@@ -707,6 +709,22 @@
 		}
 		{
 			tasks: [{
+				id: "73F472A3E2ECDDB7"
+				type: "item"
+				item: "create:brown_toolbox"
+			}]
+			description: [
+				"The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."
+				""
+				"Why is this here? Because the recipe now starts from &eBrass Casing&r, itself requiring some &eSynthetic Oil&r."
+			]
+			dependencies: ["1DEDC34AE5197F09"]
+			id: "3F422B244183BD83"
+			y: 14.5d
+			x: -19.5d
+		}
+		{
+			tasks: [{
 				id: "22203C96C119B187"
 				type: "item"
 				item: "geggy:limestone_dust"
@@ -727,6 +745,50 @@
 			y: 15.0d
 			min_width: 250
 			dependencies: ["1DEDC34AE5197F09"]
+		}
+		{
+			tasks: [{
+				id: "3185D78FE3769D99"
+				type: "item"
+				item: "geggy:hardened_plank"
+			}]
+			dependencies: ["41BA783FD2C150D0"]
+			id: "6ACC6A63019C31C4"
+			y: 11.0d
+			x: -19.5d
+		}
+		{
+			tasks: [{
+				id: "260931D1D8932B29"
+				type: "item"
+				item: "extended_drawers:single_drawer"
+			}]
+			dependencies: ["6ACC6A63019C31C4"]
+			id: "13DFC137FC7BE925"
+			y: 11.0d
+			x: -18.0d
+		}
+		{
+			tasks: [{
+				id: "1BDF5899BFB6E59C"
+				type: "item"
+				item: "extended_drawers:double_drawer"
+			}]
+			dependencies: ["13DFC137FC7BE925"]
+			id: "06344446CBFA67AC"
+			y: 11.0d
+			x: -16.5d
+		}
+		{
+			tasks: [{
+				id: "46DC0A9263143706"
+				type: "item"
+				item: "extended_drawers:quad_drawer"
+			}]
+			dependencies: ["06344446CBFA67AC"]
+			id: "7FB4C2F231DD736A"
+			y: 11.0d
+			x: -15.0d
 		}
 	]
 }

@@ -487,6 +487,9 @@ event.create('geggy:limestone_dust');
 event.create('geggy:incomplete_bronze_gear');
 event.create('geggy:incomplete_iron_gear');
 
+event.create('geggy:rubber_pulp');
+event.create('geggy:heated_rubber');
+
 
 
 /*

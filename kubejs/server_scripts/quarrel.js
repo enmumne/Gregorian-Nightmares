@@ -1890,7 +1890,7 @@ ServerEvents.recipes(event => {
 	////////////////////////////////////////	bucket = 1000mb = 1/20tick = 16.6 min autonomy 1 bucket/ 2000 max tank
 	// 25 sec, 1000 steam bucket max recipe, 500 ticks
 	event.recipes.modern_industrialization.proto(2, 498)
-        .itemIn("2x modern_industrialization:coal_tiny_dust")
+        .itemIn("2x #boiler_fuel")
 		.fluidIn("minecraft:water", 50)
 		.fluidOut("modern_industrialization:steam", 2000)
 		.id("protoboy")	

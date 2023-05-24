@@ -1587,12 +1587,13 @@ ServerEvents.recipes(event => {
 	
 	event.remove({id: "create:crafting/logistics/andesite_tunnel"})
 	event.shaped('create:andesite_tunnel', [
-		'AAA',
-		'ABA',
+		'ACA',
+		'B B',
 		'   '
 	], {
 		A: 'create:andesite_alloy',
-		B: 'minecraft:dried_kelp'
+		B: 'minecraft:dried_kelp',
+		C: 'create:andesite_casing'
 	})
 	
 	// CREATE END
@@ -1660,11 +1661,11 @@ ServerEvents.recipes(event => {
 		eu: 2,
 		duration: 600,
 		item_inputs: [
-			{item: "geggy:glass_dust", amount: 3},
+			{item: "geggy:glass_dust", amount: 1},
 			{item: "geggy:mold_bottle", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
-			{item: "minecraft:glass_bottle", amount: 1}
+			{item: "minecraft:glass_bottle", amount: 3}
 		]
 	})
 	
