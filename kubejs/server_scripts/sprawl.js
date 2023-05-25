@@ -128,7 +128,7 @@ ServerEvents.recipes(event => {
 		"ingredient": 
 			{"item": "geggy:fiber"},
 		"result": "geggy:dried_fiber",
-		"cookingtime": 200
+		"cookingtime": 100
 	})
 	
 	event.shaped('geggy:twine', [
@@ -191,24 +191,24 @@ ServerEvents.recipes(event => {
 			{"type": "farmersdelight:tool",
 			"item": "minecraft:shears"},
 		"result": [
-			{ "item": "minecraft:string", "count": 2}
+			{ "item": "minecraft:string", "count": 4}
 		]//,
 		//"sound": "minecraft:item.axe.strip"
 	})
 	
 	// wheat > fiber
 	
-	event.shapeless('geggy:straw', ['minecraft:wheat', 'minecraft:shears']).damageIngredient('minecraft:shears')
+	event.shapeless('farmersdelight:straw', ['minecraft:wheat', 'minecraft:shears']).damageIngredient('minecraft:shears')
 	event.custom({
 		"type": "farmersdelight:cutting",
 		"ingredients": [
-			{"item": "geggy:straw"}
+			{"item": "farmersdelight:straw"}
 		],
 		"tool": 
 			{"type": "farmersdelight:tool",
 			"item": "create:filter"},
 		"result": [
-			{ "item": "geggy:fiber", "count": 1, "chance": 0.1}
+			{ "item": "geggy:dried_fiber", "count": 1, "chance": 0.08}
 		]//,
 		//"sound": "minecraft:item.axe.strip"
 	})

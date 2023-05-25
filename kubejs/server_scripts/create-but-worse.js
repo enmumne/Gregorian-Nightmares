@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
 	
-	event.shaped('create:crafting/kinetics/mechanical_plough', [
+	event.shaped('create:mechanical_plough', [
 		'CCC',
 		'BBB',
 		' A '
@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
 		C: 'geggy:sharp_plate',
 		B: 'create:andesite_alloy'
 	})
-	event.shaped('create:crafting/kinetics/mechanical_harvester', [
+	event.shaped('create:mechanical_harvester', [
 		'DCD',
 		'BCB',
 		' A '
@@ -19,7 +19,7 @@ ServerEvents.recipes(event => {
 		C: 'geggy:sharp_plate',
 		D: 'create:andesite_alloy'
 	})
-	event.shaped('create:crafting/kinetics/mechanical_drill', [
+	event.shaped('create:mechanical_drill', [
 		' C ',
 		'CBC',
 		' A '
@@ -1909,13 +1909,13 @@ ServerEvents.recipes(event => {
 		type: "create:mixing",
 		ingredients: [
 			{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "geggy:kelp_dust"},{"item": "minecraft:dandelion"},{"item": "modern_industrialization:sulfur_tiny_dust"},
-			{amount: 250, "fluid":"minecraft:water"}
+			{amount: 20250, "fluid":"minecraft:water"}
 		],
 		results: [{
 			"count": 6, "item":"geggy:rubber_pulp"
 		}],
 		processingTime: 400
 	})
-	event.smelting('geggy:heathed_rubber', 'geggy:rubber_pulp').cookingTime(100)
+	event.smelting('geggy:heated_rubber', 'geggy:rubber_pulp').cookingTime(100)
 	
 })	

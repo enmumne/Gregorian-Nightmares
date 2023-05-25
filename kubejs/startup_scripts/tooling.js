@@ -322,7 +322,7 @@ event.create('geggy:j_stone_axe_head').displayName('Stone Axe Head');
 event.create('geggy:wooden_form', 'basic').displayName('Wooden Form').maxDamage(128);
 //event.create('geggy:stone_bowl').displayName('Stone Bowl');
 event.create('geggy:stone_mortar', 'basic').displayName('Stone Mortar').maxDamage(128);
-event.create('geggy:soft_hammer', 'basic').displayName('Soft Hammer').maxDamage(50);
+//event.create('geggy:soft_hammer', 'basic').displayName('Soft Hammer').maxDamage(50);
 
 event.create('geggy:wood_pulp').displayName('Wood Pulp');
 event.create('geggy:quartz_sand').displayName('Quartz Sand');
@@ -405,7 +405,7 @@ event.create('geggy:holed_large_copper_dented');
 event.create('geggy:incomplete_large_copper_dented');
 
 //////////////
-event.create('geggy:incomplete_empty_blaze_burner'); ///
+event.create('geggy:incomplete_empty_blaze_burner'); 
 event.create('geggy:hot_steel_ingot');
 event.create('geggy:incomplete_steel_ingot');
 event.create('geggy:blackened_rod');
@@ -419,14 +419,14 @@ event.create('geggy:unfired_pickaxe_mold');
 event.create('geggy:pickaxe_mold');
 event.create('geggy:filled_pickaxe_mold');
 event.create('geggy:bronze_pickaxe_head');
-/////////////
+
 event.create('geggy:incomplete_chest');
 event.create('geggy:incomplete_toolbox');
 event.create('geggy:incomplete_barrel');
-event.create('geggy:incomplete_extdw');
-event.create('geggy:incomplete_extdw_d');
-event.create('geggy:incomplete_extdw_q');
-event.create('geggy:uncooked_seared_brick');
+event.create('geggy:incomplete_extdw').displayName('Incomplete Drawer');
+event.create('geggy:incomplete_extdw_d').displayName('Incomplete Double Drawer');
+event.create('geggy:incomplete_extdw_q').displayName('Incomplete Quad Drawer');
+//event.create('geggy:uncooked_seared_brick');
 event.create('geggy:unfinished_iron_helmet');
 event.create('geggy:unfinished_iron_chestplate');
 event.create('geggy:unfinished_iron_leggings');
@@ -444,7 +444,7 @@ event.create('geggy:basic_hull');
 event.create('geggy:incomplete_basic_machine_hull');
 event.create('geggy:treated_plank'); // tannin
 event.create('geggy:hardened_plank'); // creosote
-event.create('geggy:pattern');
+//event.create('geggy:pattern');
 
 event.create('geggy:copper_can');
 event.create('geggy:mulch_copper_can');
@@ -473,7 +473,7 @@ event.create('geggy:gravel_dust');
 event.create('geggy:andesite_dust');
 event.create('geggy:andesite_mix');
 
-event.create('geggy:straw');
+//event.create('geggy:straw');
 event.create('geggy:fiber');
 event.create('geggy:dried_fiber');
 event.create('geggy:fiber_pulp');
@@ -486,6 +486,11 @@ event.create('geggy:chadded_copper_can').displayName('Chad Copper Can')
 event.create('geggy:limestone_dust');
 event.create('geggy:incomplete_bronze_gear');
 event.create('geggy:incomplete_iron_gear');
+event.create('geggy:incomplete_tin_gear');
+event.create('geggy:incomplete_gold_gear');
+event.create('geggy:incomplete_steel_gear');
+event.create('geggy:incomplete_invar_gear');
+event.create('geggy:incomplete_copper_gear');
 
 event.create('geggy:rubber_pulp');
 event.create('geggy:heated_rubber');

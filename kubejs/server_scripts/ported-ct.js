@@ -1,5 +1,6 @@
 ServerEvents.recipes(event => {	
 	
+	/*
 	event.shaped('geggy:pattern', [
 		'AC ',
 		'BA ',
@@ -9,6 +10,7 @@ ServerEvents.recipes(event => {
 		B: 'geggy:j_planks',
 		C: 'minecraft:paper'
 	})
+	*/
 	event.custom({
 		"type": "farmersdelight:cutting",
 		"ingredients": [
