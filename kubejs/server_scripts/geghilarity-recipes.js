@@ -63,7 +63,7 @@ ServerEvents.recipes(event => {
 	event.recipes.modern_industrialization.mixer(2, 100)
         .itemIn("7x geggy:wrought_dust")
         .itemIn("2x modern_industrialization:coke_dust")
-		.itemOut("9x modern_industrialization:uncooked_steel_dust")
+		.itemOut("7x modern_industrialization:uncooked_steel_dust")
         //.fluidIn("modern_industrialization:oxygen", 1000)
         //.fluidOut("modern_industrialization:creosote", 5000)
 		

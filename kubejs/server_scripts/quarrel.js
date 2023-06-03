@@ -722,6 +722,191 @@ ServerEvents.recipes(event => {
 		D: 'create:mechanical_piston'
 	})
 	
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:bronze_plate"},
+		transitionalItem: {"item": "drilly:incomplete_bronze_refined_drill"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "modern_industrialization:bronze_plate"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+		  	},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "modern_industrialization:bronze_rod"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "modern_industrialization:bronze_rod"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "modern_industrialization:bronze_gear"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				
+				type: "create:filling",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"amount": 1620, "fluid": "modern_industrialization:lubricant"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "create:mechanical_piston"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_bronze_refined_drill"},
+					{"item": "modern_industrialization:bronze_curved_plate"}
+				],
+				results: [{
+					"item": "drilly:incomplete_bronze_refined_drill"
+				}]
+			}		
+		],
+		results: [{
+			"item": "drilly:bronze_refined_drill"
+		}],
+		loops: 1
+	  }
+	)
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:iron_plate"},
+		transitionalItem: {"item": "drilly:incomplete_iron_refined_drill"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "modern_industrialization:iron_plate"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+		  	},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "modern_industrialization:iron_rod"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "modern_industrialization:iron_rod"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "modern_industrialization:iron_gear"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				
+				type: "create:filling",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"amount": 3240, "fluid": "modern_industrialization:lubricant"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "create:mechanical_piston"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "drilly:incomplete_iron_refined_drill"},
+					{"item": "geggy:iron_curved_plate"}
+				],
+				results: [{
+					"item": "drilly:incomplete_iron_refined_drill"
+				}]
+			}		
+		],
+		results: [{
+			"item": "drilly:iron_refined_drill"
+		}],
+		loops: 1
+	  }
+	)
+	/*
 	event.shaped('drilly:bronze_refined_drill', [
 		'ADA',
 		'BCB',
@@ -745,6 +930,7 @@ ServerEvents.recipes(event => {
 		D: 'create:mechanical_piston',
 		E: 'geggy:iron_curved_plate'
 	})
+	*/
 	
 	event.shaped('modern_industrialization:bronze_proto', [
 		'DED',

@@ -1,13 +1,5 @@
 ServerEvents.recipes(event => {
 
-	event.shaped('expert_armor:create/copper_plate', [
-		'A A',
-		'   ',
-		'A A'
-	], {
-		A: 'minecraft:copper_ingot'
-	})
-	
 	event.remove({id: 'betternether:shield'})
 	event.remove({id: 'bclib:tag_shield'})
 	

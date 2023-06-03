@@ -863,6 +863,24 @@ WorldgenEvents.add(event => {
         ore.worldgenLayer = "underground_decoration"		
 	})
 	
+	// andesite extra
+	event.addOre((ore) => {
+		ore.id = 'geggy:andesite_extra'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:andesite'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'minecraft:andesite'),
+		
+		ore.count([4])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(-5),
+				anchors.absolute(80)	 
+			)								 
+				
+        ore.size = 64 
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_decoration"		
+	})
+	
 	
 })	
 

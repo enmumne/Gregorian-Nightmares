@@ -33,6 +33,11 @@ ServerEvents.tags('block', event => {
   event.add('needs_stone_tool', 'minecraft:redstone_ore')
   event.add('needs_stone_tool', 'minecraft:deepslate_redstone_ore')
   
+  event.remove('needs_iron_tool', 'create:zinc_ore')
+  event.remove('needs_iron_tool', 'create:deepslate_zinc_ore')
+  event.add('needs_stone_tool', 'create:zinc_ore')
+  event.add('needs_stone_tool', 'create:deepslate_zinc_ore')
+  
  
   
 });  
@@ -361,14 +366,14 @@ event.custom (
   ], {
     S: '#minecraft:stone_tool_materials'
   })
+  /*
   event.shaped('geggy:j_wooden_pickaxe_head', [
-    'SSS',
-    '   ',
+    'SS ',
+    ' S ',
     '   '
   ], {
     S: '#minecraft:planks'
-  })
-  /*
+  })  
   event.shaped('geggy:j_stone_pickaxe_head', [
     'SSS',
     '   ',
@@ -409,9 +414,9 @@ event.custom (
 	B: 'geggy:flint_pickaxe'
   }).damageIngredient('geggy:flint_pickaxe')
   event.shaped('geggy:bronze_pickaxe', [
-    ' S ',
+    '  S',
     ' A ',
-    ' B '
+    'B  '
   ], {
     S: 'geggy:bronze_pickaxe_head',
 	A: 'geggy:j_tool_rod',
@@ -653,19 +658,6 @@ event.custom({
 	event.remove({id: 'modern_industrialization:materials/diamond/compressor/main'})
 	event.remove({id: 'magick:diamond_dust_4'})
 	event.remove({id: 'magick:diamond_dust_4_exported_mi_cutting_machine'})
-	event.recipes.modern_industrialization.cutting_machine({
-		eu: 38,
-		duration: 800,
-		item_inputs: [ 
-			{item: "minecraft:diamond", amount: 1}
-		],
-		fluid_inputs: [
-			{fluid: "modern_industrialization:lubricant", amount: 1}
-		],
-		item_outputs: [	
-			{item: "modern_industrialization:diamond_plate", amount: 1}
-		]
-	})
 	event.recipes.modern_industrialization.blast_furnace({
 		eu: 2,
 		duration: 400,
@@ -726,14 +718,77 @@ event.custom({
 			{item: "geggy:mold_hoe", amount: 1}
 		]
 	})
+	/*
 	event.recipes.modern_industrialization.fextract({
 		eu: 38,
-		duration: 500,
+		duration: 600,
 		item_inputs: [ 
 			{item: "minecraft:diamond", amount: 1}
 		],
 		fluid_outputs: [
 			{fluid: "geggy:molten_diamond", amount: 144}
+		]
+	})
+	*/
+	event.recipes.modern_industrialization.fextract({
+		eu: 38,
+		duration: 400,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_diamond", amount: 144}
+		]
+	})
+	//shards
+	/*
+	event.recipes.modern_industrialization.fextract({
+		eu: 42,
+		duration: 600,
+		item_inputs: [ 
+			{item: "geggy:diamond_shards", amount: 5}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_diamond", amount: 144}
+		]
+	})
+	*/
+	event.recipes.modern_industrialization.salloy({
+		eu: 38,
+		duration: 400,
+		item_inputs: [ 
+			{item: "geggy:mold_plate", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "geggy:molten_diamond", amount: 144}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:diamond_plate", amount: 1}
+		]
+	})
+	
+	event.remove({id: "modern_industrialization:materials/diamond/macerator/ore_to_crushed"})
+event.recipes.modern_industrialization.macerator({
+		eu: 2,
+		duration: 800,
+		item_inputs : [
+			{tag: "c:diamond_ores", amount: 1}
+		],
+		item_outputs :
+		[
+			{item: "modern_industrialization:diamond_crushed_dust", amount: 1},
+			{item: "modern_industrialization:diamond_crushed_dust", amount: 1, probability: 0.5}
+		]
+	})
+event.recipes.modern_industrialization.macerator({
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "geggy:diamond_shards", amount: 1}
+		],
+		item_outputs :
+		[
+			{item: "modern_industrialization:diamond_tiny_dust", amount: 2}
 		]
 	})
 	

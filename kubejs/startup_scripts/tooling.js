@@ -495,6 +495,8 @@ event.create('geggy:incomplete_copper_gear');
 event.create('geggy:rubber_pulp');
 event.create('geggy:heated_rubber');
 
+event.create('geggy:diamond_shards');
+
 
 
 /*

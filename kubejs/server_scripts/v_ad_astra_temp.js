@@ -19,5 +19,15 @@ ServerEvents.recipes(event => {
 		A: 'geghilarity:polybenzimidazole_sheet'
 	})
 	
+	event.remove({id: 'ad_astra:recipes/wheel'})
+	event.shaped('ad_astra:wheel', [
+		'BBB',
+		'BAB',
+		'BBB'
+	], {
+		A: '#c:steel_plates',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	
 })	
 	

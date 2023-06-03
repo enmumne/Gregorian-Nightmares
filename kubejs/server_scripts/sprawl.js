@@ -4,6 +4,7 @@
 //onEvent('recipes', event => {
 ServerEvents.recipes(event => {
 	
+	event.remove({id: 'minecraft:respawn_anchor'})
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:grindstone'})
 	
 	event.shaped('minecraft:grindstone', [
@@ -1331,6 +1332,34 @@ ServerEvents.recipes(event => {
 	event.smelting('minecraft:iron_nugget', 'create:crushed_iron_ore').cookingTime(1200) // 60 sec
 	event.remove({type: 'minecraft:blasting', output: 'minecraft:iron_ingot'})
 	
+	// nerf back 1.6.6 ffs
+	event.remove({id: 'modern_industrialization:materials/blast_furnace/steel_with_carbon'})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 16,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:carbon_dust", amount: 1},
+			{item: "modern_industrialization:iron_dust", amount: 4}
+		],
+		item_outputs :
+		[
+			{item: "modern_industrialization:steel_ingot", amount: 4}
+		]
+	})
+	event.remove({id: 'modern_industrialization:materials/centrifuge/carbon'})
+	event.recipes.modern_industrialization.centrifuge({
+		eu: 16,
+		duration: 600,
+		item_inputs : [
+			{tag: "c:coal_dusts", amount: 1}
+		],
+		item_outputs :
+		[
+			{item: "modern_industrialization:carbon_dust", amount: 1}
+		]
+	})
+	event.remove({id: 'modern_industrialization:vanilla_recipes/compressor/diamond_from_coal'})
+	
 	event.recipes.modern_industrialization.salloy({
 		eu: 1,
 		duration: 100,
@@ -1582,7 +1611,7 @@ ServerEvents.recipes(event => {
 		'   '
 	], {
 		A: 'create:andesite_alloy',
-		B: 'minecraft:dried_kelp'
+		B: 'modern_industrialization:rubber_sheet'
 	})
 	
 	event.remove({id: "create:crafting/logistics/andesite_tunnel"})
@@ -1592,9 +1621,16 @@ ServerEvents.recipes(event => {
 		'   '
 	], {
 		A: 'create:andesite_alloy',
-		B: 'minecraft:dried_kelp',
+		B: 'modern_industrialization:rubber_sheet',
 		C: 'create:andesite_casing'
 	})
+	
+	// MI barrels nerf
+	event.remove({id: "modern_industrialization:materials/bronze/craft/barrel"})
+	event.remove({id: "modern_industrialization:materials/steel/craft/barrel"})
+	event.remove({id: "modern_industrialization:materials/aluminum/craft/barrel"})
+	event.remove({id: "modern_industrialization:materials/stainless_steel/craft/barrel"})
+	event.remove({id: "modern_industrialization:materials/titanium/craft/barrel"})
 	
 	// CREATE END
 	
@@ -1732,7 +1768,17 @@ ServerEvents.recipes(event => {
 	//***
 	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:steam_engine'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
 	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'create:steam_whistle'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
-	event.replaceInput({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:capacitor'}, 'modern_industrialization:gold_plate', 'modern_industrialization:copper_plate')
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/capacitor'})
+	event.shaped('modern_industrialization:capacitor', [
+		'ADA',
+		'CBC',
+		'ADA'
+	], {
+		A: 'minecraft:gold_nugget',
+		B: 'modern_industrialization:rubber_sheet',
+		C: 'modern_industrialization:copper_wire',
+		D: 'modern_industrialization:copper_plate'
+	})
 	
 	event.remove({type: "modern_industrialization:mixer", output: "modern_industrialization:rubber_sheet"})
 	
@@ -1785,7 +1831,7 @@ ServerEvents.recipes(event => {
 			{fluid: "minecraft:water", amount: 500}
 		],
 		item_outputs: [
-			{item: "geggy:craut", amount: 12}
+			{item: "geggy:craut", amount: 8}
 		]
 	})
 	
@@ -1807,24 +1853,30 @@ ServerEvents.recipes(event => {
 		eu: 2,
 		duration: 160,
 		item_inputs: [
-			{item: "minecraft:dried_kelp", amount: 2}
+			{item: "minecraft:dried_kelp", amount: 6}
 		],
 		fluid_inputs: [ 
-			{fluid: "modern_industrialization:synthetic_rubber", amount: 111.11}
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 120}
 		],
 		item_outputs: [
-			{item: "modern_industrialization:rubber_sheet", amount: 12}
+			{item: "modern_industrialization:rubber_sheet", amount: 6}
 		]
 	})
 		
 	event.recipes.modern_industrialization.mixer({
 		eu: 2,
-		duration: 300,
+		duration: 200,
 		item_inputs: [
-			{item: "geggy:kelp_dust", amount: 2}
+			{item: "geggy:kelp_dust", amount: 6},
+			{item: "minecraft:dandelion", amount: 1},
+			{item: "modern_industrialization:sulfur_tiny_dust", amount: 1}
+			
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 250}
 		],
 		item_outputs: [
-			{item: "modern_industrialization:rubber_sheet", amount: 2}
+			{item: "geggy:rubber_pulp", amount: 6}
 		]
 	})	
 	
@@ -2209,7 +2261,43 @@ event.shaped('modern_industrialization:packer_double_ingot_template', [
 	
 event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 
+event.remove({id: "moderndynamics:machine_extender"})
+event.shaped('moderndynamics:machine_extender', [
+		'BDB',
+		'CAC',
+		'BDB'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:steel_plate',
+		C: 'modern_industrialization:cupronickel_cable',
+		D: 'modern_industrialization:inductor'
+	})
 
+	event.remove({id: "modern_industrialization:electric_age/component/craft/resistor"})
+	event.remove({id: "modern_industrialization:electric_age/component/assembler/resistor"})
+	event.shaped('modern_industrialization:resistor', [
+		' B ',
+		'ACA',
+		' B '
+	], {
+		A: 'modern_industrialization:copper_fine_wire',
+		B: 'minecraft:paper',
+		C: 'modern_industrialization:coal_dust'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:copper_fine_wire", amount: 2},
+			{item: "minecraft:paper", amount: 1},
+			{item: "modern_industrialization:coal_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:resistor", amount: 1}
+		]
+	})
+	
+	
 	
 })
 

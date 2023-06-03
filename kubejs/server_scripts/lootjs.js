@@ -18,6 +18,32 @@ LootJS.modifiers(event => {
         .replaceLoot("minecraft:milk_bucket", "kibe:water_wooden_bucket")
         .replaceLoot("minecraft:gold_ore", "geggy:precious_ore")
         .replaceLoot("minecraft:deepslate_gold_ore", "geggy:deepslate_precious_ore");
+		
+	const diamondstandard = LootEntry.of("minecraft:diamond_ore").when((c) =>
+        c.matchMainHand(ItemFilter.hasEnchantment("minecraft:silk_touch"))
+    );	
+		
+	event
+        .addBlockLootModifier("minecraft:diamond_ore")
+        .removeLoot(Ingredient.all)
+        .addAlternativesLoot(
+			diamondstandard,
+            LootEntry.of("minecraft:diamond").when((c) => c.randomChance(0.3)),
+            LootEntry.of("geggy:diamond_shards").limitCount([2, 6])
+		);
+	
+	const diamondDeep = LootEntry.of("minecraft:deepslate_diamond_ore").when((c) =>
+        c.matchMainHand(ItemFilter.hasEnchantment("minecraft:silk_touch"))
+    );	
+	
+	event
+        .addBlockLootModifier("minecraft:deepslate_diamond_ore")
+        .removeLoot(Ingredient.all)
+        .addAlternativesLoot(
+			diamondDeep,
+            LootEntry.of("minecraft:diamond").when((c) => c.randomChance(0.35)),
+            LootEntry.of("geggy:diamond_shards").limitCount([2, 6])
+		);	
 
     // chests
     event.addLootTypeModifier(LootType.CHEST)

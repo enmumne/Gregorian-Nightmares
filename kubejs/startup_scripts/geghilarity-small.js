@@ -20,9 +20,11 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:copper_refined_drill').displayName('Refined Copper Drill');
 	event.create('drilly:copper_bulky_drill').displayName('Bulky Copper Drill');
 	event.create('drilly:bronze_base_drill').displayName('Basic Bronze Drill');
+	event.create('drilly:incomplete_bronze_refined_drill').displayName('Incomplete Refined Bronze Drill');
 	event.create('drilly:bronze_refined_drill').displayName('Refined Bronze Drill');
 	event.create('drilly:bronze_bulky_drill').displayName('Bulky Bronze Drill');
 	event.create('drilly:iron_base_drill').displayName('Basic Iron Drill');
+	event.create('drilly:incomplete_iron_refined_drill').displayName('Incomplete Refined Iron Drill');
 	event.create('drilly:iron_refined_drill').displayName('Refined Iron Drill');
 	event.create('drilly:iron_bulky_drill').displayName('Bulky Iron Drill');
 	event.create('drilly:steel_composite_drill').displayName('Composite Steel Drill');
