@@ -19,7 +19,7 @@ event.add('geggy:j_planks', '§7For chests and crafting table.')
 event.add('minecraft:rotten_flesh', '§7Use shears on zombies to obtain, 3 attempts, 85% chance.')
 event.add('minecraft:rotten_flesh', '§7Process in a mixer to obtain leather.')
 
-event.add('geggy:gravel_dust', '§7From milling Andesite or Unrefined Clay.')
+event.add('geggy:gravel_dust', '§7To be merged into a Gravel block.')
 
 event.add('drilly:drill_group1', '§7For tin and copper.')
 event.add('drilly:drill_group2', '§7For coal, iron and lignite.')
@@ -29,6 +29,8 @@ event.add('drilly:drill_group5', '§7For bauxite, mozanite, tungsten and uranium
 event.add('drilly:drill_groupx', '§7For nether quartz.')
 
 event.add('geggy:cogwheel', '§7Internal use only.')
+
+event.add('modern_industrialization:sulfur_tiny_dust', '§7Obtained early from washing Lignite Crushed Dust.')
 
 event.add('geghilarity:cobalt_dust', '§7(Use EMI for recipe)')
 

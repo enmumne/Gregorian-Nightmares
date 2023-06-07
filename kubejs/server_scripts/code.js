@@ -32,6 +32,8 @@ function entitySnipSnip(event, entity, item, output, dropchance, amount){
 		}
 
         event.player.damageHeldItem()
+		//event.attack(1)
+		//#35: Error occurred while handling event 'ItemEvents.entityInteracted': TypeError: Cannot find function attack in object dev.latvian.mods.kubejs.item.ItemEntityInteractedEventJS@5c359aac. (server_scripts:code.js#35)
 		
 }}
 
@@ -73,5 +75,20 @@ ItemEvents.entityInteracted(event =>{
 //  entitySnipSnip(event, entity.id, item, output, minimumAmount, maximumAmount,)
     entitySnipSnip(event, 'minecraft:zombie', 'minecraft:shears', 'minecraft:rotten_flesh', 1, 3, 3)
     entitySnipSnip(event, 'minecraft:villager', 'minecraft:shears', 'minecraft:emerald', 1, 1, 99)
+})
+*/
+/*
+FTBQuestsEvents.completed('5CE0514DEC09071E', (event) => {
+
+	  let e1 = level.createEntity("minecraft:creeper")
+let e2 = level.createEntity("minecraft:creeper")
+let e3 = level.createEntity("minecraft:creeper")
+    event.notifiedPlayers.tell(Text.of(`A funny surprise for you!`).green())
+
+	
+	e1.spawn()
+	e2.spawn()
+	e3.spawn()
+
 })
 */

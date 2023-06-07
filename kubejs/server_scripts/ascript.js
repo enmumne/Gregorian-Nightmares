@@ -881,7 +881,7 @@ ServerEvents.recipes(event => {
 			"type": "create:milling",
 			"processingTime":250,
 			"ingredients": [{"item": "minecraft:raw_iron"}],
-			"results": [{"count": 2, "item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50}]
+			"results": [{"count": 2, "item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -1212,12 +1212,7 @@ ServerEvents.recipes(event => {
 	*/
 
 	// invar
-	event.custom({
-			"type": "create:mixing",
-			"ingredients": [{"item": "modern_industrialization:iron_dust"},{"item": "modern_industrialization:iron_dust"}, {"item": "modern_industrialization:nickel_dust"}],
-			//"ingredients": [{count: 2, "item": "modern_industrialization:iron_dust"}, {"item": "modern_industrialization:nickel_dust"}],
-			"results": [{"item": "modern_industrialization:invar_dust"}]
-	})
+	// just MI mixer
 	/*
 	event.recipes.createMixing(
 		"modern_industrialization:invar_dust",
@@ -1503,9 +1498,9 @@ ServerEvents.recipes(event => {
 
 
 	// circuits
-	circuit_recipes(event, "analog", "modern_industrialization:capacitor", "modern_industrialization:resistor",	"modern_industrialization:copper_wire")
+	circuit_recipes(event, "analog", "modern_industrialization:capacitor", "modern_industrialization:resistor",	"modern_industrialization:inductor")
 	circuit_recipes(event, "electronic", "modern_industrialization:diode", "modern_industrialization:transistor", "modern_industrialization:analog_circuit")
-	circuit_recipes(event, "quantum", "modern_industrialization:processing_unit", "modern_industrialization:cooling_cell", "modern_industrialization:qbit")
+	//circuit_recipes(event, "quantum", "modern_industrialization:processing_unit", "modern_industrialization:cooling_cell", "modern_industrialization:qbit")
 
 	event.remove({type: "modern_industrialization:assembler", output: "modern_industrialization:analog_circuit"})
 	event.remove({type: "minecraft:crafting_shaped", output: "modern_industrialization:analog_circuit"})
@@ -1568,7 +1563,7 @@ ServerEvents.recipes(event => {
 			"item": "ae2:silicon_press",
 			},
 			"middle": {
-				"item": "geghilarity:rhenium_ingot"
+				"item": "modern_industrialization:iridium_plate"
 			}
 		}
 	});
@@ -2399,8 +2394,6 @@ ServerEvents.recipes(event => {
 			{item: "create:blaze_burner"}
 		]
 	})
-
-	event.replaceInput({mod: "modern_industrialization", output: "modern_industrialization:vacuum_freezer"}, "modern_industrialization:aluminum_large_plate", "ae2:engineering_processor")
 
 	event.recipes.modern_industrialization.blast_furnace({
 		eu: 8,

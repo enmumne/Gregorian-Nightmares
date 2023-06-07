@@ -1152,7 +1152,7 @@ ServerEvents.recipes(event => {
 
 	// QUARTZ early access
 	event.recipes.modern_industrialization.drill1(2, 6000)
-        .itemIn("drilly:bronze_base_drill", 0.09)
+        .itemIn("drilly:copper_drill", 0.09)
 		.itemIn("drilly:drill_groupx", 0.00)
 		//.itemIn("geggy:selector_1", 0.00)
 		.itemOut("2x minecraft:quartz",  0.52)
@@ -1163,7 +1163,18 @@ ServerEvents.recipes(event => {
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
         .dimension("nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
-		.id("qea_quartzcore_slow")		
+		.id("qea_quartzcore_slow")	
+
+	// ZINC early access
+	event.recipes.modern_industrialization.drill1(2, 6000)
+        .itemIn("drilly:copper_drill", 0.06)
+		.itemIn("drilly:drill_group3", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
+		.itemOut("2x create:raw_zinc",  0.15)
+		.itemOut("drilly:tiny_tier1_experience", 0.5)
+        .dimension("overworld")
+        .adjacentBlock("geggy:zinc_corenode", "below")	
+		.id("qea_zinccore_slow")	
 		
 	// TIER 2/bronze1	
 		
@@ -1300,6 +1311,17 @@ ServerEvents.recipes(event => {
         .dimension("nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("024xa_quartzcore_slow")
+		
+	// ZINC early access
+	event.recipes.modern_industrialization.drill2(2, 6000)
+        .itemIn("drilly:bronze_base_drill", 0.06)
+		.itemIn("drilly:drill_group3", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
+		.itemOut("3x create:raw_zinc",  0.15)
+		.itemOut("drilly:tiny_tier2_experience", 0.35)
+        .dimension("overworld")
+        .adjacentBlock("geggy:zinc_corenode", "below")	
+		.id("qea2_zinccore_slow")	
 
 	event.recipes.modern_industrialization.drill2(2, 3600)
         .itemIn("drilly:bronze_base_drill", 0.24)
@@ -1652,6 +1674,18 @@ ServerEvents.recipes(event => {
         .dimension("overworld")
         .adjacentBlock("geggy:iron_corenode", "below")	
 		.id("040d_ironcore_fast")	
+		
+	// ZINC early access
+	event.recipes.modern_industrialization.drill3(2, 6000)
+		.itemIn("drilly:bronze_refined_drill")
+		.itemIn("drilly:drill_group3", 0.00)
+		//.itemIn("geggy:selector_1", 0.00)
+		.itemOut("drilly:dirty_bronze_refined_drill", 0.95)
+		.itemOut("5x create:raw_zinc",  0.15)
+		.itemOut("drilly:tiny_tier3_experience", 0.28)
+        .dimension("overworld")
+        .adjacentBlock("geggy:zinc_corenode", "below")	
+		.id("qea3_zinccore_slow")	
 		
 	// tier 4/bronze2	
 	
@@ -2071,7 +2105,9 @@ ServerEvents.recipes(event => {
 		//.itemOut("drilly:tiny_tier3_experience", 0.18)
         .dimension("overworld")
         .adjacentBlock("geggy:zinc_corenode", "below")	
-		.id("056h_zinccore_fast")		
+		.id("056h_zinccore_fast")
+
+	
 		
 	////////////////////////////////////////	bucket = 1000mb = 1/20tick = 16.6 min autonomy 1 bucket/ 2000 max tank
 	// 25 sec, 1000 steam bucket max recipe, 500 ticks

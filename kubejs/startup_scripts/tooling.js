@@ -351,11 +351,11 @@ event.create('geggy:unfired_coke_oven_brick');
 
 event.create('geggy:compressed_fireclay');
 
-event.create('geggy:wrought_dust').displayName('Pig Iron Dust');
-event.create('geggy:wrought_small_dust').displayName('Small Pile of Pig Iron');
-event.create('geggy:wrought_nugget').displayName('Pig Iron Nugget');
-event.create('geggy:wrought_ingot').displayName('Pig Iron Ingot');
-event.create('geggy:wrought_plate').displayName('Pig Iron Plate');
+event.create('geggy:wrought_dust').displayName('Wrought Iron Dust');
+event.create('geggy:wrought_small_dust').displayName('Small Pile of Wrought Iron');
+event.create('geggy:wrought_nugget').displayName('Wrought Iron Nugget');
+event.create('geggy:wrought_ingot').displayName('Wrought Iron Ingot');
+event.create('geggy:wrought_plate').displayName('Wrought Iron Plate');
 event.create('geggy:mold').displayName('Steel Mold');
 event.create('geggy:mold_ball').displayName('Ball Mold');
 event.create('geggy:mold_block').displayName('Block Mold');
@@ -496,6 +496,12 @@ event.create('geggy:rubber_pulp');
 event.create('geggy:heated_rubber');
 
 event.create('geggy:diamond_shards');
+
+//////////////////
+
+event.create('geggy:muddy_coke_oven_blend');
+event.create('geggy:pig_iron_ingot');
+event.create('geggy:tiny_iron_blend_dust');
 
 
 

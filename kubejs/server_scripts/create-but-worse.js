@@ -197,9 +197,9 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'create:crafting/kinetics/large_cogwheel'})
 	event.remove({id: 'create:crafting/kinetics/large_cogwheelfrom_little'})
 	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "minecraft:copper_ingot"}],
-			"results": [{"item": "modern_industrialization:copper_plate"}]
+		"type": "create:pressing",
+		"ingredients": [{"item": "minecraft:copper_ingot"}],
+		"results": [{"item": "modern_industrialization:copper_plate"}]
 	})
 	
 	// geggy cog
@@ -654,7 +654,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_copper_casing"},
-					{"item": "minecraft:dried_kelp"}
+					{"item": "modern_industrialization:rubber_sheet"}
 				],
 				results: [{
 					"item": "geggy:incomplete_copper_casing"
@@ -1870,5 +1870,92 @@ ServerEvents.recipes(event => {
 		processingTime: 400
 	})
 	event.smelting('geggy:heated_rubber', 'geggy:rubber_pulp').cookingTime(100)
+	
+	// sticks from jplank
+	event.custom({
+		"type": "create:cutting",
+		"ingredients": [
+			{"item": "geggy:j_planks"}
+		],
+		"processingTime": 50,
+		"results": [
+			{"count": 4, "item": "minecraft:stick"}
+		]
+	})
+	
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "modern_industrialization:coke"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"count": 1, "item": "modern_industrialization:coke_dust"}
+		]
+	})
+	
+	// coke oven bricks
+	// crafting table > 4 clay ball to clay needed for mortar clay dust
+	event.remove({id: 'create:milling/clay'})
+	event.remove({id: 'minecraft:clay'})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:clay"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"count": 4, "item": "geggy:clay_dust"},
+			{"count": 1, "item": "geggy:gravel_dust"}
+		]
+	})
+	event.custom({
+		type: "create:compacting",
+		ingredients: [
+			{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"}
+		],
+		results: [
+			{"count": 1, "item": "minecraft:clay"}
+		],
+		processingTime: 100
+	})
+	event.custom({
+		type: "create:compacting",
+		ingredients: [
+			{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"}
+		],
+		results: [
+			{"count": 1, "item": "minecraft:clay"}
+		],
+		processingTime: 100
+	})
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:gravel"},{"item": "minecraft:gravel"},{"tag": "c:sand"},{"tag": "c:sand"},{"tag": "c:sand"},{"fluid": "minecraft:water", amount: 20250}],
+		"results": [{"count": 3, "item": "geggy:muddy_coke_oven_blend"}]
+	})
+	event.custom({
+		type: "create:compacting",
+		ingredients: [
+			{"item": "geggy:muddy_coke_oven_blend"}
+		],
+		results: [
+			{"count": 1, "item": "geggy:unfired_coke_oven_brick"}
+		],
+		processingTime: 100
+	})
+	
+	
+	// more iron
+	event.custom({
+		type: "create:compacting",
+		ingredients: [
+			{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust"}
+		],
+		results: [
+			{"count": 1, "item": "modern_industrialization:iron_dust"}
+		],
+		processingTime: 100
+	})
 	
 })	

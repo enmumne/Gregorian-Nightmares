@@ -12,7 +12,7 @@ ServerEvents.loaded(e => e.server.runCommandSilent('reload'))
 
 ServerEvents.loaded(event => {	
 	event.server.schedule(22000, () => { 
-		//Utils.server.runCommand(`/kubejs reload client_scripts`)
+		Utils.server.runCommand(`/kubejs reload client_scripts`)
 		Utils.server.runCommand(`tell @a Please check the recipe to make a bed (white).`)	
 		Utils.server.runCommand(`tell @a If you see the vanilla one it means recipes didn't load, try "/reload".`)
 	})

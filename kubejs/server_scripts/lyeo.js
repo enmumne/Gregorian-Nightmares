@@ -475,25 +475,6 @@ event.custom({
 	event.recipes.modern_industrialization.packer({eu: 128, duration: 200,item_inputs: [{item: 'geghilarity:naquadah_plate', amount: 9},{item: 'modern_industrialization:tungsten_large_plate', amount: 4},{item: 'modern_industrialization:lead_plate', amount: 4}],
 		item_outputs: [{item: 'modern_industrialization:ultradense_metal_ball', amount: 1}]})	
 	
-	//quantum upgrade
-	event.remove({id: "modern_industrialization:electric_age/upgrades/quantum"})
-	
-		event.recipes.modern_industrialization.assembler({
-		eu: 32,
-		duration: 1000,
-		item_inputs: [ 
-			{item: 'geghilarity:tritanium_plate', amount: 8},
-			{item: 'modern_industrialization:quantum_circuit', amount: 4},
-			{item: 'modern_industrialization:highly_advanced_upgrade', amount: 32},
-			{item: 'modern_industrialization:singularity', amount: 1}
-		],
-		fluid_inputs: [ 
-			{fluid: 'modern_industrialization:uu_matter', amount: 50}
-		],
-		item_outputs: [
-			{item: 'modern_industrialization:quantum_upgrade', amount: 1}
-		]
-	})
 	
 	//quantum upgrade
 	event.remove({id: "modern_industrialization:electric_age/upgrades/quantum"})

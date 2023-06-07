@@ -5,6 +5,8 @@ ServerEvents.tags('item', event => {
   
   event.add('c:stripped_logs', 'geggy:j_stripped_log')
   
+  event.add('c:stripped_logs', 'ad_astra:stripped_glacian_log')
+  
   event.add('forever', 'drilly:drill_group1')
   event.add('forever', 'drilly:drill_group2')
   event.add('forever', 'drilly:drill_group3')
@@ -841,31 +843,4 @@ EntityEvents.checkSpawn(e => {
 })
 
 
-	
-
-/* testing shit
-
-// server/recipes_and_fixes
-
-onEvent('recipes', event => {
-
-  // Glow Berries to Baked Glow Berries
-  event.smelting(Item.of('gn:baked_glow_berries', 1), 'minecraft:glow_berries').xp(0.10).id('gn:baked_glow_berries_smelt')
-  event.smoking(Item.of('gn:baked_glow_berries', 1), 'minecraft:glow_berries').xp(0.10).id('gn:baked_glow_berries_smoked')
-  event.campfireCooking('gn:baked_glow_berries', 'minecraft:glow_berries').id('gn:baked_glow_berries_campfire')
-  
-});
-  
-// server/tags_normal.js  
-  
-onEvent('tags.items', event => {  
-  
-  event.add('c:foods', 'gn:baked_glow_berries')
-  event.add('c:glow_berries', 'gn:baked_glow_berries')
-  event.add('minecraft:fox_food', 'gn:baked_glow_berries')
-  //event.add('gn:berries', 'gn:baked_glow_berries')
-  
-});
-
-*/
 

@@ -37,7 +37,7 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('geggy:quartz_sand', ['#c:sand', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
-	event.shapeless('geggy:clay_dust', ['minecraft:clay', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('2x geggy:clay_dust', ['minecraft:clay', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('geggy:flint_dust_tiny', ['minecraft:flint', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
@@ -66,7 +66,7 @@ ServerEvents.recipes(event => {
 	event.shaped('geggy:unfinished_bucket', [
 		'A A',
 		'ABA',
-		'AAA'
+		' A '
 	], {
 		A: 'modern_industrialization:iron_dust',
 		B: 'geggy:wooden_form'
@@ -128,6 +128,32 @@ ServerEvents.recipes(event => {
 		B: 'geggy:wooden_form',
 		C: 'minecraft:gravel',
 		D: '#c:sand'
+	}).damageIngredient('geggy:wooden_form')
+	
+	event.shaped('geggy:wrought_dust', [
+		' A ',
+		'ABA',
+		' A '
+	], {
+		A: 'geggy:wrought_small_dust',
+		B: 'geggy:wooden_form'
+	}).damageIngredient('geggy:wooden_form')
+	
+	event.shaped('minecraft:clay', [
+		'AAA',
+		' B ',
+		'AAA'
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form'
+	}).damageIngredient('geggy:wooden_form')
+	event.shaped('minecraft:clay', [
+		'AAA',
+		' B ',
+		'AAA'
+	], {
+		A: 'geggy:clay_dust',
+		B: 'geggy:wooden_form'
 	}).damageIngredient('geggy:wooden_form')
 	
 	event.remove({id: 'create:crafting/materials/sand_paper'})

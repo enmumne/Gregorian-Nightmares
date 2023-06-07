@@ -1018,7 +1018,7 @@ ServerEvents.recipes(event => {
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:bronze_furnace'})
 	event.shaped('modern_industrialization:bronze_furnace', [
 		'CBC',
-		'CAC',
+		'BAB',
 		'DDD'
 	], {
 		A: 'minecraft:furnace',
@@ -1321,19 +1321,32 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/conveyor'})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:motor", amount: 2},
+			{item: "create:belt_connector", amount: 3},
+			{item: "modern_industrialization:tin_cable", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:conveyor", amount: 1}
+		]
+	})
 	
 	event.remove({id: 'ad_astra:recipes/steel_ingot_from_blasting_iron_ingot'})
 	event.remove({type: 'minecraft:crafting_shapeless', output: 'minecraft:iron_ingot'})
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:iron_ingot'})
 	event.remove({type: 'minecraft:smelting', output: 'minecraft:iron_ingot'})
 	event.remove({type: 'minecraft:blasting', output: 'minecraft:iron_ingot'})
-	event.smelting('minecraft:iron_nugget', 'minecraft:raw_iron').cookingTime(1800) // 90 sec
-	event.smelting('minecraft:iron_nugget', 'create:crushed_iron_ore').cookingTime(1200) // 60 sec
+	//event.smelting('minecraft:iron_nugget', 'minecraft:raw_iron').cookingTime(1800) // 90 sec
+	//event.smelting('minecraft:iron_nugget', 'create:crushed_iron_ore').cookingTime(1200) // 60 sec
 	event.remove({type: 'minecraft:blasting', output: 'minecraft:iron_ingot'})
 	
 	// nerf back 1.6.6 ffs
 	event.remove({id: 'modern_industrialization:materials/blast_furnace/steel_with_carbon'})
+	/*
 	event.recipes.modern_industrialization.blast_furnace({
 		eu: 16,
 		duration: 400,
@@ -1344,6 +1357,31 @@ ServerEvents.recipes(event => {
 		item_outputs :
 		[
 			{item: "modern_industrialization:steel_ingot", amount: 4}
+		]
+	})
+	*/
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 8,
+		duration: 200,
+		item_inputs : [
+			{item: "modern_industrialization:carbon_dust", amount: 1},
+			{item: "modern_industrialization:iron_dust", amount: 3}
+		],
+		item_outputs :
+		[
+			{item: "geggy:pig_iron_ingot", amount: 3}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 8,
+		duration: 300,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 1},
+			{item: "geggy:limestone_dust", amount: 1}
+		],
+		item_outputs :
+		[
+			{item: "geggy:hot_steel_ingot", amount: 1}
 		]
 	})
 	event.remove({id: 'modern_industrialization:materials/centrifuge/carbon'})
@@ -1361,8 +1399,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:vanilla_recipes/compressor/diamond_from_coal'})
 	
 	event.recipes.modern_industrialization.salloy({
-		eu: 1,
-		duration: 100,
+		eu: 2,
+		duration: 200,
 		item_inputs: [
 			{item: "minecraft:iron_ingot", amount: 1},
 			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
@@ -1373,7 +1411,7 @@ ServerEvents.recipes(event => {
 	})
 	event.recipes.modern_industrialization.salloy({
 		eu: 2,
-		duration: 200,
+		duration: 1000,
 		item_inputs: [
 			{item: "minecraft:iron_nugget", amount: 9},
 			{item: "geggy:mold_ingot", amount: 1, probability: 0.0}
@@ -1383,7 +1421,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.recipes.modern_industrialization.salloy({
-		eu: 1,
+		eu: 2,
 		duration: 100,
 		item_inputs: [
 			{item: "geggy:wrought_ingot", amount: 1},
@@ -1415,28 +1453,32 @@ ServerEvents.recipes(event => {
 			{item: "geggy:wrought_dust", amount: 1}
 		]
 	})
-	event.replaceInput({type: "modern_industrialization:mixer"}, "modern_industrialization:iron_dust", "geggy:wrought_dust")
+
+	event.remove({id: 'modern_industrialization:materials/mixer/uncooked_steel_dust'})
+	event.recipes.modern_industrialization.mixer({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "geggy:wrought_dust", amount: 7},
+			{item: "modern_industrialization:coke_dust", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 7}
+		]
+	})
+	event.recipes.modern_industrialization.mixer({
+		eu: 8,
+		duration: 100,
+		item_inputs: [
+			{item: "geggy:wrought_dust", amount: 3},
+			{item: "modern_industrialization:carbon_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 4}
+		]
+	})
+	
 	event.blasting('geggy:wrought_nugget', 'minecraft:iron_nugget').cookingTime(200)
-	event.recipes.modern_industrialization.blast_furnace({
-		eu: 1,
-		duration: 400,
-		item_inputs: [
-			{item: "minecraft:iron_nugget", amount: 9}
-		],
-		item_outputs: [
-			{item: "minecraft:iron_ingot", amount: 1}
-		]
-	})
-	event.recipes.modern_industrialization.blast_furnace({
-		eu: 1,
-		duration: 400,
-		item_inputs: [
-			{item: "modern_industrialization:iron_dust", amount: 1}
-		],
-		item_outputs: [
-			{item: "minecraft:iron_ingot", amount: 1}
-		]
-	})
 	event.recipes.modern_industrialization.blast_furnace({
 		eu: 2,
 		duration: 200,
@@ -1470,14 +1512,7 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:furnace',
 		B: 'minecraft:smooth_stone'
 	})
-	
-	event.shaped('geggy:wrought_dust', [
-		'AA ',
-		'AA ',
-		'   '
-	], {
-		A: 'geggy:wrought_small_dust'
-	})
+
 	
 	// fucking create designed like shit and not respecting recipe fucking time
 	//event.blasting('minecraft:iron_ingot', 'modern_industrialization:iron_dust').cookingTime(36000)
@@ -2124,12 +2159,6 @@ ServerEvents.recipes(event => {
 		A: '#selector'
 	}).noShrink()
 	
-	event.custom({
-		"type": "create:mixing",
-		"ingredients": [{"item": "minecraft:clay"}],
-		"results": [{count: 3, "item": "geggy:clay_dust"}]
-	})
-	
 	event.remove({id: 'create:sequenced_assembly/precision_mechanism'})
 	event.custom({
 		"type": "create:sequenced_assembly",
@@ -2297,6 +2326,56 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
+	event.remove({id: 'magick:dust_to_diamond'})
+	
+	// NEW IRON/STEEL
+	event.remove({id: 'modern_industrialization:materials/iron/smelting/tiny_dust_to_nugget_smelting'})
+	event.remove({id: 'modern_industrialization:materials/iron/smelting/tiny_dust_to_nugget_blasting'})
+	event.shaped('3x geggy:tiny_iron_blend_dust', [
+		'SSS',
+		'B  ',
+		'   '
+	], {
+		S: 'modern_industrialization:iron_tiny_dust',
+		B: 'modern_industrialization:coal_tiny_dust'
+	})
+	event.blasting('minecraft:iron_nugget', 'geggy:tiny_iron_blend_dust').cookingTime(400)
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 360,
+		item_inputs: [
+			{item: "modern_industrialization:iron_dust", amount: 3},
+			{item: "modern_industrialization:coke_dust", amount: 2}
+		],
+		item_outputs: [
+			{item: "geggy:pig_iron_ingot", amount: 2}
+		]
+	})	
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "modern_industrialization:iron_dust", amount: 3},
+			{item: "modern_industrialization:coke", amount: 2}
+		],
+		item_outputs: [
+			{item: "geggy:pig_iron_ingot", amount: 2}
+		]
+	})
+	event.blasting('minecraft:iron_ingot', 'geggy:pig_iron_ingot').cookingTime(200)
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 120,
+		duration: 300,
+		item_inputs: [
+			{item: "geggy:pig_iron_ingot", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 400}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:steel_ingot", amount: 1}
+		]
+	})
 	
 	
 })
