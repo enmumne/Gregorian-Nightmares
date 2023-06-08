@@ -1,16 +1,14 @@
 {
-	quest_links: [ ]
 	default_hide_dependency_lines: false
-	group: "4708CC84ABDF95FB"
-	id: "228EF32762DBD2BB"
-	filename: "quarry"
 	default_quest_shape: ""
+	filename: "quarry"
+	group: "4708CC84ABDF95FB"
 	icon: "drilly:bronze_base_drill"
-	title: "The Quarry System"
+	id: "228EF32762DBD2BB"
 	order_index: 1
+	quest_links: [ ]
 	quests: [
 		{
-			size: 1.5d
 			description: [
 				"Currently all the default quarry recipes within MI are still present (but you need electricity). The new quarry system is meant to replace it, as it gets more complete."
 				""
@@ -23,21 +21,19 @@
 				"&cOh, you'll likely have to load the chunks where you set up the quarries, if you want them to run while you're away. There should be an icon on top left of the bookmarks, on REI. And then again top left icon, \"claimed chunks\". First you claim one, then you can also force load it."
 			]
 			id: "776CCD6DD8504943"
-			x: -6.75d
-			y: -3.75d
 			min_width: 280
+			size: 1.5d
 			tasks: [{
 				id: "469966184B2A2964"
-				type: "checkmark"
 				title: "Work In Progress"
+				type: "checkmark"
 			}]
+			x: -6.75d
+			y: -3.75d
 		}
 		{
-			tasks: [{
-				id: "402943963B71161A"
-				type: "item"
-				item: "minecraft:bucket"
-			}]
+			dependencies: ["776CCD6DD8504943"]
+			dependency_requirement: "all_started"
 			description: [
 				"You can start the process of setting up the very first, early game quarry by crafting a bucket. This is necessary because due to technical limitations you need steam to jumpstart the process."
 				""
@@ -50,31 +46,18 @@
 				"&7&oNote: the macerator is gated much later than usual, and you don't have any direct way to obtain a iron dust. Therefore figure out first how to get a \"&airon tiny dust&7&o\", so that you can also obtain a full dust with that."
 			]
 			id: "47EA49CACF79FC68"
+			min_width: 280
+			shape: "square"
+			tasks: [{
+				id: "402943963B71161A"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
 			x: -8.5d
 			y: -2.5d
-			shape: "square"
-			min_width: 280
-			dependencies: ["776CCD6DD8504943"]
-			dependency_requirement: "all_started"
 		}
 		{
-			tasks: [
-				{
-					id: "29B870E00C9BA65A"
-					type: "item"
-					item: "modern_industrialization:bronze_proto"
-				}
-				{
-					id: "41635477CF513675"
-					type: "item"
-					item: "create:fluid_pipe"
-				}
-				{
-					id: "61EDCF0C06A1816C"
-					type: "item"
-					item: "create:mechanical_pump"
-				}
-			]
+			dependencies: ["47EA49CACF79FC68"]
 			description: [
 				"The name of the item is misleading, to craft this quaint &cboiler prototype&r you only need some copper."
 				""
@@ -86,19 +69,32 @@
 				""
 				"You then need a second pipe (and another pump), taking steam out from a different face, and then moving that steam to the quarry you want to power."
 			]
-			id: "6BCEC770345AA722"
 			icon: "modern_industrialization:bronze_drill1"
+			id: "6BCEC770345AA722"
+			min_width: 280
+			shape: "square"
+			tasks: [
+				{
+					id: "29B870E00C9BA65A"
+					item: "modern_industrialization:bronze_proto"
+					type: "item"
+				}
+				{
+					id: "41635477CF513675"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+				{
+					id: "61EDCF0C06A1816C"
+					item: "create:mechanical_pump"
+					type: "item"
+				}
+			]
 			x: -8.5d
 			y: -1.0d
-			shape: "square"
-			min_width: 280
-			dependencies: ["47EA49CACF79FC68"]
 		}
 		{
-			tasks: [{
-				id: "64711B4AD8833B6A"
-				type: "checkmark"
-			}]
+			dependencies: ["6BCEC770345AA722"]
 			description: [
 				"Fluid valves need to be powered so that the Create pipes actually do something."
 				""
@@ -109,25 +105,17 @@
 				"Find your own solution, but if looking for suggestions, open up the ponder system ('w') on the Create \"&aWindmill Bearing&r\" item. Using Create sails and wind works well enough as a simple system that you can set up once and forget."
 			]
 			id: "1CCCB70AE6B4C2B9"
+			min_width: 280
+			tasks: [{
+				id: "64711B4AD8833B6A"
+				type: "checkmark"
+			}]
+			title: "Automation"
 			x: -10.0d
 			y: -1.0d
-			title: "Automation"
-			min_width: 280
-			dependencies: ["6BCEC770345AA722"]
 		}
 		{
-			tasks: [
-				{
-					id: "16498216BB1AA6D0"
-					type: "item"
-					item: "modern_industrialization:steam_bucket"
-				}
-				{
-					id: "1CD453034322C8D3"
-					type: "item"
-					item: "modern_industrialization:coal_tiny_dust"
-				}
-			]
+			dependencies: ["6BCEC770345AA722"]
 			description: [
 				"Here comes another compromise: you need steam to begin producing steam."
 				""
@@ -139,27 +127,27 @@
 				""
 				"At a later point, when you have bronze, you'll be able to craft an infinite water pump, so that this part will also become passive."
 			]
-			id: "10701EF47839B7CE"
 			icon: "modern_industrialization:steam_bucket"
-			x: -8.5d
-			y: 0.5d
-			shape: "square"
+			id: "10701EF47839B7CE"
 			min_width: 280
-			dependencies: ["6BCEC770345AA722"]
-		}
-		{
+			shape: "square"
 			tasks: [
 				{
-					id: "662410A395E4A1EA"
+					id: "16498216BB1AA6D0"
+					item: "modern_industrialization:steam_bucket"
 					type: "item"
-					item: "modern_industrialization:bronze_drill1"
 				}
 				{
-					id: "798F1FA0E57DD9ED"
+					id: "1CD453034322C8D3"
+					item: "modern_industrialization:coal_tiny_dust"
 					type: "item"
-					item: "drilly:copper_drill"
 				}
 			]
+			x: -8.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["10701EF47839B7CE"]
 			description: [
 				"If you got to this point then it means you have an automated contraption with a primitive boiler as its center, with a pipe coming out to power the whole goal here: a quarry (the quarry being named \"driller\", here)."
 				""
@@ -169,20 +157,27 @@
 				""
 				"It's the whole point of this system: you can't place these machines where you want. You need to find these infinite ore nodes out in the world, and mine them where they are with these quarries."
 			]
-			id: "553A119B22280B8D"
 			icon: "modern_industrialization:bronze_drill1"
+			id: "553A119B22280B8D"
+			min_width: 260
+			shape: "square"
+			tasks: [
+				{
+					id: "662410A395E4A1EA"
+					item: "modern_industrialization:bronze_drill1"
+					type: "item"
+				}
+				{
+					id: "798F1FA0E57DD9ED"
+					item: "drilly:copper_drill"
+					type: "item"
+				}
+			]
 			x: -8.5d
 			y: 2.0d
-			shape: "square"
-			min_width: 260
-			dependencies: ["10701EF47839B7CE"]
 		}
 		{
-			tasks: [{
-				id: "34574D5B12482EDD"
-				type: "item"
-				item: "drilly:tiny_tier1_experience"
-			}]
+			dependencies: ["553A119B22280B8D"]
 			description: [
 				"In the recipe you can see that you need a copper drill as ingredient, but also a \"token\". This token has no recipe and is otherwise unobtainable."
 				""
@@ -195,17 +190,16 @@
 				"Because of that, it is advise you collect the tokens only when you need them, and right before shoving them into a quarry. So to minimize risks of losing them. Just be careful."
 			]
 			id: "4ED2B22E4841535A"
+			min_width: 280
+			tasks: [{
+				id: "34574D5B12482EDD"
+				item: "drilly:tiny_tier1_experience"
+				type: "item"
+			}]
 			x: -10.0d
 			y: 2.0d
-			min_width: 280
-			dependencies: ["553A119B22280B8D"]
 		}
 		{
-			tasks: [{
-				id: "791139D0D4E12CB8"
-				type: "checkmark"
-				title: "Tokens"
-			}]
 			description: [
 				"Ore groups:"
 				""
@@ -223,214 +217,219 @@
 				"But the system will be designed and balanced around the idea of a SINGLE quarry for each ore type. And that should sustain the whole progression without requiring more \"juggling\". Only by upgrading each quarry through its tiers."
 			]
 			icon: "drilly:drill_group1"
-			x: -4.0d
 			id: "2B1C9080592A0898"
-			y: -5.0d
-			shape: "rsquare"
+			min_width: 300
 			rewards: [
 				{
 					id: "7F596407A347B210"
-					type: "item"
 					item: "drilly:drill_group1"
+					type: "item"
 				}
 				{
 					id: "4275662A63554730"
-					type: "item"
 					item: "drilly:drill_group1"
+					type: "item"
 				}
 				{
 					id: "7F9E227B9B91A48B"
-					type: "item"
 					item: "drilly:drill_group2"
+					type: "item"
 				}
 				{
 					id: "6D89FB6253A06DAE"
-					type: "item"
 					item: "drilly:drill_group2"
+					type: "item"
 				}
 				{
 					id: "0BCF612C8DF15107"
-					type: "item"
 					item: "drilly:drill_group2"
+					type: "item"
 				}
 				{
 					id: "785E5244D6F48602"
-					type: "item"
 					item: "drilly:drill_group3"
+					type: "item"
 				}
 				{
 					id: "23649C18B6929325"
-					type: "item"
 					item: "drilly:drill_group3"
+					type: "item"
 				}
 				{
 					id: "22BC37161CD1026E"
-					type: "item"
 					item: "drilly:drill_group3"
+					type: "item"
 				}
 				{
 					id: "179F8BDFB0BD6F27"
-					type: "item"
 					item: "drilly:drill_group4"
+					type: "item"
 				}
 				{
 					id: "785CD954D09766DA"
-					type: "item"
 					item: "drilly:drill_group4"
+					type: "item"
 				}
 				{
 					id: "1871DC821391516A"
-					type: "item"
 					item: "drilly:drill_group4"
+					type: "item"
 				}
 				{
 					id: "63997C072CFB9461"
-					type: "item"
 					item: "drilly:drill_group4"
+					type: "item"
 				}
 				{
 					id: "5B86C087BFFF24AB"
-					type: "item"
 					item: "drilly:drill_group5"
+					type: "item"
 				}
 				{
 					id: "22B0A18377DED196"
-					type: "item"
 					item: "drilly:drill_group5"
+					type: "item"
 				}
 				{
 					id: "744BA7680C8CD298"
-					type: "item"
 					item: "drilly:drill_group5"
+					type: "item"
 				}
 				{
 					id: "386A4AC2D522CF34"
-					type: "item"
 					item: "drilly:drill_group5"
+					type: "item"
 				}
 				{
 					id: "373EF79381C5E0BF"
-					type: "item"
 					item: "drilly:drill_groupx"
+					type: "item"
 				}
 			]
-			min_width: 300
+			shape: "rsquare"
+			tasks: [{
+				id: "791139D0D4E12CB8"
+				title: "Tokens"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: -5.0d
 		}
 		{
-			min_width: 300
 			description: [
 				"Additional info:"
 				""
 				"&dTier 1&r copper quarry (still named Bronze Primitive Driller because of technical reasons) can only use a copper drill, and mine &bcopper, tin, coal&r and &blignite&r nodes. If you find out other types of nodes mark their location, but you can't use them at this stage."
+				"&aCurrent version has Tier1+ quarries also for quartz and zinc, just in case. Look at recipes."
 				""
 				"&dTier 2&r quarry, the first bronze one, can still use the same copper drills, but consumption is much higher and production not that great. This because you're meant to also upgrade the drills you use. In this case a \"Basic Bronze Drill\". With this drill you can mine all the nodes above, plus &blead&r and &bquartz&r (only in the Nether)."
 				""
 				"&dTier 3&r is again a bronze class. You can reuse here the bronze drill from tier 2, but again consumption will be very high and you're meant to move to a \"Refined Bronze Drill\". This drill can also mine &biron&r."
 				""
-				"&cImportant&r: starting from the Refined Bronze Drill there's an added mechanic ported over from Incremental Industries. The drill can still get broken, but at every run it will be coming out as \"dirty\". You're meant to get the dirty drill (though automation, not manually), and \"wash it\" through a Create recipe, and then insert it back into the quarry."
+				"&cImportant&r: starting from the Refined Bronze Drill there's an added mechanic ported over from Incremental Industries. The drill can still get broken, but it will also be coming out as \"dirty\". You're meant to get the dirty drill (through automation, not manually), and \"wash it\" with a Create recipe, and then insert it back into the quarry."
 				""
 				"&dTier 4&r: moving to steel. This is the last tier under this new system at the moment. From tier 5 onward you'll deal with larger and more expensive multiblocks requiring electricity. Same mechanics of the above, but you can also mine &bzinc&r and &bnickel&r now."
 			]
 			id: "3D63762D1F77B9A4"
-			y: -5.0d
-			x: -2.5d
+			min_width: 300
 			tasks: [{
 				id: "1D98E5DA88FAF8A3"
-				type: "checkmark"
 				title: "Here we are"
+				type: "checkmark"
 			}]
+			x: -2.5d
+			y: -5.0d
 		}
 		{
-			tasks: [
-				{
-					id: "4C35DEACD8719A23"
-					type: "item"
-					item: "modern_industrialization:bronze_drill1"
-				}
-				{
-					id: "68F5CE2CF924F04E"
-					type: "item"
-					item: "drilly:copper_drill"
-				}
-			]
 			description: ["(the quest up there, across the page, next to the tokens gives a breakdown of the tiers)"]
 			icon: "drilly:copper_drill"
 			id: "1F02920D116E5DDC"
+			tasks: [
+				{
+					id: "4C35DEACD8719A23"
+					item: "modern_industrialization:bronze_drill1"
+					type: "item"
+				}
+				{
+					id: "68F5CE2CF924F04E"
+					item: "drilly:copper_drill"
+					type: "item"
+				}
+			]
+			title: "Tier 1"
 			x: -8.5d
 			y: 3.5d
-			title: "Tier 1"
 		}
 		{
+			dependencies: ["1F02920D116E5DDC"]
+			icon: "drilly:bronze_base_drill"
+			id: "5B9F3D94A95E2BD0"
 			tasks: [
 				{
 					id: "7410759A81A1EAE7"
-					type: "item"
 					item: "modern_industrialization:bronze_drill2"
+					type: "item"
 				}
 				{
 					id: "72106249E55A568C"
-					type: "item"
 					item: "drilly:bronze_base_drill"
+					type: "item"
 				}
 			]
-			icon: "drilly:bronze_base_drill"
-			id: "5B9F3D94A95E2BD0"
+			title: "Tier 2"
 			x: -10.0d
 			y: 3.5d
-			title: "Tier 2"
-			dependencies: ["1F02920D116E5DDC"]
 		}
 		{
-			tasks: [
-				{
-					id: "3FF0AEED55CC76D2"
-					type: "item"
-					item: "modern_industrialization:bronze_drill3"
-				}
-				{
-					id: "6B1085F4CB7139AB"
-					type: "item"
-					item: "drilly:bronze_refined_drill"
-				}
-			]
+			dependencies: ["5B9F3D94A95E2BD0"]
 			description: [
 				"The precision mechanism used in the crafting recipe for this tier is going to be remaded into a more complex process..."
 				""
 				"WIP"
+				""
+				"In the meantime itself, the recipe for the drill is now a Create sequence. And requires a minimum amount of lubricant."
 			]
 			icon: "drilly:bronze_refined_drill"
 			id: "24F885537FB4469E"
-			x: -11.5d
-			y: 3.5d
-			title: "Tier 3"
-			dependencies: ["5B9F3D94A95E2BD0"]
-		}
-		{
 			tasks: [
 				{
-					id: "678E89E79F541577"
+					id: "3FF0AEED55CC76D2"
+					item: "modern_industrialization:bronze_drill3"
 					type: "item"
-					item: "modern_industrialization:steel_drill4"
 				}
 				{
-					id: "5FAA238868C697D1"
+					id: "6B1085F4CB7139AB"
+					item: "drilly:bronze_refined_drill"
 					type: "item"
-					item: "drilly:iron_refined_drill"
 				}
 			]
+			title: "Tier 3"
+			x: -11.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["24F885537FB4469E"]
 			description: ["Stuff here still quite temporary."]
 			icon: "drilly:iron_refined_drill"
 			id: "3D7ADC1878C1E0BA"
+			tasks: [
+				{
+					id: "678E89E79F541577"
+					item: "modern_industrialization:steel_drill4"
+					type: "item"
+				}
+				{
+					id: "5FAA238868C697D1"
+					item: "drilly:iron_refined_drill"
+					type: "item"
+				}
+			]
+			title: "Tier 4"
 			x: -13.0d
 			y: 3.5d
-			title: "Tier 4"
-			dependencies: ["24F885537FB4469E"]
 		}
 		{
-			tasks: [{
-				id: "2747C3F764FEA9CD"
-				type: "checkmark"
-			}]
+			dependencies: ["776CCD6DD8504943"]
 			description: [
 				"One of my goals in this modpack was to push players out of familiar territory. Rather than going very hard mode in recipes, I'd shuffle things around in a way that might feel weird."
 				""
@@ -443,17 +442,17 @@
 				"As long you can come out alive with some quartz, you can start having things going. This is precisely where I wanted players to begin experimenting with quarries, rather than later. Just some copper plates and simple Create contraptions, to start producing some resources \"passively\". Not to fully replace resource gathering, but in the background."
 			]
 			id: "15950488516B4B63"
-			x: -5.0d
-			y: -2.5d
-			title: "Plan 1"
 			min_width: 300
-			dependencies: ["776CCD6DD8504943"]
-		}
-		{
 			tasks: [{
-				id: "6784B3937359E9A5"
+				id: "2747C3F764FEA9CD"
 				type: "checkmark"
 			}]
+			title: "Plan 1"
+			x: -5.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["15950488516B4B63"]
 			description: [
 				"The first \"big\" problem is that I found no way to design the \"infinite ore nodes\" as they were supposed to be."
 				""
@@ -464,17 +463,17 @@
 				"LOTS of time was wasted trying to figure out a way. The current system is a giant compromise: I can only generate \"veins\" made of 1 to 3 blocks, nothing less. And only of one type. Therefore, infinite nodes generate randomly and aren't part of any \"vein\". And because they are often single blocks generating completely at random, they can be VERY HARD to find. So the only solution was to hugely increase the spawn rate."
 			]
 			id: "3B3D3F88DB87DB6B"
-			x: -5.0d
-			y: -1.0d
-			title: "Plan 2"
 			min_width: 280
-			dependencies: ["15950488516B4B63"]
-		}
-		{
 			tasks: [{
-				id: "23BC5C8E6C8E07E8"
+				id: "6784B3937359E9A5"
 				type: "checkmark"
 			}]
+			title: "Plan 2"
+			x: -5.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3B3D3F88DB87DB6B"]
 			description: [
 				"Right now the system spawns 16 (+quartz in the Nether) different ore node types. One for every basic resource available in MI."
 				""
@@ -489,18 +488,17 @@
 				"&cMore complexity = more production"
 			]
 			id: "6A0C16FB7909BB8D"
+			min_width: 280
+			tasks: [{
+				id: "23BC5C8E6C8E07E8"
+				type: "checkmark"
+			}]
+			title: "Plan 3"
 			x: -5.0d
 			y: 0.5d
-			title: "Plan 3"
-			min_width: 280
-			dependencies: ["3B3D3F88DB87DB6B"]
 		}
 		{
-			tasks: [{
-				id: "0C4699C006A6C350"
-				type: "item"
-				item: "modern_industrialization:bronze_boiler"
-			}]
+			dependencies: ["5B9F3D94A95E2BD0"]
 			description: [
 				"Starting from this tier you're supposed to leave behind the boiler prototype."
 				""
@@ -508,16 +506,17 @@
 				""
 				"Note that there's an additional hicckup since the water pump requires glass, and glass is gated past \"steel\" (you need a steel mold, and an alloy smelter)."
 			]
-			dependencies: ["5B9F3D94A95E2BD0"]
 			id: "59174C8A4070D621"
-			y: 5.0d
+			tasks: [{
+				id: "0C4699C006A6C350"
+				item: "modern_industrialization:bronze_boiler"
+				type: "item"
+			}]
 			x: -10.0d
+			y: 5.0d
 		}
 		{
-			tasks: [{
-				id: "3F54C256BDACD1F7"
-				type: "checkmark"
-			}]
+			dependencies: ["1CCCB70AE6B4C2B9"]
 			description: [
 				"This whole deal with Create pipes and the Boiler Prototype is simply a workaround because I don't have enough control on the power system to make things work as they were intended to."
 				""
@@ -528,18 +527,16 @@
 				"Starting from Tier 2, you're supposed to move to more standardized ways of producing steam. See below the additional note linked to the Tier 2 quarry."
 			]
 			id: "0B65B240D5D30E87"
+			min_width: 250
+			tasks: [{
+				id: "3F54C256BDACD1F7"
+				type: "checkmark"
+			}]
+			title: "Design Note"
 			x: -11.5d
 			y: -1.0d
-			title: "Design Note"
-			min_width: 250
-			dependencies: ["1CCCB70AE6B4C2B9"]
 		}
 		{
-			tasks: [{
-				id: "36AFEEE608205454"
-				type: "checkmark"
-				title: "Looking for infinite ore nodes"
-			}]
 			description: [
 				"As explained above, the current \"corenodes\" generation is more the result of compromises, than good design. Here below you can check where the nodes generate by type."
 				""
@@ -568,17 +565,18 @@
 				""
 			]
 			icon: "geggy:iron_corenode"
-			x: -5.0d
 			id: "4FE72AFB4AF93B1B"
-			y: 2.0d
-			shape: "rsquare"
 			min_width: 300
-		}
-		{
+			shape: "rsquare"
 			tasks: [{
-				id: "3E9B38C4434AA77C"
+				id: "36AFEEE608205454"
+				title: "Looking for infinite ore nodes"
 				type: "checkmark"
 			}]
+			x: -5.0d
+			y: 2.0d
+		}
+		{
 			description: [
 				"Looking at recipes for each tier and drill type, you'll notice that you usually have two options."
 				""
@@ -588,18 +586,19 @@
 				""
 				"Here below you can find a quick reference."
 			]
-			x: -1.0d
 			id: "3601E10BBDCD8C37"
-			y: -5.0d
-			shape: "rsquare"
-			title: "Quarry recipes"
 			min_width: 280
-		}
-		{
+			shape: "rsquare"
 			tasks: [{
-				id: "536276F26D9AA360"
+				id: "3E9B38C4434AA77C"
 				type: "checkmark"
 			}]
+			title: "Quarry recipes"
+			x: -1.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["3601E10BBDCD8C37"]
 			description: [
 				"A breakdown of the recipes for each tier. This should give you an idea of how many &6raw ores&r of the main type, for a full hour of continuous running. No costs considered."
 				""
@@ -622,17 +621,17 @@
 				"(there might be errors, and it all could change in a major way between updates)"
 			]
 			id: "09DC4670D1C205AA"
-			x: -1.0d
-			y: -3.5d
-			title: "Breakdown"
 			min_width: 250
-			dependencies: ["3601E10BBDCD8C37"]
-		}
-		{
 			tasks: [{
-				id: "67853A50F73F5FFA"
+				id: "536276F26D9AA360"
 				type: "checkmark"
 			}]
+			title: "Breakdown"
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["6A0C16FB7909BB8D"]
 			description: [
 				"I'm aware that there might be some contrived ways to \"move\" the infinite ore nodes, for example using some Create contraptions."
 				""
@@ -641,14 +640,16 @@
 				"Obviously I cannot stop anyone. The game's yours to use and abuse."
 			]
 			id: "5F2A341E3C936A9C"
+			min_width: 250
+			tasks: [{
+				id: "67853A50F73F5FFA"
+				type: "checkmark"
+			}]
+			title: "Not By Design"
 			x: -3.5d
 			y: 0.5d
-			title: "Not By Design"
-			min_width: 250
-			dependencies: ["6A0C16FB7909BB8D"]
 		}
 		{
-			min_width: 250
 			description: [
 				"With the increase of infinite ore nodes being spawned, and since you usually just use one single node of each type, there's the problem of all these blocks becoming useless."
 				""
@@ -661,27 +662,17 @@
 				"For example, using the tier 1 experience dust in Create mixer with an iron dust, will produce 5 iron dusts. If you instead use a tier 2 experience then you'll get 10 iron dusts."
 			]
 			id: "2D52F5DAD77052CE"
-			y: 2.0d
-			x: -3.5d
+			min_width: 250
 			tasks: [{
 				id: "359F90DCF42735E2"
-				type: "checkmark"
 				title: "Free resources"
+				type: "checkmark"
 			}]
+			x: -3.5d
+			y: 2.0d
 		}
 		{
-			tasks: [
-				{
-					id: "4F1F6BCBF8E80D42"
-					type: "item"
-					item: "moderndynamics:fluid_pipe"
-				}
-				{
-					id: "6AEA14454C1EA575"
-					type: "item"
-					item: "modern_industrialization:bronze_salloy"
-				}
-			]
+			dependencies: ["24F885537FB4469E"]
 			description: [
 				"Around this stage you probably want to move from Create fluid pipes to Modern Dynamics ones. Use &d\\@dyn&r to find them in REI, with other related stuff."
 				""
@@ -703,17 +694,24 @@
 			]
 			icon: "moderndynamics:fluid_pipe"
 			id: "73112993B371F2B5"
+			min_width: 275
+			tasks: [
+				{
+					id: "4F1F6BCBF8E80D42"
+					item: "moderndynamics:fluid_pipe"
+					type: "item"
+				}
+				{
+					id: "6AEA14454C1EA575"
+					item: "modern_industrialization:bronze_salloy"
+					type: "item"
+				}
+			]
 			x: -11.5d
 			y: 5.0d
-			min_width: 275
-			dependencies: ["24F885537FB4469E"]
 		}
 		{
-			tasks: [{
-				id: "70C9A71BE560E219"
-				type: "item"
-				item: "geggy:selector_1"
-			}]
+			dependencies: ["4ED2B22E4841535A"]
 			description: [
 				"Due to recipe conflicts, now (almost) all quarry recipes require a \"selector\". The item is not consumed, just like a token, but it needs to be placed in the machine so that it will start."
 				""
@@ -721,10 +719,15 @@
 				""
 				"You can freely switch back and forth between selector types, by simply repeating the recipe and placing the item in a different position."
 			]
-			dependencies: ["4ED2B22E4841535A"]
 			id: "02F5E6B7DFBCD7A7"
-			y: 2.0d
+			tasks: [{
+				id: "70C9A71BE560E219"
+				item: "geggy:selector_1"
+				type: "item"
+			}]
 			x: -11.5d
+			y: 2.0d
 		}
 	]
+	title: "The Quarry System"
 }

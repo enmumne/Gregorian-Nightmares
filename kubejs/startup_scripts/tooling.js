@@ -499,7 +499,7 @@ event.create('geggy:diamond_shards');
 
 //////////////////
 
-event.create('geggy:muddy_coke_oven_blend');
+event.create('geggy:muddy_coke_oven_blend'); //<<<<<<<<<<<<<<<<<<<
 event.create('geggy:pig_iron_ingot');
 event.create('geggy:tiny_iron_blend_dust');
 

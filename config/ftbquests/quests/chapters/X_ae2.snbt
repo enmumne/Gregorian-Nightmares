@@ -1,16 +1,15 @@
 {
-	quest_links: [ ]
 	default_hide_dependency_lines: false
-	group: "113481E7A031FCFE"
-	id: "3E752DCD1965F443"
-	filename: "X_ae2"
 	default_quest_shape: ""
+	filename: "X_ae2"
+	group: "113481E7A031FCFE"
 	icon: "ae2:controller"
-	title: "X - Misplaced Energistics"
+	id: "3E752DCD1965F443"
 	order_index: 3
+	quest_links: [ ]
 	quests: [
 		{
-			size: 2.0d
+			dependencies: ["07DB471F85ADCCDA"]
 			description: [
 				"Welcome to the Applied Energistics Chapter. This chapter will guide you through everything AE2. Recipes are modified and integrated with MI. By the end of this chapter you should have everything you need to set up a full autocrafting system for pretty much every crafting recipe in the game."
 				""
@@ -24,23 +23,19 @@
 				"&o : Things are broken here due to a missing mod in 1.19. In due time they will be fixed..."
 			]
 			id: "4360FC0DFEEBFC39"
-			x: -5.0d
-			y: -2.0d
-			shape: "gear"
 			min_width: 290
-			dependencies: ["07DB471F85ADCCDA"]
+			shape: "gear"
+			size: 2.0d
 			tasks: [{
 				id: "7B47DBA95F2E3D7C"
-				type: "checkmark"
 				title: "Going Digital"
+				type: "checkmark"
 			}]
+			x: -5.0d
+			y: -2.0d
 		}
 		{
-			tasks: [{
-				id: "6C52FF55FBF4A6D4"
-				type: "item"
-				item: "ae2:drive"
-			}]
+			dependencies: ["4D865ED8C0CFA5EE"]
 			description: [
 				"The ME Drive can be used to store items digitally in your network."
 				""
@@ -58,125 +53,125 @@
 				"&o&c 6E : \"&lomg ae2 ruined modded!!!11!!1!&r&o&c\" -some 1.7 purist"
 			]
 			id: "1B0CD2AA799A1706"
+			min_width: 230
+			tasks: [{
+				id: "6C52FF55FBF4A6D4"
+				item: "ae2:drive"
+				type: "item"
+			}]
 			x: -1.5d
 			y: 4.5d
-			min_width: 230
-			dependencies: ["4D865ED8C0CFA5EE"]
 		}
 		{
+			dependencies: ["4360FC0DFEEBFC39"]
+			description: ["The AE2 inscriber is disabled and not needed in this pack. You can jump straight into crafting the advanced inscriber. It will be used to create processors."]
+			id: "2DB5D8AC23AA0CD1"
 			tasks: [{
 				id: "7C8DE9C4B508F767"
-				type: "item"
 				item: "ae2things:advanced_inscriber"
+				type: "item"
 			}]
-			description: ["The AE2 inscriber is disabled and not needed in this pack. You can jump straight into crafting the advanced inscriber. It will be used to create processors."]
-			dependencies: ["4360FC0DFEEBFC39"]
-			id: "2DB5D8AC23AA0CD1"
-			y: 1.5d
 			x: -5.0d
+			y: 1.5d
 		}
 		{
-			tasks: [
-				{
-					id: "7523F5376E198D6C"
-					type: "item"
-					item: "ae2:calculation_processor_press"
-				}
-				{
-					id: "4E7B40554012CA21"
-					type: "item"
-					item: "ae2:engineering_processor_press"
-				}
-				{
-					id: "5122CB4D8462AD89"
-					type: "item"
-					item: "ae2:logic_processor_press"
-				}
-				{
-					id: "6C306D5BA14ECC5D"
-					type: "item"
-					item: "ae2:silicon_press"
-				}
-			]
+			dependencies: ["4360FC0DFEEBFC39"]
 			description: [
 				"These presses are required to pair with the inscriber for pretty much everything AE2 related, along with some modified MI recipes."
 				"NOTE: Meteor generation is disabled in the pack, so no need to go on the hunt for these. They are all craftable. Ignore the REI Information Tab"
 				""
 				"&o&b 65 : oh god imagine tungstensteel instead of aluminium as the AE2 base material"
 			]
-			dependencies: ["4360FC0DFEEBFC39"]
 			id: "78E3BE6CE4572DBD"
-			y: 1.5d
-			x: -3.0d
-		}
-		{
 			tasks: [
 				{
-					id: "5864FF7ED769C58A"
+					id: "7523F5376E198D6C"
+					item: "ae2:calculation_processor_press"
 					type: "item"
-					item: "ae2:logic_processor"
 				}
 				{
-					id: "7C6935048CE7B1F9"
+					id: "4E7B40554012CA21"
+					item: "ae2:engineering_processor_press"
 					type: "item"
-					item: "ae2:calculation_processor"
 				}
 				{
-					id: "1204D3813AD119A7"
+					id: "5122CB4D8462AD89"
+					item: "ae2:logic_processor_press"
 					type: "item"
-					item: "ae2:engineering_processor"
 				}
+				{
+					id: "6C306D5BA14ECC5D"
+					item: "ae2:silicon_press"
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"2DB5D8AC23AA0CD1"
+				"78E3BE6CE4572DBD"
 			]
 			description: [
 				"&o&7(sorry, gated until I figure out what to do with it)"
 				""
 				"Once you have your presses up and running with the inscriber, you can start producing AE2 processors. These are crucial crafting components for all things AE2"
 			]
-			dependencies: [
-				"2DB5D8AC23AA0CD1"
-				"78E3BE6CE4572DBD"
-			]
 			id: "4D865ED8C0CFA5EE"
-			y: 4.5d
+			tasks: [
+				{
+					id: "5864FF7ED769C58A"
+					item: "ae2:logic_processor"
+					type: "item"
+				}
+				{
+					id: "7C6935048CE7B1F9"
+					item: "ae2:calculation_processor"
+					type: "item"
+				}
+				{
+					id: "1204D3813AD119A7"
+					item: "ae2:engineering_processor"
+					type: "item"
+				}
+			]
 			x: -3.0d
+			y: 4.5d
 		}
 		{
+			dependencies: ["4D865ED8C0CFA5EE"]
+			description: ["The Formation and Annihilation Cores are crafting components for many different AE2 machines. They will be crucial in developing your autocrafting network going forward."]
+			id: "4FCD483A19B0D015"
 			tasks: [
 				{
 					id: "3E123305BC36AA6F"
-					type: "item"
 					item: "ae2:formation_core"
+					type: "item"
 				}
 				{
 					id: "41AB6F7FDAB82E5F"
-					type: "item"
 					item: "ae2:annihilation_core"
+					type: "item"
 				}
 			]
-			description: ["The Formation and Annihilation Cores are crafting components for many different AE2 machines. They will be crucial in developing your autocrafting network going forward."]
-			dependencies: ["4D865ED8C0CFA5EE"]
-			id: "4FCD483A19B0D015"
-			y: 6.5d
 			x: -3.0d
+			y: 6.5d
 		}
 		{
+			dependencies: ["1B0CD2AA799A1706"]
+			description: ["Storage Components are used to craft disks which can be inserted into your ME Drive. This quest is for the 1k storage component, but you can crafter higher tier ones right away if you wish."]
+			id: "0372418C67987119"
 			tasks: [{
 				id: "7A73D96161A72BB6"
-				type: "item"
 				item: "ae2:cell_component_1k"
+				type: "item"
 			}]
-			description: ["Storage Components are used to craft disks which can be inserted into your ME Drive. This quest is for the 1k storage component, but you can crafter higher tier ones right away if you wish."]
-			dependencies: ["1B0CD2AA799A1706"]
-			id: "0372418C67987119"
-			y: 4.5d
 			x: 0.0d
+			y: 4.5d
 		}
 		{
-			tasks: [{
-				id: "34304F4D3B618EE8"
-				type: "item"
-				item: "ae2:blank_pattern"
-			}]
+			dependencies: ["442F2CDD520D1635"]
 			description: [
 				"Blank Patterns are encoded in the pattern encoding terminal with recipes for your autocrafting system. There are two types of recipes:"
 				""
@@ -184,523 +179,506 @@
 				""
 				"Processing, which determines input and outputs from a processing machine, like a furnace or an MI assembler. These can be configured using a pattern provider feeding the machine(s)"
 			]
-			dependencies: ["442F2CDD520D1635"]
 			id: "6816DA41E1FAF322"
-			y: 10.0d
+			tasks: [{
+				id: "34304F4D3B618EE8"
+				item: "ae2:blank_pattern"
+				type: "item"
+			}]
 			x: -4.0d
+			y: 10.0d
 		}
 		{
-			tasks: [{
-				id: "230BE1B2829D7BB2"
-				type: "item"
-				item: "ae2:item_cell_housing"
-			}]
+			dependencies: ["0372418C67987119"]
 			description: [
 				"Item Cell Housing can be combined with storage components to create Item Storage Disks. These are inserted into your ME Drive and hold items in your network."
 				""
 				"The AE2 Disks have an item type limit associated with them, so even if you craft the highest tier storage disks, you'll only be able to store 64 different types of items. To get a more powerful method of storage, check the next quest."
 			]
-			dependencies: ["0372418C67987119"]
 			id: "6A843C0106F04056"
-			y: 5.5d
+			tasks: [{
+				id: "230BE1B2829D7BB2"
+				item: "ae2:item_cell_housing"
+				type: "item"
+			}]
 			x: 1.5d
+			y: 5.5d
 		}
 		{
+			dependencies: ["0372418C67987119"]
+			description: ["Fluid Cell Housing can be combined with storage components to create Fluid Storage Disks. These are inserted into your ME Drive and hold fluids in your network."]
+			id: "2C80FA2DDEA5C9EE"
 			tasks: [{
 				id: "10C85569CFBA2FAB"
-				type: "item"
 				item: "ae2:fluid_cell_housing"
+				type: "item"
 			}]
-			description: ["Fluid Cell Housing can be combined with storage components to create Fluid Storage Disks. These are inserted into your ME Drive and hold fluids in your network."]
-			dependencies: ["0372418C67987119"]
-			id: "2C80FA2DDEA5C9EE"
-			y: 3.5d
 			x: 1.5d
+			y: 3.5d
 		}
 		{
+			dependencies: ["509CDE8C3476E793"]
+			description: ["Once you have Fluix Dust, you'll want to make some seeds and turn them into fluix crystals."]
+			id: "724AE26409301A53"
 			tasks: [{
 				id: "1EC8A7EB90DDC256"
-				type: "item"
 				item: "ae2:fluix_crystal_seed"
+				type: "item"
 			}]
-			description: ["Once you have Fluix Dust, you'll want to make some seeds and turn them into fluix crystals."]
-			dependencies: ["509CDE8C3476E793"]
-			id: "724AE26409301A53"
-			y: 2.5d
 			x: -7.5d
+			y: 2.5d
 		}
 		{
-			tasks: [{
-				id: "4C43958B06141A5F"
-				type: "item"
-				item: "ae2:certus_crystal_seed"
-			}]
-			description: ["Similarly to the Fluix Crystal quest, you'll want to create seeds to grow more Certus Quartz"]
 			dependencies: [
 				"7CB3817D8E38D356"
 				"0BAC28DC7540EF94"
 			]
+			description: ["Similarly to the Fluix Crystal quest, you'll want to create seeds to grow more Certus Quartz"]
 			id: "7F833DC5526A693C"
-			y: 7.0d
+			tasks: [{
+				id: "4C43958B06141A5F"
+				item: "ae2:certus_crystal_seed"
+				type: "item"
+			}]
 			x: -10.0d
+			y: 7.0d
 		}
 		{
+			dependencies: ["724AE26409301A53"]
+			description: ["Your first few crystals will need to be grown manually. Throw them in water, they won't despawn."]
+			id: "43445B8D308A025D"
 			tasks: [{
 				id: "58929853521908A0"
-				type: "item"
 				item: "ae2:fluix_crystal"
+				type: "item"
 			}]
-			description: ["Your first few crystals will need to be grown manually. Throw them in water, they won't despawn."]
-			dependencies: ["724AE26409301A53"]
-			id: "43445B8D308A025D"
-			y: 3.5d
 			x: -7.5d
+			y: 3.5d
 		}
 		{
+			dependencies: ["7F833DC5526A693C"]
+			description: ["Now that you've got the Crystal Growth Chamber or Accelerator, you can grow Certus Crystals more easily."]
+			id: "49795CEB4E700465"
 			tasks: [{
 				id: "04A72A29CE045D7C"
-				type: "item"
 				item: "ae2:certus_quartz_crystal"
+				type: "item"
 			}]
-			description: ["Now that you've got the Crystal Growth Chamber or Accelerator, you can grow Certus Crystals more easily."]
-			dependencies: ["7F833DC5526A693C"]
-			id: "49795CEB4E700465"
-			y: 7.0d
 			x: -11.5d
+			y: 7.0d
 		}
 		{
+			dependencies: ["4360FC0DFEEBFC39"]
+			description: ["To get Certus Quartz Ore, you'll need to start running an Aluminum Drill through the electric quarry. Grind it down in the macerator to get the dust needed."]
+			id: "7CB3817D8E38D356"
 			tasks: [{
 				id: "6A8CCB52740CBEB8"
-				type: "item"
 				item: "ae2:certus_quartz_dust"
+				type: "item"
 			}]
-			description: ["To get Certus Quartz Ore, you'll need to start running an Aluminum Drill through the electric quarry. Grind it down in the macerator to get the dust needed."]
-			dependencies: ["4360FC0DFEEBFC39"]
-			id: "7CB3817D8E38D356"
-			y: 1.5d
 			x: -10.0d
+			y: 1.5d
 		}
 		{
+			dependencies: ["4360FC0DFEEBFC39"]
+			description: ["You can make fluix dust the old fashioned way by throwing the ingredients in water, or there is an MI mixer recipe available to you."]
+			id: "509CDE8C3476E793"
 			tasks: [{
 				id: "0FA35B0E06005143"
-				type: "item"
 				item: "ae2:fluix_dust"
+				type: "item"
 			}]
-			description: ["You can make fluix dust the old fashioned way by throwing the ingredients in water, or there is an MI mixer recipe available to you."]
-			dependencies: ["4360FC0DFEEBFC39"]
-			id: "509CDE8C3476E793"
-			y: 1.5d
 			x: -7.5d
+			y: 1.5d
 		}
 		{
+			dependencies: ["0BAC28DC7540EF94"]
+			description: ["The Chamber is the advanced version of the accelerator. It has inventory space and can process seeds quicker than it's predecessor. Be sure to check out the Acceleration Card in a separate part of this questline to speed it up even further(at the cost of some extra power)"]
+			id: "6B96FC3D1CF7D13B"
 			tasks: [{
 				id: "5C6C434328657DC6"
-				type: "item"
 				item: "ae2things:crystal_growth"
+				type: "item"
 			}]
-			description: ["The Chamber is the advanced version of the accelerator. It has inventory space and can process seeds quicker than it's predecessor. Be sure to check out the Acceleration Card in a separate part of this questline to speed it up even further(at the cost of some extra power)"]
-			dependencies: ["0BAC28DC7540EF94"]
-			id: "6B96FC3D1CF7D13B"
-			y: 8.5d
 			x: -8.5d
+			y: 8.5d
 		}
 		{
+			dependencies: ["570B2DE4180DF913"]
+			description: ["The Crystal Growth Accelerator is placed in the world to accelerate the growth of your newly crafted seeds. You'll unlock better ways to do this soon, but for the first few crystals, you'll use this method."]
+			id: "0BAC28DC7540EF94"
 			tasks: [{
 				id: "4F2E11720F99D7F3"
-				type: "item"
 				item: "ae2:quartz_growth_accelerator"
+				type: "item"
 			}]
-			description: ["The Crystal Growth Accelerator is placed in the world to accelerate the growth of your newly crafted seeds. You'll unlock better ways to do this soon, but for the first few crystals, you'll use this method."]
-			dependencies: ["570B2DE4180DF913"]
-			id: "0BAC28DC7540EF94"
-			y: 7.0d
 			x: -8.5d
+			y: 7.0d
 		}
 		{
+			dependencies: ["4FCD483A19B0D015"]
+			description: ["The Pattern Provider holds AE2 patterns to store recipes for your autocrafting system to use. Similar to the ME Interface, it can be inserted into to feed items back into the network"]
+			id: "442F2CDD520D1635"
 			tasks: [{
 				id: "7FD3D1F031EAD326"
-				type: "item"
 				item: "ae2:pattern_provider"
+				type: "item"
 			}]
-			description: ["The Pattern Provider holds AE2 patterns to store recipes for your autocrafting system to use. Similar to the ME Interface, it can be inserted into to feed items back into the network"]
-			dependencies: ["4FCD483A19B0D015"]
-			id: "442F2CDD520D1635"
-			y: 9.0d
 			x: -3.0d
+			y: 9.0d
 		}
 		{
+			dependencies: ["4FCD483A19B0D015"]
+			description: ["The ME Import Bus will import items from the attached storage into your ME network. They can be filtered to only pick up desired items."]
+			id: "425B5D0A24F9AF1A"
 			tasks: [{
 				id: "23E062D923DA8F92"
-				type: "item"
 				item: "ae2:import_bus"
+				type: "item"
 			}]
-			description: ["The ME Import Bus will import items from the attached storage into your ME network. They can be filtered to only pick up desired items."]
-			dependencies: ["4FCD483A19B0D015"]
-			id: "425B5D0A24F9AF1A"
-			y: 6.0d
 			x: -0.5d
+			y: 6.0d
 		}
 		{
+			dependencies: ["4FCD483A19B0D015"]
+			description: ["The ME Storage Bus can be attached to inventories to expose their inventory to the AE2 network. Useful if you already have a more primitive storage system set up and want to expose this to the AE2 network."]
+			id: "29862AFCD2819135"
 			tasks: [{
 				id: "530D7EE7F87DE90B"
-				type: "item"
 				item: "ae2:storage_bus"
+				type: "item"
 			}]
-			description: ["The ME Storage Bus can be attached to inventories to expose their inventory to the AE2 network. Useful if you already have a more primitive storage system set up and want to expose this to the AE2 network."]
-			dependencies: ["4FCD483A19B0D015"]
-			id: "29862AFCD2819135"
-			y: 7.0d
 			x: -0.5d
+			y: 7.0d
 		}
 		{
+			dependencies: ["4FCD483A19B0D015"]
+			description: ["The ME Export Bus can export items from your AE2 network to an attached inventory. Useful when you want to stock inventories with items from your network."]
+			id: "1DDC26973BECC663"
 			tasks: [{
 				id: "2A19D9F301DB2E1B"
-				type: "item"
 				item: "ae2:export_bus"
+				type: "item"
 			}]
-			description: ["The ME Export Bus can export items from your AE2 network to an attached inventory. Useful when you want to stock inventories with items from your network."]
-			dependencies: ["4FCD483A19B0D015"]
-			id: "1DDC26973BECC663"
-			y: 8.0d
 			x: -0.5d
+			y: 8.0d
 		}
 		{
+			dependencies: ["43445B8D308A025D"]
+			description: ["The Glass Cable is what you will use to start connecting your AE2 network together."]
+			id: "570B2DE4180DF913"
 			tasks: [{
 				id: "3BB6FE7738548FA5"
-				type: "item"
 				item: "ae2:fluix_glass_cable"
+				type: "item"
 			}]
-			description: ["The Glass Cable is what you will use to start connecting your AE2 network together."]
-			dependencies: ["43445B8D308A025D"]
-			id: "570B2DE4180DF913"
-			y: 5.5d
 			x: -8.5d
+			y: 5.5d
 		}
 		{
+			dependencies: ["4FCD483A19B0D015"]
+			description: ["The ME Interface is a way to extract and import items from/to your AE2 network. It has some inventory slots which you can configure to keep a stock of items from your AE2 network. Useful for when you need to keep a machine or inventory stocked."]
+			id: "64D0FC9EDFE50AA8"
 			tasks: [{
 				id: "05CBFBAE86F29CC9"
-				type: "item"
 				item: "ae2:interface"
+				type: "item"
 			}]
-			description: ["The ME Interface is a way to extract and import items from/to your AE2 network. It has some inventory slots which you can configure to keep a stock of items from your AE2 network. Useful for when you need to keep a machine or inventory stocked."]
-			dependencies: ["4FCD483A19B0D015"]
-			id: "64D0FC9EDFE50AA8"
-			y: 9.0d
 			x: -5.0d
+			y: 9.0d
 		}
 		{
+			dependencies: ["442F2CDD520D1635"]
+			description: ["The Molecular Assembler can auto craft items you would normally craft in a crafting table. You'll want a healthy supply of these going forward. One of your first steps now that you've got autocrafting up and running is to automate all the AE2 machines needed to keep growing your automation infrastructure."]
+			id: "3536FB7F3C7E0EB7"
 			tasks: [{
 				id: "20ED44381B5FF701"
-				type: "item"
 				item: "ae2:molecular_assembler"
+				type: "item"
 			}]
-			description: ["The Molecular Assembler can auto craft items you would normally craft in a crafting table. You'll want a healthy supply of these going forward. One of your first steps now that you've got autocrafting up and running is to automate all the AE2 machines needed to keep growing your automation infrastructure."]
-			dependencies: ["442F2CDD520D1635"]
-			id: "3536FB7F3C7E0EB7"
-			y: 11.0d
 			x: -3.0d
+			y: 11.0d
 		}
 		{
+			dependencies: ["442F2CDD520D1635"]
+			description: ["The Crafting Unit is used to make Crafting Storage which are used in auto crafting. For larger and more complex recipe chains, you'll need larger capacity crafting storage."]
+			id: "05DD68D32A53113D"
 			tasks: [{
 				id: "0C70ED08BD3F1579"
-				type: "item"
 				item: "ae2:crafting_unit"
+				type: "item"
 			}]
-			description: ["The Crafting Unit is used to make Crafting Storage which are used in auto crafting. For larger and more complex recipe chains, you'll need larger capacity crafting storage."]
-			dependencies: ["442F2CDD520D1635"]
-			id: "05DD68D32A53113D"
-			y: 10.0d
 			x: -2.0d
+			y: 10.0d
 		}
 		{
+			dependencies: ["05DD68D32A53113D"]
+			description: ["The Co-Processing Unit can be attached to Crafting Storage to make a multiblock. This multiblock, when attached to an AE2 network will allow you to parallelize your crafting processes and increase your autocrafting speed."]
+			id: "25FB81E1D3823E00"
 			tasks: [{
 				id: "555098F6965A5E85"
-				type: "item"
 				item: "ae2:crafting_accelerator"
+				type: "item"
 			}]
-			description: ["The Co-Processing Unit can be attached to Crafting Storage to make a multiblock. This multiblock, when attached to an AE2 network will allow you to parallelize your crafting processes and increase your autocrafting speed."]
-			dependencies: ["05DD68D32A53113D"]
-			id: "25FB81E1D3823E00"
-			y: 11.0d
 			x: -1.0d
+			y: 11.0d
 		}
 		{
-			tasks: [
-				{
-					id: "737897605A2BF193"
-					type: "item"
-					item: "ae2:basic_card"
-				}
-				{
-					id: "63DE248773C547CD"
-					type: "item"
-					item: "ae2:advanced_card"
-				}
-			]
+			dependencies: ["4D865ED8C0CFA5EE"]
 			description: [
 				"The Basic and Advanced Cards are used to improve or modify the behaviour of AE2 machines. "
 				""
 				"In the tooltip of each card, you can see which machines/devices the card can be applied to."
 			]
-			dependencies: ["4D865ED8C0CFA5EE"]
 			id: "05277CB2748ACC48"
-			y: -1.0d
-			x: 1.5d
-		}
-		{
-			tasks: [{
-				id: "384A1CF869472C89"
-				type: "item"
-				item: "ae2:speed_card"
-			}]
-			description: ["The Acceleration Card increases the speed of AE2 devices. It has a wide array of uses from Machines themselves to Export/Import bus speed."]
-			id: "58278D42FB109C24"
-			x: 3.5d
-			y: -2.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "392D47660E2C68CA"
-				type: "item"
-				item: "ae2:redstone_card"
-			}]
-			description: ["The Redstone Card allows devices to be controlled via redstone."]
-			id: "6CB308B1C0DC7009"
-			x: 3.0d
-			y: 1.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "1E809196758BC9EB"
-				type: "item"
-				item: "ae2:capacity_card"
-			}]
-			description: ["The Capacity Card increases the capacity of inventories of AE2 Devices such as the Import/Export buses."]
-			id: "2ED0AA121FEAE88E"
-			x: 2.0d
-			y: 1.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "0CAD849C55E415BB"
-				type: "item"
-				item: "ae2:void_card"
-			}]
-			description: ["The Overflow Destruction Card will void extras coming into AE2 cells."]
-			id: "7ED447BD16B4649B"
-			x: 3.5d
-			y: -0.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "5E45A4D9AB633FDF"
-				type: "item"
-				item: "ae2:fuzzy_card"
-			}]
-			description: ["The Fuzzy Card adds damage comparison abilities to ME devices."]
-			id: "284C7C50DC1CEB33"
-			x: 3.0d
-			y: -3.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "43BC791F4C1E6075"
-				type: "item"
-				item: "ae2:inverter_card"
-			}]
-			description: ["The Inverter Card will modify the filtering behaviour of devices that have filters applied. By default, filters act as allow lists. With the inverter card, that allow list is flipped to a deny list."]
-			id: "43A3AE8233B609DB"
-			x: 2.0d
-			y: -3.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "2A7A4D1AEF3CD805"
-				type: "item"
-				item: "ae2:crafting_card"
-			}]
-			description: ["The Crafting Card is a card that when inserted into an AE2 device that requests an item from the network. If there is no available item in the network, but an autocrafting recipe is configured, it will request an autocraft of the item. Very useful when you want to keep an item stocked and without having to request the autocraft every time."]
-			id: "0400A33ABC5A0A5D"
-			x: 3.5d
-			y: 0.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
-			tasks: [{
-				id: "078DE0837347FF11"
-				type: "item"
-				item: "ae2:energy_card"
-			}]
-			description: ["The Energy Card increases the energy capacity of AE2 devices."]
-			id: "13868A2732A4B5A6"
-			x: 3.5d
-			y: -1.5d
-			dependencies: ["05277CB2748ACC48"]
-			optional: true
-		}
-		{
 			tasks: [
 				{
-					id: "03228E1B0D9746BB"
+					id: "737897605A2BF193"
+					item: "ae2:basic_card"
 					type: "item"
-					item: "ae2:energy_acceptor"
 				}
 				{
-					id: "1E3CBF8D80615F77"
+					id: "63DE248773C547CD"
+					item: "ae2:advanced_card"
 					type: "item"
-					item: {
-						id: "ae2:energy_cell"
-						Count: 1b
-						tag: { }
-					}
 				}
 			]
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Acceleration Card increases the speed of AE2 devices. It has a wide array of uses from Machines themselves to Export/Import bus speed."]
+			id: "58278D42FB109C24"
+			optional: true
+			tasks: [{
+				id: "384A1CF869472C89"
+				item: "ae2:speed_card"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Redstone Card allows devices to be controlled via redstone."]
+			id: "6CB308B1C0DC7009"
+			optional: true
+			tasks: [{
+				id: "392D47660E2C68CA"
+				item: "ae2:redstone_card"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Capacity Card increases the capacity of inventories of AE2 Devices such as the Import/Export buses."]
+			id: "2ED0AA121FEAE88E"
+			optional: true
+			tasks: [{
+				id: "1E809196758BC9EB"
+				item: "ae2:capacity_card"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Overflow Destruction Card will void extras coming into AE2 cells."]
+			id: "7ED447BD16B4649B"
+			optional: true
+			tasks: [{
+				id: "0CAD849C55E415BB"
+				item: "ae2:void_card"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Fuzzy Card adds damage comparison abilities to ME devices."]
+			id: "284C7C50DC1CEB33"
+			optional: true
+			tasks: [{
+				id: "5E45A4D9AB633FDF"
+				item: "ae2:fuzzy_card"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Inverter Card will modify the filtering behaviour of devices that have filters applied. By default, filters act as allow lists. With the inverter card, that allow list is flipped to a deny list."]
+			id: "43A3AE8233B609DB"
+			optional: true
+			tasks: [{
+				id: "43BC791F4C1E6075"
+				item: "ae2:inverter_card"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Crafting Card is a card that when inserted into an AE2 device that requests an item from the network. If there is no available item in the network, but an autocrafting recipe is configured, it will request an autocraft of the item. Very useful when you want to keep an item stocked and without having to request the autocraft every time."]
+			id: "0400A33ABC5A0A5D"
+			optional: true
+			tasks: [{
+				id: "2A7A4D1AEF3CD805"
+				item: "ae2:crafting_card"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["05277CB2748ACC48"]
+			description: ["The Energy Card increases the energy capacity of AE2 devices."]
+			id: "13868A2732A4B5A6"
+			optional: true
+			tasks: [{
+				id: "078DE0837347FF11"
+				item: "ae2:energy_card"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4D865ED8C0CFA5EE"]
 			description: [
 				"To power everything in your AE2 network, you'll want to convert EU to AE's power. To do this, put an energy connector at the point where you want to convert the EU power and run AE2 cables from there to power your machines."
 				"The Energy Cell will accept and store AE2 power acting as a buffer."
 			]
-			dependencies: ["4D865ED8C0CFA5EE"]
 			id: "55A626418702B63D"
-			y: 6.5d
+			tasks: [
+				{
+					id: "03228E1B0D9746BB"
+					item: "ae2:energy_acceptor"
+					type: "item"
+				}
+				{
+					id: "1E3CBF8D80615F77"
+					item: {
+						Count: 1b
+						id: "ae2:energy_cell"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
 			x: -4.5d
+			y: 6.5d
 		}
 		{
+			dependencies: ["4D865ED8C0CFA5EE"]
+			description: ["You can use Panels to access your AE2 network."]
+			id: "2AD843F96B7768DE"
 			tasks: [
 				{
 					id: "6E75565CC68E5877"
-					type: "item"
 					item: "ae2:semi_dark_monitor"
+					type: "item"
 				}
 				{
 					id: "55E4BC3B675787AF"
-					type: "item"
 					item: "ae2:crafting_terminal"
+					type: "item"
 				}
 			]
-			description: ["You can use Panels to access your AE2 network."]
-			dependencies: ["4D865ED8C0CFA5EE"]
-			id: "2AD843F96B7768DE"
-			y: 4.5d
 			x: -6.0d
+			y: 4.5d
 		}
 		{
+			dependencies: ["6816DA41E1FAF322"]
+			description: ["The Pattern Encoding Terminal allows you to encode Blank Patterns with recipes."]
+			id: "638A1F2839EF5F48"
 			tasks: [
 				{
 					id: "28513AF62D280933"
-					type: "item"
 					item: "ae2:pattern_encoding_terminal"
+					type: "item"
 				}
 				{
 					id: "353447C3244D29D4"
-					type: "item"
 					item: "ae2:pattern_access_terminal"
+					type: "item"
 				}
 			]
-			description: ["The Pattern Encoding Terminal allows you to encode Blank Patterns with recipes."]
-			dependencies: ["6816DA41E1FAF322"]
-			id: "638A1F2839EF5F48"
-			y: 11.0d
 			x: -5.0d
+			y: 11.0d
 		}
 		{
-			tasks: [{
-				id: "12473A56F4E721A1"
-				type: "item"
-				item: {
-					id: "ae2:dense_energy_cell"
-					Count: 1b
-					tag: { }
-				}
-			}]
+			dependencies: ["55A626418702B63D"]
 			description: ["The Dense Energy Cell is a larger capacity Energy Cell."]
 			id: "732A6902A67358C6"
+			optional: true
+			tasks: [{
+				id: "12473A56F4E721A1"
+				item: {
+					Count: 1b
+					id: "ae2:dense_energy_cell"
+					tag: { }
+				}
+				type: "item"
+			}]
 			x: -5.0d
 			y: 7.5d
-			dependencies: ["55A626418702B63D"]
-			optional: true
 		}
 		{
-			tasks: [{
-				id: "181B3FA47B9E0E69"
-				type: "item"
-				item: "ae2:fluix_pearl"
-			}]
-			description: ["Fluix Pearls are needed to get into Wireless Access to your AE2 network. "]
 			dependencies: [
 				"43445B8D308A025D"
 				"2AD843F96B7768DE"
 			]
+			description: ["Fluix Pearls are needed to get into Wireless Access to your AE2 network. "]
 			id: "6B8BBCB8E519F0EB"
-			y: 7.0d
+			tasks: [{
+				id: "181B3FA47B9E0E69"
+				item: "ae2:fluix_pearl"
+				type: "item"
+			}]
 			x: -7.0d
+			y: 7.0d
 		}
 		{
+			dependencies: ["6B8BBCB8E519F0EB"]
+			description: ["The Wireless Access Point needs to be attached to your ME network in some way to allow wireless access."]
+			id: "4997ED6EC1212FB6"
 			tasks: [
 				{
 					id: "388B2923F5D5CB65"
-					type: "item"
 					item: "ae2:wireless_receiver"
+					type: "item"
 				}
 				{
 					id: "0E8E22CF771A1C0D"
-					type: "item"
 					item: "ae2:wireless_access_point"
+					type: "item"
 				}
 			]
-			description: ["The Wireless Access Point needs to be attached to your ME network in some way to allow wireless access."]
-			dependencies: ["6B8BBCB8E519F0EB"]
-			id: "4997ED6EC1212FB6"
-			y: 9.0d
 			x: -7.0d
+			y: 9.0d
 		}
 		{
+			dependencies: ["4997ED6EC1212FB6"]
+			description: ["The Security Terminal is used to bind the wireless access terminal to your network."]
+			id: "2A184FB82FD425EA"
 			tasks: [{
 				id: "2CA107EDE820E433"
-				type: "item"
 				item: "ae2:security_station"
+				type: "item"
 			}]
-			description: ["The Security Terminal is used to bind the wireless access terminal to your network."]
-			dependencies: ["4997ED6EC1212FB6"]
-			id: "2A184FB82FD425EA"
-			y: 11.0d
 			x: -7.0d
+			y: 11.0d
 		}
 		{
-			tasks: [
-				{
-					id: "6885BA9381A88A45"
-					type: "item"
-					item: "ae2:wireless_crafting_terminal"
-				}
-				{
-					id: "7AB2105106647C2C"
-					type: "item"
-					item: "ae2wtlib:wireless_pattern_encoding_terminal"
-				}
-				{
-					id: "23F6495E06004A3C"
-					type: "item"
-					item: "ae2wtlib:wireless_pattern_access_terminal"
-				}
-				{
-					id: "189C0AD5E6902CF3"
-					type: "item"
-					item: "ae2wtlib:wireless_universal_terminal"
-				}
-			]
+			dependencies: ["2A184FB82FD425EA"]
 			description: [
 				"These are the different wireless access terminals available to you. You can combine them to have a Universal Access Terminal which allows you to do pretty much everything you need with your AE2 network."
 				""
@@ -710,44 +688,61 @@
 				"&o&b 47 : I can literally just press a button on my keyboard and have access to all my shit"
 			]
 			id: "16F789FC4A28DB47"
+			min_width: 250
+			tasks: [
+				{
+					id: "6885BA9381A88A45"
+					item: "ae2:wireless_crafting_terminal"
+					type: "item"
+				}
+				{
+					id: "7AB2105106647C2C"
+					item: "ae2wtlib:wireless_pattern_encoding_terminal"
+					type: "item"
+				}
+				{
+					id: "23F6495E06004A3C"
+					item: "ae2wtlib:wireless_pattern_access_terminal"
+					type: "item"
+				}
+				{
+					id: "189C0AD5E6902CF3"
+					item: "ae2wtlib:wireless_universal_terminal"
+					type: "item"
+				}
+			]
 			x: -7.0d
 			y: 13.0d
-			min_width: 250
-			dependencies: ["2A184FB82FD425EA"]
 		}
 		{
+			dependencies: ["6A843C0106F04056"]
+			description: ["The ME DISK is similar to the Item Storage, only without the type limitation. Very useful for a pack like this with many different components being stored."]
+			id: "0A1433F1F4A6E7C3"
 			tasks: [{
 				id: "0E3FF26CC3B64DFB"
-				type: "item"
 				item: "ae2things:disk_housing"
+				type: "item"
 			}]
-			description: ["The ME DISK is similar to the Item Storage, only without the type limitation. Very useful for a pack like this with many different components being stored."]
-			dependencies: ["6A843C0106F04056"]
-			id: "0A1433F1F4A6E7C3"
-			y: 5.5d
 			x: 3.0d
+			y: 5.5d
 		}
 		{
-			tasks: [{
-				id: "06507334B1A6A15E"
-				type: "item"
-				item: "ae2:level_emitter"
-			}]
+			dependencies: ["6CB308B1C0DC7009"]
 			description: [
 				"The ME Level Emitter emits a redstone signal based on the quantity of certain items in an ME Network. You can configure the item level you want to monitor in the emitter's UI."
 				"This can be used in conjunction with a Redstone Card and a Crafting Card to keep an exact number of components in stock."
 			]
-			dependencies: ["6CB308B1C0DC7009"]
 			id: "30BB4E155CF37C03"
-			y: 2.5d
+			tasks: [{
+				id: "06507334B1A6A15E"
+				item: "ae2:level_emitter"
+				type: "item"
+			}]
 			x: 4.0d
+			y: 2.5d
 		}
 		{
-			tasks: [{
-				id: "537CF467A7148826"
-				type: "item"
-				item: "ae2:wireless_booster"
-			}]
+			dependencies: ["2A184FB82FD425EA"]
 			description: [
 				"Place these in your wireless access point to increase the range of your wireless AE2 access for an increased power cost."
 				""
@@ -769,10 +764,15 @@
 				"&o 1Y : nothing is good"
 			]
 			id: "747601C1805F9058"
+			min_width: 280
+			tasks: [{
+				id: "537CF467A7148826"
+				item: "ae2:wireless_booster"
+				type: "item"
+			}]
 			x: -9.0d
 			y: 11.0d
-			min_width: 280
-			dependencies: ["2A184FB82FD425EA"]
 		}
 	]
+	title: "X - Misplaced Energistics"
 }

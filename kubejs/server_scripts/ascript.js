@@ -883,6 +883,13 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "minecraft:raw_iron"}],
 			"results": [{"count": 2, "item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
 	})
+	// yttr
+	event.custom({
+			"type": "create:milling",
+			"processingTime":500,
+			"ingredients": [{"item": "yttr:xl_iron_ingot"}],
+			"results": [{"count": 6, "item": "create:crushed_iron_ore"},{"count": 3, "item": "create:crushed_iron_ore", "chance": 0.50}]
+	})
 	event.custom({
 			"type": "create:milling",
 			"processingTime":200,

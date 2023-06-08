@@ -1,166 +1,149 @@
 {
-	quest_links: [ ]
 	default_hide_dependency_lines: false
-	group: "113481E7A031FCFE"
-	id: "4778389FCB6B1C16"
-	filename: "5_endgame"
 	default_quest_shape: ""
+	filename: "5_endgame"
+	group: "113481E7A031FCFE"
 	icon: "modern_industrialization:quantum_circuit"
-	title: "5 - Endgame"
+	id: "4778389FCB6B1C16"
 	order_index: 6
+	quest_links: [ ]
 	quests: [
 		{
-			size: 2.0d
+			dependencies: ["76487F82BBFA5075"]
 			description: ["Welcome to the final chapter of Incremental Industries. Congratulations on getting this far. This chapter will focus on working through Quantum Tier machinery and components. Afterwards there are some creative recipes that we hope won't be too grindy or AFK heavy."]
 			id: "3F0F0BA8A9D7AB34"
-			x: 0.0d
-			y: -1.0d
-			shape: "gear"
-			title: "In the Elon(g) Game now"
 			min_width: 250
+			shape: "gear"
+			size: 2.0d
 			subtitle: "the point where your industry sinks because you start making an unending sequelae of terrible choices"
-			dependencies: ["76487F82BBFA5075"]
 			tasks: [{
 				id: "3CC4B7B950719374"
-				type: "checkmark"
 				title: "Welcome To The Endgame"
+				type: "checkmark"
 			}]
+			title: "In the Elon(g) Game now"
+			x: 0.0d
+			y: -1.0d
 		}
 		{
+			dependencies: ["610B5BA4B0586238"]
+			description: ["Singularities are used in many Endgame crafting recipes here. Not to be confused with the AE2 version, which is.... also used in various endgame recipes."]
+			id: "5C2DEAC989EB48E9"
 			tasks: [{
 				id: "14418D9D10CD706C"
-				type: "item"
 				item: "modern_industrialization:singularity"
+				type: "item"
 			}]
-			description: ["Singularities are used in many Endgame crafting recipes here. Not to be confused with the AE2 version, which is.... also used in various endgame recipes."]
-			dependencies: ["610B5BA4B0586238"]
-			id: "5C2DEAC989EB48E9"
-			y: 5.5d
 			x: -2.5d
+			y: 5.5d
 		}
 		{
+			dependencies: ["2D2F9187D77B8D3A"]
+			description: ["With your Tritium \\& Plutonium Ingots, you can now make Nukes. Congrats?"]
+			id: "610B5BA4B0586238"
 			tasks: [{
 				id: "5B0387F99F42934E"
-				type: "item"
 				item: "modern_industrialization:nuke"
+				type: "item"
 			}]
-			description: ["With your Tritium \\& Plutonium Ingots, you can now make Nukes. Congrats?"]
-			dependencies: ["2D2F9187D77B8D3A"]
-			id: "610B5BA4B0586238"
-			y: 4.0d
 			x: -1.5d
+			y: 4.0d
 		}
 		{
+			dependencies: ["55105E79B845FBFA"]
+			description: ["You can use your depleted fuel rods to get byproducts, including plutonium."]
+			id: "2D2F9187D77B8D3A"
 			tasks: [
 				{
 					id: "20DBA918C35FCCBD"
-					type: "item"
 					item: "modern_industrialization:uranium_fuel_rod_depleted"
+					type: "item"
 				}
 				{
 					id: "5B80B1CBF5048388"
-					type: "item"
 					item: "modern_industrialization:plutonium_tiny_dust"
+					type: "item"
 				}
 			]
-			description: ["You can use your depleted fuel rods to get byproducts, including plutonium."]
-			dependencies: ["55105E79B845FBFA"]
-			id: "2D2F9187D77B8D3A"
-			y: 2.5d
 			x: -1.5d
+			y: 2.5d
 		}
 		{
+			dependencies: ["610B5BA4B0586238"]
+			description: ["Plutonium Battery is the final tier of battery and leads into Superconductor tier power."]
+			id: "455B551BC1710046"
 			tasks: [{
 				id: "1D538BF656184AA2"
-				type: "item"
 				item: "modern_industrialization:plutonium_battery"
+				type: "item"
 			}]
-			description: ["Plutonium Battery is the final tier of battery and leads into Superconductor tier power."]
-			dependencies: ["610B5BA4B0586238"]
-			id: "455B551BC1710046"
-			y: 5.5d
 			x: -0.5d
+			y: 5.5d
 		}
 		{
+			dependencies: ["55105E79B845FBFA"]
+			description: ["The final tier of circuit and the final sequenced assembly line."]
+			id: "5E713027C4CB4B2D"
 			tasks: [{
 				id: "3CC22800102C3E25"
-				type: "item"
 				item: "modern_industrialization:quantum_circuit"
+				type: "item"
 			}]
-			description: ["The final tier of circuit and the final sequenced assembly line."]
-			dependencies: ["55105E79B845FBFA"]
-			id: "5E713027C4CB4B2D"
-			y: 5.5d
 			x: 1.5d
+			y: 5.5d
 		}
 		{
+			dependencies: ["3F0F0BA8A9D7AB34"]
+			description: ["Small amounts of Tritium can be created from Hydrogen. However, if you set up your nuclear reactor last chapter, you can get it in larger quantities. Have a look at REI to see some of the reactions that create Tritium"]
+			id: "55105E79B845FBFA"
 			tasks: [{
 				id: "4DB3F1DCE044C721"
-				type: "item"
 				item: "modern_industrialization:tritium_bucket"
+				type: "item"
 			}]
-			description: ["Small amounts of Tritium can be created from Hydrogen. However, if you set up your nuclear reactor last chapter, you can get it in larger quantities. Have a look at REI to see some of the reactions that create Tritium"]
-			dependencies: ["3F0F0BA8A9D7AB34"]
-			id: "55105E79B845FBFA"
-			y: 1.5d
 			x: 0.0d
+			y: 1.5d
 		}
 		{
-			tasks: [
-				{
-					id: "7D10791EF47833FE"
-					type: "item"
-					item: "modern_industrialization:quantum_machine_hull"
-				}
-				{
-					id: "464DE18DD0384093"
-					type: "item"
-					item: "geghilarity:sacred_platinoreum"
-				}
+			dependencies: [
+				"455B551BC1710046"
+				"5E713027C4CB4B2D"
 			]
 			description: [
 				"The Quantum Machine Hull is the final tier of machine hull, used to upgrade machines to Superconductor tier."
 				""
 				"&o : ...Enjoy?"
 			]
-			dependencies: [
-				"455B551BC1710046"
-				"5E713027C4CB4B2D"
-			]
 			id: "2B4415EDBDE7F66D"
-			y: 8.0d
-			x: 0.5d
-		}
-		{
-			tasks: [{
-				id: "7E937B7C57B7C7F9"
-				type: "item"
-				item: "modern_industrialization:superconductor_storage_unit"
-			}]
-			description: ["The Superconductor Tier Storage Unit can feed Superconductor machines. "]
-			dependencies: ["2B4415EDBDE7F66D"]
-			id: "66D1EE1ECFAE9DD7"
-			y: 7.5d
-			x: 2.5d
-		}
-		{
 			tasks: [
 				{
-					id: "6E776D031F9C6C2D"
+					id: "7D10791EF47833FE"
+					item: "modern_industrialization:quantum_machine_hull"
 					type: "item"
-					item: "modern_industrialization:fusion_reactor"
 				}
 				{
-					id: "6F63A1665F3DBA0A"
+					id: "464DE18DD0384093"
+					item: "geghilarity:sacred_platinoreum"
 					type: "item"
-					item: "modern_industrialization:plasma_turbine"
-				}
-				{
-					id: "609972DEE5C6C985"
-					type: "item"
-					item: "modern_industrialization:helium_plasma_bucket"
 				}
 			]
+			x: 0.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["2B4415EDBDE7F66D"]
+			description: ["The Superconductor Tier Storage Unit can feed Superconductor machines. "]
+			id: "66D1EE1ECFAE9DD7"
+			tasks: [{
+				id: "7E937B7C57B7C7F9"
+				item: "modern_industrialization:superconductor_storage_unit"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["2B4415EDBDE7F66D"]
 			description: [
 				"The Fusion Reactor is the most efficient power generation system in the pack. "
 				""
@@ -171,94 +154,111 @@
 				"NOTE: The energy output hatch must go on the back of the multiblock."
 			]
 			id: "7DDCBDA2EA09F689"
+			min_width: 250
+			tasks: [
+				{
+					id: "6E776D031F9C6C2D"
+					item: "modern_industrialization:fusion_reactor"
+					type: "item"
+				}
+				{
+					id: "6F63A1665F3DBA0A"
+					item: "modern_industrialization:plasma_turbine"
+					type: "item"
+				}
+				{
+					id: "609972DEE5C6C985"
+					item: "modern_industrialization:helium_plasma_bucket"
+					type: "item"
+				}
+			]
 			x: 2.5d
 			y: 9.0d
-			min_width: 250
-			dependencies: ["2B4415EDBDE7F66D"]
 		}
 		{
-			tasks: [{
-				id: "481335BAB22B0E23"
-				type: "item"
-				item: "modern_industrialization:uu_matter_bucket"
-			}]
 			dependencies: ["5C2DEAC989EB48E9"]
 			id: "7CB6C37F949456D2"
-			y: 8.0d
+			tasks: [{
+				id: "481335BAB22B0E23"
+				item: "modern_industrialization:uu_matter_bucket"
+				type: "item"
+			}]
 			x: -2.5d
+			y: 8.0d
 		}
 		{
-			tasks: [{
-				id: "540A429687066ED6"
-				type: "item"
-				item: "modern_industrialization:quantum_upgrade"
-			}]
-			description: ["Quantum tier machines can take one Quantum Tier Upgrade per machine. This overclocks the machine to provide +1000MEU/t."]
 			dependencies: [
 				"7CB6C37F949456D2"
 				"2B4415EDBDE7F66D"
 			]
+			description: ["Quantum tier machines can take one Quantum Tier Upgrade per machine. This overclocks the machine to provide +1000MEU/t."]
 			id: "2395BE66C4618687"
-			y: 10.0d
+			tasks: [{
+				id: "540A429687066ED6"
+				item: "modern_industrialization:quantum_upgrade"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 10.0d
 		}
 		{
-			tasks: [{
-				id: "7BE312E90941CF96"
-				type: "item"
-				item: "modern_industrialization:creative_tank"
-			}]
+			dependencies: ["0DE0660E29A922A2"]
 			description: [
 				"The Creative Fluid Tank will create an infinite amount of any fluid you insert into it."
 				""
 				"NOTE: To empty the tank again, place the filled tank in a crafting grid and it will empty itself."
 			]
-			dependencies: ["0DE0660E29A922A2"]
 			id: "541B11E7306AF4A0"
-			y: 15.0d
+			tasks: [{
+				id: "7BE312E90941CF96"
+				item: "modern_industrialization:creative_tank"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 15.0d
 		}
 		{
+			dependencies: ["2395BE66C4618687"]
+			description: ["The Creative Storage Unit will provide you with infinite EU. You may need to add some more Mechanical Crafters to your setup in order to craft these final few recipes!"]
+			id: "0DE0660E29A922A2"
 			tasks: [{
 				id: "13A6BCFB2381AA7B"
-				type: "item"
 				item: "modern_industrialization:creative_storage_unit"
+				type: "item"
 			}]
-			description: ["The Creative Storage Unit will provide you with infinite EU. You may need to add some more Mechanical Crafters to your setup in order to craft these final few recipes!"]
-			dependencies: ["2395BE66C4618687"]
-			id: "0DE0660E29A922A2"
-			y: 12.5d
 			x: -1.0d
+			y: 12.5d
 		}
 		{
-			tasks: [{
-				id: "628C48A8AF49FAC3"
-				type: "item"
-				item: "modern_industrialization:replicator"
-			}]
+			dependencies: ["541B11E7306AF4A0"]
 			description: [
 				"The Replicator is the final step of this modpack. It takes a small amount of UU Matter and can replicate pretty much any item in the entire pack."
 				""
 				"Congratulations and thanks for playing. To quote the MI guidebook, it's now Yourcraft!"
 			]
-			dependencies: ["541B11E7306AF4A0"]
 			id: "58737F6ECDB5F10C"
-			y: 17.5d
+			tasks: [{
+				id: "628C48A8AF49FAC3"
+				item: "modern_industrialization:replicator"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 17.5d
 		}
 		{
-			size: 2.0d
+			dependencies: ["58737F6ECDB5F10C"]
 			description: [
 				""
 				" &o&7What's a pentazygon?"
 				""
 			]
 			id: "16AC400F1A3D837F"
+			shape: "gear"
+			size: 2.0d
+			title: "?"
 			x: -1.0d
 			y: 21.0d
-			shape: "gear"
-			title: "?"
-			dependencies: ["58737F6ECDB5F10C"]
 		}
 	]
+	title: "5 - Endgame"
 }

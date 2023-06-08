@@ -1135,24 +1135,6 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:barrel'
 	})
 	
-	
-	
-	
-	
-	event.recipes.modern_industrialization.coke_oven({
-		eu: 2,
-		duration: 600,
-		item_inputs: [
-			{item: "minecraft:charcoal", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:coke", amount: 1}
-		],
-		fluid_outputs: [
-				{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.35}
-			]
-	})
-	
 	///// IRON CATASTROPHY /////
 	event.remove({id: 'modern_industrialization:materials/uncooked_steel_dust'})
 	event.remove({id: 'modern_industrialization:steam_age/steel/steel_upgrade_asbl'})
@@ -1364,8 +1346,9 @@ ServerEvents.recipes(event => {
 		eu: 8,
 		duration: 200,
 		item_inputs : [
-			{item: "modern_industrialization:carbon_dust", amount: 1},
-			{item: "modern_industrialization:iron_dust", amount: 3}
+			{item: "modern_industrialization:iron_dust", amount: 3},
+			{item: "modern_industrialization:carbon_dust", amount: 1}
+			
 		],
 		item_outputs :
 		[
@@ -1376,8 +1359,7 @@ ServerEvents.recipes(event => {
 		eu: 8,
 		duration: 300,
 		item_inputs : [
-			{item: "modern_industrialization:uncooked_steel_dust", amount: 1},
-			{item: "geggy:limestone_dust", amount: 1}
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 1}
 		],
 		item_outputs :
 		[
@@ -1460,7 +1442,8 @@ ServerEvents.recipes(event => {
 		duration: 400,
 		item_inputs: [
 			{item: "geggy:wrought_dust", amount: 7},
-			{item: "modern_industrialization:coke_dust", amount: 2}
+			{item: "modern_industrialization:coke_dust", amount: 4},
+			{item: "geggy:limestone_dust", amount: 3}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:uncooked_steel_dust", amount: 7}
@@ -1471,7 +1454,8 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [
 			{item: "geggy:wrought_dust", amount: 3},
-			{item: "modern_industrialization:carbon_dust", amount: 1}
+			{item: "modern_industrialization:carbon_dust", amount: 1},
+			{item: "geggy:limestone_dust", amount: 1}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:uncooked_steel_dust", amount: 4}
@@ -2329,11 +2313,14 @@ event.shaped('moderndynamics:machine_extender', [
 	event.remove({id: 'magick:dust_to_diamond'})
 	
 	// NEW IRON/STEEL
+	event.remove({id: 'yttr:crafting/iron_nugget'})
+	event.remove({id: 'yttr:shattering/yttr/crafting/iron_nugget'})
 	event.remove({id: 'modern_industrialization:materials/iron/smelting/tiny_dust_to_nugget_smelting'})
 	event.remove({id: 'modern_industrialization:materials/iron/smelting/tiny_dust_to_nugget_blasting'})
-	event.shaped('3x geggy:tiny_iron_blend_dust', [
+	// 3 to 2 to match ingot pbf
+	event.shaped('2x geggy:tiny_iron_blend_dust', [
 		'SSS',
-		'B  ',
+		'BB ',
 		'   '
 	], {
 		S: 'modern_industrialization:iron_tiny_dust',
@@ -2362,6 +2349,28 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "geggy:pig_iron_ingot", amount: 2}
 		]
 	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 900,
+		item_inputs: [
+			{item: "modern_industrialization:iron_dust", amount: 3},
+			{item: "minecraft:coal", amount: 3}
+		],
+		item_outputs: [
+			{item: "geggy:pig_iron_ingot", amount: 2}
+		]
+	})
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 2,
+		duration: 900,
+		item_inputs: [
+			{item: "modern_industrialization:iron_dust", amount: 3},
+			{item: "minecraft:charcoal", amount: 3}
+		],
+		item_outputs: [
+			{item: "geggy:pig_iron_ingot", amount: 2}
+		]
+	})
 	event.blasting('minecraft:iron_ingot', 'geggy:pig_iron_ingot').cookingTime(200)
 	event.recipes.modern_industrialization.blast_furnace({
 		eu: 120,
@@ -2374,6 +2383,33 @@ event.shaped('moderndynamics:machine_extender', [
 		],
 		item_outputs: [
 			{item: "modern_industrialization:steel_ingot", amount: 1}
+		]
+	})
+	
+	event.recipes.modern_industrialization.coke_oven({
+		eu: 2,
+		duration: 600,
+		item_inputs: [
+			{item: "minecraft:charcoal", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:coke", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.5}
+		]
+	})
+	event.recipes.modern_industrialization.coke_oven({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "minecraft:coal", amount: 1}
+		],
+		item_outputs: [
+			{item: "minecraft:charcoal", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.35}
 		]
 	})
 	

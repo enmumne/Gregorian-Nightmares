@@ -1,257 +1,252 @@
 {
-	quest_links: [ ]
 	default_hide_dependency_lines: false
-	group: "0E7F30F354FA6BBD"
-	id: "49B71AA27632F02D"
-	filename: "storage"
 	default_quest_shape: ""
+	filename: "storage"
+	group: "0E7F30F354FA6BBD"
 	icon: "minecraft:ender_chest"
-	title: "Storage"
+	id: "49B71AA27632F02D"
 	order_index: 2
+	quest_links: [ ]
 	quests: [
 		{
-			size: 1.5d
 			description: [
 				"AE2 &mis&r (was) here... but you're a ways off that. Let's get started with some other storage options"
 				""
 				"Similarly to the Power questline, this is a progression guide for storage throughout the pack. "
 			]
-			x: -1.5d
 			id: "6434DF2EDDFBAB8E"
-			y: -0.75d
 			shape: "gear"
+			size: 1.5d
 			tasks: [{
 				id: "47434FB41B21E470"
-				type: "checkmark"
 				title: "Now where did I put that?"
+				type: "checkmark"
 			}]
+			x: -1.5d
+			y: -0.75d
 		}
 		{
-			tasks: [{
-				id: "1AD584AE8BA94C22"
-				type: "item"
-				item: "minecraft:chest"
-			}]
 			dependencies: ["6434DF2EDDFBAB8E"]
 			id: "290C89BE98070B98"
-			y: 1.0d
+			tasks: [{
+				id: "1AD584AE8BA94C22"
+				item: "minecraft:chest"
+				type: "item"
+			}]
 			x: -2.0d
+			y: 1.0d
 		}
 		{
+			dependencies: ["290C89BE98070B98"]
+			id: "28A47CD5117CCF79"
 			tasks: [
 				{
 					id: "70E84DDEF6EE7D55"
-					type: "item"
 					item: "ironchests:copper_chest"
+					type: "item"
 				}
 				{
 					id: "4C822BA36F02314B"
-					type: "item"
 					item: "ironchests:copper_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["290C89BE98070B98"]
-			id: "28A47CD5117CCF79"
-			y: 3.0d
 			x: -3.0d
+			y: 3.0d
 		}
 		{
+			dependencies: ["28A47CD5117CCF79"]
+			id: "2718CB35826E24AA"
 			tasks: [
 				{
 					id: "7891AF92A59F8533"
-					type: "item"
 					item: "ironchests:iron_chest"
+					type: "item"
 				}
 				{
 					id: "3289584A8B2654EB"
-					type: "item"
 					item: "ironchests:iron_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["28A47CD5117CCF79"]
-			id: "2718CB35826E24AA"
-			y: 4.0d
 			x: -3.0d
+			y: 4.0d
 		}
 		{
+			dependencies: ["2718CB35826E24AA"]
+			id: "1B61B5542B9634AC"
 			tasks: [
 				{
 					id: "405B4C03E7A763F0"
-					type: "item"
 					item: "ironchests:gold_chest"
+					type: "item"
 				}
 				{
 					id: "0ECF3250A6DAA300"
-					type: "item"
 					item: "ironchests:gold_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["2718CB35826E24AA"]
-			id: "1B61B5542B9634AC"
-			y: 5.0d
 			x: -3.0d
+			y: 5.0d
 		}
 		{
+			dependencies: ["0A94B5213DD6E024"]
+			id: "5B72D7C0B973294B"
 			tasks: [
 				{
 					id: "297DF04AB0B8370E"
-					type: "item"
 					item: "ironchests:obsidian_chest"
+					type: "item"
 				}
 				{
 					id: "09821EB08F70E17A"
-					type: "item"
 					item: "ironchests:obsidian_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["0A94B5213DD6E024"]
-			id: "5B72D7C0B973294B"
-			y: 7.5d
 			x: -4.0d
+			y: 7.5d
 		}
 		{
+			dependencies: ["1B61B5542B9634AC"]
+			id: "0A94B5213DD6E024"
 			tasks: [
 				{
 					id: "3A115815C1650D67"
-					type: "item"
 					item: "ironchests:diamond_chest"
+					type: "item"
 				}
 				{
 					id: "50F3C68AD671BDC5"
-					type: "item"
 					item: "ironchests:diamond_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["1B61B5542B9634AC"]
-			id: "0A94B5213DD6E024"
-			y: 6.0d
 			x: -3.0d
+			y: 6.0d
 		}
 		{
+			dependencies: ["0A94B5213DD6E024"]
+			id: "057DCDD2012948AF"
 			tasks: [
 				{
 					id: "4B4ECAF089D86148"
-					type: "item"
 					item: "ironchests:netherite_chest"
+					type: "item"
 				}
 				{
 					id: "7E1E2338B5545FB4"
-					type: "item"
 					item: "ironchests:netherite_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["0A94B5213DD6E024"]
-			id: "057DCDD2012948AF"
-			y: 7.5d
 			x: -3.0d
+			y: 7.5d
 		}
 		{
+			dependencies: ["0A94B5213DD6E024"]
+			id: "2465E724CAE75FC0"
 			tasks: [
 				{
 					id: "4D15279CF008D3A9"
-					type: "item"
 					item: "ironchests:crystal_chest"
+					type: "item"
 				}
 				{
 					id: "5F4A379538198A05"
-					type: "item"
 					item: "ironchests:crystal_chest_upgrade"
+					type: "item"
 				}
 			]
-			dependencies: ["0A94B5213DD6E024"]
-			id: "2465E724CAE75FC0"
-			y: 7.5d
 			x: -2.0d
+			y: 7.5d
 		}
 		{
+			dependencies: ["290C89BE98070B98"]
+			id: "3D0B7974C2698F22"
 			tasks: [{
 				id: "01FEB9A920EC324E"
-				type: "item"
 				item: {
-					id: "ironchests:iron_dolly"
 					Count: 1b
+					id: "ironchests:iron_dolly"
 					tag: {
 						Damage: 0
 					}
 				}
+				type: "item"
 			}]
-			dependencies: ["290C89BE98070B98"]
-			id: "3D0B7974C2698F22"
-			y: 1.0d
 			x: -4.5d
+			y: 1.0d
 		}
 		{
-			tasks: [{
-				id: "23A1C6C0D09E984F"
-				type: "item"
-				item: "ironchests:diamond_dolly"
-			}]
 			dependencies: ["290C89BE98070B98"]
 			id: "74BF9430B2781CAB"
-			y: 2.5d
+			tasks: [{
+				id: "23A1C6C0D09E984F"
+				item: "ironchests:diamond_dolly"
+				type: "item"
+			}]
 			x: -4.5d
+			y: 2.5d
 		}
 		{
-			tasks: [{
-				id: "1C37963238BE33F5"
-				type: "item"
-				item: "modern_industrialization:bronze_tank"
-			}]
 			dependencies: ["0DE8E8DE8ED0A188"]
 			id: "5F48D92956456107"
-			y: -2.5d
+			tasks: [{
+				id: "1C37963238BE33F5"
+				item: "modern_industrialization:bronze_tank"
+				type: "item"
+			}]
 			x: 1.0d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "33BBF0CC277D4B46"
-				type: "item"
-				item: "modern_industrialization:steel_tank"
-			}]
 			dependencies: ["602099CF7D66E1D6"]
 			id: "4B79C7D711206EA5"
-			y: -2.5d
+			tasks: [{
+				id: "33BBF0CC277D4B46"
+				item: "modern_industrialization:steel_tank"
+				type: "item"
+			}]
 			x: 2.5d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "365A5F96459BCF88"
-				type: "item"
-				item: "modern_industrialization:aluminum_tank"
-			}]
 			dependencies: ["16A6737D722D4D53"]
 			id: "426363EB082A5E72"
-			y: -2.5d
+			tasks: [{
+				id: "365A5F96459BCF88"
+				item: "modern_industrialization:aluminum_tank"
+				type: "item"
+			}]
 			x: 4.0d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "6B41FBF055C51F19"
-				type: "item"
-				item: "modern_industrialization:stainless_steel_tank"
-			}]
 			dependencies: ["7603A4AD4FF474AF"]
 			id: "2314F00F819FD11E"
-			y: -2.5d
+			tasks: [{
+				id: "6B41FBF055C51F19"
+				item: "modern_industrialization:stainless_steel_tank"
+				type: "item"
+			}]
 			x: 5.5d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "2453F35A36E7683C"
-				type: "item"
-				item: "modern_industrialization:titanium_tank"
-			}]
 			dependencies: ["3486B8483AC8A2DB"]
 			id: "778A910F6AB0485A"
-			y: -2.5d
+			tasks: [{
+				id: "2453F35A36E7683C"
+				item: "modern_industrialization:titanium_tank"
+				type: "item"
+			}]
 			x: 7.0d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "1129F107831A1CDC"
-				type: "item"
-				item: "modern_industrialization:quantum_tank"
-			}]
+			dependencies: ["0EBB99B8AB8FD75D"]
 			description: [
 				""
 				"&o&d 0Z : That looks moderately fancy"
@@ -298,255 +293,260 @@
 				"&o&d 0Z : Complex numbers are neither positive nor negative as they can't be ordered"
 			]
 			id: "015C41345B3F5E8B"
+			min_width: 350
+			tasks: [{
+				id: "1129F107831A1CDC"
+				item: "modern_industrialization:quantum_tank"
+				type: "item"
+			}]
 			x: 8.5d
 			y: -2.5d
-			min_width: 350
-			dependencies: ["0EBB99B8AB8FD75D"]
 		}
 		{
-			tasks: [{
-				id: "55BBB86F63748582"
-				type: "item"
-				item: "modern_industrialization:bronze_barrel"
-			}]
 			dependencies: ["0DE8E8DE8ED0A188"]
 			id: "02D7FE162F17B0C8"
-			y: 0.5d
+			tasks: [{
+				id: "55BBB86F63748582"
+				item: "modern_industrialization:bronze_barrel"
+				type: "item"
+			}]
 			x: 1.0d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "6A16C05890F4FC9F"
-				type: "item"
-				item: "modern_industrialization:steel_barrel"
-			}]
 			dependencies: ["602099CF7D66E1D6"]
 			id: "32D4AEE46F08C599"
-			y: 0.5d
+			tasks: [{
+				id: "6A16C05890F4FC9F"
+				item: "modern_industrialization:steel_barrel"
+				type: "item"
+			}]
 			x: 2.5d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "23881A643BDB6F66"
-				type: "item"
-				item: "modern_industrialization:aluminum_barrel"
-			}]
 			dependencies: ["16A6737D722D4D53"]
 			id: "540AEB0A7EC315E5"
-			y: 0.5d
+			tasks: [{
+				id: "23881A643BDB6F66"
+				item: "modern_industrialization:aluminum_barrel"
+				type: "item"
+			}]
 			x: 4.0d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "12ADADCE7C7E6C52"
-				type: "item"
-				item: "modern_industrialization:stainless_steel_barrel"
-			}]
 			dependencies: ["7603A4AD4FF474AF"]
 			id: "06706E9DAC0E5129"
-			y: 0.5d
+			tasks: [{
+				id: "12ADADCE7C7E6C52"
+				item: "modern_industrialization:stainless_steel_barrel"
+				type: "item"
+			}]
 			x: 5.5d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "52B8082DB2996D93"
-				type: "item"
-				item: "modern_industrialization:titanium_barrel"
-			}]
 			dependencies: ["3486B8483AC8A2DB"]
 			id: "30D5CAE0CA0A6196"
-			y: 0.5d
+			tasks: [{
+				id: "52B8082DB2996D93"
+				item: "modern_industrialization:titanium_barrel"
+				type: "item"
+			}]
 			x: 7.0d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "7F29285BBF3A2F24"
-				type: "item"
-				item: "modern_industrialization:quantum_barrel"
-			}]
 			dependencies: ["0EBB99B8AB8FD75D"]
 			id: "7B9DA3CD0DA4A1E6"
-			y: 0.5d
+			tasks: [{
+				id: "7F29285BBF3A2F24"
+				item: "modern_industrialization:quantum_barrel"
+				type: "item"
+			}]
 			x: 8.5d
+			y: 0.5d
 		}
 		{
-			tasks: [{
-				id: "78F02F264CAFD874"
-				type: "item"
-				item: "modern_industrialization:large_tank"
-			}]
 			dependencies: ["4B79C7D711206EA5"]
 			id: "12B91AD34BC41D11"
-			y: -4.0d
+			tasks: [{
+				id: "78F02F264CAFD874"
+				item: "modern_industrialization:large_tank"
+				type: "item"
+			}]
 			x: 2.5d
+			y: -4.0d
 		}
 		{
-			tasks: [{
-				id: "0B2703AAA1D2B412"
-				type: "item"
-				item: "modern_industrialization:bronze_ingot"
-			}]
 			dependencies: ["6434DF2EDDFBAB8E"]
 			id: "0DE8E8DE8ED0A188"
-			y: -1.0d
+			tasks: [{
+				id: "0B2703AAA1D2B412"
+				item: "modern_industrialization:bronze_ingot"
+				type: "item"
+			}]
 			x: 1.0d
+			y: -1.0d
 		}
 		{
-			tasks: [{
-				id: "11848670B904E882"
-				type: "item"
-				item: "modern_industrialization:steel_ingot"
-			}]
 			dependencies: ["0DE8E8DE8ED0A188"]
 			id: "602099CF7D66E1D6"
-			y: -1.0d
+			tasks: [{
+				id: "11848670B904E882"
+				item: "modern_industrialization:steel_ingot"
+				type: "item"
+			}]
 			x: 2.5d
+			y: -1.0d
 		}
 		{
-			tasks: [{
-				id: "11CC2D721E15EAD2"
-				type: "item"
-				item: "modern_industrialization:aluminum_ingot"
-			}]
 			dependencies: ["602099CF7D66E1D6"]
 			id: "16A6737D722D4D53"
-			y: -1.0d
+			tasks: [{
+				id: "11CC2D721E15EAD2"
+				item: "modern_industrialization:aluminum_ingot"
+				type: "item"
+			}]
 			x: 4.0d
+			y: -1.0d
 		}
 		{
-			tasks: [{
-				id: "23B450955A5249F3"
-				type: "item"
-				item: "modern_industrialization:stainless_steel_ingot"
-			}]
 			dependencies: ["16A6737D722D4D53"]
 			id: "7603A4AD4FF474AF"
-			y: -1.0d
+			tasks: [{
+				id: "23B450955A5249F3"
+				item: "modern_industrialization:stainless_steel_ingot"
+				type: "item"
+			}]
 			x: 5.5d
+			y: -1.0d
 		}
 		{
-			tasks: [{
-				id: "68188FE7D82B47DA"
-				type: "item"
-				item: "modern_industrialization:titanium_ingot"
-			}]
 			dependencies: ["7603A4AD4FF474AF"]
 			id: "3486B8483AC8A2DB"
-			y: -1.0d
+			tasks: [{
+				id: "68188FE7D82B47DA"
+				item: "modern_industrialization:titanium_ingot"
+				type: "item"
+			}]
 			x: 7.0d
+			y: -1.0d
 		}
 		{
-			tasks: [{
-				id: "788CBBD93405FB99"
-				type: "item"
-				item: "modern_industrialization:iridium_ingot"
-			}]
 			dependencies: ["3486B8483AC8A2DB"]
 			id: "0EBB99B8AB8FD75D"
-			y: -1.0d
+			tasks: [{
+				id: "788CBBD93405FB99"
+				item: "modern_industrialization:iridium_ingot"
+				type: "item"
+			}]
 			x: 8.5d
+			y: -1.0d
 		}
 		{
+			dependencies: ["290C89BE98070B98"]
+			dependency_requirement: "one_completed"
+			description: ["&o&7(Now require creosote oil, so gated at the Coke Oven)"]
+			id: "50771C8A7B6331CE"
 			tasks: [
 				{
 					id: "0BDDB58BEB89F286"
-					type: "item"
 					item: "extended_drawers:single_drawer"
+					type: "item"
 				}
 				{
 					id: "6731414879D3CA7A"
-					type: "item"
 					item: "extended_drawers:double_drawer"
+					type: "item"
 				}
 				{
 					id: "0C2B86C7BA672BBF"
-					type: "item"
 					item: "extended_drawers:quad_drawer"
+					type: "item"
 				}
 			]
-			description: ["&o&7(Now require creosote oil, so gated at the Coke Oven)"]
-			id: "50771C8A7B6331CE"
 			x: -1.0d
 			y: 3.0d
-			dependencies: ["290C89BE98070B98"]
-			dependency_requirement: "one_completed"
 		}
 		{
-			tasks: [{
-				id: "63253969D5ECF473"
-				type: "item"
-				item: "extended_drawers:t1_upgrade"
-			}]
 			dependencies: ["50771C8A7B6331CE"]
 			id: "2564709E14DF9F21"
-			y: 4.0d
+			tasks: [{
+				id: "63253969D5ECF473"
+				item: "extended_drawers:t1_upgrade"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 4.0d
 		}
 		{
-			tasks: [{
-				id: "6AD35D66B34BAB18"
-				type: "item"
-				item: "extended_drawers:t2_upgrade"
-			}]
 			dependencies: ["2564709E14DF9F21"]
 			id: "63695D24A9F74E42"
-			y: 5.0d
+			tasks: [{
+				id: "6AD35D66B34BAB18"
+				item: "extended_drawers:t2_upgrade"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 5.0d
 		}
 		{
-			tasks: [{
-				id: "145FC19B28A8C195"
-				type: "item"
-				item: "extended_drawers:t3_upgrade"
-			}]
 			dependencies: ["63695D24A9F74E42"]
 			id: "120E5E136267AFCF"
-			y: 6.0d
+			tasks: [{
+				id: "145FC19B28A8C195"
+				item: "extended_drawers:t3_upgrade"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 6.0d
 		}
 		{
-			tasks: [{
-				id: "29B2BF4469334256"
-				type: "item"
-				item: "extended_drawers:t4_upgrade"
-			}]
 			dependencies: ["120E5E136267AFCF"]
 			id: "762246FE23734F4A"
-			y: 7.5d
+			tasks: [{
+				id: "29B2BF4469334256"
+				item: "extended_drawers:t4_upgrade"
+				type: "item"
+			}]
 			x: -1.0d
+			y: 7.5d
 		}
 		{
-			tasks: [{
-				id: "49B18AAF022282EA"
-				type: "item"
-				item: "extended_drawers:downgrade"
-			}]
 			dependencies: ["50771C8A7B6331CE"]
 			id: "4BC6ED0A32A166AD"
-			y: 2.0d
+			tasks: [{
+				id: "49B18AAF022282EA"
+				item: "extended_drawers:downgrade"
+				type: "item"
+			}]
 			x: 0.5d
+			y: 2.0d
 		}
 		{
-			tasks: [{
-				id: "29047F124313906A"
-				type: "item"
-				item: "extended_drawers:controller"
-			}]
 			dependencies: ["50771C8A7B6331CE"]
 			id: "24843F0E88B927DA"
-			y: 3.0d
+			tasks: [{
+				id: "29047F124313906A"
+				item: "extended_drawers:controller"
+				type: "item"
+			}]
 			x: 0.5d
+			y: 3.0d
 		}
 		{
-			tasks: [{
-				id: "597CFB2A8AAC1C68"
-				type: "item"
-				item: "extended_drawers:lock"
-			}]
 			dependencies: ["50771C8A7B6331CE"]
 			id: "12657E66913FFFD0"
-			y: 4.0d
+			tasks: [{
+				id: "597CFB2A8AAC1C68"
+				item: "extended_drawers:lock"
+				type: "item"
+			}]
 			x: 0.5d
+			y: 4.0d
 		}
 	]
+	title: "Storage"
 }

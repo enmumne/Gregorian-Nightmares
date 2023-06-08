@@ -1,16 +1,14 @@
 {
-	quest_links: [ ]
 	default_hide_dependency_lines: false
-	group: "4708CC84ABDF95FB"
-	id: "0408AFDB331C9DFF"
-	filename: "meta"
 	default_quest_shape: ""
+	filename: "meta"
+	group: "4708CC84ABDF95FB"
 	icon: "minecraft:writable_book"
-	title: "Known Issues \\& Notes"
+	id: "0408AFDB331C9DFF"
 	order_index: 0
+	quest_links: [ ]
 	quests: [
 		{
-			size: 1.5d
 			description: [
 				"Since this is a Work in Progress, I'll add here various infos that are not part of the game progression."
 				""
@@ -25,21 +23,18 @@
 			]
 			icon: "minecraft:writable_book"
 			id: "126BEDB82177DA40"
-			x: -0.75d
-			y: 0.0d
 			min_width: 220
+			size: 1.5d
 			tasks: [{
 				id: "64AA39C7A093CB41"
-				type: "checkmark"
 				title: "Info HUB"
+				type: "checkmark"
 			}]
+			x: -0.75d
+			y: 0.0d
 		}
 		{
-			tasks: [{
-				id: "50E4746B0E2C739B"
-				type: "checkmark"
-				title: "Changelog"
-			}]
+			dependencies: ["126BEDB82177DA40"]
 			description: [
 				"Version 0.zero.0"
 				""
@@ -57,19 +52,19 @@
 				""
 				"The 1.19.3 specifically will start with \"A\", rather then a number. These are preliminar \"empty\" modpacks, collecting the mods that are updated. So letters will be used until the modpack can move to a proper numbered release. With 1.20 being close, it's possible that 1.19.3/4 will never materialize as viable versions, with mods skipping it. In general, I need at least Modern Industrialization and Create (and KubeJS + FTB Quests), to start a numbered version."
 			]
-			x: 1.0d
 			id: "4C47D47EE969EE3D"
-			y: -1.5d
-			shape: "square"
 			min_width: 320
-			dependencies: ["126BEDB82177DA40"]
+			shape: "square"
+			tasks: [{
+				id: "50E4746B0E2C739B"
+				title: "Changelog"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: -1.5d
 		}
 		{
-			tasks: [{
-				id: "67A26182F35717FB"
-				type: "checkmark"
-				title: "Known Issues"
-			}]
+			dependencies: ["126BEDB82177DA40"]
 			description: [
 				"- REI sometimes shows icon corruption. This usually happens with the caching mode turned on. Click on the wheel at the side of the search bar, in the inventory screen. &bDisplay Settings > Caching Entry Rendering &r(toggle)"
 				""
@@ -79,19 +74,19 @@
 				""
 				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power-uncapped and with more slots. So some of those recipes have been moved to this other separate machine. They do not share recipes."
 			]
-			x: -4.0d
 			id: "662B3BC2B20C38C1"
-			y: -3.0d
-			shape: "square"
 			min_width: 340
-			dependencies: ["126BEDB82177DA40"]
+			shape: "square"
+			tasks: [{
+				id: "67A26182F35717FB"
+				title: "Known Issues"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: -3.0d
 		}
 		{
-			tasks: [{
-				id: "593A1EE551C12BCD"
-				type: "checkmark"
-				title: "Hi"
-			}]
+			dependencies: ["126BEDB82177DA40"]
 			description: [
 				"This modpack is largely &c&lUNTESTED&r."
 				""
@@ -101,23 +96,25 @@
 				""
 				"Or feel free to DM me your complaints. It should be &aTrystero#0063"
 				""
+				"(Please don't send &cfriend requests&r, I don't look at those. You should be able to message me directly.)"
+				""
 				"Even better if you have some better technical skills than mine, so that we can crack the harder problems."
 				""
 				"No, I'm not opening a channel specifically for this modpack, because I don't think there's any interest for that, and I don't want to spend my time maintaining such a thing."
 			]
-			x: -4.0d
 			id: "7986F67BC1254200"
-			y: -1.5d
-			shape: "square"
 			min_width: 250
-			dependencies: ["126BEDB82177DA40"]
+			shape: "square"
+			tasks: [{
+				id: "593A1EE551C12BCD"
+				title: "Hi"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: -1.5d
 		}
 		{
-			tasks: [{
-				id: "29D8EA271B6B10EE"
-				type: "checkmark"
-				title: "Dev"
-			}]
+			dependencies: ["126BEDB82177DA40"]
 			description: [
 				"As per modpack description: you are free to use the scripts for your own ends. Use them, balance them, overhaul, laugh at them, or use them to learn. It's fine."
 				""
@@ -129,18 +126,19 @@
 				"This means that the scripts here don't begin with me, and when I say you can reuse them, or even the resources I've added, they might come with &atheir own baggage of preceeding authors&r. The stuff should still be in the public domain, anyway."
 				""
 			]
-			x: 2.0d
 			id: "3739E56EC6B63120"
-			y: 2.0d
-			shape: "square"
 			min_width: 250
-			dependencies: ["126BEDB82177DA40"]
-		}
-		{
+			shape: "square"
 			tasks: [{
-				id: "4361FF1648E36E66"
+				id: "29D8EA271B6B10EE"
+				title: "Dev"
 				type: "checkmark"
 			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3739E56EC6B63120"]
 			description: [
 				"This modpack is untested. Outside of crashes, that can erratically happen in any modpack, the progression might break early because of an oversight. I plan to update frequently (we'll see if I'm able to...)."
 				""
@@ -161,18 +159,17 @@
 				"&mFor some scripts, custom tools like the mortar, I had to use good old CraftTweaker, since KubeJS simply doesn't work. So you can find some more recipes under &a/scripts/&r Currently CraftTweaker has been removed, scripts merged back into KubeJS."
 			]
 			id: "68249176B50C0CBC"
+			min_width: 300
+			tasks: [{
+				id: "4361FF1648E36E66"
+				type: "checkmark"
+			}]
+			title: "Where stuff is"
 			x: 4.5d
 			y: 2.0d
-			title: "Where stuff is"
-			min_width: 300
-			dependencies: ["3739E56EC6B63120"]
 		}
 		{
-			tasks: [{
-				id: "0BB647BEE35033E3"
-				type: "checkmark"
-				title: "Recipes"
-			}]
+			dependencies: ["126BEDB82177DA40"]
 			description: [
 				"To be clear:"
 				""
@@ -184,19 +181,19 @@
 				""
 				"A list of the \"main\" processing lines that have either been added or modified to achieve GT parity is available on that quest on the left."
 			]
-			x: -4.0d
 			id: "0379ECB64AE8509A"
-			y: 2.0d
-			shape: "square"
 			min_width: 280
-			dependencies: ["126BEDB82177DA40"]
+			shape: "square"
+			tasks: [{
+				id: "0BB647BEE35033E3"
+				title: "Recipes"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: 2.0d
 		}
 		{
-			tasks: [{
-				id: "4227D98BF324CB99"
-				type: "checkmark"
-				title: "All the Gegs"
-			}]
+			dependencies: ["0379ECB64AE8509A"]
 			description: [
 				"The stuff I manually added can be seen by searching for &a@geg&r in REI."
 				""
@@ -204,15 +201,19 @@
 				""
 				"WIP quarry system can be partially under &a@drilly&r (some missing textures are indeed missing)"
 			]
-			dependencies: ["0379ECB64AE8509A"]
 			id: "442D3EFA6C7EE816"
-			y: 4.0d
+			tasks: [{
+				id: "4227D98BF324CB99"
+				title: "All the Gegs"
+				type: "checkmark"
+			}]
 			x: -4.0d
+			y: 4.0d
 		}
 		{
-			size: 1.5d
 			description: [
-				"- Sometimes custom resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names. If you see &eitem tooltip text being repeated&r, this too is a symptom of this problem. If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
+				"- Sometimes custom resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names.  If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
+				"If you see &eitem tooltip text being repeated&r, type \"&a/kubejs reload client_scripts&r\", nothing else beside executing the command. It should work immediately."
 				""
 				"- If a quest doesn't complete even if you have the items in the inventory, try logging out and back in. This problem happens sporadically and no one currently knows how to fix it. Not my fault here..."
 				""
@@ -226,19 +227,19 @@
 				""
 				"- [&4HEAVY&r] In case of occasional, sudden crashes, they might be related either to the \"&cTinySkeletons&r\" or \"&cfrycparry&r\" mods, you can easily remove them for the /mods/ folder if you want. &mAnother mod that can add significant server lag and that could be removed is \"&cspiderstpo&r&m\" (cursed spiders AI being laggy)"
 			]
-			x: -0.7857142857142847d
 			id: "608C7477E58ED48B"
-			y: -2.5d
-			shape: "gear"
 			min_width: 300
+			shape: "gear"
+			size: 1.5d
 			tasks: [{
 				id: "695EA3F24D74C51B"
-				type: "checkmark"
 				title: "IMPORTANT PROBLEMS"
+				type: "checkmark"
 			}]
+			x: -0.7857142857142847d
+			y: -2.5d
 		}
 		{
-			size: 1.5d
 			description: [
 				"This quest has been rewritten a few times... After countless hours spent researching the problem."
 				""
@@ -249,27 +250,24 @@
 				"The next two quests explain what I learned from the process, and how to troubleshoot and fix similar issues if they happen to happen."
 			]
 			id: "340E42500D8C7FB8"
-			x: 4.0d
-			y: -4.0d
+			min_width: 250
 			rewards: [{
 				id: "22FA65DE5CED2828"
-				type: "item"
 				item: "create:experience_nugget"
+				type: "item"
 			}]
-			min_width: 250
+			size: 1.5d
 			subtitle: "is not a game"
 			tasks: [{
 				id: "46F499C64937D880"
-				type: "checkmark"
 				title: "World of Conflicts"
+				type: "checkmark"
 			}]
+			x: 4.0d
+			y: -4.0d
 		}
 		{
-			tasks: [{
-				id: "3E943180FE7FD6C3"
-				type: "checkmark"
-				title: "rth"
-			}]
+			dependencies: ["340E42500D8C7FB8"]
 			description: [
 				"Whenever mods tried to change a seed for a dimension, they'd cause the seed for another dimension to shift to a different value, or being set to zero. This made the problem &4tricky&r to troubleshoot, because you could explore as long you'd have liked without noticing something amiss."
 				""
@@ -288,17 +286,18 @@
 				"&o&e 0A : dude, I don't read essays"
 			]
 			id: "7C6CF17C70194EE6"
-			x: 5.75d
-			y: -4.0d
-			title: "NBT Explorer"
 			min_width: 360
-			dependencies: ["340E42500D8C7FB8"]
-		}
-		{
 			tasks: [{
-				id: "213C24E67B82C471"
+				id: "3E943180FE7FD6C3"
+				title: "rth"
 				type: "checkmark"
 			}]
+			title: "NBT Explorer"
+			x: 5.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7C6CF17C70194EE6"]
 			description: [
 				"Another important tool is &dMCA Selector&r."
 				""
@@ -322,39 +321,40 @@
 				"&o&a : or sorry that happened"
 			]
 			id: "15D4473D6BE1932E"
-			x: 7.25d
-			y: -4.0d
-			title: "MCA Selector"
 			min_width: 350
 			subtitle: "brand new world"
-			dependencies: ["7C6CF17C70194EE6"]
+			tasks: [{
+				id: "213C24E67B82C471"
+				type: "checkmark"
+			}]
+			title: "MCA Selector"
+			x: 7.25d
+			y: -4.0d
 		}
 		{
-			min_width: 250
 			description: [
 				"The modpack includes Spark."
 				""
 				"Worldgen is very slow, so please be patient. Hopefully after chunks are generated things should calm down."
 				""
-				"By default the upper left corner of the screen shows the MSPT, which is the server tick time. To know how poorly this bloated modpack is running..."
+				"By default the upper left corner of the screen shows the MSPT, which is the server tick time. To know how poorly this bloated [&4HEAVY&r] modpack is running... 50 is the cap you deal with, but getting even near can be bad. The lower it is, the more headroom you have. Usually on modern Minecraft lag is worldgen and mobs. Or bugs in the mods."
 				""
-				"To profile type &a/spark profiler&r to start it, and then &a/spark profiler --stop&r when you're done, and try to catch the lag as it happens."
+				"To profile type &a/spark profiler&r to start it, and then &a/spark profiler --stop&r when you're done, and try to catch the lag as it happens inbetween."
+				""
+				"Those instructions are of course to troubleshoot the server. For FPS/client lag the command is &a/sparkc&r."
 			]
 			id: "7C6B545614A6A798"
-			y: -2.5d
-			x: 5.0d
+			min_width: 260
 			tasks: [{
 				id: "764B01E03AF638DA"
-				type: "checkmark"
 				title: "Performance troubleshooting"
+				type: "checkmark"
 			}]
+			x: 5.0d
+			y: -2.5d
 		}
 		{
-			tasks: [{
-				id: "279B05B265ADE311"
-				type: "checkmark"
-				title: "Geghilarity"
-			}]
+			dependencies: ["0379ECB64AE8509A"]
 			description: [
 				"Quick list of ported processing (recipe parity with TJ/GTNH/Nomifactory hardmode):"
 				""
@@ -376,10 +376,15 @@
 				"Things need more work to be better integrated in MI overall progression. The current priority is still adding bulk. Adjustements and polish will come later."
 			]
 			id: "1BF5638879D266B8"
+			min_width: 290
+			tasks: [{
+				id: "279B05B265ADE311"
+				title: "Geghilarity"
+				type: "checkmark"
+			}]
 			x: -6.0d
 			y: 2.0d
-			min_width: 290
-			dependencies: ["0379ECB64AE8509A"]
 		}
 	]
+	title: "Known Issues \\& Notes"
 }
