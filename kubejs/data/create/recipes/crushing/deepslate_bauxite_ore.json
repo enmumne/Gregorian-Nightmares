@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "modern_industrialization:deepslate_bauxite_ore"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "count": 1,
+      "item": "modern_industrialization:bauxite_crushed_dust"
+    },
+    {
+	  "count": 4,	
+      "chance": 0.5,
+      "item": "modern_industrialization:bauxite_crushed_dust"
+    },
+    {
+      "chance": 0.55,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ]
+}

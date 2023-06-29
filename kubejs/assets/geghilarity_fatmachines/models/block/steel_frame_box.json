@@ -1,0 +1,6 @@
+{
+  "parent": "geghilarity_fatmachines:block/tinted_cube_all",
+  "textures": {
+    "all": "geghilarity_fatmachines:block/steel_frame_box"
+  }
+}

@@ -61,7 +61,7 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'minecraft:bone_meal'})
 	event.shapeless('minecraft:bone_meal', ['minecraft:bone', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
-	event.shapeless('modern_industrialization:iron_tiny_dust', ['create:crushed_iron_ore', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('modern_industrialization:iron_tiny_dust', ['create:crushed_raw_iron', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shaped('geggy:unfinished_bucket', [
 		'A A',

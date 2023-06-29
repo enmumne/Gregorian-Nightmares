@@ -1,0 +1,115 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "create:sleepers"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": "create:track"
+    }
+  ],
+  "sequence": [
+	{
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        },
+        [
+          {
+            "item": "modern_industrialization:iron_plate"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    },
+	{
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        },
+        [
+          {
+            "item": "modern_industrialization:iron_plate"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    },
+	{
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        },
+        [
+          {
+            "item": "modern_industrialization:steel_rod"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        },
+        [
+          {
+            "item": "modern_industrialization:steel_rod"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_track"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "create:incomplete_track"
+  }
+}

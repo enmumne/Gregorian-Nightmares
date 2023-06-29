@@ -1,0 +1,32 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_ore"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+	  "chance": 0.6,	
+      "item": "minecraft:diamond"
+    },
+    {
+      "count": 4,
+      "item": "geggy:diamond_shards"
+    },
+	{
+	  "chance": 0.5,	
+      "count": 6,
+      "item": "geggy:diamond_shards"
+    },
+    {
+      "chance": 0.65,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobblestone"
+    }
+  ]
+}

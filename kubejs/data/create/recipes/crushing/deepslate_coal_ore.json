@@ -1,0 +1,30 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:deepslate_coal_ore"
+    }
+  ],
+  "processingTime": 250,
+  "results": [
+    {
+      "item": "modern_industrialization:coal_crushed_dust"
+    },
+    {
+      "chance": 0.75,
+      "item": "modern_industrialization:coal_crushed_dust"
+    },
+	{
+      "chance": 0.25,
+      "item": "modern_industrialization:coal_crushed_dust"
+    },
+    {
+      "chance": 0.55,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ]
+}

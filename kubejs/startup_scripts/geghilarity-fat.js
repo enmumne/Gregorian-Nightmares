@@ -10,6 +10,14 @@ event.create('geghilarity_fatmachines:tungstensteel_coil').material('iron').hard
 event.create('geghilarity_fatmachines:hss-g_coil').material('iron').displayName('HSS-G Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:naquadah_coil').material('iron').displayName('Naquadah Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
+event.create('geghilarity_fatmachines:casing_solid_steel').material('iron').displayName('Solid Steel Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:casing_pipe_steel').material('iron').displayName('Steel Pipe Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:steel_frame_box').material('iron').displayName('Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
+event.create('geghilarity_fatmachines:machine_casing_firebox_steel').material('iron').displayName('Steel Firebox Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:carbon_electrode_assembly').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:ulv_casing').material('iron').displayName('ULV Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+
+
 })
 
 /*
@@ -29,6 +37,14 @@ let BF5;
 
 let evaporation;
 let MINECLAY;
+let ELECELL;
+let ARCFURNACE;
+let POLYTANK;
+let SINTER;
+
+MIMachineEvents.addMultiblockSlots("steam_blast_furnace", event => {
+    event.itemOutputs.addSlot(102, 53);
+})
 
 MIMachineEvents.registerRecipeTypes(event => {
 	PYRO = event.register("pyro")
@@ -76,13 +92,36 @@ MIMachineEvents.registerRecipeTypes(event => {
     evaporation = event.register('evaporation')
         .withFluidInputs()
         .withItemInputs()
-        .withItemOutputs()
+        .withItemOutputs();
 
     MINECLAY = event.register('mine_clay')
 		.withItemInputs()
         .withFluidInputs()
+        .withItemOutputs();	
+
+	ELECELL = event.register('elecell')
+		.withItemInputs()
+        .withFluidInputs()
         .withItemOutputs()		
+		.withFluidOutputs();
 		
+	ARCFURNACE = event.register('arc_furnace')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs()	
+	
+	POLYTANK = event.register('poly_tank')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs()
+	
+	SINTER = event.register('sintering_oven')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs()
 
 });
 
@@ -90,10 +129,97 @@ MIMachineEvents.registerCasings(event => {
 	event.register("pyro_casing")
 	event.register("lcr_casing")
 	event.register("mudbricks")
+	event.register("solid_steel")
+	event.register("ulv_casing")
 });
 
 MIMachineEvents.registerMachines(event => {
 	console.log('Registering machines')
+	
+	const elecellHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    const solidsteelMember = event.memberOfBlock("geghilarity_fatmachines:casing_solid_steel");
+    const fluidpipeMember = event.memberOfBlock("geghilarity_fatmachines:casing_pipe_steel");
+    const elecellShape = event.layeredShape("solid_steel", [
+        [ " HHH ", "     ", " HHH ", "     " ],
+		[ "HHHHH", " DDD ", "HDDDH", " DDD " ],
+        [ "HHHHH", " DDD ", "HDDDH", " DDD " ],
+        [ " HHH ", "  #  ", " HHH ", "     " ],
+    ])
+        .key("H", solidsteelMember, elecellHatch)
+        .key("D", fluidpipeMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Electrolytic Cell", "elecell", ELECELL, elecellShape,
+        // REI progress bar
+        event.progressBar(94, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 3, 1),
+        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 3, 2),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "solid_steel", "elecell", true, false, false,
+    );	
+	
+	const arcfurnaceHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    //const solidsteelMember = event.memberOfBlock("geghilarity_fatmachines:casing_solid_steel");
+    const fireboxMember = event.memberOfBlock("geghilarity_fatmachines:machine_casing_firebox_steel");
+	const carbonMember = event.memberOfBlock("geghilarity_fatmachines:carbon_electrode_assembly");
+    const arcfurnaceShape = event.layeredShape("solid_steel", [
+        [ " HHH ", " HHH ", " DDD ", "     " ],
+		[ "HHHHH", "H E H", "D E D", " HEH " ],
+        [ "EHHHE", "E   E", "E   E", "EHHHE" ],
+        [ "HHHHH", "H   H", "D   D", " HHH " ],
+		[ " HHH ", " H#H ", " DDD ", "     " ],
+    ])
+        .key("H", solidsteelMember, arcfurnaceHatch)
+        .key("D", fireboxMember, event.noHatch())
+		.key("E", carbonMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Arc Furnace", "arc_furnace", ARCFURNACE, arcfurnaceShape,
+        // REI progress bar
+        event.progressBar(84, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 2, 2), itemOutputs => itemOutputs.addSlots(120, 35, 3, 1),
+        fluidInputs => fluidInputs.addSlots(34, 75, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 3, 2),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "solid_steel", "arc_furnace", true, false, false,
+    );
+	
+	const polytankHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    //const solidsteelMember = event.memberOfBlock("geghilarity_fatmachines:casing_solid_steel");
+    const frameMember = event.memberOfBlock("geghilarity_fatmachines:steel_frame_box");
+    const polytankShape = event.layeredShape("solid_steel", [
+        [ "E E", "HHH", "HHH", "HHH", "HHH"],
+		[ "   ", "HDH", "HDH", "HDH", "HDH"],
+        [ "E E", "H#H", "HHH", "HHH", "HHH"],
+    ])
+        .key("H", solidsteelMember, polytankHatch)
+        .key("D", fluidpipeMember, event.noHatch())
+		.key("E", frameMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Polymerization Tank", "poly_tank", POLYTANK, polytankShape,
+        // REI progress bar
+        event.progressBar(84, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 2, 1), itemOutputs => itemOutputs.addSlot(120, 35),
+        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlot(120, 55),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "solid_steel", "poly_tank", true, false, false,
+    );
+	
+	
+	
+	////
     
     event.craftingSingleBlock(
         'Evaporation Tank', 'evaporation_tank', evaporation, ['bronze'],
@@ -194,6 +320,38 @@ MIMachineEvents.registerMachines(event => {
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
 		
         "pyro_casing", "pyro", true, false, false,
+    );
+	
+	const sinterHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    //const solidsteelMember = event.memberOfBlock("geghilarity_fatmachines:casing_solid_steel");
+    //const frameMember = event.memberOfBlock("geghilarity_fatmachines:steel_frame_box");
+	const firecasing = event.memberOfBlock("modern_industrialization:fire_clay_bricks");
+	const ulvcasing = event.memberOfBlock("geghilarity_fatmachines:ulv_casing");
+    const sinterShape = event.layeredShape("ulv_casing", [
+		[ "HHHHH", "HHHHH", "HHHHH", " HHH ",],
+		[ "     ", " BBB ", " BBB ", " BBB ",],
+		[ "EEEEE", "EBBBE", "EBBBE", " BBB ",],
+        [ "     ", " BBB ", " BBB ", " BBB ",],	
+        [ "EEEEE", "EBBBE", "EBBBE", " BBB ",],
+		[ "     ", " BBB ", " BBB ", " BBB ",],
+        [ "HHHHH", "HH#HH", "HHHHH", " HHH ",],
+    ])
+        .key("H", ulvcasing, sinterHatch)
+		.key("E", frameMember, event.noHatch())
+		.key("B", firecasing, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Sintering Oven", "sintering_oven", SINTER, sinterShape,
+        // REI progress bar
+        event.progressBar(90, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 2), itemOutputs => itemOutputs.addSlots(115, 35, 2, 2),
+        fluidInputs => fluidInputs.addSlots(34, 35, 1, 2), fluidOutputs => fluidOutputs.addSlots(154, 35, 1, 2),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "ulv_casing", "sintering_oven", true, false, false,
     );
 	
     	
@@ -613,9 +771,9 @@ MIMachineEvents.registerMachines(event => {
 	
 	event.simpleElectricCraftingMultiBlock(
         "Large Chemical Reactor", "lcr", LCR, lcrShape,
-        event.progressBar(77, 33, "circuit"),
-        itemInputs => itemInputs.addSlots(36, 35, 1, 3), itemOutputs => itemOutputs.addSlots(102, 35, 1, 3),
-        fluidInputs => fluidInputs.addSlots(56, 35, 1, 5), fluidOutputs => fluidOutputs.addSlots(122, 35, 1, 4),
+        event.progressBar(77, 52, "circuit"),
+        itemInputs => itemInputs.addSlots(25, 35, 1, 3), itemOutputs => itemOutputs.addSlots(101, 35, 1, 3),
+        fluidInputs => fluidInputs.addSlots(45, 35, 1, 5), fluidOutputs => fluidOutputs.addSlots(121, 35, 1, 4),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "lcr_casing", "lcr", true, false, false,
     );

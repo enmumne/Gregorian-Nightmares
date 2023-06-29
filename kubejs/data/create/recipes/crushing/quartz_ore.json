@@ -1,0 +1,32 @@
+{
+  "type": "create:crushing",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "values": [
+        "c:quartz_ores"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:quartz_ores"
+    }
+  ],
+  "processingTime": 400,
+  "results": [
+    {
+	  "count": 2,	
+      "item": "modern_industrialization:quartz_crushed_dust"
+    },
+	{
+	  "count": 2,	
+	  "chance": 0.25,	
+      "item": "modern_industrialization:quartz_crushed_dust"
+    },
+    {
+      "chance": 0.35,
+      "item": "create:experience_nugget"
+    }
+  ]
+}

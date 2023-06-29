@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:coal_ore"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "item": "modern_industrialization:coal_crushed_dust"
+    },
+    {
+      "chance": 0.75,
+      "item": "modern_industrialization:coal_crushed_dust"
+    },
+    {
+      "chance": 0.45,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobblestone"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "modern_industrialization:deepslate_mozanite_ore"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "count": 2,
+      "item": "modern_industrialization:mozanite_crushed_dust"
+    },
+    {
+	  "count": 3,	
+      "chance": 0.5,
+      "item": "modern_industrialization:mozanite_crushed_dust"
+    },
+    {
+      "chance": 0.55,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ]
+}

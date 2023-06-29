@@ -744,6 +744,8 @@
 			description: [
 				"Two Prepared Planks + two pieces of flint."
 				""
+				"(Flint comes as a 10% chance from breaking gravel, just like vanilla. With a mortar you'll be able to obtain it directly.)"
+				""
 				"&o&7 : Nice pentagram of a quest you've drawn there, are we evoking a demon?"
 				"&o : you can't count. It's not a pentagram."
 				"&o&7 : anyway, I could see that coming, gtnh can't have all the flint to itself."
@@ -902,6 +904,8 @@
 			description: [
 				"But before you can make a furnace, you need to make paper."
 				"And to make paper, you need a mortar."
+				""
+				"If you followed these quests closely it's possible you don't have a pickaxe to mine the stone. Since wooden pickaxes have been disabled, you can use flint pickaxes. Look for the related quest on the main path."
 				""
 				"&o&7 : This is a thrilling experience. "
 				"&o&7 : first the flint knife. Now... Paper?!"
@@ -1242,7 +1246,7 @@
 				""
 				"&eIron, Gold and Glass&r are gated by design (along with the MI macerator, moved to a later point)."
 				""
-				"&o : Not yet done, diamond ores will only have 30% of dropping a diamond. They'll always drop shards instead. That can be melted later and reformed. Machine recipes will need full diamonds, tools and armor will instead use the melted diamond instead."
+				"&o : Diamond ores will only have 30% of dropping a diamond. They'll always drop shards instead. That can be melted later and reformed. Machine recipes will need full diamonds, tools and armor will instead use the melted diamond instead."
 			]
 			id: "73211F9811A64087"
 			min_width: 250
@@ -1361,6 +1365,7 @@
 				"The bed recipe only requires 3 carpets, so two blocks of wool will be enough."
 			]
 			hide: true
+			icon: "minecraft:white_bed"
 			id: "107FA73E711158C2"
 			tasks: [
 				{
@@ -1389,7 +1394,7 @@
 			description: [
 				"Wood and stone pickaxes have been removed. Unless you find some loot and want to stick with the plan, don't expect to use iron, or anything better."
 				""
-				"You tool of choice will be a &2Flint Pickaxe&r, and then a Bronze one later."
+				"Your tool of choice will be a &2Flint Pickaxe&r, and then a Bronze one later."
 				""
 				"It will let you pick up everything you need for the progression, including all useful ores and redstone."
 				""
@@ -2559,6 +2564,30 @@
 			title: "Hellscape"
 			x: -17.0d
 			y: -2.0d
+		}
+		{
+			dependencies: ["3F5ACCA0FDC6ADB6"]
+			description: [
+				"A reasonable upgrade to the flint pickaxe, before going to iron."
+				""
+				"No mining level improvements, but some better overall stats and durability."
+				""
+				"The crafting should be straightforward, it requires a special mold done with clay, then molten bronze in a spout, the final tool will also require some rubber. But all the steps should be known at this point."
+			]
+			id: "4EB1EA76FCDF7EE3"
+			tasks: [{
+				id: "656B2BF2639A2F48"
+				item: {
+					Count: 1b
+					id: "geggy:bronze_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -12.5d
+			y: 7.0d
 		}
 	]
 	title: "0 - Getting Started"

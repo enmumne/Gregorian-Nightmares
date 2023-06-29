@@ -1,7 +1,7 @@
 //onEvent('block.registry', (event) => {
 StartupEvents.registry('block', event => {
 	
-	event.create('geggy:andesite_block').material('stone').displayName('Andesite Alloy Block').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+	event.create('geggy:andesite_block').material('stone').displayName('Andesite Alloy Frame').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_1', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_2', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_3', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)

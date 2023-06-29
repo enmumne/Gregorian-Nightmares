@@ -499,11 +499,17 @@ event.create('geggy:diamond_shards');
 
 //////////////////
 
-event.create('geggy:muddy_coke_oven_blend'); //<<<<<<<<<<<<<<<<<<<
+event.create('geggy:muddy_coke_oven_blend'); 
 event.create('geggy:pig_iron_ingot');
 event.create('geggy:tiny_iron_blend_dust');
 
+event.create('geggy:potin_dust');
+event.create('geggy:potin_ingot');
+event.create('geggy:potin_plate');
+event.create('geggy:potin_curved_plate');
 
+event.create('geggy:incomplete_fluid_pipe');
+event.create('geggy:incomplete_item_pipe');
 
 /*
 .tooltip('§8')
@@ -550,6 +556,7 @@ StartupEvents.registry('fluid', event => {
 StartupEvents.registry('block', event => {
 
 event.create('geggy:j_stripped_log').material('wood').displayName('Multiuse Stripped Log').hardness(3).tagBlock('minecraft:mineable/axe')
+event.create('geggy:reinforced_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
 event.create('geggy:clay_bricks');
 
 // 1/19 missing grout, tinkers

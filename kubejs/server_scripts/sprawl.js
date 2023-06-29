@@ -44,7 +44,7 @@ ServerEvents.recipes(event => {
 			{item: "minecraft:coal", amount: 1}
 		],
 		item_outputs: [
-			{item: "minecraft:furnace", amount: 2}
+			{item: "minecraft:furnace", amount: 1}
 		]
 	})
 	
@@ -62,7 +62,7 @@ ServerEvents.recipes(event => {
 	})
 	
 	// fast path to furnace brick
-	event.blasting('geggy:primitive_brick', 'geggy:craut').cookingTime(1600)
+	event.blasting('geggy:primitive_brick', 'geggy:craut').cookingTime(1000)
 	event.remove({id: 'minecraft:bucket'})
 	event.shaped('minecraft:bucket', [
 		'S S',
@@ -326,7 +326,7 @@ ServerEvents.recipes(event => {
 	}).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
 	
 	// uncooked furnace recipe
-	event.smelting('geggy:primitive_brick', 'geggy:uncooked_primitive_brick').cookingTime(1000)
+	event.smelting('geggy:primitive_brick', 'geggy:uncooked_primitive_brick').cookingTime(800)
 	
 	//*** white orange magenta light_blue yellow lime pink gray light_gray cyan purple blue brown green red black
 	event.remove({type: 'minecraft:crafting_shaped', output: '#minecraft:beds'})	
@@ -359,7 +359,7 @@ ServerEvents.recipes(event => {
 	event.remove({type: 'minecraft:smelting', output: 'minecraft:brick'})
 	event.remove({type: 'modern_industrialization:furnace', output: 'minecraft:brick'})
 	event.remove({id: 'minecraft:bricks'})
-	event.smelting('geggy:unfired_tempered_brick', 'geggy:unfired_tempered_dust').cookingTime(1200)
+	event.smelting('geggy:unfired_tempered_brick', 'geggy:unfired_tempered_dust').cookingTime(1000)
 	event.smelting('geggy:clay_brick', 'geggy:unfired_clay_brick').cookingTime(1000)
 	event.shaped('2x geggy:clay_bricks', [
 		'AAA',
@@ -379,7 +379,7 @@ ServerEvents.recipes(event => {
 		S: 'kibe:water_wooden_bucket'
 	}).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
 	
-	event.smelting('minecraft:brick', 'geggy:unfired_coke_oven_brick').cookingTime(1000)
+	event.smelting('minecraft:brick', 'geggy:unfired_coke_oven_brick').cookingTime(600)
 	/*
 	event.shaped('minecraft:bricks', [
 		'AA ',
@@ -393,7 +393,7 @@ ServerEvents.recipes(event => {
 	// fire clay bricks made also in packer, not compressor to force manual at first
 	event.remove({type: 'minecraft:smelting', output: 'modern_industrialization:fire_clay_brick'})
 	event.remove({type: 'minecraft:blasting', output: 'modern_industrialization:fire_clay_brick'})
-	event.blasting('modern_industrialization:fire_clay_brick', 'geggy:compressed_fireclay').cookingTime(1000)
+	event.blasting('modern_industrialization:fire_clay_brick', 'geggy:compressed_fireclay').cookingTime(800)
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:fire_clay_bricks'})
 	event.shaped('modern_industrialization:fire_clay_bricks', [
 		'ABA',
@@ -494,13 +494,63 @@ ServerEvents.recipes(event => {
 		duration: 1000,
 		item_inputs: [ 
 			{item: "geggy:reinforced_glass_mixture", amount: 1},
-			{item: "geggy:mold_block", amount: 1, probability: 0.0}
+			{item: "geggy:mold_plate", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:reinforced_glass_pane", amount: 1}
 		]
 	})
+	event.recipes.modern_industrialization.salloy({
+		eu: 12,
+		duration: 1000,
+		item_inputs: [ 
+			{item: "geggy:reinforced_glass_mixture", amount: 2},
+			{item: "geggy:mold_block", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:reinforced_glass", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.salloy({
+		eu: 32,
+		duration: 1000,
+		item_inputs: [ 
+			{item: "geggy:reinforced_glass", amount: 1},
+			{item: "ae2:certus_quartz_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "ae2:quartz_glass", amount: 1}
+		]
+	})
+	event.remove({id: 'ae2:decorative/quartz_vibrant_glass'})
+	event.recipes.modern_industrialization.salloy({
+		eu: 64,
+		duration: 1000,
+		item_inputs: [ 
+			{item: "ae2:quartz_glass", amount: 1},
+			{item: "minecraft:glowstone_dust", amount: 2}
+		],
+		item_outputs: [
+			{item: "ae2:quartz_vibrant_glass", amount: 1}
+		]
+	})
 	
+	
+	event.remove({id: 'minecraft:glass_pane'})
+	event.remove({id: 'modern_industrialization:vanilla_recipes/cutting_machine/glass_panes'})
+	event.recipes.modern_industrialization.salloy({
+		eu: 2,
+		duration: 400,
+		item_inputs: [ 
+			{item: "geggy:glass_dust", amount: 1},
+			{item: "geggy:mold_plate", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "minecraft:glass_pane", amount: 3}
+		]
+	})
+	
+	/*
 	event.shaped('3x moderndynamics:item_pipe', [
 		'ABA',
 		'C C',
@@ -513,35 +563,44 @@ ServerEvents.recipes(event => {
 	
 	event.shaped('3x moderndynamics:fluid_pipe', [
 		'ABA',
-		'C C',
+		'CDC',
 		'ABA'
 	], {
-		A: 'modern_industrialization:bronze_curved_plate',
+		A: 'geggy:potin_curved_plate',
 		B: 'geggy:reinforced_glass_pane',
-		C: 'modern_industrialization:copper_rotor'
+		C: 'modern_industrialization:bronze_rotor',
+		D: 'modern_industrialization:rubber_sheet'
 	})
+	*/
 	event.recipes.modern_industrialization.assembler({
 		eu: 8,
 		duration: 200,
 		item_inputs: [ 
 			{item: "geggy:invar_curved_plate", amount: 4},
 			{item: "geggy:reinforced_glass_pane", amount: 2},
-			{item: "modern_industrialization:steel_gear", amount: 2}
+			{item: "modern_industrialization:steel_gear", amount: 2},
+			{item: "modern_industrialization:motor", amount: 1}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:soldering_alloy", amount: 50}
 		],
 		item_outputs: [
-			{item: "moderndynamics:item_pipe", amount: 5}
+			{item: "moderndynamics:item_pipe", amount: 3}
 		]
 	})
 	event.recipes.modern_industrialization.assembler({
 		eu: 8,
 		duration: 200,
 		item_inputs: [ 
-			{item: "modern_industrialization:bronze_curved_plate", amount: 4},
+			{item: "geggy:potin_curved_plate", amount: 4},
 			{item: "geggy:reinforced_glass_pane", amount: 2},
-			{item: "modern_industrialization:copper_rotor", amount: 2}
+			{item: "modern_industrialization:bronze_rotor", amount: 2}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 50}
 		],
 		item_outputs: [
-			{item: "moderndynamics:fluid_pipe", amount: 5}
+			{item: "moderndynamics:fluid_pipe", amount: 3}
 		]
 	})
 	event.recipes.modern_industrialization.assembler({
@@ -549,12 +608,14 @@ ServerEvents.recipes(event => {
 		duration: 400,
 		item_inputs: [ 
 			{item: "modern_industrialization:steel_curved_plate", amount: 4},
-			{item: "modern_industrialization:rubber_sheet", amount: 3},
 			{item: "modern_industrialization:aluminum_rotor", amount: 2},
 			{item: "geggy:reinforced_glass_pane", amount: 2}
 		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 200}
+		],
 		item_outputs: [
-			{item: "modern_industrialization:fluid_pipe", amount: 3}
+			{item: "modern_industrialization:fluid_pipe", amount: 2}
 		]
 	})
 	event.recipes.modern_industrialization.assembler({
@@ -563,10 +624,14 @@ ServerEvents.recipes(event => {
 		item_inputs: [ 
 			{item: "geggy:invar_curved_plate", amount: 4},
 			{item: "modern_industrialization:rubber_sheet", amount: 3},
-			{item: "modern_industrialization:invar_gear", amount: 2}
+			{item: "modern_industrialization:invar_gear", amount: 2},
+			{item: "modern_industrialization:motor", amount: 1}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:soldering_alloy", amount: 200}
 		],
 		item_outputs: [
-			{item: "modern_industrialization:item_pipe", amount: 3}
+			{item: "modern_industrialization:item_pipe", amount: 2}
 		]
 	})
 	
@@ -662,7 +727,7 @@ ServerEvents.recipes(event => {
 		C: 'modern_industrialization:steel_large_plate'
 	})	
 	event.recipes.modern_industrialization.assembler({
-		eu: 4,
+		eu: 8,
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:steel_machine_casing", amount: 1},
@@ -679,21 +744,21 @@ ServerEvents.recipes(event => {
 		'DAB',
 		'EBC'
 	], {
-		A: 'modern_industrialization:advanced_machine_hull',
-		B: 'modern_industrialization:electronic_circuit',
-		C: 'modern_industrialization:cupronickel_wire',
-		D: 'modern_industrialization:large_pump',
-		E: 'modern_industrialization:large_motor'
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:cupronickel_wire_magnetic',
+		D: 'modern_industrialization:pump',
+		E: 'modern_industrialization:piston'
 	})
 	event.recipes.modern_industrialization.assembler({
-		eu: 4,
+		eu: 8,
 		duration: 100,
 		item_inputs: [ 
-			{item: "modern_industrialization:advanced_machine_hull", amount: 1},
-			{item: "modern_industrialization:electronic_circuit", amount: 3},
-			{item: "modern_industrialization:cupronickel_wire", amount: 2},
-			{item: "modern_industrialization:large_pump", amount: 1},
-			{item: "modern_industrialization:large_motor", amount: 2}
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 3},
+			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 2},
+			{item: "modern_industrialization:pump", amount: 1},
+			{item: "modern_industrialization:piston", amount: 2}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:pyro", amount: 1}
@@ -840,25 +905,68 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.replaceInput({type: "minecraft:crafting_shaped"}, "modern_industrialization:aluminum_cable", "minecraft:flint")
-	event.replaceInput({type: "minecraft:crafting_shaped"}, "modern_industrialization:electrum_cable", "modern_industrialization:aluminum_cable")
-	event.replaceInput({type: "minecraft:crafting_shaped"}, "minecraft:flint", "modern_industrialization:electrum_cable")
-	event.replaceInput({type: "modern_industrialization:assembler"}, "modern_industrialization:aluminum_cable", "minecraft:flint")
-	event.replaceInput({type: "modern_industrialization:assembler"}, "modern_industrialization:electrum_cable", "modern_industrialization:aluminum_cable")
-	event.replaceInput({type: "modern_industrialization:assembler"}, "minecraft:flint", "modern_industrialization:electrum_cable")
+	// removed failed electrum aluminium cable swap...
 	
 	event.remove({id: 'modern_industrialization:materials/electrum/packer/cable'})
-	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:electrum_cable'})
-	event.remove({type: 'modern_industrialization:assembler', output: 'modern_industrialization:electrum_cable'})
+	event.remove({id: 'modern_industrialization:materials/electrum/assembler/cable_styrene_rubber'})
+	event.remove({id: 'modern_industrialization:materials/electrum/assembler/cable_synthetic_rubber'})
+
 	event.recipes.modern_industrialization.assembler({
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
-			{item: "modern_industrialization:electrum_wire", amount: 3},
-			{item: "geghilarity:polyethylene_foil", amount: 4}
+			{item: "modern_industrialization:electrum_wire", amount: 2}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:styrene_butadiene_rubber", amount: 6}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:electrum_cable", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:electrum_wire", amount: 2}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 30}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electrum_cable", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/aluminum/packer/cable'})
+	event.remove({id: 'modern_industrialization:materials/aluminum/assembler/cable_styrene_rubber'})
+	event.remove({id: 'modern_industrialization:materials/aluminum/assembler/cable_synthetic_rubber'})
+	event.recipes.modern_industrialization.assembler({
+		eu: 16,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:aluminum_wire", amount: 3},
+			{item: "geghilarity:polyethylene_foil", amount: 4}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:styrene_butadiene_rubber", amount: 6}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:aluminum_cable", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 16,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:aluminum_wire", amount: 3},
+			{item: "geghilarity:polyethylene_foil", amount: 4}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 30}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:aluminum_cable", amount: 1}
 		]
 	})
 	
@@ -1113,8 +1221,6 @@ ServerEvents.recipes(event => {
 		B: 'minecraft:stick'
 	})
 	
-	
-	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:coal_block'})
 	event.recipes.modern_industrialization.packer({eu: 1, duration: 100,item_inputs: [{item: "modern_industrialization:coal_dust", amount: 9}],
 			item_outputs: [{item: "minecraft:coal_block", amount: 1}]})	
 			
@@ -1352,7 +1458,8 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs :
 		[
-			{item: "geggy:pig_iron_ingot", amount: 3}
+			{item: "geggy:pig_iron_ingot", amount: 3},
+			{item: "geghilarity:tiny_dark_ashes", amount: 1}
 		]
 	})
 	event.recipes.modern_industrialization.blast_furnace({
@@ -1367,6 +1474,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.remove({id: 'modern_industrialization:materials/centrifuge/carbon'})
+	/*
 	event.recipes.modern_industrialization.centrifuge({
 		eu: 16,
 		duration: 600,
@@ -1378,6 +1486,7 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:carbon_dust", amount: 1}
 		]
 	})
+	*/
 	event.remove({id: 'modern_industrialization:vanilla_recipes/compressor/diamond_from_coal'})
 	
 	event.recipes.modern_industrialization.salloy({
@@ -1485,16 +1594,30 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.smelting('geggy:tempered_brick', 'geggy:unfired_tempered_brick').cookingTime(1800)
+	event.smelting('geggy:tempered_brick', 'geggy:unfired_tempered_brick').cookingTime(1200)
 	event.remove({id: 'minecraft:blast_furnace'})
+	event.remove({id: 'modern_industrialization:vanilla_recipes/blast_furnace_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/vanilla_recipes/blast_furnace'})
 	event.shaped('minecraft:blast_furnace', [
 		'AAA',
 		'ACA',
 		'BBB'
 	], {
 		A: 'geggy:tempered_brick',
-		C: 'minecraft:furnace',
+		C: 'minecraft:coal_block',
 		B: 'minecraft:smooth_stone'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geggy:tempered_brick", amount: 5},
+			{item: "minecraft:coal_block", amount: 1},
+			{item: "minecraft:smooth_stone", amount: 3}
+		],
+		item_outputs: [
+			{item: "minecraft:blast_furnace", amount: 1}
+		]
 	})
 
 	
@@ -1644,6 +1767,31 @@ ServerEvents.recipes(event => {
 		C: 'create:andesite_casing'
 	})
 	
+	event.remove({id: "create:crafting/logistics/brass_funnel"})
+	event.shaped('create:brass_funnel', [
+		'AAA',
+		'ABA',
+		'D E'
+	], {
+		A: 'create:brass_ingot',
+		B: 'modern_industrialization:rubber_sheet',
+		D: 'modern_industrialization:capacitor',
+		E: 'create:electron_tube'
+	})
+	
+	event.remove({id: "create:crafting/logistics/brass_tunnel"})
+	event.shaped('create:brass_tunnel', [
+		'ACA',
+		'B B',
+		'D E'
+	], {
+		A: 'create:brass_ingot',
+		B: 'modern_industrialization:rubber_sheet',
+		C: 'create:brass_casing',
+		D: 'modern_industrialization:capacitor',
+		E: 'create:electron_tube'
+	})
+	
 	// MI barrels nerf
 	event.remove({id: "modern_industrialization:materials/bronze/craft/barrel"})
 	event.remove({id: "modern_industrialization:materials/steel/craft/barrel"})
@@ -1712,6 +1860,8 @@ ServerEvents.recipes(event => {
 			{item: "minecraft:glass", amount: 1}
 		]
 	})
+	event.remove({id: 'minecraft:glass_bottle'})
+	event.remove({id: 'modern_industrialization:vanilla_recipes/compressor/glass_bottle'})
 	event.recipes.modern_industrialization.salloy({
 		eu: 2,
 		duration: 600,
@@ -1720,7 +1870,7 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_bottle", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
-			{item: "minecraft:glass_bottle", amount: 3}
+			{item: "minecraft:glass_bottle", amount: 1}
 		]
 	})
 	
@@ -1907,7 +2057,7 @@ ServerEvents.recipes(event => {
 		D: 'create:turntable',
 		A: 'create:cogwheel',
 		E: '#minecraft:planks',
-		F: 'modern_industrialization:sodium_battery',
+		F: 'modern_industrialization:silicon_battery',
 		G: 'create:electron_tube'
 	})
 		
@@ -2149,7 +2299,7 @@ ServerEvents.recipes(event => {
 		"ingredient": {
 		"item": "create:brass_sheet"
 	},
-		"loops": 5,
+		"loops": 4,
   "results": [
     {
       "chance": 120.0,
@@ -2187,6 +2337,19 @@ ServerEvents.recipes(event => {
     }
   ],
   "sequence": [
+	{
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "create:incomplete_precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_precision_mechanism"
+        }
+      ]
+    },
     {
       "type": "create:deploying",
       "ingredients": [
@@ -2234,7 +2397,23 @@ ServerEvents.recipes(event => {
           "item": "create:incomplete_precision_mechanism"
         }
       ]
-    }
+    },
+	{
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create:incomplete_precision_mechanism"
+        },
+        {
+          "item": "modern_industrialization:rubber_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:incomplete_precision_mechanism"
+        }
+      ]
+    },
   ],
   "transitionalItem": {
     "item": "create:incomplete_precision_mechanism"
@@ -2335,7 +2514,8 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "modern_industrialization:coke_dust", amount: 2}
 		],
 		item_outputs: [
-			{item: "geggy:pig_iron_ingot", amount: 2}
+			{item: "geggy:pig_iron_ingot", amount: 2},
+			{item: "geghilarity:tiny_dark_ashes", amount: 2}
 		]
 	})	
 	event.recipes.modern_industrialization.blast_furnace({
@@ -2346,7 +2526,8 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "modern_industrialization:coke", amount: 2}
 		],
 		item_outputs: [
-			{item: "geggy:pig_iron_ingot", amount: 2}
+			{item: "geggy:pig_iron_ingot", amount: 2},
+			{item: "geghilarity:tiny_dark_ashes", amount: 2}
 		]
 	})
 	event.recipes.modern_industrialization.blast_furnace({
@@ -2357,7 +2538,8 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "minecraft:coal", amount: 3}
 		],
 		item_outputs: [
-			{item: "geggy:pig_iron_ingot", amount: 2}
+			{item: "geggy:pig_iron_ingot", amount: 2},
+			{item: "geghilarity:tiny_dark_ashes", amount: 3}
 		]
 	})
 	event.recipes.modern_industrialization.blast_furnace({
@@ -2368,7 +2550,8 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "minecraft:charcoal", amount: 3}
 		],
 		item_outputs: [
-			{item: "geggy:pig_iron_ingot", amount: 2}
+			{item: "geggy:pig_iron_ingot", amount: 2},
+			{item: "geghilarity:tiny_dark_ashes", amount: 3}
 		]
 	})
 	event.blasting('minecraft:iron_ingot', 'geggy:pig_iron_ingot').cookingTime(200)
@@ -2384,6 +2567,24 @@ event.shaped('moderndynamics:machine_extender', [
 		item_outputs: [
 			{item: "modern_industrialization:steel_ingot", amount: 1}
 		]
+	})
+	
+	// coke oven
+	
+	event.remove({id: 'modern_industrialization:materials/coke_oven/coke'})
+	event.remove({id: 'modern_industrialization:materials/coke_oven/coke_dust'})
+	
+	event.custom({
+		"type" : "modern_industrialization:coke_oven",
+		"eu" : 2,
+		"duration" : 200,
+		"item_inputs" : {"tag" : "minecraft:logs", "amount" : 1},
+		"fluid_outputs" : {
+			"fluid" : "modern_industrialization:creosote", "amount" : 500, "probability" : 0.35
+		},
+		"item_outputs" : {
+			"item" : "minecraft:charcoal", "amount" : 1
+		}
 	})
 	
 	event.recipes.modern_industrialization.coke_oven({
@@ -2406,13 +2607,763 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "minecraft:coal", amount: 1}
 		],
 		item_outputs: [
-			{item: "minecraft:charcoal", amount: 1}
+			{item: "modern_industrialization:coke", amount: 1}
 		],
 		fluid_outputs: [
-			{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.35}
+			{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.5}
+		]
+	})
+	event.recipes.modern_industrialization.coke_oven({
+		eu: 2,
+		duration: 400,
+		item_inputs: [
+			{item: "modern_industrialization:coal_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:coke_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:creosote", amount: 500, probability: 0.65}
 		]
 	})
 	
+	// potin
+	event.recipes.modern_industrialization.mixer({
+		eu: 2,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:copper_dust", amount: 6},
+			{item: "modern_industrialization:tin_dust", amount: 2},
+			{item: "modern_industrialization:lead_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:potin_dust", amount: 8}
+		]
+	})
+	event.smelting('geggy:potin_ingot', 'geggy:potin_dust').cookingTime(200)
+	event.recipes.modern_industrialization.compressor({
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "geggy:potin_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:potin_plate", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.compressor({
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "geggy:potin_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:potin_curved_plate", amount: 1}
+		]
+	})
+	
+	// nickel rod
+	event.recipes.modern_industrialization.compressor({
+		eu: 2,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:nickel_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:nickel_rod", amount: 2}
+		]
+	})
+	event.recipes.modern_industrialization.compressor({
+		eu: 2,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:nickel_double_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:nickel_rod", amount: 4}
+		]
+	})
+	
+	// removed silver from lead
+	event.remove({id: 'modern_industrialization:materials/macerator/lead_crushed_to_dust'})
+	event.recipes.modern_industrialization.macerator({
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "modern_industrialization:raw_lead", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:lead_dust", amount: 1},
+			{item: "modern_industrialization:lead_dust", amount: 1, probability: 0.5}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/blast_furnace/bauxite_to_aluminum_ingot'})
+	
+	// default alu from emerald
+	event.remove({id: 'modern_industrialization:materials/electrolyzer/beryllium_dust'})
+	event.recipes.modern_industrialization.electrolyzer({
+		eu: 32,
+		duration: 400,
+		item_inputs: [
+			{item: "modern_industrialization:emerald_dust", amount: 23}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:beryllium_dust", amount: 3},
+			{item: "geghilarity:alumina", amount: 2},
+			{item: "modern_industrialization:silicon_dust", amount: 6}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 3000}
+		]
+	})
+	
+	// more create crushing ores removals
+	event.remove({id: 'create:smelting/uranium_ingot_compat_modern_industrialization'})
+	event.remove({id: 'create:blasting/uranium_ingot_compat_modern_industrialization'})
+	
+	// arc furnace
+	
+	event.shaped('geghilarity_fatmachines:steel_frame_box', [
+		'AAA',
+		'A A',
+		'AAA'
+	], {
+		A: 'modern_industrialization:steel_rod'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 64,
+		item_inputs: [ 
+			{item: "modern_industrialization:steel_rod", amount: 6}
+		],
+		item_outputs: [
+			{item: "geghilarity_fatmachines:steel_frame_box", amount: 1}
+		]
+	})
+	event.shaped('geghilarity_fatmachines:machine_casing_firebox_steel', [
+		'BAB',
+		'ACA',
+		'BAB'
+	], {
+		A: 'modern_industrialization:steel_rod',
+		B: 'modern_industrialization:steel_plate',
+		C: 'geghilarity_fatmachines:steel_frame_box'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:steel_rod", amount: 4},
+			{item: "modern_industrialization:steel_plate", amount: 4},
+			{item: "geghilarity_fatmachines:steel_frame_box", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity_fatmachines:machine_casing_firebox_steel", amount: 1}
+		]
+	})
+	event.shaped('geghilarity_fatmachines:casing_solid_steel', [
+		'B B',
+		'BCB',
+		'B B'
+	], {
+		B: 'modern_industrialization:steel_plate',
+		C: 'geghilarity_fatmachines:steel_frame_box'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:steel_plate", amount: 6},
+			{item: "geghilarity_fatmachines:steel_frame_box", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity_fatmachines:casing_solid_steel", amount: 1}
+		]
+	})
+	event.shaped('geghilarity_fatmachines:casing_pipe_steel', [
+		'CAC',
+		'ABA',
+		'CAC'
+	], {
+		A: 'modern_industrialization:steel_rod',
+		B: 'modern_industrialization:steel_machine_casing_pipe',
+		C: 'modern_industrialization:steel_plate'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:steel_rod", amount: 4},
+			{item: "modern_industrialization:steel_plate", amount: 4},
+			{item: "modern_industrialization:steel_machine_casing_pipe", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity_fatmachines:casing_pipe_steel", amount: 1}
+		]
+	})
+	event.shaped('geghilarity_fatmachines:carbon_electrode_assembly', [
+		'CDC',
+		'ABA',
+		'CDC'
+	], {
+		A: 'geghilarity:graphite_electrode',
+		B: 'geghilarity_fatmachines:steel_frame_box',
+		C: 'modern_industrialization:steel_plate',
+		D: 'modern_industrialization:annealed_copper_wire'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "geghilarity:graphite_electrode", amount: 2},
+			{item: "modern_industrialization:annealed_copper_wire", amount: 2},
+			{item: "modern_industrialization:steel_plate", amount: 4},
+			{item: "geghilarity_fatmachines:steel_frame_box", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity_fatmachines:carbon_electrode_assembly", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:arc_furnace', [
+		'EDE',
+		'BAB',
+		'CCC'
+	], {
+		A: 'modern_industrialization:advanced_machine_hull',
+		B: 'modern_industrialization:electronic_circuit',
+		C: 'modern_industrialization:steel_large_plate',
+		D: 'geghilarity_fatmachines:carbon_electrode_assembly',
+		E: 'modern_industrialization:large_pump'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:advanced_machine_hull", amount: 1},
+			{item: "modern_industrialization:steel_large_plate", amount: 3},
+			{item: "modern_industrialization:electronic_circuit", amount: 2},
+			{item: "modern_industrialization:large_pump", amount: 2},
+			{item: "geghilarity_fatmachines:carbon_electrode_assembly", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:arc_furnace", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:poly_tank', [
+		'DFD',
+		'CEC',
+		'BAB'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:pump',
+		D: 'modern_industrialization:tin_cable',
+		E: 'modern_industrialization:tin_rotor',
+		F: 'modern_industrialization:motor'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "modern_industrialization:pump", amount: 2},
+			{item: "modern_industrialization:tin_rotor", amount: 1},
+			{item: "modern_industrialization:motor", amount: 1},
+			{item: "modern_industrialization:tin_cable", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:poly_tank", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:elecell', [
+		'CBC',
+		'EAE',
+		'BDB'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:steel_plate',
+		D: 'modern_industrialization:tin_cable',
+		E: 'modern_industrialization:electrum_fine_wire'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 3},
+			{item: "modern_industrialization:steel_plate", amount: 2},
+			{item: "modern_industrialization:tin_cable", amount: 1},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:elecell", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:crystallizer', [
+		'CEC',
+		'EAE',
+		'BDB'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:steel_plate',
+		D: 'modern_industrialization:pump',
+		E: 'ae2:quartz_vibrant_glass'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "modern_industrialization:steel_plate", amount: 2},
+			{item: "modern_industrialization:pump", amount: 1},
+			{item: "ae2:quartz_vibrant_glass", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:crystallizer", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:roaster', [
+		'BDB',
+		'EAE',
+		'CEC'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:tin_cable',
+		D: 'modern_industrialization:tin_rotor',
+		E: 'modern_industrialization:cupronickel_wire_magnetic'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "modern_industrialization:tin_cable", amount: 2},
+			{item: "modern_industrialization:tin_rotor", amount: 1},
+			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:roaster", amount: 1}
+		]
+	})
+	
+	// misc sy util
+	event.smelting('geghilarity:graphite_ingot', 'geghilarity:graphite_dust').cookingTime(200)
+	event.recipes.modern_industrialization.cutting_machine({
+		eu: 2,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geghilarity:graphite_ingot", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:graphite_rod", amount: 2}
+		]
+	})
+	
+	event.remove({id: 'minecraft:iron_block'})
+	event.remove({id: 'modern_industrialization:materials/steel/craft/ingot_from_block'})
+	
+	event.remove({id: 'modern_industrialization:steam_age/bronze/cutting_machine_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/steam_age/bronze/cutting_machine'})
+	event.shaped('modern_industrialization:bronze_cutting_machine', [
+		'CDC',
+		'BAB',
+		'EEE'
+	], {
+		A: 'modern_industrialization:bronze_machine_casing',
+		B: 'modern_industrialization:copper_gear',
+		C: 'geggy:reinforced_glass_pane',
+		D: 'minecraft:diamond',
+		E: 'moderndynamics:fluid_pipe'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:bronze_machine_casing", amount: 1},
+			{item: "modern_industrialization:copper_gear", amount: 2},
+			{item: "geggy:reinforced_glass_pane", amount: 2},
+			{item: "minecraft:diamond", amount: 1},
+			{item: "moderndynamics:fluid_pipe", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:bronze_cutting_machine", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'extended_drawers:lock'})
+	event.shaped('extended_drawers:lock', [
+		'AAA',
+		'A A',
+		'BBB'
+	], {
+		A: 'minecraft:gold_nugget',
+		B: 'create:brass_sheet'
+	})
+	
+	const ctblades = [
+		'aluminum',
+		'bronze',
+		'copper',
+		'stainless_steel',
+		'tin',
+		'titanium'
+	]
+	ctblades.forEach(mat =>{
+		event.remove({id: "modern_industrialization:materials/"+mat+"/craft/blade"})
+		event.remove({id: "modern_industrialization:materials/"+mat+"/packer/blade"})
+		event.shaped("modern_industrialization:"+mat+"_blade", [
+		'A  ',
+		'A  ',
+		'B  '
+	], {
+		A: "modern_industrialization:"+mat+"_curved_plate",
+		B: "modern_industrialization:"+mat+"_rod"
+	})
+	event.recipes.modern_industrialization.packer({
+		eu: 4,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:"+mat+"_curved_plate", amount: 4},
+			{item: "modern_industrialization:"+mat+"_rod", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:"+mat+"_blade", amount: 1}
+		]
+	})
+	})
+	
+	const earlytank = [
+		'bronze',
+		'steel',
+	]
+	earlytank.forEach(mat =>{
+		event.remove({id: "modern_industrialization:materials/"+mat+"/craft/tank"})
+		event.remove({id: "modern_industrialization:materials/"+mat+"/assembler/tank"})
+		event.shaped("modern_industrialization:"+mat+"_tank", [
+			'ADA',
+			'CBC',
+			'AEA'
+		], {
+			A: "modern_industrialization:"+mat+"_large_plate",
+			B: "geggy:reinforced_glass",
+			C: "geggy:reinforced_glass_pane",
+			D: "create:precision_mechanism",
+			E: "moderndynamics:fluid_pipe"
+	})
+	event.recipes.modern_industrialization.assembler({
+			eu: 8,
+			duration: 200,
+			item_inputs: [ 
+				{item: "modern_industrialization:"+mat+"_large_plate", amount: 4},
+				{item: "geggy:reinforced_glass", amount: 1},
+				{item: "geggy:reinforced_glass_pane", amount: 2},
+				{item: "modern_industrialization:analog_circuit", amount: 1},
+				{item: "modern_industrialization:fluid_pipe", amount: 1}
+			],
+			item_outputs: [
+				{item: "modern_industrialization:"+mat+"_tank", amount: 1}
+			]
+	})
+	})
+	
+	const latetank = [
+		'aluminum',
+		'stainless_steel',
+		'titanium'
+	]
+	latetank.forEach(mat =>{
+		event.remove({id: "modern_industrialization:materials/"+mat+"/craft/tank"})
+		event.remove({id: "modern_industrialization:materials/"+mat+"/assembler/tank"})
+		event.recipes.modern_industrialization.assembler({
+			eu: 32,
+			duration: 300,
+			item_inputs: [ 
+				{item: "modern_industrialization:"+mat+"_large_plate", amount: 4},
+				{item: "ae2:quartz_vibrant_glass", amount: 1},
+				{item: "geggy:reinforced_glass_pane", amount: 2},
+				{item: "modern_industrialization:electronic_circuit", amount: 1},
+				{item: "modern_industrialization:fluid_pipe", amount: 1}
+			],
+			item_outputs: [
+				{item: "modern_industrialization:"+mat+"_tank", amount: 1}
+			]
+	})
+	})
+	
+	event.remove({id: 'modern_industrialization:electric_age/machine/mixer_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/mixer'})
+	event.shaped('modern_industrialization:electric_mixer', [
+		'DFD',
+		'BAB',
+		'CEC'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:tin_rotor',
+		C: 'modern_industrialization:analog_circuit',
+		D: 'geggy:reinforced_glass',
+		E: 'moderndynamics:fluid_pipe',
+		F: 'modern_industrialization:motor'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:tin_rotor", amount: 2},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "geggy:reinforced_glass", amount: 2},
+			{item: "moderndynamics:fluid_pipe", amount: 1},
+			{item: "modern_industrialization:motor", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_mixer", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:electric_age/machine/distillery_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/distillery'})
+	event.shaped('modern_industrialization:distillery', [
+		'DFD',
+		'BAB',
+		'CEC'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:large_pump',
+		C: 'modern_industrialization:electronic_circuit',
+		D: 'ae2:quartz_vibrant_glass',
+		E: 'modern_industrialization:electrum_cable',
+		F: 'modern_industrialization:fluid_pipe'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:large_pump", amount: 2},
+			{item: "modern_industrialization:electronic_circuit", amount: 2},
+			{item: "ae2:quartz_vibrant_glass", amount: 2},
+			{item: "modern_industrialization:electrum_cable", amount: 1},
+			{item: "modern_industrialization:fluid_pipe", amount: 1}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:distillery", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:electric_age/machine/cutting_machine_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/cutting_machine'})
+	event.shaped('modern_industrialization:electric_cutting_machine', [
+		'DFD',
+		'BAB',
+		'CEC'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:motor',
+		C: 'modern_industrialization:analog_circuit',
+		D: 'ae2:quartz_glass',
+		E: 'modern_industrialization:conveyor',
+		F: 'modern_industrialization:invar_rotary_blade'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:motor", amount: 2},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "ae2:quartz_glass", amount: 2},
+			{item: "modern_industrialization:conveyor", amount: 1},
+			{item: "modern_industrialization:invar_rotary_blade", amount: 1}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_cutting_machine", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/blast_furnace/silicium_from_quartz'})
+	event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust'})
+	event.remove({id: 'ae2:blasting/silicon_from_certus_quartz_dust'})
+	event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust_exported_mi_furnace'})
+	
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/diode_doped_asbl'})
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/diode_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/diode'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/diode_doped'})
+	event.shaped('modern_industrialization:diode', [
+		'ACB',
+		'ADB',
+		'ACB'
+	], {
+		A: 'modern_industrialization:electrum_fine_wire',
+		B: 'ae2:quartz_glass',
+		C: 'modern_industrialization:steel_curved_plate',
+		D: 'modern_industrialization:silicon_plate'
+	})
+	event.shaped('modern_industrialization:diode', [
+		' C ',
+		'ADB',
+		' C '
+	], {
+		A: 'modern_industrialization:electrum_fine_wire',
+		B: 'ae2:quartz_glass',
+		C: 'modern_industrialization:steel_curved_plate',
+		D: 'modern_industrialization:silicon_n_doped_plate'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:silicon_n_doped_plate", amount: 1},
+			{item: "ae2:quartz_glass", amount: 1},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 1},
+			{item: "modern_industrialization:steel_curved_plate", amount: 2}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:diode", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:silicon_plate", amount: 1},
+			{item: "ae2:quartz_glass", amount: 3},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 3},
+			{item: "modern_industrialization:steel_curved_plate", amount: 2}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:diode", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/transistor_doped_asbl'})
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/transistor_asbl'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/transistor'})
+	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/transistor_doped'})
+	event.shaped('modern_industrialization:transistor', [
+		'CAC',
+		'DAD',
+		'DDD'
+	], {
+		A: 'modern_industrialization:electrum_fine_wire',
+		C: 'modern_industrialization:steel_plate',
+		D: 'modern_industrialization:silicon_plate'
+	})
+	event.shaped('modern_industrialization:transistor', [
+		'CAC',
+		' C ',
+		'EDE'
+	], {
+		A: 'modern_industrialization:electrum_fine_wire',
+		C: 'modern_industrialization:steel_plate',
+		D: 'modern_industrialization:silicon_n_doped_plate',
+		E: 'modern_industrialization:silicon_p_doped_plate',
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:silicon_p_doped_plate", amount: 2},
+			{item: "modern_industrialization:silicon_n_doped_plate", amount: 1},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 1},
+			{item: "modern_industrialization:steel_plate", amount: 3}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:transistor", amount: 1}
+		]
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:silicon_plate", amount: 5},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 2},
+			{item: "modern_industrialization:steel_plate", amount: 2}
+			
+		],
+		item_outputs: [
+			{item: "modern_industrialization:transistor", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:stirred_tank', [
+		'ECE',
+		'DAD',
+		'BFB'
+	], {
+		A: 'modern_industrialization:basic_machine_hull',
+		B: 'modern_industrialization:analog_circuit',
+		C: 'modern_industrialization:tin_rotor',
+		D: 'modern_industrialization:tin_cable',
+		E: 'ae2:quartz_glass',
+		F: 'modern_industrialization:motor'
+	})
+	event.recipes.modern_industrialization.assembler({
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "modern_industrialization:steel_plate", amount: 2},
+			{item: "modern_industrialization:tin_rotor", amount: 1},
+			{item: "ae2:quartz_glass", amount: 2},
+			{item: "modern_industrialization:tin_cable", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:stirred_tank", amount: 1}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:alloy/mixer/kanthal/dust'})
+	event.recipes.modern_industrialization.mixer({
+		eu: 16,
+		duration: 400,
+		item_inputs: [ 
+			{item: "modern_industrialization:iron_dust", amount: 1},
+			{item: "modern_industrialization:aluminum_dust", amount: 1},
+			{item: "modern_industrialization:chromium_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:kanthal_dust", amount: 3}
+		]
+	})
+	
+	// elytra
+	event.recipes.modern_industrialization.assembler({
+		eu: 240,
+		duration: 10,
+		item_inputs: [ 
+			{item: "geghilarity:polytetrafluoroethylene_sheet", amount: 4},
+			{item: "modern_industrialization:stainless_steel_plate", amount: 2},
+			{item: "modern_industrialization:stainless_steel_ring", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:tin", amount: 144}
+		],
+		item_outputs: [
+			{item: "minecraft:elytra", amount: 1}
+		]
+	})
 	
 })
 

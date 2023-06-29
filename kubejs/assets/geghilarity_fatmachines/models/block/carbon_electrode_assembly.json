@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+		"particle": "geghilarity_fatmachines:block/casing_solid_steel",
+        "up": "geghilarity_fatmachines:block/casing_solid_steel",
+        "down": "geghilarity_fatmachines:block/casing_solid_steel",
+        "north": "geghilarity_fatmachines:block/carbon_electrode_assembly",
+        "south": "geghilarity_fatmachines:block/carbon_electrode_assembly",
+        "east": "geghilarity_fatmachines:block/carbon_electrode_assembly",
+        "west": "geghilarity_fatmachines:block/carbon_electrode_assembly"
+    }
+}

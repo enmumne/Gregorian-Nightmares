@@ -799,12 +799,6 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	
-
-	// create crushed ores
-	event.remove({mod: "create", input: "#create:crushed_ores"})
-	event.remove({mod: "create", output: "#create:crushed_ores"})
-
 	// create millstone
 	// TO FIX check 1.18 recipe for millstone is cogwheel + andesite casing + stone
 	event.replaceInput({type: "minecraft:crafting_shaped", output: "create:millstone"}, "create:andesite_alloy", "modern_industrialization:iron_plate")
@@ -832,6 +826,23 @@ ServerEvents.recipes(event => {
 	event.remove({type: "modern_industrialization:forge_hammer"})
 	event.remove({mod: "modern_industrialization", output: "modern_industrialization:forge_hammer"})
 	event.replaceInput({mod: "modern_industrialization"}, "modern_industrialization:forge_hammer", "modern_industrialization:steel_block")
+	
+	event.remove({id: "modern_industrialization:materials/coal/macerator/ore_to_crushed"})
+	event.remove({id: "create:crushing/raw_iron"})
+	event.remove({id: "modern_industrialization:materials/iron/macerator/ore_to_raw"})
+	event.remove({id: "create:crushing/raw_copper"})
+	event.remove({id: "modern_industrialization:materials/macerator/copper_ore_to_raw"})
+	event.remove({id: "modern_industrialization:materials/macerator/redstone_ore_to_crushed"})
+	event.remove({id: "modern_industrialization:materials/antimony/macerator/ore_to_raw"})
+	event.remove({id: "modern_industrialization:materials/bauxite/macerator/ore_to_crushed"})
+	event.remove({id: "modern_industrialization:materials/lead/macerator/ore_to_raw"})
+	event.remove({id: "modern_industrialization:materials/lignite_coal/macerator/ore_to_crushed"})
+	event.remove({id: "modern_industrialization:materials/mozanite/macerator/ore_to_crushed"})
+	event.remove({id: "modern_industrialization:materials/nickel/macerator/ore_to_raw"})
+	event.remove({id: "create:crushing/raw_tin"})
+	event.remove({id: "modern_industrialization:materials/tungsten/macerator/ore_to_raw"})
+	event.remove({id: "create:crushing/nether_quartz_ore"})
+	event.remove({id: "modern_industrialization:materials/macerator/quartz_ore_to_crushed"})
 
 	// milling recipes
 	event.custom({
@@ -841,59 +852,26 @@ ServerEvents.recipes(event => {
 			"results": [{"item": "geggy:flint_dust"}]
 	})
 	
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:iron_ore"}],
-			"results": [{"item": "minecraft:raw_iron"},{"item": "minecraft:raw_iron"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:copper_ore"}],
-			"results": [{"item": "minecraft:raw_copper"},{"item": "minecraft:raw_copper"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:gold_ore"}],
-			"results": [{"item": "minecraft:raw_gold"},{"item": "minecraft:raw_gold"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:tin_ore"}],
-			"results": [{"item": "modern_industrialization:raw_tin"},{"item": "modern_industrialization:raw_tin"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"ingredients": [{"item": "minecraft:coal_ore"}],
-			"results": [{"item": "modern_industrialization:coal_crushed_dust"},{"item": "modern_industrialization:coal_crushed_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:redstone_ore"}],
-			"results": [{"item": "modern_industrialization:redstone_crushed_dust"},{"item": "modern_industrialization:redstone_crushed_dust"}]
-	})
+
+
 	
 	event.custom({
 			"type": "create:milling",
 			"processingTime":250,
 			"ingredients": [{"item": "minecraft:raw_iron"}],
-			"results": [{"count": 2, "item": "create:crushed_iron_ore"},{"item": "create:crushed_iron_ore", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
+			"results": [{"count": 2, "item": "create:crushed_raw_iron"},{"item": "create:crushed_raw_iron", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
 	})
 	// yttr
 	event.custom({
 			"type": "create:milling",
 			"processingTime":500,
 			"ingredients": [{"item": "yttr:xl_iron_ingot"}],
-			"results": [{"count": 6, "item": "create:crushed_iron_ore"},{"count": 3, "item": "create:crushed_iron_ore", "chance": 0.50}]
+			"results": [{"count": 6, "item": "create:crushed_raw_iron"},{"count": 3, "item": "create:crushed_raw_iron", "chance": 0.50}]
 	})
 	event.custom({
 			"type": "create:milling",
 			"processingTime":200,
-			"ingredients": [{"item": "create:crushed_iron_ore"}],
+			"ingredients": [{"item": "create:crushed_raw_iron"}],
 			"results": [{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust", "chance": 0.8}]
 	})
 	event.custom({
@@ -901,12 +879,6 @@ ServerEvents.recipes(event => {
 			"processingTime":200,
 			"ingredients": [{"item": "minecraft:raw_copper"}],
 			"results": [{"item": "modern_industrialization:copper_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:raw_gold"}],
-			"results": [{"item": "modern_industrialization:gold_dust"}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -926,55 +898,13 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "modern_industrialization:redstone_crushed_dust"}],
 			"results": [{"item": "minecraft:redstone"}]
 	})
+	event.custom({
+			"type": "create:milling",
+			"processingTime":200,
+			"ingredients": [{"item": "create:crushed_raw_lead"}],
+			"results": [{"item": "modern_industrialization:lead_dust"}]
+	})		
 	
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:deepslate_coal_ore"}],
-			"results": [{"item": "modern_industrialization:coal_crushed_dust"},{"item": "modern_industrialization:coal_crushed_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:deepslate_iron_ore"}],
-			"results": [{"item": "minecraft:raw_iron"},{"item": "minecraft:raw_iron"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:deepslate_copper_ore"}],
-			"results": [{"item": "minecraft:raw_copper"},{"item": "minecraft:raw_copper"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:deepslate_gold_ore"}],
-			"results": [{"item": "minecraft:raw_gold"},{"item": "minecraft:raw_gold"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:nether_gold_ore"}],
-			"results": [{"item": "minecraft:raw_gold"},{"item": "minecraft:raw_gold"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:deepslate_redstone_ore"}],
-			"results": [{"item": "modern_industrialization:redstone_crushed_dust"},{"item": "modern_industrialization:redstone_crushed_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "create:deepslate_zinc_ore"}],
-			"results": [{"item": "create:raw_zinc"},{"item": "create:raw_zinc"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:deepslate_tin_ore"}],
-			"results": [{"item": "modern_industrialization:raw_tin"},{"item": "modern_industrialization:raw_tin"}]
-	})
 	event.custom({
 			"type": "create:milling",
 			"processingTime":200,
@@ -1059,6 +989,11 @@ ServerEvents.recipes(event => {
 			"type": "create:cutting",
 			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
 			"results": [{"item": "modern_industrialization:bronze_rod"}]
+	})
+	event.custom({
+			"type": "create:cutting",
+			"ingredients": [{"item": "modern_industrialization:nickel_ingot"}],
+			"results": [{"item": "geghilarity:nickel_rod"}]
 	})
 	/*
 	event.recipes.createCutting(Item.of("modern_industrialization:iron_rod", 2), "minecraft:iron_ingot")
@@ -1260,7 +1195,7 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.custom({
-		type: "create:pressing",
+		type: "create:compacting",
 		ingredients: [
 		// changed to kelp from paper
 			Ingredient.of("geggy:heated_rubber", 1).toJson(),
@@ -1345,15 +1280,61 @@ ServerEvents.recipes(event => {
 		type: "create:mechanical_crafting",
 		key: {
 		"A": {"item": "create:andesite_alloy"},
-		"D": {"item": "modern_industrialization:bronze_drill"}
+		"D": {"item": "create:water_wheel"},
+		"E": {"item": "modern_industrialization:iron_gear"},
+		"F": {"item": "modern_industrialization:steel_rod"}
 		},
 		pattern: [
-			"AAA",
-			"ADA",
-			"AAA"
+			"AAAAA",
+			"AFEFA",
+			"AEDEA",
+			"AFEFA",
+			"AAAAA"
 		],
 		result: {
 			"item": "create:crushing_wheel"
+		}
+	})
+	
+	event.remove({id: 'create:crafting/kinetics/water_wheel'})
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "create:shaft"},
+		"D": {"item": "create:gearbox"},
+		"E": {"item": "geggy:hardened_plank"},
+		"F": {"item": "geggy:treated_plank"}
+		},
+		pattern: [
+			"EEEEE",
+			"EAFAE",
+			"EFDFE",
+			"EAFAE",
+			"EEEEE"
+		],
+		result: {
+			"item": "create:water_wheel"
+		}
+	})
+	
+	event.remove({id: 'create:crafting/kinetics/large_water_wheel'})
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "create:shaft"},
+		"D": {"item": "create:water_wheel"},
+		"E": {"item": "geggy:hardened_plank"},
+		"F": {"item": "create:sail_frame"}
+		},
+		pattern: [
+			"EEEEE",
+			"EAFAE",
+			"EFDFE",
+			"EAFAE",
+			"EEEEE"
+		],
+		result: {
+			"item": "create:large_water_wheel"
 		}
 	})
 	/*
@@ -1479,22 +1460,26 @@ ServerEvents.recipes(event => {
 	
 	event.remove({mod: "create", output: "create:mechanical_arm"})
 	event.shaped("create:mechanical_arm", [
-		"BB ",
+		"BBD",
 		"BA ",
-		"BC ",
+		"EC ",
 	], {
 		B: "create:brass_sheet",
 		A: "modern_industrialization:analog_circuit",
-		C: "create:large_cogwheel"
+		C: "create:brass_encased_large_cogwheel",
+		D: "create:andesite_alloy",
+		E: "create:precision_mechanism"
 	})
 
 	event.recipes.modern_industrialization.assembler({
 		eu: 2,
-		duration: 1000,
+		duration: 600,
 		item_inputs: [
-			{item:"create:brass_sheet", amount: 4},
+			{item:"create:brass_sheet", amount: 3},
 			{item: "modern_industrialization:analog_circuit"},
-			{item: "create:large_cogwheel"}
+			{item: "create:brass_encased_large_cogwheel"},
+			{item: "create:precision_mechanism"},
+			{item: "create:andesite_alloy"}
 		],
 		item_outputs: [
 			{item: "create:mechanical_arm"}
@@ -1762,21 +1747,6 @@ ServerEvents.recipes(event => {
 
 	// quartz glass
 	event.remove({mod: "ae2", output: "ae2:quartz_glass"})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"tag": "c:glass"},{"tag": "c:glass"},{"tag": "c:glass"},{"tag": "c:glass"},
-			//{count: 4, "tag": "c:glass"},
-			{"item": "ae2:certus_quartz_dust"},{"item": "ae2:certus_quartz_dust"},{"item": "ae2:certus_quartz_dust"},{"item": "ae2:certus_quartz_dust"},
-			//{count: 4, "item": "ae2:certus_quartz_dust"}
-			//Item.of("#c:glass", 4),
-			//Item.of("ae2:certus_quartz_dust", 4)
-		],
-		results: [
-			{count: 4, "item": "ae2:quartz_glass"}
-			//Item.of("ae2:quartz_glass", 4)
-		]
-	})
 	//event.recipes.createCompacting(Item.of("ae2:quartz_glass", 4), [Item.of("#c:glass", 4), Item.of("ae2:certus_quartz_dust", 4)])
 
 	// ae2 cards
@@ -1995,16 +1965,17 @@ ServerEvents.recipes(event => {
 	//event.replaceInput({output: "ae2things:cell_component_4096k"}, "minecraft:glowstone_dust", "modern_industrialization:ruby_dust")
 
 	// molecular assembler
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:molecular_assembler"})
+	event.remove({id: "ae2:molecular_assembler"})
+	event.remove({id: "ae2:network/crafting/molecular_assembler"})
 	event.recipes.modern_industrialization.assembler(
 		{
-			eu: 2,
-			duration: 200,
+			eu: 32,
+			duration: 500,
 			item_inputs: [
 				{item: "modern_industrialization:assembler", amount: 1},
 				{item: "ae2:formation_core", amount: 1},
 				{item: "ae2:annihilation_core", amount: 1},
-				{item: "minecraft:glass", amount: 6}
+				{item: "ae2:quartz_vibrant_glass", amount: 6}
 			],
 			item_outputs: [
 				{item: "ae2:molecular_assembler"}
@@ -2415,6 +2386,8 @@ ServerEvents.recipes(event => {
 
 	event.replaceInput({type: "create:compacting", output: "create:blaze_cake_base"}, "minecraft:egg", "kibe:cursed_kibe")
 
+	// max 9 ingredients ???
+	/*
 	event.custom({
 		type: "create:mixing",
 		heatRequirement: "superheated",
@@ -2429,6 +2402,7 @@ ServerEvents.recipes(event => {
 		processingTime: 100
 	})
 	//.superheated()
+	*/
 
 	// creative create
 	event.recipes.modern_industrialization.implosion_compressor({

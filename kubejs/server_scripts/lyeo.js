@@ -608,7 +608,7 @@ event.custom({
 		.fluidIn('modern_industrialization:uu_matter', 1000)
 		.fluidIn("modern_industrialization:cryofluid", 10000)
 		
-	//compresosr steam	
+	//compressor steam	
 	
 
 		event.remove({id: 'modern_industrialization:assembler_generated/steam_age/bronze/compressor'})
@@ -627,7 +627,7 @@ event.custom({
 	
 	
 	
-	//eletrolyzer reowrk
+	//eletrolyzer rework
 		event.remove({id: 'modern_industrialization:electric_age/machine/electrolyzer_asbl'})
 		event.shaped('modern_industrialization:electrolyzer', [
 		"ANA",
@@ -636,7 +636,7 @@ event.custom({
 	], {
 		A: 'modern_industrialization:cupronickel_wire_magnetic',
 		S: 'modern_industrialization:basic_machine_hull',
-		C: 'modern_industrialization:gold_rod',
+		C: 'modern_industrialization:electrum_fine_wire',
 		N: 'modern_industrialization:analog_circuit'
 	})
 	
@@ -644,11 +644,38 @@ event.custom({
 		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/electrolyzer'})
 		event.recipes.modern_industrialization.assembler(8, 200)
 		.itemIn('modern_industrialization:basic_machine_hull', 1)
-		.itemIn('2x modern_industrialization:gold_rod', 1)
+		.itemIn('2x modern_industrialization:electrum_fine_wire', 1)
 		.itemIn('2x modern_industrialization:analog_circuit', 1)
 		.itemIn('4x modern_industrialization:cupronickel_wire_magnetic', 1)
 		
 		.itemOut('modern_industrialization:electrolyzer', 1)
+	
+	// chemical reactor	
+	event.remove({id: 'modern_industrialization:electric_age/machine/chemical_reactor_asbl'})
+		event.shaped('modern_industrialization:chemical_reactor', [
+		"AXA",
+		"CSC",
+		"BNB"
+	], {
+		A: 'ae2:quartz_vibrant_glass',
+		B: 'modern_industrialization:analog_circuit',
+		S: 'modern_industrialization:basic_machine_hull',
+		C: 'modern_industrialization:aluminum_rotor',
+		N: 'modern_industrialization:tin_cable',
+		X: 'modern_industrialization:large_motor'
+	})
+	
+	
+		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/chemical_reactor'})
+		event.recipes.modern_industrialization.assembler(8, 200)
+		.itemIn('2x ae2:quartz_vibrant_glass', 1)
+		.itemIn('2x modern_industrialization:analog_circuit', 1)
+		.itemIn('modern_industrialization:basic_machine_hull', 1)
+		.itemIn('2x modern_industrialization:aluminum_rotor', 1)
+		.itemIn('modern_industrialization:tin_cable', 1)
+		.itemIn('modern_industrialization:large_motor', 1)
+		
+		.itemOut('modern_industrialization:chemical_reactor', 1)	
 
 	
 

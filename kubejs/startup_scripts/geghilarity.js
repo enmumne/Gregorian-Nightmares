@@ -357,11 +357,6 @@ StartupEvents.registry('fluid', event => {
     .noBucket
 	
 	event
-    .create('geghilarity:sodium_hydroxide_solution')
-	.thinTexture(0x011355)
-    .noBucket
-	
-	event
     .create('geghilarity:sodium_hydroxide_bauxite')
 	.thinTexture(0x8C5414)
     .noBucket
@@ -709,7 +704,17 @@ StartupEvents.registry('fluid', event => {
 	
 	event
     .create('geghilarity:air')
-	.thinTexture(0x586C81)
+	.thinTexture(0x4F6070)
+    .noBucket
+	
+	event
+    .create('geghilarity:nether_air')
+	.thinTexture(0x453535)
+    .noBucket
+	
+	event
+    .create('geghilarity:ender_air')
+	.thinTexture(0x2D354A)
     .noBucket
 	
 	event
@@ -1079,11 +1084,114 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0xFF3838)
     .noBucket
 	
-	///////////////
-	
 	event
     .create('geghilarity:molten_bronze')
-	.thinTexture(0xFF3838)
+	.thinTexture(0xD46C02)
+    .noBucket
+	
+	event
+	.create('geghilarity:cryolite')
+	.thinTexture(0x1F717C)
+    .noBucket
+	
+	event
+	.create('geghilarity:hydrogen_fluoride')
+	.thinTexture(0x610D4B)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodium_fluoride_solution')
+	.thinTexture(0x320479)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodium_aluminate_solution')
+	.thinTexture(0x32568F)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_sodium_aluminate_solution')
+	.thinTexture(0x45618B)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_soda_ash_solution')
+	.thinTexture(0x6A6B73)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_sodium_hydroxide_solution')
+	.thinTexture(0x2D386D)
+    .noBucket
+	
+	/////////////
+	
+	event
+	.create('geghilarity:carburized_stainless_steel')
+	.thinTexture(0x524E40)
+    .noBucket
+	
+	event
+	.create('geghilarity:stainless_steel')
+	.thinTexture(0xA9A9BA)
+    .noBucket
+	
+	event
+	.create('geghilarity:soda_ash_solution')
+	.thinTexture(0x5454C0)
+    .noBucket
+	
+	event
+	.create('geghilarity:potassium_carbonate_solution')
+	.thinTexture(0x267C3E)
+    .noBucket
+	
+	event
+	.create('geghilarity:rock_salt_solution')
+	.thinTexture(0x2D47AF)
+    .noBucket
+	
+	event
+	.create('geghilarity:hydrogen_chloride')
+	.thinTexture(0x590440)
+    .noBucket
+	
+	event
+	.create('geghilarity:potassium_bisulfate_solution')
+	.thinTexture(0x24A8A7)
+    .noBucket
+	
+	event
+	.create('geghilarity:potassium_bisulfate')
+	.thinTexture(0x499797)
+    .noBucket
+	
+	event
+	.create('geghilarity:seed_oil')
+	.thinTexture(0x9BAD62)
+    .noBucket
+	
+	event
+	.create('geghilarity:liquid_fat')
+	.displayName('Liquid Fat (Stearin)')
+	.thinTexture(0xB8944B)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodium_stearate')
+	.displayName('Sodium Stearate (Soap)')
+	.thinTexture(0xBBBBBB)
+    .noBucket
+	
+	event
+	.create('geghilarity:tetrafluoroethylene_emulsion')
+	.thinTexture(0x2B2229)
+    .noBucket
+	
+	event
+	.create('geghilarity:polytetrafluoroethylene_solution')
+	.displayName('Polytetrafluoroethylene (PTFE) Solution')
+	.thinTexture(0x262685)
     .noBucket
 	
    
@@ -1140,7 +1248,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:rhodium_filter_cake_dust').displayName('Rhodium Filter Cake Dust');
 	event.create('geghilarity:reprecipitated_rhodium_dust').displayName('Reprecipitated Rhodium Dust');
 	event.create('geghilarity:rhodium_dust').displayName('Rhodium Dust');
-	event.create('geghilarity:soda_ash_dust').displayName('Soda Ash Dust');
+	event.create('geghilarity:soda_ash_dust').displayName('Soda Ash (Sodium Carbonate) Dust');
 	event.create('geghilarity:rarest_metal_residue_dust').displayName('Rarest Metal Residue Dust');
 	event.create('geghilarity:sodium_ruthenate_dust').displayName('Sodium Ruthenate Dust');
 	event.create('geghilarity:ruthenium_tetroxide_dust').displayName('Ruthenium Tetroxide Dust');
@@ -1219,7 +1327,7 @@ StartupEvents.registry('item', event => {
 	
 	//LCR
 	event.create('geghilarity:sodium_fluoride_dust');
-	event.create('geghilarity:aluminium_trifluoride');
+	event.create('geghilarity:aluminium_trifluoride_dust');
 	event.create('geghilarity:charcoal_dust').burnTime(1600);
 	event.create('geghilarity:polyethylene_foil')
 	event.create('geghilarity:polyethylene_sheet')
@@ -1403,8 +1511,41 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:osmium_rod')
 	event.create('geghilarity:osmium_drill_head')
 
-
+	// alu
+	event.create('geghilarity:cryolite_dust')
+	//event.create('geghilarity:calcium_sulfate_dust') //  check uses
+	event.create('geghilarity:acanthite_dust')
+	event.create('geghilarity:tiny_calcite_dust').displayName('Tiny Pile of Calcite Dust')
+	event.create('geghilarity:small_silver_oxide_dust').displayName('Small Pile of Silver Oxide Dust');
+	event.create('geghilarity:silver_oxide_dust')
 	
+	event.create('geghilarity:nickel_rod')
+	
+	event.create('geghilarity:graphite_dust')
+	event.create('geghilarity:graphite_ingot')
+	event.create('geghilarity:graphite_rod')
+	event.create('geghilarity:graphite_electrode')
+	event.create('geghilarity:chromite_dust')
+	event.create('geghilarity:ferrochromium_dust')
+	event.create('geghilarity:ferrosilicon_dust')
+	event.create('geghilarity:fluorite_dust')
+	event.create('geghilarity:gallium_dust')
+	event.create('geghilarity:tiny_gallium_dust').displayName('Tiny Pile of Gallium Dust');
+	event.create('geghilarity:silicon_carbide_dust')
+	event.create('geghilarity:wood_ash_dust')
+	event.create('geghilarity:dark_ashes')
+	event.create('geghilarity:potassium_carbonate_dust')
+	event.create('geghilarity:potassium_bisulfate_dust')
+	event.create('geghilarity:potassium_persulfate_dust')
+	event.create('geghilarity:polytetrafluoroethylene_pulp').displayName('Polytetrafluoroethylene (PTFE) Pulp')
+	event.create('geghilarity:philips_catalyst_dust')
+	event.create('geghilarity:ziegler_natta_catalyst_dust')
+	
+	event.create('geghilarity:small_ferrosilicon_dust').displayName('Small Pile of Ferrosilicon Dust');
+	
+	event.create('geghilarity:tiny_dark_ashes').displayName('Tiny Pile of Dark Ashes')
+
+
 })	
 
 

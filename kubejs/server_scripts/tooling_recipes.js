@@ -431,26 +431,7 @@ event.custom (
 	//event.shapeless('minecraft:wooden_pickaxe', ['geggy:j_wooden_pickaxe_head', 'geggy:j_tool_rod'])
 	//event.shapeless('minecraft:stone_pickaxe', ['geggy:j_stone_pickaxe_head', 'geggy:j_tool_rod'])
 	event.shapeless('minecraft:wooden_axe', ['geggy:j_wooden_axe_head', 'geggy:j_tool_rod'])
-	event.shapeless('minecraft:stone_axe', ['geggy:j_stone_axe_head', 'geggy:j_tool_rod'])
-
-event.custom({
-  "type" : "modern_industrialization:coke_oven",
-  "eu" : 2,
-  "duration" : 200,
-  "item_inputs" : {
-    "tag" : "minecraft:logs",
-    "amount" : 1
-  },
-  "fluid_outputs" : {
-      "fluid" : "modern_industrialization:creosote",
-      "amount" : 500,
-      "probability" : 0.5
-  },
-  "item_outputs" : {
-    "item" : "minecraft:charcoal",
-    "amount" : 1
-  }
-})	
+	event.shapeless('minecraft:stone_axe', ['geggy:j_stone_axe_head', 'geggy:j_tool_rod'])	
 
 // LEATHER // leaves > dye > tannin > drain> wash > dry > leather > strips > labels
 
@@ -800,7 +781,7 @@ event.recipes.modern_industrialization.macerator({
 		'ABA',
 		' A '
 	], {
-		A: 'geggy:treated_plank',
+		A: 'geggy:hardened_plank',
 		B: 'createdeco:netherite_sheet'
 	})
 	

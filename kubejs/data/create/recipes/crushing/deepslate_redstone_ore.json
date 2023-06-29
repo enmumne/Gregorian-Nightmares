@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:deepslate_redstone_ore"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "count": 5,
+      "item": "modern_industrialization:redstone_crushed_dust"
+    },
+    {
+	  "count": 2,	
+      "chance": 0.5,
+      "item": "modern_industrialization:redstone_crushed_dust"
+    },
+    {
+      "chance": 0.75,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ]
+}

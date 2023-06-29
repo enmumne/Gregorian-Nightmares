@@ -1,5 +1,31 @@
 ServerEvents.recipes(event => {
 	
+	event.remove({id: 'create:crafting/kinetics/smart_chute'})
+	event.shaped('create:smart_chute', [
+		' D ',
+		'BAB',
+		'BCB'
+	], {
+		A: 'create:chute',
+		B: 'create:brass_sheet',
+		C: 'modern_industrialization:capacitor',
+		D: 'create:electron_tube'
+	})
+	
+	event.remove({id: 'create:crafting/kinetics/mechanical_crafter'})
+	event.shaped('create:mechanical_crafter', [
+		'ABA',
+		'FCF',
+		'DED'
+	], {
+		A: 'create:electron_tube',
+		B: 'modern_industrialization:capacitor',
+		C: 'create:brass_casing',
+		D: 'geggy:hardened_plank',
+		E: 'create:precision_mechanism',
+		F: 'create:cogwheel'
+	})
+	
 	event.shaped('create:mechanical_plough', [
 		'CCC',
 		'BBB',
@@ -27,16 +53,6 @@ ServerEvents.recipes(event => {
 		A: 'create:andesite_casing',
 		B: 'create:shaft',
 		C: 'geggy:sharp_plate'
-	})
-	
-	event.remove({id: 'create:crafting/kinetics/water_wheel'})
-	event.shaped('create:water_wheel', [
-		'AAA',
-		'ABA',
-		'AAA'
-	], {
-		A: 'geggy:hardened_plank',
-		B: 'create:large_cogwheel'
 	})
 	
 	event.remove({id: 'create:crafting/kinetics/weighted_ejector'})
@@ -1615,25 +1631,24 @@ ServerEvents.recipes(event => {
 	
 	// sails
 	event.remove({id: 'create:crafting/kinetics/white_sail'})
+	event.remove({id: 'create:crafting/kinetics/white_sailfrom_conversion'})
+	event.remove({id: 'create:crafting/kinetics/sail_framefrom_conversion'})
 	event.shaped('create:white_sail', [
 		'AB ',
-		'BC ',
+		'A  ',
 		'   '
 	], {
 		A: 'geggy:linen',
-		B: 'minecraft:stick',
-		C: 'create:andesite_alloy'
+		B: 'create:sail_frame'
 	})
-	event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
-	event.shaped('create:windmill_bearing', [
-		'A  ',
-		'BD ',
-		'C  '
+	event.shaped('create:white_sail', [
+		'BAB',
+		'BAB',
+		' C '
 	], {
-		A: '#minecraft:wooden_slabs',
-		B: 'create:andesite_casing',
-		C: 'create:piston_extension_pole',
-		D: 'create:cogwheel'
+		A: 'geggy:linen',
+		B: 'minecraft:stick',
+		C: 'create:shaft'
 	})
 	
 	// iron apocalypse
@@ -1646,8 +1661,8 @@ ServerEvents.recipes(event => {
 			{"type": "farmersdelight:tool",
 			"tag": "c:tools/pickaxes"},
 		"result": [
-			{ "item": "create:crushed_iron_ore", "count": 1},
-			{"chance": 0.8, "count": 1, "item": "create:crushed_iron_ore"}
+			{ "item": "create:crushed_raw_iron", "count": 1},
+			{"chance": 0.8, "count": 1, "item": "create:crushed_raw_iron"}
 		],
 		"sound": "minecraft:entity.item.break"
 	})
@@ -1957,5 +1972,135 @@ ServerEvents.recipes(event => {
 		],
 		processingTime: 100
 	})
+	
+	// brass encased large cogwheel for arm
+	event.shapeless('create:brass_encased_large_cogwheel', ['create:large_cogwheel','create:brass_casing'])
+	
+	// MD pipes
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:rubber_sheet"},
+		transitionalItem: {"item": "geggy:incomplete_fluid_pipe"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_fluid_pipe"},
+					{"item": "geggy:potin_curved_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_fluid_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_fluid_pipe"},
+					{"item": "geggy:reinforced_glass_pane"}
+				],
+				results: [{
+					"item": "geggy:incomplete_fluid_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_fluid_pipe"},
+					{"item": "modern_industrialization:bronze_rotor"}
+				],
+				results: [{
+					"item": "geggy:incomplete_fluid_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_fluid_pipe"},
+					{"item": "geggy:potin_curved_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_fluid_pipe"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_fluid_pipe"}
+				],
+				results: [{
+					"item": "geggy:incomplete_fluid_pipe"
+				}]
+		  	}
+		],
+		results: [{
+			"item": "moderndynamics:fluid_pipe"
+		}],
+		loops: 2
+	  }
+	)
+	
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:motor"},
+		transitionalItem: {"item": "geggy:incomplete_item_pipe"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_item_pipe"},
+					{"item": "geggy:invar_curved_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_item_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_item_pipe"},
+					{"item": "geggy:reinforced_glass_pane"}
+				],
+				results: [{
+					"item": "geggy:incomplete_item_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_item_pipe"},
+					{"item": "modern_industrialization:steel_gear"}
+				],
+				results: [{
+					"item": "geggy:incomplete_item_pipe"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_item_pipe"},
+					{"item": "geggy:invar_curved_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_item_pipe"
+				}]
+			},
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_item_pipe"},
+					// 81 = 1
+					{"amount": 1620, "fluid": "modern_industrialization:soldering_alloy"}
+				],
+				results: [{
+					"item": "geggy:incomplete_item_pipe"
+				}]
+			}
+		],
+		results: [{
+			"item": "moderndynamics:item_pipe"
+		}],
+		loops: 2
+	  }
+	)
 	
 })	

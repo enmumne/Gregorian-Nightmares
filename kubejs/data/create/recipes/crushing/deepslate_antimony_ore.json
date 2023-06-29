@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "modern_industrialization:deepslate_antimony_ore"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "count": 2,
+      "item": "modern_industrialization:raw_antimony"
+    },
+    {
+	  "count": 3,	
+      "chance": 0.5,
+      "item": "modern_industrialization:raw_antimony"
+    },
+    {
+      "chance": 0.55,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ]
+}

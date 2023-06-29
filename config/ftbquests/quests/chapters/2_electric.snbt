@@ -17,6 +17,8 @@
 				""
 				"By the end of this chapter you'll have access to most basic machines, an electric quarry and oil drilling rig with even more resource generation options and a new source of power generation. Good Luck!"
 				""
+				"&o : Note that quests and progression are both in the process of being overhauled, so these are still mostly \"legacy\", as you can see from the Brass quest, considering you've had access to brass for quite a while..."
+				""
 				"&o&d 2T : 0C if you're still around lemme show you how you make your first electricity :trollge:"
 				"&o&d : first you need a burning box to make heat as HU. This is a steel one."
 				"&o&d : then you need a boiler tank to use the heat to turn into steam"
@@ -199,7 +201,11 @@
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
-			description: ["To gain access to some more advanced Create machines, you'll want a steel mixer to mix up some brass dust. Smelt this up to get some create brass."]
+			description: [
+				"To gain access to some more advanced Create machines, you'll want a steel mixer to mix up some brass dust. Smelt this up to get some create brass."
+				""
+				"&o(The questbook will be overhauled at some point. You already got brass in the first page of these quests. So from this point onward use the questbook as an overall guide, but don't trust it. At least as long development is focused on adding major content rather than polish.)"
+			]
 			id: "4611CABE90FC9DB9"
 			tasks: [{
 				id: "41A62C3517372B93"
@@ -565,14 +571,13 @@
 		{
 			dependencies: ["777C8BA4044899FB"]
 			description: [
-				"The Electric Blast Furnace(EBF) is the electric version of your steam blast furnace."
+				"The Electric Blast Furnace (EBF) is the electric version of your steam blast furnace."
 				""
 				"You'll want Cupronickel coils to complete the EBF multiblock"
 				""
 				"&o&6 2Y : Blood roils through your veins as the harsh words of the townsfolk echo in your ears....they think you mad. But you are not merely a lunatic. You'll show them. You'll show them all! They will pay for their grave mistake. You merely need to use the &l&cAlloy Smelter&r&o&6 that you had devised before to create something...new."
 				""
 				"&o&6 : Cupronickel, you've decided to call it. Yes, that's a perfect name. The material has a lustrous brown sheen, darker than the mere copper that you had been working with previously. Perhaps darker in more ways than just appearance, as well. The Alloy Smelter was more powerful than you had imagined, and it almost scares you. But you are its master. It has to obey your every command. And in turn, metal obeys its command. You wondered how you might utilize this newfound power, when you realized. Everything in this world is made of cubes. That is for a reason, is it not? Yes...yes, this will do nicely, you think, cackling as a devious plan hatches in your twisted head. Perhaps this material will be more capable than you had previously imagined. If you can find a way to tightly pack wires of this new material into a cube, you should be able to harness its incredible power, bending the universe to your untouchable will. Hahahahahaha...you'll show them, alright. They will die regretting the day they ever doubted you!"
-				""
 			]
 			id: "049C15D562CA1774"
 			min_width: 360
@@ -585,11 +590,16 @@
 			y: 20.5d
 		}
 		{
-			dependencies: ["049C15D562CA1774"]
+			dependencies: [
+				"049C15D562CA1774"
+				"658A2A18099ABF88"
+			]
 			description: [
-				"There are several ways of obtaining Aluminum, so check REI to see which is more favorable for you. We assume you've encountered some Bauxite on your mining expeditions by now so for this quest you'll want to turn some Bauxite dust into aluminum in the EBF"
+				"The process to obtain aluminium has been replaced from one adapted from &6&lSupersymmetry&r a WIP GregTech science-based modpack on 1.12."
 				""
-				"NOTE: When you gather enough aluminum, you'll want to fast track toward cheaper Aluminum recipes as soon as you can. "
+				"Supersymmetry removed the ubiquitous chemical reactor to replace it with an handful different machines. I've only adapted certain things, and more work is ahead."
+				""
+				"Look sideways to have an overall guide to the main line."
 				""
 				"&o&d 2T : gregtech 6, it's totally different from what you've been playing now"
 				"&o&7 6N : you dont really need a modpack for gt6"
@@ -612,20 +622,15 @@
 				"&o&d 2T : both"
 				"&o&d : autoclave bauxite with NaOH to get sodium aluminate. Bathe the aluminate in water to get Aluminium Hydroxide, then melt that into molten alumina"
 			]
+			icon: "modern_industrialization:aluminum_ingot"
 			id: "3889F5C3B7615BC4"
 			min_width: 340
-			tasks: [
-				{
-					id: "2606DADC71ADA960"
-					item: "modern_industrialization:bauxite_dust"
-					type: "item"
-				}
-				{
-					id: "5393E7CF2C1DEBCD"
-					item: "modern_industrialization:aluminum_ingot"
-					type: "item"
-				}
-			]
+			shape: "rsquare"
+			tasks: [{
+				id: "5393E7CF2C1DEBCD"
+				item: "modern_industrialization:aluminum_ingot"
+				type: "item"
+			}]
 			x: 1.5d
 			y: 22.0d
 		}
@@ -681,7 +686,10 @@
 				"Quartz Dust can be obtained by running Diorite through the Crushing Wheel."
 				""
 				"Throw it in the EBF and you've got silicon."
+				""
+				"(Time for changes... Find a different way to obtain these.)"
 			]
+			icon: "modern_industrialization:silicon_dust"
 			id: "112F3AF89CBBAF63"
 			tasks: [
 				{
@@ -720,6 +728,7 @@
 				"112F3AF89CBBAF63"
 			]
 			description: ["These components are used in crafting electronic circuits. Similarly to Aluminum, you'll use regular steel plates until you get access to the chemical reactor, where you can double your output with a little bit of extra work."]
+			icon: "modern_industrialization:diode"
 			id: "50522C08021350A6"
 			tasks: [
 				{
@@ -749,13 +758,12 @@
 				item: "modern_industrialization:chemical_reactor"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 24.5d
+			x: 3.0d
+			y: 25.0d
 		}
 		{
-			dependencies: ["5EDB45EE3EACD5E1"]
 			description: [
-				"The Electrolyzer, similarly to the Chemical Reactor is an integral part of MI. Right now it can be used to produce Aluminum cheaper than you have been doing. Although this isn't required right away, the ratio is so much better it might as well be."
+				"The recipe for the Electrolyzer has been shuffled so that it's possible to craft it earlier and use it to assist in the production of aluminium."
 				""
 				"&o&d 57 : I really love chemistry!"
 				"&o&4 0R : americium oganesson uranium sulfide"
@@ -768,8 +776,8 @@
 				item: "modern_industrialization:electrolyzer"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 25.5d
+			x: 10.5d
+			y: 20.5d
 		}
 		{
 			dependencies: [
@@ -962,11 +970,12 @@
 			y: 34.5d
 		}
 		{
-			dependencies: ["350EE85AAE5FB778"]
 			description: [
 				"The basic upgrade will allow +2EU/t per upgrade. You can stack up to 64 in a single machine."
 				""
 				"NOTE: To extract the upgrades from a machine again, Shift+Right Click with your crowbar."
+				""
+				"(Crowbar not needed anymore...)"
 			]
 			id: "7DADC4A3DD64DEF3"
 			optional: true
@@ -975,11 +984,11 @@
 				item: "modern_industrialization:basic_upgrade"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 34.5d
+			x: 3.0d
+			y: 20.5d
 		}
 		{
-			dependencies: ["7DADC4A3DD64DEF3"]
+			dependencies: ["350EE85AAE5FB778"]
 			description: ["The Advanced Overclocker gives up to +8EU/t"]
 			id: "0940AEEC91293AED"
 			optional: true
@@ -1102,8 +1111,224 @@
 				type: "checkmark"
 			}]
 			title: "Fabled Transmutation: From Lead to... Electrum"
-			x: 3.0d
+			x: -3.0d
 			y: 22.5d
+		}
+		{
+			dependencies: ["4368EA2D485FBCCB"]
+			description: [
+				"For carbon you can pack the tiny dark ashes you get from smelting pig iron, and then centrifuge a full dark ash for a carbon dust."
+				""
+				"Or you can use the electrolyzer, for example from sugar."
+				""
+				"Carbon is the last ingredient in this complex recipe. &eAluminium Ingots&r can be produced directly with the following, the main function of the Electrolytic Cell:"
+				""
+				"10 alumina dusts + 1 aluminium trifluoride dust + 3 carbon dusts + 144 cryolite (fluid) > 4 &aaluminium ingots&r + 1350 hydrogen fluoride + 3000 carbon dioxide"
+			]
+			icon: "modern_industrialization:carbon_dust"
+			id: "658A2A18099ABF88"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "6CA9E5AFE5DF1D2D"
+				item: "modern_industrialization:carbon_dust"
+				type: "item"
+			}]
+			title: "Pulling it together"
+			x: 3.0d
+			y: 22.0d
+		}
+		{
+			dependencies: [
+				"3EF0FE07E02D12E3"
+				"07A54FE84FCC09D2"
+			]
+			description: [
+				"Roaster again."
+				""
+				"4 Aluminium Trifluoride Dusts + 6 Sodium Fluoride Dusts > 10 Cryolite Dusts"
+				""
+				"This then goes into an Extractor, because you need the Cryolite as fluid."
+			]
+			id: "4368EA2D485FBCCB"
+			shape: "rsquare"
+			tasks: [{
+				id: "4A472661524DC415"
+				item: "geghilarity:cryolite_dust"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 22.0d
+		}
+		{
+			dependencies: ["7593BDF715A3AC99"]
+			description: [
+				"Bauxite is the start for both aluminium and titanium. Of course you don't have to worry about titanium at this point. But the two are somewhat connected."
+				""
+				"The first step requires a new machine, a &aRoaster&r."
+				""
+				"Along with bauxite you need &eSodium Hydroxide&r, and you can get that from a mixer with Sodium Hydroxide Dust and water."
+				""
+				"The Sodium Hydroxide Dust itself needs a few steps, and you'll have to rush an electrolyzer, so that you can use salt water. Since we don't have ways for realism, you can't use sea water, and you'll have to produce salt water by simply using a mixer with standard water and salt dust..."
+				""
+				"It's not elegant, but it should get the job done."
+				""
+				"From this process you can obtain &eImpure Sodium Aluminate Solution&r, and with a centrifuge you can turn that into normal sodium aluminate solution."
+			]
+			icon: "modern_industrialization:bauxite_dust"
+			id: "62C1756D9C7FC4B1"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "7B606B4CA88AE9B0"
+					item: "modern_industrialization:bauxite_dust"
+					type: "item"
+				}
+				{
+					id: "1617784EDB5A636E"
+					item: "modern_industrialization:roaster"
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 20.5d
+		}
+		{
+			dependencies: ["62C1756D9C7FC4B1"]
+			description: [
+				"Another machine comes into action: a &aCrystallizer&r."
+				""
+				"Two recipes can be used but to jumpstart it you need three fluids:"
+				""
+				"3000 sodium aluminate solution (from the previous step) + 1000 water + 1000 carbon dioxide"
+				""
+				"&eCarbon dioxide&r can be a problem here, but you can use the roaster with coke and some oxygen to get it, before you get access to more transformations through a chemical reactor (which requires aluminium)."
+				""
+				"You should have some options for oxygen, but since they can be ugly you can use limestone on its own, but at an higher energy cost."
+				""
+				"After the first run you can use a single Aluminium Hydroxide Dust as a catalyst for a slightly different process. Being a catalyst, that dust won't be consumed. So you can skip on the carbon dioxide now."
+			]
+			icon: "geghilarity:aluminium_hydroxide"
+			id: "79EEC5D737DE2B78"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "1B9BD6D333608314"
+					item: "geghilarity:aluminium_hydroxide"
+					type: "item"
+				}
+				{
+					id: "5B4434CED88CE91B"
+					item: "modern_industrialization:crystallizer"
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 22.0d
+		}
+		{
+			dependencies: ["79EEC5D737DE2B78"]
+			description: [
+				"Time to cook that Aluminium Hydroxide into an Electric Blast Furnace to get &eAlumina&r."
+				""
+				"Still not quite there to aluminium, we need a few more steps."
+				""
+				"Note that alumina itself can also be obtained in various ways and byproducts. In most cases I converted the aluminium dusts into alumina, to preserve this complex production chain."
+			]
+			id: "5E9712879C2ACBA0"
+			shape: "rsquare"
+			tasks: [{
+				id: "7AA4ECC5750416D3"
+				item: "geghilarity:alumina"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 22.0d
+		}
+		{
+			dependencies: [
+				"5E9712879C2ACBA0"
+				"740525CB21FFA9E0"
+			]
+			description: [
+				"A few steps packed here."
+				""
+				"We need to roast Alumina with quite a bit of &eHydrofluoric Acid&r. We got alumina from the previous step, so you'll need to deal with the other ingredient."
+				""
+				"Here comes another machine: &aEpileptic Stirred Tank Reactor&r."
+				""
+				"It's like a Chemical Reactor that works very fast with small quantities, and only fluids."
+				""
+				"You have to use it twice. First we mix Hydrogen and Fluorine, for &eHydrogen Fluoride&r, then mix Hydrogen Fluoride and Water for Hydrofluoric Acid."
+				""
+				"But you still need Fluorine."
+				""
+				"For Fluorine you'll need to electrolyze &eBiotite Dust&r, at a quite high energy cost. Biotite comes once again from electrolyzing, either clay or blackstone (check the recipes)."
+				""
+				"Both aluminium trifluoride and alumina are here being reprocessed (to &eCryolite&r), but the final recipe will also need these ingredients. So you don't have to convert everything."
+			]
+			icon: "geghilarity:aluminium_trifluoride_dust"
+			id: "3EF0FE07E02D12E3"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "1D010CD554D7F596"
+					item: "geghilarity:aluminium_trifluoride_dust"
+					type: "item"
+				}
+				{
+					id: "1BA8D7459B0E0B0C"
+					item: "modern_industrialization:stirred_tank"
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 22.0d
+		}
+		{
+			description: [
+				"This multiblock is important because it will be used for the last step to make aluminium ingots."
+				""
+				"Here it has been repurposed as the default way to split water into &ehydrogen&r and &eoxygen&r."
+				""
+				"The recipe will need a nickel and iron rods used as catalysts, so they won't be reused indefinitely."
+				""
+				"The multiblock itself is not especially costly to build. You need some electrum for the controller, but everything else is only a whole lot of steel."
+			]
+			id: "740525CB21FFA9E0"
+			tasks: [{
+				id: "33E3C51A42B1D656"
+				item: "modern_industrialization:elecell"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 20.5d
+		}
+		{
+			description: [
+				"If you've gone through the main branch, then the first step should be familiar."
+				""
+				"You need to use the marvellous Epileptic Tank to mix Sodium Hydroxide (fluid) and Hydrogen Fluoride."
+				""
+				"As you processed Sodium Aluminate Solution in the Crystallizer, you should have obtained Impure Sodium Hydroxide Solution as byproduct (or Impure Soda Ash Solution for the first batch). But converting these will require a graphite electrode, that can only be obtained with a chemical reactor."
+				""
+				"So you'll have to keep getting Sodium Hydroxide from Salt Water..."
+				""
+				"First step you get &eSodium Fluoride Solution&r, then you use the Crystallizer again to precipitate the solution into &eSodium Fluoride Dust&r. With that, you can rejoin the main branch for the actual conclusion..."
+			]
+			id: "07A54FE84FCC09D2"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "2AF43B5D01F085E5"
+				item: "geghilarity:sodium_fluoride_dust"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 23.5d
 		}
 	]
 	title: "2 - Biribiri"
