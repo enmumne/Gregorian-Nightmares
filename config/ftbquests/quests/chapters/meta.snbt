@@ -75,6 +75,8 @@
 				"- Sometimes in REI the buttons at the top to move between the recipe tabs stop working. Try using the mouse scroll wheel."
 				""
 				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power-uncapped and with more slots. So some of those recipes have been moved to this other separate machine. They do not share recipes."
+				""
+				"- &aNEW&r: underwater rendering looks weird because it got broken in the last version of Create. It's a really stupid bug, but it looks like they aren't in a rush to fix it..."
 			]
 			id: "662B3BC2B20C38C1"
 			min_width: 340
@@ -94,7 +96,7 @@
 				""
 				"So why is it even out? Exactly."
 				""
-				"If you find problems of any kind, or want to complain about things, you can find me on discord, in most of the Greggy Minecraft channels."
+				"If you find problems of any kind, or want to complain about things, you can find me on &dDiscord&r, in most of the Greggy Minecraft channels."
 				""
 				"Or feel free to DM me your complaints. It should be &atrysteros&r (after the recent renaming)"
 				""

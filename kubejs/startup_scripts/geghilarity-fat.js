@@ -20,6 +20,13 @@ event.create('geghilarity_fatmachines:ulv_casing').material('iron').displayName(
 
 })
 
+MIRegistrationEvents.registerFluidFuels(event => {
+    // id of the fluid, amount of EU per mb of the fluid
+    event.register("geghilarity:rocket_fuel", 16000);
+});
+
+
+
 /*
 const $MachineRegistrationHelper = Java.loadClass('aztech.modern_industrialization.machines.init.MachineRegistrationHelper')
 const $ReiMachineRecipes = Java.loadClass('aztech.modern_industrialization.compat.rei.machines.ReiMachineRecipes')
@@ -41,6 +48,7 @@ let ELECELL;
 let ARCFURNACE;
 let POLYTANK;
 let SINTER;
+let STEAMALLOY;
 
 MIMachineEvents.addMultiblockSlots("steam_blast_furnace", event => {
     event.itemOutputs.addSlot(102, 53);
@@ -109,19 +117,24 @@ MIMachineEvents.registerRecipeTypes(event => {
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
-		.withFluidOutputs()	
+		.withFluidOutputs();	
 	
 	POLYTANK = event.register('poly_tank')
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
-		.withFluidOutputs()
+		.withFluidOutputs();
 	
 	SINTER = event.register('sintering_oven')
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
-		.withFluidOutputs()
+		.withFluidOutputs();
+		
+	STEAMALLOY = event.register('alloy_smelter')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs();		
 
 });
 
@@ -131,6 +144,7 @@ MIMachineEvents.registerCasings(event => {
 	event.register("mudbricks")
 	event.register("solid_steel")
 	event.register("ulv_casing")
+	event.register("bronze_casing")
 });
 
 MIMachineEvents.registerMachines(event => {
@@ -352,6 +366,40 @@ MIMachineEvents.registerMachines(event => {
         fluidInputs => fluidInputs.addSlots(34, 35, 1, 2), fluidOutputs => fluidOutputs.addSlots(154, 35, 1, 2),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "ulv_casing", "sintering_oven", true, false, false,
+    );
+	
+	const stalloyHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    //const solidsteelMember = event.memberOfBlock("geghilarity_fatmachines:casing_solid_steel");
+    //const frameMember = event.memberOfBlock("geghilarity_fatmachines:steel_frame_box");
+	const bronzeplatedbricks = event.memberOfBlock("modern_industrialization:bronze_plated_bricks");
+	const bronze_casing = event.memberOfBlock("modern_industrialization:bronze_machine_casing");
+	const bronzepipe = event.memberOfBlock("modern_industrialization:bronze_machine_casing_pipe");
+	const chimney = event.memberOfBlock("sootychimneys:dirty_brick_chimney");
+	const normobrick = event.memberOfBlock("minecraft:bricks");
+    const stalloyShape = event.layeredShape("bronze_casing", [
+		[ "EEE", "BBB", "BBB", "   ",],
+		[ "EHE", "BCB", "BCB", " D ",],
+		[ "EHE", "CCC", "BBB", "   ",],
+        [ "EHE", " # ", "   ", "   ",],	
+    ])
+        .key("H", bronzeplatedbricks, event.noHatch())
+		.key("E", bronze_casing, stalloyHatch)
+		.key("B", normobrick, event.noHatch())
+		.key("C", bronzepipe, event.noHatch())
+		.key("D", chimney, event.noHatch())
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Steam Alloy Smelter", "steam_alloy", STEAMALLOY, stalloyShape,
+        // REI progress bar
+        event.progressBar(90, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => itemOutputs.addSlot(115, 35),
+        fluidInputs => fluidInputs.addSlot(54, 55), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "bronze_plated_bricks", "steam_alloy", true, false, false,
     );
 	
     	

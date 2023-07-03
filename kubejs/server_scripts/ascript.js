@@ -1138,9 +1138,25 @@ ServerEvents.recipes(event => {
 	event.custom({
 			"type": "create:mixing",
 			"heatRequirement":"heated",
-			"ingredients": [{"item": "geggy:clay_dust"}, {"item": "geggy:clay_dust"}, {"item": "modern_industrialization:brick_dust"}, {"item": "magick:calcite_dust"}],
+			"ingredients": [{"item": "geggy:clay_dust"}, {"item": "geggy:clay_dust"}, {"item": "modern_industrialization:brick_dust"}, {"item": "magick:calcite_dust"}, {"item": "geggy:andesite_mix"}],
 			"results": [{count: 1, "item": "modern_industrialization:fire_clay_dust"}]
 	})
+	// pbf mixer
+	event.remove({type: "modern_industrialization:mixer", output: `modern_industrialization:fire_clay_dust`})
+	event.recipes.modern_industrialization.mixer({
+		eu: 2,
+		duration: 100,
+		item_inputs : [
+			{item: "geggy:clay_dust", amount: 2},
+			{item: "modern_industrialization:brick_dust", amount: 1},
+			{item: "magick:calcite_dust", amount: 1},
+			{item: "geggy:andesite_mix"}
+		],
+		item_outputs :[
+			{item: "modern_industrialization:fire_clay_dust", amount: 1}
+		]
+	})
+	
 	/*
 	event.recipes.createMixing(
 		Item.of("modern_industrialization:fire_clay_dust", 2),

@@ -26,6 +26,7 @@ StartupEvents.registry('fluid', event => {
     .noBucket
 	
 	// MI
+		/*
 	event
     .create('geghilarity:chlorine')
   	.displayName('Chlorine') 
@@ -38,6 +39,7 @@ StartupEvents.registry('fluid', event => {
   	.displayName('Hydrochloric Acid') 
 	.thinTexture(0x6C7572)
     .noBucket
+	*/
 	
 	event
     .create('geghilarity:chloroauric_acid')
@@ -1194,6 +1196,40 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x262685)
     .noBucket
 	
+	/////////////////////////
+	
+	event
+	.create('geghilarity:rocket_fuel')
+	.displayName('Rocket Fuel H8N4C204')
+	.thinTexture(0x489A1B)
+    .noBucket
+	
+	event
+	.create('geghilarity:dimethylhydrazine')
+	.displayName('1,1-Dimethylhydrazine')
+	.thinTexture(0x12123B)
+    .noBucket
+	
+	event
+	.create('geghilarity:dinitrogen_tetroxide')
+	.thinTexture(0x113153)
+    .noBucket
+	
+	event
+	.create('geghilarity:chloramine')
+	.thinTexture(0x316353)
+    .noBucket
+	
+	event
+	.create('geghilarity:dimethylamine')
+	.thinTexture(0x3B3344)
+    .noBucket
+	
+	event
+	.create('geghilarity:hypochlorous_acid')
+	.thinTexture(0x48565A)
+    .noBucket
+	
    
 })
 
@@ -1226,7 +1262,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:tiny_reprecipitated_palladium_dust').displayName('Tiny Pile of Reprecipitated Palladium Dust');
 	event.create('geghilarity:palladium_salt_dust').displayName('Palladium Salt Dust');
 	event.create('geghilarity:tiny_ashes').displayName('Tiny Pile of Ashes');
-	event.create('geghilarity:sodium_dust').displayName('Sodium Dust');
+	//MI event.create('geghilarity:sodium_dust').displayName('Sodium Dust');
 	event.create('geghilarity:sodium_hydroxide_dust').displayName('Sodium Hydroxide Dust');
 	event.create('geghilarity:sodium_bisulfate_dust').displayName('Sodium Bisulfate Dust');
 	event.create('geghilarity:reprecipitated_palladium_dust').displayName('Reprecipitated Palladium Dust');
@@ -1435,6 +1471,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:zinc_wire');
 	event.create('geghilarity:zinc_plate');
 	event.create('geghilarity:small_zinc_dust').displayName('Small Pile of Zinc Dust');
+	event.create('geghilarity:tiny_zinc_dust').displayName('Tiny Pile of Zinc Dust');
 	event.create('geghilarity:iron_fine_wire');
 	event.create('geghilarity:iron_wire');
 	event.create('geghilarity:indium_hydroxide');
@@ -1523,7 +1560,7 @@ StartupEvents.registry('item', event => {
 	
 	event.create('geghilarity:graphite_dust')
 	event.create('geghilarity:graphite_ingot')
-	event.create('geghilarity:graphite_rod')
+	//event.create('geghilarity:graphite_rod')
 	event.create('geghilarity:graphite_electrode')
 	event.create('geghilarity:chromite_dust')
 	event.create('geghilarity:ferrochromium_dust')
@@ -1544,6 +1581,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:small_ferrosilicon_dust').displayName('Small Pile of Ferrosilicon Dust');
 	
 	event.create('geghilarity:tiny_dark_ashes').displayName('Tiny Pile of Dark Ashes')
+	event.create('geghilarity:raw_electrode')
 
 
 })	

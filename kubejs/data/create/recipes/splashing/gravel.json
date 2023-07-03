@@ -1,0 +1,26 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "results": [
+	{
+      "item": "geggy:gravel_dust"
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:flint"
+    },
+    {
+      "chance": 0.125,
+      "item": "magick:calcite_dust"
+    },
+    {
+      "chance": 0.09,
+	  "count": 3,
+      "item": "geghilarity:tiny_rock_salt_dust"
+    }
+  ]
+}

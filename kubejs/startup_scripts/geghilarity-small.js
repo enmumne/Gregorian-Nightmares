@@ -153,7 +153,7 @@ MIMachineEvents.registerMachines(event => {
 	
 	event.craftingSingleBlock(
 		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
-		"Alloy Smelter", "salloy", SALLOY, ["bronze", "steel", "electric"],
+		"Electric Alloy Smelter", "salloy", SALLOY, ["electric"],
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
 		185, event.progressBar(78, 32, "furnace"), event.efficiencyBar(38, 80), event.energyBar(14, 43),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs

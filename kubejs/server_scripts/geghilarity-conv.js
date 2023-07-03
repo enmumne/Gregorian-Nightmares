@@ -102,8 +102,15 @@ ServerEvents.recipes(event => {
 	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:small_tungstate_dust", amount: 4}],
 			item_outputs: [{item: "geghilarity:tungstate_dust", amount: 1}]})
 			
-	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:small_zinc_dust", amount: 4}],
+	event.shapeless('kubejs:zinc_dust', [ '4x geghilarity:small_zinc_dust'])
+	event.shapeless('kubejs:zinc_dust', [ '9x geghilarity:tiny_zinc_dust'])
+	event.shapeless('9x geghilarity:tiny_leach_residue_dust', [ 'kubejs:zinc_dust'])
+	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_zinc_dust", amount: 9}],
 			item_outputs: [{item: "kubejs:zinc_dust", amount: 1}]})
+	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:small_zinc_dust", amount: 4}],
+			item_outputs: [{item: "kubejs:zinc_dust", amount: 1}]})		
+	event.recipes.modern_industrialization.unpacker({eu: 4, duration: 100,item_inputs: [{item: "kubejs:zinc_dust", amount: 1}],
+			item_outputs: [{item: "geghilarity:tiny_zinc_dust", amount: 9}]})		
 
 	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_jasper_dust", amount: 9}],
 			item_outputs: [{item: "geghilarity:jasper_dust", amount: 1}]})	
@@ -111,7 +118,7 @@ ServerEvents.recipes(event => {
 	// MAGICK		
 	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_calcite_dust", amount: 9}],
 			item_outputs: [{item: "magick:calcite_dust", amount: 1}]})	
-	event.recipes.modern_industrialization.packer({eu: 4, duration: 50,item_inputs: [{item: "magick:calcite_dust", amount: 1}],
+	event.recipes.modern_industrialization.unpacker({eu: 4, duration: 50,item_inputs: [{item: "magick:calcite_dust", amount: 1}],
 			item_outputs: [{item: "geghilarity:tiny_calcite_dust", amount: 9}]})			
 			
 	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:small_silver_oxide_dust", amount: 4}],
@@ -120,19 +127,19 @@ ServerEvents.recipes(event => {
 	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_gallium_dust", amount: 9}],
 			item_outputs: [{item: "geghilarity:gallium_dust", amount: 1}]})
 
-	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:ferrosilicon_dust", amount: 1}],
+	event.recipes.modern_industrialization.unpacker({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:ferrosilicon_dust", amount: 1}],
 			item_outputs: [{item: "geghilarity:small_ferrosilicon_dust", amount: 4}]})	
 
-	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:dark_ashes", amount: 1}],
+	event.recipes.modern_industrialization.unpacker({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:dark_ashes", amount: 1}],
 			item_outputs: [{item: "geghilarity:tiny_dark_ashes", amount: 9}]})	
-	event.recipes.modern_industrialization.packer({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_dark_ashes", amount: 4}],
+	event.recipes.modern_industrialization.unpacker({eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_dark_ashes", amount: 4}],
 			item_outputs: [{item: "geghilarity:dark_ashes", amount: 1}]})	
 	event.shapeless('geghilarity:dark_ashes', [ '9x geghilarity:tiny_dark_ashes'])		
 			
 
 	event.remove({id: 'minecraft:gold_ingot_from_nuggets'})
 	event.remove({id: 'minecraft:gold_nugget'})
-	event.recipes.modern_industrialization.salloy({
+	event.recipes.modern_industrialization.alloy_smelter({
 		eu: 2,
 		duration: 100,
 		item_inputs: [
@@ -143,7 +150,7 @@ ServerEvents.recipes(event => {
 			{item: "minecraft:gold_nugget", amount: 9}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.recipes.modern_industrialization.alloy_smelter({
 		eu: 2,
 		duration: 200,
 		item_inputs: [

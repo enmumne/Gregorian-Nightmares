@@ -762,6 +762,7 @@
 			y: 25.0d
 		}
 		{
+			dependencies: ["455DF0961AF27322"]
 			description: [
 				"The recipe for the Electrolyzer has been shuffled so that it's possible to craft it earlier and use it to assist in the production of aluminium."
 				""
@@ -771,13 +772,14 @@
 			]
 			id: "7593BDF715A3AC99"
 			min_width: 220
+			shape: "rsquare"
 			tasks: [{
 				id: "5CBBA33504CD5BAC"
 				item: "modern_industrialization:electrolyzer"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 20.5d
+			x: 10.433333333333316d
+			y: 19.65714285714286d
 		}
 		{
 			dependencies: [
@@ -1096,13 +1098,8 @@
 				""
 				"The gold nerf caused substantial repercussions on the progression. I've changed some recipes to avoid blocks, in any case there should be plenty of other sources for gold, like looting."
 				""
-				"What you should actually do at this point is setting up a processing line with electrolyzers and chemical reactors to obtain the proper yields."
-				"Since this is meant as a fun puzzle, no quests will detail this process. Especially because these recipes are manually added, so you only need to track the processing linearly. There's generally just one recipe for each step."
-				""
-				"But to build those chem reactors and electrolyzers... you'll need electrum. This by default. So I hope you set aside some gold dusts to jumpstart the process. I've decided to not touch any recipe there because the yields for electrum items are quite good."
-				""
-				"To make electrum dust in a mixer, you need silver and gold. Silver is also not available as an ore, but can be obtained by processing raw lead in a macerator."
-				"This was also left untouched."
+				"What you should actually do at this point is setting up a processing line with electrolyzers and chemical reactors to obtain the proper yields, from precious ores."
+				"Since this is meant as a fun puzzle, no quests will detail this process. Especially because these recipes are manually added, so you only need to track the processing linearly. There's generally just one recipe for each step (well...)."
 			]
 			id: "034187DD42EEAA4E"
 			min_width: 320
@@ -1111,17 +1108,15 @@
 				type: "checkmark"
 			}]
 			title: "Fabled Transmutation: From Lead to... Electrum"
-			x: -3.0d
-			y: 22.5d
+			x: 4.5d
+			y: 25.0d
 		}
 		{
 			dependencies: ["4368EA2D485FBCCB"]
 			description: [
-				"For carbon you can pack the tiny dark ashes you get from smelting pig iron, and then centrifuge a full dark ash for a carbon dust."
+				"While making silver you used the ashes that come out of pig iron, but on the way to this point you got access to an electrolyzer. So now you can electrolyze sugar, for example."
 				""
-				"Or you can use the electrolyzer, for example from sugar."
-				""
-				"Carbon is the last ingredient in this complex recipe. &eAluminium Ingots&r can be produced directly with the following, the main function of the Electrolytic Cell:"
+				"Carbon is the last ingredient in this complex recipe, everything else you need here comes from previous steps. &eAluminium Ingots&r can be produced directly with the following, the main function of the Electrolytic Cell:"
 				""
 				"10 alumina dusts + 1 aluminium trifluoride dust + 3 carbon dusts + 144 cryolite (fluid) > 4 &aaluminium ingots&r + 1350 hydrogen fluoride + 3000 carbon dioxide"
 			]
@@ -1161,36 +1156,30 @@
 			y: 22.0d
 		}
 		{
-			dependencies: ["7593BDF715A3AC99"]
+			dependencies: [
+				"7593BDF715A3AC99"
+				"249F36B29911D889"
+			]
 			description: [
 				"Bauxite is the start for both aluminium and titanium. Of course you don't have to worry about titanium at this point. But the two are somewhat connected."
 				""
-				"The first step requires a new machine, a &aRoaster&r."
+				"The first step requires a roaster once again."
 				""
-				"Along with bauxite you need &eSodium Hydroxide&r, and you can get that from a mixer with Sodium Hydroxide Dust and water."
-				""
-				"The Sodium Hydroxide Dust itself needs a few steps, and you'll have to rush an electrolyzer, so that you can use salt water. Since we don't have ways for realism, you can't use sea water, and you'll have to produce salt water by simply using a mixer with standard water and salt dust..."
-				""
-				"It's not elegant, but it should get the job done."
+				"Hydrogen comes from the Electrolytic Cell that lead here. Whereas &eSodium&r comes from electrolyzing salt..."
 				""
 				"From this process you can obtain &eImpure Sodium Aluminate Solution&r, and with a centrifuge you can turn that into normal sodium aluminate solution."
+				""
+				"There's also a little bit of Red Mud byproduct, but that will only be used for titanium."
 			]
 			icon: "modern_industrialization:bauxite_dust"
 			id: "62C1756D9C7FC4B1"
 			min_width: 250
 			shape: "rsquare"
-			tasks: [
-				{
-					id: "7B606B4CA88AE9B0"
-					item: "modern_industrialization:bauxite_dust"
-					type: "item"
-				}
-				{
-					id: "1617784EDB5A636E"
-					item: "modern_industrialization:roaster"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "7B606B4CA88AE9B0"
+				item: "modern_industrialization:bauxite_dust"
+				type: "item"
+			}]
 			x: 9.0d
 			y: 20.5d
 		}
@@ -1203,11 +1192,11 @@
 				""
 				"3000 sodium aluminate solution (from the previous step) + 1000 water + 1000 carbon dioxide"
 				""
-				"&eCarbon dioxide&r can be a problem here, but you can use the roaster with coke and some oxygen to get it, before you get access to more transformations through a chemical reactor (which requires aluminium)."
+				"&eCarbon dioxide&r can be a problem here, but you can use the roaster with coke and some oxygen to get it, before you get access to more transformations through a chemical reactor."
 				""
-				"You should have some options for oxygen, but since they can be ugly you can use limestone on its own, but at an higher energy cost."
+				"After the first batch you should immediately jump to the alternate recipe that uses a single Aluminium Hydroxide Dust as a catalyst. Being a catalyst, that dust won't be consumed. "
 				""
-				"After the first run you can use a single Aluminium Hydroxide Dust as a catalyst for a slightly different process. Being a catalyst, that dust won't be consumed. So you can skip on the carbon dioxide now."
+				"This is necessary because you will need the &eImpure Sodium Hydroxide Solution&r for one of the following steps, before aluminium."
 			]
 			icon: "geghilarity:aluminium_hydroxide"
 			id: "79EEC5D737DE2B78"
@@ -1235,7 +1224,7 @@
 				""
 				"Still not quite there to aluminium, we need a few more steps."
 				""
-				"Note that alumina itself can also be obtained in various ways and byproducts. In most cases I converted the aluminium dusts into alumina, to preserve this complex production chain."
+				"Note that alumina itself can also be obtained in various ways and byproducts. In most cases I converted the aluminium dusts into alumina, to preserve the more complex production chain."
 			]
 			id: "5E9712879C2ACBA0"
 			shape: "rsquare"
@@ -1248,10 +1237,7 @@
 			y: 22.0d
 		}
 		{
-			dependencies: [
-				"5E9712879C2ACBA0"
-				"740525CB21FFA9E0"
-			]
+			dependencies: ["5E9712879C2ACBA0"]
 			description: [
 				"A few steps packed here."
 				""
@@ -1289,33 +1275,13 @@
 			y: 22.0d
 		}
 		{
-			description: [
-				"This multiblock is important because it will be used for the last step to make aluminium ingots."
-				""
-				"Here it has been repurposed as the default way to split water into &ehydrogen&r and &eoxygen&r."
-				""
-				"The recipe will need a nickel and iron rods used as catalysts, so they won't be reused indefinitely."
-				""
-				"The multiblock itself is not especially costly to build. You need some electrum for the controller, but everything else is only a whole lot of steel."
-			]
-			id: "740525CB21FFA9E0"
-			tasks: [{
-				id: "33E3C51A42B1D656"
-				item: "modern_industrialization:elecell"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 20.5d
-		}
-		{
+			dependencies: ["68836F6D1CDDB6C0"]
 			description: [
 				"If you've gone through the main branch, then the first step should be familiar."
 				""
 				"You need to use the marvellous Epileptic Tank to mix Sodium Hydroxide (fluid) and Hydrogen Fluoride."
 				""
-				"As you processed Sodium Aluminate Solution in the Crystallizer, you should have obtained Impure Sodium Hydroxide Solution as byproduct (or Impure Soda Ash Solution for the first batch). But converting these will require a graphite electrode, that can only be obtained with a chemical reactor."
-				""
-				"So you'll have to keep getting Sodium Hydroxide from Salt Water..."
+				"This is why it was important to switch recipe on the crystallizer, to get the Impure Sodium Hydroxide. That goes into the Electrolytic Cell to make it into the standard sodium hydroxide that is required here."
 				""
 				"First step you get &eSodium Fluoride Solution&r, then you use the Crystallizer again to precipitate the solution into &eSodium Fluoride Dust&r. With that, you can rejoin the main branch for the actual conclusion..."
 			]
@@ -1328,6 +1294,190 @@
 				type: "item"
 			}]
 			x: 4.5d
+			y: 23.5d
+		}
+		{
+			description: [
+				"We need to start from a certain distance to get all the way to aluminium..."
+				""
+				"The first step is to make a &aGass Collector&r."
+				""
+				"This is a simple machine that will gather air. It can be used in the Nether and End dimensions for different outcomes, but for now you only need overworld air."
+				""
+				"This step is necessary because after the air is collected, it can then be centrifuged to get some &aoxygen&r."
+				""
+				"Obtaining Oxygen leads to the next step."
+			]
+			id: "5BCC68B73A269C4F"
+			min_width: 220
+			shape: "rsquare"
+			tasks: [{
+				id: "7A032D3EBA052DA9"
+				item: "modern_industrialization:gas_collector"
+				type: "item"
+			}]
+			x: 14.664625850340116d
+			y: 19.133333333333333d
+		}
+		{
+			dependencies: ["5BCC68B73A269C4F"]
+			description: [
+				"With oxygen, we can process &eAchantite Dust&r."
+				""
+				"Acanthite can only be obtained in a quarry/driller, on a lead corenode. Amounts will probably have to be tweaked but the overall goal here is to get to silver, so that electrum is also possible, and with electrum we have access to the Electrolyzer."
+				""
+				"To process achantite we need another new machine: a &aroaster&r."
+				""
+				"Roast achantite dust and oxygen to get &aSilver Oxide Dust&r."
+				""
+				"Note that the recipe also consumes a little bit of &eCalcite&r. To obtain that you unpack Calcite dust. To get that, look at the vanilla stone cutting recipes. You can use calcite blocks, or dripstone, or tuff."
+			]
+			icon: "modern_industrialization:roaster"
+			id: "4CD2BEEF55DF773D"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "0A2E84E7A04C82B8"
+					item: "modern_industrialization:roaster"
+					type: "item"
+				}
+				{
+					id: "5B2E656DBFD5E25A"
+					item: "geghilarity:acanthite_dust"
+					type: "item"
+				}
+			]
+			x: 13.164625850340116d
+			y: 19.133333333333333d
+		}
+		{
+			dependencies: ["4CD2BEEF55DF773D"]
+			description: [
+				"After packing again Silver Oxide Dusts, you can use the roaster again, along with &aCarbon Dust&r to finally obtain silver."
+				""
+				"Carbon could still be a problem, but you can obtain tiny dark ashes from processing Pig Iron."
+				""
+				"Pack that into full &eDark Ash&r and you can then centrifuge that for carbon..."
+			]
+			id: "381CD168A562C04C"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "5DB18922044DCCB6"
+				item: "modern_industrialization:silver_dust"
+				type: "item"
+			}]
+			x: 13.171428571428542d
+			y: 20.38503401360544d
+		}
+		{
+			dependencies: ["381CD168A562C04C"]
+			description: [
+				"Silver and Gold make Electrum."
+				""
+				"We got silver from the previous step, but gold is still being weird."
+				""
+				"After you get a Chemical Reactor you can start the Gold Line, that processes precious ore to obtain gold. But the chemical reactor is gated by aluminium."
+				""
+				"Therefore you still have to rely on some gold scraps."
+				""
+				"The precious ore can be smelted to precious ingot, and then smelted again for... just 1 gold nugget."
+				""
+				"At the moment you can only macerate those nuggets into tiny dusts, and then assemble into full gold dusts."
+				""
+				"Silver and gold dusts then go in a mixer to get electrum. From there you should be able to do the steps all the way to &eElectrum Fine Wire&r."
+			]
+			id: "455DF0961AF27322"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "4E5519C980847DAF"
+				item: "modern_industrialization:electrum_fine_wire"
+				type: "item"
+			}]
+			x: 11.885714285714258d
+			y: 20.38503401360544d
+		}
+		{
+			dependencies: ["455DF0961AF27322"]
+			description: [
+				"This new machine is a multiblock: &aElectrolytic Cell&r."
+				""
+				"Look at the recipe for the controller and you can see why electrum was required."
+				""
+				"The rest of the blocks are only made of a whole lot of steel."
+				""
+				"If you look at the recipes for this machine, you'll see what's the \"final\" recipe for aluminium we're aiming at. But for now the main purpose is to use it to get oxygen more easily, but also &eHydrogen&r."
+				""
+				"3000 water + iron rod + nikel rod > 2000 hydrogen + 1000 oxygen"
+				""
+				"Note that those two rods are only catalysts and don't get consumed."
+			]
+			id: "249F36B29911D889"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "23240041A44A81BF"
+				item: "modern_industrialization:elecell"
+				type: "item"
+			}]
+			x: 10.433333333333316d
+			y: 21.15714285714286d
+		}
+		{
+			dependencies: ["5CED5B7755781ED0"]
+			description: [
+				"Things are ugly in a funny way here."
+				""
+				"All problems start from Sodium Hydroxide."
+				""
+				"To be able to recycle the Impure Sodium Hydroxide, so that you can finalize aluminium, you need a &eGraphite Electrode&r to be used as catalyst."
+				""
+				"You need just one of these, at least until the Arc Furnace required mainly for Stainless Steel."
+				""
+				"But to get one now you need &eMethane&r, and again this is a problem without distilleries and chemical reactors."
+				""
+				"So, to get that bit of necessary methane you can... centrifuge chocolate bars."
+				""
+				"I'm not making anything up, that's a GregTech recipe (I've then restricted to just chocolate, of course)."
+				""
+				"And yes, this &aSintering Oven&r multiblock is only needed for this one silly recipe. Hopefully it can be used for other stuff in the future, because making more of that firebrick stuff is never very nice..."
+			]
+			icon: "modern_industrialization:sintering_oven"
+			id: "68836F6D1CDDB6C0"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "369C134A64AA944B"
+					item: "geghilarity:graphite_electrode"
+					type: "item"
+				}
+				{
+					id: "4E81E14A0390149D"
+					item: "modern_industrialization:sintering_oven"
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 23.5d
+		}
+		{
+			description: [
+				"To make aluminium you need chocolate."
+				""
+				"Yes. For realism."
+			]
+			id: "5CED5B7755781ED0"
+			shape: "rsquare"
+			tasks: [{
+				id: "6023725C8A542A3D"
+				item: "create:bar_of_chocolate"
+				type: "item"
+			}]
+			title: "Yum."
+			x: 7.5d
 			y: 23.5d
 		}
 	]

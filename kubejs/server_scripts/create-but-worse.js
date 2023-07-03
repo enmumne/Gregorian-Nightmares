@@ -1384,7 +1384,7 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "geggy:unrefined_clay"}
 		],
-		"processingTime": 150,
+		"processingTime": 100,
 		"results": [
 			{"item": "geggy:clay_dust", "chance": 0.08},
 			{"item": "geggy:gravel_dust"}

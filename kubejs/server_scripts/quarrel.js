@@ -2364,6 +2364,17 @@ ServerEvents.recipes(event => {
 
 	legacy_quarry_recipes(event)
 	
+	/*
+		event.recipes.modern_industrialization.drill1(2, 400)
+        .itemIn("minecraft:stick", 0.0)
+		//.itemIn("geggy:selector_1", 0.00)
+        .itemOut("5x minecraft:raw_copper")
+        .dimension("overworld")
+        .adjacentBlock("ad_astra:oil", "below")
+		.id("testadad")
+		
+	*/	
+	
 })
 
 ServerEvents.tags('block', event => { 

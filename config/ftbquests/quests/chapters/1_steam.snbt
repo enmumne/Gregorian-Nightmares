@@ -515,7 +515,11 @@
 		}
 		{
 			dependencies: ["39754E37B49FAC5E"]
-			description: ["For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result."]
+			description: [
+				"For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result."
+				""
+				"Note that the recipe was changed. Now the dusts don't go in the mixer, but in the alloy smelter."
+			]
 			icon: "modern_industrialization:invar_ingot"
 			id: "5DAA5DF264D1E559"
 			tasks: [
@@ -900,11 +904,22 @@
 				""
 				"The Alloy Smelter is a Bronze tier machine that you could have easily built before, but not very useful without the use of steel molds."
 				""
+				"&cImportant&r: read the next page for more info. The Alloy Smelter is now a multiblock with a quirk..."
+				""
 				"Obtaining one can be a major help because it will let you skip the manual crafting of nuggets. With a normal iron ingot and a nugget mold you can get iron nuggets directly."
 				""
 				"The recipe for the mold requires some type of nugget, but this is only needed to give the mold its shape, and is not consumed in the process."
+				""
+				"{@pagebreak}"
+				"This is now a multiblock... with a chimney."
+				""
+				"This multiblock has a fairly weird structure, so make sure you build and assemble the correct blocks. For example Bronze Machine Casing, and Bronze Plated Bricks can look quite similar."
+				""
+				"The real quirk is that you can craft both a \"clean\" or \"dirty\" chimney. But the structure will only validates when the chimney is dirty. This can be a problem because with an axe you can clean the chimney to also have a chance at a black dye, and since they are considered two different blocks, the structure would invalidate."
+				""
+				"The logic of the chimney is not connected to the machine, so it will produce smoke even when not active. If you happen to clean it, either you have to craft again a dirty one to replace, or you can wait. The chimney goes dirty with a random chance after some time."
 			]
-			icon: "modern_industrialization:bronze_salloy"
+			icon: "modern_industrialization:steam_alloy"
 			id: "415F550A624CC08D"
 			min_width: 250
 			shape: "rsquare"
@@ -915,8 +930,8 @@
 					type: "item"
 				}
 				{
-					id: "162C22B12035F6BD"
-					item: "modern_industrialization:bronze_salloy"
+					id: "0A90DFF91D58EED0"
+					item: "modern_industrialization:steam_alloy"
 					type: "item"
 				}
 			]

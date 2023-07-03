@@ -134,19 +134,6 @@ ServerEvents.recipes(event => {
 	})
 */
 
-	//electric alloy
-	event.shaped('modern_industrialization:electric_salloy', [
-		"ABA",
-		"LCL",
-		"ATA"
-	], {
-		C: "modern_industrialization:basic_machine_hull",
-		B: 'modern_industrialization:analog_circuit',
-		A: 'modern_industrialization:cupronickel_wire_magnetic',
-		L: 'modern_industrialization:electric_furnace',
-		T: 'modern_industrialization:tin_cable'
-	})
-
 // ???
 /*
 event.recipes.modern_industrialization.heat_exchanger(8, 10)
@@ -652,24 +639,11 @@ event.custom({
 	
 	// chemical reactor	
 	event.remove({id: 'modern_industrialization:electric_age/machine/chemical_reactor_asbl'})
-		event.shaped('modern_industrialization:chemical_reactor', [
-		"AXA",
-		"CSC",
-		"BNB"
-	], {
-		A: 'ae2:quartz_vibrant_glass',
-		B: 'modern_industrialization:analog_circuit',
-		S: 'modern_industrialization:basic_machine_hull',
-		C: 'modern_industrialization:aluminum_rotor',
-		N: 'modern_industrialization:tin_cable',
-		X: 'modern_industrialization:large_motor'
-	})
-	
 	
 		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/chemical_reactor'})
-		event.recipes.modern_industrialization.assembler(8, 200)
+		event.recipes.modern_industrialization.assembler(32, 200)
 		.itemIn('2x ae2:quartz_vibrant_glass', 1)
-		.itemIn('2x modern_industrialization:analog_circuit', 1)
+		.itemIn('2x modern_industrialization:electronic_circuit', 1)
 		.itemIn('modern_industrialization:basic_machine_hull', 1)
 		.itemIn('2x modern_industrialization:aluminum_rotor', 1)
 		.itemIn('modern_industrialization:tin_cable', 1)

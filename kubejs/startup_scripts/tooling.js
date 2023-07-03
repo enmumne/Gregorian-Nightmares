@@ -363,6 +363,7 @@ event.create('geggy:mold_bottle').displayName('Ball Mold');
 event.create('geggy:mold_ingot').displayName('Ingot Mold');
 event.create('geggy:mold_nugget').displayName('Nugget Mold');
 event.create('geggy:mold_plate').displayName('Plate Mold');
+event.create('geggy:mold_rod').displayName('Rod Mold');
 
 event.create('geggy:invar_curved_plate');
 
@@ -510,6 +511,11 @@ event.create('geggy:potin_curved_plate');
 
 event.create('geggy:incomplete_fluid_pipe');
 event.create('geggy:incomplete_item_pipe');
+
+event.create('geggy:pitch_binder');
+event.create('geggy:fluid_filter');
+
+event.create('geggy:slag');
 
 /*
 .tooltip('§8')
