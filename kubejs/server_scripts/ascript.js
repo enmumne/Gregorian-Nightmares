@@ -903,7 +903,15 @@ ServerEvents.recipes(event => {
 			"processingTime":200,
 			"ingredients": [{"item": "create:crushed_raw_lead"}],
 			"results": [{"item": "modern_industrialization:lead_dust"}]
-	})		
+	})
+
+	// progression fix pipes macerator
+	event.custom({
+			"type": "create:milling",
+			"processingTime":150,
+			"ingredients": [{"item": "modern_industrialization:raw_lead"}],
+			"results": [{"item": "modern_industrialization:lead_dust"}]
+	})
 	
 	event.custom({
 			"type": "create:milling",

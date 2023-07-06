@@ -121,7 +121,7 @@
 				""
 				"To fix this circular dependency, there's a simple recipe to craft a steam bucket by just using some water and a furnace."
 				""
-				"You shouldn't need to repeat this process, because as soon the recipe runs the boiler should have enough steam to self-power from that point onward."
+				"You shouldn't need to repeat this process, because as soon the recipe runs the boiler should have enough steam to self-power from that point onward. But this could also depend on how the steam is buffered around, since both the boiler and the driller have an internal tank capacity of 2k, so 4k total. Whereas one run of the boiler produces 2k. So it can also happen that you have to manually refill the boiler with steam until it's fully independent..."
 				""
 				"In order to continue producing that steam, it still needs running its recipe. If you look it up you'll see that it needs a small quantity of coal and water. This part will likely be manual for now (but if you input enough it will keep going for quite a while)."
 				""
@@ -700,8 +700,8 @@
 					type: "item"
 				}
 				{
-					id: "6AEA14454C1EA575"
-					item: "modern_industrialization:bronze_salloy"
+					id: "674303C7F0122095"
+					item: "modern_industrialization:steam_alloy"
 					type: "item"
 				}
 			]
@@ -716,6 +716,8 @@
 				"You can switch between \"selectors\" by placing a Create \"precision mechanism\" on a crafting table. Depending on the position, you craft a different selector."
 				""
 				"You can freely switch back and forth between selector types, by simply repeating the recipe and placing the item in a different position."
+				""
+				"There's still the option to lock the slots on the UI to keep in mind."
 			]
 			id: "02F5E6B7DFBCD7A7"
 			tasks: [{

@@ -1230,6 +1230,16 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x48565A)
     .noBucket
 	
+	event
+	.create('geghilarity:vinyl_chloride_solution')
+	.thinTexture(0x52B3B3)
+    .noBucket
+	
+	event
+	.create('geghilarity:polyvinyl_chloride_solution')
+	.thinTexture(0x4FB2B1)
+    .noBucket
+	
    
 })
 
@@ -1582,7 +1592,11 @@ StartupEvents.registry('item', event => {
 	
 	event.create('geghilarity:tiny_dark_ashes').displayName('Tiny Pile of Dark Ashes')
 	event.create('geghilarity:raw_electrode')
-
+	
+	event.create('geghilarity:calcium_carbide_dust')
+	event.create('geghilarity:slaked_lime_dust').displayName('Slaked Lime (Calcium Hydroxide) Dust')
+	event.create('geghilarity:polyvinyl_chloride_pulp').displayName('Polyvinyl Chloride (PVC) Pulp')
+	event.create('geghilarity:mercury_chloride_dust').displayName('Mercury II Chloride Dust')
 
 })	
 

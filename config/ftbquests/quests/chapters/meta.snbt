@@ -75,8 +75,6 @@
 				"- Sometimes in REI the buttons at the top to move between the recipe tabs stop working. Try using the mouse scroll wheel."
 				""
 				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power-uncapped and with more slots. So some of those recipes have been moved to this other separate machine. They do not share recipes."
-				""
-				"- &aNEW&r: underwater rendering looks weird because it got broken in the last version of Create. It's a really stupid bug, but it looks like they aren't in a rush to fix it..."
 			]
 			id: "662B3BC2B20C38C1"
 			min_width: 340
@@ -230,6 +228,9 @@
 				"- [&4HEAVY&r] When you create a new world you may notice that early on RAM gets filled up, creating &llag&r (yes, again), even if you allocate 8Gb. During my tests RAM usage usually decreases after some time to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more. (allocating more doesn't seem to help much...) The mod \"&cchipped&r\" by itself adds some memory overhead, so you can try removing that one."
 				""
 				"- [&4HEAVY&r] In case of occasional, sudden crashes, they might be related either to the \"&cTinySkeletons&r\" or \"&cfrycparry&r\" mods, you can easily remove them for the /mods/ folder if you want. &mAnother mod that can add significant server lag and that could be removed is \"&cspiderstpo&r&m\" (cursed spiders AI being laggy)"
+				""
+				"- [&4HEAVY&r] Bewitchment and related mods now removed. Mainly because the library pehkui adds a tiny amount of generalized lag. It's not a big deal, but I decided to squeeze performance where I can..."
+				"If you want more, Immersive Weathering can also be removed without significant repercussions."
 			]
 			id: "608C7477E58ED48B"
 			min_width: 300

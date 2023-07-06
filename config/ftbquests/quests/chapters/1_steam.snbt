@@ -327,7 +327,7 @@
 				""
 				"The Bronze Water Pump requires steam to function, so you'll need to prime it with a bucket of steam manually. When you have access to the boiler, you should set up the boiler pumping steam back into the pump in order for the pump to become self-sufficient."
 				""
-				"&o : This is optional, as it requires glass."
+				"&o : This is optional, as it requires glass (and potin)."
 				""
 				"&o : You can come back here after the Primitive Blast Furnace and Steel."
 				""
@@ -1005,6 +1005,8 @@
 				"With reinforced glass panes, you have access to Modern Dynamics fluid pipes and the Bronze Cutting Machine that is required to make steel rods and bolts. "
 				""
 				"These new fluid pipes are now on a Create assembly line, the recipe is a bit convoluted..."
+				""
+				"Note: fluid pipes require potin, that can now also be produced with the alloy smelter. The recipe was changed to bronze + lead to fit in the slots."
 			]
 			icon: "modern_industrialization:bronze_cutting_machine"
 			id: "25BDF469C1F67959"

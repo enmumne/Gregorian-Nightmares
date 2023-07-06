@@ -7948,6 +7948,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// enforce longer chain
+	/*
 	event.recipes.modern_industrialization.mixer({
 		eu: 7,
 		duration: 80,
@@ -7961,6 +7963,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:rock_salt_solution", amount: 1000}
 		]
 	})
+	*/
 	
 	event.recipes.modern_industrialization.roaster({
 		eu: 30,
@@ -8012,8 +8015,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// electro to chem due to lack of slots
-	event.recipes.modern_industrialization.chemical_reactor({
+	// electro to elecell?
+	event.recipes.modern_industrialization.elecell({
 		eu: 30,
 		duration: 200,
 		item_inputs: [
@@ -8248,7 +8251,7 @@ ServerEvents.recipes(event => {
 			{item: "create:bar_of_chocolate", amount: 1}
 		],
 		fluid_outputs: [
-			{fluid: "modern_industrialization:methane", amount: 5}
+			{fluid: "modern_industrialization:methane", amount: 10}
 		]
 	})
 	
@@ -8362,9 +8365,183 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	event.remove({id: 'modern_industrialization:materials/chemical_reactor/hydrochloric_acid'})
 	
+	// PVC redone
+	event.remove({id: 'modern_industrialization:petrochem/polymerization/vinyl_chloride_lead'})
+	event.remove({id: 'modern_industrialization:petrochem/polymerization/vinyl_chloride_chromium'})
+	event.remove({id: 'modern_industrialization:oil/chemical_reactor/vinyl_chloride'})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/steam_cracked_light_fuel_1'})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/steam_cracked_naphtha_1'})
+	event.remove({id: 'modern_industrialization:oil/blast_furnace/methane_to_acetylene'})
 	
+	event.recipes.modern_industrialization.roaster({
+		eu: 30,
+		duration: 80,
+		item_inputs: [ 
+			{item: "geggy:limestone_dust", amount: 5}
+		],
+		item_outputs: [	
+			{item: "geghilarity:quicklime_dust", amount: 2}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:carbon_dioxide", amount: 3000}
+		]
+	})
 	
+	event.recipes.modern_industrialization.blast_furnace({
+		eu: 120,
+		duration: 400,
+		item_inputs: [ 
+			{item: "geghilarity:quicklime_dust", amount: 2},
+			{item: "modern_industrialization:carbon_dust", amount: 3}
+		],
+		item_outputs: [	
+			{item: "geghilarity:calcium_carbide_dust", amount: 3}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:carbon_monoxide", amount: 1000}
+		]
+	})
+	
+	event.recipes.modern_industrialization.crystallizer({
+		eu: 30,
+		duration: 120,
+		item_inputs: [ 
+			{item: "geghilarity:calcium_carbide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 2000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:slaked_lime_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:acetylene", amount: 1000}
+		]
+	})
+	
+	event.recipes.modern_industrialization.roaster({
+		eu: 30,
+		duration: 120,
+		item_inputs: [ 
+			{item: "geghilarity:slaked_lime_dust", amount: 5}
+		],
+		item_outputs: [	
+			{item: "geghilarity:quicklime_dust", amount: 2}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:steam", amount: 1000}
+		]
+	})
+	
+	// MAGICK
+	event.recipes.modern_industrialization.roaster({
+		eu: 30,
+		duration: 120,
+		item_inputs: [ 
+			{item: "geghilarity:slaked_lime_dust", amount: 5}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:carbon_dioxide", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "magick:calcite_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:steam", amount: 1000}
+		]
+	})
+	
+	/*
+	event.recipes.modern_industrialization.stirred_tank({
+		eu: 30,
+		duration: 1,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:chlorine", amount: 100},
+			{fluid: "modern_industrialization:ethylene", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:vinyl_chloride", amount: 50},
+			{fluid: "geghilarity:hydrogen_chloride", amount: 50}
+		]
+	})
+	*/
+	
+	event.recipes.modern_industrialization.roaster({
+		eu: 30,
+		duration: 1,
+		item_inputs: [ 
+			{item: "geghilarity:mercury_chloride_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:hydrogen_chloride", amount: 50},
+			{fluid: "modern_industrialization:acetylene", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:vinyl_chloride", amount: 50}
+		]
+	})
+	
+	event.recipes.modern_industrialization.mixer({
+		eu: 30,
+		duration: 120,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:vinyl_chloride", amount: 1000},
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:vinyl_chloride_solution", amount: 2000}
+		]
+	})
+	
+	event.recipes.modern_industrialization.poly_tank({
+		eu: 60,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:potassium_persulfate_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:vinyl_chloride_solution", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:polyvinyl_chloride_solution", amount: 2000}
+		]
+	})
+	
+	event.recipes.modern_industrialization.dehy({
+		eu: 30,
+		duration: 260,
+		fluid_inputs: [
+			{fluid: "geghilarity:polyvinyl_chloride_solution", amount: 2000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:polyvinyl_chloride_pulp", amount: 7}
+		]
+	})
+	
+	event.recipes.modern_industrialization.distillery({
+		eu: 60,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:polyvinyl_chloride_solution", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:polyvinyl_chloride", amount: 500}
+		]
+	})
+	
+	event.recipes.modern_industrialization.crystallizer({
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:chlorine", amount: 2000},
+			{fluid: "geghilarity:mercury", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:mercury_chloride_dust", amount: 3}
+		]
+	})
 	
 })
 

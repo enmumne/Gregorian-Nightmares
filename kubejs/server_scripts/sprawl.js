@@ -2677,12 +2677,11 @@ event.shaped('moderndynamics:machine_extender', [
 	})
 	
 	// potin
-	event.recipes.modern_industrialization.mixer({
+	event.recipes.modern_industrialization.alloy_smelter({
 		eu: 2,
 		duration: 200,
 		item_inputs: [
-			{item: "modern_industrialization:copper_dust", amount: 6},
-			{item: "modern_industrialization:tin_dust", amount: 2},
+			{item: "modern_industrialization:bronze_dust", amount: 8},
 			{item: "modern_industrialization:lead_dust", amount: 1}
 		],
 		item_outputs: [
