@@ -2589,6 +2589,23 @@
 			x: -12.5d
 			y: 7.0d
 		}
+		{
+			dependencies: ["66B6D3512DDEBFFE"]
+			description: [
+				"Useful."
+				""
+				"It stores ingredients on the crafting grid, and includes its own storage like a smaller chest."
+			]
+			hide: true
+			id: "0B6C91109569B32C"
+			tasks: [{
+				id: "49AC0DABB9232562"
+				item: "enhancedworkbenches:project_table"
+				type: "item"
+			}]
+			x: -12.0d
+			y: -14.0d
+		}
 	]
 	title: "0 - Getting Started"
 }

@@ -286,10 +286,9 @@ event.custom (
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:crafting_table'})
 	event.remove({type: 'minecraft:crafting_shaped', output: '#byg:crafting_table'})
-	event.remove({type: 'minecraft:crafting_shaped', output: '4x #c:wooden_chests'})
-	event.remove({type: 'minecraft:crafting_shaped', output: '#c:wooden_chests'})
-	
-	event.remove({type: 'minecraft:crafting_shaped', output: '#c:wooden_chests'})
+	event.remove({id: "modern_industrialization:vanilla_recipes/easy_chest"})
+	event.remove({id: "minecraft:chest"})
+
 	
 	event.remove({type: 'minecraft:smelting', output: 'minecraft:charcoal'})
 	event.remove({type: 'minecraft:smoking', output: 'architects_palette:charcoal_block'})
@@ -641,7 +640,8 @@ event.custom (
 	event.remove({id: 'modern_industrialization:materials/diamond/compressor/main'})
 	event.remove({id: 'magick:diamond_dust_4'})
 	event.remove({id: 'magick:diamond_dust_4_exported_mi_cutting_machine'})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -653,7 +653,8 @@ event.custom (
 			{item: "geggy:mold_sword", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -665,7 +666,8 @@ event.custom (
 			{item: "geggy:mold_pickaxe", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -677,7 +679,8 @@ event.custom (
 			{item: "geggy:mold_axe", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -689,7 +692,8 @@ event.custom (
 			{item: "geggy:mold_shovel", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -702,7 +706,8 @@ event.custom (
 		]
 	})
 	/*
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 38,
 		duration: 600,
 		item_inputs: [ 
@@ -713,7 +718,8 @@ event.custom (
 		]
 	})
 	*/
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 38,
 		duration: 400,
 		item_inputs: [ 
@@ -725,7 +731,8 @@ event.custom (
 	})
 	//shards
 	/*
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 42,
 		duration: 600,
 		item_inputs: [ 
@@ -736,7 +743,8 @@ event.custom (
 		]
 	})
 	*/
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 38,
 		duration: 400,
 		item_inputs: [ 
@@ -751,7 +759,8 @@ event.custom (
 	})
 	
 	event.remove({id: "modern_industrialization:materials/diamond/macerator/ore_to_crushed"})
-event.recipes.modern_industrialization.macerator({
+event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 800,
 		item_inputs : [
@@ -763,7 +772,8 @@ event.recipes.modern_industrialization.macerator({
 			{item: "modern_industrialization:diamond_crushed_dust", amount: 1, probability: 0.5}
 		]
 	})
-event.recipes.modern_industrialization.macerator({
+event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -817,7 +827,7 @@ event.recipes.modern_industrialization.macerator({
 
 // AQM2 thankyouverymuch
 EntityEvents.checkSpawn(e => {
-    let nbt = e.entity.fullNBT
+    let nbt = e.entity.nbt
     if (e.type == 'SPAWNER' && nbt.cardinal_components && nbt.cardinal_components['eldritch_mobs:eldritch_modifiers']?.numMaxAbilities > 0) {
       e.cancel()
     }

@@ -99,7 +99,8 @@ ServerEvents.recipes(event => {
 		A: 'minecraft:diamond'
 	})
 	*/
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 10,
 		duration: 100,
 		item_inputs: [ 
@@ -110,7 +111,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:unfinished_diamond_helmet", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 16,
 		duration: 100,
 		item_inputs: [ 
@@ -121,7 +123,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:unfinished_diamond_chestplate", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 14,
 		duration: 100,
 		item_inputs: [ 
@@ -132,7 +135,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:unfinished_diamond_leggings", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
@@ -145,7 +149,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// diamond tools
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -158,7 +163,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:diamond_sword_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -171,7 +177,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:diamond_shovel_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -184,7 +191,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:diamond_pickaxe_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -197,7 +205,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:diamond_hoe_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [

@@ -212,11 +212,6 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'create:deploying/large_cogwheel'})
 	event.remove({id: 'create:crafting/kinetics/large_cogwheel'})
 	event.remove({id: 'create:crafting/kinetics/large_cogwheelfrom_little'})
-	event.custom({
-		"type": "create:pressing",
-		"ingredients": [{"item": "minecraft:copper_ingot"}],
-		"results": [{"item": "modern_industrialization:copper_plate"}]
-	})
 	
 	// geggy cog
 	
@@ -931,7 +926,7 @@ ServerEvents.recipes(event => {
 			"type": "create:mixing",
 			"heatRequirement": "heated",
 			"ingredients": [{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"}],
-			"results": [{"amount": 40500, "fluid": "geghilarity:molten_bronze"}]
+			"results": [{"amount": 46656, "fluid": "geghilarity:molten_bronze"}]
 	})
 	event.smelting('geggy:pickaxe_mold', 'geggy:unfired_pickaxe_mold').cookingTime(400)
 	event.custom({
@@ -2102,5 +2097,180 @@ ServerEvents.recipes(event => {
 		loops: 2
 	  }
 	)
+	
+	// small bronze gear
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "modern_industrialization:bronze_gear"}
+		],
+		results: [{
+			"count": 2, "item": "geggy:small_bronze_gear"
+		}]
+	})
+	
+	event.custom({
+		type: "create:pressing",
+		ingredients: [
+			{"item": "geggy:red_alloy_ingot"}
+		],
+		results: [{
+			"count": 1, "item": "geggy:red_alloy_plate"
+		}]
+	})
+	
+	// glue
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"item": "minecraft:slime_ball"},{"item": "minecraft:slime_ball"},
+			{"item": "minecraft:slime_ball"},{"item": "minecraft:slime_ball"},
+			{"item": "minecraft:slime_ball"}],
+			"results": [{"amount": 8100, "fluid": "geggy:glue"}]
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:book_binding"},
+		transitionalItem: {"item": "geggy:incomplete_book"},
+		sequence: [
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_book"},
+					// 81 = 1
+					{"amount": 1620, "fluid": "geggy:glue"}
+				],
+				results: [{
+					"item": "geggy:incomplete_book"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_book"},
+					{"item": "minecraft:paper"}
+				],
+				results: [{
+					"item": "geggy:incomplete_book"
+				}]
+			}
+		],
+		results: [{
+			"item": "minecraft:book"
+		}],
+		loops: 5
+	  }
+	)
+	
+	// analog circuit gegg
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:analog_circuit_board"},
+		transitionalItem: {"item": "kubejs:incomplete_analog_circuit"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "kubejs:incomplete_analog_circuit"},
+					{"item": "geggy:vacuum_tube"}
+				],
+				results: [{
+					"item": "kubejs:incomplete_analog_circuit"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "kubejs:incomplete_analog_circuit"},
+					{"item": "modern_industrialization:capacitor"}
+				],
+				results: [{
+					"item": "kubejs:incomplete_analog_circuit"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "kubejs:incomplete_analog_circuit"},
+					{"item": "modern_industrialization:resistor"}
+				],
+				results: [{
+					"item": "kubejs:incomplete_analog_circuit"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "kubejs:incomplete_analog_circuit"},
+					{"item": "modern_industrialization:inductor"}
+				],
+				results: [{
+					"item": "kubejs:incomplete_analog_circuit"
+				}]
+			}
+		],
+		results: [{
+			"item": "modern_industrialization:analog_circuit"
+		}],
+		loops: 2
+	  }
+	)
+	
+	// custom electron tube
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "modern_industrialization:quartz_dust"},{"item": "modern_industrialization:quartz_dust"},
+		{"amount": 81000, "fluid": "modern_industrialization:molten_redstone"}],
+		"results": [{"amount": 81000, "fluid": "geggy:molten_rose_quartz"}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:glass_tube"},
+			{"amount": 40500, "fluid": "geggy:molten_rose_quartz"}
+		],
+		results: [{
+			"item": "geggy:rose_quartz_tube"
+		}]
+	})
+	event.shaped('create:electron_tube', [
+		'A  ',
+		'B  ',
+		'   '
+	], {
+		A: 'geggy:rose_quartz_tube',
+		B: 'modern_industrialization:tin_plate'
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:quartz_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:molten_redstone", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_rose_quartz", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geggy:glass_tube", amount: 1},
+			{item: "modern_industrialization:tin_plate", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geggy:molten_rose_quartz", amount: 500},
+			{fluid: "modern_industrialization:soldering_alloy", amount: 12}
+		],
+		item_outputs: [
+			{item: "create:electron_tube", amount: 1}
+		]
+	})
 	
 })	

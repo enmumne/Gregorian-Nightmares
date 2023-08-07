@@ -1,7 +1,8 @@
 ServerEvents.recipes(event => {
 	
 	//FERRIC REE CHLORIDES (ad astra)
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 576,
 		fluid_inputs: [ 
@@ -20,7 +21,8 @@ ServerEvents.recipes(event => {
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:plasma_handling_iridium_machine_casing'})
 	
 	event.remove({type: "modern_industrialization:assembler", output: `modern_industrialization:plasma_handling_iridium_machine_casing`})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 200,
 		item_inputs: [ 
@@ -36,7 +38,8 @@ ServerEvents.recipes(event => {
 		//SUPER CONDUCTOR BLOCK 
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:superconductor_coil'})	
 	event.remove({type: "modern_industrialization:assembler", output: `modern_industrialization:superconductor_coil`})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 3840,
 		duration: 600,
 		item_inputs: [ 
@@ -52,7 +55,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	//carbon monoxide electrolysis 
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 120,
 		fluid_inputs: [ 
@@ -66,7 +70,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 1,
 		duration: 400,
 		item_inputs: [
@@ -76,7 +81,8 @@ ServerEvents.recipes(event => {
 			{item: "geghilarity:precious_ingot", amount: 1}
 		]
 	})	
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 1,
 		duration: 400,
 		item_inputs: [
@@ -88,8 +94,9 @@ ServerEvents.recipes(event => {
 	})
 	
 	//oxygen -> ad astra
-		event.recipes.modern_industrialization.centrifuge(
-		{
+		event.custom({ 
+		type: "modern_industrialization:centrifuge",
+
 			eu: 16,
 			duration: 100,
 			fluid_inputs: [ 
@@ -101,7 +108,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	//leached copper dehydration
-		event.recipes.modern_industrialization.dehy({
+		event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 80,
 		item_inputs: [ 
@@ -118,7 +126,8 @@ ServerEvents.recipes(event => {
 
 /*
 	// lyeo indium ? check later
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 60,
 		item_inputs: [ 
@@ -145,7 +154,8 @@ event.recipes.modern_industrialization.heat_exchanger(8, 10)
 */		
 
 	// mercury stone dust
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 150,
 		item_inputs: [ 
@@ -156,7 +166,8 @@ event.recipes.modern_industrialization.heat_exchanger(8, 10)
 			{item: 'geghilarity:tiny_platinum_metallic_powder_dust', amount: 1, probability: 0.1}
 		]
 	})
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 150,
 		item_inputs: [ 
@@ -168,7 +179,8 @@ event.recipes.modern_industrialization.heat_exchanger(8, 10)
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 20,
 		duration: 320,
 		item_inputs: [ 
@@ -195,13 +207,14 @@ event.custom({
 		{"item": 'geghilarity:rhodium_dust'}
 		],
 		results: [
-			Fluid.of('geghilarity:liquid_rhodium', fluid_volume_to_fabric(300)).toJson()
+			{"amount": 24300, "fluid": "geghilarity:liquid_rhodium"}
 		],
 		processingTime:50
 	})
 	
 	//palladium
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 			eu: 30,
 			duration: 2600,
 			item_inputs: [ 
@@ -225,7 +238,8 @@ event.custom({
 	})
 	
 	//normal rhodium plated palladium
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 320,
 		item_inputs: [ 
@@ -237,7 +251,8 @@ event.custom({
 	})	
 
 	//plate rhodium plated palladium
-		event.recipes.modern_industrialization.compressor({
+		event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 200,
 		item_inputs : [
@@ -313,7 +328,8 @@ event.custom({
 	
 	//combined mix metal
 	event.remove({id: 'modern_industrialization:materials/packer/mixed_ingot_iridium'})	
-		event.recipes.modern_industrialization.packer({
+		event.custom({ 
+		type: "modern_industrialization:packer",
 		eu: 2,
 		duration: 200,
 		item_inputs: [
@@ -334,7 +350,8 @@ event.custom({
 	//quantum hull
 	event.remove({id: "modern_industrialization:electric_age/hull/quantum_machine_hull_asbl"})
 	event.remove({type: 'modern_industrialization:assembler', output: 'modern_industrialization:quantum_machine_hull'})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 200,
 		item_inputs: [ 
@@ -357,7 +374,8 @@ event.custom({
 	
 	
 	//hot naquadah ingot
-		event.recipes.modern_industrialization.blaster_furnace4({
+		event.custom({ 
+		type: "modern_industrialization:blaster_furnace4",
 		eu: 3840,
 		duration: 1000,
 		item_inputs: [ 
@@ -372,7 +390,8 @@ event.custom({
 	})
 	
 	//normal  naquadah ingot
-		event.recipes.modern_industrialization.vacuum_freezer({
+		event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 480,
 		duration: 600,
 		item_inputs: [ 
@@ -392,7 +411,8 @@ event.custom({
 	
 	
 		//normal  naquadah plate
-		event.recipes.modern_industrialization.compressor({
+		event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 4,
 		duration: 200,
 		item_inputs : [
@@ -430,7 +450,8 @@ event.custom({
 		.itemOut('geghilarity:tritanium_ingot', 1)
 		
 	//normal  tritanium plate
-		event.recipes.modern_industrialization.compressor({
+		event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 4,
 		duration: 200,
 		item_inputs : [
@@ -452,21 +473,24 @@ event.custom({
 		
 	//AE gold processors
 	event.remove({id: "modern_industrialization:compat/ae2/printed_logic_processor"})
-	event.recipes.modern_industrialization.packer({eu: 8, duration: 200,item_inputs: [{item: 'ad_astra:desh_ingot'}],
+	event.custom({ 
+		type: "modern_industrialization:packer",eu: 8, duration: 200,item_inputs: [{item: 'ad_astra:desh_ingot'}],
 			item_outputs: [{item: 'ae2:printed_logic_processor', amount: 1}]})	
 
 	//superdense metal
 	event.remove({id: "modern_industrialization:electric_age/component/craft/ultradense_metal_ball_asbl"})
 	event.remove({id: "modern_industrialization:assembler_generated/electric_age/component/craft/ultradense_metal_ball"})
 	
-	event.recipes.modern_industrialization.packer({eu: 128, duration: 200,item_inputs: [{item: 'geghilarity:naquadah_plate', amount: 9},{item: 'modern_industrialization:tungsten_large_plate', amount: 4},{item: 'modern_industrialization:lead_plate', amount: 4}],
+	event.custom({ 
+		type: "modern_industrialization:packer",eu: 128, duration: 200,item_inputs: [{item: 'geghilarity:naquadah_plate', amount: 9},{item: 'modern_industrialization:tungsten_large_plate', amount: 4},{item: 'modern_industrialization:lead_plate', amount: 4}],
 		item_outputs: [{item: 'modern_industrialization:ultradense_metal_ball', amount: 1}]})	
 	
 	
 	//quantum upgrade
 	event.remove({id: "modern_industrialization:electric_age/upgrades/quantum"})
 	
-		event.recipes.modern_industrialization.assembler({
+		event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 32,
 		duration: 1000,
 		item_inputs: [ 
@@ -485,7 +509,8 @@ event.custom({
 
 	//end portal recipe
 	
-		event.recipes.modern_industrialization.assembler({
+		event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 32,
 		duration: 1000,
 		item_inputs: [ 

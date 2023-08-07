@@ -24,8 +24,8 @@ event.add('geggy:gravel_dust', '§7To be merged into a Gravel block.')
 event.add('drilly:drill_group1', '§7For tin and copper.')
 event.add('drilly:drill_group2', '§7For coal, iron and lignite.')
 event.add('drilly:drill_group3', '§7For lead, nickel and zinc.')
-event.add('drilly:drill_group4', '§7For salt, redstone, antimony and precious ore.')
-event.add('drilly:drill_group5', '§7For bauxite, mozanite, tungsten and uranium.')
+event.add('drilly:drill_group4', '§7For salt, redstone, precious ore and bauxite.')
+event.add('drilly:drill_group5', '§7For mozanite, tungsten and uranium.')
 event.add('drilly:drill_groupx', '§7For nether quartz.')
 
 event.add('geggy:cogwheel', '§7Internal use only.')
@@ -155,6 +155,7 @@ Ingredient.of('@chipped').stacks.forEach(item => {
 */
 
 const HID = [
+ "modern_industrialization:forge_hammer",	
  "vinery:cooking_pot",
  "create:copper_sheet",
  "create:iron_sheet",

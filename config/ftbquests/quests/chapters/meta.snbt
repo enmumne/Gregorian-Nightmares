@@ -214,19 +214,12 @@
 		}
 		{
 			description: [
-				"- Sometimes custom resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names.  If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
-				"If you see &eitem tooltip text being repeated&r, type \"&a/kubejs reload client_scripts&r\", nothing else beside executing the command. It should work immediately."
-				""
-				"- If a quest doesn't complete even if you have the items in the inventory, try logging out and back in. This problem happens sporadically and no one currently knows how to fix it. Not my fault here..."
+				"- Sometimes resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names. When loading into a world sometimes &epipes are rendered as disconnected, and hatches in multiblocks not formed&r even if the machine is working... If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
 				""
 				"- [&4HEAVY&r] This version of the modpack is VERY HEAVY to run. It just sucks. I try improving things where I can, but please look into the &lLITE&r version that should now be available, for something reasonably playable. This one here is expected to choke."
 				""
-				"- &lLAG.&r Recipe reloading has been changed, so now when you log into the game recipes should have finished loading (twice). That means the loading itself will be quite long, please have patience."
-				""
-				"- It can happen under certain (hopefully rare) conditions that recipes STILL aren't properly loaded. To make sure they are, look at the recipe to make a bed (white), if you see the vanilla one then it means that recipes aren't loaded. Try \"&a/reload&r\" in chat, the game will freeze for a few seconds (again). The \"correct\" bed recipe requires carpets, not wool."
-				"{@pagebreak}"
 				"- [&4HEAVY&r] When you create a new world you may notice that early on RAM gets filled up, creating &llag&r (yes, again), even if you allocate 8Gb. During my tests RAM usage usually decreases after some time to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more. (allocating more doesn't seem to help much...) The mod \"&cchipped&r\" by itself adds some memory overhead, so you can try removing that one."
-				""
+				"{@pagebreak}"
 				"- [&4HEAVY&r] In case of occasional, sudden crashes, they might be related either to the \"&cTinySkeletons&r\" or \"&cfrycparry&r\" mods, you can easily remove them for the /mods/ folder if you want. &mAnother mod that can add significant server lag and that could be removed is \"&cspiderstpo&r&m\" (cursed spiders AI being laggy)"
 				""
 				"- [&4HEAVY&r] Bewitchment and related mods now removed. Mainly because the library pehkui adds a tiny amount of generalized lag. It's not a big deal, but I decided to squeeze performance where I can..."

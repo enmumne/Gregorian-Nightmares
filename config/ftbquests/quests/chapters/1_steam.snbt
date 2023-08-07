@@ -397,9 +397,9 @@
 				""
 				"Starting from this point you may consider locking slots, especially to avoid some recipe conflicts where in some cases a recipe could be contained with another with more ingredients, and one of the two getting randomly selected..."
 				""
-				"Look at the slot icons, and locking mode. You can drag and drop both fluids and items, from the item lists to the empty slots. Doing so and locking them can be an easy way to filter the recipe you need on that machine. Without the risk that something else gets used or produced."
+				"Look at the slot icons, and &dlocking mode&r. You can drag and drop both fluids and items, from the item lists to the empty slots. Doing so and locking them can be an easy way to filter the recipe you need on that machine. Without the risk that something else gets used or produced."
 				""
-				"It works for both inputs and outputs (so look at the hatches). And it works on all machines, including single blocks."
+				"It works for both inputs and outputs (so look at the hatches). And it works on all machines, including single blocks. Using the scroll wheel (as the tooltip says) will also set a custom capacity/count for that slot (pressing shift while scrolling will make it scale faster)."
 			]
 			icon: "modern_industrialization:steam_blast_furnace"
 			id: "1DEDC34AE5197F09"

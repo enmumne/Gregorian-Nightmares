@@ -1,7 +1,8 @@
 //onEvent('recipes', event => {
 ServerEvents.recipes(event => {
 	
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 300,
 		item_inputs : [
@@ -11,7 +12,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:compressed_fireclay", amount: 2}
 		]
 	})
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 300,
 		item_inputs : [
@@ -22,7 +24,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	//event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:bricks'})
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 300,
 		item_inputs : [
@@ -33,7 +36,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	/*
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 600,
 		item_inputs : [
@@ -45,7 +49,8 @@ ServerEvents.recipes(event => {
 	})
 	*/
 
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -57,7 +62,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_ball", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -69,7 +75,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_ingot", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -81,7 +88,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_block", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -93,7 +101,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_nugget", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -105,7 +114,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_bottle", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 2,
 		duration: 400,
 		item_inputs : [
@@ -135,10 +145,12 @@ ServerEvents.recipes(event => {
 	
 	
 	event.remove({type: "modern_industrialization:packer", output: `modern_industrialization:fire_clay_bricks`})
-	event.recipes.modern_industrialization.packer({eu: 2, duration: 100,item_inputs: [{item: "modern_industrialization:fire_clay_brick", amount: 4},{item: "geggy:kelp_dust", amount: 1}],
+	event.custom({ 
+		type: "modern_industrialization:packer",eu: 2, duration: 100,item_inputs: [{item: "modern_industrialization:fire_clay_brick", amount: 4},{item: "geggy:kelp_dust", amount: 1}],
 			item_outputs: [{item: "modern_industrialization:fire_clay_bricks", amount: 1}]})
 	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 30,
 		item_inputs: [ 
@@ -148,7 +160,8 @@ ServerEvents.recipes(event => {
 			{item: "geggy:clay_dust", amount: 1}
 		]
 	})	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 60,
 		item_inputs: [ 
@@ -160,7 +173,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	event.remove({type: "modern_industrialization:macerator", output: `modern_industrialization:tungsten_dust`})
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 400,
 		item_inputs: [ 
@@ -173,7 +187,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	event.remove({type: "modern_industrialization:assembler", output: `modern_industrialization:digital_circuit_board`})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 16,
 		duration: 500,
 		item_inputs: [ 
@@ -192,7 +207,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// start
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 8,
 		duration: 1600,
 		fluid_inputs: [ 
@@ -205,8 +221,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// a1
-	event.recipes.modern_industrialization.chemical_reactor(
-	{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 1250,
 		fluid_inputs: [ 
@@ -219,8 +235,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// MV?	
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 240,
 			duration: 30,
 			fluid_inputs: [ 
@@ -234,8 +250,8 @@ ServerEvents.recipes(event => {
 		})
 	
 	// a2
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 240,
 			fluid_inputs: [ 
@@ -248,45 +264,14 @@ ServerEvents.recipes(event => {
 			]
 		})
 		
-	event.remove({type: "modern_industrialization:macerator", input: `#c:salt_ores`})	
-		
-	//aa	
-	//DEPP MaGICK
-	event.recipes.modern_industrialization.macerator({
-		eu: 12,
-		duration: 400,
-		item_inputs: [ 
-			{tag: "c:salt_ores", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:salt_crushed_dust", amount: 6},
-			{item: "geghilarity:rock_salt_dust", amount: 1, probability: 0.35},
-			{item: "magick:stone_dust", amount: 1, probability: 0.60}
-		]
-	})
-		
-	//bb	
-	//DEPP MAGICK
-	event.custom({
-		"type": "create:splashing",
-		"ingredients": [
-			{"item": "modern_industrialization:salt_crushed_dust"}
-		],
-		"results": [
-			{"count": 1, "item": "modern_industrialization:salt_dust"},
-			{"count": 3, "item": "geghilarity:tiny_rock_salt_dust"},
-			{"count": 1, "item": "magick:stone_dust"}
-		]	
-	})
-		
 	// event.remove modern_industrialization:materials/electrolyzer/salt_electrolysis	
 	event.remove({type: "modern_industrialization:electrolyzer", output: `modern_industrialization:sodium_dust`})
 	event.remove({type: "modern_industrialization:electrolyzer", input: `minecraft:water`})
 	
 	// 1
 	event.remove({id: "modern_industrialization:materials/electrolyzer/water"})
-	event.recipes.modern_industrialization.elecell(
-		{
+	event.custom({ 
+		type: "modern_industrialization:elecell",
 			eu: 30,
 			duration: 1500,
 			item_inputs: [ 
@@ -304,8 +289,8 @@ ServerEvents.recipes(event => {
 		})
 	
 	// 2
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 288,
 			item_inputs: [ 
@@ -320,7 +305,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 2b
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 224,
 		item_inputs: [ 
@@ -335,7 +321,8 @@ ServerEvents.recipes(event => {
 	})
 
 	// hydrogen oxygen loop, only uses water
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 144,
 		item_inputs: [ 
@@ -351,7 +338,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// 3
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 100,
 		item_inputs : [
@@ -368,8 +356,8 @@ ServerEvents.recipes(event => {
 	})
 				
 	// 4
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 100,
 			item_inputs : [
@@ -385,8 +373,9 @@ ServerEvents.recipes(event => {
 			]
 		})
 		
-	event.recipes.minecraft.blasting(
-		{
+	event.custom({ 
+		type: "minecraft:blasting",
+
 			cookingtime: 400,
 			ingredient: [ 
 				{item: "geggy:precious_ore"}
@@ -394,8 +383,9 @@ ServerEvents.recipes(event => {
 			result: "geghilarity:precious_ingot"
 		})	
 		
-	event.recipes.minecraft.blasting(
-		{
+	event.custom({ 
+		type: "minecraft:blasting",
+
 			cookingtime: 400,
 			ingredient: [ 
 				{item: "geggy:nether_precious_ore"}
@@ -403,8 +393,9 @@ ServerEvents.recipes(event => {
 			result: "geghilarity:precious_ingot"
 		})
 
-	event.recipes.minecraft.blasting(
-		{
+	event.custom({ 
+		type: "minecraft:blasting",
+
 			cookingtime: 400,
 			ingredient: [ 
 				{item: "geggy:deepslate_precious_ore"}
@@ -413,7 +404,8 @@ ServerEvents.recipes(event => {
 		})
 
 	// need create mechanism
-	event.recipes.minecraft.smelting({
+	event.custom({ 
+		type: "minecraft:smelting",
 		cookingtime: 600,
 		ingredient: [ 
 			{item: "geghilarity:precious_ingot"}
@@ -475,8 +467,8 @@ ServerEvents.recipes(event => {
 	*/	
 
 	// 5 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 80,
 			item_inputs : [
@@ -496,8 +488,8 @@ ServerEvents.recipes(event => {
 		})			
 		
 	// 6
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 60,
 			fluid_inputs: [ 
@@ -510,8 +502,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 7
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 80,
 			item_inputs : [
@@ -531,7 +523,8 @@ ServerEvents.recipes(event => {
 		})		
 	
 	// 8
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 100,
 		item_inputs : [
@@ -555,7 +548,8 @@ ServerEvents.recipes(event => {
 	//GATED AND DISABLED
 	// 01
 	/*
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 384,
 			duration: 320,
 			fluid_inputs: [ 
@@ -569,8 +563,8 @@ ServerEvents.recipes(event => {
 	*/	
 		
 	// 02
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 16,
 			fluid_inputs: [ 
@@ -583,8 +577,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// 03 TEMP purified zinc > zinc
-	event.recipes.modern_industrialization.centrifuge(
-		{
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 			eu: 5,
 			duration: 220,
 			item_inputs: [ 
@@ -597,8 +591,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 04
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 30,
 			fluid_inputs: [ 
@@ -612,8 +606,8 @@ ServerEvents.recipes(event => {
 		})
 	
 	// 05
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 250,
 			item_inputs: [
@@ -631,7 +625,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// 06 TEMP
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 30,
 		duration: 1200,
 		fluid_inputs: [ 
@@ -650,8 +645,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// 07 TEMP sifter > mixer
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 24,
 			duration: 300,
 			item_inputs: [ 
@@ -664,7 +659,8 @@ ServerEvents.recipes(event => {
 		})
 
 	// 08
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -679,8 +675,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// 09 TEMP LCR > chem.rea 
-	event.recipes.modern_industrialization.lcr(
-		{
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 			eu: 30,
 			duration: 250,
 			item_inputs: [ 
@@ -694,8 +690,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 10 
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 432,
 			item_inputs: [ 
@@ -710,8 +706,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 11 TEMP LCR  
-	event.recipes.modern_industrialization.lcr(
-		{
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 			eu: 30,
 			duration: 250,
 			item_inputs: [ 
@@ -727,8 +723,8 @@ ServerEvents.recipes(event => {
 		})
   
 	// 12 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 250,
 			fluid_inputs: [
@@ -740,7 +736,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 12a
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 250,
 		item_inputs: [ 
@@ -755,8 +752,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// 13 TEMP sifter > mixer
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 24,
 			duration: 300,
 			item_inputs: [ 
@@ -769,7 +766,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 14a 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 80,
 			item_inputs: [ 
@@ -787,7 +785,8 @@ ServerEvents.recipes(event => {
 		})	
 	
 	// 14b 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 80,
 			item_inputs: [ 
@@ -802,8 +801,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// 15
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 40,
 			item_inputs: [ 
@@ -821,8 +820,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 15 opt
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 60,
 			item_inputs: [ 
@@ -840,8 +839,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 16
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 60,
 			item_inputs: [ 
@@ -874,8 +873,8 @@ ServerEvents.recipes(event => {
 	*/	
 
 	// 18
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 320,
 			fluid_inputs: [
@@ -888,8 +887,8 @@ ServerEvents.recipes(event => {
 		})	
 	
 	// 19
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 60,
 			fluid_inputs: [
@@ -905,8 +904,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 20
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 1920,
 			duration: 300,
 			item_inputs: [
@@ -925,8 +924,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 21
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 512,
 			fluid_inputs: [ 
@@ -940,8 +939,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 22
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 168,
 			fluid_inputs: [ 
@@ -956,8 +955,8 @@ ServerEvents.recipes(event => {
 		})		
 		
 	// 23
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 128,
 			fluid_inputs: [ 
@@ -972,8 +971,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 24
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 448,
 			item_inputs: [
@@ -986,8 +985,8 @@ ServerEvents.recipes(event => {
 		})		
 
 	// 25
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 864,
 			fluid_inputs: [
@@ -1003,8 +1002,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// 26 
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 96,
 			duration: 42,
 			fluid_inputs: [
@@ -1021,7 +1020,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 27 IMAGE
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -1041,8 +1041,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// 28
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 120,
 			duration: 180,
 			item_inputs: [ 
@@ -1058,8 +1058,8 @@ ServerEvents.recipes(event => {
 		})
 
 	// 29
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 400,
 			fluid_inputs: [
@@ -1075,7 +1075,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 30 
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -1092,8 +1093,8 @@ ServerEvents.recipes(event => {
 
 	// to do
 	// 31
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 624,
 			item_inputs: [ 
@@ -1109,8 +1110,8 @@ ServerEvents.recipes(event => {
 		})
 
 	// 32
-	event.recipes.modern_industrialization.blast_furnace(
-		{
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 			eu: 120,
 			duration: 300,
 			item_inputs: [ 
@@ -1123,8 +1124,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 33
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 30,
 			fluid_inputs: [
@@ -1139,8 +1140,8 @@ ServerEvents.recipes(event => {
 		})
 
 	// 34
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 320,
 			fluid_inputs: [
@@ -1154,8 +1155,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 35
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 60,
 			duration: 8,
 			item_inputs: [ 
@@ -1174,8 +1175,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 36 TEMP LCR > chem.rea 
-	event.recipes.modern_industrialization.lcr(
-		{
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 			eu: 30,
 			duration: 300,
 			item_inputs: [ 
@@ -1193,8 +1194,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 37 TEMP sifter > mixer
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 600,
 			item_inputs: [ 
@@ -1207,8 +1208,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 38
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 300,
 			item_inputs: [ 
@@ -1223,7 +1224,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 39 
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 500,
 		fluid_inputs: [
@@ -1238,7 +1240,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// 39b
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -1253,8 +1256,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// 40
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 480,
 			duration: 80,
 			item_inputs: [ 
@@ -1272,7 +1275,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 40b magick IMAGE
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 120,
 		item_inputs: [ 
@@ -1286,7 +1290,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// 41 IMAGE
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -1306,7 +1311,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// 42
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -1321,8 +1327,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// 43 crack.unit > chem.rea
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 480,
 			duration: 150,
 			fluid_inputs: [
@@ -1335,7 +1341,8 @@ ServerEvents.recipes(event => {
 		})		
 	
 	// 44
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 480,
 		duration: 1500,
 		fluid_inputs: [
@@ -1348,7 +1355,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// 45 TEMP fluid.solidifier + ball mold > vacuum freezer
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 8,
 		duration: 16,
 		item_inputs: [ 
@@ -1363,8 +1371,8 @@ ServerEvents.recipes(event => {
 	})		
 		
 	// 46 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 300,
 			item_inputs: [ 
@@ -1383,8 +1391,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 47
-	event.recipes.modern_industrialization.blast_furnace(
-		{
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 			eu: 120,
 			duration: 100,
 			item_inputs: [ 
@@ -1402,8 +1410,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 48
-	event.recipes.modern_industrialization.distillation_tower(
-		{
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 			eu: 7680,
 			duration: 150,
 			fluid_inputs: [
@@ -1416,8 +1424,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 49 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 300,
 			fluid_inputs: [
@@ -1434,8 +1442,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 50 IMAGE
-	event.recipes.modern_industrialization.blaster_furnace(
-		{
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 			eu: 120,
 			duration: 200,
 			item_inputs: [ 
@@ -1448,8 +1456,8 @@ ServerEvents.recipes(event => {
 		})	
 	
 	// 51
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 300,
 			item_inputs: [ 
@@ -1464,8 +1472,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 52 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 300,
 			fluid_inputs: [
@@ -1482,8 +1490,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// 53 TEMP LCR > chem.rea 
-	event.recipes.modern_industrialization.lcr(
-		{
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 			eu: 1920,
 			duration: 300,
 			item_inputs: [ 
@@ -1502,8 +1510,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 54 
-	event.recipes.modern_industrialization.centrifuge(
-		{
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 			eu: 30,
 			duration: 180,
 			item_inputs: [ 
@@ -1516,7 +1524,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// 55 thermal centrifuge > centrifuge 
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 10,
 		duration: 226,
 		item_inputs: [ 
@@ -1533,8 +1542,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: `modern_industrialization:materials/blast_furnace/bauxite_to_aluminum_nugget`})
 		
 	// extra1
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 1792,
 			item_inputs: [ 
@@ -1567,8 +1576,8 @@ ServerEvents.recipes(event => {
 	*/	
 		
 	// ALU
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 2496,
 			item_inputs: [ 
@@ -1585,8 +1594,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// P1
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 480,
 			duration: 500,
 			item_inputs: [ 
@@ -1603,8 +1612,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// P2 EBF NERF, was 480 IMAGE
-	event.recipes.modern_industrialization.blaster_furnace(
-		{
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 			eu: 480,
 			duration: 800,
 			item_inputs: [ 
@@ -1622,7 +1631,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:materials/titanium/vacuum_freezer/hot_ingot'})
 	event.remove({id: 'modern_industrialization:materials/blast_furnace/titanium_from_raw'})
 	// P3 
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 144,
 		item_inputs: [
@@ -1634,8 +1644,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// P4
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 360,
 			item_inputs: [ 
@@ -1650,7 +1660,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// PXa
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 60,
 		item_inputs: [ 
@@ -1665,7 +1676,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// PX1
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 240,
 		item_inputs: [ 
@@ -1680,7 +1692,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX2t fluid heater > centrifuge
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 30,
 		fluid_inputs: [ 
@@ -1692,7 +1705,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 230,
 		fluid_inputs: [
@@ -1706,7 +1720,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX4
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -1719,7 +1734,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX5
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [ 
@@ -1733,7 +1749,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX6
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 160,
 		fluid_inputs: [
@@ -1747,7 +1764,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX7
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 960,
 		duration: 160,
 		fluid_inputs: [
@@ -1761,7 +1779,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX1 
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 120,
 		duration: 240,
 		fluid_inputs: [ 
@@ -1773,7 +1792,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX2 
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 240,
 		duration: 240,
 		item_inputs: [ 
@@ -1788,7 +1808,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 400,
 		item_inputs: [ 
@@ -1805,7 +1826,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX4
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -1825,7 +1847,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX5
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 160,
 		item_inputs: [ 
@@ -1840,7 +1863,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PXX6
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 140,
 		item_inputs: [ 
@@ -1859,7 +1883,8 @@ ServerEvents.recipes(event => {
 		
 	// X1
 	// DEPP Create
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 960,
 		item_inputs: [ 
@@ -1877,8 +1902,8 @@ ServerEvents.recipes(event => {
 		
 	// X2 TEMP replaced marble with prismarine > basalt
 	// DEPP MAGICK
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 640,
 			item_inputs: [ 
@@ -1891,7 +1916,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// T1
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 480,
 		duration: 160,
 		item_inputs: [ 
@@ -1908,7 +1934,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// T2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		item_inputs: [ 
@@ -1927,7 +1954,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// T3 TEMPI LCR > chem.rea
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 150,
 		item_inputs: [ 
@@ -1944,7 +1972,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// T4 
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 120,
 		duration: 150,
 		item_inputs: [ 
@@ -1956,8 +1985,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// T5
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 1920,
 			duration: 66,
 			item_inputs: [ 
@@ -1976,8 +2005,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// T6
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 60,
 			item_inputs: [ 
@@ -1996,8 +2025,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// T7
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 720,
 			fluid_inputs: [ 
@@ -2013,8 +2042,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// T8
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 8,
 			duration: 40,
 			fluid_inputs: [ 
@@ -2029,8 +2058,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// T9
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 8,
 			duration: 238,
 			item_inputs: [ 
@@ -2043,8 +2072,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// T10 	
-	event.recipes.modern_industrialization.blast_furnace(
-		{
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 			eu: 120,
 			duration: 10980,
 			item_inputs: [ 
@@ -2056,7 +2085,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// T11	
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 550,
 		item_inputs: [
@@ -2068,7 +2098,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// TS2A	
-	event.recipes.modern_industrialization.blaster_furnace2({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
 		eu: 120,
 		duration: 7140,
 		item_inputs: [ 
@@ -2080,7 +2111,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// TS2B EBF NERF, was 480
-	event.recipes.modern_industrialization.blaster_furnace2({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
 		eu: 128,
 		duration: 3000,
 		item_inputs: [ 
@@ -2093,7 +2125,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TS3
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 188,
 		item_inputs: [
@@ -2105,7 +2138,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TS4
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 24,
 		duration: 118,
 		item_inputs: [ 
@@ -2117,7 +2151,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// X3
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 60,
 		item_inputs: [ 
@@ -2130,8 +2165,8 @@ ServerEvents.recipes(event => {
 		
 	// X4 TEMP calcite magick
 	// DEPP MAGICK
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 400,
 			item_inputs: [ 
@@ -2147,8 +2182,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// X5  60 > 30 lyeo?
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 30,
 			duration: 688,
 			item_inputs: [ 
@@ -2203,7 +2238,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// XX2
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 12,
 		duration: 200,
 		item_inputs: [ 
@@ -2216,8 +2252,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// XX3
-	event.recipes.modern_industrialization.macerator(
-		{
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 			eu: 12,
 			duration: 200,
 			item_inputs: [ 
@@ -2230,8 +2266,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// X6
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 60,
 			item_inputs: [ 
@@ -2246,8 +2282,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// X7
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 320,
 			fluid_inputs: [
@@ -2260,8 +2296,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// E1 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 480,
 			item_inputs: [ 
@@ -2277,7 +2313,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// E2 
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 64,
 		duration: 640,
 		item_inputs: [ 
@@ -2292,7 +2329,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// E3
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 		eu: 64,
 		duration: 80,
 		fluid_inputs: [
@@ -2304,7 +2342,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// E4 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 120,
 		fluid_inputs: [
@@ -2318,7 +2357,8 @@ ServerEvents.recipes(event => {
 	})
 
 	// E4b 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 36,
 		duration: 160,
 		fluid_inputs: [
@@ -2332,8 +2372,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// E5 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 36,
 			duration: 120,
 			item_inputs: [ 
@@ -2352,8 +2392,8 @@ ServerEvents.recipes(event => {
 		})		
 		
 	// E6 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 2000,
 			duration: 400,
 			fluid_inputs: [
@@ -2367,8 +2407,8 @@ ServerEvents.recipes(event => {
 		
 	// E7
 	// DEPP MAGICK
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 240,
 			item_inputs: [ 
@@ -2383,8 +2423,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// E8
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 380,
 			duration: 400,
 			item_inputs: [ 
@@ -2399,8 +2439,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// E9
-	event.recipes.modern_industrialization.distillation_tower(
-		{
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 			eu: 120,
 			duration: 80,
 			fluid_inputs: [
@@ -2414,8 +2454,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// E9bis TEMP chem.dehydra > centrifuge
-	event.recipes.modern_industrialization.centrifuge(
-		{
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 			eu: 30,
 			duration: 100,
 			fluid_inputs: [
@@ -2430,8 +2470,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// E9tris
-	event.recipes.modern_industrialization.compressor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 			eu: 2,
 			duration: 200,
 			item_inputs: [ 
@@ -2442,7 +2482,8 @@ ServerEvents.recipes(event => {
 			]
 		})	
 	// E9B gtnh	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 30,
 		duration: 200,
 		item_inputs: [ 
@@ -2456,7 +2497,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// E10 centrifuge
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 4,
 		duration: 300,
 		item_inputs: [ 
@@ -2468,7 +2510,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// E10B
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 10,
 		duration: 900,
 		item_inputs: [ 
@@ -2483,7 +2526,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// E11
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 		eu: 24,
 		duration: 400,
 		fluid_inputs: [
@@ -2495,7 +2539,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// E11B
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 400,
 		duration: 40,
 		fluid_inputs: [
@@ -2514,7 +2559,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:oil/chemical_reactor/plant_oil_to_raw_biodiesel'})
 	event.remove({id: 'modern_industrialization:oil/chemical_reactor/raw_biodiesel_to_biodiesel'})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 600,
 		fluid_inputs: [
@@ -2526,7 +2572,8 @@ ServerEvents.recipes(event => {
 			{fluid: 'modern_industrialization:raw_biodiesel', amount: 6000}
 		]
 	})	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 600,
 		fluid_inputs: [
@@ -2539,7 +2586,8 @@ ServerEvents.recipes(event => {
 			{fluid: 'geghilarity:glycerol', amount: 166}
 		]
 	})
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 600,
 		fluid_inputs: [
@@ -2553,7 +2601,8 @@ ServerEvents.recipes(event => {
 		
 	/*	
 	// E12
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 600,
 		item_inputs: [ 
@@ -2571,8 +2620,8 @@ ServerEvents.recipes(event => {
 	*/
 		
 	// E13
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 480,
 			fluid_inputs: [
@@ -2586,8 +2635,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// E14
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 160,
 			fluid_inputs: [
@@ -2602,7 +2651,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// E15
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 200,
 		item_inputs: [ 
@@ -2619,7 +2669,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// E15b
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 30,
 		duration: 480,
 		item_inputs: [ 
@@ -2640,7 +2691,8 @@ ServerEvents.recipes(event => {
 
 	// TO FIX 1.19
 	//E16 tinkers cursed epoxy into sheet
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 8,
 		duration: 40,
 		item_inputs: [
@@ -2655,8 +2707,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// E17
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 10,
 			duration: 500,
 			item_inputs: [ 
@@ -2672,8 +2724,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// E20
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 200,
 			item_inputs: [ 
@@ -2689,7 +2741,8 @@ ServerEvents.recipes(event => {
 		})
 		
 	// E21
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 64,
 		duration: 600,
 		fluid_inputs: [
@@ -2702,7 +2755,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// FOIL1
-	event.recipes.modern_industrialization.cutting_machine({
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
 		eu: 2,
 		duration: 100,
 		item_inputs: [ 
@@ -2717,7 +2771,8 @@ ServerEvents.recipes(event => {
 	})
 
 	// FOIL2
-	event.recipes.modern_industrialization.cutting_machine({
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
 		eu: 2,
 		duration: 100,
 		item_inputs: [ 
@@ -2732,8 +2787,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// X8 
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 2880,
 			item_inputs: [ 
@@ -2751,8 +2806,8 @@ ServerEvents.recipes(event => {
 
 	// X9 
 	event.remove({id: 'modern_industrialization:materials/centrifuge/chromium_crushed_dust'})
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 			eu: 60,
 			duration: 576,
 			item_inputs: [ 
@@ -2768,7 +2823,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// X10 
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 456,
 		item_inputs: [ 
@@ -2781,8 +2837,8 @@ ServerEvents.recipes(event => {
 	})	
 		
 	// X11 
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 60,
 			item_inputs: [ 
@@ -2800,8 +2856,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AM1
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 120,
 			item_inputs: [ 
@@ -2818,8 +2874,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AM1b
-	event.recipes.modern_industrialization.chemical_reactor(
-		{
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 120,
 			item_inputs: [ 
@@ -2836,7 +2892,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AM2
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 120,
 			duration: 60,
 			item_inputs: [ 
@@ -2853,7 +2910,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// AM3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 120,
 			fluid_inputs: [
@@ -2868,7 +2926,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// AM4 adapted
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 240,
 			item_inputs: [ 
@@ -2884,7 +2943,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AM5
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 120,
 		duration: 120,
 		fluid_inputs: [
@@ -2897,7 +2957,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// AMC1
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 30,
 			duration: 100,
 			item_inputs: [ 
@@ -2910,7 +2971,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// AMC2
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -2923,7 +2985,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// AMR1
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 			eu: 120,
 			duration: 100,
 			fluid_inputs: [
@@ -2937,7 +3000,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AMR2
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 			eu: 64,
 			duration: 80,
 			fluid_inputs: [
@@ -2949,7 +3013,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AME2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 60,
 			duration: 100,
 			item_inputs: [ 
@@ -2964,7 +3029,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AME3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 80,
 			item_inputs: [ 
@@ -2979,7 +3045,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AME4
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 100,
 			item_inputs: [ 
@@ -2997,7 +3064,8 @@ ServerEvents.recipes(event => {
 		})	
 		
 	// AME5 lowered eu for alu and avoid kanthal (chrome)
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 			eu: 32,
 			duration: 1200,
 			item_inputs: [ 
@@ -3012,7 +3080,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// A+1
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 120,
 		duration: 120,
 		item_inputs: [
@@ -3027,7 +3096,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// A+2
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 120,
 		duration: 30,
 		item_inputs: [
@@ -3039,7 +3109,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// A+3
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 120,
 		duration: 2400,
 		item_inputs: [
@@ -3058,7 +3129,8 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:electronic_circuit'
 	})
 	// AX1
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 200,
 		fluid_inputs: [
@@ -3070,7 +3142,8 @@ ServerEvents.recipes(event => {
 		]	
 	})
 	// AX2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 400,
 		fluid_inputs: [
@@ -3082,18 +3155,22 @@ ServerEvents.recipes(event => {
 		]	
 	})
 	
-	event.recipes.modern_industrialization.packer({eu: 16, duration: 48,item_inputs: [{item: "modern_industrialization:titanium_rod", amount: 2}],
+	event.custom({ 
+		type: "modern_industrialization:packer",eu: 16, duration: 48,item_inputs: [{item: "modern_industrialization:titanium_rod", amount: 2}],
 		item_outputs: [{item: "geghilarity:long_titanium_rod", amount: 1}]})
 	
 	// bullshit
 	/*
-	event.recipes.modern_industrialization.the_bull({eu: 16, duration: 48,item_inputs: [{item: "modern_industrialization:titanium_rod", amount: 2}],
+	event.custom({ 
+		type: "modern_industrialization:the_bull",eu: 16, duration: 48,item_inputs: [{item: "modern_industrialization:titanium_rod", amount: 2}],
 		item_outputs: [{item: "geghilarity:long_titanium_rod", amount: 1}]})
 
-	event.recipes.modern_industrialization.the_bull({eu: 1, duration: 1200,item_inputs: [{item: "minecraft:lava_bucket", amount: 1}],
+	event.custom({ 
+		type: "modern_industrialization:the_bull",eu: 1, duration: 1200,item_inputs: [{item: "minecraft:lava_bucket", amount: 1}],
 		item_outputs: [{item: "geghilarity:precious_ore", amount: 2}]})
 			
-	event.recipes.modern_industrialization.ironq({eu: 1, duration: 1200,item_inputs: [{item: "minecraft:stick", amount: 1}],
+	event.custom({ 
+		type: "modern_industrialization:ironq",eu: 1, duration: 1200,item_inputs: [{item: "minecraft:stick", amount: 1}],
 			item_outputs: [{item: "minecraft:raw_iron", amount: 2}]})
 	*/	
 
@@ -3101,7 +3178,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: "modern_industrialization:oil/chemical_reactor/ethanol_to_ethylene"})
 
 	// LCR1
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 3500,
 		item_inputs: [ 
@@ -3116,7 +3194,8 @@ ServerEvents.recipes(event => {
 	})
 
 	// LCR2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 80,
 			fluid_inputs: [
@@ -3131,7 +3210,8 @@ ServerEvents.recipes(event => {
 		
 	event.remove({mod: 'magick', output: 'magick:blackstone_dust'})	
 	// FLUO1 MAGICK
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 150,
 		item_inputs: [ 
@@ -3144,7 +3224,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// FLUO2
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 400,
 		item_inputs: [ 
@@ -3157,7 +3238,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// FLUO3
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 1760,
 		item_inputs: [ 
@@ -3176,7 +3258,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// FLUO+
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 240,
 		item_inputs: [ 
@@ -3191,7 +3274,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// FLUO++
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 80,
 		fluid_inputs: [ 
@@ -3204,7 +3288,8 @@ ServerEvents.recipes(event => {
 	})
 		
 	// LCR4
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 60,
 			fluid_inputs: [
@@ -3217,7 +3302,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// LCR5
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 256,
 			duration: 240,
 			fluid_inputs: [
@@ -3232,7 +3318,8 @@ ServerEvents.recipes(event => {
 	
 	/*
 	// LCR6
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 160,
 			item_inputs: [ 
@@ -3247,7 +3334,8 @@ ServerEvents.recipes(event => {
 		})		
 		
 	// LCR7
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 160,
 			fluid_inputs: [
@@ -3260,7 +3348,8 @@ ServerEvents.recipes(event => {
 		})	
 
 	// LCR8
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 800,
 			item_inputs: [ 
@@ -3276,7 +3365,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// LCR9
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 800,
 			item_inputs: [ 
@@ -3294,7 +3384,8 @@ ServerEvents.recipes(event => {
 	*/	
 		
 	// LCR1xa
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 40,
 			item_inputs: [ 
@@ -3312,7 +3403,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// LCR1xb
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 8,
 			duration: 40,
 			item_inputs: [ 
@@ -3327,7 +3419,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// LCR2x eu from 200 to 150, to make ethylene craftable with basic upgrades
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 150,
 			duration: 400,
 			fluid_inputs: [
@@ -3341,7 +3434,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// LCR3x
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 120,
 			duration: 1200,
 			fluid_inputs: [
@@ -3355,7 +3449,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// LCR4x
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 			eu: 30,
 			duration: 1200,
 			fluid_inputs: [
@@ -3368,7 +3463,8 @@ ServerEvents.recipes(event => {
 	
 	/*	
 	// LCR6x
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 160,
 			item_inputs: [ 
@@ -3383,7 +3479,8 @@ ServerEvents.recipes(event => {
 	})		
 		
 	// LCR7x
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 160,
 			fluid_inputs: [
@@ -3396,7 +3493,8 @@ ServerEvents.recipes(event => {
 	})	
 	*/
 	
-	event.recipes.modern_industrialization.poly_tank({
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
 		eu: 30,
 		duration: 75,
 		item_inputs: [
@@ -3413,7 +3511,8 @@ ServerEvents.recipes(event => {
 	
 
 	// LCR8x
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 800,
 			fluid_inputs: [
@@ -3427,7 +3526,8 @@ ServerEvents.recipes(event => {
 	})	
 
 	// LCR9x
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 			eu: 30,
 			duration: 800,
 			fluid_inputs: [
@@ -3440,7 +3540,8 @@ ServerEvents.recipes(event => {
 			]	
 	})	
 	
-	event.recipes.modern_industrialization.poly_tank({
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
 		eu: 30,
 		duration: 30,
 		item_inputs: [
@@ -3456,7 +3557,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// P0
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 120,
 		duration: 720,
 		item_inputs: [ 
@@ -3471,7 +3573,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// P1
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 96,
 		duration: 440,
 		item_inputs: [ 
@@ -3486,7 +3589,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// P2
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 64,
 		duration: 640,
 		item_inputs: [ 
@@ -3501,7 +3605,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// P3
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 64,
 		duration: 440,
 		item_inputs: [ 
@@ -3517,7 +3622,8 @@ ServerEvents.recipes(event => {
 	
 	// PX
 	/*
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 18,
 		item_inputs: [
@@ -3529,7 +3635,8 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 30,
 		item_inputs: [ 
@@ -3540,7 +3647,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 80,
 		fluid_inputs: [
@@ -3553,7 +3661,8 @@ ServerEvents.recipes(event => {
 	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:quantum_machine_casing'})
 	event.remove({type: 'modern_industrialization:assembler', output: 'modern_industrialization:quantum_machine_casing'})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 200,
 		item_inputs: [
@@ -3566,7 +3675,8 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:quantum_machine_casing", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.implosion_compressor({
+	event.custom({ 
+		type: "modern_industrialization:implosion_compressor",
 		eu: 60,
 		duration: 1200,
 		item_inputs: [
@@ -3582,7 +3692,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// LC1
-	event.recipes.modern_industrialization.cutting_machine({
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
 		eu: 24,
 		duration: 4,
 		item_inputs: [ 
@@ -3596,7 +3707,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// LC2
-	event.recipes.modern_industrialization.cutting_machine({
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
 		eu: 24,
 		duration: 4,
 		item_inputs: [ 
@@ -3610,7 +3722,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// LC3
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 8,
 		duration: 40,
 		item_inputs: [ 
@@ -3624,7 +3737,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// LC4
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 8,
 		duration: 40,
 		item_inputs: [ 
@@ -3638,7 +3752,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 2000,
 		duration: 100,
 		item_inputs: [
@@ -3653,7 +3768,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NAA
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 12,
 		duration: 400,
 		item_inputs: [ 
@@ -3678,7 +3794,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// 
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 12,
 		duration: 200,
 		item_inputs: [ 
@@ -3690,7 +3807,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 60,
 		duration: 2352,
 		item_inputs: [
@@ -3718,7 +3836,8 @@ ServerEvents.recipes(event => {
 		]	
 	})
 	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 32,
 		duration: 200,
 		item_inputs: [ 
@@ -3730,7 +3849,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 128,
 		duration: 2352,
 		item_inputs: [
@@ -3748,7 +3868,8 @@ ServerEvents.recipes(event => {
 	
 
 	// N01a
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 100,
 		item_inputs: [
@@ -3766,7 +3887,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N01b
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 100,
 		item_inputs: [
@@ -3784,7 +3906,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N01c
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 100,
 		item_inputs: [
@@ -3802,7 +3925,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N03
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 600,
 		duration: 50,
 		item_inputs: [ 
@@ -3820,7 +3944,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NO4 arc furnace > centrifuge
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 60,
 		item_inputs: [
@@ -3835,7 +3960,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N05
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		item_inputs: [ 
@@ -3853,7 +3979,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N06
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -3868,7 +3995,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N07
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [ 
@@ -3881,7 +4009,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N08a
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -3898,7 +4027,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N08b
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -3915,7 +4045,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N08c
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -3932,7 +4063,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N09a
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
@@ -3945,7 +4077,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N09b
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
@@ -3958,7 +4091,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N09c
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
@@ -3971,7 +4105,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N10a
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 30720,
 		duration: 100,
 		item_inputs: [ 
@@ -3987,7 +4122,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N10b
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 30720,
 		duration: 100,
 		item_inputs: [ 
@@ -4003,7 +4139,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N10c
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 30720,
 		duration: 100,
 		item_inputs: [ 
@@ -4019,7 +4156,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N11
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 270,
 		item_inputs: [ 
@@ -4035,7 +4173,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N12
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [
@@ -4052,7 +4191,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N13
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -4072,7 +4212,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N14
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 7680,
 		duration: 200,
 		fluid_inputs: [
@@ -4088,7 +4229,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR1
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 224,
 		item_inputs: [ 
@@ -4103,7 +4245,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 220,
 		item_inputs: [ 
@@ -4118,7 +4261,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -4136,7 +4280,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR4 EBF NERF, was 480
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 128,
 		duration: 100,
 		item_inputs: [ 
@@ -4152,7 +4297,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR5
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 714,
 		fluid_inputs: [
@@ -4170,7 +4316,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NR6
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 		eu: 120,
 		duration: 600,
 		fluid_inputs: [
@@ -4182,7 +4329,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC1
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 176,
 		item_inputs: [ 
@@ -4197,7 +4345,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -4212,7 +4361,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -4226,7 +4376,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC4
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [
@@ -4239,7 +4390,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC5
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -4260,7 +4412,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC6
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 7680,
 		duration: 200,
 		fluid_inputs: [
@@ -4277,7 +4430,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC7
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -4294,7 +4448,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC8
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 100,
 		item_inputs: [ 
@@ -4309,7 +4464,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC9 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 150,
 		fluid_inputs: [
@@ -4322,7 +4478,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC10
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 7680,
 		duration: 200,
 		fluid_inputs: [
@@ -4336,7 +4493,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC11
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 400,
 		fluid_inputs: [
@@ -4351,7 +4509,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC12
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30720,
 		duration: 120,
 		fluid_inputs: [
@@ -4367,7 +4526,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC13
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 200,
 		fluid_inputs: [
@@ -4380,7 +4540,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC14
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -4393,7 +4554,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC15
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -4406,7 +4568,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC16
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -4419,7 +4582,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC17
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 100,
 		item_inputs: [ 
@@ -4434,7 +4598,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC18
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 120,
 		fluid_inputs: [
@@ -4447,7 +4612,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC19
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 100,
 		fluid_inputs: [
@@ -4467,7 +4633,8 @@ ServerEvents.recipes(event => {
 		.dimension("nether")
 		
 	// NE2
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 7680,
 		duration: 2000,
 		fluid_inputs: [
@@ -4485,7 +4652,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TEMP TEMP TEMP
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 6864,
 		item_inputs: [ 
@@ -4503,7 +4671,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC21
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 180,
 		fluid_inputs: [
@@ -4517,7 +4686,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC22
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 180,
 		fluid_inputs: [
@@ -4533,7 +4703,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC23
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -4545,7 +4716,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC24
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 260,
 		fluid_inputs: [ 
@@ -4557,7 +4729,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC25 MAGICK
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 480,
 		duration: 190,
 		fluid_inputs: [
@@ -4575,7 +4748,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC26
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 480,
 		duration: 270,
 		fluid_inputs: [
@@ -4591,7 +4765,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC27
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 120,
 		duration: 180,
 		fluid_inputs: [
@@ -4606,7 +4781,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC28
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 150,
 		fluid_inputs: [
@@ -4619,7 +4795,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC29
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 180,
 		fluid_inputs: [
@@ -4634,7 +4811,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC30
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 480,
 		duration: 400,
 		fluid_inputs: [
@@ -4646,7 +4824,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NC31
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 180,
 		item_inputs: [ 
@@ -4662,7 +4841,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX1
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 30720,
 		duration: 600,
 		item_inputs: [
@@ -4680,7 +4860,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX2
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 480,
 		duration: 900,
 		item_inputs: [ 
@@ -4698,7 +4879,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX3
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 220,
 		fluid_inputs: [
@@ -4714,7 +4896,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX4
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 1920,
 		duration: 400,
 		fluid_inputs: [
@@ -4731,7 +4914,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX5
-	event.recipes.modern_industrialization.blaster_furnace5({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace5",
 		eu: 30720,
 		duration: 750,
 		item_inputs: [ 
@@ -4745,7 +4929,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX6
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 969,
 		item_inputs: [ 
@@ -4763,7 +4948,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX6b
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 92,
 		item_inputs: [
@@ -4776,7 +4962,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX7
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 480,
 		duration: 300,
 		fluid_inputs: [
@@ -4790,7 +4977,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// NX8
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 30720,
 		duration: 600,
 		item_inputs: [
@@ -4808,7 +4996,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NX9
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 1920,
 		duration: 400,
 		fluid_inputs: [
@@ -4826,7 +5015,8 @@ ServerEvents.recipes(event => {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 150,
 		item_inputs: [ 
@@ -4839,7 +5029,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN01
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 120,
 		duration: 50,
 		item_inputs: [ 
@@ -4855,7 +5046,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN02
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 120,
 		item_inputs: [ 
@@ -4874,7 +5066,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN03
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 120,
 		duration: 80,
 		item_inputs: [ 
@@ -4886,7 +5079,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN04
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 80,
 		item_inputs: [ 
@@ -4901,7 +5095,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN05
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 130,
 		fluid_inputs: [
@@ -4916,7 +5111,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN06
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 140,
 		fluid_inputs: [
@@ -4929,7 +5125,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN07
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 180,
 		fluid_inputs: [
@@ -4943,7 +5140,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN08
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 150,
 		item_inputs: [ 
@@ -4962,7 +5160,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN09
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 130,
 		item_inputs: [ 
@@ -4980,7 +5179,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN10
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 130,
 		item_inputs: [ 
@@ -4998,7 +5198,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN11
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 480,
 		duration: 50,
 		item_inputs: [ 
@@ -5016,7 +5217,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN12
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 120,
 		duration: 230,
 		fluid_inputs: [
@@ -5028,7 +5230,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN13
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 120,
 		duration: 240,
 		item_inputs: [ 
@@ -5046,7 +5249,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN+1
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 50,
 		item_inputs: [ 
@@ -5063,7 +5267,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// IN+2
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 304,
 		item_inputs: [ 
@@ -5078,7 +5283,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// N+
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 20,
 		duration: 160,
 		item_inputs: [ 
@@ -5093,7 +5299,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V0
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 16,
 		duration: 200,
 		fluid_inputs: [
@@ -5105,7 +5312,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V1
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 450,
 		item_inputs: [ 
@@ -5124,7 +5332,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 150,
 		item_inputs: [ 
@@ -5138,7 +5347,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V3
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 150,
 		item_inputs: [ 
@@ -5154,7 +5364,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V4
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 168,
 		item_inputs: [ 
@@ -5169,7 +5380,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V5 redoes 17
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 7,
 		duration: 200,
 		item_inputs: [ 
@@ -5185,7 +5397,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V6 
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 7,
 		duration: 60,
 		item_inputs: [ 
@@ -5200,7 +5413,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// V7
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 152,
 		fluid_inputs: [
@@ -5215,7 +5429,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C1
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 38,
 		duration: 80,
 		item_inputs: [ 
@@ -5227,7 +5442,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C1a
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 30,
 		duration: 1200,
 		item_inputs: [
@@ -5240,7 +5456,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C1b
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 25,
 		duration: 500,
 		item_inputs: [
@@ -5252,7 +5469,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C1c
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 80,
 		item_inputs: [
@@ -5264,7 +5482,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C1d
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 80,
 		item_inputs: [
@@ -5280,7 +5499,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: `modern_industrialization:materials/cupronickel/assembler/coil`})
 	event.remove({id: `modern_industrialization:materials/kanthal/assembler/coil`})
 	// C2
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
@@ -5296,7 +5516,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C3
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -5312,7 +5533,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C4 needed for basic upgrades, requires upgrade, so jumpstarted by created at a loss
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 38,
 		duration: 80,
 		item_inputs: [ 
@@ -5324,7 +5546,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C5
-	event.recipes.modern_industrialization.cutting_machine({
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -5339,7 +5562,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C6
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 30,
 		duration: 400,
 		item_inputs: [
@@ -5352,7 +5576,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C7
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 28,
 		duration: 400,
 		item_inputs: [
@@ -5365,7 +5590,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C8
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 8,
 		duration: 400,
 		item_inputs: [ 
@@ -5378,7 +5604,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C9
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 120,
 		duration: 400,
 		item_inputs: [ 
@@ -5394,7 +5621,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C9a
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 4,
 		duration: 500,
 		item_inputs: [ 
@@ -5406,7 +5634,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C9b
-	event.recipes.modern_industrialization.wiremill({
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
 		eu: 4,
 		duration: 500,
 		item_inputs: [ 
@@ -5418,7 +5647,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C9c
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 4,
 		duration: 500,
 		item_inputs: [ 
@@ -5433,7 +5663,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C10
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 128,
 		duration: 80,
 		item_inputs: [ 
@@ -5445,7 +5676,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C11
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 480,
 		duration: 2700,
 		item_inputs: [ 
@@ -5459,7 +5691,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C12
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 3024,
 		item_inputs: [ 
@@ -5471,7 +5704,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C13
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 280,
 		item_inputs: [ 
@@ -5484,7 +5718,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C14
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 1920,
 		duration: 600,
 		item_inputs: [ 
@@ -5503,7 +5738,8 @@ ServerEvents.recipes(event => {
 
 	
 	// C14b
-	event.recipes.modern_industrialization.wiremill({
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
 		eu: 8,
 		duration: 500,
 		item_inputs: [ 
@@ -5515,7 +5751,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C14c
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 500,
 		item_inputs: [ 
@@ -5530,7 +5767,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C15
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 1920,
 		duration: 600,
 		item_inputs: [ 
@@ -5546,7 +5784,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C15b
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 168,
 		item_inputs: [ 
@@ -5558,7 +5797,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C16
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 512,
 		duration: 80,
 		item_inputs: [ 
@@ -5570,7 +5810,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C17
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 512,
 		duration: 80,
 		item_inputs: [ 
@@ -5582,7 +5823,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C18
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 882,
 		item_inputs: [ 
@@ -5597,7 +5839,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C19
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 1920,
 		duration: 871,
 		item_inputs: [ 
@@ -5612,7 +5855,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C19a
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 16,
 		duration: 500,
 		item_inputs: [ 
@@ -5624,7 +5868,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C19b
-	event.recipes.modern_industrialization.wiremill({
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
 		eu: 16,
 		duration: 500,
 		item_inputs: [ 
@@ -5636,7 +5881,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C19c
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 16,
 		duration: 500,
 		item_inputs: [ 
@@ -5651,7 +5897,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C20
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 294,
 		item_inputs: [ 
@@ -5663,7 +5910,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C21
-	event.recipes.modern_industrialization.blaster_furnace4({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace4",
 		eu: 1920,
 		duration: 938,
 		item_inputs: [ 
@@ -5678,7 +5926,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C22
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 250,
 		item_inputs: [ 
@@ -5696,7 +5945,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C23
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 4046,
 		duration: 450,
 		item_inputs: [ 
@@ -5711,7 +5961,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C24
-	event.recipes.modern_industrialization.blaster_furnace4({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace4",
 		eu: 1920,
 		duration: 1005,
 		item_inputs: [ 
@@ -5726,7 +5977,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C25
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 388,
 		item_inputs: [ 
@@ -5744,7 +5996,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C26
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 7680,
 		duration: 25,
 		item_inputs: [ 
@@ -5758,7 +6011,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXT1
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 8,
 		duration: 150,
 		item_inputs: [ 
@@ -5771,7 +6025,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXT2
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 20,
 		duration: 320,
 		item_inputs: [ 
@@ -5788,7 +6043,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXT3
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 20,
 		duration: 320,
 		item_inputs: [ 
@@ -5800,7 +6056,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXT4
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 20,
 		duration: 320,
 		item_inputs: [ 
@@ -5814,8 +6071,9 @@ ServerEvents.recipes(event => {
 	
 	
 	//LITHIUM HYDROXIDE ELECTROLYSIS
-	event.recipes.modern_industrialization.electrolyzer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+
 			eu: 30,
 			duration: 200,
 					fluid_inputs: [ 
@@ -5846,7 +6104,8 @@ ServerEvents.recipes(event => {
 		A: "modern_industrialization:aluminum_cable",
 		L: "geghilarity:lithium_dust"
 	})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 64,
 		duration: 200,
 		item_inputs: [ 
@@ -5861,7 +6120,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC01 TEMP autoclave > centrifuge
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 600,
 		item_inputs: [ 
@@ -5877,7 +6137,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC02 TEMP chem.bath > centrifuge
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 600,
 		fluid_inputs: [ 
@@ -5891,7 +6152,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC03
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 480,
 		duration: 600,
 		item_inputs: [ 
@@ -5908,7 +6170,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC04
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 200,
 		item_inputs: [ 
@@ -5926,7 +6189,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC05
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 600,
 		item_inputs: [ 
@@ -5944,7 +6208,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC06
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 16,
 		duration: 650,
 		item_inputs: [ 
@@ -5962,7 +6227,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC07 TEMP autoclave > centrifuge
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 600,
 		item_inputs: [ 
@@ -5978,7 +6244,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC08 TEMP solvent.ext > lcr (can probably make a dedicated MB)
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 122880,
 		duration: 100,
 		fluid_inputs: [ 
@@ -5994,7 +6261,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC09
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [ 
@@ -6008,7 +6276,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC10 TEMP, chanced
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [ 
@@ -6023,7 +6292,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC11 TEMP, EBF4?
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 7680,
 		duration: 8000,
 		item_inputs: [ 
@@ -6042,7 +6312,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC11b
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 558,
 		item_inputs: [
@@ -6054,7 +6325,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC12
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		fluid_inputs: [
@@ -6068,7 +6340,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC13
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 20,
 		fluid_inputs: [
@@ -6081,7 +6354,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC14
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 20,
 		item_inputs: [ 
@@ -6095,7 +6369,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC15
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 20,
 		item_inputs: [ 
@@ -6111,7 +6386,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC16
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -6126,7 +6402,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC17
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -6143,7 +6420,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC18 TEMP lcr due to 4 input fluid
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [ 
@@ -6159,7 +6437,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC19
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [
@@ -6172,7 +6451,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC20
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		fluid_inputs: [
@@ -6186,7 +6466,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC21
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 480,
 		duration: 200,
 		item_inputs: [ 
@@ -6205,7 +6486,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC22
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		fluid_inputs: [
@@ -6218,7 +6500,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC23
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		item_inputs: [ 
@@ -6234,7 +6517,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PC24
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -6252,7 +6536,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX01
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -6271,7 +6556,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX02
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 180,
 		duration: 330,
 		item_inputs: [ 
@@ -6288,7 +6574,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX03
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 1920,
 		duration: 1000,
 		item_inputs: [ 
@@ -6306,7 +6593,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX04
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 125,
 		item_inputs: [ 
@@ -6325,7 +6613,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX05
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -6337,7 +6626,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX06
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 80,	
 		fluid_inputs: [
@@ -6351,7 +6641,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX07
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 60,
 		duration: 120,
 		fluid_inputs: [ 
@@ -6366,7 +6657,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX08
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -6382,7 +6674,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX09 or 120 100 tic
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 1920,
 		duration: 50,
 		fluid_inputs: [
@@ -6397,7 +6690,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX10
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30720,
 		duration: 200,
 		item_inputs: [ 
@@ -6414,7 +6708,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX11
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 96,
 		duration: 120,
 		fluid_inputs: [
@@ -6428,7 +6723,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX12
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 96,
 		duration: 120,
 		fluid_inputs: [
@@ -6441,7 +6737,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX13
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 96,
 		duration: 320,
 		item_inputs: [ 
@@ -6457,7 +6754,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX14
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 7680,
 		duration: 100,
 		item_inputs: [ 
@@ -6474,7 +6772,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX15 
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 4,
 		duration: 60,
 		fluid_inputs: [ 
@@ -6487,7 +6786,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX16
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 460,
 		duration: 600,
 		fluid_inputs: [
@@ -6500,7 +6800,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX17
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		item_inputs: [ 
@@ -6515,7 +6816,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX18
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		item_inputs: [ 
@@ -6532,7 +6834,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX19
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 60,
 		item_inputs: [ 
@@ -6548,7 +6851,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX20
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 240,
 		duration: 100,
 		item_inputs: [ 
@@ -6564,7 +6868,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX21
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 1920,
 		duration: 40,
 		fluid_inputs: [
@@ -6577,7 +6882,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX22 TEMP deionized water
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 1920,
 		duration: 40,
 		fluid_inputs: [
@@ -6594,7 +6900,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX23
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 1920,
 		duration: 40,
 		fluid_inputs: [
@@ -6609,7 +6916,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// PX24
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -6623,7 +6931,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PX25
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 40,
 		item_inputs: [ 
@@ -6638,7 +6947,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX1
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 1920,
 		fluid_inputs: [
@@ -6652,7 +6962,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX2
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 384,
 		fluid_inputs: [ 
@@ -6668,7 +6979,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX3
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 576,
 		item_inputs: [ 
@@ -6685,7 +6997,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX4
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 320,
 		item_inputs: [ 
@@ -6705,7 +7018,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX5
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 96,
 		item_inputs: [
@@ -6720,7 +7034,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX6
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 120,
 		duration: 110,
 		item_inputs: [
@@ -6735,7 +7050,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX7
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 576,
 		item_inputs: [
@@ -6748,7 +7064,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PPX8
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 360,
 		item_inputs: [
@@ -6765,7 +7082,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: `modern_industrialization:materials/centrifuge/mozanite_tiny_dust`})
 	
 	// NU01
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		item_inputs: [ 
@@ -6782,7 +7100,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NU02
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 200,
 		fluid_inputs: [
@@ -6799,7 +7118,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NU03
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 250,
 		item_inputs: [ 
@@ -6816,7 +7136,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// NU04
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 120,
 		duration: 150,
 		item_inputs: [ 
@@ -6835,7 +7156,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: `modern_industrialization:materials/centrifuge/mozanite_dust`})	
 	
 	// NU0X
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 480,
 		duration: 250,
 		fluid_inputs: [
@@ -6852,7 +7174,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NU05
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -6868,7 +7191,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// NU06
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 480,
 		duration: 100,
 		item_inputs: [ 
@@ -6886,7 +7210,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: `modern_industrialization:materials/centrifuge/liquid_air`})
 	
 	// AI02
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 5,
 		duration: 1484,
 		fluid_inputs: [
@@ -6901,7 +7226,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AI03
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 5,
 		duration: 680,
 		fluid_inputs: [
@@ -6916,7 +7242,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AI04
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 			eu: 510,
 			duration: 600,
 			fluid_inputs: [
@@ -6937,7 +7264,8 @@ ServerEvents.recipes(event => {
 	})	
 	
 	// XXX1
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 30,
 		item_inputs: [
@@ -6949,7 +7277,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXX2
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 30,
 		duration: 20,
 		fluid_inputs: [
@@ -6964,7 +7293,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXX3
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 60,
 		duration: 84,
 		fluid_inputs: [
@@ -6980,7 +7310,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// XXX4
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 150,
 		fluid_inputs: [
@@ -6994,7 +7325,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB01
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 2,
 		duration: 500,
 		fluid_inputs: [
@@ -7007,7 +7339,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB02
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 240,
 		fluid_inputs: [
@@ -7021,7 +7354,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB03
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		fluid_inputs: [
@@ -7035,7 +7369,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB04
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 1920,
 		duration: 200,
 		item_inputs: [
@@ -7052,7 +7387,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB05
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 7680,
 		duration: 100,
 		item_inputs: [
@@ -7069,7 +7405,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB06
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
@@ -7083,7 +7420,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB07
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 8,
 		duration: 40,
 		item_inputs: [
@@ -7098,7 +7436,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB08
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 800,
 		item_inputs: [
@@ -7113,7 +7452,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB09
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 60,
 		duration: 100,
 		item_inputs: [
@@ -7128,7 +7468,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB10
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 100,
 		item_inputs: [
@@ -7146,7 +7487,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB11
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs: [
@@ -7162,7 +7504,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB12
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -7175,7 +7518,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB13
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 4000,
 		fluid_inputs: [
@@ -7189,7 +7533,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB14
-	event.recipes.modern_industrialization.distillation_tower({
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
 		eu: 256,
 		duration: 40,
 		fluid_inputs: [
@@ -7205,7 +7550,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB15
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 1920,
 		duration: 900,
 		item_inputs: [
@@ -7221,7 +7567,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB16
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 240,
 		fluid_inputs: [
@@ -7235,7 +7582,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// PB17
-	event.recipes.modern_industrialization.lcr({
+	event.custom({ 
+		type: "modern_industrialization:lcr",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
@@ -7250,7 +7598,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// O1
-	event.recipes.modern_industrialization.blaster_furnace3({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
 		eu: 30720,
 		duration: 670,
 		item_inputs: [ 
@@ -7265,7 +7614,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// O2
-	event.recipes.modern_industrialization.vacuum_freezer({
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
 		eu: 120,
 		duration: 570,
 		item_inputs: [
@@ -7277,7 +7627,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// O3
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 24,
 		duration: 190,
 		item_inputs: [
@@ -7289,7 +7640,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// O4
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 24,
 		duration: 190,
 		item_inputs: [
@@ -7301,7 +7653,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// O5
-	event.recipes.modern_industrialization.packer({
+	event.custom({ 
+		type: "modern_industrialization:packer",
 		eu: 96,
 		duration: 380,
 		item_inputs: [
@@ -7313,7 +7666,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AL1
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 764,
 		item_inputs : [
@@ -7326,7 +7680,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AL2
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 7680,
 		duration: 484,
 		item_inputs : [
@@ -7340,7 +7695,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// AL3
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 2224,
 		item_inputs : [
@@ -7355,7 +7711,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TI1
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 120,
 		item_inputs : [
@@ -7370,7 +7727,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TI2
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 100,
 		item_inputs : [
@@ -7389,7 +7747,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TI3
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 820,
 		item_inputs : [
@@ -7402,7 +7761,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// TI4
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 820,
 		item_inputs : [
@@ -7415,7 +7775,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// aluminium redone
-	event.recipes.modern_industrialization.elecell({
+	event.custom({ 
+		type: "modern_industrialization:elecell",
 		eu: 60,
 		duration: 300,
 		item_inputs : [
@@ -7435,7 +7796,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 30,
 		duration: 20,
 		item_inputs: [ 
@@ -7446,7 +7808,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 180,
 		item_inputs: [ 
@@ -7458,7 +7821,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 200,
 		fluid_inputs: [
@@ -7472,7 +7836,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.stirred_tank({
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
 		eu: 30,
 		duration: 5,
 		fluid_inputs: [
@@ -7484,7 +7849,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 60,
 		duration: 60,
 		fluid_inputs: [
@@ -7496,7 +7862,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -7513,7 +7880,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 300,
 		fluid_inputs: [
@@ -7529,7 +7897,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -7548,7 +7917,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// red mud gone, reduced output
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 200,
 		fluid_inputs: [
@@ -7560,7 +7930,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 200,
 		item_inputs: [ 
@@ -7578,7 +7949,8 @@ ServerEvents.recipes(event => {
 	
 	event.remove({id: 'modern_industrialization:materials/aluminum/blast_furnace/tiny_dust'})
 	event.remove({id: 'modern_industrialization:materials/aluminum/blast_furnace/dust'})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 600,
 		item_inputs: [ 
@@ -7588,7 +7960,8 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:aluminum_nugget", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 884,
 		item_inputs: [ 
@@ -7598,7 +7971,8 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:aluminum_ingot", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 592,
 		item_inputs: [ 
@@ -7614,7 +7988,8 @@ ServerEvents.recipes(event => {
 	
 	// sysy silver
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -7632,7 +8007,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -7651,7 +8027,8 @@ ServerEvents.recipes(event => {
 	
 	// stainless
 	
-	event.recipes.modern_industrialization.sintering_oven({
+	event.custom({ 
+		type: "modern_industrialization:sintering_oven",
 		eu: 30,
 		duration: 150,
 		item_inputs: [ 
@@ -7670,7 +8047,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.remove({id: 'modern_industrialization:materials/electrolyzer/chromium_tiny_dust'})
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 16,
 		duration: 400,
 		fluid_inputs: [
@@ -7685,7 +8063,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 120,
 		duration: 200,
 		item_inputs: [ 
@@ -7703,7 +8082,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.blaster_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
 		eu: 60,
 		duration: 300,
 		item_inputs: [ 
@@ -7719,7 +8099,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.blaster_furnace2({
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
 		eu: 240,
 		duration: 800,
 		item_inputs: [ 
@@ -7732,7 +8113,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.arc_furnace({
+	event.custom({ 
+		type: "modern_industrialization:arc_furnace",
 		eu: 120,
 		duration: 600,
 		item_inputs: [ 
@@ -7755,7 +8137,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:materials/stainless_steel/blast_furnace/dust'})
 	event.remove({id: 'modern_industrialization:petrochem/polymerization/ethylene_chromium'})
 	event.remove({id: 'modern_industrialization:petrochem/polymerization/ethylene_lead'})
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 32,
 		duration: 400,
 		item_inputs: [ 
@@ -7769,7 +8152,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 239,
 		item_inputs: [ 
@@ -7784,7 +8168,8 @@ ServerEvents.recipes(event => {
 	// polymerization
 	
 	// electro to elecell due to lack of slots
-	event.recipes.modern_industrialization.elecell({
+	event.custom({ 
+		type: "modern_industrialization:elecell",
 		eu: 30,
 		duration: 300,
 		item_inputs: [
@@ -7803,7 +8188,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// electro to elecell due to lack of slots
-	event.recipes.modern_industrialization.elecell({
+	event.custom({ 
+		type: "modern_industrialization:elecell",
 		eu: 30,
 		duration: 300,
 		item_inputs: [ 
@@ -7821,7 +8207,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -7832,7 +8219,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.arc_furnace({
+	event.custom({ 
+		type: "modern_industrialization:arc_furnace",
 		eu: 60,
 		duration: 300,
 		item_inputs: [ 
@@ -7850,7 +8238,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.arc_furnace({
+	event.custom({ 
+		type: "modern_industrialization:arc_furnace",
 		eu: 60,
 		duration: 300,
 		item_inputs: [ 
@@ -7868,7 +8257,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.arc_furnace({
+	event.custom({ 
+		type: "modern_industrialization:arc_furnace",
 		eu: 60,
 		duration: 270,
 		item_inputs: [ 
@@ -7883,7 +8273,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 40,
 		item_inputs: [ 
@@ -7894,7 +8285,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.pyro({
+	event.custom({ 
+		type: "modern_industrialization:pyro",
 		eu: 64,
 		duration: 320,
 		item_inputs: [ 
@@ -7908,7 +8300,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -7925,7 +8318,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -7936,7 +8330,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 6,
 		duration: 250,
 		item_inputs: [ 
@@ -7950,7 +8345,8 @@ ServerEvents.recipes(event => {
 	
 	// enforce longer chain
 	/*
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 7,
 		duration: 80,
 		item_inputs: [ 
@@ -7965,7 +8361,8 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -7980,7 +8377,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.stirred_tank({
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
 		eu: 30,
 		duration: 1,
 		fluid_inputs: [
@@ -7993,7 +8391,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 60,
 		fluid_inputs: [
@@ -8004,7 +8403,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 30,
 		duration: 19,
 		item_inputs: [
@@ -8016,7 +8416,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// electro to elecell?
-	event.recipes.modern_industrialization.elecell({
+	event.custom({ 
+		type: "modern_industrialization:elecell",
 		eu: 30,
 		duration: 200,
 		item_inputs: [
@@ -8034,7 +8435,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 2,
 		duration: 32,
 		item_inputs: [
@@ -8045,7 +8447,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 7,
 		duration: 80,
 		item_inputs: [
@@ -8059,7 +8462,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 1200,
 		item_inputs: [
@@ -8073,7 +8477,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 120,
 		duration: 60,
 		item_inputs: [
@@ -8088,7 +8493,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 30,
 		duration: 200,
 		fluid_inputs: [
@@ -8101,7 +8507,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.poly_tank({
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
 		eu: 60,
 		duration: 300,
 		item_inputs: [
@@ -8116,7 +8523,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 260,
 		fluid_inputs: [
@@ -8127,7 +8535,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.fextract({
+	event.custom({ 
+		type: "modern_industrialization:fextract",
 		eu: 30,
 		duration: 16,
 		item_inputs: [
@@ -8138,7 +8547,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.stirred_tank({
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
 		eu: 7,
 		duration: 1,
 		fluid_inputs: [
@@ -8150,7 +8560,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 30,
 		duration: 200,
 		item_inputs: [
@@ -8162,7 +8573,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -8174,7 +8586,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 160,
 		item_inputs: [
@@ -8188,7 +8601,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 7,
 		duration: 40,
 		item_inputs: [
@@ -8202,7 +8616,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 80,
 		item_inputs: [
@@ -8216,7 +8631,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.stirred_tank({
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
 		eu: 7,
 		duration: 1,
 		fluid_inputs: [
@@ -8244,7 +8660,8 @@ ServerEvents.recipes(event => {
 		
 	// methane early...
 	
-	event.recipes.modern_industrialization.centrifuge({
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
 		eu: 16,
 		duration: 200,
 		item_inputs: [
@@ -8258,7 +8675,8 @@ ServerEvents.recipes(event => {
 	// was 8/60> 10 redstone > 5 iron dust + 1 ruby dust + 1 quartz dust + 1 tiny neodymium 50%
 	event.remove({id: 'modern_industrialization:materials/centrifuge/ruby_dust'})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 600,
 		item_inputs: [ 
@@ -8276,7 +8694,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// rocket fuel TJ
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 480,
 		duration: 280,
 		fluid_inputs: [
@@ -8288,7 +8707,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 32,
 		duration: 480,
 		fluid_inputs: [
@@ -8301,7 +8721,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 480,
 		duration: 960,
 		fluid_inputs: [
@@ -8314,7 +8735,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 120,
 		duration: 240,
 		fluid_inputs: [
@@ -8327,7 +8749,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 32,
 		duration: 160,
 		fluid_inputs: [
@@ -8340,7 +8763,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.electrolyzer({
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
 		eu: 32,
 		duration: 144,
 		fluid_inputs: [
@@ -8352,7 +8776,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.chemical_reactor({
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
 		eu: 32,
 		duration: 120,
 		fluid_inputs: [
@@ -8375,21 +8800,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'modern_industrialization:petrochem/distillation/steam_cracked_naphtha_1'})
 	event.remove({id: 'modern_industrialization:oil/blast_furnace/methane_to_acetylene'})
 	
-	event.recipes.modern_industrialization.roaster({
-		eu: 30,
-		duration: 80,
-		item_inputs: [ 
-			{item: "geggy:limestone_dust", amount: 5}
-		],
-		item_outputs: [	
-			{item: "geghilarity:quicklime_dust", amount: 2}
-		],
-		fluid_outputs: [	
-			{fluid: "geghilarity:carbon_dioxide", amount: 3000}
-		]
-	})
-	
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 120,
 		duration: 400,
 		item_inputs: [ 
@@ -8404,7 +8816,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -8421,7 +8834,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -8436,7 +8850,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	// MAGICK
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 120,
 		item_inputs: [ 
@@ -8454,7 +8869,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	/*
-	event.recipes.modern_industrialization.stirred_tank({
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
 		eu: 30,
 		duration: 1,
 		fluid_inputs: [
@@ -8468,7 +8884,8 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	
-	event.recipes.modern_industrialization.roaster({
+	event.custom({ 
+		type: "modern_industrialization:roaster",
 		eu: 30,
 		duration: 1,
 		item_inputs: [ 
@@ -8483,7 +8900,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 30,
 		duration: 120,
 		fluid_inputs: [
@@ -8495,7 +8913,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.poly_tank({
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
 		eu: 60,
 		duration: 300,
 		item_inputs: [
@@ -8509,7 +8928,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.dehy({
+	event.custom({ 
+		type: "modern_industrialization:dehy",
 		eu: 30,
 		duration: 260,
 		fluid_inputs: [
@@ -8520,7 +8940,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.distillery({
+	event.custom({ 
+		type: "modern_industrialization:distillery",
 		eu: 60,
 		duration: 200,
 		fluid_inputs: [
@@ -8531,7 +8952,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.recipes.modern_industrialization.crystallizer({
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
 		eu: 30,
 		duration: 200,
 		fluid_inputs: [
@@ -8540,6 +8962,32 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [	
 			{item: "geghilarity:mercury_chloride_dust", amount: 3}
+		]
+	})
+	
+	// andesite centrifuge
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 2,
+		duration: 54,
+		item_inputs: [
+			{item: "minecraft:andesite", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geggy:andesite_dust", amount: 3},
+			{item: "geggy:gravel_dust", amount: 8}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geggy:andesite_dust", amount: 6}
+		],
+		item_outputs: [	
+			{item: "geghilarity:asbestos_dust", amount: 4},
+			{item: "geggy:saltpeter", amount: 1}
 		]
 	})
 	

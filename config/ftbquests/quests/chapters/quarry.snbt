@@ -206,9 +206,11 @@
 				"&6Group A&r: tin, copper (2)"
 				"&6Group B&r: coal, iron, lignite (3)"
 				"&6Group C&r: lead, nickel, zinc (3)"
-				"&6Group D&r: salt, redstone, antimony, precious ore (4)"
-				"&6Group E&r: bauxite, mozanite, tungsten, uranium (4)"
+				"&6Group D&r: salt, redstone, precious ore, bauxite (4)"
+				"&6Group E&r: mozanite, tungsten, uranium (3)"
 				"&6Group X&r: quartz (1, nether only)"
+				""
+				"Note: &eAntimony is part of Redstone. Antimony nodes can be freely broken for raw antimony."
 				""
 				"This system of tokens is designed as a way to control how many quarries can run concurrently on the same ore type. The goal is to forbid spamming more than one type, but rather upgrade the quarry through tiers."
 				""
@@ -276,32 +278,27 @@
 					type: "item"
 				}
 				{
-					id: "63997C072CFB9461"
+					id: "04C6437BB5F5F6C8"
 					item: "drilly:drill_group4"
 					type: "item"
 				}
 				{
-					id: "5B86C087BFFF24AB"
+					id: "47BA19BE58A8E77E"
 					item: "drilly:drill_group5"
 					type: "item"
 				}
 				{
-					id: "22B0A18377DED196"
+					id: "5F4F90AD2354A930"
 					item: "drilly:drill_group5"
 					type: "item"
 				}
 				{
-					id: "744BA7680C8CD298"
+					id: "2EF378E31D9ED480"
 					item: "drilly:drill_group5"
 					type: "item"
 				}
 				{
-					id: "386A4AC2D522CF34"
-					item: "drilly:drill_group5"
-					type: "item"
-				}
-				{
-					id: "373EF79381C5E0BF"
+					id: "6684BBF36F0FF0E4"
 					item: "drilly:drill_groupx"
 					type: "item"
 				}
@@ -319,16 +316,15 @@
 			description: [
 				"Additional info:"
 				""
-				"&dTier 1&r copper quarry (still named Bronze Primitive Driller because of technical reasons) can only use a copper drill, and mine &bcopper, tin, coal&r and &blignite&r nodes. If you find out other types of nodes mark their location, but you can't use them at this stage."
-				"&aCurrent version has Tier1+ quarries also for quartz and zinc, just in case. Look at recipes."
+				"&dTier 1&r copper quarry (still named Bronze Primitive Driller because of technical reasons) can only use a copper drill, and mine &bcopper, tin, coal&r, &blignite&r, &bquartz&r (only in the Nether) and &bzinc&r nodes. If you find out other types of nodes mark their location, but you can't use them at this stage."
 				""
-				"&dTier 2&r quarry, the first bronze one, can still use the same copper drills, but consumption is much higher and production not that great. This because you're meant to also upgrade the drills you use. In this case a \"Basic Bronze Drill\". With this drill you can mine all the nodes above, plus &blead&r and &bquartz&r (only in the Nether)."
+				"&dTier 2&r quarry, the first bronze one, can still use the same copper drills, but consumption is much higher and production not that great. This because you're meant to also upgrade the drills you use. In this case a \"Basic Bronze Drill\". With this drill you can mine all the nodes above, plus &blead&r."
 				""
 				"&dTier 3&r is again a bronze class. You can reuse here the bronze drill from tier 2, but again consumption will be very high and you're meant to move to a \"Refined Bronze Drill\". This drill can also mine &biron&r."
 				""
-				"&cImportant&r: starting from the Refined Bronze Drill there's an added mechanic ported over from Incremental Industries. The drill can still get broken, but it will also be coming out as \"dirty\". You're meant to get the dirty drill (through automation, not manually), and \"wash it\" with a Create recipe, and then insert it back into the quarry."
+				"&cImportant&r: starting from the Refined Bronze Drill there's an added mechanic ported over from Incremental Industries. The drill can still get broken, but it will also come out as \"dirty\". You're meant to get the dirty drill (through automation, not manually), and \"wash it\" with a Create recipe, and then insert it back into the quarry."
 				""
-				"&dTier 4&r: moving to steel. This is the last tier under this new system at the moment. From tier 5 onward you'll deal with larger and more expensive multiblocks requiring electricity. Same mechanics of the above, but you can also mine &bzinc&r and &bnickel&r now."
+				"&dTier 4&r: moving to Refined Iron Drill. Same mechanics of the above, but you can also mine &bnickel&r. This is the last single block. From tier 5 onward you'll deal with larger and more expensive multiblocks requiring electricity."
 			]
 			id: "3D63762D1F77B9A4"
 			min_width: 300
@@ -357,7 +353,7 @@
 				}
 			]
 			title: "Tier 1"
-			x: -8.5d
+			x: -10.0d
 			y: 3.5d
 		}
 		{
@@ -377,7 +373,7 @@
 				}
 			]
 			title: "Tier 2"
-			x: -10.0d
+			x: -11.5d
 			y: 3.5d
 		}
 		{
@@ -404,7 +400,7 @@
 				}
 			]
 			title: "Tier 3"
-			x: -11.5d
+			x: -13.0d
 			y: 3.5d
 		}
 		{
@@ -425,7 +421,7 @@
 				}
 			]
 			title: "Tier 4"
-			x: -13.0d
+			x: -14.5d
 			y: 3.5d
 		}
 		{
@@ -512,7 +508,7 @@
 				item: "modern_industrialization:bronze_boiler"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -11.5d
 			y: 5.0d
 		}
 		{
@@ -603,20 +599,23 @@
 				"A breakdown of the recipes for each tier. This should give you an idea of how many &6raw ores&r of the main type, for a full hour of continuous running. No costs considered."
 				""
 				"&l&dTier 1"
-				"&aCopper 21, Tin 8.4, Coal 21, Lignite 16.8"
+				"Copper &a34.8&r, Tin &a7.2&r, Coal &a21&r, Lignite &a16.8&r"
+				"Quartz &a12.48&r, Zinc &a3.6&r"
 				""
 				"&l&dTier 2"
-				"&aCopper 37.8, Tin 16.8, Coal 37.8, Lignite 33.6"
-				"&aLead 4.8, Quartz 18.7"
+				"Copper &a62.6&r, Tin &a14.4&r, Coal &a37.8&r, Lignite &a33.6&r"
+				"Quartz &a18.7&r, Zinc &a4.32&r, Lead &a4.8&r"
 				""
 				"&l&dTier 3"
-				"&aCopper 63, Tin 29.4, Coal 63, Lignite 50.4"
-				"&aLead 7.2, Quartz 31.2, Iron 9"
+				"Copper &a73.8&r, Tin &a25.2&r, Coal &a50.4&r, Lignite &a37.4&r"
+				"Quartz &a25.8&r, Zinc &a9&r, Lead &a7.2&r, Iron &a9&r"
 				""
 				"&l&dTier 4"
-				"&aCopper 84, Tin 32.7, Coal 84, Lignite 63"
-				"&aLead 9.6, Quartz 43.7, Iron 14.4, Nickel 14.4"
-				"&aZinc 14.4"
+				"Copper &a84&r, Tin &a32.4&r, Coal &a62.4&r, Lignite &a41.4&r"
+				"Quartz &a32.76&r, Zinc &a14.4&r, Lead &a12&r, Iron &a50&r"
+				"Nickel &a14.4&r"
+				""
+				"At tier 4 you'll probably have a Macerator, that you can use to process raw ores and multiply dusts by 1.5."
 				""
 				"(there might be errors, and it all could change in a major way between updates)"
 			]
@@ -657,9 +656,9 @@
 				""
 				"When they break, they drop 12 to 20 raw ores corresponding to the block type. So if you don't intend to build a quarry there, you can harvest these resources immediately."
 				""
-				"For similar reasons, the system of running a quarry produces \"experience\", that you then use to craft the next tier of a quarry machine. But in the case you don't need that, you can use the full experience \"dust\", along with a ore dust, to get +5 dusts of the same type."
+				"For similar reasons, the system of running a quarry produces \"experience\", that you then use to craft the next tier of a quarry machine. But in the case you don't need that, you can use the full experience \"dust\", along with a ore dust, to get +10 dusts of the same type (tier 1 starts at 20)."
 				""
-				"For example, using the tier 1 experience dust in Create mixer with an iron dust, will produce 5 iron dusts. If you instead use a tier 2 experience then you'll get 10 iron dusts."
+				"For example, using the tier 1 experience dust in Create mixer with an iron dust, will produce 20 iron dusts. If you instead use a tier 2 experience then you'll get 30 iron dusts."
 			]
 			id: "2D52F5DAD77052CE"
 			min_width: 250
@@ -705,7 +704,7 @@
 					type: "item"
 				}
 			]
-			x: -11.5d
+			x: -13.0d
 			y: 5.0d
 		}
 		{
@@ -727,6 +726,248 @@
 			}]
 			x: -11.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["553A119B22280B8D"]
+			description: [
+				"This step assumes you already went through all the previous 4 Tiers, and that you have access to electricity (and one LV Alloy Smelter)."
+				""
+				"As an homage to the famous Reika's &bRotaryCraft&r, back in 1.7 golden era, LV Miners make large use of HSLA Steel. Sadly due to technical constraints I cannot mimic the same mechanics, and even if I reproduced some of the same components, using similar recipes, everything is superficial and not a representation of that mod."
+				""
+				"To make HSLA Steel you need this dedicated Blast Furnace, whose shape can be tricky to figure out, especially because REI only shows 6 blocks for its structure, and more are used instead. Use this quest items as reference to know what you actually need."
+				""
+				"The exception being the heatproof casings blocks, because you replace them with hatches. You have some customization available but to run the larger batch recipe you need three steel item input hatches, two steel item output, and one fluid input for the steam."
+				""
+				"{@pagebreak}"
+				"Starting from the bottom, there's a 5x5 layer of smooth basalt. Moving up one step, from the front, one block of Quartz Glass in the center with two Steel Frame Boxes, one on each side. Mirored just the same on the back of the structure. Then, another four steel boxes, placed as two on each side, but at the extremes of the two central rows."
+				""
+				" XAX"
+				"X___X"
+				"X___X"
+				" XAX"
+				""
+				"X representing the steel boxes, and A the quartz glass. In the six central blocks, you'll have to drop lava, basically creating a lava pool, that is also a required part of this structure."
+				""
+				"At the third level you have the controller, right in the front-center, and heatproof machine casings all around it, following a similar shape to the one in the previous level. These casings are what you need to replace with hatches, only on this level, and with nine positions available in total. Therefore subtract the number of hatches you plan to use from the 9 casings."
+				""
+				"The six blocks above the lava pool on this level are instead left empty."
+				""
+				"{@pagebreak}"
+				"Fourth level."
+				""
+				"In the six central spots left empty on the previous level, you have Steel Pipe Machine Casing. All around these, again following the previous level, you have ULV Casings instead."
+				""
+				"Fifth level."
+				""
+				"Just another section of six Steel Pipes, right above the previous."
+				""
+				"Sixth and last."
+				""
+				"Two... Dirty Terracotta Chimneys. Check the structure by holding a wrench to see where they need to be placed."
+				""
+				"As it happened with the Bronze Alloy Smelter, the chimneys can be crafted already dirty, but can be cleaned with an axe. If this happens the structure of the multiblock becomes invalid, since it only recognizes the dirty version. In that case, the chimneys turn dirty as a random chance after some time."
+			]
+			icon: "modern_industrialization:hsla_blast"
+			id: "7DE1756CE298B1B3"
+			min_width: 290
+			shape: "square"
+			tasks: [
+				{
+					id: "63B25CF230BA630C"
+					item: "modern_industrialization:hsla_blast"
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "4A6069E03263897B"
+					item: "minecraft:smooth_basalt"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "01A0413EBBA5151B"
+					item: "geghilarity_fatmachines:steel_frame_box"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "0BD5DE16920B5A17"
+					item: "ae2:quartz_glass"
+					type: "item"
+				}
+				{
+					id: "441DE217F0241383"
+					item: "modern_industrialization:heatproof_machine_casing"
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "0AEE17DC02A13803"
+					item: "geghilarity_fatmachines:ulv_casing"
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "367BCE76001E9053"
+					item: "modern_industrialization:steel_machine_casing_pipe"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "3B86E3F68CD03E67"
+					item: "sootychimneys:dirty_terracotta_chimney"
+					type: "item"
+				}
+			]
+			x: -8.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7DE1756CE298B1B3"]
+			description: [
+				"There are four recipes to run in the HSLA Blast Furnace."
+				""
+				"In the original RotaryCraft the recipes were similar to a Tinkers' smeltery and had single slots up to 9 iron ingots, to convert to HSLA Steel. The more you added, the better the yields, up to 1.5x, and the recipe being run would adjust dynamically. The temperature would also be an active calculation, that checked biomes and nearby heat sources."
+				""
+				"Since here the recipe system has no real flexibility, the four recipes available are manually forced with the use of Create Mechanisms, in their numbered configuration."
+				""
+				"As in the original, HSLA Steel requires \"reagents\": gunpowder, sand and coke. The numbers are much different but check the chances for all the slots."
+				""
+				"Running bigger batches is more efficient and produces much better yields. The best recipe runs at 15 minutes, a very long time. But it retains the original 1.5x total multiplier iron to steel. On average it produces 121 HSLA ingots, so less than 7.5 seconds for one ingot."
+				""
+				"Breakdown:"
+				"4th recipe: 81 iron to &b121&r HSLA (1.5x)"
+				"3rd recipe: 27 iron to &b32.5&r HSLA (1.2x)"
+				"2nd recipe: 9 iron to &b9&r HSLA (1 to 1)"
+				""
+				"The first recipe can use bronze hatches and only needs 1 iron ingot to run. Only has an half chance to HSLA steel, while the other half goes to \"&ebrittle iron&r\". Brittle iron can be macerated to have iron dust out of it (to recycle) and a chance at a full dark ashes dust. Dark ashes can be centrifuged to get carbon dust, so the recipe could be useful in that specific case."
+			]
+			id: "53C4210963F05B57"
+			min_width: 350
+			tasks: [{
+				id: "41EF26601A79A122"
+				item: "geggy:hsla_ingot"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7DE1756CE298B1B3"]
+			description: [
+				"Welcome to some old school micro-crafting, made worse by my recipes."
+				""
+				"Most of the components for this multiblock are crafting table only, this because even if you need to build several, for each ore node, you only need to do it once. So it's better to do it manually in batches rather than automate the process."
+				""
+				"The drills instead will be a different deal, but the amount of HSLA Steel used there is more tolerable."
+				""
+				"The structure could be tricy here too. The important part is that the controller goes right on top of the ore node. On top of the controller goes the Shaft Power Bus, then the Basic Engine, and then the Steam Turbine."
+				""
+				"You can easily verify the rest of the structure with a wrench. It's mostly made of HSLA Steel Frame Boxes, and HSLA Steel Casings. The casings is what you can replace with hatches, so once again this quest only shows one block even if you'll need several."
+				""
+				"There are still a couple of quaint blocks required. There's a Create Brass Ladder. One goes in front of the block that comes out under the controller. The other five go up the back, on the right side, looking from the front. The last thing, three white valves, that you can also craft directly with HSLA Steel. Two go right at the sides of the ladder in the front, and the last goes at the bottom of the \"pillar\" over the structure, but on the back."
+			]
+			icon: "modern_industrialization:lv_miner"
+			id: "2E583E2AF994DAC7"
+			min_width: 300
+			shape: "square"
+			tasks: [
+				{
+					id: "728C74BDFC17A275"
+					item: "modern_industrialization:lv_miner"
+					type: "item"
+				}
+				{
+					id: "0B4CA41A64CDF7DD"
+					item: "drilly:shaft_power_bus"
+					type: "item"
+				}
+				{
+					id: "0BCC51B5AFB5BFB7"
+					item: "drilly:basic_engine"
+					type: "item"
+				}
+				{
+					id: "3BA91A575B83116C"
+					item: "drilly:steam_turbine"
+					type: "item"
+				}
+				{
+					count: 18L
+					id: "6E82AD7E7FF540AA"
+					item: "drilly:hsla_frame_box"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "7C7F2299770D3B77"
+					item: "create:brass_ladder"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "547B002747002938"
+					item: "create:white_valve_handle"
+					type: "item"
+				}
+				{
+					id: "3E5894438E3B01E7"
+					item: "drilly:hsla_casing"
+					type: "item"
+				}
+			]
+			x: -8.5d
+			y: 6.5d
+		}
+		{
+			description: [
+				"There are some general changes from previous tiers."
+				""
+				"- The LV Miner only uses HSLA Steel Drills, so it doesn't carry over drills from the previous tier."
+				"- In most cases the outputs are now ore blocks, not raw ores."
+				"- Lubrificant is required in the recipe."
+				"- Each recipe is usually producing just one ore type, with some exceptions."
+				""
+				"I spent two days figuring out the numbers, but things could still need more work. This system now expects you to do some basic ore processing, before I do a major redesign of that aspect."
+				""
+				"This means that the ore blocks produced in these quarries are meant to be processed in Create's Crushing Wheels. The output from there goes then in a macerator for a final 1.5x multiplier to produce the dusts. So in the current system the macerator is only used once, and cannot process the ore blocks directly. "
+				""
+				"The numbers shown here are once again the average for a standard hour of running recipe, but they include the full ore processing into dusts."
+				""
+				"&l&dTier 5 - LV"
+				"Copper &a204&r, Tin &a124.8&r, Coal &a117&r, Lignite &a59.4&r"
+				"Quartz &a63&r, Zinc &a38.8&r, Lead &a45&r, Iron &a147&r"
+				"Nickel &a43.7&r, Salt &a37.1&r, Redstone &a87.7&r"
+				"Antimony &a43.2&r, Precious Ore &a35&r,"
+				"Bauxite &a101.25&r"
+				""
+				"Note: Antimony is joined to Redstone."
+			]
+			id: "266FD937E3242A42"
+			min_width: 290
+			tasks: [{
+				id: "61AC044A3A4EB2F7"
+				title: "LV Breakdown"
+				type: "checkmark"
+			}]
+			x: -7.0d
+			y: 6.5d
+		}
+		{
+			description: [
+				"And yes. There's a bit of a mess with colors between HSLA Steel, Tin and Stainless Steel. But I didn't want to change the classic HSLA look, and modifying the rest would be quite annoying..."
+				""
+				"For now it's stays like this."
+			]
+			id: "4E90A4B51A13E560"
+			tasks: [{
+				id: "5BB38EB102719358"
+				item: "drilly:hsla_base_drill"
+				type: "item"
+			}]
+			title: "Tier 5 - LV"
+			x: -10.0d
+			y: 6.5d
 		}
 	]
 	title: "The Quarry System"

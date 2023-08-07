@@ -517,6 +517,57 @@ event.create('geggy:fluid_filter');
 
 event.create('geggy:slag');
 
+event.create('geggy:hsla_ingot').displayName('HSLA Steel Ingot')
+event.create('geggy:hsla_shaft_unit').displayName('HSLA Steel Shaft Unit')
+event.create('geggy:hsla_ring').displayName('HSLA Steel Ring')
+event.create('geggy:hsla_plate').displayName('HSLA Steel Plate')
+event.create('geggy:hsla_bolt').displayName('HSLA Steel Bolt')
+event.create('geggy:incomplete_hsla_gear').displayName('Incomplete HSLA Steel Gear')
+event.create('geggy:hsla_gear').displayName('HSLA Steel Gear')
+event.create('geggy:brittle_iron')
+event.create('geggy:saltpeter')
+
+event.create('drilly:hsla_2x_gear_unit').displayName('HSLA 2x Gear Unit')
+event.create('drilly:impeller')
+event.create('drilly:base_panel')
+event.create('drilly:propeller_blade')
+event.create('drilly:turbine')
+event.create('drilly:steam_turbine_core')
+event.create('drilly:steel_shaft_bearing')
+event.create('drilly:ball_bearing')
+event.create('drilly:steel_shaft_core')
+event.create('drilly:hub')
+event.create('drilly:mount')
+event.create('drilly:ignition_unit')
+event.create('drilly:combustor')
+event.create('drilly:radiator')
+event.create('drilly:spring_ingot')
+event.create('drilly:cylinder')
+
+event.create('drilly:hsla_drill_head').displayName('HSLA Drill Head')
+event.create('drilly:incomplete_hsla_drill_head').displayName('Incomplete HSLA Drill Head')
+event.create('drilly:incomplete_hsla_base_drill').displayName('Incomplete HSLA Base Drill')
+
+////
+event.create('geggy:bronze_piston')
+event.create('geggy:bronze_motor')
+event.create('geggy:bronze_pump')
+event.create('geggy:small_bronze_gear')
+event.create('geggy:vacuum_tube_components')
+event.create('geggy:vacuum_tube')
+event.create('geggy:glass_tube')
+event.create('geggy:red_alloy_ingot')
+event.create('geggy:red_alloy_plate')
+event.create('geggy:red_alloy_wire')
+event.create('geggy:fine_red_alloy_wire')
+event.create('geggy:book_binding')
+event.create('geggy:incomplete_book')
+
+event.create('geggy:rose_quartz_tube')
+
+event.create('geggy:tin_conduct')
+event.create('geggy:tin_spring')
+
 /*
 .tooltip('§8')
 
@@ -554,6 +605,21 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geggy:fiber_pulpy')
 	.thinTexture(0xC3BDAE)
+    .noBucket
+	
+	event
+    .create('geggy:resin')
+	.thinTexture(0xBB9035)
+    .noBucket
+	
+	event
+    .create('geggy:glue')
+	.thinTexture(0xCDB583)
+    .noBucket
+	
+	event
+    .create('geggy:molten_rose_quartz')
+	.thinTexture(0xC94771)
     .noBucket
 	
 })	

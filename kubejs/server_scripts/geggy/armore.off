@@ -144,7 +144,8 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	// 5 > 11
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 10,
 		duration: 100,
 		item_inputs: [ 
@@ -156,7 +157,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// 8 > 14
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 16,
 		duration: 100,
 		item_inputs: [ 
@@ -168,7 +170,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// 7 > 13
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 14,
 		duration: 100,
 		item_inputs: [ 
@@ -180,7 +183,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	// 4 > 10
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
@@ -216,7 +220,8 @@ ServerEvents.recipes(event => {
 		A: 'modern_industrialization:steel_ingot',
 		B: 'minecraft:netherite_ingot'
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -229,7 +234,8 @@ ServerEvents.recipes(event => {
 			{item: "expert_weapons:dull_diamond_blade", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -242,7 +248,8 @@ ServerEvents.recipes(event => {
 			{item: "expert_weapons:dull_diamond_shovel_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -255,7 +262,8 @@ ServerEvents.recipes(event => {
 			{item: "expert_weapons:dull_diamond_pickaxe_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [
@@ -268,7 +276,8 @@ ServerEvents.recipes(event => {
 			{item: "expert_weapons:dull_diamond_hoe_head", amount: 1}
 		]
 	})
-	event.recipes.modern_industrialization.salloy({
+	event.custom({ 
+		type: "modern_industrialization:salloy",
 		eu: 32,
 		duration: 600,
 		fluid_inputs: [

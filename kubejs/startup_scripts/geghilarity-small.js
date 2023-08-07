@@ -15,6 +15,8 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:whole_tier3_experience').displayName('Tier 3 Experience');
 	event.create('drilly:tiny_tier4_experience').displayName('Tiny Pile of Tier 4 Experience');
 	event.create('drilly:whole_tier4_experience').displayName('Tier 4 Experience');
+	event.create('drilly:tiny_tier5_experience').displayName('Tiny Pile of Tier 5 Experience');
+	event.create('drilly:whole_tier5_experience').displayName('Tier 5 Experience');	
 	
 	event.create('drilly:copper_drill').displayName('Basic Copper Drill');
 	event.create('drilly:copper_refined_drill').displayName('Refined Copper Drill');
@@ -31,6 +33,7 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:steel_base_drill').displayName('Basic Steel Drill');
 	event.create('drilly:steel_refined_drill').displayName('Refined Steel Drill');
 	event.create('drilly:steel_bulky_drill').displayName('Bulky Steel Drill');
+	event.create('drilly:hsla_base_drill').displayName('Basic HSLA Steel Drill');
 	
 	event.create('drilly:dirty_copper_bulky_drill').displayName('Dirty Bulky Copper Drill');
 	event.create('drilly:dirty_bronze_base_drill').displayName('Dirty Basic Bronze Drill');
@@ -42,6 +45,7 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:dirty_steel_base_drill').displayName('Dirty Basic Steel Drill');
 	event.create('drilly:dirty_steel_refined_drill').displayName('Dirty Refined Steel Drill');
 	event.create('drilly:dirty_steel_bulky_drill').displayName('Dirty Bulky Steel Drill');
+	event.create('drilly:dirty_hsla_base_drill').displayName('Dirty Basic HSLA Steel Drill');
 	
 })	
 
@@ -52,6 +56,7 @@ let ROASTER;
 let CRYSTALLIZER;
 let STIRR;
 let GASCOLLECT;
+let VACUUM;
 
 let DRILL1;
 let DRILL2;
@@ -97,7 +102,11 @@ MIMachineEvents.registerRecipeTypes(event => {
 
 	GASCOLLECT = event.register("gas_collector")
 		.withItemInputs()
-        .withFluidOutputs();	
+        .withFluidOutputs();
+
+	VACUUM = event.register("vacuum_chamber")
+		.withItemInputs()
+        .withItemOutputs();	
 		
 	DRILL1 = event.register("drill1")
         .withItemInputs()
@@ -243,6 +252,22 @@ MIMachineEvents.registerMachines(event => {
 		// Slot positions: items and fluids.
 		items => items.addSlot(36, 35),
 		fluids => fluids.addSlot(96, 35),
+		// front overlay?, top overlay?, side overlay?
+		true, true, true,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Vacuum Chamber", "vacuum_chamber", VACUUM, ["steel", "electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		175, event.progressBar(84, 33, "extract"), event.efficiencyBar(28, 65), event.energyBar(15, 33),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		4, 4, 0, 0,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 2, 2), 
+		fluids => {},
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,
 	);

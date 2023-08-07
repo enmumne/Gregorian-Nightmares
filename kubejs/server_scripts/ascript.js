@@ -29,7 +29,8 @@ function wired_redstone(event) {
 	event.remove({type: "wiredredstone:redstone_assembler_shapeless"})
 	
 
-	event.recipes.modern_industrialization.wiremill({
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
 		eu: 2,
 		duration: 100,
 		item_inputs: [
@@ -95,7 +96,8 @@ function wired_redstone(event) {
 	dyed_bundled_cable("red")
 	dyed_bundled_cable("black")
 
-	event.recipes.modern_industrialization.packer({
+	event.custom({ 
+		type: "modern_industrialization:packer",
 		eu: 2,
 		duration: 200,
 		item_inputs: [
@@ -113,7 +115,8 @@ function wired_redstone(event) {
 			"results": [{"item": "wiredredstone:stone_plate"},{"item": "wiredredstone:stone_plate"}]
 		})
 	//event.recipes.createPressing(Item.of("wiredredstone:stone_plate", 2), ["minecraft:smooth_stone"])
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 100,
 		item_inputs: [
@@ -713,7 +716,8 @@ ServerEvents.recipes(event => {
 	})
 		
 
-	event.recipes.modern_industrialization.compressor({
+	event.custom({ 
+		type: "modern_industrialization:compressor",
 		eu: 2,
 		duration: 100,
 		item_inputs: [
@@ -772,32 +776,7 @@ ServerEvents.recipes(event => {
 	event.recipes.createPressing("modern_industrialization:bronze_plate", "modern_industrialization:bronze_curved_plate")
 	*/
 
-	event.recipes.modern_industrialization.macerator(
-		{
-			eu: 2,
-			duration: 100,
-			item_inputs: [
-				{tag: "c:zinc_ores", amount: 1},
-			],
-			item_outputs: [
-				{item: "create:raw_zinc", amount: 3}
-			]
-		}
-	)
-
-	event.recipes.modern_industrialization.macerator(
-		{
-			eu: 2,
-			duration: 100,
-			item_inputs: [
-				{item: "minecraft:obsidian", amount: 1}
-			],
-			item_outputs: [
-				{item: "create:powdered_obsidian", amount: 1},
-				{item: "minecraft:obsidian", amount: 1, probability: 0.75}
-			]
-		}
-	)
+	
 
 	// create millstone
 	// TO FIX check 1.18 recipe for millstone is cogwheel + andesite casing + stone
@@ -823,102 +802,7 @@ ServerEvents.recipes(event => {
 
 	// forge hammer
 	// TO FIX check 1.18 steel block
-	event.remove({type: "modern_industrialization:forge_hammer"})
-	event.remove({mod: "modern_industrialization", output: "modern_industrialization:forge_hammer"})
-	event.replaceInput({mod: "modern_industrialization"}, "modern_industrialization:forge_hammer", "modern_industrialization:steel_block")
 	
-	event.remove({id: "modern_industrialization:materials/coal/macerator/ore_to_crushed"})
-	event.remove({id: "create:crushing/raw_iron"})
-	event.remove({id: "modern_industrialization:materials/iron/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/raw_copper"})
-	event.remove({id: "modern_industrialization:materials/macerator/copper_ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/macerator/redstone_ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/antimony/macerator/ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/bauxite/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/lead/macerator/ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/lignite_coal/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/mozanite/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/nickel/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/raw_tin"})
-	event.remove({id: "modern_industrialization:materials/tungsten/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/nether_quartz_ore"})
-	event.remove({id: "modern_industrialization:materials/macerator/quartz_ore_to_crushed"})
-
-	// milling recipes
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:flint"}],
-			"results": [{"item": "geggy:flint_dust"}]
-	})
-	
-
-
-	
-	event.custom({
-			"type": "create:milling",
-			"processingTime":250,
-			"ingredients": [{"item": "minecraft:raw_iron"}],
-			"results": [{"count": 2, "item": "create:crushed_raw_iron"},{"item": "create:crushed_raw_iron", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
-	})
-	// yttr
-	event.custom({
-			"type": "create:milling",
-			"processingTime":500,
-			"ingredients": [{"item": "yttr:xl_iron_ingot"}],
-			"results": [{"count": 6, "item": "create:crushed_raw_iron"},{"count": 3, "item": "create:crushed_raw_iron", "chance": 0.50}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "create:crushed_raw_iron"}],
-			"results": [{"item": "modern_industrialization:iron_tiny_dust"},{"item": "modern_industrialization:iron_tiny_dust", "chance": 0.8}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:raw_copper"}],
-			"results": [{"item": "modern_industrialization:copper_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:raw_tin"}],
-			"results": [{"item": "modern_industrialization:tin_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:coal_crushed_dust"}],
-			"results": [{"item": "modern_industrialization:coal_dust"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:redstone_crushed_dust"}],
-			"results": [{"item": "minecraft:redstone"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "create:crushed_raw_lead"}],
-			"results": [{"item": "modern_industrialization:lead_dust"}]
-	})
-
-	// progression fix pipes macerator
-	event.custom({
-			"type": "create:milling",
-			"processingTime":150,
-			"ingredients": [{"item": "modern_industrialization:raw_lead"}],
-			"results": [{"item": "modern_industrialization:lead_dust"}]
-	})
-	
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:quartz"}],
-			"results": [{"item": "modern_industrialization:quartz_dust"}]
-	})
 	/*
 	event.recipes.createMilling(Item.of("minecraft:raw_iron", 2), "minecraft:iron_ore")
 	event.recipes.createMilling(Item.of("minecraft:raw_copper", 2), "minecraft:copper_ore")
@@ -952,11 +836,6 @@ ServerEvents.recipes(event => {
 			"type": "create:mixing",
 			"ingredients": [{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:tin_dust"}],
 			"results": [{count: 4, "item": "modern_industrialization:bronze_dust"}]
-	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
-			"results": [{"item": "modern_industrialization:bronze_plate"}]
 	})
 	/*
 	event.recipes.createMixing(
@@ -1151,7 +1030,8 @@ ServerEvents.recipes(event => {
 	})
 	// pbf mixer
 	event.remove({type: "modern_industrialization:mixer", output: `modern_industrialization:fire_clay_dust`})
-	event.recipes.modern_industrialization.mixer({
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 		eu: 2,
 		duration: 100,
 		item_inputs : [
@@ -1208,9 +1088,10 @@ ServerEvents.recipes(event => {
 		type: "create:compacting",
 		ingredients: [
 		// changed to kelp from paper
-			Ingredient.of("geggy:heated_rubber", 1).toJson(),
-			Ingredient.of("geggy:heated_rubber", 1).toJson(),
-			Fluid.of("modern_industrialization:synthetic_oil", fluid_volume_to_fabric(111.11)).toJson()
+			{"item": "geggy:heated_rubber"},
+			{"item": "geggy:heated_rubber"},
+			{"amount": 8992, "fluid": "modern_industrialization:synthetic_oil", "nbt": {}}
+			//Fluid.of("modern_industrialization:synthetic_oil", fluid_volume_to_fabric(111.11)).toJson()
 		],
 		results: [
 		{"count" : 6, "item": "modern_industrialization:rubber_sheet"}
@@ -1222,8 +1103,8 @@ ServerEvents.recipes(event => {
 		type: "create:compacting",
 		ingredients: [
 		// changed to kelp from paper
-			Ingredient.of("geggy:heated_rubber", 1).toJson(),
-			Ingredient.of("geggy:heated_rubber", 1).toJson()
+			{"item": "geggy:heated_rubber"},
+			{"item": "geggy:heated_rubber"},
 		],
 		results: [
 			{count: 1, "item": "modern_industrialization:rubber_sheet"}
@@ -1234,7 +1115,12 @@ ServerEvents.recipes(event => {
 	})
 	
 	// cables
-	event.remove({type: "minecraft:crafting_shaped", output: "#modern_industrialization:cables"})
+	//event.remove({type: "minecraft:crafting_shaped", output: "#modern_industrialization:cables"})
+	event.remove({id: "modern_industrialization:materials/copper/craft/cable"})
+	event.remove({id: "modern_industrialization:materials/tin/craft/cable"})
+	event.remove({id: "modern_industrialization:materials/silver/craft/cable"})
+	event.remove({id: "moderndynamics:cable/lv_to_mi"})
+	event.remove({id: "moderndynamics:cable/lv_from_mi"})
 
 	// lv cables compacting recipe
 	event.custom({
@@ -1242,7 +1128,7 @@ ServerEvents.recipes(event => {
 		ingredients: [
 			{"item": "modern_industrialization:copper_wire"},{"item": "modern_industrialization:copper_wire"},{"item": "modern_industrialization:copper_wire"},
 			//{count: 3, "item": "modern_industrialization:copper_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},
+			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
 			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
 		],
 		results: [
@@ -1254,7 +1140,7 @@ ServerEvents.recipes(event => {
 		ingredients: [
 			{"item": "modern_industrialization:tin_wire"},{"item": "modern_industrialization:tin_wire"},{"item": "modern_industrialization:tin_wire"},
 			//{count: 3, "item": "modern_industrialization:tin_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},
+			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
 			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
 		],
 		results: [
@@ -1266,7 +1152,7 @@ ServerEvents.recipes(event => {
 		ingredients: [
 			{"item": "modern_industrialization:silver_wire"},{"item": "modern_industrialization:silver_wire"},{"item": "modern_industrialization:silver_wire"},
 			//{count: 3, "item": "modern_industrialization:silver_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},
+			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
 			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
 		],
 		results: [
@@ -1372,48 +1258,7 @@ ServerEvents.recipes(event => {
 	})
 	*/
 
-	// create brass
-	event.remove({type: "create:mixing", output: "create:brass_ingot"})
-	event.custom({
-		type: "create:milling",
-		"processingTime":200,
-		ingredients: [{
-			"item": "create:brass_ingot"
-		}],
-		results: [{
-			"item": "kubejs:brass_dust"
-		}]
-	})
-	event.custom({
-		type: "create:milling",
-		"processingTime":200,
-		ingredients: [{
-			"item": "create:zinc_ingot"
-		}],
-		results: [{
-			"item": "kubejs:zinc_dust"
-		}]
-	})
-	event.custom({
-		type: "create:milling",
-		"processingTime":200,
-		ingredients: [{
-			"item": "create:zinc_ore"
-		}],
-		results: [{
-			count: 2, "item": "create:raw_zinc"
-		}]
-	})
-	event.custom({
-		type: "create:milling",
-		"processingTime":200,
-		ingredients: [{
-			"item": "create:raw_zinc"
-		}],
-		results: [{
-			"item": "kubejs:zinc_dust"
-		}]
-	})
+	
 	/*
 	event.recipes.createMilling("kubejs:brass_dust", ["create:brass_ingot"])
 	event.recipes.createMilling("kubejs:zinc_dust", ["create:zinc_ingot"])
@@ -1421,8 +1266,8 @@ ServerEvents.recipes(event => {
 	event.recipes.createMilling("kubejs:zinc_dust", ["create:raw_zinc"])
 	*/
 
-	event.recipes.modern_industrialization.macerator(
-		{
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 			eu: 2,
 			duration: 200,
 			item_inputs: [
@@ -1434,8 +1279,8 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	event.recipes.modern_industrialization.macerator(
-		{
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 			eu: 2,
 			duration: 100,
 			item_inputs: [
@@ -1451,8 +1296,8 @@ ServerEvents.recipes(event => {
 
 	event.smelting("create:zinc_ingot", "kubejs:zinc_dust")
 
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 2,
 			duration: 100,
 			item_inputs: [
@@ -1495,7 +1340,8 @@ ServerEvents.recipes(event => {
 		E: "create:precision_mechanism"
 	})
 
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 2,
 		duration: 600,
 		item_inputs: [
@@ -1514,7 +1360,7 @@ ServerEvents.recipes(event => {
 
 
 	// circuits
-	circuit_recipes(event, "analog", "modern_industrialization:capacitor", "modern_industrialization:resistor",	"modern_industrialization:inductor")
+	
 	circuit_recipes(event, "electronic", "modern_industrialization:diode", "modern_industrialization:transistor", "modern_industrialization:analog_circuit")
 	//circuit_recipes(event, "quantum", "modern_industrialization:processing_unit", "modern_industrialization:cooling_cell", "modern_industrialization:qbit")
 
@@ -1568,7 +1414,8 @@ ServerEvents.recipes(event => {
 	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon"})
 	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon_from_ingot"})
 	// temp lol gated
-	event.recipes.ae2.inscriber({
+	event.custom({ 
+		type: "ae2:inscriber",
 		"type": "ae2:inscriber",
 		"mode": "inscribe",
 		"result": {
@@ -1696,8 +1543,8 @@ ServerEvents.recipes(event => {
 
 	// fluix glass cable
 	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:fluix_glass_cable"})
-	event.recipes.modern_industrialization.wiremill(
-		{
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
 			eu: 2,
 			duration: 100,
 			item_inputs: [
@@ -1709,8 +1556,8 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	event.recipes.modern_industrialization.mixer(
-		{
+	event.custom({ 
+		type: "modern_industrialization:mixer",
 			eu: 2,
 			duration: 100,
 			item_inputs: [
@@ -1991,8 +1838,9 @@ ServerEvents.recipes(event => {
 	// molecular assembler
 	event.remove({id: "ae2:molecular_assembler"})
 	event.remove({id: "ae2:network/crafting/molecular_assembler"})
-	event.recipes.modern_industrialization.assembler(
-		{
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+
 			eu: 32,
 			duration: 500,
 			item_inputs: [
@@ -2010,7 +1858,8 @@ ServerEvents.recipes(event => {
 	// ender dust
 	event.remove({mod: "ae2", output: "ae2:ender_dust"})
 	event.remove({mod: "create", output: "ae2:ender_dust"})
-	event.recipes.modern_industrialization.macerator({
+	event.custom({ 
+		type: "modern_industrialization:macerator",
 		eu: 2,
 		duration: 100,
 		item_inputs:[{item: "minecraft:ender_pearl"}],
@@ -2272,7 +2121,8 @@ ServerEvents.recipes(event => {
 
 	event.remove({mod: "ae2", output: "ae2:wireless_booster"})
 
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 200,
 		item_inputs: [
@@ -2369,7 +2219,8 @@ ServerEvents.recipes(event => {
 	]).transitionalItem("kubejs:incomplete_digital_circuit").loops(2)
 	*/
 
-	event.recipes.modern_industrialization.implosion_compressor({
+	event.custom({ 
+		type: "modern_industrialization:implosion_compressor",
 		eu: 100,
 		duration: 6000,
 		item_inputs: [
@@ -2382,7 +2233,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 6000,
 		item_inputs: [
@@ -2397,7 +2249,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 
-	event.recipes.modern_industrialization.blast_furnace({
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
 		eu: 8,
 		duration: 100,
 		item_inputs: [
@@ -2429,7 +2282,8 @@ ServerEvents.recipes(event => {
 	*/
 
 	// creative create
-	event.recipes.modern_industrialization.implosion_compressor({
+	event.custom({ 
+		type: "modern_industrialization:implosion_compressor",
 		eu: 100,
 		duration: 6000,
 		item_inputs: [
@@ -2651,7 +2505,8 @@ ServerEvents.recipes(event => {
 	*/
 
 	event.remove({mod: "modern_industrialization", output: "modern_industrialization:replicator"})
-	event.recipes.modern_industrialization.assembler({
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 1,
 		duration: 20,
 		item_inputs: [

@@ -17,6 +17,11 @@ event.create('geghilarity_fatmachines:machine_casing_firebox_steel').material('i
 event.create('geghilarity_fatmachines:carbon_electrode_assembly').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:ulv_casing').material('iron').displayName('ULV Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
+event.create('drilly:steam_turbine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('drilly:basic_engine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('drilly:shaft_power_bus').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('drilly:hsla_frame_box').material('iron').displayName('HSLA Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
+event.create('drilly:hsla_casing').material('iron').displayName('HSLA Steel Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 })
 
@@ -49,6 +54,9 @@ let ARCFURNACE;
 let POLYTANK;
 let SINTER;
 let STEAMALLOY;
+let HSLA_BLAST;
+
+let LVMINER;
 
 MIMachineEvents.addMultiblockSlots("steam_blast_furnace", event => {
     event.itemOutputs.addSlot(102, 53);
@@ -135,6 +143,15 @@ MIMachineEvents.registerRecipeTypes(event => {
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs();		
+		
+	HSLA_BLAST = event.register('hsla_blast')
+		.withItemInputs()
+        .withItemOutputs();	
+		
+	LVMINER = event.register('lv_miner')
+		.withItemInputs()
+		.withFluidInputs()
+        .withItemOutputs();		
 
 });
 
@@ -145,6 +162,7 @@ MIMachineEvents.registerCasings(event => {
 	event.register("solid_steel")
 	event.register("ulv_casing")
 	event.register("bronze_casing")
+	event.register("hsla_casing")
 });
 
 MIMachineEvents.registerMachines(event => {
@@ -405,7 +423,7 @@ MIMachineEvents.registerMachines(event => {
     	
 	const heatproofMem = event.memberOfBlock("geghilarity_fatmachines:ptfe_casing");
 	const heatproofMember = event.memberOfBlock("modern_industrialization:heatproof_machine_casing");
-
+	
 	
 	// new EBF
 	const ebfHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
@@ -824,6 +842,84 @@ MIMachineEvents.registerMachines(event => {
         fluidInputs => fluidInputs.addSlots(45, 35, 1, 5), fluidOutputs => fluidOutputs.addSlots(121, 35, 1, 4),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "lcr_casing", "lcr", true, false, false,
+    );
+	
+	
+	const hslaHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	const tchimney = event.memberOfBlock("sootychimneys:dirty_terracotta_chimney");
+	const basaltb = event.memberOfBlock("minecraft:smooth_basalt");
+	const rglass = event.memberOfBlock("ae2:quartz_glass");
+	const llava = event.memberOfBlock("minecraft:lava");
+	const steelpipe = event.memberOfBlock("modern_industrialization:steel_machine_casing_pipe");
+    const hslaShape = event.layeredShape("heatproof_machine_casing", [
+		[ "FFFFF", " BCB ", " XXX ", " HHH ", "     ", "     ",],
+		[ "FFFFF", "BEEEB", "X   X", "HGGGH", " GGG ", " D D ",],
+		[ "FFFFF", "BEEEB", "X   X", "HGGGH", " GGG ", "     ",],
+        [ "FFFFF", " BCB ", " X#X ", " HHH ", "     ", "     ",],	
+    ])
+        .key("H", ulvcasing, event.noHatch())
+		.key("B", frameMember, event.noHatch())
+		.key("C", rglass, event.noHatch())
+		.key("D", tchimney, event.noHatch())
+		.key("E", llava, event.noHatch())
+		.key("F", basaltb, event.noHatch())
+		.key("G", steelpipe, event.noHatch())
+		.key("X", heatproofMember, hslaHatch)
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "HSLA Blast Furnace", "hsla_blast", HSLA_BLAST, hslaShape,
+        // REI progress bar
+        event.progressBar(90, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 3, 4), itemOutputs => itemOutputs.addSlots(135, 35, 3, 2),
+        fluidInputs => {}, fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "heatproof_machine_casing", "hsla_blast", true, false, false,
+    );
+	
+	const lvminerHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	
+	const hslacasing = event.memberOfBlock("drilly:hsla_casing");
+	const hslaframeMember = event.memberOfBlock("drilly:hsla_frame_box");
+	
+	const ladder = event.memberOfBlock("create:brass_ladder");
+	const valve = event.memberOfBlock("create:white_valve_handle");
+	
+	const steamt = event.memberOfBlock("drilly:steam_turbine");
+	const bengine = event.memberOfBlock("drilly:basic_engine");
+	const shaftpb = event.memberOfBlock("drilly:shaft_power_bus");
+
+    const lvminerShape = event.layeredShape("hsla_casing", [
+		[ " X   ", " X   ", " X   ", " X   ", " X   ", "     ", "     ", "     ", "     ",],
+		[ " E E ", " HHH ", " EHE ", " E E ", " HHH ", "  Y  ", "     ", "     ", "     ",],
+		[ "E H E", "HH HH", " H#H ", "  C  ", " HBH ", " EAE ", "  H  ", "  E  ", "  E  ",],
+        [ " E E ", " HHH ", " E E ", " E E ", " HHH ", "     ", "     ", "     ", "     ",],	
+        [ "     ", " YXY ", "     ", "     ", "     ", "     ", "     ", "     ", "     ",],
+
+    ])
+        .key("H", hslacasing, lvminerHatch)
+		.key("E", hslaframeMember, event.noHatch())
+		.key("X", ladder, event.noHatch())
+		.key("Y", valve, event.noHatch())
+		.key("A", steamt, event.noHatch())
+		.key("B", bengine, event.noHatch())
+		.key("C", shaftpb, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "LV Miner", "lv_miner", LVMINER, lvminerShape,
+        // REI progress bar
+        event.progressBar(90, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 2), itemOutputs => itemOutputs.addSlots(115, 35, 3, 2),
+        fluidInputs => fluidInputs.addSlots(34, 35, 1, 2), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "hsla_casing", "lv_miner", true, false, false,
     );
 	
 	

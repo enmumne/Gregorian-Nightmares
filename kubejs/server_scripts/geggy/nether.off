@@ -7,6 +7,10 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'betternether:paper'})
 	event.remove({id: 'betterend:paper'})
 	
+	event.remove({id: 'betterend:sulphur_gunpowder'})
+	
+	event.remove({id: 'bclib:tag_bucket'})
+	
 })
 
 

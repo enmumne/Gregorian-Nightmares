@@ -1,5 +1,6 @@
-Platform.mods.kubejs.name = 'Geghilarity'
-Platform.mods.modern_industrialization.name = 'Geghilafrfregrity'
+//Platform.mods.geghilarity.name = 'Geghilarity'
+Platform.mods.modern_industrialization.name = 'Gregic Industrial'
+//Platform.mods.geghilarity_fatmachines.name = 'Geghilarity Fatmachines'
 
 //onEvent('fluid.registry', event => {
 StartupEvents.registry('fluid', event => {

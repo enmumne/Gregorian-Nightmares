@@ -43,14 +43,6 @@ StartupEvents.registry('item', event => {
 	event.create("dirty_osmium_drill")
 })
 
-//onEvent('block.registry', event => {
-StartupEvents.registry('block', event => {	
-	// Register new blocks here
-	// event.create('example_block').material('wood').hardness(1.0).displayName('Example Block')
-})
-
-
-
 /* testing shit
 
 // startup/food_items
