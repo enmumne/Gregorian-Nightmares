@@ -171,8 +171,12 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 	event.custom({ 
 		type: "modern_industrialization:unpacker", eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_dark_ashes", amount: 4}],
 			item_outputs: [{item: "geghilarity:dark_ashes", amount: 1}]})	
-	event.shapeless('geghilarity:dark_ashes', [ '9x geghilarity:tiny_dark_ashes'])		
-			
+	event.shapeless('geghilarity:dark_ashes', [ '9x geghilarity:tiny_dark_ashes'])	
+
+	event.shapeless('geghilarity:seaweed_ash_dust', [ '4x geghilarity:small_seaweed_ash_dust'])	
+	event.custom({ 
+		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:small_seaweed_ash_dust", amount: 4}],
+			item_outputs: [{item: "geghilarity:seaweed_ash_dust", amount: 1}]})		
 
 	event.remove({id: 'minecraft:gold_ingot_from_nuggets'})
 	event.remove({id: 'minecraft:gold_nugget'})

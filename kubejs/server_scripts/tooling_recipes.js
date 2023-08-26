@@ -406,6 +406,91 @@ event.custom (
     S: 'minecraft:flint',
 	A: 'geggy:j_tool_rod'
   })
+  event.shaped('geggy:flint_sword', [
+    '  S',
+    ' S ',
+    'A  '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod'
+  })
+  event.shaped('geggy:flint_hoe', [
+    'SS ',
+    ' A ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod'
+  })
+  event.shaped('geggy:flint_shovel', [
+    'S  ',
+    'A  ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod'
+  })
+  event.shaped('geggy:flint_axe', [
+    'SS ',
+    'SA ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod'
+  })
+  
+  event.shaped('geggy:reinforced_flint_pickaxe', [
+    'SSZ',
+    'ASX',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:reinforced_tool_rod',
+	X: 'geggy:low_grade_resin',
+	Z: 'minecraft:string'
+  })
+  event.shaped('geggy:reinforced_flint_sword', [
+    ' XS',
+    ' SZ',
+    'A  '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:reinforced_tool_rod',
+	X: 'geggy:low_grade_resin',
+	Z: 'minecraft:string'
+  })
+  event.shaped('geggy:reinforced_flint_axe', [
+    'SSZ',
+    'SAX',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:reinforced_tool_rod',
+	X: 'geggy:low_grade_resin',
+	Z: 'minecraft:string'
+  })
+  event.shaped('geggy:reinforced_flint_hoe', [
+    'SSZ',
+    'XA ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:reinforced_tool_rod',
+	X: 'geggy:low_grade_resin',
+	Z: 'minecraft:string'
+  })
+  event.shaped('geggy:reinforced_flint_shovel', [
+    'XS ',
+    'ZA ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:reinforced_tool_rod',
+	X: 'geggy:low_grade_resin',
+	Z: 'minecraft:string'
+  })
+  
+  
   event.shaped('geggy:unfired_pickaxe_mold', [
     'AAA',
     'ABA',
@@ -456,35 +541,28 @@ event.custom (
 	}).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
 
 	event.custom({
-  "type": "farmersdelight:cooking",
-  "container": {"item": "geggy:copper_can"},
-  "cookingtime": 900,
-  "experience": 0.0,
-  "ingredients": [
-    {"item": "minecraft:green_dye"},
-    {"item": "minecraft:green_dye"},
-    {"item": "minecraft:green_dye"},
-    {"item": "minecraft:green_dye"}
-  ],
-  "recipe_book_tab": "meals",
-  "result": {"item": "geggy:mulch_copper_can"}
+		"type": "farmersdelight:cooking",
+		"container": {"item": "geggy:copper_can"},
+		"cookingtime": 900,
+		"experience": 0.0,
+		"ingredients": [
+			{"item": "minecraft:green_dye"},
+			{"item": "minecraft:green_dye"},
+			{"item": "minecraft:green_dye"},
+			{"item": "minecraft:green_dye"}
+		],
+		"recipe_book_tab": "meals",
+		"result": {"item": "geggy:mulch_copper_can"}
 	})
 	event.custom({
-  "type": "create:emptying",
-  "ingredients": [
-    {
-      "item": "geggy:mulch_copper_can"
-    }
-  ],
-  "results": [
-    {
-      "item": "geggy:copper_can"
-    },
-    {
-      "amount": 40500,
-      "fluid": "geggy:tannin"
-    }
-  ]
+		"type": "create:emptying",
+		"ingredients": [
+			{"item": "geggy:mulch_copper_can"}
+		],
+		"results": [
+			{"item": "geggy:copper_can"},
+			{"amount": 40500, "fluid": "geggy:tannin"}
+		]
 	})
 
 	event.shaped('geggy:copper_can', [

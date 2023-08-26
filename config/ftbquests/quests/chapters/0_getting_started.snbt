@@ -393,7 +393,7 @@
 			min_width: 250
 			shape: "diamond"
 			size: 1.5d
-			subtitle: "made by a madman"
+			subtitle: "made by a fool"
 			tasks: [{
 				id: "4A59550717ACE281"
 				item: {
@@ -464,7 +464,7 @@
 			size: 1.5d
 			tasks: [{
 				id: "2B9CD7CC4FD8C39B"
-				title: "Mediocre solutions for a mediocre life"
+				title: "Mediocre solutions for mediocre lives"
 				type: "checkmark"
 			}]
 			x: -15.5d
@@ -1392,7 +1392,7 @@
 		{
 			dependencies: ["5CFBB8884435817C"]
 			description: [
-				"Wood and stone pickaxes have been removed. Unless you find some loot and want to stick with the plan, don't expect to use iron, or anything better."
+				"Wood and stone pickaxes have been removed. Some numbers have been tweaked for other tools as well, so don't expect wood to work well for dealing damage, or stone to have good speed. Unless you find some loot and want to stick with the plan, iron won't be available until much later than usual."
 				""
 				"Your tool of choice will be a &2Flint Pickaxe&r, and then a Bronze one later."
 				""
@@ -1401,6 +1401,8 @@
 				"Diamonds and obsidian will still need iron or better, but this flint pickaxe has already better durability compared to a vanilla stone one."
 				""
 				"It's implied that past this point in the progression you already went through the funny \"quest chain\" to make a crafting table and furnace."
+				""
+				"Note: there's a full set of flint tools, and reinforced flint tools later on. These are already set up to work much better than vanilla stone tools."
 				""
 				"&o&e 0A : a suggestion: don't fall into a bush"
 			]
@@ -1418,7 +1420,7 @@
 				}
 				type: "item"
 			}]
-			title: "A Tool"
+			title: "such a tool"
 			x: -11.0d
 			y: -8.0d
 		}
@@ -2036,7 +2038,7 @@
 				id: "5E328397895585E9"
 				type: "checkmark"
 			}]
-			title: "Pivot"
+			title: "The Navel of the World"
 			x: -11.0d
 			y: 4.0d
 		}
@@ -2408,7 +2410,7 @@
 				item: "geggy:cured_leather"
 				type: "item"
 			}]
-			title: "Full Armor"
+			title: "Armored Core"
 			x: -12.5d
 			y: 4.0d
 		}
@@ -2605,6 +2607,36 @@
 			}]
 			x: -12.0d
 			y: -14.0d
+		}
+		{
+			dependencies: ["01BC3CBCD4210960"]
+			description: [
+				"With tannin it's possible to craft a full set of reinforced flint tools."
+				""
+				"The recipes will also require string and &aLow Grade Resin&r. Each piece of this resin requires coal dust, seagrass, &6honeycomb&r and tiny sulfur dust, in a mixer, then you cook it in a pot."
+				""
+				"Yeah, there's no need to mutter under your breath."
+				""
+				"One resin for one tool."
+			]
+			icon: "geggy:reinforced_tool_rod"
+			id: "229E4CD94769D382"
+			min_width: 250
+			tasks: [
+				{
+					id: "0E51F892908D60FC"
+					item: "geggy:reinforced_tool_rod"
+					type: "item"
+				}
+				{
+					id: "6324E0C0791F9147"
+					item: "geggy:low_grade_resin"
+					type: "item"
+				}
+			]
+			title: "Reinforcing prejudices"
+			x: -17.0d
+			y: 2.5d
 		}
 	]
 	title: "0 - Getting Started"

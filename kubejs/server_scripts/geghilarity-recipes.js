@@ -644,17 +644,25 @@ ServerEvents.recipes(event => {
 		]
 	})	
 	
-	// 07 TEMP sifter > mixer
+	// 07 
 	event.custom({ 
-		type: "modern_industrialization:mixer",
+		type: "modern_industrialization:sifter",
 			eu: 24,
 			duration: 300,
 			item_inputs: [ 
-				{item: "geghilarity:platinum_salt_dust", amount: 2}
+				{item: "geghilarity:platinum_salt_dust", amount: 1}
 			],
 			item_outputs :
 			[
-				{item: "geghilarity:refined_platinum_salt_dust", amount: 2, probability: 0.95}
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:refined_platinum_salt_dust", amount: 1, probability: 0.15}
 			]
 		})
 
@@ -751,17 +759,25 @@ ServerEvents.recipes(event => {
 		]	
 	})	
 		
-	// 13 TEMP sifter > mixer
+	// 13 
 	event.custom({ 
-		type: "modern_industrialization:mixer",
+		type: "modern_industrialization:sifter",
 			eu: 24,
 			duration: 300,
 			item_inputs: [ 
-				{item: "geghilarity:palladium_salt_dust", amount: 2}
+				{item: "geghilarity:palladium_salt_dust", amount: 1}
 			],
 			item_outputs :
 			[
-				{item: "geghilarity:palladium_metallic_powder_dust", amount: 2, probability: 0.95}
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.1},
+				{item: "geghilarity:palladium_metallic_powder_dust", amount: 1, probability: 0.15}
 			]
 		})	
 		
@@ -1193,9 +1209,9 @@ ServerEvents.recipes(event => {
 			]
 		})	
 
-	// 37 TEMP sifter > mixer
+	// 37 
 	event.custom({ 
-		type: "modern_industrialization:mixer",
+		type: "modern_industrialization:sifter",
 			eu: 30,
 			duration: 600,
 			item_inputs: [ 
@@ -2478,7 +2494,7 @@ ServerEvents.recipes(event => {
 				{item: "minecraft:sugar_cane", amount: 8}
 			],
 			item_outputs: [
-				{item: "geghilarity:plant_ball", amount: 1}
+				{item: "geggy:plant_ball", amount: 1}
 			]
 		})	
 	// E9B gtnh	
@@ -2487,7 +2503,7 @@ ServerEvents.recipes(event => {
 		eu: 30,
 		duration: 200,
 		item_inputs: [ 
-			{item: "geghilarity:plant_ball", amount: 2}
+			{item: "geggy:plant_ball", amount: 2}
 		],
 		item_outputs: [
 			{item: "geggy:plant_mass", amount: 2},
@@ -2752,39 +2768,7 @@ ServerEvents.recipes(event => {
 			{fluid: "minecraft:water", amount: 1000},
 			{fluid: "modern_industrialization:hydrochloric_acid", amount: 1000}
 		]
-	})	
-		
-	// FOIL1
-	event.custom({ 
-		type: "modern_industrialization:cutting_machine",
-		eu: 2,
-		duration: 100,
-		item_inputs: [ 
-			{tag: "c:copper_ingots", amount: 1}
-		],
-		fluid_inputs: [
-			{fluid: "modern_industrialization:lubricant", amount: 1}
-		],
-		item_outputs: [	
-			{item: "geghilarity:copper_foil", amount: 4}
-		]
-	})
-
-	// FOIL2
-	event.custom({ 
-		type: "modern_industrialization:cutting_machine",
-		eu: 2,
-		duration: 100,
-		item_inputs: [ 
-			{tag: "c:electrum_ingots", amount: 1}
-		],
-		fluid_inputs: [
-			{fluid: "modern_industrialization:lubricant", amount: 1}
-		],
-		item_outputs: [	
-			{item: "geghilarity:electrum_foil", amount: 4}
-		]
-	})	
+	})		
 
 	// X8 
 	event.custom({ 
@@ -6346,7 +6330,7 @@ ServerEvents.recipes(event => {
 		duration: 20,
 		fluid_inputs: [
 			{fluid: "geghilarity:trioctylamine", amount: 1000},
-			{fluid: "geghilarity:chlorometane", amount: 1000}
+			{fluid: "geghilarity:chloromethane", amount: 1000}
 		],
 		item_outputs: [
 			{item: "geghilarity:trioctylmethylammonium_chloride_dust", amount: 8}
@@ -6625,18 +6609,113 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// PX06
+	// PX06A
 	event.custom({ 
-		type: "modern_industrialization:chemical_reactor",
+		type: "modern_industrialization:stirred_tank",
 		eu: 30,
-		duration: 80,	
+		duration: 5,	
 		fluid_inputs: [
-			{fluid: "modern_industrialization:methane", amount: 1000},
-			{fluid: "modern_industrialization:chlorine", amount: 2000}
+			{fluid: "geghilarity:methanol", amount: 50},
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 50}
 		],
 		fluid_outputs: [
-			{fluid: "modern_industrialization:hydrochloric_acid", amount: 1000},
-			{fluid: "geghilarity:chlorometane", amount: 1000}
+			{fluid: "geghilarity:chloromethane_solution", amount: 150}
+		]
+	})
+	// PX06B
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 6,
+		duration: 120,	
+		fluid_inputs: [
+			{fluid: "geghilarity:chloromethane_solution", amount: 120}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:chloromethane", amount: 40}
+		]
+	})
+	// PX06C
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 5,	
+		fluid_inputs: [
+			{fluid: "modern_industrialization:methane", amount: 50},
+			{fluid: "modern_industrialization:chlorine", amount: 250}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:chlorinated_methane_mixture", amount: 200}
+		]
+	})
+	// PX06D
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 160,	
+		fluid_inputs: [
+			{fluid: "geghilarity:chlorinated_methane_mixture", amount: 4000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hydrogen_chloride", amount: 2500},
+			{fluid: "geghilarity:chloromethane", amount: 250},
+			{fluid: "geghilarity:dichloromethane", amount: 250},
+			{fluid: "geghilarity:chloroform", amount: 250},
+			{fluid: "geghilarity:carbon_tetrachloride", amount: 250}
+		]
+	})
+	// PX06E
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 5,	
+		fluid_inputs: [
+			{fluid: "geghilarity:dichloromethane", amount: 50},
+			{fluid: "modern_industrialization:chlorine", amount: 150}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:chlorinated_dichloromethane_mixture", amount: 150}
+		]
+	})
+	// PX06F
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 160,	
+		fluid_inputs: [
+			{fluid: "geghilarity:chlorinated_dichloromethane_mixture", amount: 3000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hydrogen_chloride", amount: 1500},
+			{fluid: "geghilarity:chloroform", amount: 500},
+			{fluid: "geghilarity:carbon_tetrachloride", amount: 500}
+		]
+	})
+	// PX06G
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 5,	
+		fluid_inputs: [
+			{fluid: "geghilarity:chloromethane", amount: 15},
+			{fluid: "modern_industrialization:chlorine", amount: 60}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:chlorinated_chloromethane_mixture", amount: 50}
+		]
+	})
+	// PX06H
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 160,	
+		fluid_inputs: [
+			{fluid: "geghilarity:chlorinated_chloromethane_mixture", amount: 5000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hydrogen_chloride", amount: 3000},
+			{fluid: "geghilarity:dichloromethane", amount: 500},
+			{fluid: "geghilarity:chloroform", amount: 500},
+			{fluid: "geghilarity:carbon_tetrachloride", amount: 500}
 		]
 	})
 	
@@ -7353,36 +7432,107 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// PB03
+	// SUSY plugin
 	event.custom({ 
-		type: "modern_industrialization:chemical_reactor",
-		eu: 480,
-		duration: 100,
-		fluid_inputs: [
-			{fluid: "geghilarity:chlorobenzene", amount: 1000},
-			{fluid: "geghilarity:nitration_mixture", amount: 2000}
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 60,
+		item_inputs: [
+			{item: "geggy:saltpeter", amount: 5}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000}
+		],
+		item_outputs: [
+			{item: "geghilarity:potassium_bisulfate_dust", amount: 7}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:nitrochlorobenzene", amount: 1000},
-			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 1000}
+			{fluid: "geghilarity:nitric_acid", amount: 1000}
 		]
 	})
 	
-	// PB04
 	event.custom({ 
-		type: "modern_industrialization:chemical_reactor",
-		eu: 1920,
-		duration: 200,
-		item_inputs: [
-			{item: "modern_industrialization:copper_dust", amount: 1, probability: 0.0}
-		],
-		fluid_inputs: [
-			{fluid: "modern_industrialization:hydrogen", amount: 2000},
-			{fluid: "geghilarity:nitrochlorobenzene", amount: 2000}
+		type: "modern_industrialization:stirred_tank",
+		eu: 480,
+		duration: 100,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:chlorobenzene", amount: 50},
+			{fluid: "geghilarity:nitration_mixture", amount: 100},
+			{fluid: "modern_industrialization:toluene", amount: 50}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:dichlorobenzidine", amount: 1000},
-			{fluid: "modern_industrialization:oxygen", amount: 4000}
+			{fluid: "geghilarity:mixed_nitrochlorobenzene_solution", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:mixed_nitrochlorobenzene_solution", amount: 2000}
+		],
+		item_outputs: [
+			{item: "geghilarity:mixed_nitrochlorobenzene_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 98,
+		item_inputs: [
+			{item: "geghilarity:mixed_nitrochlorobenzene_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:mixed_nitrochlorobenzene", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:mixed_nitrochlorobenzene", amount: 144}
+		],
+		item_outputs: [
+			{item: "geghilarity:4-nitrochlorobenzene_dust", amount: 1, probability: 0.65}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:2-nitrochlorobenzene", amount: 48}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 120,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:palladium_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:hot_high-pressure_hydrogen", amount: 2000},
+			{fluid: "geghilarity:2-nitrochlorobenzene", amount: 288}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:2_2_dichlorohydrazobenzene_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 120,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "geghilarity:2_2_dichlorohydrazobenzene_solution", amount: 50},
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:3_3_dichlorobenzidine_solution", amount: 100}
 		]
 	})
 	
@@ -7392,32 +7542,210 @@ ServerEvents.recipes(event => {
 		eu: 7680,
 		duration: 100,
 		item_inputs: [
-			{item: "kubejs:zinc_dust", amount: 1, probability: 0.0}
+			{item: "modern_industrialization:copper_dust", amount: 1, probability: 0.0}
 		],
 		fluid_inputs: [
-			{fluid: "geghilarity:dichlorobenzidine", amount: 1000},
-			{fluid: "geghilarity:ammonia", amount: 2000}
+			{fluid: "geghilarity:3_3_dichlorobenzidine_solution", amount: 1000},
+			{fluid: "geghilarity:hot_compressed_ammonia", amount: 2000}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:diaminobenzidine", amount: 1000},
-			{fluid: "modern_industrialization:hydrochloric_acid", amount: 2000}
+			{fluid: "geghilarity:diaminobenzidine_solution", amount: 1000},
+			{fluid: "geghilarity:hydrogen_chloride", amount: 2000}
 		]
 	})
 	
-	// PB06
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 240,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 1280}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_high-pressure_hydrogen", amount: 1280}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 120,
+		duration: 20,
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonia", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_compressed_ammonia", amount: 1000}
+		]
+	})
+	
+	// PB06 MOD
 	event.custom({ 
 		type: "modern_industrialization:lcr",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
-			{fluid: "geghilarity:diphenyl_isophthalate", amount: 1000},
-			{fluid: "geghilarity:diaminobenzidine", amount: 1000}
+			{fluid: "geghilarity:diphenyl_isophthalate_solution", amount: 3000},
+			{fluid: "geghilarity:diaminobenzidine_solution", amount: 2000}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:phenol", amount: 2000},
-			{fluid: "geghilarity:polybenzimidazole", amount: 1000}
+			{fluid: "geghilarity:polybenzimidazole_polymerization_mix", amount: 5000}
 		]
 	})
+	
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
+		eu: 240,
+		duration: 200,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:polybenzimidazole_polymerization_mix", amount: 5000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:polybenzimidazole_prepolymer_foam", amount: 25000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
+		eu: 240,
+		duration: 200,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:polybenzimidazole_prepolymer_foam", amount: 25000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:impure_polybenzimidazole_solution", amount: 7000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:advanced_centrifuge",
+		eu: 120,
+		duration: 300,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:impure_polybenzimidazole_solution", amount: 7000},
+			{fluid: "geghilarity:dimethylacetamide", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:polybenzimidazole_solution", amount: 1000},
+			{fluid: "geghilarity:polybenzimidazole_waste", amount: 7000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 120,
+		duration: 300,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:polybenzimidazole_solution", amount: 1000}
+		],
+		item_outputs: [
+			{item: "geghilarity:polybenzimidazole_pulp", amount: 7}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dimethylacetamide", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 8,
+		item_inputs: [
+			{item: "geghilarity:polybenzimidazole_pulp", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:polybenzimidazole", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 240,
+		duration: 300,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:polybenzimidazole_waste", amount: 7000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dichloroethane", amount: 1000},
+			{fluid: "geghilarity:phenol", amount: 1000},
+			{fluid: "modern_industrialization:toluene", amount: 1000},
+			{fluid: "minecraft:water", amount: 4000},
+		]
+	})
+	
+	// dimethylacetamide jumpstart
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 30,
+		duration: 5,
+		item_inputs: [
+			{item: "geghilarity:cobalt_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:oxygen", amount: 100},
+			{fluid: "geghilarity:acetaldehyde", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:acetic_acid", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 120,
+		duration: 8,
+		item_inputs: [
+			{item: "geghilarity:impregnated_alumina_catalyst_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:ammonia", amount: 150},
+			{fluid: "geghilarity:methanol", amount: 300}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:methylamine_mix", amount: 450}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 90,
+		duration: 1200,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:methylamine_mix", amount: 9000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:trimethylamine", amount: 1000},
+			{fluid: "geghilarity:dimethylamine", amount: 1000},
+			{fluid: "geghilarity:methylamine", amount: 1000},
+			{fluid: "minecraft:water", amount: 6000},
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 5,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:dimethylamine", amount: 50},
+			{fluid: "geghilarity:acetic_acid", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dimethylacetamide_solution", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 60,
+		duration: 16,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:dimethylacetamide_solution", amount: 80}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dimethylacetamide", amount: 40}
+		]
+	})
+
 	
 	// PB07
 	event.custom({ 
@@ -7429,7 +7757,7 @@ ServerEvents.recipes(event => {
 		],
 		fluid_inputs: [
 			{fluid: "geghilarity:polybenzimidazole", amount: 144}
-			],
+		],
 		item_outputs: [
 			{item: "geghilarity:polybenzimidazole_sheet", amount: 1}
 		]
@@ -7581,19 +7909,353 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// PB17
+	// furfural
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 180,
+		item_inputs: [ 
+			{item: "modern_industrialization:wood_pulp", amount: 4}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:furfural_solution", amount: 5000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 240,
+		fluid_inputs: [
+			{fluid: "geghilarity:furfural_solution", amount: 5000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000},
+			{fluid: "geghilarity:furfural", amount: 1000},	
+			{fluid: "minecraft:water", amount: 3000}
+		]
+	})
+	
+	// susy B.T.E.X
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 60,
+		duration: 300,
+		item_inputs: [ 
+			{item: "geghilarity:platinum_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:hydrogen", amount: 1000},
+			{fluid: "modern_industrialization:naphtha", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:naphtha_reformate", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:advanced_centrifuge",
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:furfural", amount: 100},
+			{fluid: "geghilarity:naphtha_reformate", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:btex_extract", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:advanced_centrifuge",
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "geghilarity:btex_extract", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:furfural", amount: 100},
+			{fluid: "geghilarity:btex", amount: 1000}
+		]
+	})
+	
+	// susy isophthaloyl
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 60,
+		duration: 260,
+		fluid_inputs: [
+			{fluid: "geghilarity:btex", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:xylene_mixture", amount: 400},
+			{fluid: "modern_industrialization:ethylbenzene", amount: 50},
+			{fluid: "modern_industrialization:toluene", amount: 400},
+			{fluid: "modern_industrialization:benzene", amount: 150}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:xylene_mixture", amount: 40}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:m/p-xylene_mixture", amount: 32}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
+		eu: 30,
+		duration: 500,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:m/p-xylene_mixture", amount: 4000}
+		],
+		item_outputs: [
+			{item: "geghilarity:p-xylene_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:m-xylene", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 30,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 1280}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_high-pressure_oxygen", amount: 1280}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 60,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:air", amount: 1280}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_high-pressure_air", amount: 1280}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 1920,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geghilarity:amoco_process_catalyst_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:hot_high-pressure_air", amount: 8000},
+			{fluid: "geghilarity:m-xylene", amount: 1000},
+			{fluid: "geghilarity:acetic_acid", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:isophthalic_acid_solution", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 1920,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geghilarity:amoco_process_catalyst_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:carbon_dioxide", amount: 6000, probability: 0.0},
+			{fluid: "geghilarity:hot_high-pressure_oxygen", amount: 2000},
+			{fluid: "geghilarity:m-xylene", amount: 1000},
+			{fluid: "geghilarity:acetic_acid", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:isophthalic_acid_solution", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 120,
+		duration: 100,
+		fluid_inputs: [ 
+			{fluid: "geghilarity:isophthalic_acid_solution", amount: 2000}
+		],
+		item_outputs: [
+			{item: "geghilarity:isophthalic_acid_dust", amount: 18}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:acetic_acid", amount: 1000},
+			{fluid: "minecraft:water", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 30,
+		duration: 10,
+		item_inputs: [ 
+			{item: "geghilarity:iron_iii_oxide_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:ethylene", amount: 50},
+			{fluid: "modern_industrialization:chlorine", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dichloroethane", amount: 50}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 120,
+		item_inputs: [ 
+			{item: "geghilarity:isophthalic_acid_dust", amount: 18}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:dichloroethane", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:dichloroethane_isophthalic_acid_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 30,
+		duration: 10,
+		item_inputs: [ 
+			{item: "modern_industrialization:carbon_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:chlorine", amount: 100},
+			{fluid: "geghilarity:carbon_monoxide", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:phosgene", amount: 50}
+		]
+	})
+	
+	// PB17 MOD
 	event.custom({ 
 		type: "modern_industrialization:lcr",
 		eu: 7680,
 		duration: 100,
 		fluid_inputs: [ 
-			{fluid: "geghilarity:phtalic_acid", amount: 1000},
-			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000},
-			{fluid: "geghilarity:phenol", amount: 2000}
+			{fluid: "geghilarity:phosgene", amount: 1000},
+			{fluid: "geghilarity:dichloroethane_isophthalic_acid_solution", amount: 1000}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:diphenyl_isophthalate", amount: 1000},
-			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 1000}
+			{fluid: "geghilarity:isophthaloyl_dichloride_solution", amount: 1000},
+			{fluid: "geghilarity:carbon_dioxide", amount: 2000},
+			{fluid: "geghilarity:hydrogen_chloride", amount: 2000}
+		]
+	})
+	
+	// susy phenol
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 30,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:benzene", amount: 1280}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_high-pressure_benzene", amount: 1280}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fluid_compressor",
+		eu: 30,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:propene", amount: 1280}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hot_high-pressure_propene", amount: 1280}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "geghilarity:hot_high-pressure_propene", amount: 50},
+			{fluid: "geghilarity:hot_high-pressure_benzene", amount: 50},
+			{fluid: "geghilarity:phosphoric_acid", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:acidic_cumene", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 50},
+			{fluid: "geghilarity:acidic_cumene", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:rearranged_cumene", amount: 150}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:rearranged_cumene", amount: 150}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:phosphoric_acid", amount: 50},
+			{fluid: "geghilarity:phenol", amount: 50},
+			{fluid: "geghilarity:acetone", amount: 50}
+		]
+	})
+	
+	// susy diphenyil isophthalate
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 160,
+		item_inputs: [ 
+			{item: "geghilarity:sodium_hydroxide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:phenol", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sodium_phenoxide_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "geghilarity:isophthaloyl_dichloride_solution", amount: 50},
+			{fluid: "geghilarity:sodium_phenoxide_solution", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diphenyl_isophthalate_solution", amount: 150}
 		]
 	})
 	
@@ -7837,7 +8499,7 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.custom({ 
-		type: "modern_industrialization:stirred_tank",
+		type: "modern_industrialization:bubble_reactor",
 		eu: 30,
 		duration: 5,
 		fluid_inputs: [
@@ -7916,7 +8578,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// red mud gone, reduced output
+	// red mud changed to not conflict with titanium
 	event.custom({ 
 		type: "modern_industrialization:centrifuge",
 		eu: 30,
@@ -7926,7 +8588,7 @@ ServerEvents.recipes(event => {
 		],
 		fluid_outputs: [
 			{fluid: "geghilarity:sodium_aluminate_solution", amount: 2000},
-			{fluid: "geghilarity:red_mud", amount: 20}
+			{fluid: "geghilarity:low-grade_red_mud", amount: 500}
 		]
 	})
 	
@@ -8167,7 +8829,7 @@ ServerEvents.recipes(event => {
 	
 	// polymerization
 	
-	// electro to elecell due to lack of slots
+	// electrolyzer to elecell due to lack of slots
 	event.custom({ 
 		type: "modern_industrialization:elecell",
 		eu: 30,
@@ -8187,7 +8849,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// electro to elecell due to lack of slots
+	// electrolyzer to elecell due to lack of slots
 	event.custom({ 
 		type: "modern_industrialization:elecell",
 		eu: 30,
@@ -8415,7 +9077,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// electro to elecell?
+	// electrolyzer to elecell?
 	event.custom({ 
 		type: "modern_industrialization:elecell",
 		eu: 30,
@@ -8632,7 +9294,7 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.custom({ 
-		type: "modern_industrialization:stirred_tank",
+		type: "modern_industrialization:bubble_reactor",
 		eu: 7,
 		duration: 1,
 		fluid_inputs: [
@@ -8991,5 +9653,1932 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// nickel tweaks
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/raw_metal_to_ingot_smelting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/ore_to_ingot_smelting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/ore_deepslate_to_ingot_smelting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/dust_to_ingot_smelting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/raw_metal_to_ingot_blasting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/ore_to_ingot_blasting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/ore_deepslate_to_ingot_blasting'})
+	event.remove({id: 'modern_industrialization:materials/nickel/smelting/dust_to_ingot_blasting'})
+	event.remove({id: 'create:smelting/nickel_ingot_compat_modern_industrialization'})
+	event.remove({id: 'create:blasting/nickel_ingot_compat_modern_industrialization'})
+	
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 120,
+		item_inputs: [
+			{item: "geghilarity:pentlandite_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 3000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:garnierite_dust", amount: 1},
+			{item: "geghilarity:tiny_dark_ashes", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sulfur_dioxide", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:garnierite_dust", amount: 2},
+			{item: "modern_industrialization:coal_dust", amount: 2}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:nickel_ingot", amount: 1},
+			{item: "geghilarity:tiny_dark_ashes", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:nickel_dust", amount: 1},
+			{item: "modern_industrialization:coal_dust", amount: 2}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:nickel_ingot", amount: 1},
+			{item: "geghilarity:tiny_dark_ashes", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 80,
+		item_inputs: [
+			{item: "modern_industrialization:nickel_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:nitrogen", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:nickel_ingot", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 30,
+		duration: 100,
+		item_inputs: [
+			{item: "geghilarity:garnierite_dust", amount: 2},
+			{item: "modern_industrialization:coal_dust", amount: 2}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:nickel_ingot", amount: 1}
+		]
+		,
+		fluid_outputs: [
+			{fluid: "geghilarity:carbon_monoxide", amount: 1000}
+		]
+	})
+	
+	// ELYTRA SYSY
+	event.custom({ 
+		type: "modern_industrialization:bubble_reactor",
+		eu: 30,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonia", amount: 50},
+			{fluid: "geghilarity:nitric_acid", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:ammonium_nitrate_solution", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 22,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonium_nitrate_solution", amount: 500}
+		],
+		item_outputs: [	
+			{item: "geghilarity:ammonium_nitrate_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "minecraft:water", amount: 500}
+		]
+	})
+	event.remove({id: 'minecraft:firework_rocket'})
+	event.remove({id: 'minecraft:firework_rocket_simple'})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 200,
+		duration: 60,
+		item_inputs: [
+			{item: "modern_industrialization:stainless_steel_plate", amount: 2},
+			{item: "geghilarity:ammonium_nitrate_dust", amount: 1},
+			{item: "minecraft:gunpowder", amount: 1},
+			{item: "geggy:fine_red_alloy_wire", amount: 1}
+		],
+		item_outputs: [	
+			{item: "minecraft:firework_rocket", amount: 16}
+		]
+	})
+	
+	// preliminar oil overhaul
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:crude_oil", amount: 1000},
+			{fluid: "minecraft:water", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_oil", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_oil", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:oily_brine", amount: 100},
+			{fluid: "geghilarity:desalted_oil", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:oily_brine", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:desalted_oil", amount: 200},
+			{fluid: "geghilarity:salt_water", amount: 1000}
+		]
+	})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/crude_oil_full'})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/crude_oil_0'})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/crude_oil_1'})
+	event.remove({id: 'modern_industrialization:petrochem/distillation/crude_oil_2'})
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 36,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:desalted_oil", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_light_fuel", amount: 250},
+			{fluid: "modern_industrialization:sulfuric_heavy_fuel", amount: 100},
+			{fluid: "modern_industrialization:sulfuric_naphtha", amount: 150}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:desalted_oil", amount: 200}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_light_fuel", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:desalted_oil", amount: 200}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_heavy_fuel", amount: 20}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:desalted_oil", amount: 200}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_naphtha", amount: 30}
+		]
+	})
+	event.remove({id: 'modern_industrialization:petrochem/sulfuric_purification/light_fuel'})
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sulfuric_light_fuel", amount: 12000},
+			{fluid: "modern_industrialization:hydrogen", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:light_fuel", amount: 12000},
+			{fluid: "geghilarity:hydrogen_sulfide", amount: 1000}
+		]
+	})
+	event.remove({id: 'modern_industrialization:petrochem/steam_cracking/light_fuel'})
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 240,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:light_fuel", amount: 1000},
+			{fluid: "modern_industrialization:steam", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:steam_cracked_light_fuel", amount: 500}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 30,
+		duration: 240,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam_cracked_light_fuel", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:carbon_tiny_dust", amount: 2}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:propene", amount: 250}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 120,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:propene", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:methane", amount: 1000},
+			{fluid: "geghilarity:isoprene", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 2000},
+			{fluid: "geghilarity:isoprene", amount: 144}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:rubber_sheet", amount: 3}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 30,
+		duration: 52,
+		fluid_inputs: [
+			{fluid: "geghilarity:isoprene", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:carbon_dust", amount: 5}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 8000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 30,
+		duration: 36,
+		fluid_inputs: [
+			{fluid: "geghilarity:hydrogen_sulfide", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:sulfur_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 2000}
+		]
+	})
+	
+	// SUSY CATALYSTS
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:silicon_dioxide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "modern_industrialization:sodium_hydroxide", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_sodium_silicate_solution", amount: 4000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_sodium_silicate_solution", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sodium_silicate_solution", amount: 25}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 120,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:hydrogen_chloride", amount: 2000},
+			{fluid: "geghilarity:sodium_silicate_solution", amount: 1000}
+		],
+		item_outputs: [
+			{item: "geghilarity:wet_silica_gel_dust", amount: 3}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:salt_water", amount: 2000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 30,
+		duration: 100,
+		item_inputs: [
+			{item: "geghilarity:wet_silica_gel_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:silica_gel_dust", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 120,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:low-grade_red_mud", amount: 2000}
+		],
+		item_outputs: [
+			{item: "geghilarity:iron_iii_oxide_dust", amount: 1, probability: 0.5}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:concentrated_low-grade_red_mud", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
+		eu: 240,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:concentrated_low-grade_red_mud", amount: 2000}
+		],
+		item_outputs: [
+			{item: "minecraft:iron_ingot", amount: 1},
+			{item: "geghilarity:red_mud_slag", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 480,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:red_mud_slag", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 750}
+		],
+		item_outputs: [
+			{item: "geghilarity:rutile_dust", amount: 1},
+			{item: "geghilarity:leached_red_mud_slag", amount: 3}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
+		eu: 480,
+		duration: 80,
+		item_inputs: [
+			{item: "geghilarity:iron_iii_oxide_dust", amount: 5}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:carbon_monoxide", amount: 3000}
+		],
+		item_outputs: [
+			{item: "minecraft:iron_ingot", amount: 4},
+			{item: "geghilarity:silicon_dioxide_dust", amount: 1, probability: 0.5}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:carbon_dioxide", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 120,
+		duration: 3,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:acetylene", amount: 50},
+			{fluid: "geghilarity:bromine", amount: 200}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:tetrabromomethane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 120,
+		duration: 120,
+		item_inputs: [
+			{item: "geghilarity:cobalt_dust", amount: 1},
+			{item: "modern_industrialization:manganese_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:tetrabromomethane", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:amoco_process_catalyst_dust", amount: 2}
+		]
+	})
+	
+	// styrene-butadiene susy
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:bromine", amount: 100},
+			{fluid: "geghilarity:sulfur_dioxide", amount: 50},
+			{fluid: "minecraft:water", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:brominated_sulfur_dioxide", amount: 150}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 1200,
+		fluid_inputs: [
+			{fluid: "geghilarity:brominated_sulfur_dioxide", amount: 60}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:hydrobromic_acid", amount: 40}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 500,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 3000},
+			{fluid: "geghilarity:trialkylaluminium_mixture", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:aluminium_alkoxide_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 500,
+		fluid_inputs: [
+			{fluid: "geghilarity:aluminium_alkoxide_solution", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:aluminium_alkoxide_mixture_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:diethyl_ether", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 500,
+		item_inputs: [
+			{item: "geghilarity:aluminium_alkoxide_mixture_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 3000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:aluminium_hydroxide", amount: 7}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:ziegler_alcohol_mixture", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 332,
+		fluid_inputs: [
+			{fluid: "geghilarity:ziegler_alcohol_mixture", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:n-butanol", amount: 34}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 120,
+		duration: 5,
+		item_inputs: [
+			{item: "geghilarity:platinum_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 100},
+			{fluid: "geghilarity:butyraldehide", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:n-butanol", amount: 50}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 10,
+		fluid_inputs: [
+			{fluid: "geghilarity:hydrobromic_acid", amount: 50},
+			{fluid: "geghilarity:n-butanol", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_1-bromobutane", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_1-bromobutane", amount: 80}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:1-bromobutane", amount: 40}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 30,
+		duration: 320,
+		item_inputs: [
+			{item: "geghilarity:lithium_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:diethyl_ether", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:lithium_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:1-bromobutane", amount: 1000},
+			{fluid: "geghilarity:lithium_solution", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:lithium_bromide_dust", amount: 2}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_n-butyllithium", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 90,
+		duration: 360,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_n-butyllithium", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:n-butyllithium", amount: 1000},
+			{fluid: "modern_industrialization:diethyl_ether", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 22,
+		duration: 28,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_n-butyllithium", amount: 80}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:n-butyllithium", amount: 40}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 120,
+		duration: 5,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:benzene", amount: 50},
+			{fluid: "modern_industrialization:ethylene", amount: 50},
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 50, probability: 0.0}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:ethylbenzene", amount: 50}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 30,
+		duration: 2,
+		item_inputs: [
+			{item: "geghilarity:iron_iii_oxide_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 50},
+			{fluid: "modern_industrialization:ethylbenzene", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:crude_styrene", amount: 50},
+			{fluid: "modern_industrialization:hydrogen", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 2,
+		fluid_inputs: [
+			{fluid: "geghilarity:crude_styrene", amount: 40}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:styrene", amount: 36}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 60,
+		duration: 450,
+		fluid_inputs: [
+			{fluid: "geghilarity:dry_ethanol", amount: 100},
+			{fluid: "modern_industrialization:styrene", amount: 1000},
+			{fluid: "modern_industrialization:butadiene", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:styrene_butadiene_solution", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:poly_tank",
+		eu: 120,
+		duration: 1200,
+		fluid_inputs: [
+			{fluid: "geghilarity:n-butyllithium", amount: 100, probability: 0.0},
+			{fluid: "geghilarity:styrene_butadiene_solution", amount: 3000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:polymerized_styrene_butadiene_solution", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 120,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geghilarity:polymerized_styrene_butadiene_solution", amount: 3000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:raw_styrene_butadiene_rubber_dust", amount: 16}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:ethanol", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 7,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:raw_styrene_butadiene_rubber_dust", amount: 1},
+			{item: "modern_industrialization:sulfur_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:styrene_butadiene_rubber_bar", amount: 4}
+		]
+	})
+	
+	///////
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 10,
+		item_inputs: [
+			{item: "geghilarity:lithium_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:lithium", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:reaction_furnace",
+		eu: 1920,
+		duration: 480,
+		item_inputs: [
+			{item: "modern_industrialization:emerald_dust", amount: 1},
+			{item: "modern_industrialization:carbon_dust", amount: 18}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:chlorine", amount: 36000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:chlorinated_beryl", amount: 900}
+		]
+	})
+	
+	// to fix
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 1920,
+		duration: 480,
+		fluid_inputs: [
+			{fluid: "geghilarity:chlorinated_beryl", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:beryllium_chloride_dust", amount: 9}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:aluminium_chloride", amount: 2000},
+			{fluid: "geghilarity:silicon_tetrachloride", amount: 6000},
+			{fluid: "geghilarity:carbon_monoxide", amount: 18000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 480,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sodium_hydroxide", amount: 3000},
+			{fluid: "geghilarity:aluminium_chloride", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:aluminium_hydroxide", amount: 7}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:salt_water", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 26,
+		item_inputs: [
+			{item: "geghilarity:beryllium_chloride_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:beryllium_chloride", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:elecell",
+		eu: 1920,
+		duration: 480,
+		item_inputs: [
+			{item: "geghilarity:graphite_electrode", amount: 1, probability: 0.0},
+			{item: "modern_industrialization:aluminum_rod", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:beryllium_chloride", amount: 432},
+			{fluid: "geghilarity:salt", amount: 432, probability: 0.0}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:beryllium_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:chlorine", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 480,
+		duration: 160,
+		item_inputs: [
+			{item: "modern_industrialization:beryllium_dust", amount: 1},
+			{item: "geghilarity:potassium_dust", amount: 4}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:nitrogen", amount: 5000}
+		],
+		item_outputs: [	
+			{item: "geggy:enderpearl_dust", amount: 10}
+		]
+	})
+	
+	// susy synth methane
+	
+	event.custom({ 
+		type: "modern_industrialization:reaction_furnace",
+		eu: 120,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:nickel_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 8000},
+			{fluid: "geghilarity:carbon_dioxide", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:methane", amount: 1000},
+			{fluid: "modern_industrialization:steam", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:reaction_furnace",
+		eu: 120,
+		duration: 150,
+		item_inputs: [
+			{item: "geghilarity:nickel_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 6000},
+			{fluid: "geghilarity:carbon_monoxide", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:methane", amount: 1000},
+			{fluid: "modern_industrialization:steam", amount: 1000}
+		]
+	})
+	
+	// GTNH monazite line, why not
+	
+	// digester
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 1920,
+		duration: 400,
+		item_inputs: [
+			{item: "modern_industrialization:mozanite_crushed_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric_acid", amount: 700}
+		],
+		item_outputs: [	
+			{item: "geghilarity:silicon_dioxide_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:muddy_monazite_rare_earth_solution", amount: 400}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dissolution_tank",
+		eu: 480,
+		duration: 8100,
+		item_inputs: [
+			{item: "geggy:saltpeter", amount: 9}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:muddy_monazite_rare_earth_solution", amount: 9000},
+			{fluid: "minecraft:water", amount: 90000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnia-zirconia_blend_dust", amount: 4},
+			{item: "geghilarity:thorianite_dust", amount: 9},
+			{item: "modern_industrialization:mozanite_dust", amount: 2}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:diluted_monazite_rare_earth_mud", amount: 99000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 1920,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:hafnia-zirconia_blend_dust", amount: 9}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnia_dust", amount: 3},
+			{item: "geghilarity:zirconia_dust", amount: 9}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 7,
+		duration: 60,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 1000},
+			{fluid: "modern_industrialization:chlorine", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 480,
+		duration: 400,
+		item_inputs: [
+			{item: "modern_industrialization:sodium_dust", amount: 4},
+			{item: "geghilarity:magnesium_chloride_dust", amount: 6}
+		],
+		item_outputs: [	
+			{item: "geghilarity:magnesium_dust", amount: 2},
+			{item: "modern_industrialization:salt_dust", amount: 8}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:hafnia_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnium_tetrachloride_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "minecraft:water", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:hafnium_tetrachloride_dust", amount: 5}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:hafnium_tetrachloride_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
+		eu: 1920,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:magnesium_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:hafnium_tetrachloride_solution", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:low-purity_hafnium_dust", amount: 1},
+			{item: "geghilarity:magnesium_chloride_dust", amount: 6}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:low-purity_hafnium_dust", amount: 1},
+			{item: "geghilarity:iodine_dust", amount: 4}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnium_iodide_dust", amount: 5}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:low-purity_hafnium_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:iodine", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnium_iodide_dust", amount: 5}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace3",
+		eu: 1920,
+		duration: 5400,
+		item_inputs: [
+			{item: "geghilarity:hafnium_iodide_dust", amount: 45}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hot_hafnium_ingot", amount: 9},
+			{item: "geghilarity:hafnium_runoff_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:iodine", amount: 36000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
+		eu: 120,
+		duration: 534,
+		item_inputs: [
+			{item: "geghilarity:hot_hafnium_ingot", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnium_ingot", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:zirconia_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:zirconium_tetrachloride_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "minecraft:water", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:zirconium_tetrachloride_dust", amount: 5}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:zirconium_tetrachloride_solution", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace4",
+		eu: 1920,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:magnesium_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:zirconium_tetrachloride_solution", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hot_zirconium_ingot", amount: 1},
+			{item: "geghilarity:magnesium_chloride_dust", amount: 6}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
+		eu: 120,
+		duration: 273,
+		item_inputs: [
+			{item: "geghilarity:hot_zirconium_ingot", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:zirconium_ingot", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 60,
+		duration: 53,
+		item_inputs: [
+			{item: "geghilarity:thorianite_dust", amount: 3}
+		],
+		item_outputs: [	
+			{item: "geghilarity:thorium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 60,
+		duration: 104,
+		item_inputs: [
+			{item: "modern_industrialization:mozanite_dust", amount: 2}
+		],
+		item_outputs: [	
+			{item: "geghilarity:thorium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 240,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_monazite_rare_earth_mud", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:monazite_sulfate_dust", amount: 1, probability: 0.9},
+			{item: "geghilarity:silicon_dioxide_dust", amount: 1, probability: 0.75},
+			{item: "geghilarity:rutile_dust", amount: 1, probability: 0.2},
+			{item: "geghilarity:red_zircon_dust", amount: 1, probability: 0.05},
+			{item: "geghilarity:ilmenite_dust", amount: 1, probability: 0.2}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 90,
+		duration: 250,
+		item_inputs: [
+			{item: "geghilarity:red_zircon_dust", amount: 6}
+		],
+		item_outputs: [	
+			{item: "geghilarity:zirconium_dust", amount: 1},
+			{item: "geghilarity:silicon_dioxide_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
+		eu: 480,
+		duration: 2130,
+		item_inputs: [
+			{item: "geghilarity:zirconium_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hot_zirconium_ingot", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
+		eu: 480,
+		duration: 3200,
+		item_inputs: [
+			{item: "geghilarity:ilmenite_dust", amount: 9},
+			{item: "modern_industrialization:carbon_dust", amount: 9}
+		],
+		item_outputs: [	
+			{item: "geggy:pig_iron_ingot", amount: 4},
+			{item: "geghilarity:rutile_dust", amount: 4}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:carbon_monoxide", amount: 9000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 400,
+		duration: 4800,
+		item_inputs: [
+			{item: "geghilarity:monazite_sulfate_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 6000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:diluted_monazite_sulfate", amount: 7000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 480,
+		duration: 4320,
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_monazite_sulfate", amount: 9000},
+			{fluid: "geghilarity:ammonium_nitrate_solution", amount: 1800}
+		],
+		item_outputs: [	
+			{item: "geghilarity:acidic_monazite_powder_dust", amount: 3}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 256,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:acidic_monazite_powder_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:monazite_rare_earth_filtrate_dust", amount: 1, probability: 0.9},
+			{item: "geghilarity:thorium-phosphate_cake_dust", amount: 1, probability: 0.7}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:thorium-phosphate_cake_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:thorium-phosphate_concentrate_dust", amount: 1}
+		]
+	})
+	
+	// termal centrifuge
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 240,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:thorium-phosphate_concentrate_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:thorium_dust", amount: 1},
+			{item: "geghilarity:phosphate_dust", amount: 1}
+		]
+	})
+	
+	// chemical bath
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 240,
+		duration: 120,
+		item_inputs: [
+			{item: "geghilarity:monazite_rare_earth_filtrate_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonium_nitrate_solution", amount: 320}
+		],
+		item_outputs: [	
+			{item: "geghilarity:neutralized_monazite_rare_earth_filtrate_dust", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 480,
+		duration: 800,
+		item_inputs: [
+			{item: "geghilarity:neutralized_monazite_rare_earth_filtrate_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:monazite_rare_earth_hydroxide_concentrate_dust", amount: 1, probability: 0.9},
+			{item: "geghilarity:uranium_filtrate_dust", amount: 1, probability: 0.5},
+			{item: "geghilarity:uranium_filtrate_dust", amount: 1, probability: 0.4}
+		]
+	})
+	
+	// chemical bath
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 120,
+		duration: 360,
+		item_inputs: [
+			{item: "geghilarity:uranium_filtrate_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:hydrofluoric_acid", amount: 100}
+		],
+		item_outputs: [	
+			{item: "geghilarity:neutralized_uranium_filtrate_dust", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 30,
+		duration: 1000,
+		item_inputs: [
+			{item: "geghilarity:neutralized_uranium_filtrate_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:uranium_238_dust", amount: 1, probability: 0.45},
+			{item: "modern_industrialization:uranium_238_dust", amount: 1, probability: 0.4},
+			{item: "modern_industrialization:uranium_238_dust", amount: 1, probability: 0.3},
+			{item: "modern_industrialization:uranium_235_dust", amount: 1, probability: 0.3},
+			{item: "modern_industrialization:uranium_235_dust", amount: 1, probability: 0.2}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:monazite_rare_earth_hydroxide_concentrate_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:dried_monazite_rare_earth_concentrate_dust", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 480,
+		duration: 500,
+		item_inputs: [
+			{item: "geghilarity:dried_monazite_rare_earth_concentrate_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric_acid", amount: 500}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitrogenated_monazite_rare_earth_concentrate", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 120,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitrogenated_monazite_rare_earth_concentrate", amount: 1000},
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitric-leached_monazite_mixture", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 120,
+		duration: 220,
+		item_inputs: [
+			{item: "geghilarity:cerium-rich_mixture_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:nitrogenated_monazite_rare_earth_concentrate", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitric-leached_monazite_mixture", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 240,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric-leached_monazite_mixture", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cerium_dioxide_dust", amount: 1, probability: 0.1111}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitric_monazite_leached_concentrate", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
+		eu: 240,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric_monazite_leached_concentrate", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cooled_monazite_rare_earth_concentrate_dust", amount: 1}
+		]
+	})
+	
+	// electro separator
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 1920,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:cooled_monazite_rare_earth_concentrate_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:monazite_rarer_earth_sediment_dust", amount: 1, probability: 0.9},
+			{item: "geghilarity:europium_iii_oxide_dust", amount: 5, probability: 0.05}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 8400,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:europium_iii_oxide_dust", amount: 5},
+			{item: "geghilarity:europium_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:europium_oxide_dust", amount: 4}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 33000,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:europium_oxide_dust", amount: 2}
+		],
+		item_outputs: [	
+			{item: "geghilarity:europium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
+		eu: 480,
+		duration: 500,
+		item_inputs: [
+			{item: "geghilarity:monazite_rarer_earth_sediment_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:chlorine", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:heterogenous_halogenic_mozanite_rare_earth_mixture_dust", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 240,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:salt_dust", amount: 1},
+			{item: "geghilarity:heterogenous_halogenic_mozanite_rare_earth_mixture_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:acetone", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:saturated_monazite_rare_earth_dust", amount: 1}
+		]
+	})
+	
+	// simple samarium vs samarium ore concentrate
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 240,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:samarium_dust", amount: 2},
+			{item: "geghilarity:heterogenous_halogenic_mozanite_rare_earth_mixture_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:acetone", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:saturated_monazite_rare_earth_dust", amount: 3}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 1920,
+		duration: 3150,
+		item_inputs: [
+			{item: "geghilarity:saturated_monazite_rare_earth_dust", amount: 4}
+		],
+		item_outputs: [	
+			{item: "geghilarity:samaric_residue_dust", amount: 3}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:chloromethane", amount: 400}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 1920,
+		duration: 133,
+		item_inputs: [
+			{item: "geghilarity:samaric_residue_dust", amount: 3}
+		],
+		item_outputs: [	
+			{item: "geghilarity:samarium_dust", amount: 2},
+			{item: "geghilarity:gadolinium_dust", amount: 1}
+		]
+	})
+	
+	// cerium
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:cerium_dioxide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonium_chloride", amount: 3000},
+			{fluid: "modern_industrialization:hydrogen", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cerium_chloride_dust", amount: 4}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:ammonia", amount: 3000},
+			{fluid: "modern_industrialization:steam", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:cerium_chloride_dust", amount: 8}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:oxalate", amount: 3000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cerium_oxalate_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 6000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace",
+		eu: 480,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:cerium_oxalate_dust", amount: 5},
+			{item: "modern_industrialization:carbon_dust", amount: 3}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cerium_iii_oxide_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:carbon_monoxide", amount: 9000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 60,
+		duration: 70,
+		item_inputs: [
+			{item: "geghilarity:cerium_iii_oxide_dust", amount: 5}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cerium_dust", amount: 2}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 480,
+		duration: 80,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric_oxide", amount: 9000},
+			{fluid: "modern_industrialization:oxygen", amount: 9000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitrogen_dioxide", amount: 9000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 320,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitrogen_dioxide", amount: 2000},
+			{fluid: "modern_industrialization:oxygen", amount: 1000},
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitric_acid", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "minecraft:sugar", amount: 24},
+			{item: "geghilarity:vanadium_pentoxide_dust", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:nitric_acid", amount: 6000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:oxalate", amount: 3000},
+			{fluid: "geghilarity:nitric_oxide", amount: 6000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 80,
+		fluid_inputs: [
+			{fluid: "geghilarity:ammonia", amount: 1000},
+			{fluid: "modern_industrialization:oxygen", amount: 2500}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:nitric_oxide", amount: 1000}
+		]
+	})
+	
+	// iodine source // MAGICK
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 240,
+		duration: 600,
+		item_inputs: [
+			{item: "geghilarity:seaweed_ash_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 1200}
+		],
+		item_outputs: [	
+			{item: "magick:calcite_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:seaweed_concentrate", amount: 1200}
+		]
+	})
+	// seaweed byproducts, no use
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 480,
+		duration: 760,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:benzene", amount: 1000},
+			{fluid: "geghilarity:seaweed_concentrate", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:iodine_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:seaweed_byproducts", amount: 200}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 127,
+		item_inputs: [
+			{item: "geghilarity:iodine_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:iodine", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 2,
+		duration: 1200,
+		item_inputs: [
+			{item: "minecraft:sugar", amount: 4}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "minecraft:charcoal", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 1000}
+		]
+	})
+	
+	// superconductor
+	event.remove({id: 'modern_industrialization:alloy/mixer/superconductor/dust'})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 491520,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:naquadria_dust", amount: 4},
+			{item: "geghilarity:osmiridium_dust", amount: 3},
+			{item: "geghilarity:europium_dust", amount: 1},
+			{item: "geghilarity:samarium_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:superconductor_dust", amount: 9}
+		]
+	})
+	
+	// europium jumpstart?
+	
+	event.custom({ 
+		type: "modern_industrialization:fusion_reactor",
+		eu: 24576,
+		duration: 32,
+		fluid_inputs: [
+			{fluid: "geghilarity:molten_neodymium", amount: 16},
+			{fluid: "modern_industrialization:hydrogen", amount: 48}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:molten_europium", amount: 16}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:blaster_furnace2",
+		eu: 4080,
+		duration: 3600,
+		item_inputs: [
+			{item: "geghilarity:naquadria_dust", amount: 32}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:fluoroantimonic_acid", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:extremely_unstable_naquadah_dust", amount: 17}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:acid_naquadah_emulsion", amount: 8000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:lcr",
+		eu: 120,
+		duration: 240,
+		item_inputs: [
+			{item: "geghilarity:quicklime_dust", amount: 32}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:acid_naquadah_emulsion", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:antimony_trioxide_dust", amount: 1},
+			{item: "geghilarity:fluorspar_dust", amount: 16}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:naquadah_emulsion", amount: 4000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 30,
+		duration: 250,
+		item_inputs: [
+			{item: "geghilarity:antimony_trioxide_dust", amount: 5}
+		],
+		item_outputs: [	
+			{item: "modern_industrialization:antimony_dust", amount: 2}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:oxygen", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 60,
+		duration: 19,
+		item_inputs: [
+			{item: "geghilarity:fluorspar_dust", amount: 3}
+		],
+		item_outputs: [	
+			{item: "geghilarity:calcium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:fluorine", amount: 2000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:sifter",
+		eu: 120,
+		duration: 800,
+		fluid_inputs: [
+			{fluid: "geghilarity:naquadah_emulsion", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:radioactive_sludge_dust", amount: 4, probability: 0.8},
+			{item: "geghilarity:radioactive_sludge_dust", amount: 2, probability: 0.75},
+			{item: "geghilarity:radioactive_sludge_dust", amount: 1, probability: 0.50},
+			{item: "geghilarity:radioactive_sludge_dust", amount: 1, probability: 0.25},
+			{item: "geghilarity:radioactive_sludge_dust", amount: 1, probability: 0.5},
+			{item: "geghilarity:radioactive_sludge_dust", amount: 1, probability: 0.01}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:naquadah_solution", amount: 500}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 1920,
+		duration: 20,
+		fluid_inputs: [
+			{fluid: "geghilarity:naquadah_solution", amount: 20}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:naquadah_gas", amount: 60},
+			{fluid: "minecraft:water", amount: 10},
+			{fluid: "geghilarity:light_naquadah_fuel", amount: 10},
+			{fluid: "geghilarity:heavy_naquadah_fuel", amount: 5},
+			{fluid: "geghilarity:naquadah_asphalt", amount: 2}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fusion_reactor",
+		eu: 26000,
+		duration: 500,
+		fluid_inputs: [
+			{fluid: "geghilarity:light_naquadah_fuel", amount: 780},
+			{fluid: "geghilarity:heavy_naquadah_fuel", amount: 360}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:naquadah_based_liquid_fuel_mki", amount: 100}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 1920,
+		duration: 750,
+		fluid_inputs: [
+			{fluid: "geghilarity:naquadah_based_liquid_fuel_mki_depleted", amount: 125}
+		],
+		item_outputs: [	
+			{item: "geghilarity:naquadah_dust", amount: 8, probability: 0.9},
+			{item: "geghilarity:naquadah_dust", amount: 6, probability: 0.85},
+			{item: "geghilarity:naquadah_dust", amount: 4, probability: 0.5},
+			{item: "modern_industrialization:neodymium_dust", amount: 4, probability: 0.4},
+			{item: "geghilarity:europium_dust", amount: 4, probability: 0.2}
+		]
+	})
+	
+	
 })
 
+/*
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "geghilarity:hafnia_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrochloric_acid", amount: 4000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:hafnium_tetrachloride_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "minecraft:water", amount: 2000}
+		]
+	})
+*/	

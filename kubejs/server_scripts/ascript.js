@@ -1108,82 +1108,9 @@ ServerEvents.recipes(event => {
 		],
 		results: [
 			{count: 1, "item": "modern_industrialization:rubber_sheet"}
-			//Item.of("modern_industrialization:rubber_sheet", 1).toJson(),
-			//Item.of("modern_industrialization:rubber_sheet", 1).toJson()
 		],
 		processingTime: 100
 	})
-	
-	// cables
-	//event.remove({type: "minecraft:crafting_shaped", output: "#modern_industrialization:cables"})
-	event.remove({id: "modern_industrialization:materials/copper/craft/cable"})
-	event.remove({id: "modern_industrialization:materials/tin/craft/cable"})
-	event.remove({id: "modern_industrialization:materials/silver/craft/cable"})
-	event.remove({id: "moderndynamics:cable/lv_to_mi"})
-	event.remove({id: "moderndynamics:cable/lv_from_mi"})
-
-	// lv cables compacting recipe
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "modern_industrialization:copper_wire"},{"item": "modern_industrialization:copper_wire"},{"item": "modern_industrialization:copper_wire"},
-			//{count: 3, "item": "modern_industrialization:copper_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
-			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
-		],
-		results: [
-			{count: 1, "item": "modern_industrialization:copper_cable"}
-		]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "modern_industrialization:tin_wire"},{"item": "modern_industrialization:tin_wire"},{"item": "modern_industrialization:tin_wire"},
-			//{count: 3, "item": "modern_industrialization:tin_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
-			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
-		],
-		results: [
-			{count: 1, "item": "modern_industrialization:tin_cable"}
-		]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "modern_industrialization:silver_wire"},{"item": "modern_industrialization:silver_wire"},{"item": "modern_industrialization:silver_wire"},
-			//{count: 3, "item": "modern_industrialization:silver_wire"},
-			{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"},{"item": "modern_industrialization:rubber_sheet"}
-			//{count: 6, "item": "modern_industrialization:rubber_sheet"}
-		],
-		results: [
-			{count: 1, "item": "modern_industrialization:silver_cable"}
-		]
-	})
-	/*
-	event.recipes.createCompacting(
-		"modern_industrialization:copper_cable",
-		[
-			Item.of("modern_industrialization:copper_wire", 3),
-			Item.of("modern_industrialization:rubber_sheet", 6)
-		]
-	)
-
-	event.recipes.createCompacting(
-		"modern_industrialization:tin_cable",
-		[
-			Item.of("modern_industrialization:tin_wire", 3),
-			Item.of("modern_industrialization:rubber_sheet", 6)
-		]
-	)
-
-	event.recipes.createCompacting(
-		"modern_industrialization:silver_cable",
-		[
-			Item.of("modern_industrialization:silver_wire", 3),
-			Item.of("modern_industrialization:rubber_sheet", 6)
-		]
-	)
-	*/
 
 	event.remove({mod: "create", output: "create:crushing_wheel"})
 	event.custom({

@@ -122,7 +122,8 @@ event.groupItemsByTag('chipped:redstone_block', 'Redstone Block', 'chipped:redst
 event.groupItemsByTag('minecraft:leaves', 'Leaves', 'minecraft:leaves')
 //event.groupItemsByTag('minecraft:wool_carpets', 'Carpets', 'minecraft:wool_carpets')
 
-event.groupItems('gegbuck', 'Gegs Buckets', [/^(geghilarity:).*(bucket)$/])
+event.groupItems('geghbuck', 'Geghi Buckets', [/^(geghilarity:).*(bucket)$/])
+event.groupItems('geggbuck', 'Geggy Buckets', [/^(geggy:).*(bucket)$/])
 
 event.groupItems('chipped:grouped', 'Chipped Groups', [/^(chipped:).*$/])
 

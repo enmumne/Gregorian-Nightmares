@@ -54,11 +54,11 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	//carbon monoxide electrolysis 
+	//carbon monoxide electrolysis, gtnh
 	event.custom({ 
 		type: "modern_industrialization:electrolyzer",
-		eu: 30,
-		duration: 120,
+		eu: 60,
+		duration: 112,
 		fluid_inputs: [ 
 			{fluid: 'geghilarity:carbon_monoxide', amount: 1000}
 		],

@@ -2273,4 +2273,43 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// reinforced flint tools
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:j_tool_rod"},
+			{"amount": 20250, "fluid": "geggy:tannin",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:reinforced_tool_rod"
+		}]
+	})
+	event.shaped('geggy:reinforced_tool_rod', [
+		'AS ',
+		'   ',
+		'   '
+	], {
+		A: 'geggy:j_tool_rod',
+		S: 'geggy:mulch_copper_can'
+	}).replaceIngredient('geggy:mulch_copper_can', 'geggy:copper_can')
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "modern_industrialization:coal_dust"},{"item": "minecraft:seagrass"},
+		{"item": "minecraft:honeycomb"},{"item": "modern_industrialization:sulfur_tiny_dust"},
+		{"amount": 40500, "fluid": "geggy:tannin"}],
+		"results": [{"count": 2, "item": "geggy:low_grade_resin_raw"}]
+	})
+	event.custom({
+		"type": "farmersdelight:cooking",
+		"cookingtime": 600,
+		"experience": 0.0,
+		"ingredients": [
+			{"item": "geggy:low_grade_resin_raw"},
+			{"item": "geggy:low_grade_resin_raw"}
+		],
+		"recipe_book_tab": "meals",
+		"result": {"item": "geggy:low_grade_resin"}
+	})
+	
 })	

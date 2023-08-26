@@ -13,9 +13,13 @@ event.create('geghilarity_fatmachines:naquadah_coil').material('iron').displayNa
 event.create('geghilarity_fatmachines:casing_solid_steel').material('iron').displayName('Solid Steel Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:casing_pipe_steel').material('iron').displayName('Steel Pipe Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:steel_frame_box').material('iron').displayName('Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
+event.create('geghilarity_fatmachines:invar_frame_box').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
+event.create('geghilarity_fatmachines:stainless_frame_box').material('iron').displayName('Stainless Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
 event.create('geghilarity_fatmachines:machine_casing_firebox_steel').material('iron').displayName('Steel Firebox Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:carbon_electrode_assembly').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:ulv_casing').material('iron').displayName('ULV Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:muffler_hatch').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:titanium_reinforced_borosilicate_glass_block').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
 
 event.create('drilly:steam_turbine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('drilly:basic_engine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
@@ -49,10 +53,17 @@ let BF5;
 
 let evaporation;
 let MINECLAY;
+
 let ELECELL;
 let ARCFURNACE;
 let POLYTANK;
 let SINTER;
+let FBEDREACTOR;
+
+let REACTIONFURNACE;
+
+let DISSOLUTIONTANK;
+
 let STEAMALLOY;
 let HSLA_BLAST;
 
@@ -126,6 +137,18 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidInputs()
         .withItemOutputs()		
 		.withFluidOutputs();	
+		
+	REACTIONFURNACE = event.register('reaction_furnace')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();	
+		
+	DISSOLUTIONTANK = event.register('dissolution_tank')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();	
 	
 	POLYTANK = event.register('poly_tank')
 		.withItemInputs()
@@ -138,6 +161,12 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidInputs()
         .withItemOutputs()		
 		.withFluidOutputs();
+		
+	FBEDREACTOR = event.register('fluidized_bed_reactor')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();	
 		
 	STEAMALLOY = event.register('alloy_smelter')
 		.withItemInputs()
@@ -411,7 +440,7 @@ MIMachineEvents.registerMachines(event => {
         // English name, internal name, recipe type, multiblock shape
         "Steam Alloy Smelter", "steam_alloy", STEAMALLOY, stalloyShape,
         // REI progress bar
-        event.progressBar(90, 33, "furnace"),
+        event.progressBar(91, 33, "furnace"),
         // REI item inputs, item outputs, fluid inputs, fluid outputs
 		// rows, column
         itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => itemOutputs.addSlot(115, 35),
@@ -844,6 +873,32 @@ MIMachineEvents.registerMachines(event => {
         "lcr_casing", "lcr", true, false, false,
     );
 	
+	const fbrHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+
+    const fbrShape = event.layeredShape("lcr_casing", [
+
+		[ "EE EE", "HHHHH", "HHHHH", " HHH "],
+		[ "     ", "HHDHH", "HHDHH", " HDH "],
+        [ "EE EE", "HH#HH", "HHHHH", "     "],
+    ])
+        .key("H", lcrcasing, fbrHatch)
+        .key("D", lcrpipe, event.noHatch())
+		.key("E", frameMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Fluidized Bed Reactor", "fluidized_bed_reactor", FBEDREACTOR, fbrShape,
+        // REI progress bar
+        event.progressBar(90, 33, "extract"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(56, 35, 2, 1), itemOutputs => itemOutputs.addSlots(126, 35, 2, 1),
+		fluidInputs => fluidInputs.addSlots(36, 55, 3, 1), fluidOutputs => fluidOutputs.addSlots(126, 55, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "lcr_casing", "fbr", true, false, false,
+    );
+	
 	
 	const hslaHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	const tchimney = event.memberOfBlock("sootychimneys:dirty_terracotta_chimney");
@@ -880,6 +935,69 @@ MIMachineEvents.registerMachines(event => {
         "heatproof_machine_casing", "hsla_blast", true, false, false,
     );
 	
+	const reactHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	const muffler = event.memberOfBlock("geghilarity_fatmachines:muffler_hatch");
+	const frameinvMember = event.memberOfBlock("geghilarity_fatmachines:invar_frame_box");
+
+    const reactShape = event.layeredShape("heatproof_machine_casing", [
+		[ "     ", "     ", " D D ", " D D ", " D D ",],
+		[ "B   B", "BCCCB", "XDXDX", "XXXXX", " D D ",],
+		[ "     ", "XCCCX", "XD DX", "XDEDX", " DFD ",],
+        [ "B   B", "BCCCB", "XX#XX", "XXXXX", "     ",],	
+    ])
+		.key("B", frameinvMember, event.noHatch())
+		.key("C", fireboxMember, event.noHatch())
+		.key("D", fluidpipeMember, event.noHatch())
+		.key("E", muffler, event.noHatch())
+		.key("F", tchimney, event.noHatch())
+		.key("X", heatproofMember, reactHatch)
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Reaction Furnace", "reaction_furnace", REACTIONFURNACE, reactShape,
+        // REI progress bar
+        event.progressBar(90, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 3, 1), itemOutputs => itemOutputs.addSlots(135, 35, 3, 1),
+        fluidInputs => fluidInputs.addSlots(54, 55, 3, 1), fluidOutputs => fluidOutputs.addSlots(135, 55, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "heatproof_machine_casing", "reaction_furnace", true, false, false,
+    );
+	
+	const disstankHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+
+	const framessMember = event.memberOfBlock("geghilarity_fatmachines:stainless_frame_box");
+	const boroglass = event.memberOfBlock("geghilarity_fatmachines:titanium_reinforced_borosilicate_glass_block");
+	const stainlessMember = event.memberOfBlock("modern_industrialization:clean_stainless_steel_machine_casing");
+
+    const disstankShape = event.layeredShape("clean_stainless_steel_machine_casing", [
+		[ "B   B", "XXXXX", "XEEEX", "XEEEX", " XXX ",],
+		[ "     ", "XDDDX", "E   E", "E   E", "XXXXX",],
+		[ "     ", "XDDDX", "E   E", "E   E", "XXXXX",],
+		[ "     ", "XDDDX", "E   E", "E   E", "XXXXX",],
+        [ "B   B", "XX#XX", "XEEEX", "XEEEX", " XXX ",],	
+    ])
+		.key("B", framessMember, event.noHatch())
+		.key("E", boroglass, event.noHatch())
+		.key("D", heatproofMember, event.noHatch())
+		.key("X", stainlessMember, disstankHatch)
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Dissolution Tank", "dissolution_tank", DISSOLUTIONTANK, disstankShape,
+        // REI progress bar
+        event.progressBar(95, 33, "extract"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlot(54, 35), itemOutputs => itemOutputs.addSlots(135, 35, 3, 1),
+        fluidInputs => fluidInputs.addSlots(54, 55, 2, 1), fluidOutputs => fluidOutputs.addSlot(135, 55),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "clean_stainless_steel_machine_casing", "dissolution_tank", true, false, false,
+    );
+	
 	const lvminerHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	
 	const hslacasing = event.memberOfBlock("drilly:hsla_casing");
@@ -913,7 +1031,7 @@ MIMachineEvents.registerMachines(event => {
         // English name, internal name, recipe type, multiblock shape
         "LV Miner", "lv_miner", LVMINER, lvminerShape,
         // REI progress bar
-        event.progressBar(90, 33, "furnace"),
+        event.progressBar(90, 33, "arrow"),
         // REI item inputs, item outputs, fluid inputs, fluid outputs
 		// rows, column
         itemInputs => itemInputs.addSlots(54, 35, 2, 2), itemOutputs => itemOutputs.addSlots(115, 35, 3, 2),
@@ -926,6 +1044,8 @@ MIMachineEvents.registerMachines(event => {
 })
 
 MIMachineEvents.addMultiblockSlots("distillation_tower", event => {
+	// not possible, recipe type no items
+	//	event.itemOutputs.addSlot(50, 35);
 		event.fluidOutputs.addSlot(246, 35);
 		event.fluidOutputs.addSlot(264, 35);
 	})

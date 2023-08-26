@@ -19,8 +19,6 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:whole_tier5_experience').displayName('Tier 5 Experience');	
 	
 	event.create('drilly:copper_drill').displayName('Basic Copper Drill');
-	event.create('drilly:copper_refined_drill').displayName('Refined Copper Drill');
-	event.create('drilly:copper_bulky_drill').displayName('Bulky Copper Drill');
 	event.create('drilly:bronze_base_drill').displayName('Basic Bronze Drill');
 	event.create('drilly:incomplete_bronze_refined_drill').displayName('Incomplete Refined Bronze Drill');
 	event.create('drilly:bronze_refined_drill').displayName('Refined Bronze Drill');
@@ -29,22 +27,14 @@ StartupEvents.registry('item', event => {
 	event.create('drilly:incomplete_iron_refined_drill').displayName('Incomplete Refined Iron Drill');
 	event.create('drilly:iron_refined_drill').displayName('Refined Iron Drill');
 	event.create('drilly:iron_bulky_drill').displayName('Bulky Iron Drill');
-	event.create('drilly:steel_composite_drill').displayName('Composite Steel Drill');
-	event.create('drilly:steel_base_drill').displayName('Basic Steel Drill');
-	event.create('drilly:steel_refined_drill').displayName('Refined Steel Drill');
-	event.create('drilly:steel_bulky_drill').displayName('Bulky Steel Drill');
 	event.create('drilly:hsla_base_drill').displayName('Basic HSLA Steel Drill');
 	
-	event.create('drilly:dirty_copper_bulky_drill').displayName('Dirty Bulky Copper Drill');
 	event.create('drilly:dirty_bronze_base_drill').displayName('Dirty Basic Bronze Drill');
 	event.create('drilly:dirty_bronze_refined_drill').displayName('Dirty Refined Bronze Drill');
 	event.create('drilly:dirty_bronze_bulky_drill').displayName('Dirty Bulky Bronze Drill');
 	event.create('drilly:dirty_iron_base_drill').displayName('Dirty Basic Iron Drill');
 	event.create('drilly:dirty_iron_refined_drill').displayName('Dirty Refined Iron Drill');
 	event.create('drilly:dirty_iron_bulky_drill').displayName('Dirty Bulky Iron Drill');
-	event.create('drilly:dirty_steel_base_drill').displayName('Dirty Basic Steel Drill');
-	event.create('drilly:dirty_steel_refined_drill').displayName('Dirty Refined Steel Drill');
-	event.create('drilly:dirty_steel_bulky_drill').displayName('Dirty Bulky Steel Drill');
 	event.create('drilly:dirty_hsla_base_drill').displayName('Dirty Basic HSLA Steel Drill');
 	
 })	
@@ -52,9 +42,18 @@ StartupEvents.registry('item', event => {
 let DEHY;
 let SALLOY;
 let FEXTRACT;
+
 let ROASTER;
 let CRYSTALLIZER;
 let STIRR;
+let BUBBLE;
+let BATCH;
+let BED;
+let FCOMPRESS;
+let SIFTER;
+
+let ADVCENTRIFUGE;
+
 let GASCOLLECT;
 let VACUUM;
 
@@ -99,7 +98,40 @@ MIMachineEvents.registerRecipeTypes(event => {
 	STIRR = event.register("stirred_tank")
 		.withFluidInputs() 
         .withFluidOutputs();
+		
+	BUBBLE = event.register("bubble_reactor")
+		.withItemInputs()
+		.withFluidInputs() 
+        .withFluidOutputs();
 
+	BATCH = event.register("batch_reactor")
+		.withItemInputs()
+		.withItemOutputs()
+		.withFluidInputs() 
+        .withFluidOutputs();
+
+	BED = event.register("bed_reactor")
+		.withItemInputs()
+		.withItemOutputs()
+		.withFluidInputs() 
+        .withFluidOutputs();
+
+	ADVCENTRIFUGE = event.register("advanced_centrifuge")
+		.withItemInputs()
+		.withItemOutputs()
+		.withFluidInputs() 
+        .withFluidOutputs();	
+
+	SIFTER = event.register("sifter")
+		.withItemInputs()
+		.withItemOutputs()
+		.withFluidInputs() 
+        .withFluidOutputs();	
+	
+	FCOMPRESS = event.register("fluid_compressor")
+		.withFluidInputs() 
+        .withFluidOutputs();
+		
 	GASCOLLECT = event.register("gas_collector")
 		.withItemInputs()
         .withFluidOutputs();
@@ -180,13 +212,13 @@ MIMachineEvents.registerMachines(event => {
 		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
 		"Fluid Extractor", "fextract", FEXTRACT, ["steel", "electric"],
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		170, event.progressBar(78, 34, "extract"), event.efficiencyBar(38, 60), event.energyBar(14, 34),
+		170, event.progressBar(73, 34, "extract"), event.efficiencyBar(38, 60), event.energyBar(14, 34),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
 		1, 1, 0, 1,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlot(36, 35).addSlot(106, 35),
+		items => items.addSlot(41, 35).addSlot(106, 35),
 		fluids => fluids.addSlot(126, 35),
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,
@@ -205,23 +237,87 @@ MIMachineEvents.registerMachines(event => {
 		items => items.addSlots(36, 35, 2, 1).addSlots(106, 35, 2, 1),
 		fluids => fluids.addSlots(36, 55, 2, 1).addSlots(106, 55, 3, 1),
 		// front overlay?, top overlay?, side overlay?
-		true, true, true,
+		true, true, false,
 	);
 	
 	event.craftingSingleBlock(
 		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
 		"Crystallizer", "crystallizer", CRYSTALLIZER, ["electric"],
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		185, event.progressBar(98, 43, "extract"), event.efficiencyBar(38, 80), event.energyBar(14, 43),
+		185, event.progressBar(89, 42, "extract"), event.efficiencyBar(38, 80), event.energyBar(9, 43),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
-		3, 1, 3, 1,
+		3, 2, 3, 3,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlots(36, 35, 3, 1).addSlot(126, 35),
-		fluids => fluids.addSlots(36, 55, 3 , 1).addSlot(126, 55),
+		items => items.addSlots(29, 35, 3, 1).addSlots(117, 35, 2, 1),
+		fluids => fluids.addSlots(29, 55, 3 , 1).addSlots(117, 55, 3, 1),
 		// front overlay?, top overlay?, side overlay?
 		true, true, false,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Batch Reactor", "batch_reactor", BATCH, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		185, event.progressBar(88, 43, "centrifuge"), event.efficiencyBar(38, 80), event.energyBar(9, 43),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		3, 3, 3, 3,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlots(29, 35, 3, 1).addSlots(117, 35, 3, 1),
+		fluids => fluids.addSlots(29, 55, 3 , 1).addSlots(117, 55, 3, 1),
+		// front overlay?, top overlay?, side overlay?
+		true, false, false,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Bed Reactor", "bed_reactor", BED, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		185, event.progressBar(98, 43, "extract"), event.efficiencyBar(38, 80), event.energyBar(14, 43),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		2, 1, 3, 2,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlots(36, 35, 2, 1).addSlot(126, 35),
+		fluids => fluids.addSlots(36, 55, 3 , 1).addSlots(126, 55, 2, 1),
+		// front overlay?, top overlay?, side overlay?
+		true, false, false,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Fluid Compressor", "fluid_compressor", FCOMPRESS, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		175, event.progressBar(83, 40, "compress"), event.efficiencyBar(32, 70), event.energyBar(24, 41),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		0, 0, 1, 1,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => {},
+		fluids => fluids.addSlot(56, 42).addSlot(110, 42),
+		// front overlay?, top overlay?, side overlay?
+		true, false, false,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Advanced Centrifuge", "advanced_centrifuge", ADVCENTRIFUGE, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		225, event.progressBar(78, 43, "centrifuge"), event.efficiencyBar(38, 118), event.energyBar(14, 43),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		1, 6, 2, 6,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlot(36, 35).addSlots(106, 35, 3, 2),
+		fluids => fluids.addSlots(36, 55, 2 , 1).addSlots(106, 73, 3, 2),
+		// front overlay?, top overlay?, side overlay?
+		true, true, true,
 	);
 	
 	event.craftingSingleBlock(
@@ -236,6 +332,22 @@ MIMachineEvents.registerMachines(event => {
 		// Slot positions: items and fluids.
 		items => {},
 		fluids => fluids.addSlots(36, 45, 3 , 1).addSlots(126, 45, 2, 1),
+		// front overlay?, top overlay?, side overlay?
+		true, true, false,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Bubble Column Reactor", "bubble_reactor", BUBBLE, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		185, event.progressBar(98, 33, "arrow"), event.efficiencyBar(38, 80), event.energyBar(14, 43),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		1, 0, 3, 2,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlot(36, 35),
+		fluids => fluids.addSlots(36, 55, 3 , 1).addSlots(126, 35, 2, 1),
 		// front overlay?, top overlay?, side overlay?
 		true, true, false,
 	);
@@ -270,6 +382,22 @@ MIMachineEvents.registerMachines(event => {
 		fluids => {},
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,
+	);
+	
+	event.craftingSingleBlock(
+		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
+		"Sifter", "sifter", SIFTER, ["electric"],
+		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
+		220, event.progressBar(78, 35, "macerate"), event.efficiencyBar(38, 112), event.energyBar(14, 36),
+		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
+		1, 9, 1, 1,
+		// Capacity for fluid slots
+		16,
+		// Slot positions: items and fluids.
+		items => items.addSlot(56, 37).addSlots(106, 29, 3, 3), //fluids => {},
+		fluids => fluids.addSlot(36, 37).addSlot(106, 85),
+		// front overlay?, top overlay?, side overlay?
+		true, true, false,
 	);
 	
 	event.craftingSingleBlock(

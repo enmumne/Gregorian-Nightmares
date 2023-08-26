@@ -295,15 +295,13 @@ let andesiteblock5 = event.create('geggy:andesite_casing_5').material('stone').d
 
 WorldgenEvents.remove(event => {
 	
-	console.log('REM')	
-	
+
 	//event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:gold_ore', 'minecraft:deepslate_gold_ore', 'minecraft:nether_gold_ore', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether', 'minecraft:ore_nether_gold', 'minecraft:ore_gold_buried'])
 	
 	event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
 	
 	event.removeFeatureById('underground_decoration', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
 	
-  console.info('HELP')
   //console.debugEnabled = true;
 
   // print all features for a given biome filter
@@ -404,7 +402,6 @@ MIMaterialEvents.addMaterials(event => {
 	
 WorldgenEvents.add(event => {	
 
-console.log('WORLDGEN')	
 
 	const {anchors} = event
 		
@@ -419,8 +416,8 @@ console.log('WORLDGEN')
 	
 	event.addOre((ore) => {
 		ore.id = 'geggy:owgold1'
-		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:dirt'),
-		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'minecraft:dirt'),
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:precious_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:deepslate_precious_ore'),
 		
 		ore.count([3, 6])
 				.squared()

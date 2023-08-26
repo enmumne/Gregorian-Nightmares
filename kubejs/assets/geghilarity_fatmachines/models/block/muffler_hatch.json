@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+		"particle": "modern_industrialization:block/heatproof_machine_casing",
+        "up": "geghilarity_fatmachines:block/muffler_hatch",
+        "down": "modern_industrialization:block/heatproof_machine_casing",
+        "north": "modern_industrialization:block/heatproof_machine_casing",
+        "south": "modern_industrialization:block/heatproof_machine_casing",
+        "east": "modern_industrialization:block/heatproof_machine_casing",
+        "west": "modern_industrialization:block/heatproof_machine_casing"
+    }
+}

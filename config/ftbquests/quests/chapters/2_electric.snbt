@@ -9,7 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["0CE2D04744434785"]
+			dependencies: ["5DAA5DF264D1E559"]
 			description: [
 				"Now that you've got some base resources generating, it's time to work towards electricity. This chapter will walk you through the steps involved in getting your first machine hull and first set of electronic machines, as well as some more advanced Create machinery."
 				""
@@ -51,8 +51,8 @@
 				type: "checkmark"
 			}]
 			title: "The End of the Start"
-			x: 1.9751700680272037d
-			y: -1.321428571428573d
+			x: 2.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
@@ -63,8 +63,8 @@
 				item: "modern_industrialization:steel_wiremill"
 				type: "item"
 			}]
-			x: 1.9751700680272037d
-			y: 1.678571428571427d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
@@ -82,8 +82,8 @@
 					type: "item"
 				}
 			]
-			x: -0.5248299319727963d
-			y: 1.678571428571427d
+			x: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4BD4DC65BCF3C64A"]
@@ -103,8 +103,8 @@
 				item: "create:belt_connector"
 				type: "item"
 			}]
-			x: -0.5248299319727963d
-			y: 4.678571428571427d
+			x: -0.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["28B836571B0E67D1"]
@@ -115,8 +115,8 @@
 				item: "modern_industrialization:rubber_sheet"
 				type: "item"
 			}]
-			x: -2.0248299319727963d
-			y: 3.178571428571427d
+			x: -2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -145,8 +145,8 @@
 				type: "item"
 			}]
 			title: "Cables"
-			x: 1.4751700680272037d
-			y: 6.178571428571427d
+			x: 1.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["4AC4679E7BE6841E"]
@@ -165,8 +165,8 @@
 				item: "modern_industrialization:analog_circuit"
 				type: "item"
 			}]
-			x: -0.5248299319727963d
-			y: 10.678571428571427d
+			x: -0.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["717E4973C497B4C7"]
@@ -183,6 +183,7 @@
 				"&o 1A : but that doesnt mean you go out of your way to try to do stupid things"
 				"&o&9 2X : I've printed my own circuit boards and assembled them. I can assure you that screwdrivers aren't part of the equation"
 			]
+			icon: "create:deployer"
 			id: "4AC4679E7BE6841E"
 			min_width: 280
 			tasks: [
@@ -198,8 +199,8 @@
 					type: "item"
 				}
 			]
-			x: -1.0248299319727963d
-			y: 9.178571428571427d
+			x: -1.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
@@ -214,8 +215,8 @@
 				item: "create:brass_ingot"
 				type: "item"
 			}]
-			x: -4.024829931972796d
-			y: 3.178571428571427d
+			x: -4.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -245,8 +246,8 @@
 				}
 			]
 			title: "Circuit Components"
-			x: -2.0248299319727963d
-			y: 7.678571428571427d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["5825BFEDB5F567B5"]
@@ -276,7 +277,7 @@
 			]
 			title: "LV Power"
 			x: 1.5d
-			y: 13.5d
+			y: 12.5d
 		}
 		{
 			dependencies: [
@@ -289,8 +290,8 @@
 				item: "modern_industrialization:redstone_battery"
 				type: "item"
 			}]
-			x: 2.9751700680272037d
-			y: 7.678571428571427d
+			x: 3.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
@@ -301,8 +302,8 @@
 				item: "modern_industrialization:antimony_dust"
 				type: "item"
 			}]
-			x: 4.475170068027204d
-			y: 1.678571428571427d
+			x: 4.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["382C198D85803B4A"]
@@ -313,8 +314,8 @@
 				item: "modern_industrialization:battery_alloy_ingot"
 				type: "item"
 			}]
-			x: 4.475170068027204d
-			y: 3.178571428571427d
+			x: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["12754417BF2759C0"]
@@ -330,11 +331,11 @@
 				item: "modern_industrialization:basic_machine_hull"
 				type: "item"
 			}]
-			x: 1.4894557823129233d
-			y: 12.271428571428565d
+			x: 1.5d
+			y: 11.0d
 		}
 		{
-			dependencies: ["0E1CAD3AF8127A47"]
+			dependencies: ["5B60A5DCEBD1E4FC"]
 			description: ["The Pump is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
 			id: "57E82D11C30C6800"
 			tasks: [{
@@ -346,7 +347,7 @@
 			y: 15.0d
 		}
 		{
-			dependencies: ["0E1CAD3AF8127A47"]
+			dependencies: ["5B60A5DCEBD1E4FC"]
 			description: [
 				"The Motor is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."
 				""
@@ -374,7 +375,7 @@
 			y: 18.0d
 		}
 		{
-			dependencies: ["0E1CAD3AF8127A47"]
+			dependencies: ["5B60A5DCEBD1E4FC"]
 			description: ["The Piston is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
 			id: "03E47F8E6224D02E"
 			tasks: [{
@@ -564,8 +565,8 @@
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: -4.024829931972796d
-			y: 7.678571428571427d
+			x: -4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["777C8BA4044899FB"]
@@ -594,7 +595,7 @@
 				"658A2A18099ABF88"
 			]
 			description: [
-				"The process to obtain aluminium has been replaced from one adapted from &6&lSupersymmetry&r a WIP GregTech science-based modpack on 1.12."
+				"The process to obtain aluminium has been replaced with one adapted from &6&lSupersymmetry&r a WIP GregTech science-based modpack on 1.12."
 				""
 				"Supersymmetry removed the ubiquitous chemical reactor to replace it with an handful different machines. I've only adapted certain things, and more work is ahead."
 				""
@@ -823,8 +824,8 @@
 				item: "modern_industrialization:polarizer"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 13.5d
+			x: 3.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["787420B3F07B9909"]
@@ -1034,8 +1035,8 @@
 				item: "create:brass_funnel"
 				type: "item"
 			}]
-			x: -9.024829931972796d
-			y: 6.678571428571427d
+			x: -9.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["24F3AC19B2959B84"]
@@ -1046,8 +1047,8 @@
 				item: "create:brass_tunnel"
 				type: "item"
 			}]
-			x: -9.024829931972796d
-			y: 7.678571428571427d
+			x: -9.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["24F3AC19B2959B84"]
@@ -1058,8 +1059,8 @@
 				item: "create:smart_chute"
 				type: "item"
 			}]
-			x: -9.024829931972796d
-			y: 8.678571428571427d
+			x: -9.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["07DB471F85ADCCDA"]
@@ -1513,7 +1514,23 @@
 			]
 			title: "Mistakes were made"
 			x: 1.5d
-			y: 11.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["0E1CAD3AF8127A47"]
+			description: [
+				"Beauty is meant to be shown and shared."
+				""
+				"Please don't hide your spaghetti. "
+			]
+			id: "5B60A5DCEBD1E4FC"
+			tasks: [{
+				id: "6CFB6201B7E44767"
+				title: "A spaghetti of your own making"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 13.5d
 		}
 	]
 	title: "2 - Biribiri"

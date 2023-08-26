@@ -50,29 +50,63 @@ ItemEvents.modification(event => {
 */	
 
 ItemEvents.toolTierRegistry (event => {
+	
+	// vanilla axe, stone 9, iron 9, diamond 9
+	// vanilla sword, stone 5, iron 6, diamond 7  
+	// modded axe, stone 5, iron 6, diamond 7	
+	// modded sword, stone 4, iron 5, diamond 6 
+	// raw
+	// flint axe 8.4 0.9s, reinforced 8.8 0.9 
+	// flint sword 5.4 1.6s, reinforced 5.8 1.6s
+
 
   event.add('flint', tier => {
-    tier.uses = 180
-    tier.speed = 3.0
-    tier.attackDamageBonus = 1.1
+    tier.uses = 140
+    tier.speed = 4.2
+    tier.attackDamageBonus = 1.4
+    tier.level = 1
+    tier.enchantmentValue = 14
+	tier.repairIngredient = 'minecraft:flint'
+  })
+  event.add('reinforced_flint', tier => {
+    tier.uses = 220
+    tier.speed = 5.2
+    tier.attackDamageBonus = 1.8
     tier.level = 1
     tier.enchantmentValue = 14
 	tier.repairIngredient = 'minecraft:flint'
   })
   event.add('bronze', tier => {
     tier.uses = 280
-    tier.speed = 4.0
-    tier.attackDamageBonus = 1.2
+    tier.speed = 6.0
+    tier.attackDamageBonus = 2.5
     tier.level = 1
     tier.enchantmentValue = 14
 	tier.repairIngredient = 'modern_industrialization:bronze_ingot'
   })
-
-  
+ 
 })
 
-
 ItemEvents.modification(event => {
+	
+	// stone nerf, more space for flint
+	event.modify('minecraft:stone_pickaxe', pickaxe => {
+        pickaxe.setMaxDamage(100)
+    })
+	event.modify('minecraft:stone_axe', pickaxe => {
+        pickaxe.setMaxDamage(100)
+    })
+	event.modify('minecraft:stone_hoe', pickaxe => {
+        pickaxe.setMaxDamage(100)
+    })
+	event.modify('minecraft:stone_sword', pickaxe => {
+        pickaxe.setMaxDamage(100)
+    })
+	event.modify('minecraft:stone_shovel', pickaxe => {
+        pickaxe.setMaxDamage(100)
+    })
+	
+	
     event.modify('minecraft:iron_pickaxe', pickaxe => {
         pickaxe.setMaxDamage(400)
     })
@@ -498,6 +532,8 @@ event.create('geggy:heated_rubber');
 
 event.create('geggy:diamond_shards');
 
+event.create('geggy:plant_ball').displayName('Plant Ball');
+
 //////////////////
 
 event.create('geggy:muddy_coke_oven_blend'); 
@@ -568,6 +604,28 @@ event.create('geggy:rose_quartz_tube')
 event.create('geggy:tin_conduct')
 event.create('geggy:tin_spring')
 
+event.create('geggy:enderpearl_dust')
+event.create('geggy:item_filter')
+event.create('geggy:zinc_foil')
+event.create('geggy:steel_wire')
+event.create('geggy:fine_steel_wire')
+event.create('geggy:endereye_dust')
+event.create('geggy:endergetic_alloy_dust')
+event.create('geggy:vibrant_alloy_dust')
+event.create('geggy:conductive_iron_dust')
+event.create('geggy:black_steel_dust')
+event.create('geggy:red_alloy_dust')
+event.create('geggy:black_bronze_dust')
+event.create('geggy:hot_vibrant_alloy_ingot')
+event.create('geggy:vibrant_alloy_ingot')
+event.create('geggy:vibrant_alloy_plate')
+event.create('geggy:vibrant_alloy_ring')
+event.create('geggy:vibrant_alloy_rotor')
+
+event.create('geggy:raw_rubber_dust')
+event.create('geggy:propolis')
+event.create('geggy:sticky_resin')
+
 /*
 .tooltip('§8')
 
@@ -579,7 +637,22 @@ tooltip.add('mod:item', ["", "", ''])
 
 */
 
+event.create('geggy:reinforced_tool_rod')
+event.create('geggy:low_grade_resin_raw')
+event.create('geggy:low_grade_resin')
+
 event.create('geggy:flint_pickaxe', 'pickaxe').tier('flint')
+event.create('geggy:flint_axe', 'axe').tier('flint')
+event.create('geggy:flint_sword', 'sword').tier('flint')
+event.create('geggy:flint_shovel', 'shovel').tier('flint')
+event.create('geggy:flint_hoe', 'hoe').tier('flint')
+
+event.create('geggy:reinforced_flint_pickaxe', 'pickaxe').tier('reinforced_flint')
+event.create('geggy:reinforced_flint_axe', 'axe').tier('reinforced_flint')
+event.create('geggy:reinforced_flint_sword', 'sword').tier('reinforced_flint')
+event.create('geggy:reinforced_flint_shovel', 'shovel').tier('reinforced_flint')
+event.create('geggy:reinforced_flint_hoe', 'hoe').tier('reinforced_flint')
+
 event.create('geggy:bronze_pickaxe', 'pickaxe').tier('bronze')
 
 })
@@ -622,6 +695,11 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0xC94771)
     .noBucket
 	
+	event
+    .create('geggy:refined_glue')
+	.thinTexture(0xCDB583)
+    .noBucket
+	
 })	
 
 //onEvent('block.registry', (event) => {
@@ -629,6 +707,7 @@ StartupEvents.registry('block', event => {
 
 event.create('geggy:j_stripped_log').material('wood').displayName('Multiuse Stripped Log').hardness(3).tagBlock('minecraft:mineable/axe')
 event.create('geggy:reinforced_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
+event.create('geggy:borosilicate_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
 event.create('geggy:clay_bricks');
 
 // 1/19 missing grout, tinkers

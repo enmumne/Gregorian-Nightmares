@@ -11,7 +11,11 @@
 		{
 			dependencies: ["5DAA5DF264D1E559"]
 			description: [
-				"The Quarry is an essential multiblock machine. It will generate increasingly valuable resources for you as you progress through the pack. &o : &l>>Note that the standard Quarry System has been partially replaced. The Steam Quarry multiblock, here, is not directly available since the recipes require at least electricity. The only recipe still active is for the standard type of stones.<<"
+				"[This quest is optional]"
+				""
+				"The Quarry is an essential multiblock machine. It will generate increasingly valuable resources for you as you progress through the pack. "
+				""
+				"&o : &l>>Note that the standard Quarry System has been partially replaced. The Steam Quarry multiblock, here, is not directly available since the recipes require at least electricity. The only recipe still active is for the standard type of stones.<<"
 				""
 				"The Quarry will consume the drill heads you feed it and output the dirty version of the drill head. This drill head can be washed using the Create Washer and fed back to the machine for re-use."
 				""
@@ -19,6 +23,8 @@
 				""
 				"NOTE: Now that you do have access to ore generation and mob drops, it may be worth looking at both the Storage \\& Perks tabs to figure out how to store the Quarry outputs and also how to put your mob drops to good use."
 				""
+				""
+				"{@pagebreak}"
 				"&o&b 58 : when sceenshot describes it better than just a sentence aka (&luxv tier voidminer&r &bxddddd)"
 				"&o&b : what else in our reality can surpass the new horizons?"
 				"&o&4 27 : what the sus"
@@ -38,6 +44,7 @@
 			icon: "modern_industrialization:bronze_drill"
 			id: "0CE2D04744434785"
 			min_width: 320
+			optional: true
 			tasks: [
 				{
 					id: "49B89DFFEEC4A5A5"
@@ -518,10 +525,11 @@
 			description: [
 				"For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result."
 				""
-				"Note that the recipe was changed. Now the dusts don't go in the mixer, but in the alloy smelter."
+				"Note that the recipe was changed (again). You need to obtain nickel dust from a macerator, then smelt it with coal in a Steam Blast Furnace for the ingot. Then iron and nickel ingots go into the bronze alloy smelter, for invar."
 			]
 			icon: "modern_industrialization:invar_ingot"
 			id: "5DAA5DF264D1E559"
+			min_width: 210
 			tasks: [
 				{
 					id: "6BC244A4FA4C4DA0"
@@ -549,7 +557,7 @@
 				""
 				"Also, if you run out of free faces, you can craft an MD \"machine extender\". These blocks are placed above the MI machine you want to extend, and you can then connect to it more cables and pipes, and you can go as tall you want..."
 				""
-				"Use the MI pipe to remove connections or extractors."
+				"Use the MI wrench to remove connections or extractors."
 			]
 			id: "6D27859AE4185773"
 			tasks: [{
@@ -1102,6 +1110,71 @@
 			]
 			x: -22.5d
 			y: 19.0d
+		}
+		{
+			dependencies: ["39754E37B49FAC5E"]
+			description: [
+				"Extra notes on fluid pipes:"
+				""
+				"As written in the \"Known Issues \\& Notes\" page, sometime when you reload a world fluid pipes show as not connected even if still working, or just look weird. This can be quickly fixed by pressing \"&aF3+t&r\" (reloading resources)."
+				""
+				"MI machines can usually auto-extract from the marked face (usually on the back, unless moved manually with a wrench and SHIFT + right click), but if you want to move things manually, even when using item pipes taking items from a barrel, you need to use an \"&eextractor&r\". A red and white item, look it up on REI/EMI. Just apply it to the end of the pipe connected to a barrel or tank you want to extract from."
+				""
+				"MD pipes don't behave coherently. &bThey will look empty while transfering fluid&r. This because they act like a container, but only getting filled with the fluid AFTER the destination is full."
+				""
+				"Let's say you are moving a fluid onto a very large tank. While this process of transfering fluid is ongoing, the level will increase in the tank, but the pipe will look empty, apparently doing nothing. Only after the destination tank is completely full you'll see the fluid pipe filling up with the corresponding fluid type, and the tooltip will also then show both the fluid and amount within."
+			]
+			id: "2D9FCCC50C86C0B7"
+			min_width: 260
+			tasks: [{
+				id: "5B82FE16164A9934"
+				item: "moderndynamics:fluid_pipe"
+				type: "item"
+			}]
+			title: "Incongrous Fluidification"
+			x: -19.5d
+			y: 20.5d
+		}
+		{
+			dependencies: ["2D9FCCC50C86C0B7"]
+			description: [
+				"MI Large Tanks, being defined in code, can't be messed with."
+				""
+				"Therefore, you can start using them as soon you have steel and glass. Not going to be cheap, but they can store huge amounts of one fluid."
+				""
+				"Their size determines how much fluid, but to use a different size than the default 3x3x3 you need to place the controller and then manually select a custom shape from the interface. The maximum being 7x7x7. (then use a wrench as always to have a better idea of where to place glass and steel machine casings)"
+				""
+				"As the tooltip says, for every block within the structure, you get 64 buckets of storage."
+				""
+				"So, "
+				"3x3x3 = 64 blocks = &b1K 728&r buckets"
+				"7x7x7 = 343 blocks = &b22M&r buckets"
+				""
+				"To add fluid to this tank you need specifically a Large Tank Hatch. "
+				""
+				"While the structure may look fragile with the glass, and so risking of voiding huge amounts of fluid after a small mistake, the actual fluid amount is only registered to the \"controller\" of the machine. As soon you restore the structure, the fluid will be back. Breaking the hatch is also harmless."
+				""
+				"Everything will get voided instead if you break the controller."
+			]
+			icon: "modern_industrialization:large_tank"
+			id: "62043941D20CCAE3"
+			min_width: 270
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "30F59F729CE9DB03"
+					item: "modern_industrialization:large_tank"
+					type: "item"
+				}
+				{
+					id: "38E21F881E77F88F"
+					item: "modern_industrialization:large_tank_hatch"
+					type: "item"
+				}
+			]
+			title: "Larger than life"
+			x: -18.0d
+			y: 20.5d
 		}
 	]
 	title: "1 - Steam"

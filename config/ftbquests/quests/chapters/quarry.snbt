@@ -596,7 +596,7 @@
 		{
 			dependencies: ["3601E10BBDCD8C37"]
 			description: [
-				"A breakdown of the recipes for each tier. This should give you an idea of how many &6raw ores&r of the main type, for a full hour of continuous running. No costs considered."
+				"A breakdown of the recipes for each tier. This should give you an idea of how many &6raw ores&r of the main type, for a full hour of continuous activity. No costs considered."
 				""
 				"&l&dTier 1"
 				"Copper &a34.8&r, Tin &a7.2&r, Coal &a21&r, Lignite &a16.8&r"
@@ -691,7 +691,7 @@
 			]
 			icon: "moderndynamics:fluid_pipe"
 			id: "73112993B371F2B5"
-			min_width: 275
+			min_width: 270
 			tasks: [
 				{
 					id: "4F1F6BCBF8E80D42"
@@ -926,7 +926,7 @@
 				"- The LV Miner only uses HSLA Steel Drills, so it doesn't carry over drills from the previous tier."
 				"- In most cases the outputs are now ore blocks, not raw ores."
 				"- Lubrificant is required in the recipe."
-				"- Each recipe is usually producing just one ore type, with some exceptions."
+				"- Each recipe is usually producing just one ore type, with exceptions."
 				""
 				"I spent two days figuring out the numbers, but things could still need more work. This system now expects you to do some basic ore processing, before I do a major redesign of that aspect."
 				""
