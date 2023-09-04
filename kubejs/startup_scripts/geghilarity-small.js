@@ -210,7 +210,7 @@ MIMachineEvents.registerMachines(event => {
 	
 	event.craftingSingleBlock(
 		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
-		"Fluid Extractor", "fextract", FEXTRACT, ["steel", "electric"],
+		"Fluid Extractor", "fextract", FEXTRACT, ["electric"],
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
 		170, event.progressBar(73, 34, "extract"), event.efficiencyBar(38, 60), event.energyBar(14, 34),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs

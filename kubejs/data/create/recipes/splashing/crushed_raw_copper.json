@@ -7,11 +7,11 @@
   ],
   "results": [
     {
-      "count": 3,
-      "item": "modern_industrialization:copper_nugget"
+      "count": 1,
+      "item": "minecraft:raw_copper"
     },
     {
-      "chance": 0.5,
+      "chance": 0.2,
       "item": "modern_industrialization:tin_nugget"
     }
   ]

@@ -608,9 +608,9 @@ event.create('geggy:enderpearl_dust')
 event.create('geggy:item_filter')
 event.create('geggy:zinc_foil')
 event.create('geggy:steel_wire')
-event.create('geggy:fine_steel_wire')
+event.create('geggy:steel_fine_wire')
 event.create('geggy:endereye_dust')
-event.create('geggy:endergetic_alloy_dust')
+event.create('geggy:energetic_alloy_dust')
 event.create('geggy:vibrant_alloy_dust')
 event.create('geggy:conductive_iron_dust')
 event.create('geggy:black_steel_dust')
@@ -625,6 +625,21 @@ event.create('geggy:vibrant_alloy_rotor')
 event.create('geggy:raw_rubber_dust')
 event.create('geggy:propolis')
 event.create('geggy:sticky_resin')
+
+event.create('geggy:black_steel_ingot')
+event.create('geggy:black_steel_plate')
+event.create('geggy:black_steel_wire')
+event.create('geggy:black_steel_fine_wire')
+event.create('geggy:aluminium_fine_wire')
+event.create('geggy:low_voltage_coil')
+event.create('geggy:medium_voltage_coil')
+event.create('geggy:high_voltage_coil')
+event.create('geggy:magnetic_iron_rod')
+event.create('geggy:neodymium_ingot')
+event.create('geggy:neodymium_rod')
+event.create('geggy:magnetic_neodymium_rod')
+event.create('geggy:tungstensteel_fine_wire')
+event.create('geggy:extreme_voltage_coil')
 
 /*
 .tooltip('§8')
@@ -697,7 +712,12 @@ StartupEvents.registry('fluid', event => {
 	
 	event
     .create('geggy:refined_glue')
-	.thinTexture(0xCDB583)
+	.thinTexture(0xF9C988)
+    .noBucket
+	
+	event
+    .create('geggy:rubber')
+	.thinTexture(0x969366)
     .noBucket
 	
 })	

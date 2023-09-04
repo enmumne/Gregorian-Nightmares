@@ -662,47 +662,5 @@ event.custom({
 		
 		.itemOut('modern_industrialization:electrolyzer', 1)
 	
-	// chemical reactor	
-	event.remove({id: 'modern_industrialization:electric_age/machine/chemical_reactor_asbl'})
-	
-		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/chemical_reactor'})
-		event.recipes.modern_industrialization.assembler(32, 200)
-		.itemIn('2x ae2:quartz_vibrant_glass', 1)
-		.itemIn('2x modern_industrialization:electronic_circuit', 1)
-		.itemIn('modern_industrialization:basic_machine_hull', 1)
-		.itemIn('2x modern_industrialization:aluminum_rotor', 1)
-		.itemIn('modern_industrialization:tin_cable', 1)
-		.itemIn('modern_industrialization:large_motor', 1)
-		
-		.itemOut('modern_industrialization:chemical_reactor', 1)	
-
-	
-
-
-	//centrifuge reowrk
-		event.remove({id: 'modern_industrialization:electric_age/machine/centrifuge_asbl'})
-		event.shaped('modern_industrialization:centrifuge', [
-		"APA",
-		"CSC",
-		"ANA"
-	], {
-		A: 'modern_industrialization:motor',
-		S: 'modern_industrialization:basic_machine_hull',
-		C: 'modern_industrialization:tin_cable',
-		N: 'modern_industrialization:analog_circuit',
-		P: 'modern_industrialization:pump'
-	})
-	
-	
-		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/centrifuge'})
-		event.recipes.modern_industrialization.assembler(8, 200)
-		.itemIn('modern_industrialization:basic_machine_hull', 1)
-		.itemIn('2x modern_industrialization:tin_cable', 1)
-		.itemIn('1x modern_industrialization:pump', 1)
-		.itemIn('1x modern_industrialization:analog_circuit', 1)
-		.itemIn('4x modern_industrialization:motor', 1)
-		
-		.itemOut('modern_industrialization:centrifuge', 1)
-	
 	
 })	

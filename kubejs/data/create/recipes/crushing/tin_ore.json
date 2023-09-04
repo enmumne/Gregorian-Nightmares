@@ -20,6 +20,7 @@
     },
     {
       "chance": 0.75,
+	  "count": 2,
       "item": "create:crushed_raw_tin"
     },
     {

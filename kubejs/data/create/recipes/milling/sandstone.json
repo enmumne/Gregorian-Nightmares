@@ -1,0 +1,18 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:sandstone"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "item": "minecraft:sand"
+    },
+	{
+	  "chance": 0.3,	
+      "item": "geggy:saltpeter"
+    }
+  ]
+}

@@ -1304,225 +1304,224 @@ StartupEvents.registry('fluid', event => {
 	
 	event
     .create('geghilarity:diphenyl_isophthalate_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x164652)
     .noBucket
 	
 	event
     .create('geghilarity:diaminobenzidine_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x4C5E55)
     .noBucket
 	
 	event
     .create('geghilarity:polybenzimidazole_polymerization_mix')
-	.thinTexture(0x205544)
-	.thinTexture(0x205544)
+	.thinTexture(0x312721)
     .noBucket
 	
 	event
     .create('geghilarity:polybenzimidazole_prepolymer_foam')
-	.thinTexture(0x205544)
+	.thinTexture(0x27231F)
     .noBucket
 	
 	event
     .create('geghilarity:impure_polybenzimidazole_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x252221)
     .noBucket
 	
 	event
     .create('geghilarity:dimethylacetamide')
-	.thinTexture(0x205544)
+	.thinTexture(0x0A6108)
     .noBucket
 	
 	event
     .create('geghilarity:polybenzimidazole_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x14110E)
     .noBucket
 	
 	event
     .create('geghilarity:polybenzimidazole_waste')
-	.thinTexture(0x205544)
+	.thinTexture(0x1A1B1D)
     .noBucket
 	
 	event
     .create('geghilarity:dichloroethane')
-	.thinTexture(0x205544)
+	.thinTexture(0x37074A)
     .noBucket
 	
 	event
     .create('geghilarity:trimethylamine')
-	.thinTexture(0x205544)
+	.thinTexture(0x391E48)
     .noBucket
 	
 	event
     .create('geghilarity:dimethylacetamide_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x073360)
     .noBucket
 	
 	event
     .create('geghilarity:hot_compressed_ammonia')
-	.thinTexture(0x205544)
+	.thinTexture(0x352D60)
     .noBucket
 	
 	event
     .create('geghilarity:3_3_dichlorobenzidine_solution')
 	.displayName('3,3-Dichlorobenzidine Solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x98AF3F)
     .noBucket
 	
 	event
     .create('geghilarity:2_2_dichlorohydrazobenzene_solution')
 	.displayName('2,2-Dichlorohydrazobenzene Solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x665E38)
     .noBucket
 	
 	event
     .create('geghilarity:hot_high-pressure_hydrogen')
-	.thinTexture(0x205544)
+	.thinTexture(0x04047D)
     .noBucket
 	
 	event
     .create('geghilarity:2-nitrochlorobenzene')
 	.displayName('2-Nitrochlorobenzene')
-	.thinTexture(0x205544)
+	.thinTexture(0x698414)
     .noBucket
 	
 	event
     .create('geghilarity:mixed_nitrochlorobenzene_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x8A6412)
     .noBucket
 	
 	event
     .create('geghilarity:phosgene')
-	.thinTexture(0x205544)
+	.thinTexture(0x6F2804)
     .noBucket
 	
 	event
     .create('geghilarity:dichloroethane_isophthalic_acid_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x2C954B)
     .noBucket
 	
 	event
     .create('geghilarity:isophthaloyl_dichloride_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x3F1654)
     .noBucket
 	
 	event
     .create('geghilarity:isophthalic_acid_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x3C507D)
     .noBucket
 	
 	event
     .create('geghilarity:hot_high-pressure_oxygen')
-	.thinTexture(0x205544)
+	.thinTexture(0x3786AE)
     .noBucket
 	
 	event
     .create('geghilarity:hot_high-pressure_air')
-	.thinTexture(0x205544)
+	.thinTexture(0x758FA7)
     .noBucket
 	
 	event
     .create('geghilarity:m-xylene')
 	.displayName('m-Xylene')
-	.thinTexture(0x205544)
+	.thinTexture(0x302B24)
     .noBucket
 	
 	event
-    .create('geghilarity:m/p-xylene_mixture')
+    .create('geghilarity:m-p-xylene_mixture')
 	.displayName('m/p-Xylene Mixture')
-	.thinTexture(0x205544)
+	.thinTexture(0x201A13)
     .noBucket
 	
 	event
     .create('geghilarity:xylene_mixture')
-	.thinTexture(0x205544)
+	.thinTexture(0x231E18)
     .noBucket
 	
 	event
     .create('geghilarity:btex')
 	.displayName('B.T.E.X')
-	.thinTexture(0x205544)
+	.thinTexture(0x5E5E4B)
     .noBucket
 	
 	event
     .create('geghilarity:btex_extract')
 	.displayName('B.T.E.X Extract')
-	.thinTexture(0x205544)
+	.thinTexture(0x7A7A5B)
     .noBucket
 	
 	event
     .create('geghilarity:furfural')
-	.thinTexture(0x205544)
+	.thinTexture(0x131193)
     .noBucket
 	
 	event
     .create('geghilarity:furfural_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x289588)
     .noBucket
 	
 	event
     .create('geghilarity:rearranged_cumene')
-	.thinTexture(0x205544)
+	.thinTexture(0x39221D)
     .noBucket
 	
 	event
     .create('geghilarity:acidic_cumene')
-	.thinTexture(0x205544)
+	.thinTexture(0x40140A)
     .noBucket
 	
 	event
     .create('geghilarity:hot_high-pressure_propene')
-	.thinTexture(0x205544)
+	.thinTexture(0xBBA54C)
     .noBucket
 	
 	event
     .create('geghilarity:hot_high-pressure_benzene')
-	.thinTexture(0x205544)
+	.thinTexture(0x1C1A19)
     .noBucket
 	
 	event
     .create('geghilarity:sodium_phenoxide_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x076D7D)
     .noBucket
 	
 	event
     .create('geghilarity:naphtha_reformate')
-	.thinTexture(0x205544)
+	.thinTexture(0xB0B076)
     .noBucket
 	
 	event
     .create('geghilarity:mixed_nitrochlorobenzene')
-	.thinTexture(0x205544)
+	.thinTexture(0x777932)
     .noBucket
 	
 	event
     .create('geghilarity:methylamine_mix')
-	.thinTexture(0x205544)
+	.thinTexture(0x4D3976)
     .noBucket
 	
 	event
     .create('geghilarity:tetrabromomethane')
-	.thinTexture(0x205544)
+	.thinTexture(0x330A0A)
     .noBucket
 	
 	event
     .create('geghilarity:low-grade_red_mud')
-	.thinTexture(0x205544)
+	.thinTexture(0x682E21)
     .noBucket
 	
 	event
     .create('geghilarity:concentrated_low-grade_red_mud')
-	.thinTexture(0x205544)
+	.thinTexture(0x5D2F25)
     .noBucket
 	
 	event
     .create('geghilarity:sodium_silicate_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x122871)
     .noBucket
 	
 	event
     .create('geghilarity:diluted_sodium_silicate_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x088009)
     .noBucket
 	
 	// rubber styrene butadiene
@@ -1530,227 +1529,232 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geghilarity:polymerized_styrene_butadiene_solution')
 	.displayName('Polymerized Styrene-Butadiene Solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x2E1C07)
     .noBucket
 	
 	event
     .create('geghilarity:n-butyllithium')
 	.displayName('n-Butyllitium')
-	.thinTexture(0x205544)
+	.thinTexture(0x0F373D)
     .noBucket
 	
 	event
     .create('geghilarity:diluted_n-butyllithium')
 	.displayName('Diluted n-Butyllitium')
-	.thinTexture(0x205544)
+	.thinTexture(0x08791E)
     .noBucket
 	
 	event
     .create('geghilarity:styrene_butadiene_solution')
 	.displayName('Styrene-Butadiene Solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x9E0970)
     .noBucket
 	
 	event
     .create('geghilarity:dry_ethanol')
-	.thinTexture(0x205544)
+	.thinTexture(0xA74D26)
     .noBucket
 	
 	event
     .create('geghilarity:crude_styrene')
-	.thinTexture(0x205544)
+	.thinTexture(0x3C3C32)
     .noBucket
 	
 	event
     .create('geghilarity:lithium_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x5F0504)
     .noBucket
 	
 	event
     .create('geghilarity:1-bromobutane')
 	.displayName('1-Bromobutane')
-	.thinTexture(0x205544)
+	.thinTexture(0x0C5674)
     .noBucket
 	
 	event
     .create('geghilarity:diluted_1-bromobutane')
 	.displayName('Diluted 1-Bromobutane')
-	.thinTexture(0x205544)
+	.thinTexture(0x078999)
     .noBucket
 	
 	event
     .create('geghilarity:hydrobromic_acid')
-	.thinTexture(0x205544)
+	.thinTexture(0x167E6B)
     .noBucket
 	
 	event
     .create('geghilarity:n-butanol')
 	.displayName('n-Butanol')
-	.thinTexture(0x205544)
+	.thinTexture(0x0A5A37)
     .noBucket
 	
 	event
-    .create('geghilarity:ziegler_alcohol_mixture')
-	.thinTexture(0x205544)
+    .create('geghilarity:ziegler_alfol_mixture')
+	.thinTexture(0x935A28)
     .noBucket
 	
 	event
     .create('geghilarity:aluminium_alkoxide_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x4B575E)
     .noBucket
 	
 	event
     .create('geghilarity:brominated_sulfur_dioxide')
-	.thinTexture(0x205544)
+	.thinTexture(0x4D190B)
     .noBucket
 	
 	event
     .create('geghilarity:chlorinated_beryl')
-	.thinTexture(0x205544)
+	.thinTexture(0x340E11)
     .noBucket
 	
 	event
     .create('geghilarity:aluminium_chloride')
-	.thinTexture(0x205544)
+	.thinTexture(0x9E2A30)
     .noBucket
 	
 	event
     .create('geghilarity:silicon_tetrachloride')
-	.thinTexture(0x205544)
+	.thinTexture(0x49605E)
     .noBucket
 	
 	event
     .create('geghilarity:beryllium_chloride')
-	.thinTexture(0x205544)
+	.thinTexture(0x97301C)
     .noBucket
 	
 	event
     .create('geghilarity:salt')
-	.thinTexture(0x205544)
+	.thinTexture(0xC3C3C3)
     .noBucket
 	
 	event
-    .create('geghilarity:molten_titanium')
-	.thinTexture(0x205544)
+	.create('geghilarity:molten_titanium')
+	.thinTexture(0xA87AB7)
     .noBucket
 	
 	// gtnh monazite
 	event
     .create('geghilarity:muddy_monazite_rare_earth_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x5A402F)
     .noBucket
 	
 	event
     .create('geghilarity:diluted_monazite_rare_earth_mud')
-	.thinTexture(0x205544)
+	.thinTexture(0x7F614A)
     .noBucket
 	
 	event
     .create('geghilarity:hafnium_tetrachloride_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0xAAB0B1)
     .noBucket
 	
 	event
     .create('geghilarity:zirconium_tetrachloride_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x81766D)
     .noBucket
 	
 	event
     .create('geghilarity:diluted_monazite_sulfate')
-	.thinTexture(0x205544)
+	.thinTexture(0xA98F7E)
     .noBucket
 	
 	event
     .create('geghilarity:nitrogenated_monazite_rare_earth_concentrate')
-	.thinTexture(0x205544)
+	.thinTexture(0xB7A480)
     .noBucket
 	
 	event
     .create('geghilarity:nitric-leached_monazite_mixture')
 	.displayName('Nitric-Leached Monazite Mixture')
-	.thinTexture(0x205544)
+	.thinTexture(0x5A2563)
     .noBucket
 	
 	event
     .create('geghilarity:iodine')
-	.thinTexture(0x205544)
+	.thinTexture(0x7E1E81)
     .noBucket
 	
 	event
     .create('geghilarity:nitric_monazite_leached_concentrate')
-	.thinTexture(0x205544)
+	.thinTexture(0xAD9011)
     .noBucket
 	
 	event
     .create('geghilarity:oxalate')
-	.thinTexture(0x205544)
+	.thinTexture(0x589B3E)
     .noBucket
 	
 	event
     .create('geghilarity:seaweed_concentrate')
-	.thinTexture(0x205544)
+	.thinTexture(0x344A35)
     .noBucket
 	
 	event
     .create('geghilarity:seaweed_byproducts')
-	.thinTexture(0x205544)
+	.thinTexture(0x5B2565)
     .noBucket
 	
 	event
     .create('geghilarity:acid_naquadah_emulsion')
-	.thinTexture(0x205544)
+	.thinTexture(0x1B1A1A)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_emulsion')
-	.thinTexture(0x205544)
+	.thinTexture(0x363333)
     .noBucket
 	
 	event
     .create('geghilarity:molten_neodymium')
-	.thinTexture(0x205544)
+	.thinTexture(0x585858)
     .noBucket
 	
 	event
     .create('geghilarity:molten_europium')
-	.thinTexture(0x205544)
+	.thinTexture(0xD9A0E1)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_gas')
-	.thinTexture(0x205544)
+	.thinTexture(0x46A005)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_solution')
-	.thinTexture(0x205544)
+	.thinTexture(0x636061)
     .noBucket
 	
 	event
     .create('geghilarity:light_naquadah_fuel')
-	.thinTexture(0x205544)
+	.thinTexture(0x48984A)
     .noBucket
 	
 	event
     .create('geghilarity:heavy_naquadah_fuel')
-	.thinTexture(0x205544)
+	.thinTexture(0x2CBC2E)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_asphalt')
-	.thinTexture(0x205544)
+	.thinTexture(0x09200B)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_based_liquid_fuel_mki')
 	.displayName('Naquadah Based Liquid Fuel MK-1')
-	.thinTexture(0x205544)
+	.thinTexture(0x4F4B4B)
     .noBucket
 	
 	event
     .create('geghilarity:naquadah_based_liquid_fuel_mki_depleted')
 	.displayName('Naquadah Based Liquid Fuel MK-1 (Depleted)')
-	.thinTexture(0x205544)
+	.thinTexture(0x969191)
+    .noBucket
+	
+	event
+    .create('geghilarity:sodium_potassium')
+	.thinTexture(0x4AB683)
     .noBucket
    
 })
@@ -2188,7 +2192,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:samaric_residue_dust')
 	event.create('geghilarity:cerium_chloride_dust')
 	event.create('geghilarity:cerium_oxalate_dust')
-	event.create('geghilarity:cerium_iii_oxide_dust').displayName('Cerium III Oxide Dust')
+	event.create('geghilarity:cerium_iii_oxide_dust').displayName('Cerium (III) Oxide Dust')
 	event.create('geghilarity:cerium_dust')
 	event.create('geghilarity:small_seaweed_ash_dust').displayName('Small Pile of Seaweed Ash Dust');
 	event.create('geghilarity:seaweed_ash_dust')

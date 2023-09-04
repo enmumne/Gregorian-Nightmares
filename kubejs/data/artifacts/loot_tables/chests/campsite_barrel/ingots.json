@@ -1,7 +1,6 @@
 {
   "pools": [
     {
-      "name": "ingots",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
@@ -55,7 +54,7 @@
               "add": false
             }
           ],
-          "name": "geggy:precious_ingot"
+          "name": "geghilarity:precious_ingot"
         },
         {
           "type": "minecraft:item",

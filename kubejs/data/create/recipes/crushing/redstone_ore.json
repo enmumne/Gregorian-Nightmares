@@ -8,11 +8,11 @@
   "processingTime": 250,
   "results": [
     {
-      "count": 3,
+      "count": 5,
       "item": "modern_industrialization:redstone_crushed_dust"
     },
     {
-	  "count": 2,	 
+	  "count": 3,	 
       "chance": 0.5,
       "item": "modern_industrialization:redstone_crushed_dust"
     },

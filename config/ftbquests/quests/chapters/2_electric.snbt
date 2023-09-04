@@ -19,7 +19,7 @@
 				""
 				"&o : Note that quests and progression are both in the process of being overhauled, so these are still mostly \"legacy\", as you can see from the Brass quest, considering you've had access to brass for quite a while..."
 				""
-				"&oDon't trust these quests. Just use them as an overall direction for progress."
+				"&o&eDon't trust these quests. Just use them as an overall direction for progress."
 				""
 				"&o&d 2T : 0C if you're still around lemme show you how you make your first electricity :trollge:"
 				"&o&d : first you need a burning box to make heat as HU. This is a steel one."
@@ -124,27 +124,63 @@
 				"74F4734C56873B9A"
 			]
 			description: [
-				"Cables are a very important as a crafting ingredient, but also in supplying power to the electronic machines you're eventually going to craft and use."
+				"There &mare&r were 5 tiers of cables used throughout MI. Each having different power (EU) transfer rates so be sure to check REI/tooltips for information. "
 				""
-				"There are 5 tiers of cables used throughout MI. They each have different power(EU) transfer rates so be sure to check REI for information. You'll learn more about the power system when it's time to set up your first electric machine."
+				"Moving into LV (Low Voltage), machines aren't anymore powered by steam, but will need electricity. That can be produced with turbines or Diesel generators burining a variety of fluids. In order to give power to the new machine tiers you need some energy cables, of course."
 				""
-				"NOTE: You'll hear more about EU in the quests to come, but a quick note here that even though cables transfer EU, they can power any machine outside of MI as well."
+				"But this is a wild experiment, and &eall MI standard cables have been removed&r and pushed much later in the progression. So what options do you have? ...Powah Forge Energy (FE) cables."
+				""
+				"The system is fairly simple to understand because whenever you see an FE number you can just assume it's EU. Same values. "
+				""
+				"FE cables should work seamlessy with MI machines. You're supposed to move through tiers as they become available. Go to the next page for more technical information."
+				""
+				""
+				"{@pagebreak}"
+				"Here's a breakdown of the cable tiers BEFORE MI ones are unlocked:"
+				""
+				"- Starter (red alloy) 16 EU"
+				"- Basic (tin) 32 EU"
+				"- Hardened (aluminium) 128 EU"
+				"- Blazing (electrum) 512 EU"
+				"- Niotic (black steel) 2048 EU"
+				""
+				"These are \"nerfed\" compared to MI values, but more in line with classic GregTech."
+				""
+				"At this stage you should be able to craft only the first tier. The second one is available as soon you have assemblers."
+				""
+				"The tiers are somewhat gated by rubber. The Blazing/electrum tier will require Isoprene rubber, that is produced through some petrochem. But petrochem overhaul is ongoing, so things could keep changing."
+				""
+				"The Niotic/black steel tier will also require PVC. Whereas all MI cables will be based on Styrene-Butadiene rubber."
+				""
+				"There are two more tiers of FE cables, Spirited and Nitro, but they currently have no recipes and may be used in the future to fill gaps of the late game."
+				""
+				""
+				"{@pagebreak}"
+				"There are some further repercussions coming from this different system:"
+				""
+				"- FE cables occupy the full block, so can't share space with pipes. This makes things more challenging to organize."
+				""
+				"- These cables IGNORE hulls. This is an unwanted side effect that can't be fixed at the moment. Ideally machine upgrades should be dependent on hulls, but in MI they are separate systems. For higher EU recipe you can simply add upgrades. Hulls in this case would only offer a bigger power \"buffer\", for energy that is stored in the machine, that can still be useful for smooth operation."
+				""
+				"- If you run \"out of faces\", to connect stuff to the machines, remember there are \"machine extenders\". That's the other item on this quest, note that it's optional to complete the quest. Machine extenders are blocks that can be placed on top of a MI machine (not under it), and can also be piled upwards infinitely. You can use these to connect to a machine as many cables and pipes you want. There's no limit."
 			]
+			icon: "powah:energy_cable_basic"
 			id: "276B9E79AF572E91"
-			min_width: 250
-			tasks: [{
-				id: "68BD7BB024029C0F"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "modern_industrialization:lv_cables"
-					}
+			min_width: 260
+			tasks: [
+				{
+					id: "46F5ED0E4ABEF4C4"
+					item: "powah:energy_cable_starter"
+					type: "item"
 				}
-				title: "Any #modern_industrialization:lv_cables"
-				type: "item"
-			}]
-			title: "Cables"
+				{
+					id: "3ACF2D68C44FC7F1"
+					item: "moderndynamics:machine_extender"
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Cabble-Babble"
 			x: 1.5d
 			y: 4.5d
 		}
@@ -227,6 +263,7 @@
 				"These are the various components needed for crafting your first circuit."
 				""
 			]
+			icon: "modern_industrialization:capacitor"
 			id: "717E4973C497B4C7"
 			tasks: [
 				{
@@ -261,6 +298,7 @@
 				"&o&d 79 : just craft more dynamos"
 				"&o&d : oh wait"
 			]
+			icon: "modern_industrialization:lv_steam_turbine"
 			id: "0E1CAD3AF8127A47"
 			min_width: 250
 			tasks: [
@@ -930,6 +968,13 @@
 		{
 			dependencies: ["4441E8BB7DC928B0"]
 			description: ["Rubber equipment is a must when using Jetpacks."]
+			icon: {
+				Count: 1b
+				id: "modern_industrialization:rubber_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "568822852483E34D"
 			tasks: [
 				{
@@ -1159,6 +1204,7 @@
 			dependencies: [
 				"7593BDF715A3AC99"
 				"249F36B29911D889"
+				"34BFC85B87058DAC"
 			]
 			description: [
 				"Bauxite is the start for both aluminium and titanium. Of course you don't have to worry about titanium at this point. But the two are somewhat connected."
@@ -1524,6 +1570,7 @@
 				"Please don't hide your spaghetti. "
 			]
 			id: "5B60A5DCEBD1E4FC"
+			min_width: 220
 			tasks: [{
 				id: "6CFB6201B7E44767"
 				title: "A spaghetti of your own making"
@@ -1531,6 +1578,23 @@
 			}]
 			x: 1.5d
 			y: 13.5d
+		}
+		{
+			description: [
+				"In standard MI progression the Centrifuge is unlocked later."
+				""
+				"Due to too many conflicts this machine is just thrown in the general mix, as it is required for too many different things."
+			]
+			id: "34BFC85B87058DAC"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "6834ABE6667EE2BD"
+				item: "modern_industrialization:centrifuge"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 20.5d
 		}
 	]
 	title: "2 - Biribiri"

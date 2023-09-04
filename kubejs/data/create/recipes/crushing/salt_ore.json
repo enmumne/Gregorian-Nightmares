@@ -1,0 +1,42 @@
+{
+  "type": "create:crushing",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "values": [
+        "c:salt_ores"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:salt_ores"
+    }
+  ],
+  "processingTime": 400,
+  "results": [
+    {
+	  "count": 2,	
+      "item": "modern_industrialization:salt_crushed_dust"
+    },
+	{
+	  "count": 1,
+	  "chance": 0.5,	
+      "item": "modern_industrialization:salt_crushed_dust"
+    },
+	{
+	  "count": 1,
+	  "chance": 0.35,	
+      "item": "geghilarity:rock_salt_dust"
+    },
+	{
+      "chance": 0.45,
+      "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.6,
+	  "count": 1,
+      "item": "magick:stone_dust"
+    }
+  ]
+}

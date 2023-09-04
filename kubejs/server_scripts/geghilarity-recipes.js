@@ -186,26 +186,6 @@ ServerEvents.recipes(event => {
 		]
 	})	
 	
-	event.remove({type: "modern_industrialization:assembler", output: `modern_industrialization:digital_circuit_board`})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 16,
-		duration: 500,
-		item_inputs: [ 
-			{item: "modern_industrialization:aluminum_cable", amount: 6},
-			{item: "modern_industrialization:silicon_battery", amount: 1},
-			{item: "modern_industrialization:electronic_circuit_board", amount: 1},
-			{item: "modern_industrialization:stainless_steel_plate", amount: 4},
-			{item: "geghilarity:advanced_circuit_board", amount: 1}
-		],
-		fluid_inputs: [ 
-			{fluid: "modern_industrialization:polyethylene", amount: 750}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:digital_circuit_board", amount: 1}
-		]
-	})
-	
 	// start
 	event.custom({ 
 		type: "modern_industrialization:centrifuge",
@@ -2150,19 +2130,6 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [	
 			{item: "geghilarity:tungstensteel_ingot", amount: 1}
-		]
-	})
-	
-	// TS4
-	event.custom({ 
-		type: "modern_industrialization:compressor",
-		eu: 24,
-		duration: 118,
-		item_inputs: [ 
-			{item: "geghilarity:tungstensteel_ingot", amount: 1}
-		],
-		item_outputs: [
-			{item: "geghilarity:tungstensteel_plate", amount: 1}
 		]
 	})
 		
@@ -5478,44 +5445,6 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.remove({id: `modern_industrialization:materials/cupronickel/craft/coil`})
-	event.remove({id: `modern_industrialization:materials/kanthal/craft/coil`})
-	event.remove({id: `modern_industrialization:materials/cupronickel/assembler/coil`})
-	event.remove({id: `modern_industrialization:materials/kanthal/assembler/coil`})
-	// C2
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 8,
-		duration: 100,
-		item_inputs: [ 
-			{item: "geghilarity:alumino_silicate_wool", amount: 12},
-			{item: "modern_industrialization:cupronickel_cable", amount: 8}
-		],
-		fluid_inputs: [ 
-			{fluid: "geghilarity:tin", amount: 144}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:cupronickel_coil", amount: 1}
-		]
-	})
-	
-	// C3
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 300,
-		item_inputs: [ 
-			{item: "geghilarity:mica_insulator_foil", amount: 8},
-			{item: "modern_industrialization:kanthal_cable", amount: 8}
-		],
-		fluid_inputs: [ 
-			{fluid: "geghilarity:mcopper", amount: 144}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:kanthal_coil", amount: 1}
-		]
-	})
-	
 	// C4 needed for basic upgrades, requires upgrade, so jumpstarted by created at a loss
 	event.custom({ 
 		type: "modern_industrialization:fextract",
@@ -5719,20 +5648,6 @@ ServerEvents.recipes(event => {
 	})
 	
 	// C14a > done before
-
-	
-	// C14b
-	event.custom({ 
-		type: "modern_industrialization:wiremill",
-		eu: 8,
-		duration: 500,
-		item_inputs: [ 
-			{item: "geghilarity:tungstensteel_plate", amount: 1}
-		],
-		item_outputs: [
-			{item: "geghilarity:tungstensteel_wire", amount: 2}
-		]
-	})
 	
 	// C14c
 	event.custom({ 
@@ -6072,35 +5987,6 @@ ServerEvents.recipes(event => {
 			fluid_outputs: [
 				{fluid: "minecraft:water", amount: 1000}
 			]
-	})
-	
-	//silicon battery rework
-		event.remove({id: 'modern_industrialization:assembler_generated/electric_age/battery/silicon_battery'})
-		event.remove({id: 'modern_industrialization:electric_age/battery/silicon_battery_asbl'})
-		
-			event.shaped("modern_industrialization:silicon_battery", [
-		"ABA",
-		"CLC",
-		"CLC"
-	], {
-		C: "modern_industrialization:battery_alloy_curved_plate",
-		B: "modern_industrialization:battery_alloy_plate",
-		A: "modern_industrialization:aluminum_cable",
-		L: "geghilarity:lithium_dust"
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 64,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:aluminum_cable", amount: 2},
-			{item: "modern_industrialization:battery_alloy_plate", amount: 1},
-			{item: "modern_industrialization:battery_alloy_curved_plate", amount: 4},
-			{item: "geghilarity:lithium_dust", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:silicon_battery", amount: 1}
-		]
 	})
 	
 	// PC01 TEMP autoclave > centrifuge
@@ -8007,7 +7893,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:xylene_mixture", amount: 40}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:m/p-xylene_mixture", amount: 32}
+			{fluid: "geghilarity:m-p-xylene_mixture", amount: 32}
 		]
 	})
 	
@@ -8016,7 +7902,7 @@ ServerEvents.recipes(event => {
 		eu: 30,
 		duration: 500,
 		fluid_inputs: [ 
-			{fluid: "geghilarity:m/p-xylene_mixture", amount: 4000}
+			{fluid: "geghilarity:m-p-xylene_mixture", amount: 4000}
 		],
 		item_outputs: [
 			{item: "geghilarity:p-xylene_dust", amount: 1}
@@ -10178,7 +10064,7 @@ ServerEvents.recipes(event => {
 			{item: "geghilarity:aluminium_hydroxide", amount: 7}
 		],
 		fluid_outputs: [
-			{fluid: "geghilarity:ziegler_alcohol_mixture", amount: 3000}
+			{fluid: "geghilarity:ziegler_alfol_mixture", amount: 3000}
 		]
 	})
 	
@@ -10187,7 +10073,7 @@ ServerEvents.recipes(event => {
 		eu: 7,
 		duration: 332,
 		fluid_inputs: [
-			{fluid: "geghilarity:ziegler_alcohol_mixture", amount: 1000}
+			{fluid: "geghilarity:ziegler_alfol_mixture", amount: 1000}
 		],
 		fluid_outputs: [
 			{fluid: "geghilarity:n-butanol", amount: 34}
@@ -10318,7 +10204,7 @@ ServerEvents.recipes(event => {
 		],
 		fluid_outputs: [
 			{fluid: "geghilarity:crude_styrene", amount: 50},
-			{fluid: "modern_industrialization:hydrogen", amount: 100}
+			{fluid: "modern_industrialization:hydrogen", amount: 90}
 		]
 	})
 	
@@ -10334,8 +10220,9 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// was mixer, no slots
 	event.custom({ 
-		type: "modern_industrialization:mixer",
+		type: "modern_industrialization:batch_reactor",
 		eu: 60,
 		duration: 450,
 		fluid_inputs: [
@@ -11560,6 +11447,36 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// potassium from saltpeter
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+		eu: 60,
+		duration: 100,
+		item_inputs: [
+			{item: "geggy:saltpeter", amount: 5}
+		],
+		item_outputs: [	
+			{item: "geghilarity:potassium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "modern_industrialization:nitrogen", amount: 1000},
+			{fluid: "modern_industrialization:oxygen", amount: 3000}
+		]
+	})
+	
+	// sodium potassium for energy hatches
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 30,
+		duration: 3000,
+		item_inputs: [
+			{item: "modern_industrialization:sodium_dust", amount: 1},
+			{item: "geghilarity:potassium_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:sodium_potassium", amount: 1000}
+		]
+	})
 	
 })
 

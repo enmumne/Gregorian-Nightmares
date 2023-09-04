@@ -8,6 +8,7 @@
   "processingTime": 150,
   "results": [
     {
+	  "count": 2,			
       "item": "modern_industrialization:coal_crushed_dust"
     },
     {
@@ -19,7 +20,7 @@
       "item": "create:experience_nugget"
     },
     {
-      "chance": 0.125,
+      "chance": 0.5,
       "item": "minecraft:cobblestone"
     }
   ]

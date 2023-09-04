@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions":[ {"condition": "fabric:or","values": []}],
+"type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "tag": "c:copper_plates"
+    },
+    "C": {
+      "tag": "c:wooden_barrels"
+    }
+  },
+  "pattern": [
+    "B",
+    "C",
+    "B"
+  ],
+  "result": {
+    "item": "create:fluid_tank"
+  }
+}

@@ -2,35 +2,31 @@ ServerEvents.recipes(event => {
 	
 	// forge hammer gone
 	event.remove({type: "modern_industrialization:forge_hammer"})
-	event.remove({id: "modern_industrialization:assembler_generated/vanilla_recipes/steel_forge_hammer"})
-	event.remove({id: "modern_industrialization:vanilla_recipes/steel_forge_hammer_asbl"})
-	event.remove({id: "modern_industrialization:forge_hammer"})
+	
+	event.remove([
+		"modern_industrialization:assembler_generated/vanilla_recipes/steel_forge_hammer",
+		"modern_industrialization:vanilla_recipes/steel_forge_hammer_asbl", "modern_industrialization:forge_hammer",
+		"modern_industrialization:materials/coal/macerator/ore_to_crushed",
+		"create:crushing/raw_iron", "modern_industrialization:materials/iron/macerator/ore_to_raw",
+		"modern_industrialization:materials/tin/macerator/ore_to_raw",
+		"create:crushing/raw_copper", "create:crushing/raw_tin_ore", "create:crushing/raw_lead_ore",
+		"create:crushing/raw_nickel_ore", "create:crushing/raw_zinc", "create:crushing/raw_tin",
+		"modern_industrialization:materials/macerator/copper_ore_to_raw",
+		"modern_industrialization:materials/macerator/redstone_ore_to_crushed",
+		"modern_industrialization:materials/antimony/macerator/ore_to_raw",
+		"modern_industrialization:materials/bauxite/macerator/ore_to_crushed",
+		"modern_industrialization:materials/lead/macerator/ore_to_raw",
+		"modern_industrialization:materials/lignite_coal/macerator/ore_to_crushed",
+		"modern_industrialization:materials/mozanite/macerator/ore_to_crushed",
+		"modern_industrialization:materials/salt/macerator/ore_to_crushed",
+		"modern_industrialization:materials/nickel/macerator/ore_to_raw",
+		"modern_industrialization:materials/tungsten/macerator/ore_to_raw",
+		"create:crushing/nether_quartz_ore",
+		"modern_industrialization:materials/macerator/quartz_ore_to_crushed"
+	])
 	
 	// create crush, crushed and stone to be used for processing > wash for raw > macerate into dusts 
 	// block mined > raw
-	
-	event.remove({id: "modern_industrialization:materials/coal/macerator/ore_to_crushed"})
-	event.remove({id: "create:crushing/raw_iron"})
-	event.remove({id: "modern_industrialization:materials/iron/macerator/ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/tin/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/raw_copper"})
-	event.remove({id: "create:crushing/raw_tin_ore"})
-	event.remove({id: "create:crushing/raw_lead_ore"})
-	event.remove({id: "create:crushing/raw_nickel_ore"})
-	event.remove({id: "create:crushing/raw_zinc"})
-	event.remove({id: "modern_industrialization:materials/macerator/copper_ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/macerator/redstone_ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/antimony/macerator/ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/bauxite/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/lead/macerator/ore_to_raw"})
-	event.remove({id: "modern_industrialization:materials/lignite_coal/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/mozanite/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/salt/macerator/ore_to_crushed"})
-	event.remove({id: "modern_industrialization:materials/nickel/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/raw_tin"})
-	event.remove({id: "modern_industrialization:materials/tungsten/macerator/ore_to_raw"})
-	event.remove({id: "create:crushing/nether_quartz_ore"})
-	event.remove({id: "modern_industrialization:materials/macerator/quartz_ore_to_crushed"})
 
 	// milling recipes
 	event.custom({
@@ -39,9 +35,6 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "minecraft:flint"}],
 			"results": [{"item": "geggy:flint_dust"}]
 	})
-	
-
-
 	
 	event.custom({
 			"type": "create:milling",

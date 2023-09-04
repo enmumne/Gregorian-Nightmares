@@ -1082,8 +1082,6 @@ ServerEvents.recipes(event => {
 		R: "modern_industrialization:rubber_sheet",
 	})
 
-	event.replaceInput({mod: "modern_industrialization", output: "modern_industrialization:conveyor"}, "modern_industrialization:rubber_sheet", "create:belt_connector")
-
 	event.custom({
 		type: "create:compacting",
 		ingredients: [

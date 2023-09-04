@@ -749,73 +749,6 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	
-	event.shaped('modern_industrialization:electric_dehy', [
-		'BEB',
-		'CAC',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:aluminum_rotor',
-		C: 'modern_industrialization:analog_circuit',
-		D: 'modern_industrialization:cupronickel_cable',
-		E: 'modern_industrialization:robot_arm'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 4,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:aluminum_rotor", amount: 4},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:cupronickel_cable", amount: 1},
-			{item: "modern_industrialization:robot_arm", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:electric_dehy", amount: 1}
-		]
-	})
-	
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 4,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "ae2:quartz_glass", amount: 2},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:cupronickel_cable", amount: 2},
-			{item: "modern_industrialization:pump", amount: 1},
-			{item: "modern_industrialization:piston", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:electric_fextract", amount: 1}
-		]
-	})
-	
-	event.shaped('4x geghilarity_fatmachines:pyro_casing', [
-		'CBC',
-		'BAB',
-		'CBC'
-	], {
-		A: 'modern_industrialization:steel_machine_casing',
-		B: 'modern_industrialization:tin_cable',
-		C: 'modern_industrialization:steel_large_plate'
-	})	
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 8,
-		duration: 100,
-		item_inputs: [ 
-			{item: "modern_industrialization:steel_machine_casing", amount: 1},
-			{item: "modern_industrialization:tin_cable", amount: 4},
-			{item: "modern_industrialization:steel_large_plate", amount: 4}
-		],
-		item_outputs: [
-			{item: "geghilarity_fatmachines:pyro_casing", amount: 4}
-		]
-	})
-	
 	event.shaped('modern_industrialization:pyro', [
 		'EBC',
 		'DAB',
@@ -874,7 +807,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_basic_hull"},
-					{"item": "modern_industrialization:tin_cable"}
+					{"item": "powah:energy_cable_starter"}
 				],
 				results: [{
 					"item": "geggy:incomplete_basic_hull"
@@ -906,7 +839,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_basic_hull"},
-					{"item": "modern_industrialization:tin_cable"}
+					{"item": "powah:energy_cable_starter"}
 				],
 				results: [{
 					"item": "geggy:incomplete_basic_hull"
@@ -945,7 +878,7 @@ ServerEvents.recipes(event => {
 		duration: 200,
 		item_inputs: [ 
 			{item: "modern_industrialization:analog_circuit", amount: 1},
-			{item: "modern_industrialization:tin_cable", amount: 3},
+			{item: "powah:energy_cable_basic", amount: 3},
 			{item: "modern_industrialization:redstone_battery", amount: 2},
 			{item: "modern_industrialization:steel_machine_casing", amount: 1},
 			{item: "create:brass_sheet", amount: 1}
@@ -982,37 +915,6 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [
 			{item: "modern_industrialization:basic_upgrade", amount: 4}
-		]
-	})
-	
-	event.remove({type: 'minecraft:crafting_shaped', output: 'modern_industrialization:turbo_machine_hull'})
-	event.shaped('modern_industrialization:turbo_machine_hull', [
-		'ABA',
-		'CDC',
-		'EEE'
-	], {
-		A: 'geghilarity:polyethylene_sheet',
-		B: 'modern_industrialization:digital_circuit',
-		C: 'modern_industrialization:sodium_battery',
-		D: 'modern_industrialization:turbo_machine_casing',
-		E: 'modern_industrialization:electrum_cable'
-	})
-	event.remove({type: 'modern_industrialization:assembler', output: 'modern_industrialization:turbo_machine_hull'})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 8,
-		duration: 100,
-		item_inputs: [ 
-			{item: "modern_industrialization:sodium_battery", amount: 2},
-			{item: "modern_industrialization:digital_circuit", amount: 1},
-			{item: "modern_industrialization:turbo_machine_casing", amount: 1},
-			{item: "modern_industrialization:electrum_cable", amount: 2}
-		],
-		fluid_inputs: [
-			{fluid: "modern_industrialization:polyethylene", amount: 288}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:turbo_machine_hull", amount: 1}
 		]
 	})
 	
@@ -1434,21 +1336,6 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [
 			{item: "modern_industrialization:bronze_macerator", amount: 1}
-		]
-	})
-	
-	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/component/craft/conveyor'})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 8,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:motor", amount: 2},
-			{item: "create:belt_connector", amount: 3},
-			{item: "modern_industrialization:tin_cable", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:conveyor", amount: 1}
 		]
 	})
 	
@@ -2061,7 +1948,7 @@ ServerEvents.recipes(event => {
 			{item: "minecraft:paper", amount: 6}
 		],
 		fluid_inputs: [ 
-			{fluid: "modern_industrialization:synthetic_rubber", amount: 120}
+			{fluid: "modern_industrialization:synthetic_rubber", amount: 667}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:rubber_sheet", amount: 6}
@@ -2075,7 +1962,7 @@ ServerEvents.recipes(event => {
 			{item: "geggy:heated_rubber", amount: 2}
 		],
 		fluid_inputs: [ 
-			{fluid: "modern_industrialization:synthetic_oil", amount: 111}
+			{fluid: "modern_industrialization:synthetic_oil", amount: 222}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:rubber_sheet", amount: 6}
@@ -2156,10 +2043,65 @@ ServerEvents.recipes(event => {
 	
 	//event.shapeless('geggy:clay_', ['geggy:quartz_dust', 'greggy:flint_dust_tiny'])
 	
+	
+	event.shaped('geggy:magnetic_iron_rod', [
+		' BB',
+		'BAB',
+		'BB '
+	], {
+		A: 'modern_industrialization:iron_rod',
+		B: 'minecraft:redstone'
+	})
+	event.custom({ 
+		type: "modern_industrialization:polarizer",
+		eu: 8,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:iron_rod", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:magnetic_iron_rod", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 3735,
+		item_inputs: [
+			{item: "modern_industrialization:neodymium_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:neodymium_ingot", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 16,
+		duration: 288,
+		item_inputs: [
+			{item: "geggy:neodymium_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:neodymium_rod", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:polarizer",
+		eu: 240,
+		duration: 72,
+		item_inputs: [
+			{item: "geggy:neodymium_rod", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:magnetic_neodymium_rod", amount: 1}
+		]
+	})
+	
+	// susy values
 	event.custom({ 
 		type: "modern_industrialization:wiremill",
-		eu: 2,
-		duration: 200,
+		eu: 7,
+		duration: 56,
 		item_inputs: [
 			{item: "modern_industrialization:iron_plate", amount: 1}
 		],
@@ -2169,13 +2111,101 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({ 
 		type: "modern_industrialization:wiremill",
-		eu: 2,
-		duration: 100,
+		eu: 7,
+		duration: 84,
 		item_inputs: [
 			{item: "geghilarity:iron_wire", amount: 1}
 		],
 		item_outputs: [
 			{item: "geghilarity:iron_fine_wire", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 56,
+		item_inputs: [
+			{item: "modern_industrialization:steel_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:steel_wire", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 84,
+		item_inputs: [
+			{item: "geggy:steel_wire", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:steel_fine_wire", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 39,
+		item_inputs: [
+			{item: "modern_industrialization:aluminum_wire", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:aluminium_fine_wire", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 64,
+		item_inputs: [
+			{item: "geggy:black_steel_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:black_steel_wire", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 96,
+		item_inputs: [
+			{item: "geggy:black_steel_wire", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:black_steel_fine_wire", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:compressor",
+		eu: 24,
+		duration: 119,
+		item_inputs: [ 
+			{item: "geghilarity:tungstensteel_ingot", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:tungstensteel_plate", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 30,
+		duration: 119,
+		item_inputs: [
+			{item: "geghilarity:tungstensteel_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:tungstensteel_wire", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:wiremill",
+		eu: 7,
+		duration: 178,
+		item_inputs: [
+			{item: "geghilarity:tungstensteel_wire", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:tungstensteel_fine_wire", amount: 4}
 		]
 	})
 	event.custom({ 
@@ -2209,28 +2239,6 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [
 			{item: "geghilarity:zinc_plate", amount: 1}
-		]
-	})
-	event.custom({ 
-		type: "modern_industrialization:wiremill",
-		eu: 12,
-		duration: 100,
-		item_inputs: [
-			{item: "modern_industrialization:steel_plate", amount: 1}
-		],
-		item_outputs: [
-			{item: "geggy:steel_wire", amount: 2}
-		]
-	})
-	event.custom({ 
-		type: "modern_industrialization:wiremill",
-		eu: 12,
-		duration: 100,
-		item_inputs: [
-			{item: "geggy:steel_wire", amount: 1}
-		],
-		item_outputs: [
-			{item: "geggy:fine_steel_wire", amount: 4}
 		]
 	})
 	
@@ -2534,18 +2542,6 @@ event.shaped('modern_industrialization:packer_double_ingot_template', [
 	})	
 	
 event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
-
-event.remove({id: "moderndynamics:machine_extender"})
-event.shaped('moderndynamics:machine_extender', [
-		'BDB',
-		'CAC',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:steel_plate',
-		C: 'modern_industrialization:cupronickel_cable',
-		D: 'modern_industrialization:inductor'
-	})
 
 	event.remove({id: "modern_industrialization:electric_age/component/craft/resistor"})
 	event.remove({id: "modern_industrialization:electric_age/component/assembler/resistor"})
@@ -2955,116 +2951,6 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
-	event.shaped('modern_industrialization:poly_tank', [
-		'DFD',
-		'CEC',
-		'BAB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'modern_industrialization:pump',
-		D: 'modern_industrialization:tin_cable',
-		E: 'modern_industrialization:tin_rotor',
-		F: 'modern_industrialization:motor'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:pump", amount: 2},
-			{item: "modern_industrialization:tin_rotor", amount: 1},
-			{item: "modern_industrialization:motor", amount: 1},
-			{item: "modern_industrialization:tin_cable", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:poly_tank", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:elecell', [
-		'CBC',
-		'EAE',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'modern_industrialization:steel_plate',
-		D: 'modern_industrialization:tin_cable',
-		E: 'modern_industrialization:electrum_fine_wire'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 3},
-			{item: "modern_industrialization:steel_plate", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 1},
-			{item: "modern_industrialization:electrum_fine_wire", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:elecell", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:crystallizer', [
-		'CEC',
-		'EAE',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'modern_industrialization:steel_plate',
-		D: 'modern_industrialization:pump',
-		E: 'ae2:quartz_vibrant_glass'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:steel_plate", amount: 2},
-			{item: "modern_industrialization:pump", amount: 1},
-			{item: "ae2:quartz_vibrant_glass", amount: 3}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:crystallizer", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:roaster', [
-		'BDB',
-		'EAE',
-		'CEC'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'modern_industrialization:tin_cable',
-		D: 'modern_industrialization:tin_rotor',
-		E: 'modern_industrialization:cupronickel_wire_magnetic'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 2},
-			{item: "modern_industrialization:tin_rotor", amount: 1},
-			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 3}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:roaster", amount: 1}
-		]
-	})
-	
 	// misc sy util
 	event.smelting('geghilarity:graphite_ingot', 'geghilarity:graphite_dust').cookingTime(200)
 	
@@ -3234,38 +3120,6 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
-	event.remove({id: 'modern_industrialization:electric_age/machine/distillery_asbl'})
-	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/distillery'})
-	event.shaped('modern_industrialization:distillery', [
-		'DFD',
-		'BAB',
-		'CEC'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:large_pump',
-		C: 'modern_industrialization:electronic_circuit',
-		D: 'ae2:quartz_vibrant_glass',
-		E: 'modern_industrialization:electrum_cable',
-		F: 'modern_industrialization:fluid_pipe'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 16,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:large_pump", amount: 2},
-			{item: "modern_industrialization:electronic_circuit", amount: 2},
-			{item: "ae2:quartz_vibrant_glass", amount: 2},
-			{item: "modern_industrialization:electrum_cable", amount: 1},
-			{item: "modern_industrialization:fluid_pipe", amount: 1}
-			
-		],
-		item_outputs: [
-			{item: "modern_industrialization:distillery", amount: 1}
-		]
-	})
-	
 	event.remove({id: 'modern_industrialization:electric_age/machine/cutting_machine_asbl'})
 	event.remove({id: 'modern_industrialization:assembler_generated/electric_age/machine/cutting_machine'})
 	event.shaped('modern_industrialization:electric_cutting_machine', [
@@ -3413,64 +3267,6 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
-	event.shaped('modern_industrialization:stirred_tank', [
-		'ECE',
-		'DAD',
-		'BFB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'modern_industrialization:tin_rotor',
-		D: 'modern_industrialization:tin_cable',
-		E: 'ae2:quartz_glass',
-		F: 'modern_industrialization:motor'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:motor", amount: 1},
-			{item: "modern_industrialization:tin_rotor", amount: 1},
-			{item: "ae2:quartz_glass", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:stirred_tank", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:bubble_reactor', [
-		'ECE',
-		'DFD',
-		'BAB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'moderndynamics:fluid_pipe',
-		D: 'modern_industrialization:tin_cable',
-		E: 'ae2:quartz_glass',
-		F: 'modern_industrialization:pump'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:pump", amount: 1},
-			{item: "modern_industrialization:fluid_pipe", amount: 1},
-			{item: "ae2:quartz_glass", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:bubble_reactor", amount: 1}
-		]
-	})
-	
 	event.shaped('geggy:fluid_filter', [
 		'AAA',
 		'ABA',
@@ -3529,10 +3325,12 @@ event.shaped('moderndynamics:machine_extender', [
 		item_inputs: [ 
 			{item: "geghilarity:polytetrafluoroethylene_sheet", amount: 4},
 			{item: "modern_industrialization:stainless_steel_plate", amount: 2},
-			{item: "modern_industrialization:stainless_steel_ring", amount: 2}
+			{item: "modern_industrialization:stainless_steel_ring", amount: 2},
+			{item: "minecraft:feather", amount: 6}
 		],
 		fluid_inputs: [
-			{fluid: "geghilarity:tin", amount: 144}
+			{fluid: "modern_industrialization:soldering_alloy", amount: 111},
+			{fluid: "modern_industrialization:styrene_butadiene_rubber", amount: 144}
 		],
 		item_outputs: [
 			{item: "minecraft:elytra", amount: 1}
@@ -3665,34 +3463,6 @@ event.shaped('moderndynamics:machine_extender', [
 		C: 'modern_industrialization:bronze_plate',
 		D: 'geggy:clay_bricks',
 		F: 'create:fluid_pipe'
-	})
-	
-	//electric alloy
-	event.shaped('modern_industrialization:salloy', [
-		"ABA",
-		"LCL",
-		"ATA"
-	], {
-		C: "modern_industrialization:basic_machine_hull",
-		B: 'modern_industrialization:analog_circuit',
-		A: 'modern_industrialization:cupronickel_wire_magnetic',
-		L: 'modern_industrialization:electric_furnace',
-		T: 'modern_industrialization:tin_cable'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 16,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 1},
-			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 4},
-			{item: "modern_industrialization:electric_furnace", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:salloy", amount: 1}
-		]
 	})
 	
 	event.remove({id: 'modern_industrialization:steam_age/bronze/casing_pipe_asbl'})
@@ -4556,92 +4326,6 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
-	// more susy machines
-	event.shaped('modern_industrialization:fluid_compressor', [
-		'GCF',
-		'EAE',
-		'BDB'
-	], {
-		A: 'modern_industrialization:advanced_machine_hull',
-		B: 'modern_industrialization:electronic_circuit',
-		C: 'modern_industrialization:fluid_pipe',
-		D: 'modern_industrialization:electrum_cable',
-		E: 'ae2:quartz_vibrant_glass',
-		F: 'modern_industrialization:large_pump',
-		G: 'modern_industrialization:large_motor'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:advanced_machine_hull", amount: 1},
-			{item: "modern_industrialization:electronic_circuit", amount: 2},
-			{item: "modern_industrialization:large_pump", amount: 1},
-			{item: "modern_industrialization:large_motor", amount: 1},
-			{item: "modern_industrialization:fluid_pipe", amount: 1},
-			{item: "ae2:quartz_vibrant_glass", amount: 2},
-			{item: "modern_industrialization:electrum_cable", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:fluid_compressor", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:bed_reactor', [
-		'FDF',
-		'CAC',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'moderndynamics:fluid_pipe',
-		D: 'modern_industrialization:tin_cable',
-		F: 'modern_industrialization:pump',
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:pump", amount: 2},
-			{item: "modern_industrialization:fluid_pipe", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:bed_reactor", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:batch_reactor', [
-		'EFE',
-		'DAD',
-		'BDB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		D: 'modern_industrialization:tin_cable',
-		E: 'ae2:quartz_glass',
-		F: 'modern_industrialization:pump',
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:pump", amount: 1},
-			{item: "modern_industrialization:tin_cable", amount: 3},
-			{item: "ae2:quartz_glass", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:batch_reactor", amount: 1}
-		]
-	})
-	
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 128,
@@ -4656,21 +4340,6 @@ event.shaped('moderndynamics:machine_extender', [
 		],
 		item_outputs: [
 			{item: "modern_industrialization:fluidized_bed_reactor", amount: 1}
-		]
-	})
-	
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 64,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:advanced_machine_hull", amount: 1},
-			{item: "modern_industrialization:electronic_circuit", amount: 4},
-			{item: "modern_industrialization:large_motor", amount: 2},
-			{item: "modern_industrialization:electrum_cable", amount: 2},
-		],
-		item_outputs: [
-			{item: "modern_industrialization:advanced_centrifuge", amount: 1}
 		]
 	})
 	
@@ -4850,22 +4519,6 @@ event.shaped('moderndynamics:machine_extender', [
 		]
 	})
 	
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 128,
-		duration: 400,
-		item_inputs: [ 
-			{item: "modern_industrialization:advanced_machine_hull", amount: 1},
-			{item: "modern_industrialization:electronic_circuit", amount: 2},
-			{item: "modern_industrialization:aluminum_plate", amount: 3},
-			{item: "modern_industrialization:aluminum_cable", amount: 2},
-			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 1}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:reaction_furnace", amount: 1}
-		]
-	})
-	
 	// sifter - gravel
 	event.custom({ 
 		type: "modern_industrialization:sifter",
@@ -4935,38 +4588,11 @@ event.shaped('moderndynamics:machine_extender', [
 		eu: 16,
 		duration: 1600,
 		item_inputs: [ 
-			{item: "geggy:fine_steel_wire", amount: 64},
+			{item: "geggy:steel_fine_wire", amount: 64},
 			{item: "geggy:zinc_foil", amount: 16}
 		],
 		item_outputs: [
 			{item: "geggy:item_filter", amount: 1}
-		]
-	})
-	
-	event.shaped('modern_industrialization:sifter', [
-		'ECE',
-		'DAD',
-		'BCB'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:analog_circuit',
-		C: 'geggy:item_filter',
-		D: 'modern_industrialization:tin_cable',
-		E: 'modern_industrialization:piston'
-	})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 30,
-		duration: 200,
-		item_inputs: [ 
-			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "modern_industrialization:piston", amount: 2},
-			{item: "geggy:item_filter", amount: 2},
-			{item: "modern_industrialization:tin_cable", amount: 2}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:sifter", amount: 1}
 		]
 	})
 	
@@ -5084,7 +4710,7 @@ event.shaped('moderndynamics:machine_extender', [
 		eu: 7,
 		duration: 100,
 		item_inputs: [ 
-			{item: "geggy:endergetic_alloy_dust", amount: 1},
+			{item: "geggy:energetic_alloy_dust", amount: 1},
 			{item: "geggy:endereye_dust", amount: 1},
 			{item: "modern_industrialization:chromium_dust", amount: 1}
 		],
@@ -5102,7 +4728,7 @@ event.shaped('moderndynamics:machine_extender', [
 			{item: "geggy:black_steel_dust", amount: 1}
 		],
 		item_outputs: [
-			{item: "geggy:endergetic_alloy_dust", amount: 3}
+			{item: "geggy:energetic_alloy_dust", amount: 3}
 		]
 	})
 	event.custom({ 
@@ -5351,6 +4977,35 @@ event.shaped('moderndynamics:machine_extender', [
 		A: 'geggy:sticky_resin',
 		B: 'minecraft:string',
 		C: 'minecraft:stick'
+	})
+	
+	// black steel
+	event.custom({ 
+		type: "modern_industrialization:compressor",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geggy:black_steel_ingot", amount: 1}
+		],
+
+		item_outputs: [
+			{item: "geggy:black_steel_plate", amount: 1}
+		]
+	})
+	// from 120 eu, problem for HV hatches
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 120,
+		duration: 1029,
+		item_inputs: [ 
+			{item: "geggy:black_steel_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:nitrogen", amount: 1000}
+		],
+		item_outputs: [
+			{item: "geggy:black_steel_ingot", amount: 1}
+		]
 	})
 	
 	

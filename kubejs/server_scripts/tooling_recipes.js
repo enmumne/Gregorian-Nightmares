@@ -25,6 +25,9 @@ ServerEvents.tags('item', event => {
   event.add('boiler_fuel', 'modern_industrialization:coal_tiny_dust')
   event.add('boiler_fuel', 'modern_industrialization:lignite_coal_tiny_dust')
   
+  event.add('geggy:lv_cable', 'powah:energy_cable_starter')
+  event.add('geggy:lv_cable', 'powah:energy_cable_basic')
+  
 });
 
 ServerEvents.tags('block', event => { 

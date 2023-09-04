@@ -1,0 +1,22 @@
+{
+  "type": "create:splashing",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "modern_industrialization"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_lead"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": "modern_industrialization:raw_lead"
+    }
+  ]
+}

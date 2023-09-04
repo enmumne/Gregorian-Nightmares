@@ -1,19 +1,21 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{
+  "fabric:load_conditions":[ {"condition": "fabric:or","values": []}],
+"type": "minecraft:crafting_shaped",
+  "key": {
+    "d": {
+      "tag": "c:black_dyes"
+    },
+    "p": {
+      "tag": "modern_industrialization:fluid_pipes"
+    }
+  },
+  "pattern": [
+    "ppp",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "count": 8,
+    "item": "modern_industrialization:black_fluid_pipe"
+  }
+}
