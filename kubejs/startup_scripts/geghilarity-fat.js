@@ -63,6 +63,7 @@ let FBEDREACTOR;
 let REACTIONFURNACE;
 
 let DISSOLUTIONTANK;
+let CRACKINGUNIT;
 
 let STEAMALLOY;
 let HSLA_BLAST;
@@ -145,6 +146,12 @@ MIMachineEvents.registerRecipeTypes(event => {
 		.withFluidOutputs();	
 		
 	DISSOLUTIONTANK = event.register('dissolution_tank')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();
+
+	CRACKINGUNIT = event.register('cracking_unit')
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
@@ -997,6 +1004,30 @@ MIMachineEvents.registerMachines(event => {
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "clean_stainless_steel_machine_casing", "dissolution_tank", true, false, false,
     );
+	
+	const crackingHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	
+	const crackingShape = event.layeredShape("clean_stainless_steel_machine_casing", [
+		[ "XBXBX", "XBXBX", "XBXBX",],
+		[ "XBXBX", "X   X", "XBXBX",],
+		[ "XBXBX", "XB#BX", "XBXBX",],
+    ])
+		.key("B", kanthalCoilMember, event.noHatch())
+		.key("X", stainlessMember, crackingHatch)
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Oil Cracking Unit", "cracking_unit", CRACKINGUNIT, crackingShape,
+        // REI progress bar
+        event.progressBar(115, 33, "extract"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlot(93, 35), itemOutputs => {},
+        fluidInputs => fluidInputs.addSlots(54, 35, 2, 1), fluidOutputs => fluidOutputs.addSlots(142, 35, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "clean_stainless_steel_machine_casing", "cracking_unit", true, false, false,
+    );	
 	
 	const lvminerHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	

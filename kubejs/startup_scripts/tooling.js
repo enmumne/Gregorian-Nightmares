@@ -641,6 +641,13 @@ event.create('geggy:magnetic_neodymium_rod')
 event.create('geggy:tungstensteel_fine_wire')
 event.create('geggy:extreme_voltage_coil')
 
+event.create('geggy:brass_rod')
+event.create('geggy:manganese_ingot')
+event.create('geggy:manganese_rod')
+event.create('geggy:quartzite_dust')
+event.create('geggy:quartzite')
+event.create('geggy:nichrome_spring')
+
 /*
 .tooltip('§8')
 
@@ -717,6 +724,15 @@ StartupEvents.registry('fluid', event => {
 	
 	event
     .create('geggy:rubber')
+	.thinTexture(0x969366)
+    .noBucket
+	
+	
+	
+	
+	
+	event
+    .create('geggy:grain_solution')
 	.thinTexture(0x969366)
     .noBucket
 	

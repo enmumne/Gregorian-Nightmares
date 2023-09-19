@@ -195,12 +195,6 @@ StartupEvents.registry('fluid', event => {
     .noBucket
 	
 	event
-    .create('geghilarity:sodium_tungstate')
-  	.displayName('Sodium Tungstate') 
-	.thinTexture(0x5C5959)
-    .noBucket
-	
-	event
     .create('geghilarity:salt_water')
   	.displayName('Salt Water') 
 	.thinTexture(0x0202BB)
@@ -253,12 +247,6 @@ StartupEvents.registry('fluid', event => {
     .create('geghilarity:biomass')
   	.displayName('Biomass') 
 	.thinTexture(0x00D700)
-    .noBucket
-	
-	event
-    .create('geghilarity:biodiesel')
-  	.displayName('Bio Diesel') 
-	.thinTexture(0x905113)
     .noBucket
 	
 	event
@@ -1756,6 +1744,731 @@ StartupEvents.registry('fluid', event => {
     .create('geghilarity:sodium_potassium')
 	.thinTexture(0x4AB683)
     .noBucket
+	
+	///////////////////
+	
+	event
+    .create('geghilarity:sulfuric_oil_residue')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:sulfuric_fuel_oil')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:sulfuric_diesel')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:sulfuric_refinery_gas')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_refinery_gas')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_naphtha')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_diesel')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_fuel_oil')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_oil_residue')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_light_fuel')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:treated_sulfuric_heavy_fuel')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:sour_gas')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:fuel_oil')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:oil_residue')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:refinery_gas')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:ethanolamine_mix')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:rich_amine')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:impure_ethylene_oxide')
+	.thinTexture(0x4AB683)
+    .noBucket
+	
+	event
+    .create('geghilarity:butyraldehide_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:sodium_bisulfate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:n-bromopropane')
+	.displayName('n-Bromopropane')
+	.thinTexture(0x969191)
+    .noBucket
+	
+	event
+    .create('geghilarity:impure_ethanol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:fusel_oil')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:n-propanol')
+	.displayName('n-Propanol')
+	.thinTexture(0x969191)
+    .noBucket
+	
+	event
+    .create('geghilarity:tripopylamine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:tetrapropylammonium_bromide')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:crude_manganese_ii_sulfate_solution')
+	.displayName('Crude Manganese II Sulfate Solution')
+	.thinTexture(0x969191)
+    .noBucket
+	
+	event
+    .create('geghilarity:manganese_ii_sulfate_solution')
+	.displayName('Manganese II Sulfate Solution')
+	.thinTexture(0x969191)
+    .noBucket
+	
+	event
+    .create('geghilarity:sodium_sulfate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:distilled_water')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:molten_alumina')
+	.thinTexture(0xAB9A56)
+    .noBucket
+   
+	event
+    .create('geghilarity:impure_wolframite_slurry')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:wolframite_slurry')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:granite_tailing_slurry')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:oleic_acid')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:wastewater')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:sodium_tungstate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:silicate_free_tungstate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:molybdenum_free_tungstate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diluted_sodium_sulfate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:tungsten_extract')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:tungsten_extraction_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:demineralized_water')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:scrubbed_tungsten_extract')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:ammonia_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:ammonium_isopolytungstate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:aminated_ethylene_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:neutralized_aminated_ethylene_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:ethylenediamine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:cyclopentadiene_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:cyclopentadiene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:crude_iron_pentacarbonyl')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:iron_pentacarbonyl')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:aluminium_phenolate')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:isobutylene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:2_6_di_tert_butylphenol')
+	.displayName('2,6-Di-tert-butylphenol')
+	.thinTexture(0x665E38)
+    .noBucket
+	
+	event
+    .create('geghilarity:cresol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:butylated_hydroxytoluene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:xylenol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:2_4_dimethyl_6_tert_butylphenol')
+	.displayName('2,4-Dimethyl-6-tert-butylphenol')
+	.thinTexture(0x665E38)
+    .noBucket
+	
+	event
+    .create('geghilarity:gasoline_antioxidants')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:iso-octane')
+	.displayName('iso-Octane')
+	.thinTexture(0x665E38)
+    .noBucket
+	
+	event
+    .create('geghilarity:tetraethyl_lead')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:chloroethane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:tetraethyl_lead_sludge')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:isobutane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:gasoline_antiknock')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:hydrated_propene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:isopropyl_alcohol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:butane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:tert-butyl_alcohol')
+	.displayName('tert-Butyl Alcohol')
+	.thinTexture(0x665E38)
+    .noBucket
+	
+	event
+    .create('geghilarity:ethyl_tert-butyl_ether')
+	.displayName('Ethyl Tert-Butyl Ether')
+	.thinTexture(0x665E38)
+    .noBucket
+	
+	event
+    .create('geghilarity:gasoline_oxygenates')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:propane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diluted_nitromethane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:nitromethane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:gasoline_general_additives')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:supreme_gasoline')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:premium_gasoline')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:midgrade_gasoline')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:purified_isoprene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:piperazine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:triethylenetetramine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:aminoethylpiperazine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diethylenetriamine')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:o-xylene')
+	.displayName('o-Xylene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:styrene_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:polystyrene_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:polystyrene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diethylbenzene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:divinylbenzene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:crosslinked_polystyrene-divinylbenzene')
+	.displayName('Crosslinked Polystyrene-Divinylbenzene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:chlorinated_glycerol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:epichlorohydrin_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:allyl_chloride')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:allyl_alcohol_mix')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diluted_epichlorohydrin')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:diluted_saltwater')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+    .create('geghilarity:fatty_acid_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+   
+	event
+	.create('geghilarity:urea_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:oleic_acid_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:tripropylene')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:isodecanal_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:isodecanal')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:isodecanol')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:molybdenic_acid_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:neutralized_ammonium_molybdate_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:ammonium_chloride_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:raw_molecular_sieve')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:unscrubbed_wood_gas')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:wood_gas')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:muddy_bastnasite_rare_earth_solution')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:steam-cracked_bastnasite_mud')
+	.displayName('Steam-Cracked Bastnasite Mud')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodiumfluorosilicate')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:conditioned_bastnasite_mud')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:hexafluorosilicic_acid')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:diluted_bastnasite_mud')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:filtered_bastnasite_mud')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:nitrogenated_bastnasite_rarer_earth_oxides')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:bastnasite_rarer_earth_oxide_suspension')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:diluted_acetone')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:calcium_fluoride')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:hydrated_ammonium_nitrate_slurry')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_steam-cracked_light_fuel')
+	.displayName('Lightly Steam-Cracked Light Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_steam-cracked_heavy_fuel')
+	.displayName('Lightly Steam-Cracked Heavy Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_steam-cracked_naphtha')
+	.displayName('Lightly Steam-Cracked Naphtha')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_steam-cracked_light_fuel')
+	.displayName('Severely Steam-Cracked Light Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_steam-cracked_heavy_fuel')
+	.displayName('Severely Steam-Cracked Heavy Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_steam-cracked_naphtha')
+	.displayName('Severely Steam-Cracked Naphtha')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_hydro-cracked_light_fuel')
+	.displayName('Lightly Hydro-Cracked Light Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_hydro-cracked_heavy_fuel')
+	.displayName('Lightly Hydro-Cracked Heavy Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:lightly_hydro-cracked_naphtha')
+	.displayName('Lightly Hydro-Cracked Naphtha')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_hydro-cracked_light_fuel')
+	.displayName('Severely Hydro-Cracked Light Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_hydro-cracked_heavy_fuel')
+	.displayName('Severely Hydro-Cracked Heavy Fuel')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:severely_hydro-cracked_naphtha')
+	.displayName('Severely Hydro-Cracked Naphtha')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:butene_mixture')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:steam-cracked_propane')
+	.displayName('Steam-Cracked Propane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:steam-cracked_ethane')
+	.displayName('Steam-Cracked Ethane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
+	event
+	.create('geghilarity:steam-cracked_butane')
+	.displayName('Steam-Cracked Butane')
+	.thinTexture(0xAB9A56)
+    .noBucket
+	
    
 })
 
@@ -1848,8 +2561,6 @@ StartupEvents.registry('item', event => {
 	
 	event.create('geghilarity:tungstate_dust').displayName('Tungstate Dust');
 	event.create('geghilarity:lithium_hydroxide_dust').displayName('Lithium Hydroxide Dust');
-	event.create('geghilarity:calcium_tungstate_dust').displayName('Calcium Tungstate Dust');
-	event.create('geghilarity:tungstic_acid_dust').displayName('Tungstic Acid Dust');
 	event.create('geghilarity:calcium_hydroxide_dust').displayName('Calcium Hydroxide Dust');
 	event.create('geghilarity:tungsten_trioxide_dust').displayName('Tungsten Trioxide Dust');
 	event.create('geghilarity:lithium_dust').displayName('Lithium Dust');
@@ -2185,7 +2896,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:monazite_rarer_earth_sediment_dust')
 	event.create('geghilarity:europium_dust')
 	event.create('geghilarity:europium_oxide_dust')
-	event.create('geghilarity:heterogenous_halogenic_mozanite_rare_earth_mixture_dust')
+	event.create('geghilarity:heterogenous_halogenic_monazite_rare_earth_mixture_dust')
 	event.create('geghilarity:saturated_monazite_rare_earth_dust')
 	event.create('geghilarity:samarium_dust')
 	event.create('geghilarity:gadolinium_dust')
@@ -2199,6 +2910,78 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:extremely_unstable_naquadah_dust')
 	event.create('geghilarity:fluorspar_dust')
 	event.create('geghilarity:radioactive_sludge_dust')
+	
+	event.create('geghilarity:alumina_catalyst_bed')
+	event.create('geghilarity:alumina_catalyst_pellet')
+	event.create('geghilarity:silver_catalyst_bed')
+	event.create('geghilarity:silver_catalyst_pellet')
+	event.create('geghilarity:dicobalt_octacarbonyl_dust')
+	event.create('geghilarity:lv_emitter').displayName('LV Emitter');
+	event.create('geghilarity:aluminium_sulfate_dust')
+	event.create('geghilarity:zsm5_dust').displayName('ZSM-5 Dust');
+	event.create('geghilarity:zsm5_catalyst_pellet').displayName('ZSM-5 Catalyst Pellet');
+	event.create('geghilarity:zsm5_catalyst_bed').displayName('ZSM-5 Catalyst Bed');
+	event.create('geghilarity:sodium_aluminate_dust')
+	event.create('geghilarity:molecular_sieve_dust')
+	event.create('geghilarity:wet_molecular_sieve_dust')
+	event.create('geghilarity:pyrolusite_dust')
+	event.create('geghilarity:manganese_ii_oxide_dust').displayName('Manganese II Oxide Dust');
+	event.create('geghilarity:iron_iii_hydroxide_dust').displayName('Iron III Hydroxide Dust');
+	event.create('geghilarity:sodium_sulfate_dust')
+	event.create('geghilarity:wolframite_dust')
+	event.create('geghilarity:sifted_wolframite_dust')
+	event.create('geghilarity:gold_concentrate_dust')
+	event.create('geghilarity:sodium_silicate_dust')
+	event.create('geghilarity:floated_wolframite_dust')
+	event.create('geghilarity:aluminium_silicate_dust')
+	event.create('geghilarity:sodium_sulfide_dust')
+	event.create('geghilarity:ammonium_paratungstate_dust')
+	event.create('geghilarity:granite_tailing_dust')
+	event.create('geghilarity:molybdenum_trisulfide_dust')
+	event.create('geghilarity:potassium-loaded_molecular_sieve_dust').displayName('Potassium-Loaded Molecular Sieve Dust');
+	event.create('geghilarity:saturated_potassium-loaded_molecular_sieve_dust').displayName('Saturated Potassium-Loaded Molecular Sieve Dust');
+	event.create('geghilarity:ferrocene_dust')
+	event.create('geghilarity:sodium-lead_alloy_ingot').displayName('Sodium-Lead Alloy Ingot');
+	event.create('geghilarity:sodium-lead_alloy_dust').displayName('Sodium-Lead Alloy Dust');
+	event.create('geghilarity:aluminium_chloride_dust')
+	event.create('geghilarity:2-methylmidazole_dust').displayName('2-Methylmidazole Dust');
+	event.create('geghilarity:dicyandiamide_dust')
+	event.create('geghilarity:epoxy_curing_mixture_dust')
+	event.create('geghilarity:calcium_cyanamide_dust')
+	event.create('geghilarity:cyanamide_dust')
+	event.create('geghilarity:tiny_potassium_persulfate_dust').displayName('Tiny Pile of Potassium Persulfate Dust')
+	event.create('geghilarity:polystyrene_pulp')
+	event.create('geghilarity:crosslinked_polystyrene-divinylbenzene_nugget').displayName('Crosslinked Polystyrene-Divinylbenzene Nugget')
+	event.create('geghilarity:crosslinked_polystyrene-divinylbenzene_round').displayName('Crosslinked Polystyrene-Divinylbenzene Round')
+	event.create('geghilarity:ag_50w-x8_resin_beads').displayName('AG 50W-X8 Resin Beads')
+	event.create('geghilarity:bisphenol_a_dust')
+	event.create('geghilarity:wet_epoxy_dust')
+	event.create('geghilarity:epoxy_resin_pulp')
+	event.create('geghilarity:urea_dust')
+	event.create('geghilarity:oleic_acid_dust')
+	event.create('geghilarity:impure_molybdenum_trioxide_dust')
+	event.create('geghilarity:ammonium_dimolybdate_dust')
+	event.create('geghilarity:purified_molybdenum_trioxide_dust')
+	event.create('geghilarity:potash_dust')
+	event.create('geghilarity:crushed_bastnasite_ore')
+	event.create('geghilarity:gangue_dust')
+	event.create('geghilarity:bastnasite_rare_earth_oxides_dust')
+	event.create('geghilarity:acid-leached_bastnasite_rare_earth_oxides_dust').displayName('Acid-Leached Bastnasite Rare Earth Oxides Dust')
+	event.create('geghilarity:roasted_rare_earth_oxides_dust')
+	event.create('geghilarity:wet_rare_earth_oxides_dust')
+	event.create('geghilarity:cerium-oxidized_rare_earth_oxides_dust').displayName('Cerium-Oxidised Rare Earth Oxides Dust')
+	event.create('geghilarity:bastnasite_rarer_earth_oxides_dust')
+	event.create('geghilarity:neodymium_rare_earth_concentrate_dust')
+	event.create('geghilarity:samaric_rare_earth_concentrate_dust')
+	event.create('geghilarity:lanthanium_chloride_dust')
+	event.create('geghilarity:lanthanium_dust')
+	event.create('geghilarity:fluorinated_samaric_concentrate_dust')
+	event.create('geghilarity:holmium_dust')
+	event.create('geghilarity:samarium-terbium_mixture_dust').displayName('Samarium-Terbium Dust')
+	event.create('geghilarity:calcium_fluoride_dust')
+	event.create('geghilarity:nitrogenated_samarium-terbium_mixture_dust').displayName('Nitrogenated Samarium-Terbium Dust')
+	event.create('geghilarity:terbium_nitrate_dust')
+	event.create('geghilarity:terbium_dust')
 
 })	
 
