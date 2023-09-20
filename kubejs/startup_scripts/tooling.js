@@ -647,6 +647,11 @@ event.create('geggy:manganese_rod')
 event.create('geggy:quartzite_dust')
 event.create('geggy:quartzite')
 event.create('geggy:nichrome_spring')
+event.create('geggy:alumina_seed_crystal')
+event.create('geggy:ruby_boule')
+event.create('geggy:exquisite_ruby')
+event.create('geggy:flawless_ruby')
+event.create('geggy:ruby')
 
 /*
 .tooltip('§8')
@@ -727,13 +732,9 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x969366)
     .noBucket
 	
-	
-	
-	
-	
 	event
     .create('geggy:grain_solution')
-	.thinTexture(0x969366)
+	.thinTexture(0x8C9371)
     .noBucket
 	
 })	

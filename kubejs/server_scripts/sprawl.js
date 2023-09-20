@@ -4,7 +4,21 @@
 //onEvent('recipes', event => {
 ServerEvents.recipes(event => {
 	
-	event.remove({id: 'minecraft:respawn_anchor'})
+	event.remove([
+		"minecraft:respawn_anchor",
+	    "modern_industrialization:trash_can",
+		"minecraft:ender_chest"
+	])
+	
+	event.shaped('minecraft:ender_chest', [
+		'AAA',
+		'ABA',
+		'AAA'
+	], {
+		A: 'minecraft:obsidian',
+		B: 'modern_industrialization:quantum_upgrade'
+	})
+	
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:grindstone'})
 	
 	event.shaped('minecraft:grindstone', [
@@ -4260,8 +4274,8 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	})
 	
 	// book
-	event.remove({id: 'minecraft:book'})
-	event.remove({id: 'farmersdelight:book_from_canvas'})
+	//event.remove({id: 'minecraft:book'})
+	//event.remove({id: 'farmersdelight:book_from_canvas'})
 	event.custom({ 
 		type: "modern_industrialization:fextract",
 		eu: 8,
@@ -4380,7 +4394,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geggy:mold_nugget", amount: 1}
 		],
 		item_outputs: [
-			{item: "geghilarity:cobalt_catalyst_pellet", amount: 1}
+			{item: "geghilarity:cobalt_catalyst_pellet", amount: 4}
 		]
 	})
 	event.shaped('geghilarity:cobalt_catalyst_bed', [
@@ -4401,7 +4415,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geggy:mold_nugget", amount: 1}
 		],
 		item_outputs: [
-			{item: "geghilarity:palladium_catalyst_pellet", amount: 1}
+			{item: "geghilarity:palladium_catalyst_pellet", amount: 4}
 		]
 	})
 	event.shaped('geghilarity:palladium_catalyst_bed', [
@@ -4422,7 +4436,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geggy:mold_nugget", amount: 1}
 		],
 		item_outputs: [
-			{item: "geghilarity:platinum_catalyst_pellet", amount: 1}
+			{item: "geghilarity:platinum_catalyst_pellet", amount: 4}
 		]
 	})
 	event.shaped('geghilarity:platinum_catalyst_bed', [
@@ -4443,7 +4457,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geggy:mold_nugget", amount: 1}
 		],
 		item_outputs: [
-			{item: "geghilarity:nickel_catalyst_pellet", amount: 1}
+			{item: "geghilarity:nickel_catalyst_pellet", amount: 4}
 		]
 	})
 	event.shaped('geghilarity:nickel_catalyst_bed', [
@@ -4464,7 +4478,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geggy:mold_nugget", amount: 1}
 		],
 		item_outputs: [
-			{item: "geghilarity:iron_iii_oxide_catalyst_pellet", amount: 1}
+			{item: "geghilarity:iron_iii_oxide_catalyst_pellet", amount: 4}
 		]
 	})
 	event.shaped('geghilarity:iron_iii_oxide_catalyst_bed', [
@@ -4474,6 +4488,69 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	], {
 		A: 'geghilarity:catalyst_bed_support_grid',
 		B: 'geghilarity:iron_iii_oxide_catalyst_pellet'
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:salloy",
+		eu: 7,
+		duration: 64,
+		item_inputs: [ 
+			{item: "geghilarity:alumina", amount: 1},
+			{item: "geggy:mold_nugget", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:alumina_catalyst_pellet", amount: 4}
+		]
+	})
+	event.shaped('geghilarity:alumina_catalyst_bed', [
+		'B B',
+		' A ',
+		'B B'
+	], {
+		A: 'geghilarity:catalyst_bed_support_grid',
+		B: 'geghilarity:alumina_catalyst_pellet'
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:salloy",
+		eu: 7,
+		duration: 64,
+		item_inputs: [ 
+			{item: "modern_industrialization:silver_dust", amount: 1},
+			{item: "geggy:mold_nugget", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:silver_catalyst_pellet", amount: 4}
+		]
+	})
+	event.shaped('geghilarity:silver_catalyst_bed', [
+		'B B',
+		' A ',
+		'B B'
+	], {
+		A: 'geghilarity:catalyst_bed_support_grid',
+		B: 'geghilarity:silver_catalyst_pellet'
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:salloy",
+		eu: 7,
+		duration: 64,
+		item_inputs: [ 
+			{item: "geghilarity:zsm5_dust", amount: 1},
+			{item: "geggy:mold_nugget", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:zsm5_catalyst_pellet", amount: 4}
+		]
+	})
+	event.shaped('geghilarity:zsm5_catalyst_bed', [
+		'B B',
+		' A ',
+		'B B'
+	], {
+		A: 'geghilarity:catalyst_bed_support_grid',
+		B: 'geghilarity:zsm5_catalyst_pellet'
 	})
 	
 	event.shaped('geghilarity_fatmachines:invar_frame_box', [
@@ -5005,6 +5082,225 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		],
 		item_outputs: [
 			{item: "geggy:black_steel_ingot", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 60,
+		item_inputs: [ 
+			{item: "geggy:quartz_sand", amount: 2}
+		],
+		item_outputs: [
+			{item: "geggy:quartzite_dust", amount: 1},
+			{item: "ae2:certus_quartz_dust", amount: 1, probability: 0.2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 24,
+		duration: 800,
+		item_inputs: [ 
+			{item: "geggy:quartzite_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:distilled_water", amount: 50}
+		],
+		item_outputs: [
+			{item: "geggy:quartzite", amount: 1}
+		]
+	})
+	event.shaped('geghilarity:lv_emitter', [
+		'DBC',
+		'BAB',
+		'CBD'
+	], {
+		B: 'geggy:brass_rod',
+		A: 'geggy:quartzite',
+		C: 'modern_industrialization:analog_circuit',
+		D: 'powah:energy_cable_basic'
+	})
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 2,
+		duration: 100,
+		item_inputs: [ 
+			{item: "create:brass_ingot", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:brass_rod", amount: 2}
+		]
+	})
+	
+	event.remove([
+		"minecraft:book",
+	    "farmersdelight:book_from_canvas",
+		"modern_industrialization:materials/centrifuge/manganese_crushed_dust"
+	])
+
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 8,
+		duration: 1200,
+		item_inputs: [ 
+			{item: "minecraft:raw_iron", amount: 6}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:iron_dust", amount: 8},
+			{item: "geghilarity:pyrolusite_dust", amount: 1}
+		]
+	})
+	event.smelting('geggy:manganese_ingot', 'modern_industrialization:manganese_dust').cookingTime(200)
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 2,
+		duration: 100,
+		item_inputs: [ 
+			{item: "geggy:manganese_ingot", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:manganese_rod", amount: 2}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 7,
+		duration: 100,
+		item_inputs: [ 
+			{item: "geghilarity:crosslinked_polystyrene-divinylbenzene_nugget", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:crosslinked_polystyrene-divinylbenzene_round", amount: 1}
+		]
+	})
+	
+	// ruby alumina and chrome stuff
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 20,
+		item_inputs: [ 
+			{item: "geghilarity:alumina", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:molten_alumina", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 120,
+		duration: 400,
+		item_inputs: [ 
+			{item: "geggy:mold_ball", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:molten_alumina", amount: 36}
+		],
+		item_outputs: [
+			{item: "geggy:alumina_seed_crystal", amount: 1, probability: 0.1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
+		eu: 120,
+		duration: 400,
+		item_inputs: [
+			{item: "geggy:alumina_seed_crystal", amount: 1},
+			{item: "geghilarity:chromium_iii_oxide_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:molten_alumina", amount: 4608}
+		],
+		item_outputs: [	
+			{item: "geggy:ruby_boule", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 120,
+		duration: 400,
+		item_inputs: [ 
+			{item: "geggy:ruby_boule", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 37}
+		],
+		item_outputs: [
+			{item: "geggy:alumina_seed_crystal", amount: 1},
+			{item: "geggy:exquisite_ruby", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "geggy:exquisite_ruby", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:ruby_dust", amount: 4}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 16,
+		duration: 20,
+		item_inputs: [ 
+			{item: "geggy:exquisite_ruby", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:flawless_ruby", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 2,
+		duration: 50,
+		item_inputs: [
+			{item: "geggy:flawless_ruby", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:ruby_dust", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 16,
+		duration: 20,
+		item_inputs: [ 
+			{item: "geggy:flawless_ruby", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:ruby", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 2,
+		duration: 25,
+		item_inputs: [
+			{item: "geggy:ruby", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:ruby_dust", amount: 1}
 		]
 	})
 	

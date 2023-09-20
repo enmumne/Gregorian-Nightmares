@@ -456,7 +456,8 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	// CRACKING
+	///// CRACKING /////
+	///// CRACKING /////
 	
 	event.remove([
 		"modern_industrialization:petrochem/steam_cracking/heavy_fuel", 
@@ -1943,6 +1944,18 @@ ServerEvents.recipes(event => {
 	// steam propane
 	
 	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "geghilarity:propane", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:steam-cracked_propane", amount: 700}
+		]
+	})
+	event.custom({ 
 		type: "modern_industrialization:cracking_unit",
 		eu: 120,
 		duration: 80,
@@ -2028,6 +2041,18 @@ ServerEvents.recipes(event => {
 	// steam ethane
 	
 	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "geghilarity:ethane", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:steam-cracked_ethane", amount: 700}
+		]
+	})
+	event.custom({ 
 		type: "modern_industrialization:cracking_unit",
 		eu: 120,
 		duration: 80,
@@ -2112,6 +2137,18 @@ ServerEvents.recipes(event => {
 	
 	// steam butane
 	
+	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "geghilarity:butane", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:steam-cracked_butane", amount: 700}
+		]
+	})
 	event.custom({ 
 		type: "modern_industrialization:cracking_unit",
 		eu: 120,
@@ -3125,6 +3162,81 @@ ServerEvents.recipes(event => {
 		],
 		fluid_outputs: [
 			{fluid: "geghilarity:midgrade_gasoline", amount: 1000}
+		]
+	})
+	
+	// rough
+	
+	event.custom({ 
+		type: "modern_industrialization:cracking_unit",
+		eu: 60,
+		duration: 260,
+		item_inputs: [
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:fuel_oil", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:upgraded_fuel_oil_mix", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:upgraded_fuel_oil_mix", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:diesel", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 60,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:oxygen", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:flue_gas", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:salloy",
+		eu: 60,
+		duration: 100,
+		item_inputs: [
+			{item: "geghilarity:molecular_sieve_dust", amount: 1},
+			{item: "geggy:clay_dust", amount: 1}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 60,
+		duration: 120,
+		fluid_inputs: [
+			{fluid: "geghilarity:refinery_gas", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:butane", amount: 100},
+			{fluid: "geghilarity:propane", amount: 100},
+			{fluid: "geghilarity:ethane", amount: 100},
+			{fluid: "modern_industrialization:methane", amount: 750}
 		]
 	})
 
