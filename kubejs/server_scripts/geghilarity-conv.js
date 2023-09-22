@@ -176,7 +176,16 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 	event.shapeless('geghilarity:seaweed_ash_dust', [ '4x geghilarity:small_seaweed_ash_dust'])	
 	event.custom({ 
 		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:small_seaweed_ash_dust", amount: 4}],
-			item_outputs: [{item: "geghilarity:seaweed_ash_dust", amount: 1}]})		
+			item_outputs: [{item: "geghilarity:seaweed_ash_dust", amount: 1}]})	
+
+	event.shapeless('geghilarity:potassium_persulfate_dust', [ '9x geghilarity:tiny_potassium_persulfate_dust'])
+	event.shapeless('9x geghilarity:tiny_potassium_persulfate_dust', [ 'geghilarity:potassium_persulfate_dust'])	
+	event.custom({ 
+		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:tiny_potassium_persulfate_dust", amount: 9}],
+			item_outputs: [{item: "geghilarity:potassium_persulfate_dust", amount: 1}]})	
+	event.custom({ 
+		type: "modern_industrialization:unpacker", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:potassium_persulfate_dust", amount: 1}],
+			item_outputs: [{item: "geghilarity:tiny_potassium_persulfate_dust", amount: 9}]})		
 
 	event.remove({id: 'minecraft:gold_ingot_from_nuggets'})
 	event.remove({id: 'minecraft:gold_nugget'})

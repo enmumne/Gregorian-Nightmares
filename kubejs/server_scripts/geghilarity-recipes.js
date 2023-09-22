@@ -11042,7 +11042,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:wolframite_slurry", amount: 1000}
 		],
 		item_outputs: [	
-			{item: "geghilarity:floated_wolframite_dust", amount: 16}
+			{item: "geghilarity:flotated_wolframite_dust", amount: 16}
 		],
 		fluid_outputs: [	
 			{fluid: "geghilarity:wastewater", amount: 1000}
@@ -11053,7 +11053,7 @@ ServerEvents.recipes(event => {
 		eu: 480,
 		duration: 20,
 		item_inputs: [
-			{item: "geghilarity:floated_wolframite_dust", amount: 1}
+			{item: "geghilarity:flotated_wolframite_dust", amount: 1}
 		],
 		fluid_inputs: [
 			{fluid: "geghilarity:distilled_water", amount: 1000},
@@ -12902,7 +12902,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:fluorine", amount: 4000}
 		],
 		item_outputs: [	
-			{item: "geghilarity:cerium-oxidized_rare_earth_oxides_dust", amount: 1}
+			{item: "geghilarity:cerium-oxidised_rare_earth_oxides_dust", amount: 1}
 		],
 		fluid_outputs: [	
 			{fluid: "geghilarity:hydrofluoric_acid", amount: 4000}
@@ -12913,7 +12913,7 @@ ServerEvents.recipes(event => {
 		eu: 480,
 		duration: 600,
 		item_inputs: [
-			{item: "geghilarity:cerium-oxidized_rare_earth_oxides_dust", amount: 1}
+			{item: "geghilarity:cerium-oxidised_rare_earth_oxides_dust", amount: 1}
 		],
 		item_outputs: [	
 			{item: "geghilarity:bastnasite_rarer_earth_oxides_dust", amount: 1},
@@ -12995,7 +12995,7 @@ ServerEvents.recipes(event => {
 			{item: "geghilarity:lanthanium_chloride_dust", amount: 4}
 		],
 		item_outputs: [	
-			{item: "geghilarity:lanthanium_dust", amount: 1}
+			{item: "geghilarity:lanthanum_dust", amount: 1}
 		],
 		fluid_outputs: [	
 			{fluid: "modern_industrialization:chlorine", amount: 3000}

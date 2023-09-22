@@ -4274,8 +4274,6 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	})
 	
 	// book
-	//event.remove({id: 'minecraft:book'})
-	//event.remove({id: 'farmersdelight:book_from_canvas'})
 	event.custom({ 
 		type: "modern_industrialization:fextract",
 		eu: 8,

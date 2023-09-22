@@ -94,22 +94,19 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "minecraft:quartz"}],
 			"results": [{"item": "modern_industrialization:quartz_dust"}]
 	})
-	
-
 
 	event.custom({ 
 		type: "modern_industrialization:macerator",
-			eu: 2,
-			duration: 100,
-			item_inputs: [
-				{item: "minecraft:obsidian", amount: 1}
-			],
-			item_outputs: [
-				{item: "create:powdered_obsidian", amount: 1},
-				{item: "minecraft:obsidian", amount: 1, probability: 0.75}
-			]
-		}
-	)
+		eu: 2,
+		duration: 100,
+		item_inputs: [
+			{item: "minecraft:obsidian", amount: 1}
+		],
+		item_outputs: [
+			{item: "create:powdered_obsidian", amount: 1},
+			{item: "minecraft:obsidian", amount: 1, probability: 0.75}
+		]
+	})
 	
 	// create brass
 	event.remove({type: "create:mixing", output: "create:brass_ingot"})
