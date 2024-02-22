@@ -474,6 +474,10 @@
 				"There's no respect for pigs these days."
 				""
 				"This shall be their revenge. The revenge of the pigs."
+				""
+				"&o&cThe pigs have won tonight"
+				"&o&cNow they can all sleep soundly"
+				"&o&cAnd everything is alright"
 			]
 			icon: "modern_industrialization:uncooked_steel_dust"
 			id: "4571CCE5C6A7EFC9"
@@ -482,7 +486,7 @@
 				item: "modern_industrialization:coke_dust"
 				type: "item"
 			}]
-			title: "The Revenge of the Pigs"
+			title: "March of the Pigs"
 			x: -20.98809523809524d
 			y: 12.649999999999999d
 		}
@@ -497,7 +501,8 @@
 			]
 			id: "19A98DE71EE34CAA"
 			min_width: 260
-			shape: "rsquare"
+			shape: "octagon"
+			size: 1.3d
 			tasks: [{
 				id: "750D838B7E2E5194"
 				item: "modern_industrialization:steel_ingot"
@@ -558,13 +563,18 @@
 				"Also, if you run out of free faces, you can craft an MD \"machine extender\". These blocks are placed above the MI machine you want to extend, and you can then connect to it more cables and pipes, and you can go as tall you want..."
 				""
 				"Use the MI wrench to remove connections or extractors."
+				""
+				"&o&6 43 : I hear people asking for pipes a lot. What, in your mind, are the features of the pipe?"
+				"&o : to be smoked, evidently."
 			]
 			id: "6D27859AE4185773"
+			min_width: 240
 			tasks: [{
 				id: "6D0EA4EBF692B16B"
 				item: "moderndynamics:item_pipe"
 				type: "item"
 			}]
+			title: "Pied Piper of Item Pipes"
 			x: -22.5d
 			y: 22.983333333333327d
 		}
@@ -819,10 +829,23 @@
 				"Finally."
 				""
 				"The ratio of iron dust to ingot will be 3 to 2 for a while."
+				""
+				"&o&cHey, pig"
+				"&o&cYeah, you"
+				""
+				"&o&cHey, pig, piggy, pig, pig, pig"
+				"&o&cAll of my fears came true"
+				""
+				"&o&cHey, pig"
+				"&o&cNothing's turning out the way I planned"
+				""
+				"&o&cWhat am I supposed to do?"
+				""
+				"&o&cNothing can stop me now"
 			]
 			icon: "geggy:pig_iron_ingot"
 			id: "628637F51350EFD3"
-			min_width: 240
+			min_width: 270
 			shape: "rsquare"
 			tasks: [
 				{
@@ -836,7 +859,7 @@
 					type: "item"
 				}
 			]
-			title: "Piggy Back"
+			title: "Piggy"
 			x: -21.0d
 			y: 16.0d
 		}
@@ -1175,6 +1198,179 @@
 			title: "Larger than life"
 			x: -18.0d
 			y: 20.5d
+		}
+		{
+			dependencies: ["415F550A624CC08D"]
+			description: [
+				"You may have noticed that some tricks for breathing underwater have been nerfed."
+				""
+				"With the alloy smelter you can now craft glass bottles. There's this weird added feature that if you bring empty bottles while you are under water and use them, you get a water bottle."
+				""
+				"This is obviously a vanilla behavior, but the added benefit is that every time you fill one empty bottle with water, one breathing \"bubble\" gets refilled. As if you breathed some air from the bottle..."
+				""
+				"Since you can easily \"drink\" the water bottles, the system is conveniently reusable."
+				""
+				"...Now, that bottle you see there in the quest objective obviously won't help. You need a stopper."
+				""
+				"&o : For some reason bottled water smells a bit like farts. It's a mistery science still hasn't been able to solve, but the usefulness of the device surpasses the momentary discomfort."
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "7B7FBACCC734F3CB"
+			min_width: 250
+			tasks: [{
+				id: "3EB0622F14CAB20D"
+				item: "geggy:uncorked_glass_bottle"
+				type: "item"
+			}]
+			title: "Underwater Farts"
+			x: -25.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["39754E37B49FAC5E"]
+			description: [
+				"While the situation isn't improving much here, with a macerator or an alloy smelter you also get access to the production of gold ingots."
+				""
+				"So what you can do is crush the gold nuggets into tiny dusts, gather nine of them into a full dust, and then you can cook the dust in a furnace."
+				""
+				"Alternatively, you can use the alloy smelter and a mold to convert nine nuggets directly into a gold ingot. Skipping the macerator."
+				""
+				"If you upgrade the macerator to the steel version, you can also process the precious ore block for better yields."
+				""
+				"As you can see from the recipes, the next stage opens up when you can craft an electric autocalve, for better yields at the purified ore. Then the full processing will require first assemblers, to craft chemical reactors. Then a small setup will realize the full gold processing chain."
+			]
+			id: "05DA598C312DD133"
+			min_width: 250
+			shape: "octagon"
+			size: 1.3d
+			tasks: [{
+				id: "679DD9EEE279B63B"
+				item: "minecraft:gold_ingot"
+				type: "item"
+			}]
+			x: -19.5d
+			y: 22.0d
+		}
+		{
+			dependencies: ["7B7FBACCC734F3CB"]
+			description: [
+				"To craft a stopper for the glass bottle, you need some tree bark."
+				""
+				"But in this case, the bark needs to be oak."
+				""
+				"Once you get some kind of oak or dark oak log, there's only a specific way to get the bark you need, and that's exclusively by using a Create saw."
+				""
+				"I'd use a MI cutting machine, but it's currently hardcoded to have a single output slot."
+			]
+			icon: "geggy:oak_bark"
+			id: "0D2DBE919E04B100"
+			shape: "rsquare"
+			tasks: [{
+				id: "171C619882BD1F27"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:cork"
+					}
+				}
+				title: "Any #minecraft:cork"
+				type: "item"
+			}]
+			title: "Bark at a tree"
+			x: -27.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["0D2DBE919E04B100"]
+			description: [
+				"Grind the oak bark into a dust, either the usual Create millstone or a macerator."
+				""
+				"&7&o : It looks like shit."
+				"&o : I'm not an artist. You can draw a better one yourself and send it to me."
+				"&7&o : Oh, does that mean you take pride in its DESIGN, instead?"
+			]
+			id: "47A1DC679D46C66F"
+			shape: "rsquare"
+			tasks: [{
+				id: "1DED87A771737B46"
+				item: "geggy:ground_tree_bark"
+				type: "item"
+			}]
+			title: "Arale"
+			x: -28.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["47A1DC679D46C66F"]
+			description: [
+				"Yeah, so..."
+				""
+				"That's some rubber mixed with the ground tree bark."
+				""
+				"Got two options, mixer either Create or MI. But the MI mixer is steel-tier."
+				""
+				"&7&o : Eww."
+			]
+			id: "18C5A7C989DC445D"
+			shape: "rsquare"
+			tasks: [{
+				id: "35F22F2181907DCC"
+				item: "geggy:mixed_cork"
+				type: "item"
+			}]
+			title: "Mixing shit and piss..."
+			x: -28.5d
+			y: 19.0d
+		}
+		{
+			dependencies: ["18C5A7C989DC445D"]
+			description: [
+				"Then you take the shit and compress it into a turd."
+				""
+				"I mean, the mixed cork gets lumped into a kind of rod, that we'll then cut into individual corks. It's realistic."
+			]
+			id: "38862A3E3F13DC7C"
+			shape: "rsquare"
+			tasks: [{
+				id: "512E0537478A2834"
+				item: "geggy:pressed_cork"
+				type: "item"
+			}]
+			title: "Turd"
+			x: -27.0d
+			y: 19.0d
+		}
+		{
+			dependencies: ["38862A3E3F13DC7C"]
+			description: [
+				"And there you have it, a bottle stopper."
+				""
+				"The pressed cork is processed in a cutting machine or a Create saw."
+				""
+				"Just join the uncorked glass bottle and the bottle cork on a crafting table."
+				""
+				"&o : I know you are surprised it doesn't even need lube, to make."
+			]
+			icon: "minecraft:glass_bottle"
+			id: "385EBA194D69C948"
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "3C88DFE1C10E6D15"
+					item: "geggy:bottle_cork"
+					type: "item"
+				}
+				{
+					id: "726E91AF6235525C"
+					item: "minecraft:glass_bottle"
+					type: "item"
+				}
+			]
+			title: "Smelly bottle"
+			x: -25.5d
+			y: 19.0d
 		}
 	]
 	title: "1 - Steam"

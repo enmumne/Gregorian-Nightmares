@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_door",
+  "key": {
+    "#": {
+      "item": "minecraft:crimson_planks"
+    },
+    "X": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "X##",
+    "X##",
+    "X##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:crimson_door"
+  }
+}

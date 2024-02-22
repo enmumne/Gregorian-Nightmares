@@ -333,7 +333,18 @@ function qol_recipes(event) {
 			"results": [{"item": "minecraft:green_dye"}]
 	})
 	//event.recipes.createMilling("minecraft:green_dye", ["#minecraft:leaves"])
-	event.shapeless("minecraft:slime_ball", ["create:dough", "minecraft:green_dye"])
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:dough"},{"item": "minecraft:green_dye"}],
+		"results": [{"item": "minecraft:slime_ball"}]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:dough"},{"item": "minecraft:lime_dye"}],
+		"results": [{"item": "minecraft:slime_ball"}]
+	})
 
 	event.remove({id: "kibe:golden_lasso"})
 	//event.remove({output: "kibe:golden_lasso"})
@@ -438,20 +449,27 @@ function qol_recipes(event) {
 		processingTime: 1200
 	})
 	
-
-	event.replaceInput({type: "minecraft:crafting_shaped", output: "dankstorage:dank_1"}, "minecraft:coal", "minecraft:leather")
+	event.remove([
+		"dankstorage:1",
+		"dankstorage:6",
+		"dankstorage:7",
+	    "dankstorage:5_to_6",
+		"dankstorage:6_to_7"
+	])
 
 	// event.replaceInput({type: "minecraft:crafting_shaped", output: "travelstaff:travel_staff"}, "minecraft:iron_ingot", "modern_industrialization:iron_rod")
 	// event.replaceInput({type: "minecraft:crafting_shaped", output: "travelstaff:travel_anchor"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
 	// event.replaceInput({type: "minecraft:crafting_shaped", output: "travelstaff:travel_anchor"}, "minecraft:iron_block", "modern_industrialization:iron_large_plate")
-
-	event.remove({id: "dankstorage:dank_6"})
-	//event.remove({output: "dankstorage:dank_6"})
-	event.remove({id: "dankstorage:dank_7"})
-	//event.remove({output: "dankstorage:dank_7"})
-
-	event.remove({type: "minecraft:crafting_shaped", output: "dankstorage:5_to_6"})
-	event.remove({type: "minecraft:crafting_shaped", output: "dankstorage:6_to_7"})
+	
+	event.shaped("dankstorage:dank_1", [
+		" B ",
+		"BAB",
+		"CB "
+	], {
+		A: "extended_drawers:single_drawer",
+		B: "modern_industrialization:steel_plate",
+		C: "modern_industrialization:capacitor"
+	})
 	
 	event.custom({
 		"type": "create:mechanical_crafting",
@@ -542,18 +560,6 @@ function qol_recipes(event) {
 		P: "modern_industrialization:diamond_plate"
 	})
 
-	event.remove({id: "kibe:trash_can"})
-	//event.remove({output: "kibe:trash_can"})
-	event.shaped("kibe:trash_can", [
-		" T ",
-		"C C",
-		"CTC"
-	], {
-		T: "modern_industrialization:tin_plate",
-		C: "modern_industrialization:tin_curved_plate"
-	})
-	event.replaceInput({mod: "modern_industrialization", output: "modern_industrialization:trash_can"}, "minecraft:lava_bucket", "kibe:trash_can")
-
 	event.remove({id: "kibe:redstone_timer"})
 	//event.remove({output: "kibe:redstone_timer"})
 	event.shaped("kibe:redstone_timer", [
@@ -571,72 +577,7 @@ function qol_recipes(event) {
 	event.replaceInput({mod: "kibe", output: "kibe:heater"}, "minecraft:blaze_powder", "modern_industrialization:copper_wire")
 	event.replaceInput({mod: "kibe", output: "kibe:dehumidifier"}, "minecraft:sponge", "modern_industrialization:copper_wire")
 
-	// REMOVED BUILDING GADGETS 1.19
-	/*
-	event.remove({id: "buildinggadgets:gadget_building"})
-	//event.remove({output: "buildinggadgets:gadget_building"})
-	event.shaped("buildinggadgets:gadget_building", [
-		"SDS",
-		"ICI",
-		"RIR",
 
-	],
-	{
-		C: "modern_industrialization:electronic_circuit",
-		R: "wiredredstone:red_alloy_wire",
-		I: "modern_industrialization:iron_plate",
-		S: "modern_industrialization:silicon_battery",
-		D: "minecraft:diamond"
-	})
-
-	event.remove({id: "buildinggadgets:gadget_destruction"})
-	//event.remove({output: "buildinggadgets:gadget_destruction"})
-	event.shaped("buildinggadgets:gadget_destruction", [
-		"SPS",
-		"ICI",
-		"RIR",
-
-	],
-	{
-		C: "modern_industrialization:electronic_circuit",
-		R: "wiredredstone:red_alloy_wire",
-		I: "modern_industrialization:iron_plate",
-		S: "modern_industrialization:silicon_battery",
-		P: "minecraft:ender_pearl"
-	})
-
-	event.remove({id: "buildinggadgets:gadget_exchanging"})
-	//event.remove({output: "buildinggadgets:gadget_exchanging"})
-	event.shaped("buildinggadgets:gadget_exchanging", [
-		"SDS",
-		"ICI",
-		"RIR",
-
-	],
-	{
-		C: "modern_industrialization:electronic_circuit",
-		R: "wiredredstone:red_alloy_wire",
-		I: "modern_industrialization:iron_plate",
-		S: "modern_industrialization:silicon_battery",
-		D: "minecraft:redstone"
-	})
-
-	event.remove({id: "buildinggadgets:gadget_copy_paste"})
-	//event.remove({output: "buildinggadgets:gadget_copy_paste"})
-	event.shaped("buildinggadgets:gadget_copy_paste", [
-		"SES",
-		"ICI",
-		"RIR",
-
-	],
-	{
-		C: "modern_industrialization:electronic_circuit",
-		R: "wiredredstone:red_alloy_wire",
-		I: "modern_industrialization:iron_plate",
-		S: "modern_industrialization:silicon_battery",
-		E: "minecraft:emerald"
-	})
-	*/
 
 	// check 1.18 only crafing table
 	event.replaceInput({mod: "buildinggadgets", output: "buildinggadgets:template_manager"}, "minecraft:gold_ingot", "modern_industrialization:gold_plate")

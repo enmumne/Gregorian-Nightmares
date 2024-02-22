@@ -68,7 +68,7 @@
         .itemIn("kubejs:osmium_drill")
 		.itemOut("kubejs:dirty_osmium_drill", 0.92)
 		.itemOut("2x geghilarity:naquadric_compound_ore",  0.35)
-        .dimension("end")
+        .dimension("the_end")
 		.id("quarry_naq")
 
 	event.custom({
@@ -317,16 +317,6 @@
 					probability: 0.05
 				},
 				{
-					item: "minecraft:soul_sand",
-					amount: 20,
-					probability: 0.25
-				},
-				{
-					item: "minecraft:ancient_debris",
-					amount: 1,
-					probability: 0.01
-				},
-				{
 					item: "minecraft:glowstone",
 					amount: 12,
 					probability: 0.05
@@ -366,6 +356,11 @@
 				{
 					item: "geghilarity:vanadium_magnetite_dust",
 					amount: 2,
+					probability: 0.05
+				},
+				{
+					item: "geghilarity:tiny_chromite_dust",
+					amount: 40,
 					probability: 0.05
 				}
 			]
@@ -1176,7 +1171,7 @@ ServerEvents.recipes(event => {
 		.itemOut("1x minecraft:glowstone", 0.06)
 		.itemOut("1x geghilarity:precious_nugget", 0.2)
 		.itemOut("drilly:tiny_tier1_experience", 0.5)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("qea_quartzcore_slow")	
 
@@ -1323,7 +1318,7 @@ ServerEvents.recipes(event => {
 		.itemOut("1x minecraft:glowstone", 0.12)
 		.itemOut("1x geghilarity:precious_nugget", 0.3)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("024xa_quartzcore_slow")
 		
@@ -1348,7 +1343,7 @@ ServerEvents.recipes(event => {
 		.itemOut("1x minecraft:glowstone", 0.1)
 		.itemOut("1x geghilarity:precious_nugget", 0.28)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("024xb_quartzcore_fast")	
 		
@@ -1484,7 +1479,7 @@ ServerEvents.recipes(event => {
 		.itemOut("1x minecraft:glowstone", 0.15)
 		.itemOut("1x geghilarity:precious_nugget", 0.33)
 		.itemOut("drilly:tiny_tier2_experience", 0.35)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("032xa_quartzcore_slow")
 
@@ -1498,7 +1493,7 @@ ServerEvents.recipes(event => {
 		.itemOut("1x minecraft:glowstone", 0.13)
 		.itemOut("1x geghilarity:precious_nugget", 0.31)
 		.itemOut("drilly:tiny_tier2_experience", 0.22)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("032xb_quartzcore_fast")	
 		
@@ -1645,7 +1640,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:glowstone", 0.12)
 		.itemOut("2x geghilarity:precious_nugget", 0.3)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("040xa_quartzcore_slow")
 
@@ -1660,7 +1655,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:glowstone", 0.1)
 		.itemOut("2x geghilarity:precious_nugget", 0.28)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("040xb_quartzcore_fast")	
 
@@ -1847,7 +1842,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:glowstone", 0.15)
 		.itemOut("2x geghilarity:precious_nugget", 0.33)
 		.itemOut("drilly:tiny_tier3_experience", 0.28)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("048xa_quartzcore_slow")
 
@@ -1862,7 +1857,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:glowstone", 0.13)
 		.itemOut("2x geghilarity:precious_nugget", 0.31)
 		.itemOut("drilly:tiny_tier3_experience", 0.18)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("048xb_quartzcore_fast")	
 
@@ -2037,7 +2032,7 @@ ServerEvents.recipes(event => {
 		.itemOut("3x minecraft:glowstone", 0.12)
 		.itemOut("3x geghilarity:precious_nugget", 0.3)
 		.itemOut("drilly:tiny_tier4_experience", 0.26)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("056xa_quartzcore_slow")
 
@@ -2052,7 +2047,7 @@ ServerEvents.recipes(event => {
 		.itemOut("3x minecraft:glowstone", 0.1)
 		.itemOut("3x geghilarity:precious_nugget", 0.28)
 		.itemOut("drilly:tiny_tier4_experience", 0.16)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("056xb_quartzcore_fast")		
 		
@@ -2262,7 +2257,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:basalt", 0.32)
 		.itemOut("1x minecraft:glowstone", 0.3)
 		.itemOut("drilly:tiny_tier5_experience", 0.1)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("065a_quartzcore_slow")
 
@@ -2276,7 +2271,7 @@ ServerEvents.recipes(event => {
 		.itemOut("2x minecraft:basalt", 0.3)
 		.itemOut("1x minecraft:glowstone", 0.28)
 		.itemOut("drilly:tiny_tier5_experience", 0.07)
-        .dimension("nether")
+        .dimension("the_nether")
         .adjacentBlock("geggy:quartz_corenode", "below")	
 		.id("065b_quartzcore_fast")		
 		
@@ -2632,6 +2627,10 @@ ServerEvents.tags('block', event => {
   event.add('minecraft:mineable/pickaxe', 'geggy:redstone_corenode')
   event.add('minecraft:needs_iron_tool', 'geggy:quartz_corenode')	
   event.add('minecraft:mineable/pickaxe', 'geggy:quartz_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:oilsands_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:oilsands_corenode')
+  event.add('minecraft:needs_iron_tool', 'geggy:gaseous_corenode')	
+  event.add('minecraft:mineable/pickaxe', 'geggy:gaseous_corenode')
   
 })
 
@@ -2782,6 +2781,19 @@ ServerEvents.blockLootTables(event => {
     table.addPool(pool => {
       pool.rolls = 1 
       pool.addItem('geghilarity:precious_nugget', 1, [4, 16]) 
+    })
+  })
+  
+  event.addBlock('geggy:oilsands_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:oilsands_dust', 1, [8, 16]) 
+    })
+  })
+  event.addBlock('geggy:gaseous_corenode', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geggy:gaseous_rocks', 1, [6, 10]) 
     })
   })
   

@@ -2,7 +2,7 @@
   "volume": 45,
   "clientPlayerVolume": 100,
   "otherPlayerVolume": 100,
-  "runningVolumeIncrease": 0,
+  "runningVolumeIncrease": 10,
   "stance": "BIPED",
   "multiplayer": false,
   "global": false,

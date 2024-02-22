@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool",
+    "tag": "c:tools/shovels"
+  },
+  "result": [
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:flint",
+      "chance": 0.5
+    }
+  ]
+}

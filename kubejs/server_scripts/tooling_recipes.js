@@ -13,6 +13,9 @@ ServerEvents.tags('item', event => {
   event.add('forever', 'drilly:drill_group4')
   event.add('forever', 'drilly:drill_group5')
   event.add('forever', 'drilly:drill_groupx')
+  event.add('forever', 'geggy:rose_quartz_blend')
+  event.add('forever', 'create:rose_quartz')
+  event.add('forever', 'minecraft:amethyst_shard')
   
   event.add('selector', 'create:precision_mechanism')
   event.add('selector', 'geggy:selector_1')
@@ -20,13 +23,89 @@ ServerEvents.tags('item', event => {
   event.add('selector', 'geggy:selector_3')
   
   event.add('c:tools/pickaxes', 'geggy:flint_pickaxe')
+  event.add('c:tools/pickaxes', 'geggy:reinforced_flint_pickaxe')
   event.add('c:tools/pickaxes', 'geggy:bronze_pickaxe')
+  event.add('c:tools', 'geggy:flint_pickaxe')
+  event.add('c:tools', 'geggy:reinforced_flint_pickaxe')
+  event.add('c:tools', 'geggy:bronze_pickaxe')
+  event.add('c:pickaxes', 'geggy:flint_pickaxe')
+  event.add('c:pickaxes', 'geggy:reinforced_flint_pickaxe')
+  event.add('c:pickaxes', 'geggy:bronze_pickaxe')
+  
+  event.add('c:tools', 'geggy:flint_sword')
+  event.add('c:tools', 'geggy:reinforced_flint_sword')
+  event.add('c:tools', 'geggy:bronze_sword')
+  event.add('c:swords', 'geggy:flint_sword')
+  event.add('c:swords', 'geggy:reinforced_flint_sword')
+  event.add('c:swords', 'geggy:bronze_sword')
+  
+  event.add('c:tools', 'geggy:flint_shovel')
+  event.add('c:tools', 'geggy:reinforced_flint_shovel')
+  event.add('c:tools', 'geggy:bronze_shovel')
+  event.add('c:shovels', 'geggy:flint_shovel')
+  event.add('c:shovels', 'geggy:reinforced_flint_shovel')
+  event.add('c:shovels', 'geggy:bronze_shovel')
+  event.add('c:tools/shovels', 'geggy:flint_shovel')
+  event.add('c:tools/shovels', 'geggy:reinforced_flint_shovel')
+  event.add('c:tools/shovels', 'geggy:bronze_shovel')
+  
+  event.add('c:tools/axes', 'geggy:flint_axe')
+  event.add('c:tools/axes', 'geggy:reinforced_flint_axe')
+  event.add('c:tools/axes', 'geggy:bronze_axe')
+  event.add('c:tools', 'geggy:flint_axe')
+  event.add('c:tools', 'geggy:reinforced_flint_axe')
+  event.add('c:tools', 'geggy:bronze_axe')
+  event.add('c:axes', 'geggy:flint_axe')
+  event.add('c:axes', 'geggy:reinforced_flint_axe')
+  event.add('c:axes', 'geggy:bronze_axe')
+  
+  event.add('c:tools', 'geggy:flint_hoe')
+  event.add('c:tools', 'geggy:reinforced_flint_hoe')
+  event.add('c:tools', 'geggy:bronze_hoe')
+  event.add('c:hoes', 'geggy:flint_hoe')
+  event.add('c:hoes', 'geggy:reinforced_flint_hoe')
+  event.add('c:hoes', 'geggy:bronze_hoe')
   
   event.add('boiler_fuel', 'modern_industrialization:coal_tiny_dust')
   event.add('boiler_fuel', 'modern_industrialization:lignite_coal_tiny_dust')
   
   event.add('geggy:lv_cable', 'powah:energy_cable_starter')
   event.add('geggy:lv_cable', 'powah:energy_cable_basic')
+  
+  event.add('cork', 'geggy:oak_bark')
+  event.add('cork', 'geggy:dark_oak_bark')
+  event.add('cork', 'immersive_weathering:oak_bark')
+  event.add('cork', 'immersive_weathering:dark_oak_bark')
+  
+  event.add('c:hidden_from_recipe_viewers', 'minecraft:wooden_pickaxe')
+  event.add('c:hidden_from_recipe_viewers', 'minecraft:stone_pickaxe')
+  event.add('c:hidden_from_recipe_viewers', 'create:copper_sheet')
+  event.add('c:hidden_from_recipe_viewers', 'create:iron_sheet')
+  event.add('c:hidden_from_recipe_viewers', 'create:golden_sheet')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:trash_can')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_bag')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_tank')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_bucket')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:void_bucket')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:big_torch')
+  event.add('c:hidden_from_recipe_viewers', 'modern_industrialization:copper_nugget')
+  event.add('c:hidden_from_recipe_viewers', 'ad_astra:steel_plate')
+  event.add('c:hidden_from_recipe_viewers', 'ad_astra:steel_ingot')
+  event.add('c:hidden_from_recipe_viewers', 'ad_astra:iron_plate')
+  event.add('c:hidden_from_recipe_viewers', 'ad_astra:iron_rod')
+  event.add('c:hidden_from_recipe_viewers', 'ad_astra:steel_nugget')
+  event.add('c:hidden_from_recipe_viewers', 'extended_drawers:connector')
+  event.add('c:hidden_from_recipe_viewers', 'extended_drawers:access_point')
+  
+  event.remove('c:steel_ingots', 'ad_astra:steel_ingot')
+  event.remove('c:ingots', 'ad_astra:steel_ingot')
+  event.remove('c:steel_plates', 'ad_astra:steel_plate')
+  event.remove('c:plates', 'ad_astra:steel_plate')
+  event.remove('c:iron_plates', 'ad_astra:iron_plate')
+  event.remove('c:plates', 'ad_astra:iron_plate')
+  event.remove('c:iron_rods', 'ad_astra:iron_rod')
+  event.remove('c:steel_nuggets', 'ad_astra:steel_nugget')
+  event.remove('c:nuggets', 'ad_astra:steel_nugget')
   
 });
 
@@ -43,7 +122,58 @@ ServerEvents.tags('block', event => {
   event.add('needs_stone_tool', 'create:zinc_ore')
   event.add('needs_stone_tool', 'create:deepslate_zinc_ore')
   
- 
+  event.add('needs_stone_tool', 'minecraft:deepslate_coal_ore')
+  event.add('needs_stone_tool', 'geggy:deepslate_precious_ore')
+  
+  event.remove('needs_stone_tool', 'minecraft:iron_ore')
+  event.remove('needs_stone_tool', 'minecraft:copper_ore')
+  event.remove('needs_stone_tool', 'minecraft:redstone_ore')
+  event.remove('needs_stone_tool', 'create:zinc_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:lead_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:lignite_coal_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:tin_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:salt_ore')
+  
+  event.remove('needs_stone_tool', 'modern_industrialization:tungsten_ore')
+  event.add('needs_diamond_tool', 'modern_industrialization:tungsten_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:deepslate_tungsten_ore')
+  event.add('needs_diamond_tool', 'modern_industrialization:deepslate_tungsten_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:uranium_ore')
+  event.add('needs_iron_tool', 'modern_industrialization:uranium_ore')
+  event.remove('needs_stone_tool', 'modern_industrialization:deepslate_uranium_ore')
+  event.add('needs_iron_tool', 'modern_industrialization:deepslate_uranium_ore')
+  
+  event.add('needs_stone_tool', 'minecraft:deepslate')
+  event.add('needs_stone_tool', 'minecraft:cobbled_deepslate')
+  event.add('needs_stone_tool', 'minecraft:polished_deepslate')
+  event.add('needs_stone_tool', 'minecraft:infested_deepslate')
+  event.add('needs_stone_tool', 'minecraft:deepslate_bricks')
+  event.add('needs_stone_tool', 'minecraft:deepslate_tiles')
+  event.add('needs_stone_tool', 'minecraft:layered_deepslate')
+  event.add('needs_stone_tool', 'minecraft:tuff')
+  event.add('needs_stone_tool', 'minecraft:cut_tuff')
+  event.add('needs_stone_tool', 'minecraft:polished_cut_tuff')
+  event.add('needs_stone_tool', 'minecraft:cut_tuff_bricks')
+  event.add('needs_stone_tool', 'minecraft:small_tuff_bricks')
+  event.add('needs_stone_tool', 'minecraft:layered_tuff')
+  event.add('needs_stone_tool', 'minecraft:tuff_pillar')
+  event.add('needs_stone_tool', 'minecraft:gilded_blackstone')
+  event.add('needs_stone_tool', 'minecraft:polished_blackstone_bricks')
+  event.add('needs_stone_tool', 'minecraft:blackstone_tile')
+  
+  event.remove('brazier:brazier_base_blocks', 'minecraft:gilded_blackstone')
+  event.remove('brazier:brazier_stripe_blocks', 'minecraft:gilded_blackstone')
+  event.remove('brazier:brazier_base_blocks', 'minecraft:crying_obsidian')
+  event.remove('brazier:brazier_stripe_blocks', 'minecraft:crying_obsidian')
+  event.remove('brazier:brazier_base_blocks', 'minecraft:ancient_debris')
+  event.remove('brazier:brazier_stripe_blocks', 'minecraft:ancient_debris')
+  event.remove('brazier:brazier_base_blocks', 'minecraft:netherite_block')
+  event.remove('brazier:brazier_stripe_blocks', 'minecraft:netherite_block')
+  
+  event.add('brazier:brazier_base_blocks', 'geggy:gloom_block')
+  event.add('brazier:brazier_stripe_blocks', 'geggy:gloom_block')
+  event.add('needs_stone_tool', 'geggy:gloom_block')
+
   
 });  
   
@@ -408,7 +538,7 @@ event.custom (
   ], {
     S: 'minecraft:flint',
 	A: 'geggy:j_tool_rod'
-  })
+  }).noMirror()
   event.shaped('geggy:flint_sword', [
     '  S',
     ' S ',
@@ -440,18 +570,18 @@ event.custom (
   ], {
     S: 'minecraft:flint',
 	A: 'geggy:j_tool_rod'
-  })
+  }).noMirror()
   
   event.shaped('geggy:reinforced_flint_pickaxe', [
-    'SSZ',
-    'ASX',
+    'ZS ',
+    'AX ',
     '   '
   ], {
-    S: 'minecraft:flint',
+    S: 'geggy:sharpened_flint_pickaxe_head',
 	A: 'geggy:reinforced_tool_rod',
 	X: 'geggy:low_grade_resin',
 	Z: 'minecraft:string'
-  })
+  }).noMirror()
   event.shaped('geggy:reinforced_flint_sword', [
     ' XS',
     ' SZ',
@@ -471,7 +601,7 @@ event.custom (
 	A: 'geggy:reinforced_tool_rod',
 	X: 'geggy:low_grade_resin',
 	Z: 'minecraft:string'
-  })
+  }).noMirror()
   event.shaped('geggy:reinforced_flint_hoe', [
     'SSZ',
     'XA ',
@@ -493,25 +623,147 @@ event.custom (
 	Z: 'minecraft:string'
   })
   
+  // bronze tools 
   
   event.shaped('geggy:unfired_pickaxe_mold', [
-    'AAA',
+    ' A ',
     'ABA',
-    'AAA'
+    'CA '
   ], {
-    A: 'minecraft:clay_ball',
+    A: 'geggy:clay_dust',
+	C: 'kibe:water_wooden_bucket',
 	B: 'geggy:flint_pickaxe'
-  }).damageIngredient('geggy:flint_pickaxe')
+  }).damageIngredient('geggy:flint_pickaxe').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+  event.shaped('geggy:unfired_pickaxe_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'minecraft:water_bucket',
+	B: 'geggy:flint_pickaxe'
+  }).damageIngredient('geggy:flint_pickaxe').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
   event.shaped('geggy:bronze_pickaxe', [
     '  S',
     ' A ',
     'B  '
   ], {
     S: 'geggy:bronze_pickaxe_head',
-	A: 'geggy:j_tool_rod',
+	A: 'geggy:reinforced_tool_rod',
 	B: 'modern_industrialization:rubber_sheet'
   })
   
+  event.shaped('geggy:unfired_axe_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'kibe:water_wooden_bucket',
+	B: 'geggy:flint_axe'
+  }).damageIngredient('geggy:flint_axe').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+  event.shaped('geggy:unfired_axe_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'minecraft:water_bucket',
+	B: 'geggy:flint_axe'
+  }).damageIngredient('geggy:flint_axe').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+  event.shaped('geggy:bronze_axe', [
+    '  S',
+    ' A ',
+    'B  '
+  ], {
+    S: 'geggy:bronze_axe_head',
+	A: 'geggy:reinforced_tool_rod',
+	B: 'modern_industrialization:rubber_sheet'
+  })
+  
+  event.shaped('geggy:unfired_sword_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'kibe:water_wooden_bucket',
+	B: 'geggy:flint_sword'
+  }).damageIngredient('geggy:flint_sword').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+  event.shaped('geggy:unfired_sword_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'minecraft:water_bucket',
+	B: 'geggy:flint_sword'
+  }).damageIngredient('geggy:flint_sword').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+  event.shaped('geggy:bronze_sword', [
+    '  S',
+    ' A ',
+    'B  '
+  ], {
+    S: 'geggy:bronze_sword_head',
+	A: 'geggy:reinforced_tool_rod',
+	B: 'modern_industrialization:rubber_sheet'
+  })
+  
+  event.shaped('geggy:unfired_hoe_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'kibe:water_wooden_bucket',
+	B: 'geggy:flint_hoe'
+  }).damageIngredient('geggy:flint_hoe').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+  event.shaped('geggy:unfired_hoe_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'minecraft:water_bucket',
+	B: 'geggy:flint_hoe'
+  }).damageIngredient('geggy:flint_hoe').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+  event.shaped('geggy:bronze_hoe', [
+    '  S',
+    ' A ',
+    'B  '
+  ], {
+    S: 'geggy:bronze_hoe_head',
+	A: 'geggy:reinforced_tool_rod',
+	B: 'modern_industrialization:rubber_sheet'
+  })
+  
+  event.shaped('geggy:unfired_shovel_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'kibe:water_wooden_bucket',
+	B: 'geggy:flint_shovel'
+  }).damageIngredient('geggy:flint_shovel').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+  event.shaped('geggy:unfired_shovel_mold', [
+    ' A ',
+    'ABA',
+    'CA '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'minecraft:water_bucket',
+	B: 'geggy:flint_shovel'
+  }).damageIngredient('geggy:flint_shovel').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+  event.shaped('geggy:bronze_shovel', [
+    '  S',
+    ' A ',
+    'B  '
+  ], {
+    S: 'geggy:bronze_shovel_head',
+	A: 'geggy:reinforced_tool_rod',
+	B: 'modern_industrialization:rubber_sheet'
+  })
   
   
 
@@ -679,6 +931,13 @@ event.custom (
 			"count": 2, "item": "geggy:cured_leather_cord"
 		}]
 	})
+	event.remove([
+		"minecraft:leather_helmet",
+	    "minecraft:leather_chestplate",
+		"minecraft:leather_leggings",
+		"minecraft:leather_boots",
+		"create:crafting/materials/rose_quartz"
+	])
 	event.remove({id: 'minecraft:leather_helmet'})
 	event.remove({id: 'minecraft:leather_chestplate'})
 	event.remove({id: 'minecraft:leather_leggings'})
@@ -740,7 +999,7 @@ event.custom (
 		duration: 400,
 		item_inputs : [
 			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
-			{item: "minecraft:iron_pickaxe", probability: 0.0}
+			{tag: "c:tools/pickaxes", probability: 0.0}
 		],
 		item_outputs :
 		[
@@ -786,19 +1045,7 @@ event.custom (
 			{item: "geggy:mold_hoe", amount: 1}
 		]
 	})
-	/*
-	event.custom({ 
-		type: "modern_industrialization:fextract",
-		eu: 38,
-		duration: 600,
-		item_inputs: [ 
-			{item: "minecraft:diamond", amount: 1}
-		],
-		fluid_outputs: [
-			{fluid: "geggy:molten_diamond", amount: 144}
-		]
-	})
-	*/
+
 	event.custom({ 
 		type: "modern_industrialization:fextract",
 		eu: 38,
@@ -808,6 +1055,18 @@ event.custom (
 		],
 		fluid_outputs: [
 			{fluid: "geggy:molten_diamond", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:gold_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
 		]
 	})
 	//shards
@@ -825,7 +1084,7 @@ event.custom (
 	})
 	*/
 	event.custom({ 
-		type: "modern_industrialization:salloy",
+		type: "modern_industrialization:electric_alloy_smelter",
 		eu: 38,
 		duration: 400,
 		item_inputs: [ 
@@ -902,6 +1161,170 @@ event.custom({
   ],
   "recipe_book_tab": "meals",
   "result": {"item": "minecraft:dried_kelp"}
+	})
+	
+	event.custom({
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{	
+		"item": "minecraft:polished_blackstone"
+		}
+	],
+	"tool": {
+		"type": "farmersdelight:tool",
+		"tag": "c:tools/pickaxes"
+	},
+	"result": [
+		{  
+		"item": "minecraft:blackstone",
+		"count": 1
+		}
+	],
+	"sound": "minecraft:entity.item.break"
+	})
+	
+	// credit to mikerooni CEu netherite
+	event.remove([
+		"minecraft:netherite_scrap",
+	    "minecraft:netherite_scrap_from_blasting",
+		"minecraft:netherite_ingot",
+		"modern_industrialization:vanilla_recipes/mixer/netherite",
+		"modern_industrialization:vanilla_recipes/macerator/netherite_scrap",
+		"ae2:tools/certus_quartz_axe",
+		"ae2:tools/certus_quartz_pickaxe",
+		"ae2:tools/certus_quartz_sword",
+		"ae2:tools/certus_quartz_hoe",
+		"ae2:tools/certus_quartz_spade",
+		"ae2:tools/nether_quartz_axe",
+		"ae2:tools/nether_quartz_pickaxe",
+		"ae2:tools/nether_quartz_sword",
+		"ae2:tools/nether_quartz_hoe",
+		"ae2:tools/nether_quartz_spade"
+	])
+	
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 32,
+		duration: 400,
+		item_inputs : [
+			{item: "minecraft:ancient_debris", amount: 1}
+		],
+		item_outputs : [
+			{item: "minecraft:netherite_scrap", amount: 1},
+			{item: "minecraft:netherite_scrap", amount: 1, probability: 0.35}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 256,
+		duration: 300,
+		item_inputs : [
+			{item: "minecraft:netherite_scrap", amount: 2}
+		],
+		fluid_inputs : [
+			{fluid: "geghilarity:aqua_regia", amount: 3000}
+		],
+		fluid_outputs : [
+			{fluid: "geggy:ancient_debris_slurry", amount: 3000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 500,
+		duration: 400,
+		fluid_inputs : [
+			{fluid: "geggy:ancient_debris_slurry", amount: 3000}
+		],
+		item_outputs : [
+			{item: "geggy:netherium_dust", amount: 2},
+			{item: "geghilarity:tungstate_dust", amount: 1},
+			{item: "geghilarity:platinum_metallic_powder_dust", amount: 1},
+			{item: "geghilarity:platinum_metallic_powder_dust", amount: 1, probability: 0.5}
+		],
+		fluid_outputs : [
+			{fluid: "geghilarity:diluted_hydrochloric_acid", amount: 2000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 256,
+		duration: 200,
+		item_inputs : [
+			{item: "geggy:netherium_dust", amount: 10},
+			{item: "modern_industrialization:gold_dust", amount: 6}
+		],
+		item_outputs : [
+			{item: "geggy:netherite_dust", amount: 2}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 1900,
+		duration: 300,
+		item_inputs : [
+			{item: "geggy:netherite_dust", amount: 1}
+		],
+		fluid_inputs : [
+			{fluid: "modern_industrialization:nitrogen", amount: 2000}
+		],
+		item_outputs : [
+			{item: "geggy:netherite_hot_ingot", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:vacuum_freezer",
+		eu: 600,
+		duration: 250,
+		item_inputs : [
+			{item: "geggy:netherite_hot_ingot", amount: 1}
+		],
+		fluid_inputs : [
+			{fluid: "geghilarity:liquid_helium", amount: 500}
+		],
+		item_outputs : [
+			{item: "minecraft:netherite_ingot", amount: 1}
+		],
+		fluid_outputs : [
+			{fluid: "modern_industrialization:helium", amount: 250}
+		],
+	})
+	
+	event.shaped('geggy:rose_quartz_blend', [
+		'CC ',
+		'AA ',
+		'AA '
+	], {
+		A: 'minecraft:redstone',
+		C: 'modern_industrialization:quartz_dust'
+	})
+	event.custom({
+		"type": "ae2:transform",
+		"circumstance": {
+			"type": "fluid",
+			"tag": "minecraft:lava"
+		},
+		"ingredients": [
+			{
+				"item": "geggy:rose_quartz_blend"
+			},
+			{	
+				"item": "minecraft:amethyst_shard"
+			}
+		],
+		"result": 
+			{
+				"count": 1, "item": "create:rose_quartz"
+			}
+	})
+	
+	event.shaped('geggy:gloom_block', [
+		'CAC',
+		'ABA',
+		'CAC'
+	], {
+		A: 'modern_industrialization:steel_large_plate',
+		B: 'modern_industrialization:aluminum_gear',
+		C: 'modern_industrialization:aluminum_plate'
 	})
 
 })

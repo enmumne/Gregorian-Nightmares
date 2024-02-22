@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:slime",
+    "minecraft:magma_cube",
+    "minecraft:hoglin",
+	"minecraft:tropical_fish",
+    "minecraft:pufferfish",
+    "minecraft:salmon",
+    "minecraft:cod",
+    "minecraft:squid",
+    "minecraft:glow_squid",
+    "minecraft:tadpole",
+	"charm:coral_squid",
+	"minecraft:bat",
+	"minecraft:dolphin"
+  ]
+}

@@ -27,6 +27,21 @@
     "iconScale": 1.0
   },
   "subCategories": [
+	{
+      "hardInclude": "nothing",
+      "includeList": [
+        "labels:label"
+      ],
+      "includeListInSuperCategory": true,
+      "excludeMode": "ONLY",
+      "excludeList": [],
+      "name": "labels",
+      "protection": false,
+      "settingOverrides": {
+        "displayed": false
+      },
+      "subCategories": []
+    },
     {
       "hardInclude": "nothing",
       "includeList": [
@@ -176,6 +191,7 @@
       "name": "gui.xaero_entity_category_items",
       "protection": true,
       "settingOverrides": {
+		"displayed": false,  
         "renderOrder": 1.0,
         "color": 12.0
       },
@@ -190,6 +206,7 @@
       "name": "gui.xaero_entity_category_other_entities",
       "protection": true,
       "settingOverrides": {
+		"displayed": false,  
         "color": 5.0
       },
       "subCategories": []

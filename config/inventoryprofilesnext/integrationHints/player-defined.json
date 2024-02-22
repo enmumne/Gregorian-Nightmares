@@ -18,5 +18,173 @@
                 "horizontalOffset": -8
             }
         }
+    },
+    "com.tom.storagemod.gui.CraftingTerminalScreen": {
+        "buttonHints": {
+            "MOVE_TO_PLAYER": {
+                "top": -14
+            },
+            "SORT": {
+                "top": -14
+            },
+            "SORT_COLUMNS": {
+                "top": -14
+            },
+            "SORT_ROWS": {
+                "top": -14
+            }
+        }
+    },
+    "aztech.modern_industrialization.machines.gui.MachineScreen": {
+        "ignore": true
+    },
+    "aztech.modern_industrialization.machines.gui.MachineMenuClient": {
+        "ignore": true
+    },
+    "aztech.modern_industrialization.pipes.item.ItemPipeScreen": {
+        "playerSideOnly": true
+    },
+    "net.mehvahdjukaar.supplementaries.client.screens.SackScreen": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.common.inventories.SackContainerMenu": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.client.screens.NoticeBoardScreen": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.common.inventories.NoticeBoardContainerMenu": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.client.screens.TrappedPresentBlockScreen": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.common.inventories.TrappedPresentContainerMenu": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.client.screens.PulleyBlockScreen": {
+        "ignore": true
+    },
+    "net.mehvahdjukaar.supplementaries.common.inventories.PulleyBlockContainerMenu": {
+        "ignore": true
+    },
+    "com.nhoryzon.mc.farmersdelight.client.screen.CookingPotScreen": {
+        "ignore": true
+    },
+    "com.nhoryzon.mc.farmersdelight.entity.block.screen.CookingPotScreenHandler": {
+        "ignore": true
+    },
+    "com.ianm1647.expandeddelight.util.inventory.screen.JuicerScreen": {
+        "ignore": true
+    },
+    "com.ianm1647.expandeddelight.util.inventory.screen.JuicerScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.CinderhearthScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.CinderhearthScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.SuckingChestScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.SuckingChestScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.ColorPickerScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.ColorPickerScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.PotionWorkshopScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.PotionWorkshopScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.RestockingChestScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.RestockingChestScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.CompactingChestScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.CompactingChestScreenHandler": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.BedrockAnvilScreen": {
+        "ignore": true
+    },
+    "de.dafuqs.spectrum.inventories.BedrockAnvilScreenHandler": {
+        "ignore": true
+    },
+    "earth.terrarium.ad_astra.client.screen.VehicleScreen": {
+        "playerSideOnly": true
+    },
+    "earth.terrarium.ad_astra.client.screen.ConversionScreen": {
+        "playerSideOnly": true
+    },
+    "earth.terrarium.ad_astra.client.screen.OxygenDistributorScreen": {
+        "playerSideOnly": true
+    },
+    "earth.terrarium.ad_astra.client.screen.LargeVehicleScreen": {
+        "ignore": true
+    },
+    "earth.terrarium.ad_astra.common.screen.menu.LargeVehicleMenu": {
+        "ignore": true
+    },
+    "earth.terrarium.ad_astra.client.screen.CryoFreezerScreen": {
+        "playerSideOnly": true
+    },
+    "earth.terrarium.ad_astra.client.screen.SolarPanelScreen": {
+        "playerSideOnly": true
+    },
+    "earth.terrarium.ad_astra.client.screen.NasaWorkbenchScreen": {
+        "playerSideOnly": true
+    },
+    "com.tiviacz.travelersbackpack.client.screen.TravelersBackpackHandledScreen": {
+        "ignore": true
+    },
+    "com.tiviacz.travelersbackpack.inventory.screen.TravelersBackpackItemScreenHandler": {
+        "ignore": true
+    },
+    "com.simibubi.create.content.equipment.toolbox.ToolboxScreen": {
+        "ignore": true
+    },
+    "com.simibubi.create.content.equipment.toolbox.ToolboxMenu": {
+        "ignore": true
+    },
+    "com.simibubi.create.content.logistics.filter.FilterScreen": {
+        "ignore": true
+    },
+    "net.minecraft.class_490": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "horizontalOffset": 1,
+                "bottom": -13
+            },
+            "SORT": {
+                "horizontalOffset": 13,
+                "bottom": -1
+            },
+            "SORT_COLUMNS": {
+                "horizontalOffset": 18,
+                "bottom": -1
+            },
+            "SORT_ROWS": {
+                "horizontalOffset": 41,
+                "bottom": -1
+            }
+        }
+    },
+    "me.luligabi.enhancedworkbenches.client.screen.CraftingStationScreen": {
+        "playerSideOnly": true
+    },
+    "me.luligabi.enhancedworkbenches.client.screen.ProjectTableScreen": {
+        "playerSideOnly": true
     }
 }

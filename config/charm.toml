@@ -25,7 +25,7 @@
 #A storage block for gunpowder. It obeys gravity and dissolves in lava.
 "BlockOfGunpowder Enabled" = true
 #A storage block for sugar. It obeys gravity and dissolves in water.
-"BlockOfSugar Enabled" = true
+"BlockOfSugar Enabled" = false
 #Bookcases hold up to 9 stacks of books, paper and maps.
 "Bookcases Enabled" = true
 #Integration with Bumblezone.

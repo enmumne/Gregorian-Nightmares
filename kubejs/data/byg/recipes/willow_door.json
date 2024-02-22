@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","group":"wooden_door","key":{"P":{"item":"byg:willow_planks"},"X":{"item":"minecraft:iron_nugget"}},"pattern":["XPP","XPP","XPP"],"result":{"count":3,"item":"byg:willow_door"}}

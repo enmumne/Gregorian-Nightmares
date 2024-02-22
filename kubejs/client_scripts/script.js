@@ -7,6 +7,13 @@ console.info('Hello, World! (You will see this line every time client resources 
 	// event.hide('minecraft:cobblestone')
 //})
 
+const $TooltipFlag$Default = Java.loadClass('net.minecraft.world.item.TooltipFlag$Default')
+REIEvents.hide('item', (e) => {
+  Item.of('minecraft:apple').getTooltipLines(
+    Client.player,
+    $TooltipFlag$Default.ADVANCED
+  );
+});
 
 ItemEvents.tooltip(event => {
 //onEvent('item.tooltip', event => {
@@ -156,11 +163,30 @@ Ingredient.of('@chipped').stacks.forEach(item => {
 */
 
 const HID = [
- "modern_industrialization:forge_hammer",	
+ "minecraft:wooden_pickaxe",
+ "minecraft:stone_pickaxe",
+ "extended_drawers:connector",
+ "extended_drawers:access_point",
+ "modern_industrialization:forge_hammer",
+ "modern_industrialization:copper_nugget", 
  "vinery:cooking_pot",
  "create:copper_sheet",
  "create:iron_sheet",
- "create:golden_sheet"
+ "create:golden_sheet",
+ "kibe:trash_can",
+ "kibe:entangled_bag",
+ "kibe:entangled_chest",
+ "kibe:entangled_tank",
+ "kibe:entangled_bucket",
+ "kibe:void_bucket",
+ "kibe:big_torch",
+ "oxidized:copper_nugget",
+ "twilightforest:uncrafting_table",
+ "ad_astra:steel_plate",
+ "ad_astra:steel_ingot",
+ "ad_astra:iron_rod",
+ "ad_astra:iron_plate",
+ "ad_astra:steel_nugget"
  ];
  
  REIEvents.hide('item', (event) => {
@@ -170,6 +196,7 @@ const HID = [
 REIEvents.removeCategories(event => {
     event.remove('vinery:cooking_pot_display')
 	event.remove('vinery:cooking_pot')
+	event.remove('twilightforest:uncrafting_table')
 })
 
 //ClientEvents.loggedIn(e => e.server.runCommandSilent('/kubejs reload client_scripts'))

@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "twilightforest"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "expert_armor:twilightforest/steeleaf_plate"
+    }
+  ],
+  "result": {
+    "item": "twilightforest:steeleaf_ingot",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+		"particle": "modern_industrialization:block/casings/ulv_casing/top",
+        "up": "geghilarity_fatmachines:block/cast_iron_muffler_hatch",
+        "down": "modern_industrialization:block/casings/ulv_casing/top",
+        "north": "modern_industrialization:block/casings/ulv_casing/top",
+        "south": "modern_industrialization:block/casings/ulv_casing/top",
+        "east": "modern_industrialization:block/casings/ulv_casing/top",
+        "west": "modern_industrialization:block/casings/ulv_casing/top"
+    }
+}

@@ -10,7 +10,7 @@
 	 * timing on the server side. This makes timing firing the rifle feel much better, but a hacked
 	 * client can get perfect shots every time.
 	 */
-	trust-players: off;
+	trust-players: on;
 	
 	/*
 	 * If set to "on", enables inside-jokes and various chaos. Nothing destructive.
@@ -154,7 +154,7 @@
 	 * 
 	 * The Wasteland is not required for Yttr progression.
 	 */
-	wasteland: on;
+	wasteland: off;
 	
 	/*
 	 * Replace the Nether's bottom bedrock with unremovable "Core Lava" and barriers. This exists
@@ -172,13 +172,13 @@
 	 * without any mods. Just removing the bedrock and providing this much more interesting
 	 * replacement makes more sense than you think.
 	 */
-	scorched: on;
+	scorched: off;
 	/*
 	 * Perform Scorched retrogeneration in Nether chunks that still have bedrock.
 	 *
 	 * Won't destroy existing structures.
 	 */
-	scorched-retrogen: on;
+	scorched-retrogen: off;
 	
 	/*
 	 * Generate "Roots of Continuity" on the underside of small End islands.

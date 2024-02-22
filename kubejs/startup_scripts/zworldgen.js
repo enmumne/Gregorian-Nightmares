@@ -3,6 +3,7 @@ StartupEvents.registry('block', event => {
 	
 	console.log('BLOCK REGISTRY')
 	
+	event.create('geggy:oleous_sand').material('sand').displayName('Oleous Sand').hardness(2).tagBlock('minecraft:mineable/shovel').requiresTool(false)
 	event.create('geggy:andesite_block').material('stone').displayName('Andesite Alloy Frame').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_1', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_2', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
@@ -255,38 +256,41 @@ let andesiteblock5 = event.create('geggy:andesite_casing_5').material('stone').d
 	
 	
 	//event.create('geggy:iron_corenode').material('stone').hardness(50).noDrops().lightLevel(0.7)
-	event.create('geggy:iron_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:iron_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_iron_corenode').material('iron').hardness(666).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:copper_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:copper_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_copper_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:tin_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:tin_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_tin_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:coal_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:coal_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_coal_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:antimony_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:antimony_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_antimony_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:bauxite_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:bauxite_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_bauxite_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:lead_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:lead_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_lead_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:lignite_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:lignite_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_lignite_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:mozanite_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:mozanite_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_mozanite_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:nickel_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
-	event.create('geggy:zinc_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:nickel_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
+	event.create('geggy:zinc_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_nickel_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:salt_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:salt_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_salt_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:tungsten_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:tungsten_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_tungsten_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:uranium_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:uranium_corenode').material('stone').hardness(200).lightLevel(0.8).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_uranium_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:precious_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:precious_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_precious_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:redstone_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:redstone_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	//event.create('geggy:deepslate_rediron_corenode').material('iron').hardness(50).tagBlock('minecraft:mineable/pickaxe')
-	event.create('geggy:quartz_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').requiresTool(true)
+	event.create('geggy:quartz_corenode').material('stone').hardness(200).lightLevel(0.7).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
+	
+	event.create('geggy:oilsands_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
+	event.create('geggy:gaseous_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 
 
 })
@@ -295,12 +299,10 @@ let andesiteblock5 = event.create('geggy:andesite_casing_5').material('stone').d
 
 WorldgenEvents.remove(event => {
 	
-
-	//event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:gold_ore', 'minecraft:deepslate_gold_ore', 'minecraft:nether_gold_ore', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether', 'minecraft:ore_nether_gold', 'minecraft:ore_gold_buried'])
-	
-	event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
-	
-	event.removeFeatureById('underground_decoration', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
+	//event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
+	//event.removeFeatureById('underground_decoration', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_extra', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
+	event.removeFeatureById('underground_ores', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
+	event.removeFeatureById('underground_decoration', ['minecraft:ore_gold', 'minecraft:ore_gold_deltas', 'minecraft:ore_gold_lower', 'minecraft:ore_gold_nether'])
 	
   //console.debugEnabled = true;
 
@@ -357,48 +359,7 @@ MIMaterialEvents.addMaterials(event => {
 });
 */
 
-/*
-MIMaterialEvents.addMaterials(event => {
-    event.createMaterial("Ironicus Maximum", "ironicus", 0x80ffff, // english name, internal name, and material color in hex
-        builder => {
-        builder
 
-			.addParts("ingot", "nugget", "dust", "tiny_dust", "rod", "gear", "ring", "blade", "rotor", "coil", "plate", "bolt", "large_plate")
-            // addParts adds the simple parts to the material ie, the one already defined in MI and that don't need more parameters 
-            .barrel("Super Barrel", "super_barrel", 69) // add a barrel with 69 stacks capacity and custom english name and path (both optional)
-            .tank("Super Tank", "super_tank", 42) // add a tank same as above but for buckets capacity
-            .block("copper") // add a simple block with the "copper" texture (found in "textures/materialsets/blocks") 
-            .cable("ev") // add an EV tiers cable 
-            .specialCasing("Super Zinc Casing", "super_zinc_casing", 8.0) // add a special casing with custom english name and path (both required) 
-            // and 8.0 blast resistance (also optional, default is 6.0)
-            .machineCasing(8.0) // same as above but for machine casings but the custom name and path are optional
-            .pipeCasing(8.0) // add a pipe casing, only blast resistance can be specified
-
-            .ore({ 
-                "generate": true, // does the ore generate in the world
-                "ore_set": "copper", // texture set, same principle as for blocks (found in "textures/materialsets/ores")
-                "vein_size": 1, // the vein size
-                "veins_per_chunk": 88, // the number of veins per chunk
-                "max_y": 64, // the maximum y level
-				"min_y": 54,
-                // the generation parameters are only required if generate is true
-  
-                "min_xp" : 0
-                "max_xp" : 0
-                 max and min xp dropped by the ore, default is 0 for both. Must be zero if the ore drop raw ores 
-	 
-            //})  
-			}, false) 
-			//a second boolean optional parameter can be passed to only add the deepslate or if true or normal ore if false
-            // default is to add both
-            .rawMetal("copper") // add a raw metal with the "copper" texture (found in "textures/materialsets/raw"), same principle as for blocks
-            // as for ore, a second boolean optional parameter can be passed to only add the raw ore block if true or the raw ore item if false
-            // default is to add both, equivalent to .rawMetal("copper", true).rawMetal("copper", false)
-            .defaultRecipes() // add the default recipes for the material (crafting, smelting and machines)
-            .forgeHammerRecipes(); // add the forge hammer recipes 
-    });
-});
-*/
 	
 WorldgenEvents.add(event => {	
 
@@ -474,7 +435,7 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:iron_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:iron_corenode'),
 		
-		ore.count([2])		
+		ore.count([1])		
 			.squared()
 			//.triangleHeight(
 			.uniformHeight(
@@ -482,7 +443,24 @@ WorldgenEvents.add(event => {
 				anchors.absolute(40)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
+		//ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:ironinfup'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:iron_corenode'),
+		
+		ore.count([1])		
+			.squared()
+			//.triangleHeight(
+			.uniformHeight(
+				anchors.absolute(80),
+				anchors.absolute(120)	 
+			)								 
+				
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -492,14 +470,30 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:copper_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:copper_corenode'),
 		
-		ore.count([5])
+		ore.count([2])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(0),
 				anchors.absolute(80)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
+		//ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:copperinfup'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:copper_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(90),
+				anchors.absolute(180)	 
+			)								 
+				
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -509,14 +503,30 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:tin_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:tin_corenode'),
 		
-		ore.count([3])
+		ore.count([1])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(-8),
 				anchors.absolute(48)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
+		//ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:tininfup'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:tin_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(60),
+				anchors.absolute(160)	 
+			)								 
+				
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -533,7 +543,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(0)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -543,14 +553,14 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:coal_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:coal_corenode'),
 		
-		ore.count([5])
+		ore.count([3])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(32),
 				anchors.absolute(128)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -567,7 +577,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(40)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -584,8 +594,24 @@ WorldgenEvents.add(event => {
 				anchors.absolute(-8)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:bauxiteinfup'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:bauxite_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(80),
+				anchors.absolute(200)	 
+			)								 
+				
+        ore.size = 5 
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
@@ -601,7 +627,23 @@ WorldgenEvents.add(event => {
 				anchors.absolute(56)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
+		ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:leadinfup'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:lead_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(70),
+				anchors.absolute(200)	 
+			)								 
+				
+        ore.size = 5 
 		ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -611,14 +653,14 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:lignite_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:lignite_corenode'),
 		
-		ore.count([3])
+		ore.count([2])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(0),
 				anchors.absolute(128)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -635,7 +677,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(-32)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -645,14 +687,14 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:nickel_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:nickel_corenode'),
 		
-		ore.count([2])
+		ore.count([1])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(-16),
 				anchors.absolute(40)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -662,14 +704,14 @@ WorldgenEvents.add(event => {
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:zinc_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:zinc_corenode'),
 		
-		ore.count([2])
+		ore.count([1])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(-24),
 				anchors.absolute(48)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		//ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -686,7 +728,24 @@ WorldgenEvents.add(event => {
 				anchors.absolute(64)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
+		ore.chance = 1
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:saltinfdown'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:salt_corenode'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:salt_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(-64),
+				anchors.absolute(-20)	 
+			)								 
+				
+        ore.size = 5 
 		ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -703,7 +762,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(-32)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5
 		ore.chance = 3
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -720,7 +779,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(-40)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 3
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -737,7 +796,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(0)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 1
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -754,7 +813,7 @@ WorldgenEvents.add(event => {
 				anchors.absolute(-40)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
 		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
@@ -763,17 +822,69 @@ WorldgenEvents.add(event => {
 		ore.id = 'geggy:quartzinf'
 		ore.addTarget('minecraft:netherrack', 'geggy:quartz_corenode')
 		
-		ore.count([8])
+		ore.count([5])
 			.squared()
 			.uniformHeight(
 				anchors.aboveBottom(10),
 				anchors.belowTop(10)	 
 			)								 
 				
-        ore.size = 3 
+        ore.size = 5 
         ore.noSurface = 0.0  
         ore.worldgenLayer = "underground_decoration"		
 	})
+	
+	// new oil
+	event.addOre((ore) => {
+		ore.id = 'geggy:oil'
+		ore.addTarget('#c:sand', 'geggy:oilsands_corenode'),
+		ore.addTarget('#c:sandstone', 'geggy:oilsands_corenode'),
+		
+		ore.count([1])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(20),
+				anchors.absolute(100)	 
+			)								 
+				
+        ore.size = 9 
+        ore.noSurface = 0.0  
+        ore.worldgenLayer = "underground_decoration"		
+	})
+	event.addOre((ore) => {
+		ore.id = 'geggy:gas1'
+		ore.addTarget('minecraft:netherrack', 'geggy:gaseous_corenode')
+		
+		ore.count([3])
+				.squared()
+				.uniformHeight(
+					anchors.aboveBottom(10),
+					anchors.belowTop(10)
+						 
+				)								 
+				
+        ore.size = 6
+        ore.noSurface = 0.0  
+        ore.worldgenLayer = "underground_decoration"		
+	})
+	/*
+	event.addOre((ore) => {
+		ore.id = 'geggy:gas'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:gaseous_corenode'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:gaseous_corenode'),
+		
+		ore.count([2])
+			.squared()
+			.uniformHeight(
+				anchors.aboveBottom(10),
+				anchors.belowTop(10)	 
+			)								 
+				
+        ore.size = 6 
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	*/
 	
 	// andesite extra
 	event.addOre((ore) => {
@@ -784,13 +895,30 @@ WorldgenEvents.add(event => {
 		ore.count([4])
 			.squared()
 			.uniformHeight(
-				anchors.absolute(-5),
-				anchors.absolute(80)	 
+				anchors.absolute(-15),
+				anchors.absolute(90)	 
 			)								 
 				
         ore.size = 64 
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_decoration"		
+	})
+	
+	// redstone extra
+	event.addOre((ore) => {
+		ore.id = 'geggy:redstone_extra'
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:redstone_ore')
+		
+		ore.count([5])
+			.squared()
+			.uniformHeight(
+				anchors.absolute(100),
+				anchors.absolute(200)	 
+			)								 
+				
+        ore.size = 9 
+        ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
 	})
 	
 	

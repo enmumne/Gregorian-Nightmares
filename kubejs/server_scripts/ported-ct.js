@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
 	
 	event.shapeless('2x geggy:chad', ['minecraft:sugar_cane', 'minecraft:sugar_cane', 'minecraft:sugar_cane', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
-	event.shapeless('geggy:wood_pulp', ['#minecraft:logs', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('3x modern_industrialization:wood_pulp', ['#minecraft:logs', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
 	//event.shapeless('minecraft:flint', ['minecraft:gravel', 'minecraft:gravel', 'minecraft:gravel'])
 
@@ -37,7 +37,7 @@ ServerEvents.recipes(event => {
 
 	event.shapeless('geggy:quartz_sand', ['#c:sand', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
-	event.shapeless('2x geggy:clay_dust', ['minecraft:clay', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('3x geggy:clay_dust', ['minecraft:clay', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('geggy:flint_dust_tiny', ['minecraft:flint', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
@@ -62,6 +62,9 @@ ServerEvents.recipes(event => {
 	event.shapeless('minecraft:bone_meal', ['minecraft:bone', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('modern_industrialization:iron_tiny_dust', ['create:crushed_raw_iron', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	
+	event.shapeless('minecraft:clay_ball', ['geggy:clay_dust', 'geggy:clay_dust', 'kibe:water_wooden_bucket']).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
+	event.shapeless('minecraft:clay_ball', ['geggy:clay_dust', 'geggy:clay_dust', 'minecraft:water_bucket']).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
 
 	event.shaped('geggy:unfinished_bucket', [
 		'A A',
@@ -85,7 +88,7 @@ ServerEvents.recipes(event => {
 		'ABA',
 		'AAA'
 	], {
-		A: 'modern_industrialization:copper_nugget',
+		A: 'create:copper_nugget',
 		B: 'geggy:stone_mortar'
 	}).damageIngredient('geggy:stone_mortar')
 	// no need tin nuggets > dusts, already create milling available, post-cog pre-bronze
@@ -110,7 +113,7 @@ ServerEvents.recipes(event => {
 		D: 'geggy:primitive_brick_dust'
 	}).damageIngredient('geggy:wooden_form')
 	
-	event.shaped('8x geggy:unfired_clay_brick', [
+	event.shaped('4x geggy:unfired_clay_brick', [
 		'AAA',
 		'ABA',
 		'AAA'
@@ -141,18 +144,10 @@ ServerEvents.recipes(event => {
 	
 	event.shaped('minecraft:clay', [
 		'AAA',
-		' B ',
-		'AAA'
+		'AAA',
+		' B '
 	], {
 		A: 'minecraft:clay_ball',
-		B: 'geggy:wooden_form'
-	}).damageIngredient('geggy:wooden_form')
-	event.shaped('minecraft:clay', [
-		'AAA',
-		' B ',
-		'AAA'
-	], {
-		A: 'geggy:clay_dust',
 		B: 'geggy:wooden_form'
 	}).damageIngredient('geggy:wooden_form')
 	

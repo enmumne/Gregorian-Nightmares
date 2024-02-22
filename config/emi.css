@@ -68,6 +68,11 @@
 	 * The pages in the left sidebar
 	 */
 	left-sidebar-pages: favorites;
+	
+	/**
+	 * The subpanels in the left sidebar
+	 */
+	left-sidebar-subpanels: lookup-history 2;
 
 	/**
 	 * How many columns and rows of ingredients to limit the left sidebar to

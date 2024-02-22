@@ -2,7 +2,7 @@
 	// World generation config options.
 	"worldgen": {
 		// Enable this to disable worldgen entirely. If true, the other options have no effect.
-		"disable_all": false,
+		"disable_all": true,
 		"poor_uraninite_veins_per_chunk": 8,
 		"uraninite_veins_per_chunk": 6,
 		"dense_uraninite_veins_per_chunk": 3,
@@ -26,9 +26,9 @@
 		},
 		// List of heat source blocks used under Thermo Generator.
 		"heat_blocks": {
-			"minecraft:magma_block": 800,
+			"minecraft:lava": 1000,
 			"powah:blazing_crystal_block": 2800,
-			"minecraft:lava": 1000
+			"minecraft:magma_block": 800
 		},
 		// Energy produced per fuel tick in the Furnator.
 		"energy_per_fuel_tick": 3,
@@ -210,13 +210,13 @@
 		},
 		"cables": {
 			"transfer_rates": {
-				"starter": 20,
-				"basic": 80,
-				"hardened": 200,
-				"blazing": 800,
-				"niotic": 2000,
-				"spirited": 8000,
-				"nitro": 40000
+				"starter": 16,
+				"basic": 32,
+				"hardened": 128,
+				"blazing": 512,
+				"niotic": 2048,
+				"spirited": 32780,
+				"nitro": 131072
 			}
 		},
 		"dischargers": {

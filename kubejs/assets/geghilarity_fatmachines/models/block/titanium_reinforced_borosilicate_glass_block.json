@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/glass",
   "textures": {
     "all": "geggy:block/titanium_reinforced_borosilicate_glass_pane"
   }

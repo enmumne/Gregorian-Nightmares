@@ -1,6 +1,53 @@
 ServerEvents.recipes(event => {
 	
-	event.remove({id: 'create:crafting/kinetics/smart_chute'})
+	event.remove([
+		"create:crafting/kinetics/large_cogwheel_from_little",
+		"create:crafting/kinetics/mechanical_press",
+		"create:crafting/kinetics/smart_chute",
+	    "create:crafting/kinetics/mechanical_crafter",
+		"create:crafting/kinetics/weighted_ejector",
+		"create:crafting/kinetics/item_drain",
+		"create:crafting/kinetics/analog_lever",
+		"create:crafting/kinetics/encased_fan",
+		"create:crafting/kinetics/millstone",
+		"create:crafting/kinetics/metal_bracket",
+		"create:crafting/kinetics/metal_girder",
+		"create:crafting/kinetics/goggles",
+		"create:crafting/kinetics/wrench",
+		"create:crafting/kinetics/depot",
+		"create:crafting/kinetics/mechanical_mixer",
+		"create:crafting/kinetics/hose_pulley",
+		"minecraft:dried_kelp_block",
+		"create:crafting/kinetics/piston_extension_pole",
+		"create:crafting/kinetics/cogwheel",
+		"create:deploying/cogwheel",
+		"create:deploying/large_cogwheel",
+		"create:crafting/kinetics/large_cogwheel",
+		"create:crafting/kinetics/empty_blaze_burner",
+		"create:item_application/andesite_casing_from_log",
+		"create:item_application/andesite_casing_from_wood",
+		"create:item_application/copper_casing_from_log",
+		"create:item_application/copper_casing_from_wood",
+		"create:item_application/brass_casing_from_log",
+		"create:item_application/brass_casing_from_wood",
+		"minecraft:andesite",
+		"create:crushing/diorite",
+		"create:crushing/diorite_recycling",
+		"create:crushing/prismarine_crystals",
+		"create:splashing/soul_sand"
+		
+	])
+	
+	event.shaped('create:mechanical_press', [
+		'A  ',
+		'B  ',
+		'C  '
+	], {
+		A: 'create:andesite_casing',
+		B: 'create:piston_extension_pole',
+		C: 'createdeco:cast_iron_sheet_slab'
+	})
+	
 	event.shaped('create:smart_chute', [
 		' D ',
 		'BAB',
@@ -12,7 +59,6 @@ ServerEvents.recipes(event => {
 		D: 'create:electron_tube'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/mechanical_crafter'})
 	event.shaped('create:mechanical_crafter', [
 		'ABA',
 		'FCF',
@@ -55,19 +101,18 @@ ServerEvents.recipes(event => {
 		C: 'geggy:sharp_plate'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/weighted_ejector'})
 	event.shaped('create:weighted_ejector', [
-		'AD ',
-		'BD ',
+		'AE ',
+		'BE ',
 		'CD '
 	], {
-		A: 'modern_industrialization:steel_plate',
+		A: 'geggy:galvanized_steel_plate',
 		B: 'create:depot',
 		C: 'modern_industrialization:steel_gear',
-		D: 'modern_industrialization:steel_ring'
+		D: 'modern_industrialization:steel_ring',
+		E: 'geggy:galvanized_steel_ring'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/item_drain'})
 	event.shaped('create:item_drain', [
 		'BBB',
 		'BAB',
@@ -77,7 +122,6 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:tin_rod'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/analog_lever'})
 	event.shaped('create:analog_lever', [
 		'C  ',
 		'B  ',
@@ -87,7 +131,6 @@ ServerEvents.recipes(event => {
 		B: 'minecraft:stick',
 		C: 'create:andesite_alloy'
 	})
-	event.remove({id: 'create:crafting/kinetics/encased_fan'})
 	event.shaped('create:encased_fan', [
 		'DC ',
 		'AB ',
@@ -98,7 +141,6 @@ ServerEvents.recipes(event => {
 		C: 'geggy:cogwheel',
 		D: 'create:shaft'
 	})
-	event.remove({id: 'create:crafting/kinetics/millstone'})
 	event.shaped('create:millstone', [
 		'DAD',
 		'DBD',
@@ -109,7 +151,6 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:smooth_stone_slab',
 		D: 'minecraft:stone_button'
 	})
-	event.remove({id: 'create:crafting/kinetics/metal_bracket'})
 	event.shaped('2x create:metal_bracket', [
 		'AAA',
 		'BCB',
@@ -119,7 +160,6 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:steel_ingot',
 		C: 'create:andesite_alloy'
 	})
-	event.remove({id: 'create:crafting/kinetics/metal_girder'})
 	event.shaped('4x create:metal_girder', [
 		'AA ',
 		'BB ',
@@ -129,7 +169,6 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:steel_ingot',
 		C: 'create:andesite_alloy'
 	})
-	event.remove({id: 'create:crafting/kinetics/goggles'})
 	event.shaped('create:goggles', [
 		'AAA',
 		'BCB',
@@ -140,7 +179,6 @@ ServerEvents.recipes(event => {
 		C: 'create:brass_sheet'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/wrench'})
 	event.shaped('create:wrench', [
 		'AA ',
 		'AB ',
@@ -151,7 +189,6 @@ ServerEvents.recipes(event => {
 		C: 'minecraft:stick'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/depot'})
 	event.shaped('create:depot', [
 		'A  ',
 		'C  ',
@@ -162,7 +199,6 @@ ServerEvents.recipes(event => {
 		C: 'modern_industrialization:tin_ring'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/mechanical_mixer'})
 	event.shaped('create:mechanical_mixer', [
 		' D ',
 		'CBC',
@@ -174,8 +210,6 @@ ServerEvents.recipes(event => {
 		D: 'create:piston_extension_pole'
 	})
 	
-	event.remove({id: 'create:crafting/kinetics/hose_pulley'})
-	event.remove({id: 'minecraft:dried_kelp_block'})
 	event.custom({
 		type: "create:compacting",
 		ingredients: [
@@ -198,7 +232,6 @@ ServerEvents.recipes(event => {
 	})
 	
 	// check?
-	event.remove({id: 'create:crafting/kinetics/piston_extension_pole'})
 	event.shaped('create:piston_extension_pole', [
 		'A  ',
 		'B  ',
@@ -207,11 +240,6 @@ ServerEvents.recipes(event => {
 		A: '#minecraft:planks',
 		B: 'create:shaft'
 	})
-	event.remove({id: 'create:crafting/kinetics/cogwheel'})
-	event.remove({id: 'create:deploying/cogwheel'})
-	event.remove({id: 'create:deploying/large_cogwheel'})
-	event.remove({id: 'create:crafting/kinetics/large_cogwheel'})
-	event.remove({id: 'create:crafting/kinetics/large_cogwheelfrom_little'})
 	
 	// geggy cog
 	
@@ -332,7 +360,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_cogwheel"},
-					{"item": "modern_industrialization:copper_nugget"}
+					{"item": "create:copper_nugget"}
 				],
 				results: [{
 					"item": "geggy:incomplete_cogwheel"
@@ -379,7 +407,7 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_quadrant"},
-					{"item": "modern_industrialization:copper_nugget"}
+					{"item": "create:copper_nugget"}
 				],
 				results: [{
 					"item": "geggy:incomplete_quadrant"
@@ -481,7 +509,6 @@ ServerEvents.recipes(event => {
 	
 	// blaze mixer section, sequence with steel, crafting table tin + blaze rod
 	
-	event.remove({id: 'create:crafting/kinetics/empty_blaze_burner'})
 	event.shaped('geggy:blackened_rod', [
 		'AB ',
 		'   ',
@@ -627,13 +654,6 @@ ServerEvents.recipes(event => {
 			"item": "create:spout"
 		}]
 	})
-	
-	event.remove({id: 'create:item_application/andesite_casing_from_log'})
-	event.remove({id: 'create:item_application/andesite_casing_from_wood'})
-	event.remove({id: 'create:item_application/copper_casing_from_log'})
-	event.remove({id: 'create:item_application/copper_casing_from_wood'})
-	event.remove({id: 'create:item_application/brass_casing_from_log'})
-	event.remove({id: 'create:item_application/brass_casing_from_wood'})
 	
 	// copper casing
 	
@@ -926,9 +946,13 @@ ServerEvents.recipes(event => {
 			"type": "create:mixing",
 			"heatRequirement": "heated",
 			"ingredients": [{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"},{"item": "modern_industrialization:bronze_dust"}],
-			"results": [{"amount": 46656, "fluid": "geghilarity:molten_bronze"}]
+			"results": [{"amount": 47385, "fluid": "geghilarity:molten_bronze"}]
 	})
 	event.smelting('geggy:pickaxe_mold', 'geggy:unfired_pickaxe_mold').cookingTime(400)
+	event.smelting('geggy:axe_mold', 'geggy:unfired_axe_mold').cookingTime(400)
+	event.smelting('geggy:shovel_mold', 'geggy:unfired_shovel_mold').cookingTime(400)
+	event.smelting('geggy:hoe_mold', 'geggy:unfired_hoe_mold').cookingTime(400)
+	event.smelting('geggy:sword_mold', 'geggy:unfired_sword_mold').cookingTime(400)
 	event.custom({
 		type: "create:filling",
 		ingredients: [
@@ -941,6 +965,52 @@ ServerEvents.recipes(event => {
 		}]
 	})
 	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:axe_mold"},
+			{"amount": 40500, "fluid": "geghilarity:molten_bronze",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:filled_axe_mold"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:shovel_mold"},
+			{"amount": 20250, "fluid": "geghilarity:molten_bronze",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:filled_shovel_mold"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:hoe_mold"},
+			{"amount": 24300, "fluid": "geghilarity:molten_bronze",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:filled_hoe_mold"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:sword_mold"},
+			{"amount": 28350, "fluid": "geghilarity:molten_bronze",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:filled_sword_mold"
+		}]
+	})
+	
+	
+	event.custom({
 		"type": "create:splashing",
 		"ingredients": [
 			{"item": "geggy:filled_pickaxe_mold"}
@@ -948,6 +1018,46 @@ ServerEvents.recipes(event => {
 		"results": [
 			{"count": 1, "item": "geggy:bronze_pickaxe_head"},
 			{"chance": 0.9, "count": 1, "item": "geggy:pickaxe_mold"}
+		]	
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:filled_axe_mold"}
+		],
+		"results": [
+			{"count": 1, "item": "geggy:bronze_axe_head"},
+			{"chance": 0.9, "count": 1, "item": "geggy:axe_mold"}
+		]	
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:filled_shovel_mold"}
+		],
+		"results": [
+			{"count": 1, "item": "geggy:bronze_shovel_head"},
+			{"chance": 0.9, "count": 1, "item": "geggy:shovel_mold"}
+		]	
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:filled_hoe_mold"}
+		],
+		"results": [
+			{"count": 1, "item": "geggy:bronze_hoe_head"},
+			{"chance": 0.9, "count": 1, "item": "geggy:hoe_mold"}
+		]	
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:filled_sword_mold"}
+		],
+		"results": [
+			{"count": 1, "item": "geggy:bronze_sword_head"},
+			{"chance": 0.9, "count": 1, "item": "geggy:sword_mold"}
 		]	
 	})
 	
@@ -1053,16 +1163,6 @@ ServerEvents.recipes(event => {
 	)
 
 	// barrels
-	event.remove({id: 'minecraft:barrel'})	
-	event.shaped('minecraft:barrel', [
-		'AAA',
-		'BCB',
-		'AAA'
-	], {
-		A: '#minecraft:wooden_slabs',
-		B: 'geggy:treated_plank',
-		C: 'minecraft:chest'
-	})
 	event.remove({id: 'extended_drawers:single_drawer'})	
 	event.remove({id: 'extended_drawers:double_drawer'})
 	event.remove({id: 'extended_drawers:quad_drawer'})
@@ -1136,26 +1236,6 @@ ServerEvents.recipes(event => {
 				type: "create:deploying",
 				ingredients: [
 					{"item": "geggy:incomplete_barrel"},
-					{"tag": "minecraft:wooden_slabs"}
-				],
-				results: [{
-					"item": "geggy:incomplete_barrel"
-				}]
-			},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_barrel"},
-					{"tag": "minecraft:wooden_slabs"}
-				],
-				results: [{
-					"item": "geggy:incomplete_barrel"
-				}]
-			},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_barrel"},
 					{"item": "geggy:treated_plank"}
 				],
 				results: [{
@@ -1175,16 +1255,6 @@ ServerEvents.recipes(event => {
 		ingredient: {"item": "minecraft:barrel"},
 		transitionalItem: {"item": "geggy:incomplete_extdw"},
 		sequence: [
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_extdw"},
-					{"item": "minecraft:chest"}
-				],
-				results: [{
-					"item": "geggy:incomplete_extdw"
-				}]
-			},
 			{
 				type: "create:deploying",
 				ingredients: [
@@ -1330,7 +1400,7 @@ ServerEvents.recipes(event => {
 		type: "create:filling",
 		ingredients: [
 			{"item": "geggy:treated_plank"},
-			{"amount": 40500, "fluid": "modern_industrialization:creosote",
+			{"amount": 20250, "fluid": "modern_industrialization:creosote",
 			"nbt": {}}
 		],
 		results: [{
@@ -1338,11 +1408,17 @@ ServerEvents.recipes(event => {
 		}]
 	})
 	
-	event.remove({id: 'minecraft:andesite'})
-	event.remove({id: 'create:crushing/diorite'})
-	event.remove({id: 'create:crushing/diorite_recycling'})
-	event.remove({id: 'create:crushing/prismarine_crystals'})
-	event.remove({id: 'create:splashing/soul_sand'})
+	event.custom({
+		"type": "create:cutting",
+		"ingredients": [
+			{"item": "geggy:hardened_plank"}
+		],
+		"processingTime": 50,
+		"results": [
+			{"count": 4, "item": "geggy:hardened_stick"}
+		]
+	})
+	
 	event.custom({
 		"type": "create:splashing",
 		"ingredients": [
@@ -1403,9 +1479,10 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({
-		"type": "create:pressing",
+		"type": "create:compacting",
 		"ingredients": [
-			{"item": "geggy:clay_dust"}
+			{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},
+			{"amount": 20250, "fluid": "minecraft:water"}
 		],
 		"results": [
 			{"item": "minecraft:clay_ball"}
@@ -1506,17 +1583,22 @@ ServerEvents.recipes(event => {
 		"sound": "minecraft:entity.item.break"
 	})
 	event.custom({
-		"type": "create:compacting",
-		"ingredients": [
-			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
-			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
-			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
-			{"item": "modern_industrialization:bronze_nugget"},{"item": "modern_industrialization:bronze_nugget"},
-			{"item": "modern_industrialization:bronze_nugget"}
-		],
-		"results": [
-			{"item": "modern_industrialization:bronze_ingot"}
-		]
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"item": "modern_industrialization:bronze_nugget"}],
+			"results": [{"amount": 1134, "fluid": "geghilarity:molten_bronze"}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"item": "modern_industrialization:bronze_tiny_dust"}],
+			"results": [{"amount": 972, "fluid": "geghilarity:molten_bronze"}]
+	})
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
+			"results": [{"amount": 11340, "fluid": "geghilarity:molten_bronze"}]
 	})
 	
 	event.remove({id: 'modern_industrialization:materials/copper/craft/ingot_from_nugget'})
@@ -1531,19 +1613,19 @@ ServerEvents.recipes(event => {
 			{"type": "farmersdelight:tool",
 			"tag": "c:tools/pickaxes"},
 		"result": [
-			{ "item": "modern_industrialization:copper_nugget", "count": 6},
-			{"chance": 0.5, "count": 3, "item": "modern_industrialization:copper_nugget"}
+			{ "item": "create:copper_nugget", "count": 6},
+			{"chance": 0.5, "count": 3, "item": "create:copper_nugget"}
 		],
 		"sound": "minecraft:entity.item.break"
 	})
 	event.custom({
 		"type": "create:compacting",
 		"ingredients": [
-			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
-			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
-			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
-			{"item": "modern_industrialization:copper_nugget"},{"item": "modern_industrialization:copper_nugget"},
-			{"item": "modern_industrialization:copper_nugget"}
+			{"item": "create:copper_nugget"},{"item": "create:copper_nugget"},
+			{"item": "create:copper_nugget"},{"item": "create:copper_nugget"},
+			{"item": "create:copper_nugget"},{"item": "create:copper_nugget"},
+			{"item": "create:copper_nugget"},{"item": "create:copper_nugget"},
+			{"item": "create:copper_nugget"}
 		],
 		"results": [
 			{"item": "minecraft:copper_ingot"}
@@ -1915,24 +1997,15 @@ ServerEvents.recipes(event => {
 		],
 		"processingTime": 100,
 		"results": [
-			{"count": 4, "item": "geggy:clay_dust"},
-			{"count": 1, "item": "geggy:gravel_dust"}
+			{"count": 3, "item": "geggy:clay_dust"},
+			{"count": 1, "item": "geggy:clay_dust","chance": 0.5},
+			{"count": 1, "item": "geggy:gravel_dust", "chance": 0.5}
 		]
 	})
 	event.custom({
 		type: "create:compacting",
 		ingredients: [
 			{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"},{"item": "minecraft:clay_ball"}
-		],
-		results: [
-			{"count": 1, "item": "minecraft:clay"}
-		],
-		processingTime: 100
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"},{"item": "geggy:clay_dust"}
 		],
 		results: [
 			{"count": 1, "item": "minecraft:clay"}
@@ -2220,15 +2293,15 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:mixing",
 		"heatRequirement": "heated",
-		"ingredients": [{"item": "modern_industrialization:quartz_dust"},{"item": "modern_industrialization:quartz_dust"},
-		{"amount": 81000, "fluid": "modern_industrialization:molten_redstone"}],
-		"results": [{"amount": 81000, "fluid": "geggy:molten_rose_quartz"}]
+		"ingredients": [{"item": "modern_industrialization:quartz_dust"},{"item": "modern_industrialization:quartz_dust"},{"item": "minecraft:amethyst_shard"},
+		{"amount": 35964, "fluid": "modern_industrialization:molten_redstone"}],
+		"results": [{"amount": 35964, "fluid": "geggy:molten_rose_quartz"}]
 	})
 	event.custom({
 		type: "create:filling",
 		ingredients: [
 			{"item": "geggy:glass_tube"},
-			{"amount": 40500, "fluid": "geggy:molten_rose_quartz"}
+			{"amount": 35964, "fluid": "geggy:molten_rose_quartz"}
 		],
 		results: [{
 			"item": "geggy:rose_quartz_tube"
@@ -2247,13 +2320,14 @@ ServerEvents.recipes(event => {
 		eu: 4,
 		duration: 200,
 		item_inputs: [ 
-			{item: "modern_industrialization:quartz_dust", amount: 2}
+			{item: "modern_industrialization:quartz_dust", amount: 2},
+			{item: "minecraft:amethyst_shard", amount: 1}
 		],
 		fluid_inputs: [
-			{fluid: "modern_industrialization:molten_redstone", amount: 1000}
+			{fluid: "modern_industrialization:molten_redstone", amount: 444}
 		],
 		fluid_outputs: [
-			{fluid: "geggy:molten_rose_quartz", amount: 1000}
+			{fluid: "geggy:molten_rose_quartz", amount: 444}
 		]
 	})
 	event.custom({ 
@@ -2265,7 +2339,7 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:tin_plate", amount: 1}
 		],
 		fluid_inputs: [
-			{fluid: "geggy:molten_rose_quartz", amount: 500},
+			{fluid: "geggy:molten_rose_quartz", amount: 222},
 			{fluid: "modern_industrialization:soldering_alloy", amount: 12}
 		],
 		item_outputs: [
@@ -2310,6 +2384,456 @@ ServerEvents.recipes(event => {
 		],
 		"recipe_book_tab": "meals",
 		"result": {"item": "geggy:low_grade_resin"}
+	})
+	
+	// misc recycle
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:netherrack"}
+		],
+		"processingTime": 200,
+		"results": [
+			{"item": "geggy:netherrack_dust"},
+			{"item": "geggy:netherrack_dust", "chance": 0.25}
+		]
+	})
+	// harder soulsand
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [
+			{"item": "minecraft:red_sand"},
+			{"amount": 20250, "fluid": "geggy:molten_rose_quartz"},
+			{"amount": 20250, "fluid": "modern_industrialization:creosote"}
+		],
+		"results": [{"item": "geggy:oleous_sand"}]
+	})
+	
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [{"item": "modern_industrialization:iron_dust"},{"item": "modern_industrialization:iron_dust"},
+		{"item": "geggy:primitive_brick_dust"},{"item": "geggy:primitive_brick_dust"},{"item": "geggy:kelp_dust"}],
+		"results": [{"count": 2, "item": "geggy:unfired_tempered_dust"}]
+	})
+	
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"tag": "cork"},{"tag": "cork"},{"tag": "cork"},
+			{"tag": "cork"},{"tag": "cork"}
+		],
+		"processingTime": 100,
+		"results": [
+			{"item": "geggy:ground_tree_bark"}
+		]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"ingredients": [
+			{"item": "geggy:ground_tree_bark"},
+			{"amount": 23328, "fluid": "geggy:rubber"}
+		],
+		"results": [{"item": "geggy:mixed_cork"}]
+	})
+	event.custom({
+		type: "create:pressing",
+		ingredients: [
+			{"item": "geggy:mixed_cork"}
+		],
+		results: [{
+			"count": 1, "item": "geggy:pressed_cork"
+		}]
+	})
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:pressed_cork"}
+		],
+		results: [{
+			"count": 5, "item": "geggy:bottle_cork"
+		}]
+	})
+
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "minecraft:gilded_blackstone"}
+		],
+		"processingTime": 150,
+		"results": [
+			{"item": "geggy:crushed_precious_ore"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "geggy:precious_ore"}
+		],
+		"processingTime": 250,
+		"results": [
+			{"item": "geggy:crushed_precious_ore"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "geggy:nether_precious_ore"}
+		],
+		"processingTime": 150,
+		"results": [
+			{"item": "geggy:crushed_precious_ore"}
+		]
+	})
+	event.custom({
+		"type": "create:milling",
+		"ingredients": [
+			{"item": "geggy:deepslate_precious_ore"}
+		],
+		"processingTime": 300,
+		"results": [
+			{"item": "geggy:crushed_precious_ore"}
+		]
+	})
+	event.custom({
+		"type": "create:splashing",
+		"ingredients": [
+			{"item": "geggy:crushed_precious_ore"}
+		],
+		"results": [
+			{"item": "geggy:purified_precious_ore", "chance": 0.9}
+		]	
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
+			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"}
+		],
+		"results": [{"item": "minecraft:gold_nugget"}]
+	})
+	
+	// reinforced
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "minecraft:flint"}
+		],
+		results: [{
+			"count": 1, "item": "geggy:flint_pickaxe_left_arm"
+		}]
+	})
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "minecraft:flint"}
+		],
+		results: [{
+			"count": 1, "item": "geggy:flint_pickaxe_right_arm"
+		}]
+	})
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "minecraft:flint"}
+		],
+		results: [{
+			"count": 1, "item": "geggy:flint_pickaxe_head_main"
+		}]
+	})
+	event.custom({
+		type: "create:compacting",
+		ingredients: [
+			{"item": "geggy:flint_pickaxe_left_arm"},{"item": "geggy:flint_pickaxe_head_main"},{"item": "geggy:flint_pickaxe_right_arm"}
+		],
+		results: [
+			{"count": 1, "item": "geggy:dull_flint_pickaxe_head"}
+		],
+		processingTime: 100
+	})
+	event.custom({
+		type: "create:sandpaper_polishing",
+		ingredients: [
+			{"item": "geggy:dull_flint_pickaxe_head"}
+		],
+		results: [
+			{"item": "geggy:sharpened_flint_pickaxe_head"}
+		]
+	})
+	
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "minecraft:stick"},
+			{"amount": 2025, "fluid": "modern_industrialization:creosote",
+			"nbt": {}}
+		],
+		results: [
+			{"item": "minecraft:torch"}
+		]
+	})
+	
+	// galvanized
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:crushed_raw_zinc"}],
+		"results": [{"amount": 10368, "fluid": "geggy:liquid_zinc"}]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:raw_zinc"}],
+		"results": [{"amount": 10368, "fluid": "geggy:liquid_zinc"}]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:zinc_ingot"}],
+		"results": [{"amount": 11016, "fluid": "geggy:liquid_zinc"}]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "create:zinc_nugget"}],
+		"results": [{"amount": 1215, "fluid": "geggy:liquid_zinc"}]
+	})
+	event.custom({
+		"type": "create:mixing",
+		"heatRequirement": "heated",
+		"ingredients": [{"item": "createdeco:zinc_sheet"}],
+		"results": [{"amount": 11016, "fluid": "geggy:liquid_zinc"}]
+	})
+	
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:steel_plate"},
+		transitionalItem: {"item": "geggy:incomplete_galvanized_plate"},
+		sequence: [
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_plate"},
+					{"amount": 729, "fluid": "geggy:liquid_zinc"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_plate"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_plate"
+		}],
+		loops: 2
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:steel_curved_plate"},
+		transitionalItem: {"item": "geggy:incomplete_galvanized_curved_plate"},
+		sequence: [
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_curved_plate"},
+					{"amount": 729, "fluid": "geggy:liquid_zinc"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_curved_plate"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_curved_plate"
+		}],
+		loops: 2
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "modern_industrialization:steel_rod"},
+			{"amount": 729, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_rod"
+		}]
+	})
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:galvanized_steel_rod"}
+		],
+		results: [{
+			"count": 2, "item": "geggy:galvanized_steel_bolt"
+		}]
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:steel_gear"},
+		transitionalItem: {"item": "geggy:incomplete_galvanized_gear"},
+		sequence: [
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_gear"},
+					{"amount": 2754, "fluid": "geggy:liquid_zinc"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_gear"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_gear"
+		}],
+		loops: 2
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:steel_ring"},
+		transitionalItem: {"item": "geggy:incomplete_galvanized_ring"},
+		sequence: [
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_ring"},
+					{"amount": 243, "fluid": "geggy:liquid_zinc"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_ring"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_ring"
+		}],
+		loops: 2
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "modern_industrialization:steel_rod"},
+		transitionalItem: {"item": "geggy:incomplete_long_galvanized_rod"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_long_galvanized_rod"},
+					{"item": "modern_industrialization:steel_rod"}
+				],
+				results: [{
+					"item": "geggy:incomplete_long_galvanized_rod"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_long_galvanized_rod"}
+				],
+				results: [{
+					"item": "geggy:incomplete_long_galvanized_rod"
+				}]
+		  	},
+			{
+				type: "create:filling",
+				ingredients: [
+					{"item": "geggy:incomplete_long_galvanized_rod"},
+					{"amount": 1296, "fluid": "geggy:liquid_zinc"}
+				],
+				results: [{
+					"item": "geggy:incomplete_long_galvanized_rod"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:long_galvanized_steel_rod"
+		}],
+		loops: 1
+	})
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:galvanized_steel_gear"},
+		transitionalItem: {"item": "geggy:incomplete_galvanized_machine_casing"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:galvanized_steel_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:galvanized_steel_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:galvanized_steel_plate"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:long_galvanized_steel_rod"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			},
+			{
+				type: "create:pressing",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+		  	},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:galvanized_steel_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			},
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_galvanized_machine_casing"},
+					{"item": "geggy:galvanized_steel_bolt"}
+				],
+				results: [{
+					"item": "geggy:incomplete_galvanized_machine_casing"
+				}]
+			}
+		],
+		results: [{
+			"item": "geghilarity:galvanized_steel_machine_casing"
+		}],
+		loops: 2
 	})
 	
 })	

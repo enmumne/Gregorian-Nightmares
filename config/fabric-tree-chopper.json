@@ -22,19 +22,16 @@
 		"betterend:aeternium_axe",
 		"betterend:thallasium_axe",
 		"betterend:terminite_axe",
+		"botania:manasteel_axe",
+		"botania:elementium_axe",
+		"botania:terra_axe",
 		"byg:pendorite_axe",
 		"byg:pendorite_battleaxe",
 		"conjuring:soul_alloy_hatchet",
-		"expert_weapons:dull_iron_axe",
-		"expert_weapons:dull_golden_axe",
-		"expert_weapons:dull_diamond_axe",
-		"expert_weapons:dull_netherite_axe",
-		"expert_weapons:ircompat/dull_bronze_axe",
-		"expert_weapons:ircompat/dull_copper_axe",
-		"expert_weapons:ircompat/dull_lead_axe",
-		"expert_weapons:ircompat/dull_silver_axe",
-		"expert_weapons:ircompat/dull_steel_axe",
-		"expert_weapons:ircompat/dull_tin_axe"
+		"deeperdarker:warden_axe",
+		"geggy:flint_axe",
+		"geggy:bronze_axe",
+		"geggy:reinforced_flint_axe"
 	],
 	"variableBreakingTime": false
 }

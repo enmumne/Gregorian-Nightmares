@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SPS",
+        "   ",
+        "   "
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:mangrove_slab"
+        },
+        "P": {
+            "item": "minecraft:barrel"
+        }
+    },
+    "result": {
+        "item": "charm:mangrove_barrel"
+    }
+}

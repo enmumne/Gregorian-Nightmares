@@ -445,6 +445,7 @@
 		}
 		{
 			dependencies: ["00A856BF79735307"]
+			description: ["&o : Yes, but no."]
 			id: "3724FB5B3F7621B8"
 			tasks: [
 				{
@@ -458,7 +459,7 @@
 					type: "item"
 				}
 			]
-			title: "Mob Drops"
+			title: "Mob Drops?"
 			x: 4.5d
 			y: 0.0d
 		}
@@ -552,7 +553,7 @@
 			description: ["Kibe Runes are used to change channels on Kibe Entangled Storage."]
 			id: "069DD64C517EECBC"
 			tasks: [{
-				id: "01994DD68252BE3E"
+				id: "37D318BC0F171D4D"
 				item: {
 					Count: 1b
 					id: "itemfilters:tag"

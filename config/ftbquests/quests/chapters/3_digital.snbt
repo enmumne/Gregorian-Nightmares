@@ -150,11 +150,17 @@
 				"0E0834FBB9FBF84B"
 				"3B2FC4AB58E9AD2F"
 			]
-			description: ["The Sodium Battery is needed for HV Machine Hulls."]
+			description: [
+				"The &mSodium&r Silicon Battery is needed for HV Machine Hulls."
+				""
+				"Silicon and Sodium batteries were swapped in MI standard progression, because sodium was gated past the electrolyzer, and silicon was obtained in the Blast Furnace with quartz and coke/carbon."
+				""
+				"Here sodium is the same, and electrolyzer unlocked earlier. Whereas silicon requires going through the Arc Furnace..."
+			]
 			id: "61C47F729721A78F"
 			tasks: [{
 				id: "4F7DF1F7BCF96567"
-				item: "modern_industrialization:sodium_battery"
+				item: "modern_industrialization:silicon_battery"
 				type: "item"
 			}]
 			x: -4.5d

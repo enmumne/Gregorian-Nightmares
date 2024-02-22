@@ -43,7 +43,7 @@
 				""
 				"As you can see, to craft the unfinished bucket you need iron dusts and a wooden form. If you've gone through the early quests you already know how."
 				""
-				"&7&oNote: the macerator is gated much later than usual, and you don't have any direct way to obtain a iron dust. Therefore figure out first how to get a \"&airon tiny dust&7&o\", so that you can also obtain a full dust with that."
+				"&7&oNote: the macerator is gated much later than usual, and you don't have any direct way to obtain a iron dust. Therefore figure out first how to get a \"&airon tiny dust&7&o\", so that you can also obtain a full dust with that. If you don't want to use looted iron nuggets, and since the chain of recipes may be tricky to navigate, look for vanilla blast furnace-only recipe that smelts &aTiny Iron Blend Dust&r &o&7to a iron nugget."
 			]
 			id: "47EA49CACF79FC68"
 			min_width: 280
@@ -209,14 +209,16 @@
 				"&6Group D&r: salt, redstone, precious ore, bauxite (4)"
 				"&6Group E&r: mozanite, tungsten, uranium (3)"
 				"&6Group X&r: quartz (1, nether only)"
+				"&cGroup Gas&r: gas (2, nether only)"
+				"&cGroup Oil&r: oil (2, overworld, spawns inside sand)"
 				""
 				"Note: &eAntimony is part of Redstone. Antimony nodes can be freely broken for raw antimony."
 				""
-				"This system of tokens is designed as a way to control how many quarries can run concurrently on the same ore type. The goal is to forbid spamming more than one type, but rather upgrade the quarry through tiers."
+				"This system of tokens is designed as a way to control how many quarries can run concurrently on the same ore type. The goal is to forbid spamming more than one type, and instead upgrade the quarry through tiers."
 				""
 				"Notice that since ores are divided into groups, you can effectively stop, for example, a tin quarry so that you can use that token and have TWO concurrent copper quarries. This is a freedom you have."
 				""
-				"But the system will be designed and balanced around the idea of a SINGLE quarry for each ore type. And that should sustain the whole progression without requiring more \"juggling\". Only by upgrading each quarry through its tiers."
+				"But the system will be designed and balanced around the idea of a SINGLE quarry for each ore type. And that should sustain the whole progression without requiring more \"juggling\". Simply by upgrading each quarry through its tiers."
 			]
 			icon: "drilly:drill_group1"
 			id: "2B1C9080592A0898"
@@ -300,6 +302,26 @@
 				{
 					id: "6684BBF36F0FF0E4"
 					item: "drilly:drill_groupx"
+					type: "item"
+				}
+				{
+					id: "1467E46612F04BC1"
+					item: "drilly:drill_gas"
+					type: "item"
+				}
+				{
+					id: "7AE594D9979B275B"
+					item: "drilly:drill_gas"
+					type: "item"
+				}
+				{
+					id: "48DD56F4F149BC67"
+					item: "drilly:drill_oil"
+					type: "item"
+				}
+				{
+					id: "22B0D2BEAD818413"
+					item: "drilly:drill_oil"
 					type: "item"
 				}
 			]
@@ -481,7 +503,7 @@
 				""
 				"Within my long-term plan, all this would become a lot more meaningful when this system of quarries would be plugged into a ore processing overhaul. With special fluids to either use alongside the drills, or after as ore processing, to extract rare materials needed to progress later in the game."
 				""
-				"&cMore complexity = more production"
+				"&cMore complexity = better production"
 			]
 			id: "6A0C16FB7909BB8D"
 			min_width: 280
@@ -534,31 +556,29 @@
 		}
 		{
 			description: [
-				"As explained above, the current \"corenodes\" generation is more the result of compromises, than good design. Here below you can check where the nodes generate by type."
+				"As explained above, the current \"corenodes\" generation is more the result of compromises than good design. Here below you can check where the nodes generate by type."
 				""
-				"&aCopper&r: &c0 to 80&r, chance 5"
-				"&aSalt&r: &c0 to 64&r, chance 1"
-				"&aTin&r: &c-8 to 48&r, chance 3"
-				"&aLead&r: &c0 to 56&r, chance 1"
-				"&aNickel&r: &c-16 to 40&r, chance 2"
-				"&aZinc&r: &c-24 to 48&r, chance 2"
-				"&aIron&r: &c-24 to 40&r, chance 2"
+				"&aCopper&r: &c0 to 80&r, chance 2 (also 90-180)"
+				"&aSalt&r: &c0 to 64&r, chance 1 (also -64 -20)"
+				"&aTin&r: &c-8 to 48&r, chance 1 (also 60-160)"
+				"&aLead&r: &c0 to 56&r, chance 1 (also 70-200)"
+				"&aNickel&r: &c-16 to 40&r, chance 1"
+				"&aZinc&r: &c-24 to 48&r, chance 1"
+				"&aIron&r: &c-24 to 40&r, chance 1 (also 80-120)"
 				"&aAntimony&r: &c-32 to 40&r, chance 1/2"
-				"&aCoal&r: &c-40 to 0&r, chance 1"
+				"&aCoal&r: &c-40 to 0&r, chance 1 (also 32-128)"
 				"&aPrecious Ore&r: &c-56 to 0&r, chance 1"
-				"&aBauxite&r: &c-56 to -8&r, chance 1"
+				"&aBauxite&r: &c-56 to -8&r, chance 1 (also 80-200)"
 				"&aTungsten&r: &c-56 to -32&r, chance 1/3"
 				"&aMozanite&r: &c-56 to -32&r, chance 1/2"
 				"&aUranium&r: &c-56 to -40&r, chance 1/3"
 				"&aRedstone&r: &c-64 to -40&r, chance 1/2"
-				"&aLignite&r: &c0 to 128&r, chance 3"
-				"&aCoal&r: &c32 to 128&r, chance 5 (additional)"
-				"&aQuartz&r: &c+/- 10&r from top or bottom, chance 8, &cNether&r"
+				"&aLignite&r: &c0 to 128&r, chance 2"
+				"&aQuartz&r: &c+/- 10&r from top or bottom, chance 5, &cNether&r"
 				""
 				"Numbers indicate Y ranges, all uniformly generated. The blocks now &l&eEMIT LIGHT&r, therefore traveling through dark caves is the ideal way to spot them."
 				""
 				"The chance indicates number of attempts for each chunk. So a value of 1 means the system makes one single attempt for every chunk. If the attempt fails, that chunk won't contain the ore node of that type. 1/3 instead indicates 1 attempt every 3 chunks, so increased rarity."
-				""
 			]
 			icon: "geggy:iron_corenode"
 			id: "4FE72AFB4AF93B1B"
@@ -634,12 +654,18 @@
 			description: [
 				"I'm aware that there might be some contrived ways to \"move\" the infinite ore nodes, for example using some Create contraptions."
 				""
-				"The whole point here is to have positional quarries, to process the nodes where you find them. Moving those blocks would go against the intended design and count as \"cheating\"."
+				"The whole point here is to have positional quarries, to process the nodes where you find them. Moving those infinite ore blocks would go against the intended design and count as \"cheating\"."
 				""
 				"Obviously I cannot stop anyone. The game's yours to use and abuse."
+				""
+				"Another problem is due to machine recipe logic. You could use a token to start a recipe, then manually remove the token and use it to start another machine at the same time. This is also considered like a cheat."
+				""
+				"There are ways to prevent this, but they'd add automation complexity and my idea was to have the first tier of quarries as simple as possible, and then gradually introduce more aspects to it."
+				""
+				"So for the time being I'll keep things as they are and simply ask players to stick to the intended design: quarries are meant to start with a very low output, but if it's considered too scarce I'd rather tweak the recipes than have players looking to cheat around the system..."
 			]
 			id: "5F2A341E3C936A9C"
-			min_width: 250
+			min_width: 255
 			tasks: [{
 				id: "67853A50F73F5FFA"
 				type: "checkmark"
@@ -968,6 +994,98 @@
 			title: "Tier 5 - LV"
 			x: -10.0d
 			y: 6.5d
+		}
+		{
+			dependencies: ["2E583E2AF994DAC7"]
+			description: [
+				"Oil nodes spawn in sand as blobs, ranging from Y 20 to 200."
+				""
+				"As in the case of gas nodes, to set up a driller you need to break all the nodes and leave ONE."
+				""
+				"The structure is quite bigger compared to gas driller. Horizontally, around the oil node, you need to place a square of 11x11 \"&aLight Concrete&r\" blocks. Meaning that right in the center of this 11x11 layout there will be the oil node block."
+				""
+				"Right under this floor of light concrete, there's simply a second layer of the same concrete, but as a full square of 9x9. So one block smaller on each side."
+				""
+				"Instead, above these two layers of concrete there's the actual multiblock machine. Use the wrench to check the structure."
+				""
+				"The controller is positioned 4 blocks above the oil node, and one step forward, when you are facing it."
+				""
+				"The rest of the structure is made of Steel Frame Box, Steel Machine Casing and Steel Pipe Machine Casing."
+				""
+				"...Plus two Cast Iron Ladders at the sides of those three casing blocks under the controller in the front."
+			]
+			id: "6D947CF3D7902F5A"
+			min_width: 270
+			shape: "rsquare"
+			tasks: [{
+				id: "567C519016357A18"
+				item: "modern_industrialization:oil_driller"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["2E583E2AF994DAC7"]
+			description: [
+				"Gas nodes exist exclusively in the Nether and spawn in Netherrack in small blobs."
+				""
+				"To set up a Gas Driller you need to clear the place of all blocks, and leave ONE gas node. The structure of the machine will embed the node and be built around it."
+				""
+				"On the same level of the gas node you need to build a 9x9 square made of \"&aLight Concrete&r\", so with the gas node right in the center."
+				""
+				"Right below, you need to place another, smaller, square of 7x7 light concrete. Filling up the space and being one block smaller on all sides than the square above."
+				""
+				"The rest of the structure is relatively straightforward and made of Steel Frame Box and Steel Machine Casing. Plus the controller of course, and the hatches you need."
+				""
+				"Look at the recipes as usual to figure out what you need."
+				""
+				"(The Gas controller cannot be crafted directly. You simply make the Oil Miner controller using an Assember, then convert it to gas on a crafting table.)"
+			]
+			id: "7CA36A6E11B8A94F"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "326ACD245CDE5694"
+				item: "modern_industrialization:gas_driller"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6D947CF3D7902F5A"]
+			dependency_requirement: "all_started"
+			description: [
+				"The oil nodes block can be broken for a generous amount of \"oilsands\". "
+				""
+				"These can be centrifuged for oil, but are obviously limited in quantities compared to the infinite nodes that can go on forever."
+			]
+			id: "09216652E65127DC"
+			tasks: [{
+				id: "6E8FB48DC1DC84F0"
+				item: "geghilarity:oilsands_dust"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["7CA36A6E11B8A94F"]
+			dependency_requirement: "all_started"
+			description: [
+				"Breaking the infinite gas nodes drops these weird rocks."
+				""
+				"They can be used in an \"advanced\" centrifuge for shale oil, that returns oil in the end. So it can serve as an early source before you set up an automated miner."
+			]
+			id: "4BCAAAB711043611"
+			tasks: [{
+				id: "0DB513F6344FC21A"
+				item: "geggy:gaseous_rocks"
+				type: "item"
+			}]
+			x: -11.0d
+			y: 8.0d
 		}
 	]
 	title: "The Quarry System"

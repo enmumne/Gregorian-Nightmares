@@ -1,11 +1,16 @@
 {
+  "megane": {
+    "create.schematicannon.gunpowder": true,
+    "create.contraption": true
+  },
   "waila": {
     "show_blocks": true,
     "show_fluids": false,
     "show_entities": true,
     "show_icon": true,
-    "icon_position": "BOTTOM",
+    "icon_position": "MIDDLE",
     "show_mod_name": true,
+    "show_item_mod_name": true,
     "show_registry": false
   },
   "minecraft": {
@@ -22,18 +27,27 @@
     "attribute.icon_per_line": 25,
     "attribute.long_health_max": 100,
     "attribute.long_armor_max": 100,
-    "furnace_contents": true,
+    "attribute.horse_jump_height": true,
+    "attribute.horse_speed": true,
+    "attribute.panda_genes": true,
+    "attribute.beacon_effects": true,
+    "attribute.mob_effects": true,
+    "attribute.hidden_mob_effects": false,
     "jukebox.record": true,
     "timer.grow": true,
     "timer.breed": true,
+    "override.invisible_entity": true,
     "override.trapped_chest": true,
     "override.powder_snow": true,
     "override.infested": true,
+    "override.vehicle": true,
     "breaking_progress.enabled": true,
     "breaking_progress.color": -1426063361,
     "breaking_progress.bottom_only": false,
     "spawner_type": true,
     "crop_progress": true,
+    "crop_growable": true,
+    "tree_growable": true,
     "redstone.lever": true,
     "redstone.repeater": true,
     "redstone.comparator": true,
@@ -43,6 +57,27 @@
     "level.honey": true,
     "note_block.type": true,
     "note_block.note": "SHARP",
-    "note_block.int_value": false
+    "note_block.int_value": false,
+    "book.enchantment": "CYCLE",
+    "book.enchantment_cycle_timing": 500,
+    "book.written": true
+  },
+  "harvest": {
+    "enabled": true,
+    "display_mode": "CLASSIC_MINIMAL"
+  },
+  "wailax": {
+    "energy.enabled_block": true,
+    "energy.enabled_entity": true,
+    "fluid.enabled_block": true,
+    "fluid.enabled_entity": true,
+    "fluid.display_unit": "MILLIBUCKETS",
+    "progress.enabled_block": true,
+    "progress.enabled_entity": true,
+    "item.enabled_block": true,
+    "item.enabled_entity": true,
+    "item.nbt": true,
+    "item.max_height": 3,
+    "item.sort_by_count": true
   }
 }

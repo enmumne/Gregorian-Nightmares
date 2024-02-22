@@ -1,0 +1,22 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "processingTime": 200,
+  "results": [
+    {
+      "item": "create:wheat_flour"
+    },
+    {
+      "chance": 0.25,
+      "item": "create:wheat_flour"
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:wheat_seeds"
+    }
+  ]
+}

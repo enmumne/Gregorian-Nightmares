@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "item": "minecraft:bamboo"
+        },
+        "X": [
+            {
+                "item": "geggy:small_coal_dust"
+            }
+        ]
+    },
+    "pattern": [
+        "X",
+        "#",
+        "#"
+    ],
+    "result": {
+        "count": 1,
+        "item": "beachparty:palm_tall_torch"
+    }
+}

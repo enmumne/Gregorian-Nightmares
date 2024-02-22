@@ -50,7 +50,7 @@
 				""
 				"The fourth number indicates general updates. This number will grow to double digits without affecting the others."
 				""
-				"The 1.19.3 specifically will start with \"A\", rather than a number. These are preliminar \"empty\" modpacks, collecting the mods that are updated. So letters will be used until the modpack can move to a proper numbered release. With 1.20 being close, it's possible that 1.19.3/4 will never materialize as viable versions, with mods skipping it. "
+				"In cases of versions starting with a letter, it's because they are experimental kitchen sink packs with no edited progression. Just tests that I can make public to test compatible mods on new versions."
 				""
 				"In general, I need at least Modern Industrialization and Create (and KubeJS + FTB Quests), to start a numbered version."
 			]
@@ -68,13 +68,13 @@
 		{
 			dependencies: ["126BEDB82177DA40"]
 			description: [
+				"- Large chests \"break\" when you interact with them just at maximum distance. It's not a big deal but either the animation or sound will stop, and won't work again until you reload, even if you get close. This is only visual, since you can still place and remove items normally."
+				""
 				"- REI sometimes shows icon corruption. This usually happens with the caching mode turned on. Click on the wheel at the side of the search bar, in the inventory screen. &bDisplay Settings > Caching Entry Rendering &r(toggle)"
 				""
 				"- Some mods don't play well with each other. For example Spectrum \"hides\" some blocks in the style of old Reika's Chromaticraft. But due to worldgen sometimes these special blocks stick out because they aren't adapted to the proper modded rock layer... Same for some ores. &7(Used to happen especially in 1.18 due to rock layers added by Unearthed.)"
 				""
 				"- Sometimes in REI the buttons at the top to move between the recipe tabs stop working. Try using the mouse scroll wheel."
-				""
-				"- The Electric Blast Furnace in MI is capped at 128eu and kanthal coils, and by only 1 item output slot. To work around this limit on 1.19 I have created a second EBF called Blaster Furnace, that is power-uncapped and with more slots. So some of those recipes have been moved to this other separate machine. They do not share recipes."
 			]
 			id: "662B3BC2B20C38C1"
 			min_width: 340
@@ -100,9 +100,9 @@
 				""
 				"(Please don't send &cfriend requests&r, I don't look at those. You should be able to message me directly.)"
 				""
-				"Even better if you have some better technical skills than mine, so that we can crack the harder problems."
+				"Even better if you have some technical skills, so that we can crack the harder problems."
 				""
-				"No, I'm not opening a channel specifically for this modpack, because I don't think there's any interest for that, and I don't want to spend my time maintaining such a thing."
+				"No, I'm not opening a channel specifically for this modpack, because I don't think there's any interest for that, and I don't want to spend my time maintaining and moderating such a thing."
 			]
 			id: "7986F67BC1254200"
 			min_width: 250
@@ -173,18 +173,16 @@
 		{
 			dependencies: ["126BEDB82177DA40"]
 			description: [
-				"To be clear:"
+				"The process of MI's \"greggification\" is ongoing. Initial effort was on adding unpolished \"bulk\" content, now the focus will shift toward wrestling it all in a coherent shape, but this phase will proceed slowly since, FOR THE FIRST TIME, after a whole year, I'll start testing the modpack in rigorous survival, and will tweak things as I go."
 				""
-				"The process of MI's \"greggification\" is ongoing, the current priority is adding unpolished \"bulk\". It will be a long process. The important part is the transition to positional quarries (to replace the void ones that are default). After that, I plan to add actual ore processing, so changes will run deep."
+				"When I started a year ago the intention was to port some complex process chains from &cGregicality/TJ&r. Now progression is progressively shifting to be based on &cSupersymmetry&r. (both of these are modpacks based on Minecraft 1.12)"
 				""
-				"On the MI side I ported some complex process chains from &cGregicality/TJ&r. "
-				""
-				"TJ = Technological Journey, the only modpack with the &cGregicality&r add-on playable. For those who don't know about it, it's a tech-only modpack that embraced very large processing lines and that significantly expanded the content of the high tiers, in a number of cases surpassing GTNH. About &m180+&r (now &m360+&r 420+) recipes have been ported, none of which really optional. These are all manual recipes, not generated. So when you see something showing up, it's because it's used somewhere."
+				"TJ = Technological Journey, the only modpack with the &cGregicality&r add-on playable. For those who don't know about it, it's a tech-only modpack that embraced very large processing lines and that significantly expanded the content of the high tiers, in a number of cases surpassing GTNH. About &m180+&r (now &m360+&r &m420+&r 1000+) recipes have been ported, none of which really optional. These are all manual recipes, not generated. "
 				""
 				"A list of the \"main\" processing lines that have either been added or modified to achieve GT parity is available on that quest on the left."
 			]
 			id: "0379ECB64AE8509A"
-			min_width: 280
+			min_width: 285
 			shape: "square"
 			tasks: [{
 				id: "0BB647BEE35033E3"
@@ -197,11 +195,14 @@
 		{
 			dependencies: ["0379ECB64AE8509A"]
 			description: [
-				"The stuff I manually added can be seen by searching for &a@geg&r in REI."
+				"What I manually added can be seen by searching for &a@geg&r in REI."
 				""
-				"The exception are the custom machines that are instead under MI mod tag."
+				"The exception are the custom machines that are instead under MI mod tag (&a@modern&r)."
 				""
-				"WIP quarry system can be partially under &a@drilly&r (some missing textures are indeed missing)"
+				"&cNote:&r I'm having fun renaming Modern Industrialization, since it's too long, and I sometime change the name after an update, so you'll need to look... here. "
+				"Currently it's: &aSuckerSymphony"
+				""
+				"WIP quarry system has some more stuff under &a@drilly&r "
 			]
 			id: "442D3EFA6C7EE816"
 			tasks: [{
@@ -214,11 +215,15 @@
 		}
 		{
 			description: [
-				"- Sometimes resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, or missing item names. When loading into a world sometimes &epipes are rendered as disconnected, and hatches in multiblocks not formed&r even if the machine is working... If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
+				"&cImportant&r: make sure to check again issues here after an update, since I try to keep this section up to date."
+				""
+				"- If you're reading this, it means you already run the modpack and created a world. But before proceeding it's better if you close it again, open the instance of the modpack and find \"&aPOST-INSTALL.txt&r\" file. This should contain further instructions to complete installation, since it may be possible that some mods need to be replaced or added, due to them being Modrinth-only. "
+				""
+				"- Sometimes resources aren't properly loaded. They exhibit weird behaviors, like missing textures, icons, missing item names or repeated tooltips. When loading into a world sometimes &epipes are rendered as disconnected, and hatches in multiblocks not formed&r even if the machine is working... If this happens, pressing &l&aF3+t&r usually fixes it. It's a shortcut to reload the assets without exiting the game."
 				""
 				"- [&4HEAVY&r] This version of the modpack is VERY HEAVY to run. It just sucks. I try improving things where I can, but please look into the &lLITE&r version that should now be available, for something reasonably playable. This one here is expected to choke."
 				""
-				"- [&4HEAVY&r] When you create a new world you may notice that early on RAM gets filled up, creating &llag&r (yes, again), even if you allocate 8Gb. During my tests RAM usage usually decreases after some time to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more. (allocating more doesn't seem to help much...) The mod \"&cchipped&r\" by itself adds some memory overhead, so you can try removing that one."
+				"- [&4HEAVY&r] When you create a new world you may notice that early on RAM gets filled up, creating &llag&r (yes, again), even if you allocate 8Gb. During my tests RAM usage usually decreases after some time to more normal levels, so I think it's still worldgen that stresses the system. Either be patient or try allocating more. (allocating more doesn't seem to help much...) The mod \"&cchipped&r\" by itself adds some memory overhead, so you can try removing it."
 				"{@pagebreak}"
 				"- [&4HEAVY&r] In case of occasional, sudden crashes, they might be related either to the \"&cTinySkeletons&r\" or \"&cfrycparry&r\" mods, you can easily remove them for the /mods/ folder if you want. &mAnother mod that can add significant server lag and that could be removed is \"&cspiderstpo&r&m\" (cursed spiders AI being laggy)"
 				""
@@ -337,7 +342,7 @@
 				""
 				"By default the upper left corner of the screen shows the MSPT, which is the server tick time. To know how poorly this bloated [&4HEAVY&r] modpack is running... 50 is the cap you deal with, but getting even near can be bad. The lower it is, the more headroom you have. Usually on modern Minecraft lag is worldgen and mobs. Or bugs in the mods."
 				""
-				"To profile type &a/spark profiler&r to start it, and then &a/spark profiler --stop&r when you're done, and try to catch the lag as it happens inbetween."
+				"To profile type &a/spark profiler start&r to start it, and then &a/spark profiler stop&r when you're done, and try to catch the lag as it happens inbetween."
 				""
 				"Those instructions are of course to troubleshoot the server. For FPS/client lag the command is &a/sparkc&r."
 			]
@@ -359,23 +364,28 @@
 				"- Early &egold line&r (TJ)"
 				"- &eFull Platinum group&r (TJ/GTNH recipe parity)"
 				"- Hard &eAmmonia line&r (optional in TJ)"
-				"- &eEpoxy&r"
-				"- More complex &eiron&r/&esteel&r/&ealuminium&r/&estainless steel&r, &echrome&r and &esilver&r (adapted from Supersymmetry)"
-				"- Complex &etitanium&r, &etungsten&r and &etungstensteel&r (TJ, with fewer skips)"
+				"- &eEpoxy&r > redone with current SUSY recipes"
+				"- &ePetrochem overhaul&r (will try to keep up to date with SUSY)"
+				"- More complex &eiron&r / &esteel&r / &ealuminium&r / &estainless steel&r / &echrome&r / &esilver&r / &etungsten&r / &emanganese&r / &emolybdenum&r as byproduct (all from SUSY)"
+				"- Complex &etitanium&r and &etungstensteel&r (TJ, with fewer skips)"
 				"- &eVanadium line&r (removed from Nomifactory hardmode, preserved here)"
-				"- from &eEthylene&r to &ePTFE&r + Supersymmetry tweaks (replaced MI parts)"
+				"- from &eEthylene&r to &ePTFE&r + SUSY tweaks (replaced MI parts)"
 				"- Long &eIndium line&r (TJ)"
 				"- All &eNaquadah&r up to Alloy (missing only UHV part). Joined and adapted some parts of Nomi hardmode, so that most of the three separate lines are now part of the same giant process."
-				"- &ePolybenzimidazole&r (TJ \\& GTNH)"
-				"- &eAll coils&r up to Naquadah Alloy"
+				"- &ePolybenzimidazole&r (TJ \\& GTNH) > fully redone based on Supersymmetry"
+				"- GTNH &eMonazite&r and &eBastnasite&r lines"
+				"- &eTaranium&r late-game processing line (TJ, all recipes present, but missing a couple of catalysts and currently detached from progression)"
+				"- &eNiobium-Tantalum&r processing line (SUSY, currently detached from the progression)"
+				"- &eAll coils&r up to Tritanium, updated to CEu 2.8, recipes made somewhat harder compared to other GT versions, waiting for Susy"
 				"- Custom &eRhenium line&r (not currently existing on any public GT version, custom by PCM/SChroedinger, 50 recipes)"
 				""
-				"I list here the major changes that have a full processing done. These are still untested and in a number of cases they still need materials to be properly sourced, or an actual use for the finished products."
+				"TJ = Technological Journey modpack"
+				"SUSY = SuperSymmetry modpack"
 				""
-				"Things need more work to be better integrated in MI overall progression. The current priority is still adding bulk. Adjustements and polish will come later."
+				"These are still untested and in some cases they still need materials to be properly sourced, or an actual use for the finished products. Things need more work to be better integrated in MI overall progression, it's an ongoing process. Priority is now shifting to make it all work."
 			]
 			id: "1BF5638879D266B8"
-			min_width: 290
+			min_width: 320
 			tasks: [{
 				id: "279B05B265ADE311"
 				title: "Geghilarity"

@@ -42,13 +42,6 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "minecraft:raw_iron"}],
 			"results": [{"count": 2, "item": "create:crushed_raw_iron"},{"item": "create:crushed_raw_iron", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
 	})
-	// yttr
-	event.custom({
-			"type": "create:milling",
-			"processingTime":500,
-			"ingredients": [{"item": "yttr:xl_iron_ingot"}],
-			"results": [{"count": 6, "item": "create:crushed_raw_iron"},{"count": 3, "item": "create:crushed_raw_iron", "chance": 0.50}]
-	})
 	event.custom({
 			"type": "create:milling",
 			"processingTime":200,
@@ -60,6 +53,12 @@ ServerEvents.recipes(event => {
 			"processingTime":200,
 			"ingredients": [{"item": "minecraft:raw_copper"}],
 			"results": [{"item": "modern_industrialization:copper_dust"}]
+	})
+	event.custom({
+			"type": "create:milling",
+			"processingTime":50,
+			"ingredients": [{"item": "create:copper_nugget"}],
+			"results": [{"item": "modern_industrialization:copper_tiny_dust"}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -156,6 +155,79 @@ ServerEvents.recipes(event => {
 			{"count": 3, "item": "geghilarity:tiny_rock_salt_dust"},
 			{"count": 1, "item": "magick:stone_dust"}
 		]	
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 8,
+		duration: 150,
+		item_inputs: [ 
+			{item: "minecraft:netherrack", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:netherrack_dust", amount: 1},
+			{item: "geggy:netherrack_dust", amount: 1, probability: 0.5},
+			{item: "geghilarity:precious_nugget", amount: 1, probability: 0.03}
+		]
+	})
+	
+	// bulk haunting only works on red sand, produced with redstone
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 80,
+		duration: 900,
+		item_inputs: [ 
+			{item: "minecraft:soul_sand", amount: 5}
+		],
+		item_outputs: [
+			{item: "minecraft:sand", amount: 1, probability: 0.9},
+			{item: "geggy:saltpeter", amount: 1, probability: 0.8},
+			{item: "modern_industrialization:coal_dust", amount: 1, probability: 0.5}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:crude_oil", amount: 80}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 250,
+		item_inputs: [ 
+			{item: "minecraft:grass_block", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:plant_ball", amount: 1, probability: 0.35},
+			{item: "minecraft:sand", amount: 1, probability: 0.5},
+			{item: "geggy:clay_dust", amount: 1, probability: 0.045}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 250,
+		item_inputs: [ 
+			{item: "minecraft:dirt", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:plant_ball", amount: 1, probability: 0.125},
+			{item: "minecraft:sand", amount: 1, probability: 0.5},
+			{item: "geggy:clay_dust", amount: 1, probability: 0.05}
+			
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 300,
+		item_inputs: [ 
+			{item: "geggy:mince_meat", amount: 3}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:biomass", amount: 200},
+			{fluid: "geghilarity:liquid_fat", amount: 10}
+		]
 	})
 	
 })	

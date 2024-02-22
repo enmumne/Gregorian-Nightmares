@@ -70,29 +70,6 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.custom({ 
-		type: "modern_industrialization:blast_furnace",
-		eu: 1,
-		duration: 400,
-		item_inputs: [
-			{item: "geggy:nether_precious_ore", amount: 1}
-		],
-		item_outputs: [
-			{item: "geghilarity:precious_ingot", amount: 1}
-		]
-	})	
-	event.custom({ 
-		type: "modern_industrialization:blast_furnace",
-		eu: 1,
-		duration: 400,
-		item_inputs: [
-			{item: "geggy:deepslate_precious_ore", amount: 1}
-		],
-		item_outputs: [
-			{item: "geghilarity:precious_ingot", amount: 1}
-		]
-	})
-	
 	//oxygen -> ad astra
 		event.custom({ 
 		type: "modern_industrialization:centrifuge",
@@ -106,23 +83,6 @@ ServerEvents.recipes(event => {
 				{fluid: 'ad_astra:oxygen', amount: 1000}
 			]
 		})
-		
-	//leached copper dehydration
-		event.custom({ 
-		type: "modern_industrialization:dehy",
-		eu: 30,
-		duration: 80,
-		item_inputs: [ 
-			{item: 'geghilarity:leached_copper_dust', amount: 1}
-		],
-		item_outputs: [
-			{item: 'modern_industrialization:copper_dust', amount: 3, probability: 0.95},
-			{item: 'modern_industrialization:lead_dust', amount: 1, probability: 0.25},
-			{item: 'modern_industrialization:nickel_dust', amount: 1, probability: 0.16},
-			{item: 'modern_industrialization:silver_dust', amount: 1, probability: 0.12},
-			{item: 'modern_industrialization:iron_dust', amount: 1, probability: 0.20}
-		]
-	})
 
 /*
 	// lyeo indium ? check later
@@ -375,9 +335,9 @@ event.custom({
 	
 	//hot naquadah ingot
 		event.custom({ 
-		type: "modern_industrialization:blaster_furnace4",
-		eu: 3840,
-		duration: 1000,
+		type: "modern_industrialization:blast_furnace",
+		eu: 7680,
+		duration: 600,
 		item_inputs: [ 
 			{item: 'geghilarity:naquadah_dust', amount: 1}
 		],
@@ -392,13 +352,19 @@ event.custom({
 	//normal  naquadah ingot
 		event.custom({ 
 		type: "modern_industrialization:vacuum_freezer",
-		eu: 480,
-		duration: 600,
+		eu: 1920,
+		duration: 150,
 		item_inputs: [ 
-			{item: "geghilarity:hot_naquadah_ingot"}
+			{item: "geghilarity:hot_naquadah_ingot", amount: 1}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:liquid_helium", amount: 500}
 		],
 		item_outputs: [	
 			{item: "geghilarity:naquadah_ingot", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:helium", amount: 250}
 		]
 	})	
 	
@@ -410,55 +376,15 @@ event.custom({
 		.itemOut('geghilarity:naquadah_ingot', 1)
 	
 	
-		//normal  naquadah plate
 		event.custom({ 
 		type: "modern_industrialization:compressor",
-		eu: 4,
-		duration: 200,
+		eu: 24,
+		duration: 526,
 		item_inputs : [
 			{item: "geghilarity:naquadah_ingot", amount: 1}
 		],
 		item_outputs :[
 			{item: "geghilarity:naquadah_plate", amount: 1}
-		]
-	})
-		
-		
-	//TRITANIUM PLASMA 	
-		event.recipes.modern_industrialization.fusion_reactor(64000, 600)
-        .fluidIn('geghilarity:tin', 1000)
-		.fluidIn('geghilarity:liquid_osmium', 1000)
-        .fluidOut("geghilarity:liquid_tritanium", 1000)
-
-	//TRITANIUM LIQUID
-		event.recipes.modern_industrialization.heat_exchanger(80, 100)
-        .fluidIn('modern_industrialization:cryofluid', 1000)
-		.fluidIn('geghilarity:liquid_tritanium', 1000)
-        .fluidOut("modern_industrialization:argon", 650)
-		.fluidOut("modern_industrialization:helium", 250)
-		.itemOut('geghilarity:hot_tritanium_ingot', 1)
-		
-		event.recipes.modern_industrialization.heat_exchanger(8, 10)
-        .fluidIn('modern_industrialization:cryofluid', 100)
-		.itemIn('geghilarity:hot_tritanium_ingot', 1)
-        .fluidOut("modern_industrialization:argon", 65)
-		.fluidOut("modern_industrialization:helium", 25)
-		.itemOut('geghilarity:tritanium_ingot', 1)
-		
-		event.recipes.modern_industrialization.vacuum_freezer(1024, 600)
-		.itemIn('geghilarity:hot_tritanium_ingot', 1)
-		.itemOut('geghilarity:tritanium_ingot', 1)
-		
-	//normal  tritanium plate
-		event.custom({ 
-		type: "modern_industrialization:compressor",
-		eu: 4,
-		duration: 200,
-		item_inputs : [
-			{item: "geghilarity:tritanium_ingot", amount: 1}
-		],
-		item_outputs :[
-			{item: "geghilarity:tritanium_plate", amount: 1}
 		]
 	})
 		
@@ -494,7 +420,7 @@ event.custom({
 		eu: 32,
 		duration: 1000,
 		item_inputs: [ 
-			{item: 'geghilarity:tritanium_plate', amount: 8},
+			{item: 'geggy:tritanium_plate', amount: 8},
 			{item: 'modern_industrialization:quantum_circuit', amount: 8},
 			{item: 'modern_industrialization:highly_advanced_upgrade', amount: 32},
 			{item: 'modern_industrialization:singularity', amount: 1}
@@ -514,7 +440,7 @@ event.custom({
 		eu: 32,
 		duration: 1000,
 		item_inputs: [ 
-			{item: 'geghilarity:tritanium_plate', amount: 8},
+			{item: 'geggy:tritanium_plate', amount: 8},
 			{item: 'modern_industrialization:quantum_circuit', amount: 4},
 			{item: 'modern_industrialization:highly_advanced_upgrade', amount: 16},
 			{item: 'geghilarity:naquadah_plate', amount: 5},
@@ -530,14 +456,6 @@ event.custom({
 	
 		event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:end_portal_frame'})
 	
-	//blast furnace recipes
-	event.shapeless('modern_industrialization:blaster_furnace', ['modern_industrialization:electric_blast_furnace'])
-	event.shapeless('modern_industrialization:blaster_furnace2', ['modern_industrialization:blaster_furnace'])
-	event.shapeless('modern_industrialization:blaster_furnace3', ['modern_industrialization:blaster_furnace2'])
-	event.shapeless('modern_industrialization:blaster_furnace4', ['modern_industrialization:blaster_furnace3'])
-	event.shapeless('modern_industrialization:blaster_furnace5', ['modern_industrialization:blaster_furnace4'])
-	event.shapeless('modern_industrialization:electric_blast_furnace', ['modern_industrialization:blaster_furnace5'])
-	
 	
 	//quantum 
      event.recipes.modern_industrialization.assembler(16000, 200)
@@ -546,7 +464,7 @@ event.custom({
 		.itemIn('minecraft:netherite_helmet', 1)
 		
 		.itemIn('64x geghilarity:naquadah_plate', 1)
-		.itemIn('64x geghilarity:tritanium_plate', 1)
+		.itemIn('64x geggy:tritanium_plate', 1)
 		.itemIn('modern_industrialization:quantum_upgrade', 1)
 		.itemIn('8x modern_industrialization:quantum_circuit', 1)
 		.itemIn('32x modern_industrialization:superconductor_cable', 1)
@@ -562,7 +480,7 @@ event.custom({
 		.itemIn('minecraft:netherite_chestplate', 1)
 		
 		.itemIn('64x geghilarity:naquadah_plate', 1)
-		.itemIn('64x geghilarity:tritanium_plate', 1)
+		.itemIn('64x geggy:tritanium_plate', 1)
 		.itemIn('modern_industrialization:quantum_upgrade', 1)
 		.itemIn('8x modern_industrialization:quantum_circuit', 1)
 		.itemIn('32x modern_industrialization:superconductor_cable', 1)
@@ -578,7 +496,7 @@ event.custom({
 		.itemIn('minecraft:netherite_leggings', 1)
 		
 		.itemIn('64x geghilarity:naquadah_plate', 1)
-		.itemIn('64x geghilarity:tritanium_plate', 1)
+		.itemIn('64x geggy:tritanium_plate', 1)
 		.itemIn('modern_industrialization:quantum_upgrade', 1)
 		.itemIn('8x modern_industrialization:quantum_circuit', 1)
 		.itemIn('32x modern_industrialization:superconductor_cable', 1)
@@ -594,7 +512,7 @@ event.custom({
 		.itemIn('minecraft:netherite_boots', 1)
 		
 		.itemIn('64x geghilarity:naquadah_plate', 1)
-		.itemIn('64x geghilarity:tritanium_plate', 1)
+		.itemIn('64x geggy:tritanium_plate', 1)
 		.itemIn('modern_industrialization:quantum_upgrade', 1)
 		.itemIn('8x modern_industrialization:quantum_circuit', 1)
 		.itemIn('32x modern_industrialization:superconductor_cable', 1)
@@ -610,7 +528,7 @@ event.custom({
 		.itemIn('minecraft:netherite_sword', 1)
 		
 		.itemIn('64x geghilarity:naquadah_plate', 1)
-		.itemIn('64x geghilarity:tritanium_plate', 1)
+		.itemIn('64x geggy:tritanium_plate', 1)
 		.itemIn('modern_industrialization:quantum_upgrade', 1)
 		.itemIn('8x modern_industrialization:quantum_circuit', 1)
 		.itemIn('32x modern_industrialization:superconductor_cable', 1)

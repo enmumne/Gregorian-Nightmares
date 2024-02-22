@@ -1,5 +1,80 @@
 ServerEvents.recipes(event => {
 	
+	// drill
+	event.custom({ 
+		type: "modern_industrialization:oil_driller",
+		eu: 8,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:aluminum_drill", amount: 1, probability: 0.04},
+			{item: "drilly:drill_oil", amount: 1, probability: 0.0}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:crude_oil", amount: 500}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:oil_driller",
+		eu: 32,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:stainless_steel_drill", amount: 1, probability: 0.02},
+			{item: "drilly:drill_oil", amount: 1, probability: 0.0}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:shale_oil", amount: 4000}
+		]
+	})
+	
+	event.recipes.modern_industrialization.gas_driller(16, 200)
+        .itemIn("modern_industrialization:steel_drill", 0.00)
+		.itemIn("drilly:drill_gas", 0.00)
+		.fluidOut("geghilarity:crude_natural_gas", 500)
+        .dimension("the_nether")
+		.id("nether_gas")
+	
+	// drop
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 16,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:oilsands_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:crude_oil", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:advanced_centrifuge",
+		eu: 64,
+		duration: 200,
+		item_inputs: [
+			{item: "geggy:gaseous_rocks", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:shale_oil", amount: 1000}
+		]
+	})
+	
+	// gas
+	
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geghilarity:crude_natural_gas", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:crude_oil", amount: 50},
+			{fluid: "geghilarity:sulfuric_natural_gas", amount: 1000}
+		]
+	})
+	
 	// preliminar oil overhaul
 	event.custom({ 
 		type: "modern_industrialization:mixer",
@@ -14,7 +89,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({ 
-		type: "modern_industrialization:centrifuge",
+		type: "modern_industrialization:es_separator",
 		eu: 30,
 		duration: 160,
 		fluid_inputs: [
@@ -154,6 +229,22 @@ ServerEvents.recipes(event => {
 		],
 		fluid_inputs: [
 			{fluid: "modern_industrialization:hydrogen", amount: 45},
+			{fluid: "geghilarity:sulfuric_natural_gas", amount: 180}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:treated_sulfuric_natural_gas", amount: 180}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:bed_reactor",
+		eu: 30,
+		duration: 30,
+		item_inputs: [
+			{item: "geghilarity:alumina_catalyst_bed", amount: 1, probability: 0.0}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:hydrogen", amount: 45},
 			{fluid: "geghilarity:sulfuric_refinery_gas", amount: 180}
 		],
 		fluid_outputs: [
@@ -256,6 +347,19 @@ ServerEvents.recipes(event => {
 		eu: 30,
 		duration: 100,
 		fluid_inputs: [
+			{fluid: "geghilarity:treated_sulfuric_natural_gas", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:natural_gas", amount: 1000},
+			{fluid: "geghilarity:sour_gas", amount: 250}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 100,
+		fluid_inputs: [
 			{fluid: "geghilarity:treated_sulfuric_refinery_gas", amount: 1000}
 		],
 		fluid_outputs: [
@@ -333,6 +437,29 @@ ServerEvents.recipes(event => {
 		fluid_outputs: [
 			{fluid: "modern_industrialization:heavy_fuel", amount: 1000},
 			{fluid: "geghilarity:sour_gas", amount: 250}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:treated_sulfuric_natural_gas", amount: 40}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:natural_gas", amount: 40}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:treated_sulfuric_natural_gas", amount: 100}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sour_gas", amount: 25}
 		]
 	})
 	
@@ -467,6 +594,19 @@ ServerEvents.recipes(event => {
 	
 	// lightly steam light
 	
+	//exception for propene > isoprene rubber for cables
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 60,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:steam", amount: 1000},
+			{fluid: "modern_industrialization:light_fuel", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:lightly_steam-cracked_light_fuel", amount: 500}
+		]
+	})
 	event.custom({ 
 		type: "modern_industrialization:cracking_unit",
 		eu: 30,
@@ -2232,6 +2372,114 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
+	// NATURAL GAS cont.
+	
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 60,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:natural_gas", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:butane", amount: 100},
+			{fluid: "geghilarity:propane", amount: 100},
+			{fluid: "geghilarity:ethane", amount: 100},
+			{fluid: "modern_industrialization:methane", amount: 750}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:natural_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:butane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:natural_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:propane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:natural_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:ethane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:natural_gas", amount: 40}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:methane", amount: 30}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:stirred_tank",
+		eu: 30,
+		duration: 5,
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 250},
+			{fluid: "geghilarity:natural_gas", amount: 50}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:alkylated_natural_gas", amount: 300}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 60,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:alkylated_natural_gas", amount: 3000}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 2500},
+			{fluid: "modern_industrialization:light_fuel", amount: 500}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:alkylated_natural_gas", amount: 60}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:alkylated_natural_gas", amount: 300}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:light_fuel", amount: 50}
+		]
+	})
+	
 	// SUSY GASOLINE
 	
 	event.custom({ 
@@ -2318,7 +2566,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({ 
-		type: "modern_industrialization:salloy",
+		type: "modern_industrialization:electric_alloy_smelter",
 		eu: 120,
 		duration: 300,
 		item_inputs: [
@@ -2618,7 +2866,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({ 
-		type: "modern_industrialization:salloy",
+		type: "modern_industrialization:electric_alloy_smelter",
 		eu: 30,
 		duration: 300,
 		item_inputs: [
@@ -3182,6 +3430,62 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({ 
+		type: "modern_industrialization:cracking_unit",
+		eu: 60,
+		duration: 260,
+		item_inputs: [
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:diesel", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:upgraded_diesel_mix", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cracking_unit",
+		eu: 60,
+		duration: 260,
+		item_inputs: [
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:heavy_fuel", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:upgraded_heavy_fuel_mix", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cracking_unit",
+		eu: 60,
+		duration: 260,
+		item_inputs: [
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:naphtha", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:upgraded_naphtha_mix", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:cracking_unit",
+		eu: 60,
+		duration: 260,
+		item_inputs: [
+			{item: "geghilarity:cracking_catalyst", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:lubricating_oil", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:upgraded_lubricating_oil_mix", amount: 1000}
+		]
+	})
+	event.custom({ 
 		type: "modern_industrialization:centrifuge",
 		eu: 30,
 		duration: 160,
@@ -3193,6 +3497,62 @@ ServerEvents.recipes(event => {
 		],
 		fluid_outputs: [
 			{fluid: "modern_industrialization:diesel", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:upgraded_diesel_mix", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:heavy_fuel", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:upgraded_heavy_fuel_mix", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:naphtha", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:upgraded_naphtha_mix", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:light_fuel", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:centrifuge",
+		eu: 30,
+		duration: 160,
+		fluid_inputs: [
+			{fluid: "geghilarity:upgraded_lubricating_oil_mix", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:spent_cracking_catalyst", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sulfuric_fuel_oil", amount: 1000}
 		]
 	})
 	event.custom({ 
@@ -3213,7 +3573,7 @@ ServerEvents.recipes(event => {
 		]
 	})
 	event.custom({ 
-		type: "modern_industrialization:salloy",
+		type: "modern_industrialization:electric_alloy_smelter",
 		eu: 60,
 		duration: 100,
 		item_inputs: [
@@ -3239,7 +3599,119 @@ ServerEvents.recipes(event => {
 			{fluid: "modern_industrialization:methane", amount: 750}
 		]
 	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:refinery_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:butane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:refinery_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:propane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:refinery_gas", amount: 500}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:ethane", amount: 50}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 15,
+		duration: 8,
+		fluid_inputs: [
+			{fluid: "geghilarity:refinery_gas", amount: 40}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:methane", amount: 30}
+		]
+	})
+	
+	// oil residue incomplete
 
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geghilarity:oil_residue", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:fuel_oil", amount: 200},
+			{fluid: "modern_industrialization:diesel", amount: 200},
+			{fluid: "modern_industrialization:heavy_fuel", amount: 150},
+			{fluid: "modern_industrialization:naphtha", amount: 100},
+			{fluid: "geghilarity:lubricating_oil", amount: 500},
+			{fluid: "geghilarity:slack_wax", amount: 350}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:crystallizer",
+		eu: 30,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geghilarity:slack_wax", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:paraffin_wax", amount: 4}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:lubricating_oil", amount: 250}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:paraffin_wax", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:resin", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:paraffin_wax", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:lubricating_oil", amount: 250}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 7,
+		duration: 80,
+		item_inputs: [
+			{item: "minecraft:redstone", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:lubricating_oil", amount: 250}
+		],
+		fluid_outputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 500}
+		]
+	})
 	
 })	
 

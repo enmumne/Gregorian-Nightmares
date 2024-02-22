@@ -160,6 +160,9 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 	event.custom({ 
 		type: "modern_industrialization:packer", eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_gallium_dust", amount: 9}],
 			item_outputs: [{item: "geghilarity:gallium_dust", amount: 1}]})
+	event.custom({ 
+		type: "modern_industrialization:unpacker", eu: 4, duration: 100,item_inputs: [{item: "geghilarity:gallium_dust", amount: 1}],
+			item_outputs: [{item: "geghilarity:tiny_gallium_dust", amount: 9}]})		
 
 	event.custom({ 
 		type: "modern_industrialization:unpacker", eu: 4, duration: 100,item_inputs: [{item: "geghilarity:ferrosilicon_dust", amount: 1}],
@@ -185,7 +188,20 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 			item_outputs: [{item: "geghilarity:potassium_persulfate_dust", amount: 1}]})	
 	event.custom({ 
 		type: "modern_industrialization:unpacker", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:potassium_persulfate_dust", amount: 1}],
-			item_outputs: [{item: "geghilarity:tiny_potassium_persulfate_dust", amount: 9}]})		
+			item_outputs: [{item: "geghilarity:tiny_potassium_persulfate_dust", amount: 9}]})	
+
+	event.custom({ 
+		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:tiny_chromite_dust", amount: 9}],
+			item_outputs: [{item: "geghilarity:chromite_dust", amount: 1}]})
+
+	event.shapeless('geghilarity:magnetite_dust', [ '4x geghilarity:small_magnetite_dust'])	
+	event.custom({ 
+		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:small_magnetite_dust", amount: 4}],
+			item_outputs: [{item: "geghilarity:magnetite_dust", amount: 1}]})	
+
+	event.custom({ 
+		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:small_taranium_dust", amount: 4}],
+			item_outputs: [{item: "geghilarity:taranium_dust", amount: 1}]})		
 
 	event.remove({id: 'minecraft:gold_ingot_from_nuggets'})
 	event.remove({id: 'minecraft:gold_nugget'})

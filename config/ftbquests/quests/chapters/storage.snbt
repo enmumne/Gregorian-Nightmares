@@ -527,17 +527,6 @@
 		}
 		{
 			dependencies: ["50771C8A7B6331CE"]
-			id: "24843F0E88B927DA"
-			tasks: [{
-				id: "29047F124313906A"
-				item: "extended_drawers:controller"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["50771C8A7B6331CE"]
 			id: "12657E66913FFFD0"
 			tasks: [{
 				id: "597CFB2A8AAC1C68"

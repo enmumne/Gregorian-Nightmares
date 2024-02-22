@@ -38,12 +38,12 @@ ItemEvents.modification(event => {
 */
 
 /*   uses  
-	Wooden: 60
-    Stone: 132
-    Iron: 251
-    Golden: 33
-    Diamond: 1562
-    Netherite: 2032
+	Wooden: 60 > 50
+    Stone: 132 > 100
+    Iron: 251 > 400
+    Golden: 33 > 52
+    Diamond: 1562 > 2000
+    Netherite: 2032 > 2500
 	
 	diamond: obsidian, ancient debris
 	iron: redstone, diamond, emerald, gold (precious only need stone), 
@@ -64,7 +64,7 @@ ItemEvents.toolTierRegistry (event => {
     tier.uses = 140
     tier.speed = 4.2
     tier.attackDamageBonus = 1.4
-    tier.level = 1
+    tier.level = 0
     tier.enchantmentValue = 14
 	tier.repairIngredient = 'minecraft:flint'
   })
@@ -89,7 +89,23 @@ ItemEvents.toolTierRegistry (event => {
 
 ItemEvents.modification(event => {
 	
-	// stone nerf, more space for flint
+	// stone & wood nerf, more space for flint
+	event.modify('minecraft:wooden_pickaxe', pickaxe => {
+        pickaxe.setMaxDamage(50)
+    })
+	event.modify('minecraft:wooden_axe', pickaxe => {
+        pickaxe.setMaxDamage(50)
+    })
+	event.modify('minecraft:wooden_hoe', pickaxe => {
+        pickaxe.setMaxDamage(50)
+    })
+	event.modify('minecraft:wooden_sword', pickaxe => {
+        pickaxe.setMaxDamage(50)
+    })
+	event.modify('minecraft:wooden_shovel', pickaxe => {
+        pickaxe.setMaxDamage(50)
+    })
+	
 	event.modify('minecraft:stone_pickaxe', pickaxe => {
         pickaxe.setMaxDamage(100)
     })
@@ -358,7 +374,6 @@ event.create('geggy:wooden_form', 'basic').displayName('Wooden Form').maxDamage(
 event.create('geggy:stone_mortar', 'basic').displayName('Stone Mortar').maxDamage(128);
 //event.create('geggy:soft_hammer', 'basic').displayName('Soft Hammer').maxDamage(50);
 
-event.create('geggy:wood_pulp').displayName('Wood Pulp');
 event.create('geggy:quartz_sand').displayName('Quartz Sand');
 event.create('geggy:glass_dust').displayName('Glass Dust');
 event.create('geggy:flint_dust_tiny').displayName('Tiny Pile of Flint Dust');
@@ -393,7 +408,7 @@ event.create('geggy:wrought_plate').displayName('Wrought Iron Plate');
 event.create('geggy:mold').displayName('Steel Mold');
 event.create('geggy:mold_ball').displayName('Ball Mold');
 event.create('geggy:mold_block').displayName('Block Mold');
-event.create('geggy:mold_bottle').displayName('Ball Mold');
+event.create('geggy:mold_bottle').displayName('Bottle Mold');
 event.create('geggy:mold_ingot').displayName('Ingot Mold');
 event.create('geggy:mold_nugget').displayName('Nugget Mold');
 event.create('geggy:mold_plate').displayName('Plate Mold');
@@ -409,7 +424,8 @@ event.create('geggy:bio_chaff');
 
 event.create('geggy:netherrack_dust')
 
-event.create('geggy:endstone_dust');
+event.create('geggy:endstone_dust').texture('kubejs:item/dust_dull').color(0, '#80835D');
+//event.create('geggy:endstone_dust')
 
 event.create('geggy:sharp_plate');
 event.create('geggy:unfinished_bucket');
@@ -450,10 +466,27 @@ event.create('geggy:incomplete_compressed_netherrack');
 event.create('geggy:incomplete_copper_casing');
 event.create('geggy:incomplete_brass_casing');
 event.create('geggy:incomplete_gearbox');
+
 event.create('geggy:unfired_pickaxe_mold');
 event.create('geggy:pickaxe_mold');
 event.create('geggy:filled_pickaxe_mold');
 event.create('geggy:bronze_pickaxe_head');
+event.create('geggy:unfired_axe_mold');
+event.create('geggy:axe_mold');
+event.create('geggy:filled_axe_mold');
+event.create('geggy:bronze_axe_head');
+event.create('geggy:unfired_shovel_mold');
+event.create('geggy:shovel_mold');
+event.create('geggy:filled_shovel_mold');
+event.create('geggy:bronze_shovel_head');
+event.create('geggy:unfired_sword_mold');
+event.create('geggy:sword_mold');
+event.create('geggy:filled_sword_mold');
+event.create('geggy:bronze_sword_head');
+event.create('geggy:unfired_hoe_mold');
+event.create('geggy:hoe_mold');
+event.create('geggy:filled_hoe_mold');
+event.create('geggy:bronze_hoe_head');
 
 event.create('geggy:incomplete_chest');
 event.create('geggy:incomplete_toolbox');
@@ -602,7 +635,6 @@ event.create('geggy:incomplete_book')
 event.create('geggy:rose_quartz_tube')
 
 event.create('geggy:tin_conduct')
-event.create('geggy:tin_spring')
 
 event.create('geggy:enderpearl_dust')
 event.create('geggy:item_filter')
@@ -646,12 +678,143 @@ event.create('geggy:manganese_ingot')
 event.create('geggy:manganese_rod')
 event.create('geggy:quartzite_dust')
 event.create('geggy:quartzite')
-event.create('geggy:nichrome_spring')
 event.create('geggy:alumina_seed_crystal')
 event.create('geggy:ruby_boule')
 event.create('geggy:exquisite_ruby')
 event.create('geggy:flawless_ruby')
 event.create('geggy:ruby')
+
+event.create('geggy:tin_alloy_ingot')
+event.create('geggy:aluminium_foil')
+event.create('geggy:bronze_foil')
+event.create('geggy:nichrome_rod')
+
+
+event.create('geggy:mince_meat')
+event.create('geggy:hot_cement_clinker')
+event.create('geggy:cement_clinker')
+event.create('geggy:cement_dust')
+event.create('geggy:animal_fat')
+event.create('geggy:small_silver_pipe')
+event.create('geggy:canned_magnesium_diboride')
+event.create('geggy:magnesium_diboride_tube')
+event.create('geggy:canned_mercury_barium_calcium_cuprate')
+event.create('geggy:mercury_barium_calcium_cuprate_tube')
+event.create('geggy:uranium_triplatinum_ingot')
+event.create('geggy:uranium_triplatinum_fine_wire')
+event.create('geggy:canned_samarium_iron_arsenic_oxide')
+event.create('geggy:samarium_iron_arsenic_oxide_tube')
+event.create('geggy:hot_tantalum_carbide_ingot')
+event.create('geggy:tantalum_carbide_ingot')
+event.create('geggy:tantalum_carbide_plate')
+event.create('geggy:hot_titanium_carbide_ingot')
+event.create('geggy:titanium_carbide_ingot')
+event.create('geggy:titanium_carbide_plate')
+event.create('geggy:hot_tungstencarbide_ingot')
+event.create('geggy:tungstencarbide_ingot')
+event.create('geggy:tungstencarbide_rod')
+event.create('geggy:hot_molybdenum_disilicide_ingot')
+event.create('geggy:molybdenum_disilicide_ingot')
+event.create('geggy:molybdenum_disilicide_double_ingot')
+event.create('geggy:molybdenum_disilicide_long_rod')
+event.create('geggy:molybdenum_disilicide_double_plate')
+event.create('geggy:polycaprolactam_bar')
+event.create('geggy:nylon_string')
+event.create('geggy:gaseous_rocks')
+
+event.create('geggy:rtm_alloy_hot_ingot').displayName('RTM Alloy Hot Ingot')
+event.create('geggy:rtm_alloy_ingot').displayName('RTM Alloy Ingot')
+event.create('geggy:rtm_alloy_plate').displayName('RTM Alloy Plate')
+event.create('geggy:vanadiumsteel_dust')
+event.create('geggy:vanadiumsteel_ingot')
+event.create('geggy:vanadiumsteel_plate')
+event.create('geggy:tungstencarbide_plate')
+event.create('geggy:osmiridium_hot_ingot')
+event.create('geggy:osmiridium_ingot')
+event.create('geggy:osmiridium_plate')
+event.create('geggy:trinium_plate')
+event.create('geggy:hss-s_plate').displayName('HSS-S Plate')
+event.create('geggy:enriched_naquadah_hot_ingot')
+event.create('geggy:enriched_naquadah_ingot')
+event.create('geggy:enriched_naquadah_plate')
+event.create('geggy:naquadah_alloy_hot_ingot')
+event.create('geggy:naquadah_alloy_ingot')
+event.create('geggy:naquadria_hot_ingot')
+event.create('geggy:naquadria_ingot')
+event.create('geggy:naquadria_plate')
+event.create('geggy:tritanium_ingot')
+event.create('geggy:tritanium_plate')
+event.create('geggy:nichrome_wire')
+event.create('geggy:rtm_alloy_wire').displayName('RTM Alloy Wire')
+event.create('geggy:hss-s_wire').displayName('HSS-S Wire')
+event.create('geggy:naquadah_wire')
+event.create('geggy:trinium_wire')
+event.create('geggy:tritanium_wire')
+event.create('geggy:stainless_steel_foil')
+event.create('geggy:vanadiumsteel_foil')
+event.create('geggy:tungstencarbide_foil')
+event.create('geggy:osmiridium_foil')
+event.create('geggy:enriched_naquadah_foil')
+event.create('geggy:naquadria_foil')
+
+event.create('geggy:uncorked_glass_bottle')
+event.create('geggy:bottle_cork')
+event.create('geggy:ground_tree_bark')
+event.create('geggy:mixed_cork')
+event.create('geggy:pressed_cork')
+event.create('geggy:oak_bark')
+event.create('geggy:dark_oak_bark')
+
+event.create('geggy:gold_pickaxe_head')
+event.create('geggy:gold_axe_head')
+event.create('geggy:gold_sword_head')
+event.create('geggy:gold_hoe_head')
+event.create('geggy:gold_shovel_head')
+
+event.create('geggy:crushed_precious_ore')
+event.create('geggy:purified_precious_ore')
+
+event.create('geggy:netherite_dust')
+event.create('geggy:netherium_dust')
+event.create('geggy:netherite_hot_ingot')
+
+event.create('geggy:flint_pickaxe_left_arm')
+event.create('geggy:flint_pickaxe_right_arm')
+event.create('geggy:flint_pickaxe_head_main')
+event.create('geggy:dull_flint_pickaxe_head')
+event.create('geggy:sharpened_flint_pickaxe_head')
+event.create('geggy:rose_quartz_blend')
+
+event.create('geggy:sugar_cane_dust')
+event.create('geggy:malted_grain')
+
+event.create('geggy:iron_screw')
+event.create('geggy:magnetic_iron_bolt')
+event.create('geggy:red_alloy_rod')
+event.create('geggy:red_alloy_bolt')
+event.create('geggy:zinc_rod')
+event.create('geggy:zinc_ring')
+event.create('geggy:round_glass_pane')
+event.create('geggy:small_coal_dust').displayName('Small Pile of Coal Dust')
+
+event.create('geggy:galvanized_steel_plate') // 16
+event.create('geggy:galvanized_steel_curved_plate') // 16
+event.create('geggy:galvanized_steel_rod') // 8
+event.create('geggy:galvanized_steel_bolt') // 2
+event.create('geggy:galvanized_steel_small_gear') // 16
+event.create('geggy:galvanized_steel_gear') // 64
+event.create('geggy:galvanized_steel_ring') // 4
+event.create('geggy:long_galvanized_steel_rod') // 4
+
+event.create('geggy:incomplete_galvanized_plate')
+event.create('geggy:incomplete_galvanized_curved_plate')
+event.create('geggy:incomplete_galvanized_gear')
+event.create('geggy:incomplete_galvanized_ring')
+event.create('geggy:incomplete_long_galvanized_rod')
+event.create('geggy:incomplete_galvanized_machine_casing')
+
+event.create('geggy:steel_minecart_wheels')
+event.create('geggy:hardened_stick')
 
 /*
 .tooltip('§8')
@@ -681,6 +844,10 @@ event.create('geggy:reinforced_flint_shovel', 'shovel').tier('reinforced_flint')
 event.create('geggy:reinforced_flint_hoe', 'hoe').tier('reinforced_flint')
 
 event.create('geggy:bronze_pickaxe', 'pickaxe').tier('bronze')
+event.create('geggy:bronze_axe', 'axe').tier('bronze')
+event.create('geggy:bronze_sword', 'sword').tier('bronze')
+event.create('geggy:bronze_shovel', 'shovel').tier('bronze')
+event.create('geggy:bronze_hoe', 'hoe').tier('bronze')
 
 })
 
@@ -737,6 +904,101 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x8C9371)
     .noBucket
 	
+	event
+    .create('geggy:tin_alloy')
+	.thinTexture(0x9FA0A2)
+    .noBucket
+
+	event
+    .create('geggy:concrete')
+	.thinTexture(0x595A5D)
+    .noBucket
+	
+	event
+    .create('geggy:molten_red_alloy')
+	.thinTexture(0xB80122)
+    .noBucket
+	
+	event
+    .create('geggy:molten_energetic_alloy')
+	.thinTexture(0xD77F29)
+    .noBucket
+	
+	event
+    .create('geggy:molten_vibrant_alloy')
+	.thinTexture(0x809A2B)
+    .noBucket
+	
+	event
+    .create('geggy:molten_naquadah')
+	.thinTexture(0x208420)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_naquadah_alloy')
+	.thinTexture(0x272727)
+    .noBucket
+	
+	event
+    .create('geggy:molten_tungstensteel')
+	.thinTexture(0x787ABC)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_tritanium')
+	.thinTexture(0x50090C)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_duranium')
+	.thinTexture(0x428D8D)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_gallium')
+	.thinTexture(0xC3C3E1)
+    .noBucket
+	
+	event
+    .create('geggy:molten_gold')
+	.thinTexture(0xFBDD47)
+    .noBucket
+	
+	event
+    .create('geggy:ancient_debris_slurry')
+	.thinTexture(0x5B3B2B)
+    .noBucket
+	
+	event
+    .create('geggy:clarified_sugary_water')
+	.thinTexture(0x7B9D86)
+    .noBucket
+	
+	event
+    .create('geggy:mash')
+	.thinTexture(0x78674D)
+    .noBucket
+	
+	event
+    .create('geggy:fish_oil')
+	.thinTexture(0xA7944B)
+    .noBucket
+	
+	event
+    .create('geggy:sludge')
+	.thinTexture(0x1E1410)
+    .noBucket
+	
+	event
+    .create('geggy:fermented_biomass')
+	.thinTexture(0x364307)
+    .noBucket
+	
+	event
+    .create('geggy:liquid_zinc')
+	.thinTexture(0xC6CBBF)
+    .noBucket
+	
 })	
 
 //onEvent('block.registry', (event) => {
@@ -746,9 +1008,12 @@ event.create('geggy:j_stripped_log').material('wood').displayName('Multiuse Stri
 event.create('geggy:reinforced_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
 event.create('geggy:borosilicate_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
 event.create('geggy:clay_bricks');
+event.create('geggy:concrete_light').material('stone').displayName('Light Concrete').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 // 1/19 missing grout, tinkers
 event.create('geggy:craut').displayName('Craut').tagBlock('minecraft:mineable/shovel');
+
+event.create('geggy:gloom_block').material('iron').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 })
 

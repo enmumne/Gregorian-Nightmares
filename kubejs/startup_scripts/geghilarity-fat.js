@@ -7,25 +7,38 @@ event.create('geghilarity_fatmachines:pyro_casing').material('iron').displayName
 
 event.create('geghilarity_fatmachines:nichrome_coil').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:tungstensteel_coil').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
-event.create('geghilarity_fatmachines:hss-g_coil').material('iron').displayName('HSS-G Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:rtm_alloy_coil').material('iron').displayName('RTM Alloy Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:hss-s_coil').material('iron').displayName('HSS-S Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:naquadah_coil').material('iron').displayName('Naquadah Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:trinium_coil').material('iron').displayName('Trinium Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:tritanium_coil').material('iron').displayName('Tritanium Coil').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 event.create('geghilarity_fatmachines:casing_solid_steel').material('iron').displayName('Solid Steel Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:casing_pipe_steel').material('iron').displayName('Steel Pipe Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:steel_frame_box').material('iron').displayName('Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
 event.create('geghilarity_fatmachines:invar_frame_box').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
+event.create('geghilarity_fatmachines:tungstencarbide_frame_box').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
 event.create('geghilarity_fatmachines:stainless_frame_box').material('iron').displayName('Stainless Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
 event.create('geghilarity_fatmachines:machine_casing_firebox_steel').material('iron').displayName('Steel Firebox Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:carbon_electrode_assembly').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:ulv_casing').material('iron').displayName('ULV Machine Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:muffler_hatch').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:cast_iron_muffler_hatch').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('geghilarity_fatmachines:titanium_reinforced_borosilicate_glass_block').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
+
+event.create('geghilarity_fatmachines:tempered_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
+event.create('geghilarity_fatmachines:laminated_glass').material('glass').hardness(3).tagBlock('minecraft:mineable/pickaxe').defaultTranslucent()
+
+event.create('geghilarity_fatmachines:heat_vent').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+event.create('geghilarity_fatmachines:blast_casing').material('iron').displayName('High Temperature Smelting Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 event.create('drilly:steam_turbine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('drilly:basic_engine').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('drilly:shaft_power_bus').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 event.create('drilly:hsla_frame_box').material('iron').displayName('HSLA Steel Frame Box').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).defaultTranslucent()
 event.create('drilly:hsla_casing').material('iron').displayName('HSLA Steel Casing').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+
+event.create('geghilarity:galvanized_steel_machine_casing').material('iron').hardness(3).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
 })
 
@@ -69,10 +82,12 @@ let STEAMALLOY;
 let HSLA_BLAST;
 
 let LVMINER;
+let OILDRILLER;
+let GASDRILLER;
+let BLASTALLOY;
+let ELEALLOY;
 
-MIMachineEvents.addMultiblockSlots("steam_blast_furnace", event => {
-    event.itemOutputs.addSlot(102, 53);
-})
+let FERM_VAT;
 
 MIMachineEvents.registerRecipeTypes(event => {
 	PYRO = event.register("pyro")
@@ -187,7 +202,36 @@ MIMachineEvents.registerRecipeTypes(event => {
 	LVMINER = event.register('lv_miner')
 		.withItemInputs()
 		.withFluidInputs()
-        .withItemOutputs();		
+        .withItemOutputs();	
+		
+	OILDRILLER = event.register('oil_driller')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();
+
+	GASDRILLER = event.register('gas_driller')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();
+
+	BLASTALLOY = event.register('alloy_blast_smelter')
+		.withItemInputs()
+        .withFluidInputs()	
+		.withFluidOutputs();	
+		
+	ELEALLOY = event.register('electric_alloy_smelter')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();	
+		
+	FERM_VAT = event.register('fermentation_vat')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs()		
+		.withFluidOutputs();	
 
 });
 
@@ -199,6 +243,8 @@ MIMachineEvents.registerCasings(event => {
 	event.register("ulv_casing")
 	event.register("bronze_casing")
 	event.register("hsla_casing")
+	event.register("steel_casing")
+	event.register("blast_casing")
 });
 
 MIMachineEvents.registerMachines(event => {
@@ -382,7 +428,7 @@ MIMachineEvents.registerMachines(event => {
         // REI item inputs, item outputs, fluid inputs, fluid outputs
 		
         itemInputs => itemInputs.addSlots(56, 35, 1, 2), itemOutputs => itemOutputs.addSlot(102, 35),
-        fluidInputs => fluidInputs.addSlot(36, 35), fluidOutputs => fluidOutputs.addSlot(122, 35),
+        fluidInputs => fluidInputs.addSlot(36, 35), fluidOutputs => fluidOutputs.addSlots(102, 55, 3, 1),
 		
         /* MODEL CONFIGUATION */
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
@@ -460,370 +506,7 @@ MIMachineEvents.registerMachines(event => {
 	const heatproofMem = event.memberOfBlock("geghilarity_fatmachines:ptfe_casing");
 	const heatproofMember = event.memberOfBlock("modern_industrialization:heatproof_machine_casing");
 	
-	
-	// new EBF
-	const ebfHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
-	const kanthalCoilMember = event.memberOfBlock("modern_industrialization:kanthal_coil");
-	const bfShapeBuilder = event.startShape("heatproof_machine_casing");
-	
-	
-	//top
-	bfShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
-	
-	bfShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
-	
-	bfShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
-	
-	//center
-	bfShapeBuilder.add(+1, 2, 2, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 2, 2, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(0, 2, 2, kanthalCoilMember, event.noHatch());
-	
-	bfShapeBuilder.add(+1, 2, 1, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 2, 1, kanthalCoilMember, event.noHatch());
-	
-	bfShapeBuilder.add(+1, 2, 0, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 2, 0, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(0, 2, 0, kanthalCoilMember, event.noHatch());
-	
-	bfShapeBuilder.add(+1, 1, 2, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 1, 2, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(0, 1, 2, kanthalCoilMember, event.noHatch());
-	
-	bfShapeBuilder.add(+1, 1, 1, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 1, 1, kanthalCoilMember, event.noHatch());
-	
-	bfShapeBuilder.add(+1, 1, 0, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(-1, 1, 0, kanthalCoilMember, event.noHatch());
-	bfShapeBuilder.add(0, 1, 0, kanthalCoilMember, event.noHatch());
-	
-	//base
-	bfShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
-	
-	bfShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
-	
-	bfShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
-	bfShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
-	
-	bfShapeBuilder.add(0, 0, 0, heatproofMember);
 
-    const bfShape = bfShapeBuilder.build();
-	
-	event.simpleElectricCraftingMultiBlock(
-        /* GENERAL PARAMETERS */
-        // English name, internal name, recipe type, multiblock shape
-        "Blaster Furnace", "blaster_furnace", BF, bfShape,
-        /* REI DISPLAY CONFIGURATION */
-        // REI progress bar
-        event.progressBar(94, 33, "furnace"),
-        // REI item inputs, item outputs, fluid inputs, fluid outputs
-		// rows, column
-        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
-        fluidInputs => fluidInputs.addSlot(34, 55), fluidOutputs => fluidOutputs.addSlot(120, 55),
-        /* MODEL CONFIGUATION */
-        // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "heatproof_machine_casing", "bf", true, false, false,
-    );
-	
-	const nichromeCoilMember = event.memberOfBlock("geghilarity_fatmachines:nichrome_coil");
-	const bf2ShapeBuilder = event.startShape("heatproof_machine_casing");
-	
-	
-	//top
-	bf2ShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
-	
-	bf2ShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
-	
-	bf2ShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
-	
-	//center
-	bf2ShapeBuilder.add(+1, 2, 2, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 2, 2, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(0, 2, 2, nichromeCoilMember, event.noHatch());
-	
-	bf2ShapeBuilder.add(+1, 2, 1, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 2, 1, nichromeCoilMember, event.noHatch());
-	
-	bf2ShapeBuilder.add(+1, 2, 0, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 2, 0, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(0, 2, 0, nichromeCoilMember, event.noHatch());
-	
-	bf2ShapeBuilder.add(+1, 1, 2, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 1, 2, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(0, 1, 2, nichromeCoilMember, event.noHatch());
-	
-	bf2ShapeBuilder.add(+1, 1, 1, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 1, 1, nichromeCoilMember, event.noHatch());
-	
-	bf2ShapeBuilder.add(+1, 1, 0, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(-1, 1, 0, nichromeCoilMember, event.noHatch());
-	bf2ShapeBuilder.add(0, 1, 0, nichromeCoilMember, event.noHatch());
-	
-	//base
-	bf2ShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
-	
-	bf2ShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
-	
-	bf2ShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
-	bf2ShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
-	
-	bf2ShapeBuilder.add(0, 0, 0, heatproofMember);
-
-    const bf2Shape = bf2ShapeBuilder.build();
-	
-	event.simpleElectricCraftingMultiBlock(
-        /* GENERAL PARAMETERS */
-        // English name, internal name, recipe type, multiblock shape
-        "Blaster Furnace (nichrome)", "blaster_furnace2", BF2, bf2Shape,
-        /* REI DISPLAY CONFIGURATION */
-        // REI progress bar
-        event.progressBar(94, 33, "furnace"),
-        // REI item inputs, item outputs, fluid inputs, fluid outputs
-		// rows, column
-        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
-        fluidInputs => fluidInputs.addSlot(34, 55), fluidOutputs => fluidOutputs.addSlot(120, 55),
-        /* MODEL CONFIGUATION */
-        // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "heatproof_machine_casing", "bf2", true, false, false,
-    );
-	
-	const tungstensteelCoilMember = event.memberOfBlock("geghilarity_fatmachines:tungstensteel_coil");
-	const bf3ShapeBuilder = event.startShape("heatproof_machine_casing");
-	
-	
-	//top
-	bf3ShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
-	
-	bf3ShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
-	
-	bf3ShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
-	
-	//center
-	bf3ShapeBuilder.add(+1, 2, 2, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 2, 2, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(0, 2, 2, tungstensteelCoilMember, event.noHatch());
-	
-	bf3ShapeBuilder.add(+1, 2, 1, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 2, 1, tungstensteelCoilMember, event.noHatch());
-	
-	bf3ShapeBuilder.add(+1, 2, 0, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 2, 0, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(0, 2, 0, tungstensteelCoilMember, event.noHatch());
-	
-	bf3ShapeBuilder.add(+1, 1, 2, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 1, 2, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(0, 1, 2, tungstensteelCoilMember, event.noHatch());
-	
-	bf3ShapeBuilder.add(+1, 1, 1, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 1, 1, tungstensteelCoilMember, event.noHatch());
-	
-	bf3ShapeBuilder.add(+1, 1, 0, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(-1, 1, 0, tungstensteelCoilMember, event.noHatch());
-	bf3ShapeBuilder.add(0, 1, 0, tungstensteelCoilMember, event.noHatch());
-	
-	//base
-	bf3ShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
-	
-	bf3ShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
-	
-	bf3ShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
-	bf3ShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
-	
-	bf3ShapeBuilder.add(0, 0, 0, heatproofMember);
-
-    const bf3Shape = bf3ShapeBuilder.build();
-	
-	event.simpleElectricCraftingMultiBlock(
-        /* GENERAL PARAMETERS */
-        // English name, internal name, recipe type, multiblock shape
-        "Blaster Furnace (tungstensteel)", "blaster_furnace3", BF3, bf3Shape,
-        /* REI DISPLAY CONFIGURATION */
-        // REI progress bar
-        event.progressBar(94, 33, "furnace"),
-        // REI item inputs, item outputs, fluid inputs, fluid outputs
-		// rows, column
-        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
-        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 2, 1),
-        /* MODEL CONFIGUATION */
-        // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "heatproof_machine_casing", "bf3", true, false, false,
-    );
-	
-	const hssgCoilMember = event.memberOfBlock("geghilarity_fatmachines:hss-g_coil");
-	const bf4ShapeBuilder = event.startShape("heatproof_machine_casing");
-	
-	
-	//top
-	bf4ShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
-	
-	bf4ShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
-	
-	bf4ShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
-	
-	//center
-	bf4ShapeBuilder.add(+1, 2, 2, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 2, 2, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(0, 2, 2, hssgCoilMember, event.noHatch());
-	
-	bf4ShapeBuilder.add(+1, 2, 1, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 2, 1, hssgCoilMember, event.noHatch());
-	
-	bf4ShapeBuilder.add(+1, 2, 0, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 2, 0, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(0, 2, 0, hssgCoilMember, event.noHatch());
-	
-	bf4ShapeBuilder.add(+1, 1, 2, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 1, 2, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(0, 1, 2, hssgCoilMember, event.noHatch());
-	
-	bf4ShapeBuilder.add(+1, 1, 1, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 1, 1, hssgCoilMember, event.noHatch());
-	
-	bf4ShapeBuilder.add(+1, 1, 0, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(-1, 1, 0, hssgCoilMember, event.noHatch());
-	bf4ShapeBuilder.add(0, 1, 0, hssgCoilMember, event.noHatch());
-	
-	//base
-	bf4ShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
-	
-	bf4ShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
-	
-	bf4ShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
-	bf4ShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
-	
-	bf4ShapeBuilder.add(0, 0, 0, heatproofMember);
-
-    const bf4Shape = bf4ShapeBuilder.build();
-	
-	event.simpleElectricCraftingMultiBlock(
-        /* GENERAL PARAMETERS */
-        // English name, internal name, recipe type, multiblock shape
-        "Blaster Furnace (HSS-G)", "blaster_furnace4", BF4, bf4Shape,
-        /* REI DISPLAY CONFIGURATION */
-        // REI progress bar
-        event.progressBar(94, 33, "furnace"),
-        // REI item inputs, item outputs, fluid inputs, fluid outputs
-		// rows, column
-        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
-        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 2, 1),
-        /* MODEL CONFIGUATION */
-        // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "heatproof_machine_casing", "bf4", true, false, false,
-    );
-	
-	const naqCoilMember = event.memberOfBlock("geghilarity_fatmachines:naquadah_coil");
-	const bf5ShapeBuilder = event.startShape("heatproof_machine_casing");
-	
-	
-	//top
-	bf5ShapeBuilder.add(+1, 3, 2, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 3, 2, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(0, 3, 2, heatproofMember, ebfHatch);
-	
-	bf5ShapeBuilder.add(+1, 3, 1, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 3, 1, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(0, 3, 1, heatproofMember, ebfHatch);
-	
-	bf5ShapeBuilder.add(+1, 3, 0, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 3, 0, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(0, 3, 0, heatproofMember, ebfHatch);
-	
-	//center
-	bf5ShapeBuilder.add(+1, 2, 2, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 2, 2, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(0, 2, 2, naqCoilMember, event.noHatch());
-	
-	bf5ShapeBuilder.add(+1, 2, 1, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 2, 1, naqCoilMember, event.noHatch());
-	
-	bf5ShapeBuilder.add(+1, 2, 0, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 2, 0, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(0, 2, 0, naqCoilMember, event.noHatch());
-	
-	bf5ShapeBuilder.add(+1, 1, 2, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 1, 2, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(0, 1, 2, naqCoilMember, event.noHatch());
-	
-	bf5ShapeBuilder.add(+1, 1, 1, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 1, 1, naqCoilMember, event.noHatch());
-	
-	bf5ShapeBuilder.add(+1, 1, 0, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(-1, 1, 0, naqCoilMember, event.noHatch());
-	bf5ShapeBuilder.add(0, 1, 0, naqCoilMember, event.noHatch());
-	
-	//base
-	bf5ShapeBuilder.add(+1, 0, 2, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 0, 2, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(0, 0, 2, heatproofMember, ebfHatch);
-	
-	bf5ShapeBuilder.add(+1, 0, 1, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 0, 1, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(0, 0, 1, heatproofMember, ebfHatch);
-	
-	bf5ShapeBuilder.add(+1, 0, 0, heatproofMember, ebfHatch);
-	bf5ShapeBuilder.add(-1, 0, 0, heatproofMember, ebfHatch);
-	
-	bf5ShapeBuilder.add(0, 0, 0, heatproofMember);
-
-    const bf5Shape = bf5ShapeBuilder.build();
-	
-	event.simpleElectricCraftingMultiBlock(
-        /* GENERAL PARAMETERS */
-        // English name, internal name, recipe type, multiblock shape
-        "Blaster Furnace (Naquadah)", "blaster_furnace5", BF5, bf5Shape,
-        /* REI DISPLAY CONFIGURATION */
-        // REI progress bar
-        event.progressBar(94, 33, "furnace"),
-        // REI item inputs, item outputs, fluid inputs, fluid outputs
-		// rows, column
-        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(120, 35, 2, 1),
-        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(120, 55, 2, 1),
-        /* MODEL CONFIGUATION */
-        // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "heatproof_machine_casing", "bf5", true, false, false,
-    );
-	
-	
 	//LCR
 	const lcrHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	const lcrpipe = event.memberOfBlock("geghilarity_fatmachines:ptfe_pipe_casing");
@@ -873,7 +556,7 @@ MIMachineEvents.registerMachines(event => {
 	
 	event.simpleElectricCraftingMultiBlock(
         "Large Chemical Reactor", "lcr", LCR, lcrShape,
-        event.progressBar(77, 52, "circuit"),
+        event.progressBar(72, 52, "circuit"),
         itemInputs => itemInputs.addSlots(25, 35, 1, 3), itemOutputs => itemOutputs.addSlots(101, 35, 1, 3),
         fluidInputs => fluidInputs.addSlots(45, 35, 1, 5), fluidOutputs => fluidOutputs.addSlots(121, 35, 1, 4),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
@@ -897,11 +580,11 @@ MIMachineEvents.registerMachines(event => {
         // English name, internal name, recipe type, multiblock shape
         "Fluidized Bed Reactor", "fluidized_bed_reactor", FBEDREACTOR, fbrShape,
         // REI progress bar
-        event.progressBar(90, 33, "extract"),
+        event.progressBar(108, 33, "extract"),
         // REI item inputs, item outputs, fluid inputs, fluid outputs
 		// rows, column
-        itemInputs => itemInputs.addSlots(56, 35, 2, 1), itemOutputs => itemOutputs.addSlots(126, 35, 2, 1),
-		fluidInputs => fluidInputs.addSlots(36, 55, 3, 1), fluidOutputs => fluidOutputs.addSlots(126, 55, 2, 1),
+        itemInputs => itemInputs.addSlots(62, 35, 2, 1), itemOutputs => itemOutputs.addSlots(139, 35, 2, 1),
+		fluidInputs => fluidInputs.addSlots(26, 55, 4, 1), fluidOutputs => fluidOutputs.addSlots(139, 55, 2, 1),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "lcr_casing", "fbr", true, false, false,
     );
@@ -1006,6 +689,7 @@ MIMachineEvents.registerMachines(event => {
     );
 	
 	const crackingHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	const kanthalCoilMember = event.memberOfBlock("modern_industrialization:kanthal_coil");
 	
 	const crackingShape = event.layeredShape("clean_stainless_steel_machine_casing", [
 		[ "XBXBX", "XBXBX", "XBXBX",],
@@ -1071,7 +755,215 @@ MIMachineEvents.registerMachines(event => {
         "hsla_casing", "lv_miner", true, false, false,
     );
 	
+	const odrillHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	
+	const stdsteelcasing = event.memberOfBlock("modern_industrialization:steel_machine_casing");
+	const lconcrete = event.memberOfBlock("geggy:concrete_light");
+	const oilcore = event.memberOfBlock("geggy:oilsands_corenode");
+	const decoladder = event.memberOfBlock("createdeco:cast_iron_ladder");
+	
+	const odrillShape = event.layeredShape("steel_casing", [
+		[ "           ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "    X X    ", "    HHH    ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "   XX XX   ", "   HHHHH   ", "    XBX    ", "    XBX    ", "    HHH    ", "     X     ", "     X     ", "     X     ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCZCCCCC", "     H     ", "   HHHHH   ", "    BBB    ", "    BBB    ", "    HHH    ", "    XHX    ", "    XHX    ", "    XHX    ", "     X     ", "     X     ", "     X     ",],
+        [ " CCCCCCCCC ", "CCCCCCCCCCC", "   XX XX   ", "   HHHHH   ", "    XBX    ", "    X#X    ", "    HHH    ", "     X     ", "     X     ", "     X     ", "           ", "           ", "           ",],	
+        [ " CCCCCCCCC ", "CCCCCCCCCCC", "    X X    ", "   YHHHY   ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],  
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ " CCCCCCCCC ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+		[ "           ", "CCCCCCCCCCC", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ",],
+   
+    ])
+        .key("H", stdsteelcasing, odrillHatch)
+		.key("X", frameMember, event.noHatch())
+		.key("C", lconcrete, event.noHatch())
+		.key("B", steelpipe, event.noHatch())
+		.key("Z", oilcore, event.noHatch())
+		.key("Y", decoladder, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Oil Driller", "oil_driller", OILDRILLER, odrillShape,
+        // REI progress bar
+        event.progressBar(74, 33, "arrow"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 2, 1), itemOutputs => itemOutputs.addSlots(101, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(101, 55, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "steel_casing", "oil_driller", true, false, false,
+    );
+	
+	const gdrillHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	
+	const gascore = event.memberOfBlock("geggy:gaseous_corenode");
+	
+	const gdrillShape = event.layeredShape("steel_casing", [
+		[ "         ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],
+		[ " CCCCCCC ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],
+		[ " CCCCCCC ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],
+        [ " CCCCCCC ", "CCCCCCCCC", "   HHH   ", "    X    ", "    X    ", "    X    ", "         ", "         ", "         ",],
+		[ " CCCCCCC ", "CCCCZCCCC", "   HHH   ", "   XHX   ", "   XHX   ", "   XHX   ", "    X    ", "    X    ", "    X    ",],
+		[ " CCCCCCC ", "CCCCCCCCC", "   H#H   ", "    X    ", "    X    ", "    X    ", "         ", "         ", "         ",],
+		[ " CCCCCCC ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],
+        [ " CCCCCCC ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],	
+        [ "         ", "CCCCCCCCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ",],
+
+    ])
+        .key("H", stdsteelcasing, odrillHatch)
+		.key("X", frameMember, event.noHatch())
+		.key("C", lconcrete, event.noHatch())
+		.key("Z", gascore, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Gas Driller", "gas_driller", GASDRILLER, gdrillShape,
+        // REI progress bar
+        event.progressBar(74, 33, "arrow"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 2, 1), itemOutputs => itemOutputs.addSlots(101, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlots(34, 55, 2, 1), fluidOutputs => fluidOutputs.addSlots(101, 55, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "steel_casing", "gas_driller", true, false, false,
+    );
+	
+	const blastalloyHatch = event.hatchOf("item_input", "fluid_input", "fluid_output", "energy_input");
+	
+	const blastcasing = event.memberOfBlock("geghilarity_fatmachines:blast_casing");
+	const heatvent = event.memberOfBlock("geghilarity_fatmachines:heat_vent");
+	const hsssCoilMember = event.memberOfBlock("geghilarity_fatmachines:hss-s_coil");
+	
+	const blastalloyShape = event.layeredShape("blast_casing", [
+		[ " HHH ", " ZZZ ", " XXX ", " ZZZ ", " HHH ",],
+		[ "HHHHH", "Z   Z", "X   X", "Z   Z", "HHHHH",],
+		[ "HHHHH", "Z   Z", "X   X", "Z   Z", "HHHHH",],
+        [ "HHHHH", "Z   Z", "X   X", "Z   Z", "HHHHH",],
+		[ " H#H ", " ZZZ ", " XXX ", " ZZZ ", " HHH ",],		
+
+    ])
+        .key("H", blastcasing, blastalloyHatch)
+		.key("X", heatvent, event.noHatch())
+		.key("Z", hsssCoilMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Alloy Blast Smelter", "alloy_blast_smelter", BLASTALLOY, blastalloyShape,
+        // REI progress bar
+        event.progressBar(102, 51, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 3, 3), itemOutputs => {},
+        fluidInputs => fluidInputs.addSlots(34, 95, 3, 1), fluidOutputs => fluidOutputs.addSlot(135, 54),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "blast_casing", "alloy_blast_smelter", true, false, false,
+    );
+	
+	const elealloyHatch = event.hatchOf("item_input", "fluid_input", "fluid_output", "energy_input");
+	
+	const elealloyShape = event.layeredShape("solid_steel", [
+		[ "HHH", "HHH",],
+        [ "H#H", "DHD",],	
+
+    ])
+        .key("H", solidsteelMember, elealloyHatch)
+		.key("D", fluidpipeMember, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Alloy Smelter", "electric_alloy_smelter", ELEALLOY, elealloyShape,
+        // REI progress bar
+        event.progressBar(78, 32, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+		itemInputs => itemInputs.addSlots(36, 35, 2, 1), itemOutputs => itemOutputs.addSlot(106, 35), 
+		fluidInputs => fluidInputs.addSlot(36, 55), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "solid_steel", "electric_alloy_smelter", true, false, false,
+    );
+	
+	const fvatHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+	const mufflers = event.memberOfBlock("geghilarity_fatmachines:cast_iron_muffler_hatch");
+
+    const fvatShape = event.layeredShape("ulv_casing", [
+        [ "     ", "     ", " HHH ", " HHH ", " HHH ", "     "],
+		[ " E E ", " HHH ", "H   H", "H   H", "H   H", " HHH "],
+        [ "     ", " HHH ", "H   H", "H   H", "H   H", " HFH "],
+		[ " E E ", " HHH ", "H   H", "H   H", "H   H", " HHH "],
+		[ "     ", "     ", " HHH ", " H#H ", " HHH ", "     "],
+    ])
+        .key("H", ulvcasing, fvatHatch)
+		.key("E", frameMember, event.noHatch())
+		.key("F", mufflers, event.noHatch())
+        .build();
+		
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Fermentation Vat", "fermentation_vat", FERM_VAT, fvatShape,
+        // REI progress bar
+        event.progressBar(94, 43, "arrow"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(34, 35, 3, 1), itemOutputs => itemOutputs.addSlots(121, 35, 3, 1),
+        fluidInputs => fluidInputs.addSlots(34, 55, 3, 1), fluidOutputs => fluidOutputs.addSlots(121, 55, 3, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "ulv_casing", "fermentation_vat", true, false, false,
+    );
+	
+	
+})
+
+MIMachineEvents.addEbfTiers(event => {
+    event.add("geghilarity_fatmachines:nichrome_coil", 480, "Nichrome");
+	event.add("geghilarity_fatmachines:rtm_alloy_coil", 1920, "RTM Alloy");
+	event.add("geghilarity_fatmachines:hss-s_coil", 7680, "HSS-S");
+	event.add("geghilarity_fatmachines:naquadah_coil", 30720, "Naquadah");
+	event.add("geghilarity_fatmachines:trinium_coil", 122880, "Trinium");
+	event.add("geghilarity_fatmachines:tritanium_coil", 491520, "Tritanium");
+})
+
+MIMachineEvents.addMultiblockSlots("steam_blast_furnace", event => {
+    event.itemOutputs.addSlot(102, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_cupronickel_coil", event => {
+	event.itemOutputs.addSlot(102, 53);
+    event.fluidOutputs.addSlot(122, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_kanthal_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_hss-s_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})	
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_naquadah_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})	
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_trinium_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_tritanium_coil", event => {
+	event.itemInputs.addSlot(56, 73);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
 })
 
 MIMachineEvents.addMultiblockSlots("distillation_tower", event => {
@@ -1079,7 +971,7 @@ MIMachineEvents.addMultiblockSlots("distillation_tower", event => {
 	//	event.itemOutputs.addSlot(50, 35);
 		event.fluidOutputs.addSlot(246, 35);
 		event.fluidOutputs.addSlot(264, 35);
-	})
+})
 	
 /////////////////////////////	
 

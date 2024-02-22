@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#S#",
+        "   ",
+        "   "
+    ],
+    "key": {
+		"S": {
+            "item": "minecraft:chest"
+        },
+        "#": {
+            "item": "minecraft:dark_oak_planks"
+        }
+    },
+    "result": {
+        "item": "charm:dark_oak_chest"
+    }
+}

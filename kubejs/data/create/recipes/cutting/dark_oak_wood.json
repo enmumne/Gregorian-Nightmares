@@ -1,0 +1,21 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:dark_oak_wood"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stripped_dark_oak_wood"
+    },
+	{
+      "item": "geggy:dark_oak_bark"
+    },
+	{
+	  "chance": 0.2,		
+      "item": "geggy:dark_oak_bark"
+    }
+  ]
+}

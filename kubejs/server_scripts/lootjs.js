@@ -55,6 +55,8 @@ LootJS.modifiers(event => {
         .removeLoot("minecraft:ender_chest")
         .removeLoot("minecraft:diamond_ore")
         .removeLoot("minecraft:deepslate_diamond_ore")
+		.removeLoot("minecraft:wooden_pickaxe")
+		.removeLoot("minecraft:stone_pickaxe")
         .replaceLoot("minecraft:raw_gold_block", "modern_industrialization:coal_dust")
         .replaceLoot("minecraft:raw_gold", "modern_industrialization:coal_dust")
         .replaceLoot("minecraft:gold_nugget", "geghilarity:precious_nugget")

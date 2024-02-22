@@ -2,7 +2,7 @@
   "disabledPoppets": [],
   "enableCurses": true,
   "altarDistributionRadius": 24,
-  "generateSilver": true,
+  "generateSilver": false,
   "generateSalt": true,
   "owlWeight": 10,
   "owlMinGroupCount": 1,

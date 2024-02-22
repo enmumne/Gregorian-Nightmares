@@ -86,7 +86,9 @@
 			description: [
 				"At some point you'll feel ready for Bronze."
 				""
-				"It's certainly simpler than lots of stuff you've faced up to this point. You can use the millstone to grind both copper and tin raw ores into their dusts. Then 3 copper dusts + 1 tin dust are placed into a mixer to obtain 4 &eBronze Dusts&r. A classic."
+				"It's certainly simpler than lots of stuff you've faced up to this point. You can use the millstone to grind both copper and tin raw ores into their dusts. Then 3 copper dusts + 1 tin dust are placed into a mixer to obtain 4 &eBronze Dusts&r. "
+				""
+				"A classic."
 				""
 				"&o&b 3K : i think i have come to the conclusion that every non GTNH pack is easier than E6E"
 				"&o&b 3K : well, 99% of them"
@@ -181,7 +183,7 @@
 				""
 				"Once in molten form, you can move that fluidified bronze into a basin, and turn it into a bronze ingot with a press."
 				""
-				"Well... You can theoretically skip the heated mixer. You can still break the dust into tiny dusts, then smelt them into nuggets. Then use a press to compact 9 nuggets into an ingot. I mean, it's not the reasonable thing to do. I'm just saying this so that you become familiar with the way recipes can be set up, and navigate them."
+				"The heated mixer step was originally skippable by smelting tiny dusts into nuggets, then compacting them. The process is now unified, so you alternatively melt a full bronze dust or nuggets or tiny dusts. Yields slightly vary but not exactly worth the additional annoyance."
 				""
 				"Ancient history continues here:"
 				"&oCongratulations, you've got your first Bronze Ingot. Time to move on to the Steam chapter to start with your first few Modern Industrialization machines."
@@ -216,7 +218,8 @@
 			]
 			id: "3F5ACCA0FDC6ADB6"
 			min_width: 300
-			size: 1.5d
+			shape: "octagon"
+			size: 1.3d
 			tasks: [{
 				id: "4AC299B0ABFC9230"
 				item: "modern_industrialization:bronze_ingot"
@@ -229,9 +232,16 @@
 			description: [
 				"The Steam Mining Drill is a great early game mining tool. It mines in a 3x3 area with silk touch. It has no durability and runs on water and fuel (coal \\& lignite coal work well, so does charcoal)."
 				""
-				"&oThis recipe has been especially tweaked to show how much I appreciate quality of life accessories, like this 3x3 drill :)"
+				"&oThis recipe has been especially tweaked to show how much I appreciate wrongly represented \"quality of life\" accessories, like this 3x3 drill :)"
+				""
+				"\"QoL\", or quality of life, is a term that indicates convenient simplifications that DO NOT AFFECT gameplay. Stop labeling everything QoL."
+				""
+				"Minecraft is designed and works better with single-block interaction. I design the modpack to respect that principle."
+				""
+				"On the other hand, manually mining is not excessive, as the whole concept here relies on automated miners on inifinte ores that do the work for you."
 			]
 			id: "3A451808F8F4534A"
+			min_width: 230
 			tasks: [{
 				id: "0E802747E1501266"
 				item: "modern_industrialization:steam_mining_drill"
@@ -356,17 +366,23 @@
 				{
 					id: "359D56AA1ABFCDED"
 					item: "dehydration:campfire_cauldron"
+					optional_task: true
 					type: "item"
 				}
 				{
 					id: "55A366D78EC7956C"
 					item: "dehydration:leather_flask"
+					optional_task: true
 					type: "item"
+				}
+				{
+					id: "06361C6F8E18E1E4"
+					type: "checkmark"
 				}
 			]
 			title: "Dehehe... WHAT?!"
-			x: -17.0d
-			y: -8.0d
+			x: -16.989285714285693d
+			y: -8.610714285714288d
 		}
 		{
 			description: [
@@ -394,20 +410,27 @@
 			shape: "diamond"
 			size: 1.5d
 			subtitle: "made by a fool"
-			tasks: [{
-				id: "4A59550717ACE281"
-				item: {
-					Count: 1b
-					id: "minecraft:iron_pickaxe"
-					tag: {
-						Damage: 0
+			tasks: [
+				{
+					id: "4A59550717ACE281"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_pickaxe"
+						tag: {
+							Damage: 0
+						}
 					}
+					optional_task: true
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "460C3281B231E3C4"
+					type: "checkmark"
+				}
+			]
 			title: "Cursed Recipes"
-			x: -14.0d
-			y: -8.0d
+			x: -13.989285714285693d
+			y: -8.610714285714288d
 		}
 		{
 			description: [
@@ -444,7 +467,7 @@
 				"I was forgetting this..."
 				""
 				"When you die and respawn, you won't have all hearts and foodstuff restored, but only a maximum of 7. "
-				"( &o: Note that you start the game with 6 hearts. You then increase this limit by half a heart for every 7 different types of food you eat, to a max of 20 hearts. &r)"
+				"( &o: Note that you start the game with &66 hearts&r. &oYou then increase this limit by half a heart for every 7 different types of food you eat, to a max of 20 hearts. &r)"
 				""
 				"This is the new default."
 				""
@@ -467,8 +490,8 @@
 				title: "Mediocre solutions for mediocre lives"
 				type: "checkmark"
 			}]
-			x: -15.5d
-			y: -8.5d
+			x: -15.489285714285693d
+			y: -9.110714285714288d
 		}
 		{
 			dependencies: [
@@ -504,14 +527,15 @@
 			id: "6BBD07ADB9DCB8B2"
 			min_width: 250
 			shape: "pentagon"
+			size: 1.3d
 			tasks: [{
 				id: "3E407C49704C28DD"
 				item: "minecraft:crafting_table"
 				type: "item"
 			}]
 			title: "WTF is going on here?!"
-			x: -18.75d
-			y: -16.5d
+			x: -15.02380952380949d
+			y: -16.42261904761905d
 		}
 		{
 			dependencies: ["497612DF4D0FB9DE"]
@@ -567,6 +591,7 @@
 			icon: "minecraft:oak_log"
 			id: "3557AEBD30450E5D"
 			min_required_dependencies: 1
+			shape: "rsquare"
 			subtitle: "What am I doing here, all alone?"
 			tasks: [{
 				id: "5FB83ABD86BBC6A5"
@@ -581,16 +606,14 @@
 				type: "item"
 			}]
 			title: "Ok."
-			x: -21.0d
-			y: -15.0d
+			x: -13.0d
+			y: -15.5d
 		}
 		{
 			dependencies: ["3557AEBD30450E5D"]
 			description: [
 				"1 wood = 2 planks"
 				"Exactly as it should be."
-				""
-				"(kubejs scripts fucked up in 1.19, so I couldn't find a reasonable way to apply the wood nerf to all wood types. The wood nerf has priority over your own life, therefore the compromise: you can only craft oak planks.)"
 				""
 				"&o&7 : why is it that every \"expert\" pack has to be designed by a manchild with too much time to waste?"
 				"&o : you wouldn't get game design even if it hit you right in the face. Trust the vision."
@@ -600,15 +623,22 @@
 			icon: "minecraft:oak_planks"
 			id: "6F0BF3804B41E7A6"
 			min_width: 220
+			shape: "rsquare"
 			tasks: [{
-				id: "3C6BCF5DF1928648"
-				item: "minecraft:oak_planks"
+				id: "72AA0D6565AD9340"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:planks"
+					}
+				}
 				title: "Any #minecraft:planks"
 				type: "item"
 			}]
 			title: "Oh dear, here we go..."
-			x: -16.5d
-			y: -17.0d
+			x: -10.0d
+			y: -18.5d
 		}
 		{
 			dependencies: ["6F0BF3804B41E7A6"]
@@ -619,13 +649,14 @@
 			]
 			hide: true
 			id: "6FFA150BA93195E4"
+			shape: "rsquare"
 			tasks: [{
 				id: "210272D84ADB5E42"
 				item: "minecraft:stick"
 				type: "item"
 			}]
-			x: -21.0d
-			y: -18.0d
+			x: -13.0d
+			y: -21.5d
 		}
 		{
 			dependencies: ["6FFA150BA93195E4"]
@@ -636,13 +667,14 @@
 			]
 			hide: true
 			id: "79DE3D8A73C88BD6"
+			shape: "rsquare"
 			tasks: [{
 				id: "0C16D6FABF4A7CD3"
 				item: "geggy:j_tool_rod"
 				type: "item"
 			}]
-			x: -18.0d
-			y: -14.0d
+			x: -16.0d
+			y: -18.5d
 		}
 		{
 			dependencies: ["79DE3D8A73C88BD6"]
@@ -652,10 +684,15 @@
 				""
 				"(this is where you start using JEI/REI, click on the axe icon, then click on the axe head, or press 'R' while hovering with the mouse pointer, to see that recipe)"
 				""
+				"&eA feature of a mod here is that you can target the lowest block of a tree, and you'll harvest each block without having to climb up. The tree will be cut block by block from its top, until nothing is left.&r"
+				""
+				"&eIt's convenient, but without breaking Minecraft standard of single-block interaction that every other mod loves to mess with."
+				""
 				"&o&7 : I'm so squirmy to see what's next I'm losing my pants."
 			]
 			hide: true
 			id: "76FA2CC95FF1420B"
+			shape: "rsquare"
 			tasks: [{
 				id: "10301F929C16A3A6"
 				item: {
@@ -667,8 +704,8 @@
 				}
 				type: "item"
 			}]
-			x: -17.5d
-			y: -18.5d
+			x: -13.0d
+			y: -17.0d
 		}
 		{
 			dependencies: ["76FA2CC95FF1420B"]
@@ -679,19 +716,20 @@
 			]
 			hide: true
 			id: "34572F21E4C80346"
+			shape: "rsquare"
 			tasks: [{
 				id: "72A90C3B5E675CB3"
 				item: "farmersdelight:cutting_board"
 				type: "item"
 			}]
 			title: "COCKBLOCKED BY FARMER'S DELIGHT"
-			x: -21.5d
-			y: -16.5d
+			x: -11.5d
+			y: -18.5d
 		}
 		{
 			dependencies: ["34572F21E4C80346"]
 			description: [
-				"Place a log on the Cutting Board, then right click with an axe to get a stripped log and some bark (that you can use as fuel)."
+				"Place the Cutting Board down somewhere, then a log on top of it. Right click the log with an axe to get a stripped log and some bark (that you can use as fuel)."
 				""
 				"&o&7 : I can do that even without a Cutting Board, what's the point, again?!&r"
 				"&o : things to do."
@@ -702,6 +740,7 @@
 			hide: true
 			icon: "minecraft:stripped_oak_log"
 			id: "165A10191FA903DD"
+			shape: "rsquare"
 			tasks: [{
 				id: "237FEB2AC791E968"
 				item: {
@@ -715,8 +754,8 @@
 				type: "item"
 			}]
 			title: "Strippin'"
-			x: -16.5d
-			y: -15.5d
+			x: -13.0d
+			y: -20.0d
 		}
 		{
 			dependencies: ["165A10191FA903DD"]
@@ -731,47 +770,61 @@
 			hide: true
 			id: "43A7D246F7B435A6"
 			min_width: 220
+			shape: "rsquare"
 			tasks: [{
 				id: "6E9FAC2A5C28BBF8"
 				item: "geggy:j_planks"
 				type: "item"
 			}]
-			x: -19.5d
-			y: -19.0d
+			x: -14.5d
+			y: -18.5d
 		}
 		{
 			dependencies: ["43A7D246F7B435A6"]
 			description: [
 				"Two Prepared Planks + two pieces of flint."
 				""
-				"(Flint comes as a 10% chance from breaking gravel, just like vanilla. With a mortar you'll be able to obtain it directly.)"
+				"This is the last step, you're ready to make a crafting table."
+				""
+				"&eFlint comes as a 10% chance from breaking gravel, just like vanilla. "
+				""
+				"&eIf you place the block on a cutting board and use a shovel, that chance goes up to 50% along with another 50% of getting the block back. But these two outputs have independent chances, so you may end up with various combinations, like getting back the gravel block AND the flint... or neither of them if unlucky."
+				""
+				"&eWith a mortar you'll be able to skip the RNG and convert gravel to flint directly.&r"
 				""
 				"&o&7 : Nice pentagram of a quest you've drawn there, are we evoking a demon?"
-				"&o : you can't count. It's not a pentagram."
-				"&o&7 : anyway, I could see that coming, gtnh can't have all the flint to itself."
+				"&o : you can't count. It's not a pentagram. And you're thinking at the old quest layout, we're on a whole different standard of polish now."
+				"&o&7 : I could see that coming, gtnh can't have all the flint to itself."
+				"&o&7 : also, why all the standards have to come from Poland?"
+				""
+				"&o&c 47 : GTNH pack is old enough to play itself."
 			]
 			hide: true
+			hide_dependent_lines: true
 			id: "3015A2B3854CC10E"
-			min_width: 220
+			min_width: 240
 			rewards: [{
 				id: "0126BD149E88E3D8"
 				item: "create:experience_nugget"
 				type: "item"
 			}]
+			shape: "rsquare"
 			subtitle: "Almost... done."
 			tasks: [{
 				id: "0B823F7B1F8EB66E"
 				item: "geggy:j_crafting_top"
 				type: "item"
 			}]
-			x: -20.0d
-			y: -14.0d
+			title: "Dominant crafting"
+			x: -13.0d
+			y: -18.5d
 		}
 		{
 			dependencies: ["6BBD07ADB9DCB8B2"]
 			description: [
-				"A chest. "
 				"(this recipe used to be way worse)"
+				""
+				"A chest. "
 				""
 				"&o&7 : yeah, I could see that."
 				""
@@ -780,13 +833,13 @@
 			hide: true
 			hide_dependency_lines: true
 			id: "66B6D3512DDEBFFE"
-			shape: "pentagon"
+			shape: "rsquare"
 			tasks: [{
 				id: "01A11F253D76DDB0"
 				item: "minecraft:chest"
 				type: "item"
 			}]
-			x: -13.5d
+			x: -9.5d
 			y: -14.0d
 		}
 		{
@@ -808,44 +861,15 @@
 			hide_dependency_lines: false
 			id: "4777D48B96D99CD0"
 			shape: "pentagon"
+			size: 1.3d
 			tasks: [{
 				id: "3D8A23947A277C64"
 				item: "minecraft:furnace"
 				type: "item"
 			}]
 			title: "What's this thing appearing up here, now?"
-			x: -12.014285714285712d
-			y: -18.069047619047602d
-		}
-		{
-			dependencies: ["0530C317BE58A21B"]
-			description: [
-				"After you got chad, you can make paper (stone slabs are not consumed)."
-				""
-				"Wait, things are in a flux. The recipe to make paper looks... messy."
-				""
-				"Well, do not worry about it now, we'll return to this with the proper progression. The task here is to make a simple furnace."
-				""
-				"&bA suggestion&r: during preliminar wanderings through the world look for some &awild flax&r plant. Break it for its seeds and keep them."
-				""
-				"When replanted, it will grow as flax and it can be processed to get &7fiber&r, and fiber can then be used as a source to obtain paper, linen and strings."
-				""
-				"&7&o : ...look at those recipes, you can as well skip chad and just use wood."
-				"&o : by design. That's because there are so many resource sinks for wood. And sugar cane has its use."
-				"&o : but that too has been nerfed. No more crafting table recipe, only mixer."
-			]
-			hide: true
-			hide_dependency_lines: false
-			id: "54622889F00864A4"
-			min_width: 250
-			subtitle: "What about it?"
-			tasks: [{
-				id: "5F6C7998060D62BD"
-				type: "checkmark"
-			}]
-			title: "Paper?"
-			x: -12.871428571428567d
-			y: -19.969047619047615d
+			x: -16.57142857142854d
+			y: -16.434523809523817d
 		}
 		{
 			dependencies: ["6BBD07ADB9DCB8B2"]
@@ -864,6 +888,7 @@
 			hide_dependency_lines: true
 			id: "2888DCF41B2A221A"
 			min_width: 230
+			shape: "rsquare"
 			tasks: [{
 				id: "5264D1DD0919E50C"
 				item: {
@@ -875,29 +900,8 @@
 				}
 				type: "item"
 			}]
-			x: -13.108333333333348d
-			y: -15.98809523809524d
-		}
-		{
-			dependencies: ["41F34B3B70A485C1"]
-			description: [
-				"To make paper, you need to make chad."
-				""
-				"&7&o : why do I need to make chad when I'm one?"
-				"&o : that isn't funny as you think"
-				"&7&o : I'm just breaking the tension here"
-			]
-			hide: true
-			hide_dependency_lines: false
-			id: "0530C317BE58A21B"
-			tasks: [{
-				id: "715B56D41A1FF8C2"
-				item: "geggy:chad"
-				type: "item"
-			}]
-			title: "Chad, is that you?"
-			x: -10.858333333333341d
-			y: -15.98809523809524d
+			x: -19.0d
+			y: -17.5d
 		}
 		{
 			dependencies: ["2888DCF41B2A221A"]
@@ -905,7 +909,11 @@
 				"But before you can make a furnace, you need to make paper."
 				"And to make paper, you need a mortar."
 				""
-				"If you followed these quests closely it's possible you don't have a pickaxe to mine the stone. Since wooden pickaxes have been disabled, you can use flint pickaxes. Look for the related quest on the main path."
+				"If you followed these quests closely it's possible you don't have a pickaxe to mine the stone required here. Since wooden pickaxes have been disabled, you can use &aflint pickaxes&r. Look for the related quest on the main path."
+				""
+				"And since you're going to rely on flint tools for a while, as soon you have a mortar you can obtain flint directly from gravel blocks without the need to place and break them over and over and over..."
+				""
+				"Oh, and you can finally craft torches as well, since you need coal dust rather than just coal."
 				""
 				"&o&7 : This is a thrilling experience. "
 				"&o&7 : first the flint knife. Now... Paper?!"
@@ -914,6 +922,7 @@
 			]
 			hide: true
 			id: "41F34B3B70A485C1"
+			shape: "rsquare"
 			tasks: [{
 				id: "36A485D73A874F16"
 				item: {
@@ -925,49 +934,28 @@
 				}
 				type: "item"
 			}]
-			x: -11.286904761904772d
-			y: -19.988095238095248d
+			title: "Stoned Mortal"
+			x: -22.0d
+			y: -14.5d
 		}
 		{
-			dependencies: ["54622889F00864A4"]
+			dependencies: ["41F34B3B70A485C1"]
 			description: [
-				"With paper, you can make a pattern."
+				"&o&7 : I don't see any paper here. Why there's no paper? "
+				"&o : Pack got depauperated. There's no Tinkers. You used to need paper to make a pattern, understood?"
+				"&o : then with a pattern and a knife you used to craft the wooden form. A classic."
+				"&o&7 : So, you went through some old modpacks and sistematically selected their worst features?"
 				""
-				"...no wait, you cannot."
-				"Tinkers is not currently available on 1.19, so you have to skip this step, lucky you."
-				""
-				"Actually, making paper wasn't necessary. I guess you learned a thing anyway :)"
-				""
-				"&7&o : Oh, hello EFESTO. I mean, Tinkers."
-				"&o : the god of metalworking."
-				"&7&o : I'm only seeing a miserable stone age here..."
-				"&o : because you have no patience."
-				"&7&o : weren't we making a furnace anyway?"
-				""
-				"&o : Well, Efesto got trapped in the curse of 1.18. But I have scripts ready. You'll need steel for the starter bricks."
-				"&7&o : ... what's even the point?"
-			]
-			hide: true
-			id: "40DA390043B4CA76"
-			min_width: 250
-			tasks: [{
-				id: "12EC2BF0222C4B40"
-				type: "checkmark"
-			}]
-			title: "Mr. Tinkers Destruct"
-			x: -10.0d
-			y: -17.0d
-		}
-		{
-			dependencies: ["40DA390043B4CA76"]
-			description: [
 				"With a &mpattern&r prepared plank and a flint knife, you can make a wooden form."
+				""
+				"On the cutting board, though, not crafting table."
 				""
 				"&7&o : AH, I KNEW! It's all coming back!"
 				"&7&o : ...actually I didn't. I think I'm falling asleep."
 			]
 			hide: true
 			id: "16F0EF20B2204EDA"
+			shape: "rsquare"
 			tasks: [{
 				id: "030A347C3BB4CB84"
 				item: {
@@ -979,64 +967,80 @@
 				}
 				type: "item"
 			}]
-			x: -14.322619047619064d
-			y: -18.095238095238102d
+			x: -19.0d
+			y: -11.5d
 		}
 		{
 			dependencies: ["16F0EF20B2204EDA"]
 			description: [
-				"Use the mortar to make some Clay dust from Clay."
+				"Use the mortar to make some Clay dust, from Clay."
 				""
 				"&o&7 : Zzz..."
 				""
 				"...What? Are you saying there's no direct recipe to make clay dust from a clay ball?"
 				""
 				"OF COURSE! That's what a macerator is for."
-				"Get those clay balls, then craft them back into a block, and use that."
+				"Get those clay balls, then craft them back into a block, and use that (you can only manually do this with a wooden frame, the recipe is quite wasteful)."
 				""
+				"For a furnace you'll need just two of these clay dusts."
 			]
 			hide: true
 			id: "31383C5328C516B1"
+			min_width: 225
+			shape: "rsquare"
 			tasks: [{
 				id: "5AF829F9222DF3A1"
 				item: "geggy:clay_dust"
 				type: "item"
 			}]
-			x: -10.048809523809538d
-			y: -19.19047619047619d
+			x: -16.0d
+			y: -14.5d
 		}
 		{
 			dependencies: ["31383C5328C516B1"]
 			description: [
 				"You should have a couple of chests already (there's a quest somewhere around here), so set aside some Clay Dust for later."
 				""
-				"The next step is making a campfire."
+				"This step is about making a campfire."
 			]
 			hide: true
 			id: "4916F052DDF6C3DF"
+			shape: "rsquare"
 			tasks: [{
 				id: "6CE2586671A2E0C8"
 				item: "minecraft:campfire"
 				type: "item"
 			}]
-			x: -11.929761904761925d
-			y: -15.666666666666679d
+			x: -19.0d
+			y: -16.0d
 		}
 		{
 			dependencies: ["4916F052DDF6C3DF"]
-			description: ["Use the campfire to dry some kelp."]
+			description: [
+				"Use the campfire to dry some kelp."
+				""
+				"You can find plenty of kelp by going out in the ocean."
+				""
+				"Once you have that, right clicking while holding it on a lit campfire will place it to dry, and after a while the dried kelp will be automatically spitted out of the campfire..."
+				""
+				"To make a single furnace you'll need only 4 pieces of kelp."
+				""
+				"&7&o : ...wait, is that kelp? I &lHATE&r&7&o kelp. Now I need to go out AGAIN! Why didn't you tell me from the beginning you needed kelp?"
+				"&o : I don't need it, you do."
+			]
 			hide: true
 			id: "53CE0D8808793265"
+			shape: "rsquare"
 			tasks: [{
 				id: "37721539C3AF8ECF"
 				item: "minecraft:dried_kelp"
 				type: "item"
 			}]
-			x: -13.858333333333348d
-			y: -19.095238095238102d
+			x: -20.5d
+			y: -14.5d
 		}
 		{
-			dependencies: ["53CE0D8808793265"]
+			dependencies: ["3CA44DF3CBBB1978"]
 			description: [
 				"Set aside the kelp."
 				""
@@ -1045,30 +1049,31 @@
 				"&7&o : TINKERS-AGAIN!"
 				"&o : weren't you sleeping? I enjoyed the momentary soothing calm."
 				"&7&o : TINKERS-WHY!"
-				"&7&o : ...wait, is that kelp? I &lHATE&r&7&o kelp. Now I need to go out AGAIN! Why didn't you tell me from the beginning you needed kelp?"
-				"&o : I don't need it, you do."
 				"&7&o : Well, you made a mistake. I've never needed kelp to make grout."
 				"&o : Yeah, now you do."
 			]
 			hide: true
 			id: "1EFA3AF251DABA65"
+			shape: "rsquare"
 			tasks: [{
 				id: "5EA75C45579B62AE"
 				item: "geggy:craut"
 				type: "item"
 			}]
 			title: "Groot."
-			x: -9.608333333333341d
-			y: -18.095238095238102d
+			x: -17.5d
+			y: -14.5d
 		}
 		{
 			dependencies: ["1EFA3AF251DABA65"]
 			description: [
 				"Now it's time to bring it all together."
 				""
-				"Use 1 Clay dust, 1 grout, 1 Dried Kelp, all together with the Wooden Frame you previously crafted."
+				"Use 1 Grout, 1 Dried Kelp, all together with the Wooden Frame you previously crafted."
 				""
 				"You'll need 4 bricks total to make the furnace."
+				""
+				"This is the last step in this side-spiral, you should now have everything to craft a furnace."
 				""
 				"&7&o : okay mum. HERE COMES THE &lBATCH CRAFTING!"
 				"&o : No. You just need four of those bricks total. That's all."
@@ -1077,14 +1082,17 @@
 				"&o : Batch crafting is a curse, not a wonder. The world is already decaying without our help."
 			]
 			hide: true
+			hide_dependent_lines: true
 			id: "0B4A9C5659D78537"
+			shape: "rsquare"
 			tasks: [{
 				id: "1D519B2945DE42F8"
 				item: "geggy:uncooked_primitive_brick"
 				type: "item"
 			}]
-			x: -14.0d
-			y: -17.0d
+			title: "Breaking Better"
+			x: -19.0d
+			y: -14.5d
 		}
 		{
 			dependencies: ["4777D48B96D99CD0"]
@@ -1092,6 +1100,8 @@
 				"Eventally, you'll be able to make a (vanilla) Blast Furnace ...But no, not with iron. We have a complex relationship with iron here. You'll see when you're ready."
 				""
 				"This unlocks a simpler recipe for more furnaces, since you just need to make primitive bricks directly from &mgrout&r ...craut, without the need to dry more kelp."
+				""
+				"It's a good idea to delay this until you have a Create millstone. You need some iron dusts for the bricks used here, and you can simply grind iron nuggets into tiny dusts, and then form them into a dust. But unless you want to rely on looted nuggets, to craft them you'll need to grind the raw ore into &ecrushed raw iron&r, and from there you can get more tiny dusts..."
 				""
 				"&7&o : is there a moment when you stop and think 'what have I done?'"
 				"&o&7 : look at this mess underneath."
@@ -1105,20 +1115,29 @@
 				item: "minecraft:blast_furnace"
 				type: "item"
 			}]
-			x: -16.5d
-			y: -22.0d
+			title: "Blasted Furnace"
+			x: -17.74999999999998d
+			y: -20.747023809523817d
 		}
 		{
 			dependencies: ["255A21597101A1FA"]
-			description: ["Dead end, for dead mods."]
+			description: [
+				"Dead end, for dead mods."
+				""
+				"Did you know this modpack started on 1.18?"
+				""
+				"Meant to lead to Tinkers, but port on fabric was absurdly done only for 1.19.4, and been poorly maintained anyway."
+				""
+				"Maybe it was a blessing..."
+			]
 			id: "75AFFD24DACBAAC5"
 			tasks: [{
 				id: "4EBC97B7970E13BB"
 				item: "tconstruct:seared_bricks"
 				type: "item"
 			}]
-			x: -23.05952380952379d
-			y: -10.047619047619037d
+			x: -13.249999999999979d
+			y: -24.247023809523817d
 		}
 		{
 			dependencies: ["53CE0D8808793265"]
@@ -1133,13 +1152,14 @@
 			]
 			hide: true
 			id: "3CA44DF3CBBB1978"
+			shape: "rsquare"
 			tasks: [{
 				id: "5EFC8CE804543E4D"
 				item: "kibe:wooden_bucket"
 				type: "item"
 			}]
-			x: -7.0d
-			y: -21.0d
+			x: -19.0d
+			y: -13.0d
 		}
 		{
 			dependencies: ["4777D48B96D99CD0"]
@@ -1172,8 +1192,8 @@
 				title: "story time"
 				type: "checkmark"
 			}]
-			x: -12.928571428571423d
-			y: -23.369047619047617d
+			x: -19.0d
+			y: -19.5d
 		}
 		{
 			dependencies: ["71D9F926F78BD55D"]
@@ -1236,17 +1256,11 @@
 				""
 				"This is by design. All the gold ores have been replaced with a &csuspicious&r \"precious ore\". "
 				""
-				"You can smelt this material twice, for an insulting low yield: 1 gold nugget."
+				"At this stage there's not much you can do with it. When you reach the bottom of this page a path will open, but only after you get to electrical machines you'll also have access to the intended way to process and use gold."
 				""
-				"For that reason, it is advised to use gold wisely, and whenever possible to be stored until later, when it will be necessary for the progression."
+				"&eIron&r, &eGold&r and &eGlass&r are gated by design (along with the MI macerator, moved to a later point)."
 				""
-				"No, you aren't meant to grind it at that low yield. You are meant to avoid using it whenever possible and find other means."
-				""
-				"Raw iron ore also smelts only down to 1 nugget."
-				""
-				"&eIron, Gold and Glass&r are gated by design (along with the MI macerator, moved to a later point)."
-				""
-				"&o : Diamond ores will only have 30% of dropping a diamond. They'll always drop shards instead. That can be melted later and reformed. Machine recipes will need full diamonds, tools and armor will instead use the melted diamond instead."
+				"&o : Diamond ores will only have 30% chance of dropping a diamond. They'll always drop shards instead. That can be melted later and reformed. Machine recipes will need full diamonds, tools and armor will instead use the melted diamond instead."
 			]
 			id: "73211F9811A64087"
 			min_width: 250
@@ -1274,8 +1288,6 @@
 				""
 				"Remember that EMI is set to use different shortcuts, the key immediately under the default:"
 				"&9A&r>&cZ&r, &9R&r>&cF&r, &9U&r>&cJ&r"
-				""
-				"(for some reason REI is also laggy when you move the mouse around the item list... waiting for a fix)"
 			]
 			hide: true
 			hide_dependency_lines: true
@@ -1358,15 +1370,19 @@
 			dependencies: ["2888DCF41B2A221A"]
 			dependency_requirement: "one_completed"
 			description: [
-				"Please don't kill poor sheep."
+				"Please don't kill harmless sheep."
 				""
 				"Now that you have a flint kinfe, you can have shears without needing iron ingots."
 				""
-				"The bed recipe only requires 3 carpets, so two blocks of wool will be enough."
+				"The string can be obtained as usual by breaking a cobweb with a sword. In this case a standard wooden sword would be enough."
+				""
+				"The bed recipe only requires 3 carpets, so two blocks of wool total."
 			]
 			hide: true
+			hide_dependency_lines: true
 			icon: "minecraft:white_bed"
 			id: "107FA73E711158C2"
+			shape: "rsquare"
 			tasks: [
 				{
 					id: "16002D8C3D19A780"
@@ -1386,7 +1402,7 @@
 				}
 			]
 			title: "I'm Pacific!"
-			x: -15.0d
+			x: -9.5d
 			y: -15.5d
 		}
 		{
@@ -1402,9 +1418,9 @@
 				""
 				"It's implied that past this point in the progression you already went through the funny \"quest chain\" to make a crafting table and furnace."
 				""
-				"Note: there's a full set of flint tools, and reinforced flint tools later on. These are already set up to work much better than vanilla stone tools."
+				"Note: there's a full set of flint tools, plus reinforced flint tools later on. These are already set up to work much better than vanilla stone tools, and break through deepslate."
 				""
-				"&o&e 0A : a suggestion: don't fall into a bush"
+				"&o&e 0A : a suggestion, don't fall into a bush"
 			]
 			id: "497612DF4D0FB9DE"
 			min_width: 250
@@ -1545,8 +1561,6 @@
 				"{@pagebreak}"
 				"The recipe for the Mechanical Press adds two problems. The first is about a suspicious \"&aInternal Cogwheel&r\" looking like the one from Create, and the second is producing those &aSharp Plates&r that are made with lead plate joined with iron nuggets."
 				""
-				"&7Note: if you see repeated lines in tooltips, press F3+t to fix."
-				""
 				"The difference between a legit Create cogwheel and this one, is that the legit one has a very convoluted crafting process, whereas this one here has the easier classic recipe."
 				""
 				"As the \"manual item application\" recipe indicates, you can simply craft a wooden slab, place it in the world, then while holding a Shaft in your hand, right click on the wooden slab and you should obtain the cogwheel."
@@ -1554,6 +1568,8 @@
 				"Note that this cogwheel is only used in recipes, and doesn't operate as a standard one. It's just a passive block."
 				""
 				"&cImportant&r: a new option opens after producing a Mechanical Saw. You can now have better yields for &aShafts&r, by cutting the Andesite Alloy rather than going through a crafting table. From 3 to 1, to 1 to 2."
+				""
+				"Since Andesite Alloy can have different outputs when used with the saw, use the slot filter next to the blade to explicitly select what to produce."
 				""
 				"{@pagebreak}"
 				"Finally, the Sharp Plates. On their own they don't look like a problem that needs an extensive explanation, but due to non standard recipes some handholding here might be useful."
@@ -1744,7 +1760,11 @@
 			y: -5.0d
 		}
 		{
-			dependencies: ["17B14C7E48CA3D28"]
+			dependencies: [
+				"17B14C7E48CA3D28"
+				"6845436F47333D86"
+			]
+			dependency_requirement: "one_completed"
 			description: [
 				"A breath of fresh air, away from hell, maybe."
 				""
@@ -2498,9 +2518,45 @@
 				"- One &eBronze Item Output Hatch&r (for the Clayed Copper Can)"
 				""
 				"That means you can remove 4 mud bricks from the structure."
+				""
+				""
+				"{@pagebreak}"
+				">playing create with me and the boys (wholesome 100)"
+				">peek over and see normie playing 1.7.10"
+				""
+				"&b&o : ew wtf why are you still on that old sh*t are you fu**ing 30 or something"
+				"&b&o : watch this"
+				""
+				">download and make a create modpack"
+				">go through my 200 patreon subscriptions"
+				">acidentally download towel instead of quilt 1.23.5.1.2.95 papyrus version"
+				">boot up minecraft"
+				">pc starts making jet engine sounds"
+				">the cpu starts sizzling"
+				""
+				"&b&o : your old sh*tty version cant compare to how beautiful this looks"
+				""
+				">create new world"
+				">game freezes for a bit, computer starts screaming at this point"
+				">load in"
+				">move one block"
+				">im pretty sure one of my ram sticks just comitted suicide"
+				">build a simple farm "
+				""
+				"&b&o : check this out, solves the magic block problem, something YOU probably dont even get to expirence because your version is so old"
+				""
+				">immeadiatly place several gears belts and shafts"
+				">graphics card explodes"
+				">framerate is in the negatives"
+				">after essentially melting my pc and burning a hole in the desk, the contraption is done"
+				">the 1.7.10 player is still there somehow, watching it take 20 minutes to deliver a piece of wheat to the right storage column"
+				">before it even finishes a popup appears asking me to donate 14 dollars more to the patreon to coninue using"
+				""
+				"&b&o : this is why you should switch, ours is much more superiour in everyting, because its NEW!"
+				" "
 			]
 			id: "169A250A599D706D"
-			min_width: 280
+			min_width: 290
 			tasks: [{
 				id: "76D81364C145575C"
 				item: "modern_industrialization:clay_quarry"
@@ -2528,7 +2584,7 @@
 				id: "2E823406142704C5"
 				type: "checkmark"
 			}]
-			title: "Almost Automato"
+			title: "Almost u-tomato"
 			x: -8.0d
 			y: 8.5d
 		}
@@ -2596,7 +2652,9 @@
 			description: [
 				"Useful."
 				""
-				"It stores ingredients on the crafting grid, and includes its own storage like a smaller chest."
+				"It stores ingredients on the crafting grid, and includes its own couple of rows of storage, like a smaller chest."
+				""
+				"(though it loses some standard features...)"
 			]
 			hide: true
 			id: "0B6C91109569B32C"
@@ -2605,7 +2663,7 @@
 				item: "enhancedworkbenches:project_table"
 				type: "item"
 			}]
-			x: -12.0d
+			x: -8.0d
 			y: -14.0d
 		}
 		{
@@ -2637,6 +2695,299 @@
 			title: "Reinforcing prejudices"
 			x: -17.0d
 			y: 2.5d
+		}
+		{
+			dependencies: ["7FA13ECB870F1FDE"]
+			description: [
+				"&o &c85 : &lAAARGH!"
+				""
+				" : What?"
+				""
+				"&o &c85 : Over there! I just saw Erobin peeking from behind that corner!"
+				""
+				" : So what?"
+				" : People always keep pets around their factories. Dogs, cats..."
+				" : I don't see what's the problem with lil Herobrine, he's cute."
+				""
+				"&o &7 : Yeah, working in the factory all day can be lonely."
+				"  "
+			]
+			id: "04F7E6BC3C03B849"
+			tasks: [{
+				id: "6B76953B4E3A16AE"
+				title: "AAAAAAAARGH!!!"
+				type: "checkmark"
+			}]
+			x: -11.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["7FA13ECB870F1FDE"]
+			description: [
+				"As hinted at the top of this page, you should have access to SOME gold at this stage."
+				""
+				"Don't rely on it, because the proper way will only be unlocked later, when you have access to the full processing chain."
+				""
+				"All you can get right now are gold nuggets, and at a very poor yield."
+				""
+				"\"Precious\" ore veins can be found out in the world, at Y -64, up to 32. With a similar frequency of standard gold veins. Instead in the Nether precious ores can be found at any height, uniformly. When you mine them, the full block will drop even without silk touch, but you cannot simply process this in a furnace."
+				""
+				"This little quest chain here will describe every step."
+			]
+			icon: "geggy:precious_ore"
+			id: "6010A0E25CEF8E57"
+			min_width: 270
+			shape: "rsquare"
+			tasks: [{
+				id: "5D27FB8DBFAA8F7C"
+				item: "geggy:precious_ore"
+				type: "item"
+			}]
+			title: "My precious (ore)"
+			x: -12.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["6010A0E25CEF8E57"]
+			description: ["As you can see if you look at the recipes for the precious ore block, at this stage you can only use a Create millstone to grind the block into \"&eCrushed Precious Ore&r.\" "]
+			id: "7C4C0FB3F2E7882F"
+			min_width: 190
+			shape: "rsquare"
+			tasks: [{
+				id: "2C28D4EAC86D05B9"
+				item: "geggy:crushed_precious_ore"
+				type: "item"
+			}]
+			x: -14.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["7C4C0FB3F2E7882F"]
+			description: ["Then you wash the crushed precious ore (same Create washing with a fan), for 90% chance at &ePurified Precious Ore&r. "]
+			id: "475B033D69E635A8"
+			shape: "rsquare"
+			tasks: [{
+				id: "7DD39B1615E78484"
+				item: "geggy:purified_precious_ore"
+				type: "item"
+			}]
+			x: -15.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["475B033D69E635A8"]
+			description: [
+				"And finally you put the purified precious ore on a cutting board and use manually a filter to get an 80% chance at a standard gold nugget."
+				""
+				"The next stage for gold will unlock when you have access to steel, that will also let you process nuggets into a full ingot. But only with electrical machines you'll be able to produce gold in the intended way, and get TWO gold dusts for every purified ore."
+				""
+				"For now you'll need a limited amount of gold nuggets, as they will be required in some recipes necessary for the progression."
+				""
+				"Not suggested as a goal at this point, but do keep in mind that &eall crafted gold tools have silk touch natively&r."
+			]
+			id: "442E5358FEB4A409"
+			min_width: 240
+			shape: "octagon"
+			size: 1.3d
+			tasks: [{
+				id: "394B6097165B571B"
+				item: "minecraft:gold_nugget"
+				type: "item"
+			}]
+			x: -17.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["17B14C7E48CA3D28"]
+			description: [
+				"There have been some further changes to worldgen..."
+				""
+				"The harvest levels of tools has been modified, so for the time being you are meant to use basic flint tools, with an harvest level of zero. But the level of blocks has also been tweaked, so you should be able to mine all the early ores you need for the progression."
+				""
+				"What you can't mine, until reinforced flint tools further down this quest page, is deepslate, including ores there."
+				""
+				"To craft a deployer you'll need redstone, and amethyst shards. For this reason amethyst geodes have been moved slightly upwards."
+				""
+				"Amethyst geodes: from Y &a-52 to 42&r"
+				"(even when they generate below deepslate, you should be able to find passages through caves)"
+				""
+				"For redstone, vanilla generation is untouched, but there are extra veins that appear further up, between Y &a100 and 200&r."
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:redstone"
+			id: "3A9F647E502EE213"
+			min_width: 250
+			tasks: [
+				{
+					id: "1CC6DBE23527FB26"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					id: "7D67D91F265BEC71"
+					item: "minecraft:amethyst_shard"
+					type: "item"
+				}
+			]
+			title: "PoorGen"
+			x: -12.5d
+			y: -6.5d
+		}
+		{
+			dependencies: ["3A9F647E502EE213"]
+			description: [
+				"While the recipe for rose quartz has been tweaked to require less redstone, it needs additional steps and amethyst shards."
+				""
+				"Once you have quartz dust and redstone you can craft &aRose Quartz Blend&r."
+				""
+				"The next step may appear tricky. You need to toss one amethyst shard and one rose quartz blend... inside a lava pool (just one block is enough)."
+				""
+				"Don't worry, unless something goes wrong, these items should resist the lava, and you should be able to the retrieve the &aRose Quartz&r without setting yourself on fire, if you carefully peer down from a safe block edge. "
+				""
+				"Well, unless you really want to leap in for the additional excitement."
+				""
+				"(You'll still need sandpaper to polish rose quartz, to then craft the Electron Tube needed for a deployer.)"
+			]
+			icon: "create:rose_quartz"
+			id: "6845436F47333D86"
+			min_width: 260
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "2EDF84342B4A6FE1"
+					item: "geggy:rose_quartz_blend"
+					type: "item"
+				}
+				{
+					id: "03499252E8324E22"
+					item: "create:rose_quartz"
+					type: "item"
+				}
+			]
+			title: "Arson"
+			x: -14.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["229E4CD94769D382"]
+			description: [
+				"Yeah, you have to squint, there are TWO items there on the task list..."
+				""
+				"A reinforced flint pickaxe is special in the sense it needs a few additional steps, compared to other reinforced flint tools."
+				""
+				"Mainly to teach a trick: that dull pickaxe head, if you look at the recipe, is made of three different parts. These three parts are all crafted by placing flint on a Create saw."
+				""
+				"So how do you tell the saw block what piece to craft, so that you get all three? It seems a recipe conflict."
+				""
+				"But the lesson is that next to the blade, on the block, there's a slot where you can set a filter."
+				""
+				"But... it will say \"click with item to set\", but how can you click with the item, if you need to craft it in the first place?"
+				""
+				"You'll need to craft the list filter, and use that."
+				""
+				"By right clicking on the list filter, you bring up an UI, you can then use either REI or EMI to find the item on the list, and simply drag \\& drop the item. Then, when it's set, you can place the list filter on the filter slot of the Create saw. And it will guarantee that only that output is used."
+			]
+			icon: "geggy:dull_flint_pickaxe_head"
+			id: "24BD91BF5834689A"
+			min_width: 260
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "68E50703892CFDCF"
+					item: "geggy:dull_flint_pickaxe_head"
+					type: "item"
+				}
+				{
+					id: "6A1AEF5FA1671640"
+					item: "create:filter"
+					type: "item"
+				}
+			]
+			title: "Dull life"
+			x: -18.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["497612DF4D0FB9DE"]
+			description: [
+				"This is just a suggestion: during preliminar wanderings through the world look for some &awild flax&r plants."
+				""
+				"Wild flax should occasionally spawn close to water in arid biomes, so look in places where sands borders with water. You can also search the item list to see what it looks like."
+				""
+				"Another option is breaking clay pots and urns found underground, as they occasionally contain the seeds. Or even some illagers loot, if you can find them."
+				""
+				"When the seeds are replanted, they will grow as flax, that can be processed to get &efiber&r, and fiber can then be used as a source to obtain paper, linen and strings."
+				""
+				"You'll find quests further down the page. Flax won't stop progression, but it can be a lot more convenient."
+				""
+				"Note: &oyou can harvest plants without fully breaking them, by right clicking. But this only works while &eholding a hoe&r."
+			]
+			id: "63353C4077724405"
+			min_width: 220
+			tasks: [{
+				id: "320B8CA900D42D0A"
+				item: "supplementaries:flax_seeds"
+				type: "item"
+			}]
+			title: "Seeding the way"
+			x: -12.5d
+			y: -8.0d
+		}
+		{
+			dependencies: ["41F34B3B70A485C1"]
+			description: [
+				"Torch recipes are quaint."
+				""
+				"If you can find lignite coal, you can craft torches directly... but only two."
+				""
+				"Coal needs to be crushed into dust with a mortar, then you split the dust into four small dusts, and those can be used individually to craft one torch each. That means one full dust gives four torches, but you're not quite there because you still need to use two coal pieces with a mortar, to get one dust."
+				""
+				"A Create Millstone will give you at least standard yields for coal."
+				""
+				"Coke will eventually give 6 torches, and there's even a recipe for using creosote."
+				""
+				"At least there aren't further survival-esque mechanics that I'm always tempted to add, like torches getting extinguished by rain :)"
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "6FF7D9BE5E9A73B7"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "1042DB94C46CDD44"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -15.5d
+		}
+		{
+			dependencies: ["73211F9811A64087"]
+			description: [
+				"Some players may be looking for things that aren't truly there. To avoid chasing ghosts, here some notes to take in consideration:"
+				""
+				"- &eVillages&r should have been deleted, along with their protector, the golem."
+				""
+				"- Loot tables should have been edited to prevent &eingots&r being dropped, to avoid progression skips, especially for iron and gold. You will still find more advanced tools and it should be fine. The intent is to avoid crafting progression obtained easily. So looted tools are fine as long they are temporary and can't be repaired."
+				""
+				"- &ePhantoms&r should not spawn."
+				""
+				"- There may be some vanilla rules tweaks. It was reported for example that &ecactus farms&r do not work. This is intended and there are alternate ways to obtain green dye."
+				""
+				"If you find stuff you suspect being wrong, please report all of it directly to me. May be either a mistake or intended. For example there could be structures having blocks that should be denied. As an example, ruined Nether portals shouldn't have their typical gold block..."
+				""
+				"Look at the \"Known Issues\" questbook page, the quest titled \"Hi\" will indicate how to contact me directly."
+			]
+			id: "1C6673ADA673A78D"
+			min_width: 260
+			subtitle: "Having vanilla expectations"
+			tasks: [{
+				id: "1DC71818BC312E79"
+				title: "You're such a disappointment, Parker"
+				type: "checkmark"
+			}]
+			x: -8.0d
+			y: -8.0d
 		}
 	]
 	title: "0 - Getting Started"

@@ -84,6 +84,9 @@
   
   "fluid.xps.xp_fluid": "XP",
   
+  "item.modern_industrialization.tin_cable": "Tin-Bearing Superconductor",
+  "item.modern_industrialization.copper_cable": "Copper-Bearing Superconductor",
+  
   "dimension.minecraft.end": "End"
 
   

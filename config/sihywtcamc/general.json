@@ -1,0 +1,19 @@
+{
+  "eatDrinkCancellable": true,
+  "drinkFaster": true,
+  "splashPotionCooldown": 100,
+  "lingeringPotionCooldown": 100,
+  "appropriateInvulnerability": true,
+  "stacks": {
+    "potionStack": 16,
+    "splashPotionStack": 16,
+    "lingeringPotionStack": 16,
+    "milkBucketStack": 16,
+    "snowBallStack": 64
+  },
+  "eggSnowball": {
+    "cooldown": true,
+    "knockbackPlayer": true,
+    "shieldStopKnockack": true
+  }
+}

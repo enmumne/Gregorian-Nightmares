@@ -90,7 +90,7 @@ If your settings in this file seem to have to no effect on the generation of the
 			},
 			{
 				"data": "byg:arisian_undergrowth",
-				"weight": 2
+				"weight": 0
 			},
 			{
 				"data": "betternether:gravel_desert",
@@ -197,19 +197,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:infernal_dunes",
+				"data": "gardens_of_the_dead:soulblight_forest",
 				"weight": 2
 			},
 			{
-				"data": "incendium:withered_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:inverted_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:volcanic_deltas",
+				"data": "gardens_of_the_dead:whistling_woods",
 				"weight": 2
 			},
 			{
@@ -217,7 +209,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:quartz_flats",
+				"data": "incendium:withered_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:volcanic_deltas",
 				"weight": 2
 			},
 			{
@@ -225,7 +221,19 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
+				"data": "incendium:infernal_dunes",
+				"weight": 2
+			},
+			{
 				"data": "incendium:toxic_heap",
+				"weight": 2
+			},
+			{
+				"data": "incendium:inverted_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:quartz_flats",
 				"weight": 2
 			}
 		]
@@ -314,7 +322,7 @@ If your settings in this file seem to have to no effect on the generation of the
 			},
 			{
 				"data": "byg:arisian_undergrowth",
-				"weight": 2
+				"weight": 0
 			},
 			{
 				"data": "betternether:gravel_desert",
@@ -421,19 +429,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:infernal_dunes",
+				"data": "gardens_of_the_dead:soulblight_forest",
 				"weight": 2
 			},
 			{
-				"data": "incendium:withered_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:inverted_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:volcanic_deltas",
+				"data": "gardens_of_the_dead:whistling_woods",
 				"weight": 2
 			},
 			{
@@ -441,7 +441,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:quartz_flats",
+				"data": "incendium:withered_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:volcanic_deltas",
 				"weight": 2
 			},
 			{
@@ -449,7 +453,19 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
+				"data": "incendium:infernal_dunes",
+				"weight": 2
+			},
+			{
 				"data": "incendium:toxic_heap",
+				"weight": 2
+			},
+			{
+				"data": "incendium:inverted_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:quartz_flats",
 				"weight": 2
 			}
 		]
@@ -523,7 +539,7 @@ If your settings in this file seem to have to no effect on the generation of the
 			},
 			{
 				"data": "byg:arisian_undergrowth",
-				"weight": 2
+				"weight": 0
 			},
 			{
 				"data": "betternether:gravel_desert",
@@ -630,19 +646,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:infernal_dunes",
+				"data": "gardens_of_the_dead:soulblight_forest",
 				"weight": 2
 			},
 			{
-				"data": "incendium:withered_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:inverted_forest",
-				"weight": 2
-			},
-			{
-				"data": "incendium:volcanic_deltas",
+				"data": "gardens_of_the_dead:whistling_woods",
 				"weight": 2
 			},
 			{
@@ -650,7 +658,11 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
-				"data": "incendium:quartz_flats",
+				"data": "incendium:withered_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:volcanic_deltas",
 				"weight": 2
 			},
 			{
@@ -658,7 +670,19 @@ If your settings in this file seem to have to no effect on the generation of the
 				"weight": 2
 			},
 			{
+				"data": "incendium:infernal_dunes",
+				"weight": 2
+			},
+			{
 				"data": "incendium:toxic_heap",
+				"weight": 2
+			},
+			{
+				"data": "incendium:inverted_forest",
+				"weight": 2
+			},
+			{
+				"data": "incendium:quartz_flats",
 				"weight": 2
 			}
 		]

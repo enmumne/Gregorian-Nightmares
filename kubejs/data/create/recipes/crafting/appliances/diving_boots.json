@@ -1,0 +1,30 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "create:andesite_alloy"
+    },
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "P": {
+      "item": "expert_armor:create/copper_plate"
+    }
+  },
+  "pattern": [
+    "P P",
+    "I I",
+    "G G"
+  ],
+  "result": {
+    "item": "create:copper_diving_boots"
+  }
+}

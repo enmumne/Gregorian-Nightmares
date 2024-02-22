@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "geghilarity_fatmachines:block/naquadah_coil_top",
+    "side": "geghilarity_fatmachines:block/naquadah_coil_side"
+  }
+}

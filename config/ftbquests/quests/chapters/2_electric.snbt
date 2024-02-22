@@ -361,6 +361,9 @@
 				"Similarly to Bronze and Steel machine casings, the Machine Hull is the basis for most electrical machines. Like cables, there are tiers of machine hulls depending on the caliber of machine you're trying to build"
 				""
 				"For now the basic machine hull will give you access to a wide array of electronic machines. Some machines are similar to the steam powered versions you've already encountered, the rest are brand new, unlocking recipes and crafting ingredients you previously didn't have access to."
+				""
+				"&o&6 47 : Last month I started playing GTNH, now I have about 72 hours, maybe more. "
+				"&o&6 : I'm halfway through LV."
 			]
 			id: "5825BFEDB5F567B5"
 			min_width: 250
@@ -663,7 +666,8 @@
 			icon: "modern_industrialization:aluminum_ingot"
 			id: "3889F5C3B7615BC4"
 			min_width: 340
-			shape: "rsquare"
+			shape: "octagon"
+			size: 1.3d
 			tasks: [{
 				id: "5393E7CF2C1DEBCD"
 				item: "modern_industrialization:aluminum_ingot"
@@ -712,7 +716,7 @@
 				item: "modern_industrialization:electronic_circuit"
 				type: "item"
 			}]
-			x: 1.5d
+			x: -1.0d
 			y: 25.0d
 		}
 		{
@@ -747,18 +751,19 @@
 		{
 			dependencies: ["112F3AF89CBBAF63"]
 			description: [
-				"The silicon battery is a crafting component used most commonly in Advanced Machine Hulls. The second tier of machine hull."
+				"The &msilicon&r sodium battery is a crafting component used most commonly in Advanced Machine Hulls. The second tier of machine hull."
 				""
 				"They're also used in Building Gadgets so check out their section in Perks if you haven't already. It may be useful to craft these and start putting together a proper base if you haven't done so already."
 			]
 			id: "0E4467C81F04FE57"
 			tasks: [{
 				id: "69762A71CC73C701"
-				item: "modern_industrialization:silicon_battery"
+				item: "modern_industrialization:sodium_battery"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 23.5d
+			title: "Sodium Battery, not silicon"
+			x: 1.5d
+			y: 26.0d
 		}
 		{
 			dependencies: [
@@ -796,7 +801,7 @@
 				item: "modern_industrialization:chemical_reactor"
 				type: "item"
 			}]
-			x: 3.0d
+			x: -2.5d
 			y: 25.0d
 		}
 		{
@@ -1136,24 +1141,28 @@
 			y: 36.0d
 		}
 		{
+			dependencies: ["3BB6B056BD95F1A0"]
 			description: [
-				"As a way to experiment what can or cannot be done, I've ported the gold processing line from TJ."
+				"The chemical reactor opens the path for proper gold processing. Since there are no further developments for this material, it's worth fully automating it in the proper way."
 				""
-				"In a early quest it was pointed out that no gold ore can be found in the world, same for the quarry. This follows TJ intended behavior."
+				"The processing follows closely the gold line from Technological Journey and was intended as a test for a first automation setup. But things have changed since then, and aluminium is now more convoluted. So if you got to this point you should be fine."
 				""
-				"The gold nerf caused substantial repercussions on the progression. I've changed some recipes to avoid blocks, in any case there should be plenty of other sources for gold, like looting."
+				"We'll go step by step, from the very beginning."
 				""
-				"What you should actually do at this point is setting up a processing line with electrolyzers and chemical reactors to obtain the proper yields, from precious ores."
-				"Since this is meant as a fun puzzle, no quests will detail this process. Especially because these recipes are manually added, so you only need to track the processing linearly. There's generally just one recipe for each step (well...)."
+				"At this stage you are supposed to have an LV miner dedicated to \"precious ore\" production. But the process is the same if you use manually mined ore, of course."
+				""
+				"Precious ore blocks go directly in a macerator, steel or better, to obtain &eCrushed Precious Ore&r at the best yield."
 			]
 			id: "034187DD42EEAA4E"
-			min_width: 320
+			min_width: 260
+			shape: "rsquare"
 			tasks: [{
-				id: "5D24A36778E18E14"
-				type: "checkmark"
+				id: "3337CA4B2825E7BC"
+				item: "geggy:crushed_precious_ore"
+				type: "item"
 			}]
 			title: "Fabled Transmutation: From Lead to... Electrum"
-			x: 4.5d
+			x: -4.0d
 			y: 25.0d
 		}
 		{
@@ -1174,7 +1183,7 @@
 				item: "modern_industrialization:carbon_dust"
 				type: "item"
 			}]
-			title: "Pulling it together"
+			title: "Pulling it together!"
 			x: 3.0d
 			y: 22.0d
 		}
@@ -1514,6 +1523,8 @@
 				"To make aluminium you need chocolate."
 				""
 				"Yes. For realism."
+				""
+				"(you get milk by right clicking on a cow or goat while holding a bucket, it's vanilla)"
 			]
 			id: "5CED5B7755781ED0"
 			shape: "rsquare"
@@ -1595,6 +1606,425 @@
 			}]
 			x: 7.5d
 			y: 20.5d
+		}
+		{
+			dependencies: ["034187DD42EEAA4E"]
+			description: [
+				"Precious crushed ore then goes in an autoclave with some water, to obtain &ePurified Precious Ore&r."
+				""
+				"Even here, the autoclave offers the best output, compared to the alternative of Create bulk washing that you may have used up to this point."
+				""
+				"These steps here are meant to be specialized, so setting up machines that are permanently locked to one recipe."
+			]
+			id: "31049D3AFCF51700"
+			shape: "rsquare"
+			tasks: [{
+				id: "48273BC01D4A7571"
+				item: "geggy:purified_precious_ore"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 25.0d
+		}
+		{
+			dependencies: ["31049D3AFCF51700"]
+			description: [
+				"Three copper dusts + 1 purified precious ore go in an electrical alloy smelter, producing four &eGold Alloy Ingots&r."
+				""
+				"Alternatively you can use a precious ingot, but this should be only useful if you have some stored away. The precious ingot is only obtained to reprocess precious nuggets obtained in other ways."
+				""
+				"The electical alloy smelter is a fairly simple multiblock."
+			]
+			id: "470EE5EE7AD1C3B4"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "59A3BEEBC2A2E9A7"
+				item: "geghilarity:gold_alloy_ingot"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 25.0d
+		}
+		{
+			dependencies: [
+				"470EE5EE7AD1C3B4"
+				"053D8AC9E77240F4"
+			]
+			description: [
+				"You'll have to come from that other sideway branch of the quest, and guess what?!"
+				""
+				"Another chemical reactor here!"
+				""
+				"4 gold alloy ingots + 1k nitric acid = 4 &eGold Leach&r + 1k nitrogen dioxide"
+				""
+				"But there's also an important lesson for automation: this recipe returns nitrogen dioxide, that you just used as one ingredient to craft the nitric acid coming in here."
+				""
+				"If here 1k nitric acid turns into 1k nitrogen dioxide, and if you need 2k nitrogen dioxide to make 2k nitric acid (previous step), then it means that the nitrogen dioxide is fully recicled."
+				""
+				"In automations terms, this is a loop."
+				""
+				"It is a big deal because it means you need to jumpstart the process only once, and then you loop the nitrogen dioxide coming out and then back in the previous chemical reactor. With this ingredient out of the equation, you'll only need to keep feeding passively oxygen and water. So you could decide to structure the final chain however you want, as long you provide that oxygen and water."
+			]
+			id: "10147AC31CB45C71"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "2B6D2D147F9AF6A7"
+				item: "geghilarity:gold_leach"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 25.0d
+		}
+		{
+			dependencies: ["470EE5EE7AD1C3B4"]
+			description: [
+				"If you survived up to this point, then you should have used already a gas collector for air."
+				""
+				"Later in this quest chain you'll figure out you have some choices, but for now you need both oxygen and nitrogen. Using a gas collector and a centrifuge is an option, but here's a bit of &7foreshadowing&r: you only need nitrogen to jumpstart the process, so you won't need to fully automate that part."
+				""
+				"The goal of this branch here is to get to &eNitric Acid&r, that is needed to process the gold alloy."
+				""
+				"Note: fluid quests will always be checkmarks since the quest system is too stupid to use fluids, and using buckets would be too annoying. The buckets being shown are OPTIONAL objectives. &eTo complete the quest you only need to press the checkmark."
+			]
+			hide_dependency_lines: true
+			icon: "modern_industrialization:nitrogen_bucket"
+			id: "3E2A162A8AFB66F4"
+			min_width: 230
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "71EDA5AF890C6A4B"
+					item: "modern_industrialization:nitrogen_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4E60F3218AC47102"
+					type: "checkmark"
+				}
+			]
+			title: "On The Way For Fun"
+			x: -5.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["4BA34A9FE0539099"]
+			description: [
+				"Here's ANOTHER chemical reaction. If it's too much gold to craft more than one, you could simply go manually through the process until you have enough gold to craft more and then set up the line properly. Your choice."
+				""
+				"Outside of processes adapted from SuperSymmetry, the chemical reactor is a machine that is used all over the place."
+				""
+				"You will need &eNitric Acid&r to process the gold alloy."
+				""
+				"So you need to work with three fluids here: "
+				"1k water + 1k oxygen + 2k nitrogen dioxide = 2k &eNitric Acid&r."
+			]
+			icon: "geghilarity:nitric_acid_bucket"
+			id: "053D8AC9E77240F4"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "3F40ED815CF5CF60"
+					item: "geghilarity:nitric_acid_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1A06661136E77523"
+					type: "checkmark"
+				}
+			]
+			x: -8.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["3E2A162A8AFB66F4"]
+			description: [
+				"Here is the (first) chemical reactor."
+				""
+				"2k oxygen + 1k nitrogen go in a chemical reactor to obtain 1k &eNitrogen Dioxide&r."
+				""
+				"Note here that clicking on the nitrogen dioxide bucket will do nothing. You have to search the fluid manually in the recipe browser to look it up properly."
+				""
+				"(the reason is that buckets for custom fluids have zero recipes attached to them, due to buckets not being used, so they point to nothing)"
+			]
+			icon: "geghilarity:nitrogen_dioxide_bucket"
+			id: "4BA34A9FE0539099"
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "00EFD61CBFA61AD8"
+					item: "geghilarity:nitrogen_dioxide_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "6BDAD988F82A7526"
+					type: "checkmark"
+				}
+			]
+			title: "Here it comes..."
+			x: -7.0d
+			y: 26.5d
+		}
+		{
+			dependencies: ["61DDEE4262B77550"]
+			description: [
+				"1k hydrogen + 1k chlorine, in a chemical reactor = 1k &eHydrochloric Acid&r"
+				""
+				"Either you got the hydrogen from the previous step, by using salt water, or you follow the proper way, which is to use the Electrolytic Cell multiblock."
+				""
+				"It will need two rods, but they are \"not consumed\" catalysts. Then 3k water turns into 2k hydrogen and 1k oxygen, as expected."
+			]
+			icon: "modern_industrialization:hydrochloric_acid_bucket"
+			id: "14AA5BD83ED1DF64"
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "0F0B3B5E0CC23DCB"
+					item: "modern_industrialization:hydrochloric_acid_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2B4BA25EC03EB719"
+					type: "checkmark"
+				}
+			]
+			x: -10.0d
+			y: 23.5d
+		}
+		{
+			dependencies: [
+				"14AA5BD83ED1DF64"
+				"10147AC31CB45C71"
+			]
+			description: [
+				"4 gold leach dusts + 1k hydrochloric acid, in a chemical reactor = 4 leached copper + 1k water + 1k &eChlorauric Acid&r."
+				""
+				"While the leached copper can be reprocessed for some other stuff, the main course here is the chlorauric acid."
+				""
+				"With the next step we get to the finishing line: a gold dust."
+				""
+				"But setting all this up properly might require some more trickery..."
+			]
+			icon: "geghilarity:chloramine_bucket"
+			id: "284A68BE466825A5"
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "4DC847B13BA00CE1"
+					item: "geghilarity:chloramine_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "323C905E8F0E19F3"
+					type: "checkmark"
+				}
+			]
+			x: -8.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["10147AC31CB45C71"]
+			description: [
+				"Electrolyzer here."
+				""
+				"This is the path for hydrochloric acid, that is made with hydrogen and chlorine."
+				""
+				"The standard option for chlorine is two salt dusts for one sodium, that you can store somewhere, and 1k &eChlorine&r, that you'll need to pass on to the next step."
+				""
+				"But due to the addition of other recipes you can electrolyze \"salt water\" instead. The bonus of going this way is that this recipe produces some sodium hydroxide that you can use somewhere else, and also both the 1k hydrogen and 1k chlorine that you'll use next."
+				""
+				"The salt water itself will require its own production step, though. "
+				"1k water + 2 salt dusts in a mixer."
+			]
+			hide_dependency_lines: true
+			icon: "modern_industrialization:chlorine_bucket"
+			id: "61DDEE4262B77550"
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "3B479B506204BC38"
+					item: "modern_industrialization:chlorine_bucket"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "698F00FD518EEDC8"
+					type: "checkmark"
+				}
+			]
+			x: -11.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["284A68BE466825A5"]
+			description: [
+				"To fully reprocess the leached copper you need a dehydrator."
+				""
+				"Four dusts will convert to three copper dust, plus chances at some extras, including pure silver."
+				""
+				"Note how the three copper dusts were used at the very beginning of the chain, when you used the alloy smelter with the purified precious ore. This means that once you go through all the steps, all the copper is returned, and it too can become a loop."
+				""
+				"The overall idea here is to properly set up the chain so that it works passively. Of course the processing line burns energy, but energy too is meant to be passive (elsewhere)."
+				""
+				"One precious ore comes in, TWO gold dusts come out. "
+				"BETTER than vanilla!"
+			]
+			id: "092EACF4C549641D"
+			min_width: 240
+			shape: "rsquare"
+			tasks: [{
+				id: "330790F9741E1E4C"
+				item: "geghilarity:leached_copper_dust"
+				type: "item"
+			}]
+			title: "Looping World"
+			x: -5.5d
+			y: 23.5d
+		}
+		{
+			dependencies: [
+				"284A68BE466825A5"
+				"139D31DA1C70EB6A"
+			]
+			description: [
+				"Here we are. Filthy rich!"
+				""
+				"Yes, another chemical reactor. Takes in the 1k chloroauric acid from the previous step, the potassium metabisulfate is not consumed."
+				""
+				"Two gold dusts!"
+				""
+				"Look at the other two outputs. The water may not be all that appealing, but you also get back 1k chlorine..."
+				""
+				"As it happened earlier for nitric acid, and nitrogen dioxide being recylced, here too the chlorine used for hydrochloric acid is fully recycled."
+				""
+				"If you look at the whole chain, and with chlorine and nitrogen dioxide looped, the only other inputs, for each production \"batch\", are 500 water, 500 oxygen (for 1k nitric acid), and 1k hydrogen for the hydrochloric acid."
+				""
+				"But with this and previous step you also get 2k water out. So 500 water can be delivered for nitric acid, leaving a surplus of 1.500 water."
+				""
+				"The electrolytic cell recipe is slow, but requires 3k water, so you can run it once every two batches. Since one of its run produces 2k hydrogen, this means that the hydrogen is also now perfectly looped."
+				""
+				"And... you also get 1k oxygen, every two batches. Since you also need 500 oxygen every batch... Oxygen, too, is fully recycled."
+				""
+				"&6&lGlory to GregTech!&r"
+			]
+			id: "4C26AF6C9C3D51B7"
+			min_width: 290
+			shape: "octagon"
+			size: 1.3d
+			tasks: [{
+				id: "3BBDA98978ACD881"
+				item: "modern_industrialization:gold_dust"
+				type: "item"
+			}]
+			title: "Uncle Scrooge"
+			x: -8.5d
+			y: 22.0d
+		}
+		{
+			dependencies: ["284A68BE466825A5"]
+			description: [
+				"Before you can jump to the final step, you need to produce this dust."
+				""
+				"Note that this is used as a catalyst in the recipe, so it won't be consumed in the process."
+				""
+				"This means you'll only need a single dust (unless you decide to scale it up and have more machines working in parallel), and the production of &ePotassium Metabilsulfate&r doesn't need to be part of the chain with machines dedicated to it."
+				""
+				"There's a single use, and a single mixer recipe to obtain it, so it's easy to look up."
+				""
+				"5k oxygen, 2 sulfur dusts, and 2 potassium dust."
+				""
+				"You have some options for the potassium, but the best way is using rock salt and an electrolyzer."
+				""
+				"The rock salt can be easily obtained through Create washing, either gravel or salt crushed dust. But to find the recipe you need to look at TINY rock dusts, that you can then manually assemble into a proper full dust."
+			]
+			hide_dependency_lines: true
+			id: "139D31DA1C70EB6A"
+			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "5418B705E94E969B"
+				item: "geghilarity:potassium_metabisulfate_dust"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 22.0d
+		}
+		{
+			dependencies: ["3889F5C3B7615BC4"]
+			description: [
+				"One of the main source of lag is mobs AI, rather than automation."
+				""
+				"Since this modpack pushed the amount of automation and number of machines (past) to the maximum, there needs to be a way to remove mobs from a base..."
+				""
+				"This is done through the inclusion of &c@brazier&r mod."
+				""
+				"A \"brazier\" is a multiblock structure that prevents hostile mobs to spawn within a certain cylindrical area."
+				""
+				"Recipes &eare going to change&r and better integrate with other magic mods."
+				""
+				"For now the mod works similar to its default: the first thing you need is a &aLiving Flame&r."
+				""
+				"Living flames only spawn as jungle temples loot, or drop from Crazed Illagers, that only spawn in woodland mansions."
+				""
+				"You need one living flame for every brazier structure you want to build."
+			]
+			id: "6AAA76A988F82BC4"
+			min_width: 250
+			tasks: [{
+				id: "1A3746D9CA803A49"
+				item: "brazier:living_flame"
+				type: "item"
+			}]
+			title: "Lag prevention"
+			x: 3.0d
+			y: 23.5d
+		}
+		{
+			dependencies: ["6AAA76A988F82BC4"]
+			description: [
+				"That's a vanilla recipe, for now."
+				""
+				"The multiblock is built of a custom block, &aGloom Block&r. It is made of aluminium and steel plates. You'll need a lot, it's a resource sink."
+				""
+				"The valid multiblock structure requires a base of 5x5 (just one level, so it's a square looking from the top down), but you can cut the four corners. So the total is 21 blocks."
+				""
+				"To activate the thing you only need to place the brazier you crafted on top of this base, right in the center. If it works correctly you will see activating one second later."
+				""
+				"Then, by holding a torch and right clicking while looking inside the active brazier, you can convert that torch into a living torch, with a green light."
+				""
+				"Holding this living torch, you can walk away, and at some point you should see some \"barrier\" effect. That's the current range that prevent hostile mob spawn. It should extend infinitely up and down, only limited horizontally, and with a cylindrical radius from the center of the brazier."
+				""
+				"The brazier structure can go up to TEN level. So 210 gloom blocks if you want the max possible."
+				""
+				"The first level will cover an area (radius) of 20 blocks in all directions. From the second level, up to ten, every layer adds a +12 block radius. Therefore the total area will be 128 blocks."
+				""
+				"If you find more living flames you can of course build more of these structures, and greatly extent the protected area."
+			]
+			icon: "brazier:brazier"
+			id: "349623A3A22864C3"
+			min_width: 270
+			tasks: [
+				{
+					id: "14A047B16FB7F178"
+					item: "brazier:brazier"
+					type: "item"
+				}
+				{
+					id: "58454A83BC9FADDB"
+					item: "geggy:gloom_block"
+					type: "item"
+				}
+			]
+			title: "Brazen sink"
+			x: 4.5d
+			y: 25.0d
 		}
 	]
 	title: "2 - Biribiri"
