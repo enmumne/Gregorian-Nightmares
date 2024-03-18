@@ -1,0 +1,8 @@
+{
+  "feature": "majruszsdifficulty:enderium_ore_large",
+  "placement": [
+    {
+		"type": "minecraft:biome"
+    }
+  ]
+}

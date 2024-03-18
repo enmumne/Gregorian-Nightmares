@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SPS",
+    "TcT",
+    "SPS"
+  ],
+  "key": {
+  	"P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "modern_industrialization:steel_rod"
+    },
+    "c": {
+      "item": "modern_industrialization:motor"
+    },
+    "T": {
+      "item": "geggy:hardened_plank"
+    }
+  },
+  "result": {
+    "item": "toms_storage:ts.inventory_cable"
+  }
+}

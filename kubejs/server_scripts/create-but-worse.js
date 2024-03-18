@@ -1,6 +1,8 @@
 ServerEvents.recipes(event => {
-	
+		
 	event.remove([
+		"create:crafting/kinetics/mechanical_pump",
+		"create:crafting/kinetics/spout",
 		"create:crafting/kinetics/large_cogwheel_from_little",
 		"create:crafting/kinetics/mechanical_press",
 		"create:crafting/kinetics/smart_chute",
@@ -20,6 +22,9 @@ ServerEvents.recipes(event => {
 		"minecraft:dried_kelp_block",
 		"create:crafting/kinetics/piston_extension_pole",
 		"create:crafting/kinetics/cogwheel",
+		"create:crafting/kinetics/white_sail",
+		"create:crafting/kinetics/white_sailfrom_conversion",
+		"create:crafting/kinetics/sail_framefrom_conversion",
 		"create:deploying/cogwheel",
 		"create:deploying/large_cogwheel",
 		"create:crafting/kinetics/large_cogwheel",
@@ -34,8 +39,7 @@ ServerEvents.recipes(event => {
 		"create:crushing/diorite",
 		"create:crushing/diorite_recycling",
 		"create:crushing/prismarine_crystals",
-		"create:splashing/soul_sand"
-		
+		"create:splashing/soul_sand"		
 	])
 	
 	event.shaped('create:mechanical_press', [
@@ -142,12 +146,11 @@ ServerEvents.recipes(event => {
 		D: 'create:shaft'
 	})
 	event.shaped('create:millstone', [
-		'DAD',
+		'DDD',
 		'DBD',
 		'CCC'
 	], {
-		A: 'geggy:cogwheel',
-		B: 'create:andesite_casing',
+		B: 'create:andesite_encased_cogwheel',
 		C: 'minecraft:smooth_stone_slab',
 		D: 'minecraft:stone_button'
 	})
@@ -201,12 +204,11 @@ ServerEvents.recipes(event => {
 	
 	event.shaped('create:mechanical_mixer', [
 		' D ',
-		'CBC',
+		' B ',
 		' A '
 	], {
 		A: 'create:whisk',
-		B: 'create:andesite_casing',
-		C: 'geggy:cogwheel',
+		B: 'create:andesite_encased_cogwheel',
 		D: 'create:piston_extension_pole'
 	})
 	
@@ -629,21 +631,17 @@ ServerEvents.recipes(event => {
 	)
 	
 	// craft mechanical pump, geggy cog
-	
-	event.remove({id: 'create:crafting/kinetics/mechanical_pump'})
 	event.shaped('create:mechanical_pump', [
 		'ABC',
 		'   ',
 		'   '
 	], {
-		A: 'geggy:cogwheel',
+		A: 'create:cogwheel',
 		B: 'create:andesite_alloy',
 		C: 'create:fluid_pipe'
 	})
 	
 	// craft spout
-	
-	event.remove({id: 'create:crafting/kinetics/spout'})
 	event.custom({
 		type: "create:item_application",
 		ingredients: [
@@ -1455,7 +1453,7 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "geggy:unrefined_clay"}
 		],
-		"processingTime": 100,
+		"processingTime": 30,
 		"results": [
 			{"item": "geggy:clay_dust", "chance": 0.08},
 			{"item": "geggy:gravel_dust"}
@@ -1497,7 +1495,7 @@ ServerEvents.recipes(event => {
 		"results": [
 			{"item": "geggy:andesite_dust"},
 			{"item": "geggy:andesite_dust", "chance": 0.5},
-			{"count": 8, "item": "geggy:gravel_dust", "chance": 0.8}
+			{"count": 4, "item": "geggy:gravel_dust", "chance": 0.8}
 		]
 	})
 	event.shapeless('geggy:andesite_dust', ['minecraft:andesite', 'minecraft:andesite', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
@@ -1707,12 +1705,9 @@ ServerEvents.recipes(event => {
 	})
 	
 	// sails
-	event.remove({id: 'create:crafting/kinetics/white_sail'})
-	event.remove({id: 'create:crafting/kinetics/white_sailfrom_conversion'})
-	event.remove({id: 'create:crafting/kinetics/sail_framefrom_conversion'})
 	event.shaped('create:white_sail', [
 		'AB ',
-		'A  ',
+		'   ',
 		'   '
 	], {
 		A: 'geggy:linen',
@@ -1720,8 +1715,8 @@ ServerEvents.recipes(event => {
 	})
 	event.shaped('create:white_sail', [
 		'BAB',
-		'BAB',
-		' C '
+		'BCB',
+		'   '
 	], {
 		A: 'geggy:linen',
 		B: 'minecraft:stick',
@@ -1935,7 +1930,7 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "modern_industrialization:lignite_coal"}
 		],
-		"processingTime": 200,
+		"processingTime": 100,
 		"results": [
 			{"count": 1, "item": "modern_industrialization:lignite_coal_crushed_dust"}
 		]
@@ -2043,6 +2038,7 @@ ServerEvents.recipes(event => {
 	
 	// brass encased large cogwheel for arm
 	event.shapeless('create:brass_encased_large_cogwheel', ['create:large_cogwheel','create:brass_casing'])
+	event.shapeless('create:andesite_encased_cogwheel', ['create:cogwheel','create:andesite_casing'])
 	
 	// MD pipes
 	event.custom({
@@ -2386,7 +2382,7 @@ ServerEvents.recipes(event => {
 		"result": {"item": "geggy:low_grade_resin"}
 	})
 	
-	// misc recycle
+	// misc recycle, at 14% every 64 stack of netherrack = 1 quartz dust
 	event.custom({
 		"type": "create:milling",
 		"ingredients": [
@@ -2395,7 +2391,8 @@ ServerEvents.recipes(event => {
 		"processingTime": 200,
 		"results": [
 			{"item": "geggy:netherrack_dust"},
-			{"item": "geggy:netherrack_dust", "chance": 0.25}
+			{"item": "geggy:netherrack_dust", "chance": 0.25},
+			{"item": "modern_industrialization:quartz_tiny_dust", "chance": 0.14}
 		]
 	})
 	// harder soulsand
@@ -2420,14 +2417,14 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:milling",
 		"ingredients": [
-			{"tag": "cork"},{"tag": "cork"},{"tag": "cork"},
-			{"tag": "cork"},{"tag": "cork"}
+			{"tag": "cork"}
 		],
 		"processingTime": 100,
 		"results": [
-			{"item": "geggy:ground_tree_bark"}
+			{"item": "geggy:tree_bark_dust"}
 		]
 	})
+	event.shapeless('geggy:ground_tree_bark', [ '5x geggy:tree_bark_dust'])
 	event.custom({
 		"type": "create:mixing",
 		"ingredients": [
@@ -2510,14 +2507,11 @@ ServerEvents.recipes(event => {
 		"ingredients": [
 			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
 			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
-			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
-			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
-			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
-			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},
-			{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"},{"item": "geghilarity:precious_nugget"}
+			{"item": "geghilarity:precious_nugget"}
 		],
-		"results": [{"item": "minecraft:gold_nugget"}]
+		"results": [{"item": "geggy:gold_chip"}]
 	})
+	event.shapeless('minecraft:gold_nugget', [ '3x geggy:gold_chip'])
 	
 	// reinforced
 	event.custom({

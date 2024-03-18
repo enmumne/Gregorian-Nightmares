@@ -838,5 +838,6 @@ ServerEvents.tags('item', event => {
   
   event.add('c:hidden_from_recipe_viewers', 'vinery:cooking_pot')
   event.add('c:hidden_from_recipe_viewers', 'oxidized:copper_nugget')
+  event.add('c:hidden_from_recipe_viewers', 'twilightforest:uncrafting_table')
   
 });

@@ -65,6 +65,13 @@ ServerEvents.recipes(event => {
 	
 	event.shapeless('minecraft:clay_ball', ['geggy:clay_dust', 'geggy:clay_dust', 'kibe:water_wooden_bucket']).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
 	event.shapeless('minecraft:clay_ball', ['geggy:clay_dust', 'geggy:clay_dust', 'minecraft:water_bucket']).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+	
+	event.shapeless('geggy:j_planks', ['#c:axes', 'create:andesite_casing']).damageIngredient('#c:axes').replaceIngredient('create:andesite_casing', 'geggy:andesite_casing_5')
+	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_5']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_5', 'geggy:andesite_casing_4')
+	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_4']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_4', 'geggy:andesite_casing_3')
+	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_3']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_3', 'geggy:andesite_casing_2')
+	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_2']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_2', 'geggy:andesite_casing_1')
+	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_1']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_1', 'geggy:andesite_block')
 
 	event.shaped('geggy:unfinished_bucket', [
 		'A A',

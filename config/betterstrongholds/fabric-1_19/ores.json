@@ -1,0 +1,14 @@
+{
+  "oreChances": {
+    "entries": {
+      "minecraft:iron_ore": 0.2,
+      "modern_industrialization:nickel_ore": 0.2,
+      "minecraft:lapis_ore": 0.05,
+      "minecraft:emerald_ore": 0.02,
+      "minecraft:redstone_ore[lit=false]": 0.15,
+	  "modern_industrialization:tin_ore": 0.2,
+      "minecraft:coal_ore": 0.2
+    },
+    "defaultBlock": "minecraft:coal_ore"
+  }
+}

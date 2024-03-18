@@ -40,10 +40,10 @@ ItemEvents.modification(event => {
 /*   uses  
 	Wooden: 60 > 50
     Stone: 132 > 100
-    Iron: 251 > 400
+    Iron: 251 > 400 
     Golden: 33 > 52
-    Diamond: 1562 > 2000
-    Netherite: 2032 > 2500
+    Diamond: 1562 > 2000 > reset
+    Netherite: 2032 > 2500 > reset
 	
 	diamond: obsidian, ancient debris
 	iron: redstone, diamond, emerald, gold (precious only need stone), 
@@ -126,99 +126,40 @@ ItemEvents.modification(event => {
     event.modify('minecraft:iron_pickaxe', pickaxe => {
         pickaxe.setMaxDamage(400)
     })
-
     event.modify('minecraft:golden_pickaxe', pickaxe => {
         pickaxe.setMaxDamage(52)
-    })
-
-    event.modify('minecraft:diamond_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(2000)
-    })
-
-
-    event.modify('minecraft:netherite_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(2500)
     })
 
 
     event.modify('minecraft:iron_axe', axe => {
         axe.setMaxDamage(400)
     })
-	
-
     event.modify('minecraft:golden_axe', axe => {
         axe.setMaxDamage(52)
-    })
-
-
-    event.modify('minecraft:diamond_axe', axe => {
-        axe.setMaxDamage(2000)
-    })
-
-
-    event.modify('minecraft:netherite_axe', axe => {
-        axe.setMaxDamage(2500)
     })
 
 
     event.modify('minecraft:iron_sword', sword => {
         sword.setMaxDamage(400)
     })
-
     event.modify('minecraft:golden_sword', sword => {
         sword.setMaxDamage(52)
     })
-
-
-    event.modify('minecraft:diamond_sword', sword => {
-        sword.setMaxDamage(2000)
-    })
-
-
-    event.modify('minecraft:netherite_sword', sword => {
-        sword.setMaxDamage(2500)
-    })
-
-
+	
 
     event.modify('minecraft:iron_hoe', hoe => {
         hoe.setMaxDamage(400)
     })
-
-
     event.modify('minecraft:golden_hoe', hoe => {
         hoe.setMaxDamage(52)
     })
-
-
-    event.modify('minecraft:diamond_hoe', hoe => {
-        hoe.setMaxDamage(2000)
-    })
-
-
-    event.modify('minecraft:netherite_hoe', hoe => {
-        hoe.setMaxDamage(2500)
-    })
-
-
+	
 
     event.modify('minecraft:iron_shovel', shovel => {
         shovel.setMaxDamage(400)
     })
-
-
     event.modify('minecraft:golden_shovel', shovel => {
         shovel.setMaxDamage(52)
-    })
-
-
-    event.modify('minecraft:diamond_shovel', shovel => {
-        shovel.setMaxDamage(2000)
-    })
-
-
-    event.modify('minecraft:netherite_shovel', shovel => {
-        shovel.setMaxDamage(2500)
     })
 
 
@@ -227,7 +168,7 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:turtle_helmet', helmet => {
-        helmet.setMaxDamage(450)
+        helmet.setMaxDamage(350)
     })
 
 
@@ -258,26 +199,6 @@ ItemEvents.modification(event => {
 // diamond 363, 528, 495, 429
 
 
-    event.modify('minecraft:diamond_helmet', helmet => {
-        helmet.setMaxDamage(550)
-    })
-
-
-    event.modify('minecraft:diamond_chestplate', chestplate => {
-        chestplate.setMaxDamage(700)
-    })
-
-
-    event.modify('minecraft:diamond_leggings', leggings => {
-        leggings.setMaxDamage(650)
-    })
-
-
-    event.modify('minecraft:diamond_boots', boots => {
-        boots.setMaxDamage(550)
-    })
-
-
 // chainmail 165, 240, 225, 195
 // bop??
 
@@ -286,53 +207,33 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:iron_helmet', helmet => {
-        helmet.setMaxDamage(240)
+        helmet.setMaxDamage(220)
     })
 
 
     event.modify('minecraft:iron_chestplate', chestplate => {
-        chestplate.setMaxDamage(400)
+        chestplate.setMaxDamage(360)
     })
 
 
     event.modify('minecraft:iron_leggings', leggings => {
-        leggings.setMaxDamage(350)
+        leggings.setMaxDamage(320)
     })
 
 
     event.modify('minecraft:iron_boots', boots => {
-        boots.setMaxDamage(300)
+        boots.setMaxDamage(260)
     })
 
 
 // netherite 407, 592, 555, 481
 
 
-    event.modify('minecraft:netherite_helmet', helmet => {
-        helmet.setMaxDamage(650)
-    })
-
-
-    event.modify('minecraft:netherite_chestplate', chestplate => {
-        chestplate.setMaxDamage(850)
-    })
-
-
-    event.modify('minecraft:netherite_leggings', leggings => {
-        leggings.setMaxDamage(780)
-    })
-
-
-    event.modify('minecraft:netherite_boots', boots => {
-        boots.setMaxDamage(680)
-    })
-
-
 // golden 77, 112, 105, 91
 
 
     event.modify('minecraft:golden_helmet', helmet => {
-        helmet.setMaxDamage(120)
+        helmet.setMaxDamage(100)
     })
 
 
@@ -759,6 +660,7 @@ event.create('geggy:naquadria_foil')
 
 event.create('geggy:uncorked_glass_bottle')
 event.create('geggy:bottle_cork')
+event.create('geggy:tree_bark_dust')
 event.create('geggy:ground_tree_bark')
 event.create('geggy:mixed_cork')
 event.create('geggy:pressed_cork')
@@ -815,6 +717,8 @@ event.create('geggy:incomplete_galvanized_machine_casing')
 
 event.create('geggy:steel_minecart_wheels')
 event.create('geggy:hardened_stick')
+
+event.create('geggy:gold_chip')
 
 /*
 .tooltip('§8')

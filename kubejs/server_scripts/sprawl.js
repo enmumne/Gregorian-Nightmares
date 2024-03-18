@@ -16,17 +16,27 @@ ServerEvents.recipes(event => {
 		"minecraft:detector_rail",
 		"minecraft:barrel",
 		"minecraft:black_concrete_powder",
+		"charm:variant_chests/hopper",
 		"create:crafting/kinetics/controller_rail",
 	    "modern_industrialization:trash_can",
 		"modern_industrialization:trash_can_assembler",
 		"minecraft:ender_chest",
 		"minecraft:compass",
 		"create:crafting/appliances/slime_ball",
+		"kibe:wooden_bucket",
 		"kibe:trash_can",
+		"kibe:pocket_trash_can",
+		"kibe:pocket_crafting_table",
 		"kibe:entangled_tank",
 		"kibe:entangled_bag",
 		"kibe:void_bucket",
 		"kibe:big_torch",
+		"kibe:cobblestone_generator_mk1",
+		"kibe:cobblestone_generator_mk2",
+		"kibe:cobblestone_generator_mk3",
+		"kibe:cobblestone_generator_mk4",
+		"kibe:cobblestone_generator_mk5",
+		"magick:blaze_powder",
 		"supplementaries:wrench",
 		"extended_drawers:connector",
 		"extended_drawers:access_point",
@@ -55,6 +65,9 @@ ServerEvents.recipes(event => {
 		"modern_industrialization:materials/stainless_steel/assembler/barrel",
 		"modern_industrialization:materials/steel/assembler/barrel",
 		"modern_industrialization:materials/titanium/assembler/barrel",
+		"modern_industrialization:materials/coal/craft/tiny_dust_from_dust",
+		"modern_industrialization:materials/lignite_coal/compressor/lignite_coal",
+		"modern_industrialization:materials/macerator/lignite_coal_crushed_to_dust",
 		"modern_industrialization:vanilla_recipes/assembler/chest",
 		"modern_industrialization:vanilla_recipes/assembler/rail",
 		"modern_industrialization:vanilla_recipes/assembler/powered_rail",
@@ -73,7 +86,16 @@ ServerEvents.recipes(event => {
 		"modern_industrialization:tools/steam_mining_drill"
 	])
 	
-	event.shapeless('4x geggy:small_coal_dust', [ 'modern_industrialization:coal_dust'])
+	event.shaped('4x geggy:small_coal_dust', [
+		' A'
+	], {
+		A: 'modern_industrialization:coal_dust'
+	}).noMirror().noShrink()
+	event.shaped('9x modern_industrialization:coal_tiny_dust', [
+		'A '
+	], {
+		A: 'modern_industrialization:coal_dust'
+	}).noMirror().noShrink()
 	event.shaped('modern_industrialization:coal_dust', [
 		'AA ',
 		'AA ',
@@ -220,7 +242,6 @@ ServerEvents.recipes(event => {
 	})
 	*/
 	// kibe bucket 
-	event.remove({id: 'kibe:wooden_bucket'})
 	event.shaped('kibe:wooden_bucket', [
 		'S S',
 		' S ',
@@ -254,7 +275,8 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'geggy:linen'
 	})
-	event.shapeless('supplementaries:flax_seeds', ['supplementaries:wild_flax', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('2x supplementaries:flax_seeds', ['supplementaries:wild_flax', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('2x supplementaries:flax_seeds', ['supplementaries:flax', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	event.shapeless('geggy:fiber', ['supplementaries:flax'])
 	
 	event.custom({
@@ -266,12 +288,13 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.shaped('geggy:twine', [
-		'AA ',
+		'AAB',
 		'AA ',
 		'   '
 	], {
-		A: 'geggy:dried_fiber'
-	})
+		A: 'geggy:dried_fiber',
+		B: 'minecraft:stick'
+	}).replaceIngredient('minecraft:stick', 'minecraft:stick')
 	
 	// sails
 	event.shaped('geggy:linen', [
@@ -342,7 +365,7 @@ ServerEvents.recipes(event => {
 			{"type": "farmersdelight:tool",
 			"item": "create:filter"},
 		"result": [
-			{ "item": "geggy:dried_fiber", "count": 1, "chance": 0.08}
+			{ "item": "geggy:dried_fiber", "count": 1, "chance": 0.16}
 		]//,
 		//"sound": "minecraft:item.axe.strip"
 	})
@@ -1207,7 +1230,6 @@ ServerEvents.recipes(event => {
 	
 	// funny cobblestone generators
 	
-	event.remove({id: 'kibe:cobblestone_generator_mk1'})
 	event.shaped('kibe:cobblestone_generator_mk1', [
 		'AAA',
 		'DCE',
@@ -1219,7 +1241,6 @@ ServerEvents.recipes(event => {
 		D: 'minecraft:water_bucket',
 		E: 'minecraft:lava_bucket'
 	})
-	event.remove({id: 'kibe:cobblestone_generator_mk2'})
 	event.shaped('kibe:cobblestone_generator_mk2', [
 		' A ',
 		'ABA',
@@ -1228,7 +1249,6 @@ ServerEvents.recipes(event => {
 		A: 'kibe:cobblestone_generator_mk1',
 		B: 'minecraft:nether_star'
 	})
-	event.remove({id: 'kibe:cobblestone_generator_mk3'})
 	event.shaped('kibe:cobblestone_generator_mk3', [
 		' A ',
 		'ABA',
@@ -1237,7 +1257,6 @@ ServerEvents.recipes(event => {
 		A: 'kibe:cobblestone_generator_mk2',
 		B: 'minecraft:nether_star'
 	})
-	event.remove({id: 'kibe:cobblestone_generator_mk4'})
 	event.shaped('kibe:cobblestone_generator_mk4', [
 		' A ',
 		'ABA',
@@ -1246,7 +1265,6 @@ ServerEvents.recipes(event => {
 		A: 'kibe:cobblestone_generator_mk3',
 		B: 'minecraft:nether_star'
 	})
-	event.remove({id: 'kibe:cobblestone_generator_mk5'})
 	event.shaped('kibe:cobblestone_generator_mk5', [
 		' A ',
 		'ABA',
@@ -1659,6 +1677,7 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.smelting('geggy:tempered_brick', 'geggy:unfired_tempered_brick').cookingTime(1200)
+	event.blasting('geggy:tempered_brick', 'geggy:unfired_tempered_dust').cookingTime(1200)
 	event.remove({id: 'minecraft:blast_furnace'})
 	event.remove({id: 'modern_industrialization:vanilla_recipes/blast_furnace_asbl'})
 	event.remove({id: 'modern_industrialization:assembler_generated/vanilla_recipes/blast_furnace'})
@@ -1786,18 +1805,21 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:shaft"})
-	event.shaped('create:shaft', [
-		' A ',
-		' A ',
-		' A '
-	], {
-		A: 'create:andesite_alloy'
-	})
-	event.remove({type: "create:cutting", output: "create:shaft"})
 	event.custom({
-			"type": "create:cutting",
-			"ingredients": [{"item": "create:andesite_alloy"}],
-			"results": [{"item": "create:shaft", "count": 2}]
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "create:andesite_alloy"}
+		],
+		"tool": {
+			"type": "farmersdelight:tool",
+			"tag": "c:tools/axes"
+		},
+		"result": [
+			{"chance": 0.9, "count": 1, "item": "create:shaft"},
+			{"chance": 0.4, "count": 1, "item": "create:shaft"},
+			{"chance": 0.2, "count": 1, "item": "create:shaft"}
+		],
+		"sound": "minecraft:entity.item.break"
 	})
 	
 	event.remove({type: "minecraft:crafting_shaped", output: "create:hand_crank"})
@@ -4470,7 +4492,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 200,
 		item_inputs: [ 
 			{item: "geggy:glass_dust", amount: 1},
-			{item: "geggy:mold_ball", amount: 1}
+			{item: "geggy:mold_ball", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:glass_tube", amount: 1}
@@ -4636,7 +4658,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:cobalt_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:cobalt_catalyst_pellet", amount: 4}
@@ -4657,7 +4679,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:palladium_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:palladium_catalyst_pellet", amount: 4}
@@ -4678,7 +4700,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "modern_industrialization:platinum_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:platinum_catalyst_pellet", amount: 4}
@@ -4699,7 +4721,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "modern_industrialization:nickel_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:nickel_catalyst_pellet", amount: 4}
@@ -4720,7 +4742,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "modern_industrialization:copper_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:copper_catalyst_pellet", amount: 4}
@@ -4741,7 +4763,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:iron_iii_oxide_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:iron_iii_oxide_catalyst_pellet", amount: 4}
@@ -4762,7 +4784,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:copper_ii_chloride_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:copper_ii_chloride_catalyst_pellet", amount: 4}
@@ -4783,7 +4805,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:tantalum_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:tantalum_catalyst_pellet", amount: 4}
@@ -4804,7 +4826,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:alumina", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:alumina_catalyst_pellet", amount: 4}
@@ -4825,7 +4847,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "modern_industrialization:silver_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:silver_catalyst_pellet", amount: 4}
@@ -4846,7 +4868,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 64,
 		item_inputs: [ 
 			{item: "geghilarity:zsm5_dust", amount: 1},
-			{item: "geggy:mold_nugget", amount: 1}
+			{item: "geggy:mold_nugget", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geghilarity:zsm5_catalyst_pellet", amount: 4}
@@ -7250,6 +7272,31 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		],
 		item_outputs: [
 			{item: "minecraft:black_concrete_powder", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:compressor",
+		eu: 2,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:lignite_coal_dust", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:lignite_coal", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:macerator",
+		eu: 2,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:lignite_coal_crushed_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:lignite_coal_dust", amount: 1},
+			{item: "modern_industrialization:lignite_coal_dust", amount: 1, probability: 0.5},
+			{item: "modern_industrialization:sulfur_dust", amount: 1, probability: 0.33}
 		]
 	})
 	

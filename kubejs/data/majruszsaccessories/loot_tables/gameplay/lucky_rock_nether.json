@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+	    {
+          "type": "minecraft:item",
+          "name": "geggy:netherrack_dust",
+          "weight": 72,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "modern_industrialization:sulfur_tiny_dust",
+          "weight": 3,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "geggy:small_coal_dust",
+          "weight": 5,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "weight": 5,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:crimson_roots",
+          "weight": 5,
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geghilarity:precious_nugget",
+          "weight": 5,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "modern_industrialization:quartz_tiny_dust",
+          "weight": 5,
+          "quality": 1
+        }
+      ]
+    }
+  ]
+}

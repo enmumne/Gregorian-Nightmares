@@ -83,6 +83,8 @@ ServerEvents.tags('item', event => {
   event.add('c:hidden_from_recipe_viewers', 'create:iron_sheet')
   event.add('c:hidden_from_recipe_viewers', 'create:golden_sheet')
   event.add('c:hidden_from_recipe_viewers', 'kibe:trash_can')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:pocket_trash_can')
+  event.add('c:hidden_from_recipe_viewers', 'kibe:pocket_crafting_table')
   event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_bag')
   event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_tank')
   event.add('c:hidden_from_recipe_viewers', 'kibe:entangled_bucket')
@@ -106,6 +108,8 @@ ServerEvents.tags('item', event => {
   event.remove('c:iron_rods', 'ad_astra:iron_rod')
   event.remove('c:steel_nuggets', 'ad_astra:steel_nugget')
   event.remove('c:nuggets', 'ad_astra:steel_nugget')
+  
+  event.add('c:iron_rods', 'modern_industrialization:iron_rod')
   
 });
 
@@ -532,6 +536,15 @@ event.custom (
   event.shapeless('minecraft:diamond_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_diamond_boots'])
   
   event.shaped('geggy:flint_pickaxe', [
+    'SB ',
+    'AS ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod',
+	B: '#c:cobblestone'
+  }).noMirror()
+  event.shaped('geggy:flint_pickaxe', [
     'SS ',
     'AS ',
     '   '
@@ -570,6 +583,15 @@ event.custom (
   ], {
     S: 'minecraft:flint',
 	A: 'geggy:j_tool_rod'
+  }).noMirror()
+  event.shaped('geggy:flint_axe', [
+    'SB ',
+    'SA ',
+    '   '
+  ], {
+    S: 'minecraft:flint',
+	A: 'geggy:j_tool_rod',
+	B: '#c:cobblestone'
   }).noMirror()
   
   event.shaped('geggy:reinforced_flint_pickaxe', [

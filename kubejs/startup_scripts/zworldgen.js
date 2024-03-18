@@ -316,7 +316,7 @@ WorldgenEvents.remove(event => {
 
     // BlockStatePredicate to remove iron and copper ores from the given biomes
     // Note tags may NOT be used here, unfortunately...
-    props.blocks = ['modern_industrialization:iridium_ore', 'modern_industrialization:deepslate_iridium_ore', 'modern_industrialization:titanium_ore', 'modern_industrialization:deepslate_titanium_ore', 'minecraft:nether_gold_ore']
+    props.blocks = ['create_new_age:magnetite_block', 'create_new_age:thorium_ore', 'modern_industrialization:iridium_ore', 'modern_industrialization:deepslate_iridium_ore', 'modern_industrialization:titanium_ore', 'modern_industrialization:deepslate_titanium_ore', 'minecraft:nether_gold_ore']
   })
   
   /*
@@ -377,6 +377,7 @@ WorldgenEvents.add(event => {
 	
 	event.addOre((ore) => {
 		ore.id = 'geggy:owgold1'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:precious_ore'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:deepslate_precious_ore'),
 		
@@ -396,6 +397,7 @@ WorldgenEvents.add(event => {
 	
 	event.addOre((ore) => {
 		ore.id = 'geggy:nethergold1'
+		ore.biomes = '#minecraft:is_nether'
 		ore.addTarget('minecraft:netherrack', 'geggy:nether_precious_ore')
 		
 		ore.count([10])
@@ -413,6 +415,7 @@ WorldgenEvents.add(event => {
 	
 	event.addOre((ore) => {
 		ore.id = 'geggy:nethergoldeltas2'
+		ore.biomes = '#minecraft:is_nether'
 		ore.biomes = { id: 'minecraft:basalt_deltas' }
 		ore.addTarget('minecraft:netherrack', 'geggy:nether_precious_ore')
 		
@@ -432,6 +435,7 @@ WorldgenEvents.add(event => {
 	// INFINITE ORE NODES
 	event.addOre((ore) => {
 		ore.id = 'geggy:ironinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:iron_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:iron_corenode'),
 		
@@ -444,12 +448,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		//ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:ironinfup'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:iron_corenode'),
 		
 		ore.count([1])		
@@ -461,16 +466,17 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		//ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:copperinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:copper_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:copper_corenode'),
 		
-		ore.count([2])
+		ore.count([1])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(0),
@@ -484,6 +490,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:copperinfup'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:copper_corenode'),
 		
 		ore.count([1])
@@ -500,6 +507,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:tininf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:tin_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:tin_corenode'),
 		
@@ -517,6 +525,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:tininfup'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:tin_corenode'),
 		
 		ore.count([1])
@@ -533,6 +542,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:coalinf_a'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:coal_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:coal_corenode'),
 		
@@ -544,16 +554,17 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:coalinf_b'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:coal_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:coal_corenode'),
 		
-		ore.count([3])
+		ore.count([2])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(32),
@@ -567,6 +578,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:antimonyinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:antimony_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:antimony_corenode'),
 		
@@ -578,12 +590,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 2
+		ore.chance = 3
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:bauxiteinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:bauxite_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:bauxite_corenode'),
 		
@@ -595,12 +608,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:bauxiteinfup'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:bauxite_corenode'),
 		
 		ore.count([1])
@@ -617,6 +631,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:leadinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:lead_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:lead_corenode'),
 		
@@ -628,12 +643,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:leadinfup'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:lead_corenode'),
 		
 		ore.count([1])
@@ -644,16 +660,17 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:ligniteinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:lignite_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:lignite_corenode'),
 		
-		ore.count([2])
+		ore.count([1])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(0),
@@ -667,6 +684,7 @@ WorldgenEvents.add(event => {
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:mozaniteinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:mozanite_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:mozanite_corenode'),
 		
@@ -678,12 +696,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 2
+		ore.chance = 3
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:nickelinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:nickel_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:nickel_corenode'),
 		
@@ -695,12 +714,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		//ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:zincinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:zinc_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:zinc_corenode'),
 		
@@ -712,12 +732,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		//ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:saltinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:salt_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:salt_corenode'),
 		
@@ -729,12 +750,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:saltinfdown'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:salt_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:salt_corenode'),
 		
@@ -746,12 +768,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:tungsteninf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:tungsten_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:tungsten_corenode'),
 		
@@ -763,12 +786,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5
-		ore.chance = 3
+		ore.chance = 4
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:uraniuminf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:uranium_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:uranium_corenode'),
 		
@@ -780,12 +804,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 3
+		ore.chance = 4
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:preciousinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:precious_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:precious_corenode'),
 		
@@ -797,12 +822,13 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 1
+		ore.chance = 2
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:redstoneinf'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'geggy:redstone_corenode'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'geggy:redstone_corenode'),
 		
@@ -814,15 +840,16 @@ WorldgenEvents.add(event => {
 			)								 
 				
         ore.size = 5 
-		ore.chance = 2
+		ore.chance = 3
         ore.noSurface = 0.0 
         ore.worldgenLayer = "underground_ores"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:quartzinf'
+		ore.biomes = '#minecraft:is_nether'
 		ore.addTarget('minecraft:netherrack', 'geggy:quartz_corenode')
 		
-		ore.count([5])
+		ore.count([4])
 			.squared()
 			.uniformHeight(
 				anchors.aboveBottom(10),
@@ -837,6 +864,7 @@ WorldgenEvents.add(event => {
 	// new oil
 	event.addOre((ore) => {
 		ore.id = 'geggy:oil'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#c:sand', 'geggy:oilsands_corenode'),
 		ore.addTarget('#c:sandstone', 'geggy:oilsands_corenode'),
 		
@@ -847,12 +875,13 @@ WorldgenEvents.add(event => {
 				anchors.absolute(100)	 
 			)								 
 				
-        ore.size = 9 
+        ore.size = 8 
         ore.noSurface = 0.0  
         ore.worldgenLayer = "underground_decoration"		
 	})
 	event.addOre((ore) => {
 		ore.id = 'geggy:gas1'
+		ore.biomes = '#minecraft:is_nether'
 		ore.addTarget('minecraft:netherrack', 'geggy:gaseous_corenode')
 		
 		ore.count([3])
@@ -889,10 +918,11 @@ WorldgenEvents.add(event => {
 	// andesite extra
 	event.addOre((ore) => {
 		ore.id = 'geggy:andesite_extra'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:andesite'),
 		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'minecraft:andesite'),
 		
-		ore.count([4])
+		ore.count([3])
 			.squared()
 			.uniformHeight(
 				anchors.absolute(-15),
@@ -907,6 +937,7 @@ WorldgenEvents.add(event => {
 	// redstone extra
 	event.addOre((ore) => {
 		ore.id = 'geggy:redstone_extra'
+		ore.biomes = '#minecraft:is_overworld'
 		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:redstone_ore')
 		
 		ore.count([5])

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "m": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "pattern": [
+    "mmm"
+  ],
+  "result": {
+    "item": "createdeco:andesite_trapdoor"
+  }
+}

@@ -4,6 +4,7 @@ LootJS.modifiers(event => {
     // blocks
     event.addLootTypeModifier(LootType.BLOCK).replaceLoot("minecraft:raw_gold", LootEntry.of("geghilarity:precious_nugget").limitCount([1, 10]))
         .removeLoot("artifacts:everlasting_beef")
+		.removeLoot("artifacts:night_vision_goggles")
         .removeLoot("minecraft:iron_horse_armor")
         .removeLoot("minecraft:golden_horse_armor")
         .removeLoot("minecraft:diamond_horse_armor")
@@ -48,6 +49,7 @@ LootJS.modifiers(event => {
     // chests
     event.addLootTypeModifier(LootType.CHEST)
         .removeLoot("artifacts:everlasting_beef")
+		.removeLoot("artifacts:night_vision_goggles")
         .removeLoot("minecraft:iron_horse_armor")
         .removeLoot("minecraft:golden_horse_armor")
         .removeLoot("minecraft:diamond_horse_armor")
@@ -79,6 +81,7 @@ LootJS.modifiers(event => {
     // entities
     event.addLootTypeModifier(LootType.ENTITY)
         .removeLoot("artifacts:everlasting_beef")
+		.removeLoot("artifacts:night_vision_goggles")
         .removeLoot("minecraft:iron_horse_armor")
         .removeLoot("minecraft:golden_horse_armor")
         .removeLoot("minecraft:diamond_horse_armor")

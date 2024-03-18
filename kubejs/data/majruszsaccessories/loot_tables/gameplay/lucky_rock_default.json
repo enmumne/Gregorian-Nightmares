@@ -1,0 +1,170 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint",
+          "weight": 5,
+          "quality": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "weight": 5,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geggy:gravel_dust",
+          "weight": 5,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "weight": 5,
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geggy:small_coal_dust",
+          "weight": 12,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+		{
+          "type": "minecraft:item",
+          "name": "modern_industrialization:coal_tiny_dust",
+          "weight": 8,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 4.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "modern_industrialization:lignite_coal",
+          "weight": 9,
+          "quality": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "modern_industrialization:sulfur_tiny_dust",
+          "weight": 1,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "geggy:limestone_dust",
+          "weight": 3,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "magick:calcite_dust",
+          "weight": 2,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:raw_iron",
+          "weight": 6,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:raw_copper",
+          "weight": 10,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "modern_industrialization:raw_tin",
+          "weight": 10,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "modern_industrialization:raw_lead",
+          "weight": 6,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "create:raw_zinc",
+          "weight": 6,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "modern_industrialization:salt_dust",
+          "weight": 6,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:bone_meal",
+          "weight": 4,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 4,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 2,
+          "quality": 1
+        },
+		{
+          "type": "minecraft:item",
+          "name": "geggy:diamond_shards",
+          "weight": 1,
+          "quality": 1
+        }
+      ]
+    }
+  ]
+}

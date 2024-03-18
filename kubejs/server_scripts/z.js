@@ -3,8 +3,20 @@ PlayerEvents.loggedIn(event => {
 		event.player.give(Item.of('ftbquests:book'))
 		//Utils.server.runCommand(`gamerule doInsomnia false`)
 		event.player.stages.add('wfirst')
-	}
+	}	
+		
+	let data2 = event.server.persistentData
+	if (!data2.contains("loadedfog")) {
+		event.server.runCommandSilent('function watching:config/start_delay/add')
+		event.server.runCommandSilent('function watching:config/start_delay/add')
+		event.server.runCommandSilent('function watching:config/sighting_chance/3_rare')
+		event.server.runCommandSilent('function watching:config/randomize_skins/true')
+		event.server.runCommandSilent('function watching:config/nametag/off')
+		event.server.runCommandSilent('function watching:config/burning_base/true')
+		data2.putBoolean("loadedfog", true)
+    }
 });	
+
 
 ServerEvents.loaded(event => {
 	Utils.server.runCommand('gamerule doTraderSpawning false')
@@ -14,6 +26,7 @@ ServerEvents.loaded(event => {
     }
     data.putBoolean("loaded", true)
 })
+
 
 
 //ServerEvents.loaded(e => e.server.runCommandSilent('reload'))

@@ -1,0 +1,14 @@
+{
+  "blockChances": {
+    "entries": {
+      "minecraft:quartz_block": 0.1,
+	  "minecraft:raw_copper_block": 0.3,
+	  "create:andesite_alloy_block": 0.1,
+	  "create:zinc_block": 0.1,
+	  "modern_industrialization:lead_block": 0.1,
+	  "modern_industrialization:tin_block": 0.3,
+      "minecraft:coal_block": 0.2
+    },
+    "defaultBlock": "minecraft:coal_block"
+  }
+}

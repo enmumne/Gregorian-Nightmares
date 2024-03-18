@@ -13,6 +13,7 @@ ServerEvents.recipes(event => {
 		"betternether:glass_bottle",
 		"betternether:shield",
 		"bclib:tag_shield",
+		"bclib:tag_hopper",
 		"betternether:sugar",
 		"betterend:sugar_from_root"
 	])
