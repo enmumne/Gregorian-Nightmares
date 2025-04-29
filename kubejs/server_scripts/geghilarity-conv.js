@@ -15,6 +15,8 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 	event.custom({ 
 		type: "modern_industrialization:unpacker", eu: 4, duration: 100,item_inputs: [{item: "geghilarity:platinum_metallic_powder_dust", amount: 1}],
 			item_outputs: [{item: "geghilarity:tiny_platinum_metallic_powder_dust", amount: 9}]})
+			
+	event.shapeless('9x geggy:flint_dust_tiny', [ 'geggy:flint_dust'])		
 	
 	event.shapeless('geghilarity:platinum_residue_dust', [ '4x geghilarity:small_platinum_residue_dust'])
 	event.shapeless('geghilarity:platinum_residue_dust', [ '9x geghilarity:tiny_platinum_residue_dust'])

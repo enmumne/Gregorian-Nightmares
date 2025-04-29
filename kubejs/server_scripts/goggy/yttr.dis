@@ -1,8 +1,13 @@
 ServerEvents.recipes(event => {
 	
 	event.remove([
+		"yttr:crafting/brookite_pickaxe",
+		"yttr:crafting/brookite_axe",
 		"yttr:crafting/iron_nugget",
 		"yttr:shattering/yttr/crafting/iron_nugget",
+		"yttr:shattering/iron_ingot_from_anvil",
+		"yttr:shattering/iron_ingot_from_chipped_anvil",
+		"yttr:shattering/iron_ingot_from_damaged_anvil",
 		"yttr:crafting/project_table",
 		"yttr:crafting/spatula",
 		"yttr:crafting/giant_cobblestone",

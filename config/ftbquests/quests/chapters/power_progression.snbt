@@ -415,7 +415,23 @@
 		}
 		{
 			dependencies: ["70DDC7E150E847B1"]
+			description: [
+				"You've probably been using the custom fluid boiler, that is able to produce 33.33 EU/t (or the equivament in steam). While also using 36 pieces of coal every hour."
+				""
+				"The standard boiler here can produce a much higher value, up to 256 EU/t, but it also burns fuel a whole lot faster to get there (also needs either two bronze pumps or a steel one, for the water)."
+				""
+				"If you do the math you'd see that to produce the full 256 EU/t you'd need to feed it 0.8/t of creosote. Or 640 of creosote every 40 seconds, the time of a single run in a coke oven. But a single run only makes 250 worth of creosote, and so you'd need three of them pushing out creosote, enough to feed this boiler and keep it going."
+				""
+				"That's a whole lot of coal, because at 40s runs, it means 90 runs an hour, therefore 90 piaces of coal for every coke oven you want to keep running. If you need three, that's 270 coal/hour, even if you'd produce in excess with three."
+				""
+				"But the important part here is that this boiler doesn't only accept creosote, but also fuel items. This completely changes the overall picture."
+				""
+				"For a single, continuous coke oven run, with its 40s recipe, you produce 1 coke and 250 creosote. The creosote is enough for 100 EU/t in this boiler. Leaving another 156 EU that need to be supplied."
+				""
+				"Here comes the coke. A single coke piece is worth 64k EU, but the double efficiency of this boiler lifts it to 128k. Seems not enough? The value is distributed through the 40s it needs for its recipe. every second is 20t, so 800t in 40s. Therefore those 128k become 160 EU/t. Add up the 100 EU/t from creosote, and you'll see that a single coke oven is enough to fully supply one of these boilers, as long you feed it all the coke and the creosote it produces."
+			]
 			id: "5590F160C7EA6AC5"
+			min_width: 330
 			tasks: [{
 				id: "43C4C632960DA4D7"
 				item: "modern_industrialization:large_steam_boiler"

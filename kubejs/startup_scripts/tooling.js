@@ -84,7 +84,48 @@ ItemEvents.toolTierRegistry (event => {
     tier.enchantmentValue = 14
 	tier.repairIngredient = 'modern_industrialization:bronze_ingot'
   })
+  event.add('steel', tier => {
+    tier.uses = 500
+    tier.speed = 6.0
+    tier.attackDamageBonus = 2.5
+    tier.level = 2
+    tier.enchantmentValue = 1
+	tier.repairIngredient = 'modern_industrialization:steel_plate'
+  })
+  event.add('galvanized', tier => {
+    tier.uses = 600
+    tier.speed = 6.2
+    tier.attackDamageBonus = 2.5
+    tier.level = 2
+    tier.enchantmentValue = 5
+	tier.repairIngredient = 'geggy:galvanized_steel_plate'
+  })
  
+})	
+
+// feet / leg / chest / head
+// durability multiplies 13,15,16,11
+
+ItemEvents.armorTierRegistry(event => {
+    event.add('steel', tier => {
+        tier.durabilityMultiplier = 27;
+        tier.slotProtections = [2, 5, 7, 2];
+        tier.enchantmentValue = 0;
+        tier.equipSound = 'minecraft:item.armor.equip_iron';
+        tier.repairIngredient = 'modern_industrialization:steel_plate';
+        tier.toughness = 0.5;
+        tier.knockbackResistance = 0.05;
+    })
+	
+	event.add('bronze', tier => {
+        tier.durabilityMultiplier = 8;
+        tier.slotProtections = [1, 3, 4, 1];
+        tier.enchantmentValue = 15;
+        tier.equipSound = 'minecraft:item.armor.equip_iron';
+        tier.repairIngredient = 'modern_industrialization:bronze_plate';
+        tier.toughness = 0.0;
+        tier.knockbackResistance = 0.0;
+    });
 })
 
 ItemEvents.modification(event => {
@@ -251,6 +292,36 @@ ItemEvents.modification(event => {
         boots.setMaxDamage(110)
     })
 	
+	
+	
+	// * 20 = EU // 64k eu = 16 items = 3200 here
+	// bucket creosote should smelt 40 items, 160k eu stored
+	event.modify('modern_industrialization:coke', item => {   
+		item.burnTime = 3200
+	})
+	event.modify('modern_industrialization:coke_dust', item => {   
+		item.burnTime = 3200
+	})
+	event.modify('modern_industrialization:creosote_bucket', item => {   
+		item.burnTime = 8000
+	})
+	event.modify('modern_industrialization:coke_block', item => {   
+		item.burnTime = 32000
+	})
+	event.modify('minecraft:charcoal', item => {   
+		item.burnTime = 900
+	})
+	
+	event.modify('farmersdelight:tree_bark', item => {   
+		item.burnTime = 25
+	})
+	event.modify('geggy:oak_bark', item => {   
+		item.burnTime = 25
+	})
+	event.modify('geggy:dark_oak_bark', item => {   
+		item.burnTime = 25
+	})
+	
 });
 
 // DJJJJIFICATION TWO~!!!
@@ -329,7 +400,6 @@ event.create('geggy:endstone_dust').texture('kubejs:item/dust_dull').color(0, '#
 //event.create('geggy:endstone_dust')
 
 event.create('geggy:sharp_plate');
-event.create('geggy:unfinished_bucket');
 event.create('geggy:iron_curved_plate');
 
 event.create('geggy:reinforced_glass_pane');
@@ -357,7 +427,6 @@ event.create('geggy:holed_large_copper_dented');
 event.create('geggy:incomplete_large_copper_dented');
 
 //////////////
-event.create('geggy:incomplete_empty_blaze_burner'); 
 event.create('geggy:hot_steel_ingot');
 event.create('geggy:incomplete_steel_ingot');
 event.create('geggy:blackened_rod');
@@ -437,7 +506,7 @@ event.create('geggy:diamond_shovel_head');
 event.create('geggy:diamond_hoe_head');
 
 event.create('geggy:unrefined_clay');
-event.create('geggy:clay_copper_can').displayName('Clayed Copper Can');
+event.create('geggy:silty_copper_can').displayName('Silty Copper Can');
 event.create('geggy:gravel_dust');
 event.create('geggy:andesite_dust');
 event.create('geggy:andesite_mix');
@@ -720,6 +789,41 @@ event.create('geggy:hardened_stick')
 
 event.create('geggy:gold_chip')
 
+event.create('geggy:unfired_bucket_mold_side')
+event.create('geggy:bucket_mold_side')
+event.create('geggy:ready_unfinished_bucket_side');
+event.create('geggy:smelted_unfinished_bucket_side');
+event.create('geggy:bucket_side');
+
+event.create('geggy:base_connector');
+
+event.create('geggy:raw_stibnite');
+event.create('geggy:stibnite_dust');
+event.create('geggy:enhanced_battery_alloy_plate');
+event.create('geggy:enhanced_battery_alloy_curved_plate');
+event.create('geggy:polished_copper_plate');
+event.create('geggy:raw_bucket');
+event.create('geggy:unlit_torch');
+event.create('geggy:cathode_mix');
+event.create('geggy:andesite_alloy_slice');
+event.create('geggy:hardened_andesite_alloy');
+event.create('geggy:simple_pipe_motor');
+
+event.create('geggy:copper_blade_part');
+event.create('geggy:tin_blade_part');
+event.create('geggy:bronze_blade_part');
+event.create('geggy:aluminum_blade_part');
+event.create('geggy:stainless_steel_blade_part');
+event.create('geggy:titanium_blade_part');
+
+event.create('geggy:certus_quartz_rod');
+event.create('geggy:flummox_crystal').displayName('Flummoxed Crystal');
+event.create('geggy:slick_bloody_crystal');
+event.create('geggy:computer_monitor_cover');
+event.create('geggy:ccf').displayName('Cheap Chinese Fan');
+
+event.create('geggy:sand_dust');
+
 /*
 .tooltip('§8')
 
@@ -753,6 +857,162 @@ event.create('geggy:bronze_sword', 'sword').tier('bronze')
 event.create('geggy:bronze_shovel', 'shovel').tier('bronze')
 event.create('geggy:bronze_hoe', 'hoe').tier('bronze')
 
+event.create('geggy:steel_pickaxe', 'pickaxe').tier('steel')
+event.create('geggy:steel_axe', 'axe').tier('steel')
+event.create('geggy:steel_sword', 'sword').tier('steel')
+event.create('geggy:steel_shovel', 'shovel').tier('steel')
+event.create('geggy:steel_hoe', 'hoe').tier('steel')
+
+event.create('gegology:copper_chunk').texture('gegology:item/gt-chunk').color(0xFF825A)
+
+	// from MI:foundation
+	function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
+	let gegologyore = (name, hex) => {
+		event.create('gegology:'+name+'_ore')
+			.displayName(capitalize(name)+' Ore').texture('gegology:item/gt-ore').color(hex);
+        event.create('gegology:crushed_'+name+'_ore')
+			.displayName('Crushed '+capitalize(name)+' Ore').texture('gegology:item/gt-crushed').color(hex);
+		event.create('gegology:tiny_crushed_'+name+'_ore')
+			.displayName('Tiny Crushed '+capitalize(name)+' Ore').texture('gegology:item/gt-crushedtiny').color(hex);
+		event.create('gegology:purified_'+name+'_ore')
+			.displayName('Purified '+capitalize(name)+' Ore').texture('gegology:item/gt-purified').color(hex);
+		event.create('gegology:tiny_purified_'+name+'_ore')
+			.displayName('Tiny Purified '+capitalize(name)+' Ore').texture('gegology:item/gt-purifiedtiny').color(hex);
+		event.create('gegology:refined_'+name+'_ore')
+			.displayName('Refined '+capitalize(name)+' Ore').texture('gegology:item/gt-refined').color(hex);
+		event.create('gegology:tiny_refined_'+name+'_ore')
+			.displayName('Tiny Refined '+capitalize(name)+' Ore').texture('gegology:item/gt-refinedtiny').color(hex);
+		event.create('gegology:'+name+'_dust')
+			.displayName(capitalize(name)+' Dust').texture('gegology:item/gt-dust').color(hex);
+		event.create('gegology:small_'+name+'_dust')
+			.displayName('Small '+capitalize(name)+' Dust').texture('gegology:item/gt-dustsmall').color(hex);	
+		event.create('gegology:tiny_'+name+'_dust')
+			.displayName('Tiny '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);	
+		event.create('gegology:purified_'+name+'_dust')
+			.displayName('Purified '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddust').color(hex);
+		event.create('gegology:tiny_purified_'+name+'_dust')
+			.displayName('Tiny Purified '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddusttiny').color(hex);	
+
+    };
+
+	gegologyore('azurite', 0x537DBC)
+	gegologyore('cassiterite', 0xA2A2A2)
+	gegologyore('kesterite', 0x5B875B)
+	gegologyore('malachite', 0x055C05)
+    gegologyore('tetrahedrite', 0xC01E00)
+	
+	
+	
+	let gegologycompore = (namepr, name, hex) => {
+		event.create('gegology:'+namepr+'_'+name+'_ore')
+			.displayName(''+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-ore').color(hex);
+        event.create('gegology:crushed_'+namepr+'_'+name+'_ore')
+			.displayName('Crushed '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-crushed').color(hex);
+		event.create('gegology:tiny_crushed_'+namepr+'_'+name+'_ore')
+			.displayName('Tiny Crushed '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-crushedtiny').color(hex);
+		event.create('gegology:purified_'+namepr+'_'+name+'_ore')
+			.displayName('Purified '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-purified').color(hex);
+		event.create('gegology:tiny_purified_'+namepr+'_'+name+'_ore')
+			.displayName('Tiny Purified '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-purifiedtiny').color(hex);
+		event.create('gegology:refined_'+namepr+'_'+name+'_ore')
+			.displayName('Refined '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-refined').color(hex);
+		event.create('gegology:tiny_refined_'+namepr+'_'+name+'_ore')
+			.displayName('Tiny Refined '+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-refinedtiny').color(hex);
+		event.create('gegology:'+namepr+'_'+name+'_dust')
+			.displayName(''+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dust').color(hex);
+		event.create('gegology:small_'+namepr+'_'+name+'_dust')
+			.displayName('Small '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dustsmall').color(hex);	
+		event.create('gegology:tiny_'+namepr+'_'+name+'_dust')
+			.displayName('Tiny '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);	
+		event.create('gegology:purified_'+namepr+'_'+name+'_dust')
+			.displayName('Purified '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddust').color(hex);
+		event.create('gegology:tiny_purified_'+namepr+'_'+name+'_dust')
+			.displayName('Tiny Purified '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddusttiny').color(hex);	
+
+    };
+	
+	gegologycompore('native', 'antimony', 0xA0A0AF)
+	gegologycompore('native', 'arsenic', 0x676756)
+	gegologycompore('native', 'copper', 0xBA5F42)
+	gegologycompore('native', 'zinc', 0xB4ADAD)
+	
+	gegologycompore('brown', 'limonite', 0xD87000)
+	
+
+	
+event.create('geggy:raw_steel_sword_blade');
+event.create('geggy:raw_steel_pickaxe_head');
+event.create('geggy:raw_steel_axe_head');
+event.create('geggy:raw_steel_shovel_head');
+event.create('geggy:raw_steel_hoe_head');	
+
+event.create('geggy:incomplete_steel_sword_blade');
+event.create('geggy:incomplete_steel_pickaxe_head');
+event.create('geggy:incomplete_steel_axe_head');
+event.create('geggy:incomplete_steel_shovel_head');
+event.create('geggy:incomplete_steel_hoe_head');
+	
+event.create('geggy:steel_sword_blade');
+event.create('geggy:steel_pickaxe_head');
+event.create('geggy:steel_axe_head');
+event.create('geggy:steel_shovel_head');
+event.create('geggy:steel_hoe_head');
+
+event.create('geggy:polished_tool_rod');
+
+event.create('geggy:galvanized_steel_sword_blade');
+event.create('geggy:galvanized_steel_pickaxe_head');
+event.create('geggy:galvanized_steel_axe_head');
+event.create('geggy:galvanized_steel_shovel_head');
+event.create('geggy:galvanized_steel_hoe_head');
+
+event.create('geggy:galvanized_steel_pickaxe', 'pickaxe').tier('galvanized')
+event.create('geggy:galvanized_steel_axe', 'axe').tier('galvanized')
+event.create('geggy:galvanized_steel_sword', 'sword').tier('galvanized')
+event.create('geggy:galvanized_steel_shovel', 'shovel').tier('galvanized')
+event.create('geggy:galvanized_steel_hoe', 'hoe').tier('galvanized')	
+
+event.create('geggy:unfinished_steel_helmet');
+event.create('geggy:unfinished_steel_chestplate');
+event.create('geggy:unfinished_steel_leggings');
+event.create('geggy:unfinished_steel_boots');
+
+event.create('geggy:bronze_helmet', 'helmet')
+    .tier('bronze');
+    
+event.create('geggy:bronze_chestplate', 'chestplate')
+    .tier('bronze');
+
+event.create('geggy:bronze_leggings', 'leggings')
+    .tier('bronze');
+
+event.create('geggy:bronze_boots', 'boots')
+    .tier('bronze');
+		
+event.create('geggy:steel_helmet', 'helmet')
+    .tier('steel');
+    
+event.create('geggy:steel_chestplate', 'chestplate')
+    .tier('steel');
+
+event.create('geggy:steel_leggings', 'leggings')
+    .tier('steel');
+
+event.create('geggy:steel_boots', 'boots')
+    .tier('steel');
+
+event.create('geggy:unsavory_brain').food(food => {
+	food
+    	.hunger(6)
+    	.saturation(0.7)
+      	.effect('poison', 600, 2, 1) // 30 sec x 20 tics
+		.effect('nausea', 400, 2, 1)
+		.effect('hunger', 200, 0, 1)
+})
+			
 })
 
 StartupEvents.registry('fluid', event => {
@@ -769,8 +1029,8 @@ StartupEvents.registry('fluid', event => {
     .noBucket
 	
 	event
-    .create('geggy:liquid_clay')
-	.thinTexture(0xA3ADC8)
+    .create('geggy:silty_clay')
+	.thinTexture(0x736174)
     .noBucket
 	
 	event
@@ -901,6 +1161,16 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geggy:liquid_zinc')
 	.thinTexture(0xC6CBBF)
+    .noBucket
+	
+	event
+    .create('geggy:fluix_slurry')
+	.thinTexture(0x772FD1)
+    .noBucket
+	
+	event
+    .create('geggy:silicon_slurry')
+	.thinTexture(0x59584E)
     .noBucket
 	
 })	

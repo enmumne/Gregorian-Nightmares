@@ -567,21 +567,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:ethanolamine_mix", amount: 1000}
 		]
 	})
-	// GCP
-	event.custom({ 
-		type: "modern_industrialization:electrolyzer",
-		eu: 30,
-		duration: 36,
-		fluid_inputs: [
-			{fluid: "geghilarity:hydrogen_sulfide", amount: 1000}
-		],
-		item_outputs: [	
-			{item: "modern_industrialization:sulfur_dust", amount: 1}
-		],
-		fluid_outputs: [
-			{fluid: "modern_industrialization:hydrogen", amount: 2000}
-		]
-	})
+
 	
 	///// CRACKING /////
 	///// CRACKING /////
@@ -3710,6 +3696,48 @@ ServerEvents.recipes(event => {
 		],
 		fluid_outputs: [
 			{fluid: "modern_industrialization:lubricant", amount: 500}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 24,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitration_mixture", amount: 6000},
+			{fluid: "modern_industrialization:toluene", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:trinitrotoluene_slurry", amount: 3000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:dehy",
+		eu: 30,
+		duration: 300,
+		fluid_inputs: [
+			{fluid: "geghilarity:trinitrotoluene_slurry", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:trinitrotoluene_dust", amount: 7}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 100,
+		fluid_inputs: [
+			{fluid: "geghilarity:nitration_mixture", amount: 6000},
+			{fluid: "geghilarity:glycerol", amount: 1000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:glyceryl_trinitrate", amount: 1000},
+			{fluid: "geghilarity:diluted_sulfuric_acid", amount: 6000}
 		]
 	})
 	

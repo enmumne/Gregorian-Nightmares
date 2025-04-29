@@ -755,10 +755,7 @@
 			y: -9.0d
 		}
 		{
-			dependencies: [
-				"7E85F4D28E175040"
-				"24F3AC19B2959B84"
-			]
+			dependencies: ["7E85F4D28E175040"]
 			description: ["The mechanical crafter is required for the higher tier Dank Storages"]
 			id: "1F830681776B2EA4"
 			tasks: [{
@@ -783,6 +780,7 @@
 		}
 		{
 			dependencies: ["6B76929C5447507B"]
+			description: ["&o : Beware, most of these will be invalid..."]
 			id: "20576E61A4E4D4EA"
 			tasks: [{
 				id: "455B1E27EA5E7F5B"
@@ -1021,152 +1019,26 @@
 		{
 			dependencies: ["6B76929C5447507B"]
 			dependency_requirement: "one_completed"
-			description: ["Builders wands will help you build and place blocks in the early game"]
-			id: "487AC8C1AEFF214F"
-			tasks: [
-				{
-					id: "71AA4DD8AEBE1CEF"
-					item: {
-						Count: 1b
-						id: "wands:stone_wand"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "41C57265634A62EA"
-					item: {
-						Count: 1b
-						id: "wands:iron_wand"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "3A7605EFCA0C4E35"
-					item: {
-						Count: 1b
-						id: "wands:diamond_wand"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "002BBD4DE614FFEA"
-					item: {
-						Count: 1b
-						id: "wands:netherite_wand"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
+			description: [
+				"Just in case you resent the encouragement to go vegan for most of the progression..."
+				""
+				"There are hidden amoral paths."
+				""
+				"This step is gated by steel and some exploration, so don't worry about it."
+				""
+				"You'll need to find an &eIntegrator Egg&r. These spawn rarely in chests within dungeons, temples and similar structures."
+				""
+				"Until then..."
 			]
+			id: "487AC8C1AEFF214F"
+			tasks: [{
+				id: "450B4FF967072699"
+				item: "neepmeat:brain_rough"
+				type: "item"
+			}]
+			title: "Eldritch Horror"
 			x: 3.0d
 			y: 3.5d
-		}
-		{
-			dependencies: ["487AC8C1AEFF214F"]
-			description: [
-				"The Building Gadget is a handy tool for placing blocks in all sorts of patterns. Check your keybinds to see which button opens the nifty in-game configuration menu."
-				""
-				"NOTE: When you unlock electricity, you'll be able to charge the building gadget by right clicking on an MI power storage block. "
-			]
-			id: "008204329B73BE3D"
-			tasks: [{
-				id: "1A4997D1000D4E58"
-				item: {
-					Count: 1b
-					id: "buildinggadgets:gadget_building"
-					tag: {
-						state: {
-							data: { }
-							serializer: "buildinggadgets:dummy_serializer"
-							state: {
-								Name: "minecraft:air"
-							}
-						}
-					}
-				}
-				type: "item"
-			}]
-			x: 4.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["008204329B73BE3D"]
-			description: ["The exchanging gadget will let you exchange the type of block you're looking at for the type of block you've configured. To configure the block to place, Shift+Right Click on the block."]
-			id: "4ECBCE4AA547E51A"
-			tasks: [{
-				id: "5688B5DEAABD1CC4"
-				item: {
-					Count: 1b
-					id: "buildinggadgets:gadget_exchanging"
-					tag: {
-						state: {
-							data: { }
-							serializer: "buildinggadgets:dummy_serializer"
-							state: {
-								Name: "minecraft:air"
-							}
-						}
-					}
-				}
-				type: "item"
-			}]
-			x: 5.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["008204329B73BE3D"]
-			description: ["The copy paste gadget lets you copy block placement patterns and paste them in other parts of your world."]
-			id: "0D5094EA442C5248"
-			tasks: [{
-				id: "4F4F8EC205FED530"
-				item: {
-					Count: 1b
-					id: "buildinggadgets:gadget_copy_paste"
-					tag: {
-						"buildinggadgets:template_key": {
-							template_id: [I;
-								386656276
-								-1549972808
-								-1719416257
-								1485183493
-							]
-						}
-					}
-				}
-				type: "item"
-			}]
-			x: 4.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["008204329B73BE3D"]
-			description: ["The Destruction Gadget is handy for voiding large areas of blocks instantly. Shift+Right Click to open it's range configuration."]
-			id: "49A293CA35145D24"
-			tasks: [{
-				id: "73764630C9942DF4"
-				item: {
-					Count: 1b
-					id: "buildinggadgets:gadget_destruction"
-					tag: {
-						fuzzy: 1b
-						overlay: 1b
-					}
-				}
-				type: "item"
-			}]
-			x: 6.5d
-			y: 5.0d
 		}
 		{
 			dependencies: ["6B76929C5447507B"]
@@ -1228,6 +1100,94 @@
 			]
 			x: -6.5d
 			y: 3.5d
+		}
+		{
+			dependencies: ["487AC8C1AEFF214F"]
+			description: [
+				"So you are here."
+				""
+				"You can place down this Integrator Egg somewhere. It won't do much. If you right click on it, it will give you a message like... &4Blood 0%&r."
+				""
+				"As you are imagining, this thing needs some blood in order to do something."
+				""
+				"To get that blood you need to sacrifice some \"living entity\" while it is placed over a &eFluid Drain&r."
+				""
+				"From the drain you can then transport the blood to the egg using the usual Create pump and fluid pipes. But the drain itself needs to be of that specific type, crafted with steel and copper."
+				""
+				"To use the sacrifical scalpel on the hapless creature just do simple attacks through left clicks, since the right click is a custom feature not used here."
+				""
+				"If done correctly, the blood will be collected in the drain, and you can then transfer it directly to the egg, that will begin pulsating."
+				""
+				"After reaching the equivalent of one bucket and a short incubation time, you'll see a beautiful creature floating over the egg, starting to collect power. This is simple passive generation, so you don't need to do anything else."
+			]
+			icon: "neepmeat:integrator_egg"
+			id: "4F257A96A62C8F62"
+			min_width: 255
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "73369D7B1AA82262"
+					item: "neepmeat:integrator_egg"
+					type: "item"
+				}
+				{
+					id: "0E04159E65DE74B2"
+					item: "neepmeat:fluid_drain"
+					type: "item"
+				}
+				{
+					id: "36FDF67A7DE2AD4A"
+					item: {
+						Count: 1b
+						id: "neepmeat:sacrificial_dagger"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Blood Follows"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4F257A96A62C8F62"]
+			description: [
+				"Crafting some &eData Cables&r and a &ePedestal&r should be straightforward."
+				""
+				"Place the pedestal somewhere nearby the hatched egg, and then connect the egg with the pedestal with those data cables."
+				""
+				"What is left to do is to observe whether it works or not..."
+				""
+				"Place one of the rough brains you have collected right on the pedestal, and if everything is functional you should see a beam of light, from the creature to the brain. And soon enough the brain will be converted into an... augmented one."
+				""
+				"I know it looks delicious, but don't eat it just yet."
+			]
+			id: "78365B5F6D3EFF2E"
+			shape: "rsquare"
+			tasks: [{
+				id: "3996B02D2C3912A4"
+				item: "neepmeat:pedestal"
+				type: "item"
+			}]
+			title: "Persuasion of the wicked"
+			x: 5.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["78365B5F6D3EFF2E"]
+			description: ["With a tasty brain you can now craft this weird manual, and from this point onward you are on your own, experimenting and enjoying the process of acquiring knowledge through the pain of... others."]
+			id: "535605AE6DD56E0A"
+			shape: "octagon"
+			tasks: [{
+				id: "48087C5BBB51C6E0"
+				item: "neepmeat:projector"
+				type: "item"
+			}]
+			title: "Projected Joy"
+			x: 6.0d
+			y: 6.5d
 		}
 	]
 	title: "Perks"

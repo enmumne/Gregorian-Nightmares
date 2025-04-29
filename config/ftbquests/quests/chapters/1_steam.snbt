@@ -11,18 +11,13 @@
 		{
 			dependencies: ["5DAA5DF264D1E559"]
 			description: [
-				"[This quest is optional]"
+				"[This quest is optional and relic of the past, at some point it will get completely deleted]"
 				""
 				"The Quarry is an essential multiblock machine. It will generate increasingly valuable resources for you as you progress through the pack. "
 				""
-				"&o : &l>>Note that the standard Quarry System has been partially replaced. The Steam Quarry multiblock, here, is not directly available since the recipes require at least electricity. The only recipe still active is for the standard type of stones.<<"
+				"&o : &l>>Note that the standard Quarry System has been replaced. The Steam Quarry multiblock, here, is not directly available since the recipes require at least electricity. The only recipe still active is for the standard type of stones and mob drops.<<"
 				""
 				"The Quarry will consume the drill heads you feed it and output the dirty version of the drill head. This drill head can be washed using the Create Washer and fed back to the machine for re-use."
-				""
-				"You're going to get access to Create Belts immediately in the next chapter, so at that point it's well worth automating this to have a continuous supply of base ores and mob drops."
-				""
-				"NOTE: Now that you do have access to ore generation and mob drops, it may be worth looking at both the Storage \\& Perks tabs to figure out how to store the Quarry outputs and also how to put your mob drops to good use."
-				""
 				""
 				"{@pagebreak}"
 				"&o&b 58 : when sceenshot describes it better than just a sentence aka (&luxv tier voidminer&r &bxddddd)"
@@ -64,14 +59,16 @@
 			]
 			title: "Infinite Resources?"
 			x: -21.0d
-			y: 25.483333333333327d
+			y: 27.0d
 		}
 		{
 			dependencies: ["3F5ACCA0FDC6ADB6"]
 			description: [
-				"So far, all of our \"power\" has been generated through Create's rotational force. Now that we've got access to some bronze, we can start producing steam to power some Modern Industrialization (MI) machines."
+				"So far, all of your \"power\" has been generated through Create's rotational force. Now that you've got access to some bronze, you can start producing steam to power some Modern Industrialization (MI) machines."
 				""
-				"This chapter will walk you through the first tier of machines. By the end you'll have access to Steel and a Quarry which will let you start generating basic resources and mob drops."
+				"Consider that you'll probably need a substantial infrastructure before you can make good progress here. If you haven't, look into the quarry section of the questbook to jumpstart some quarries, that will also help you having more consistent fuel sources, as well early access to steam production."
+				""
+				"You'll need a lot of bronze. So it's likely you want to have at least a copper quarry set up. A trickle of tin (from manual mining, plus the occasional raw ore that also is part of the output of the copper quarry) should be enough to begin with. After that you probably want to arrange Create contraptions so that from a mixer+drain you can pump the liquid bronze into basin, to use the press and make bronze ingots. Because doing it manually with a spout and a bucket will force you to break the basin and refill, losing a bit of that overflow of bronze every time (and the annoyance carring the bucket back and forth)."
 				""
 				"&o&d 68 : my parrot died"
 				"&o&d : it ran into a steam pipe and boiled alive"
@@ -101,18 +98,19 @@
 				""
 				"The compressor is now required for two types of bricks, those you'll use for the Coke Oven, and the Fireclay bricks to be used on the Primitive Blast Furnace."
 				""
-				"This is also known as the BRICKGATE, coming right after the IronGate."
+				"This is also known as the BRICKGATE, coming right along the IronGate."
 				""
 				"These recipes have been brought to you with &clove&r."
 			]
 			id: "448718E321BE9E5A"
+			shape: "rsquare"
 			tasks: [{
 				id: "2235D4F38562E853"
 				item: "modern_industrialization:bronze_compressor"
 				type: "item"
 			}]
-			x: -22.261904761904752d
-			y: 9.369047619047606d
+			x: -22.5d
+			y: 9.5d
 		}
 		{
 			dependencies: ["25BDF469C1F67959"]
@@ -125,9 +123,9 @@
 				""
 				"As written before, you're not quite there. The final path to steel requires another mold to convert &anuggets to ingot&r, so that you can get a Wrought Iron Ingot and put it into a macerator again to get directly a dust, without having to grind nuggets manually."
 				""
-				"For the time being, you can at least use the macerator on the iron ore, to get 1.5 dusts (chanced output, so it's only an average). Then you process the iron dusts into ingots, and put the ingots into an alloy smelter with a ingot to nuggets mold, to get iron nuggers, to then smelt into wrought iron nuggets."
+				"For the time being, you can at least use the macerator on the iron ore, to get 1.5 dusts (chanced output, so it's only an average). Then you process the iron dusts into ingots, and put the ingots into an alloy smelter with a ingot to nuggets mold, to get iron nuggets, to then smelt into wrought iron nuggets."
 				""
-				"But with this step the path to steel reaches the end."
+				"But with this step the path to steel reaches the end. It's up to you scaling up production and automation now that you have all the \"ingredients.\""
 				""
 				"{@pagebreak}"
 				"&o&7 64 : i’m only at utility science in my current game but i kinda want to start over with bz and 100x science"
@@ -135,7 +133,7 @@
 				"&o&c 29 : Brevven's mods, adding lots of materials that tie into SE, but like, also clutter the core miner output with tons of different materials"
 				"&o&b 34 : I can feel the contempt for the players in these bz mods"
 				"&o&b : can't even make science without double smelting with a byproduct to handle... and oh you forgot to to make ammo for your pistol? good stuff"
-				"&o&3 86 : bro i thought brevens mods were for making se recipes easier"
+				"&o&3 86 : bro i thought brevens mods were for making SE recipes easier"
 				"&o&3 : like substitutes for LDS"
 				"&o&c 29 : oh it substitutes the LDS recipe alright"
 				"&o&c : for a more complex version lmao"
@@ -147,7 +145,7 @@
 				"&o : tell that to GTCEu team, thinking the same ore processing for all ores is an improvement"
 			]
 			id: "39754E37B49FAC5E"
-			min_width: 350
+			min_width: 330
 			optional: true
 			shape: "rsquare"
 			tasks: [{
@@ -156,43 +154,47 @@
 				type: "item"
 			}]
 			x: -21.0d
-			y: 20.5d
+			y: 23.0d
 		}
 		{
-			dependencies: ["448718E321BE9E5A"]
+			dependencies: ["41BA783FD2C150D0"]
 			description: [
-				"The Mixer is going to become one of the most important machines in your factory at some point. For now though, it's main use will be mixing sand and water to create clay. This machine is eventually required so make a few if you have the resources to spare."
+				"Originally, the mixer was used to easily obtain clay by mixing sand and water, then as a necessary step on the way to steel."
 				""
-				"&o : Note that originally the mixer depended on the Macerator, to grind the materials into dusts."
+				"Now it is required even to craft the fire clay for the blast furnace. And some other options may open, for example for rubber recipes."
 				""
-				"&o : Since the Macerator has been miserably gated, now, you can find alternate ways to get the dusts you need..."
-				""
-				"&o : I guarantee: you'll love it."
-				""
-				"&o : Don't trust this quest, tho. You can skip on that clay thing, it doesn't seem to lead you anywhere. Just go harvest manually the clay, they tell me it's tons of fun."
-				""
-				"&o : But if you don't want to follow my dear advices... You can try anyway, I guess. The path awaits you, full of wonder and surprises."
+				"You could ideally move to a MI-only set up for bronze, leaving behind Create, but it would require a blast furnace to turn the bronze dust into ingot, and you still need it for both iron and steel."
 			]
 			icon: "modern_industrialization:bronze_mixer"
 			id: "787BBBEB11A4718D"
-			min_width: 250
+			min_width: 210
+			shape: "rsquare"
 			tasks: [{
 				id: "28F4D1A28151F071"
 				item: "modern_industrialization:bronze_mixer"
 				type: "item"
 			}]
-			x: -24.52261904761906d
-			y: 8.68928571428571d
+			x: -21.0d
+			y: 12.5d
 		}
 		{
 			dependencies: [
 				"4A611684DE66157B"
 				"448718E321BE9E5A"
 			]
-			description: ["The Coke Oven will be your first multiblock. In this quest, we've provided the exact number of resources to get this machine up and running. You'll have the Coke Oven block itself which is the \"brain\" of the multiblock. Also some bricks and an Item Input Hatch to accept Coal Coke, an Item Output Hatch to output Coke Dust, a Fluid Input hatch to accept steam to power the machine and finally a fluid output hatch to output your first byproduct, Creosote."]
+			description: [
+				"The Coke Oven will be your first multiblock. This quest shows the exact number of resources to get this machine up and running. You'll have the Coke Oven block itself which is the \"brain\" of the multiblock. Also some bricks and an Item Input Hatch to accept Coal, an Item Output Hatch to output Coke, a Fluid Input hatch to accept steam to power the machine and finally a fluid output hatch to output your first byproduct, Creosote."
+				""
+				"This is an useful step to improve the fuel output and promote some expansion, because by processing a single piece of coal and getting coke, the fuel value is doubled already."
+				""
+				"There's also an extra of creosote fluid being produced, that can now be processed in a custom boiler multiblock to get more steam (quest on the right)."
+				""
+				"Remember that you CAN'T use coke in the prototype boiler shown on the quarry quest page. The coke you produce here is instead supposed to be used inside the standard boilers (or as normal fuel in furnaces)."
+			]
 			icon: "modern_industrialization:coke_oven"
 			id: "41BA783FD2C150D0"
 			min_width: 300
+			shape: "rsquare"
 			tasks: [
 				{
 					id: "24C8E31E05A6FDE2"
@@ -235,8 +237,22 @@
 				"4B64A02AD447ABAB"
 			]
 			dependency_requirement: "one_completed"
-			description: ["Remember to check the storage tab for some options on storing large amounts of fluids"]
+			description: [
+				"As explained in the quarry section, a \"boiler prototype\" only feeds one other single machine. The standard boiler shown here, instead and as its tooltip says, is able to produce 8 EU every tick. That's enough to power four other steam machines."
+				""
+				"Obviously, compared to the boiler prototype this one doesn't need to have steam looped on itself. It only consumes water, burns coal, and produces steam."
+				""
+				"A piece of coal stores, as its tooltip says, 32k EU, if the boiler &econverts 8EU/t&r, then it means that a single piece of coal produces those 32k of steam (since 1 EU = 1 steam) in about 200 seconds (max). Or 3.3333 minutes..."
+				""
+				"That's &e18 pieces of coal every hour&r, compared to a boiler prototype that only uses 9 full dusts. "
+				""
+				"But that's also misleading, because boilers work rather blandly and will simply \"pause\" without side effects when power is not used. That means that if you connect a single quarry to a boiler, it will only consume &e4.5 coal pieces&r for one full hour of operation."
+				""
+				"The next goal on this progression is the coke oven, because it will take coal and transform it into coke, doubling its energy value. So you will be able to use that coke in THIS boiler, and reduce the consuption to 9 pieces every hour. Same as the prototype, but with significantly higher output."
+			]
 			id: "20B7DAB8194CA924"
+			min_width: 300
+			shape: "rsquare"
 			tasks: [{
 				id: "12D37C6BE82BF25F"
 				item: "modern_industrialization:bronze_boiler"
@@ -248,25 +264,36 @@
 		{
 			dependencies: ["20B7DAB8194CA924"]
 			description: [
-				"Your first steam bucket can be smelted from manually, or if you went the Create route, you can pump water directly to the boiler and provide it with fuel. Click the steam output with a bucket in order to complete this quest in that case."
+				"Your first steam bucket can be smelted manually or, if you went the Create route, you can pump water directly to the boiler and provide it with fuel. "
 				""
-				"&o : Due to the IronGate plaguing the early game, you can just bypass the quest and press the checkmark. To carry around liquids, find a better solution. Create fluid pipes should work. Maybe."
+				"&o : Due to the IronGate plaguing the early game, you can just bypass the quest and press the checkmark. To carry around liquids, find a better solution. Create fluid pipes should work. "
 				""
-				"&o : And now, due to the new Quarry system, the steam bucket is craftable again through an alternate recipe, if you want to go there. (see Quarry page)"
+				"&o : And now, due to the new Quarry system, the steam bucket is craftable again through an alternate recipe. "
+				"&o(see Quarry quest page)"
 			]
 			id: "5E6DE2BFC757029E"
 			tasks: [{
 				id: "62B8134C8AECA3B5"
 				type: "checkmark"
 			}]
-			title: "Buckety Steam, no more"
+			title: "Buckety Steam"
 			x: -21.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["1C663430E0BDDA98"]
-			description: ["The Bronze Machine casing is the first of many machine casings you'll be making. It gives access to Bronze Level MI machines."]
+			description: [
+				"The Bronze Machine casing is the first of many machine casings you'll be making. It gives access to Bronze Level MI machines."
+				""
+				"Remember that, being one gear plus 8 plates, and one gear requiring seven bronze ingots overall. A single bronze casing requires a total of &e15 bronze ingots&r."
+				""
+				"Bronze usually comes in batches of four dusts, three copper plus one tin. As long you use Create contraptions, you'll lose some of that bronze when producing ingots. But lets do a standard calculation here. Since it's done in batches of four, you'll need at least 16 dusts for the bronze casings."
+				""
+				"16/4 * 3 = &e12 copper dusts"
+				"16/4 * 1 = &e4 tin dusts&r (simply equal to the number of batches)"
+			]
 			id: "573F81D395D2F996"
+			shape: "rsquare"
 			tasks: [{
 				id: "4A2D6688C1EAF6C8"
 				item: "modern_industrialization:bronze_machine_casing"
@@ -278,47 +305,32 @@
 		{
 			dependencies: ["738B86420BEFF68F"]
 			description: [
-				"For your first set of components, you'll be relying on create machines. When you get access to bronze machine casings, you can build out Bronze Modern Industrialization machines."
+				"For your first set of components, you'll be relying on Create machines. When you get access to bronze machine casings, you can build out Bronze Modern Industrialization machines."
 				""
 				"However, in some cases you may still want to use Create, it may be faster, cheaper or more efficient."
+				""
+				"As you can see from the recipe, the assembler is much cheaper for producing gears, but will only come later. Until then you only have the usual Create sequence. Since it's looped once, you'll need four bronze plates, and then three more bronze ingots. One for the ring (ingot > rod > ring), and two for the small bolts (since bolts come from a rod cut in two halves)."
+				""
+				"A cutting machine will produce two rods from one ingot, but you'll be only able to make one once you get access to glass, further down this page..."
 			]
+			icon: "modern_industrialization:bronze_gear"
 			id: "1C663430E0BDDA98"
 			min_width: 250
-			tasks: [
-				{
-					count: 8L
-					id: "50F15DA92AC3533F"
-					item: "modern_industrialization:bronze_rod"
-					only_from_crafting: false
-					type: "item"
-				}
-				{
-					count: 8L
-					id: "200588BAF478038F"
-					item: "modern_industrialization:bronze_bolt"
-					only_from_crafting: false
-					type: "item"
-				}
-				{
-					id: "7637CF501A3BCA9F"
-					item: "modern_industrialization:bronze_ring"
-					only_from_crafting: false
-					type: "item"
-				}
-				{
-					id: "45BF735791DD60E4"
-					item: "modern_industrialization:bronze_gear"
-					type: "item"
-				}
-			]
-			title: "Components"
+			shape: "rsquare"
+			tasks: [{
+				id: "45BF735791DD60E4"
+				item: "modern_industrialization:bronze_gear"
+				type: "item"
+			}]
+			title: "Grinding Gears"
 			x: -21.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["5E6DE2BFC757029E"]
-			description: ["With Steam Power you can craft a furnace to smelt for free. The Create option however will still be faster and more efficient for now due to it's ability to bulk smelt items. Probably not worth it early game, but will become useful eventually when you get access to MI steel, electricity and upgrades"]
+			description: ["With Steam Power you can craft a furnace to smelt for \"free\". The Create option however will still be faster and more efficient for now due to it's ability to bulk smelt items. Probably not worth it early game, but will become useful eventually when you get access to MI steel, electricity and upgrades."]
 			id: "6AF8A0C27A2FCF94"
+			optional: true
 			tasks: [{
 				id: "023C1BB5F8F2606C"
 				item: "modern_industrialization:bronze_furnace"
@@ -330,18 +342,22 @@
 		{
 			dependencies: ["573F81D395D2F996"]
 			description: [
-				"To produce steam, you'll need a steady supply of water. This can be done via MI's Water pump."
+				"To produce steam, you'll need a steady supply of water. This can be done via MI's Water Pump."
 				""
-				"The Bronze Water Pump requires steam to function, so you'll need to prime it with a bucket of steam manually. When you have access to the boiler, you should set up the boiler pumping steam back into the pump in order for the pump to become self-sufficient."
+				"The Bronze Water Pump requires steam to function. When you have access to the boiler, you should set up the boiler pumping steam BACK into the pump in order for the pump to become self-sufficient."
 				""
-				"&o : This is optional, as it requires glass (and potin)."
+				"&o : This is set as optional quest, since it requires glass (and ...potin)."
 				""
 				"&o : You can come back here after the Primitive Blast Furnace and Steel."
 				""
-				"Note: the bronze water pump produces water infinitely, but in order to work it needs &a8 full water blocks&r around it. That means on the same Y level (height), with the pump in the center. It doesn't care what's on a different Y level."
+				"Note: the bronze water pump produces water infinitely, but in order to work properly it needs &a8 full water blocks&r around it. That means on the same Y level (height), with the pump in the center. It doesn't care what's on a different Y level."
+				""
+				"&eLook at the quest on the side for more technical infos. These quests will start to provide more hard numbers, so that you can figure out the mechanics and experiment."
 			]
 			id: "4B64A02AD447ABAB"
 			min_width: 250
+			optional: true
+			shape: "rsquare"
 			tasks: [{
 				id: "1BDBA8CFDAE1F723"
 				item: "modern_industrialization:bronze_water_pump"
@@ -353,23 +369,24 @@
 		{
 			dependencies: ["573F81D395D2F996"]
 			description: [
-				"&oOld quest, this should be old news:"
+				"As also explained in the quarry section:"
 				""
-				"If there is a water pool with 10000+ source blocks nearby, you can use the Create pump to create an infinite water source basically for free."
+				"the classic, vanilla way of producing infinite water works with standard Create pumps and pipes. If you have three adjacent empty blocks and place two water source blocks at the opposite sides, then the central block will turn into an infinite regenerative water source."
 				""
-				"This requires you to be beside a larger body of water, but may be a more preferable way to get infinite water."
+				"To use that water source you only need to place an open Create pipe directly to the side of that middle block, and then use a pump to pull it and move wherever you want it (like into a boiler)."
+				""
+				"Only after you unlock steel and glass you'll be able to use bronze water pumps and leave behind Create contraptions."
+				""
+				"&eThe quest on the side will provide more detailed numbers to experiment with."
 			]
 			icon: "create:mechanical_pump"
 			id: "145CDC1CA15F6E15"
+			min_width: 250
+			shape: "rsquare"
 			tasks: [
 				{
 					id: "215D5199C424F84A"
 					item: "create:mechanical_pump"
-					type: "item"
-				}
-				{
-					id: "67A066ADACD84A8D"
-					item: "create:hose_pulley"
 					type: "item"
 				}
 				{
@@ -386,34 +403,67 @@
 			description: [
 				"The Wrench is a handy tool in MI. It can change the output side of your MI machines and down the line, it'll let you connect/disconnect item pipes, fluid pipes and cabling to each other."
 				""
-				"NOTE: Shift right clicking pipes and cables will insta-break them into your inventory, but you'll still need a pick to break MI machines faster."
+				"NOTE: Shift right-clicking pipes and cables will insta-break them into your inventory, but you'll still need a pickaxe to break MI machines faster. "
+				""
+				"&e&lBEWARE&r, basic flint pickaxes &cDESTROY&r machines. You need at least the reinforced flint version!"
+				""
+				"Shift right-clicking on multiblock hatches also orients the output face. If outputting to a tank (both MI and Create tanks) will automatically push the whole content of the hatch into the tank immediately, but you then still have to empty the tank through pipes."
 			]
 			id: "337F59E6BDB7D6BB"
+			shape: "rsquare"
 			tasks: [{
 				id: "3B232FE1DB924200"
 				item: "modern_industrialization:wrench"
 				type: "item"
 			}]
-			x: -23.0d
-			y: 0.0d
+			x: -22.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["4571CCE5C6A7EFC9"]
 			description: [
-				"The Steam Blast Furnace is used to cook Uncooked Steel Dust. It'll be worth your while to also create a fluid output hatch, down the line we're going to use this machine for some other processing too."
+				"The Steam Blast Furnace is a major achievement for this \"early\" game progression. Past this point you'll get access more or less simultaneously to iron, steel and glass. And steel will then be the stepping stone toward electricity."
 				""
+				"Of course major achievements have to be matched with some hard work. But at this point the system should have trained you well enough that getting everything done will be easier than expected..."
+				""
+				"The recipe is quite straightforward, and all about this new type of brick that is made of some different things, and a significant amount of clay. Your choice if you want to shovel out that clay manually, or set up the quarry as described at the bottom of the first quest page..."
+				""
+				"For steel and iron you'll need four hatches (two items in, two items out), plus one to feed steam to the machine (fluid input). But soon you'll make use of the two for fluid in and out, so seven in total. The complete multiblock requires a total of 34 Fire Clay Bricks, 32 for the structure plus two for the controller. But of course you can subtract the seven blocks where you will place the hatches, so &ethe final count for this bricks block is 27."
+				""
+				"On the next page there will be some numbers to more easily look up the amount of raw resources needed."
+				""
+				"{@pagebreak}"
+				""
+				"...going backwards, four single bricks to one, so 108. In between, they need to be compacted in a 3 to 2 recipe. So (108 / 2) * 3 = &e162 Fire Clay Dust&r. That number is cut in half (81) since the mixer recipe produces two for each run, with each run requiring 3 clay dust, 2 brick dust, 2 calcite dust and 1 andesite mix (this recipe is somewhat reminiscent of GTNH)."
+				""
+				"That's a total of:"
+				"&a324 clay dust&r (including andesite mix)"
+				"&a162 clay balls&r (standard bricks)"
+				"&a162 sand&r (standard bricks)"
+				"&a108 gravel&r (standard bricks)"
+				"&a162 calcite dust&r (various blocks into stonecutter)"
+				"&a162 andesite dust&r (andesite mix)"
+				"&a81 zinc nuggets&r (andesite mix)"
+				"&a81 quartz dust&r (andesite mix)"
+				"&a27 kelp dust&r"
+				""
+				"Depending on how you get the clay dust, it could be &ea total of roughly 534 clay balls&r for the whole multiblock. Consider that using a compressor you can compact 4 clay balls into a block, then grind it in a millstone for 3.5 clay dusts. The other option is to set up a clay quarry that will deliver the dusts directly."
+				""
+				"The GTNH recipe required over 1000 clay, and a very rare spawn of gypsum, so you get spared some of that hassle..."
+				""
+				"{@pagebreak}"
 				"Starting from this point you may consider locking slots, especially to avoid some recipe conflicts where in some cases a recipe could be contained with another with more ingredients, and one of the two getting randomly selected..."
 				""
-				"Look at the slot icons, and &dlocking mode&r. You can drag and drop both fluids and items, from the item lists to the empty slots. Doing so and locking them can be an easy way to filter the recipe you need on that machine. Without the risk that something else gets used or produced."
+				"Look at the slot icons in one of the hatches, and &dlocking mode&r. You can drag and drop both fluids and items, from the item lists to the empty slots. Doing so and locking them can be an easy way to filter the recipe you need on that machine. Without the risk that something else gets used or produced."
 				""
-				"It works for both inputs and outputs (so look at the hatches). And it works on all machines, including single blocks. Using the scroll wheel (as the tooltip says) will also set a custom capacity/count for that slot (pressing shift while scrolling will make it scale faster)."
+				"It works for both inputs and outputs (so look at the different hatches when dealing with multiblocks). And it works on all machines, including single blocks. Using the scroll wheel (as the tooltip says) will also set a custom capacity/count for that slot (pressing shift while scrolling will make it scale faster)."
 			]
 			icon: "modern_industrialization:steam_blast_furnace"
 			id: "1DEDC34AE5197F09"
-			min_width: 250
+			min_width: 270
+			shape: "rsquare"
 			tasks: [
 				{
-					count: 37L
 					id: "5A2A6EEFEDB02408"
 					item: "modern_industrialization:fire_clay_bricks"
 					type: "item"
@@ -423,35 +473,26 @@
 					item: "modern_industrialization:steam_blast_furnace"
 					type: "item"
 				}
-				{
-					id: "4D6713EE50074BA3"
-					item: "modern_industrialization:bronze_item_input_hatch"
-					type: "item"
-				}
-				{
-					id: "086507A2CD45F3CF"
-					item: "modern_industrialization:bronze_item_output_hatch"
-					type: "item"
-				}
-				{
-					id: "4F5B3FD34EC79678"
-					item: "modern_industrialization:bronze_fluid_output_hatch"
-					type: "item"
-				}
 			]
-			title: "Steam Blast Furnace"
+			title: "This Blasted Furnace"
 			x: -21.0d
-			y: 14.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["41BA783FD2C150D0"]
 			description: [
-				"Creosote is a byproduct of producing Coke Dust or Coal Coke. It can be refined to lubricant in the mixer, which is used in cutting machine recipes."
+				"Creosote is a byproduct of Coke. It can be refined to lubricant in the mixer, which is used in cutting machine recipes."
+				""
+				"A creosote bucket can also be used directly as fuel, for example in a standard furnace or a boiler. But this cannot be properly automated since the empty bucket will stay in the input slot."
+				""
+				"The fuel value of a creosote bucket is 160k EU, or enough to burn 40 items, but consider it's a full bucket of 1k fuel, and a single coal piece only produces 250 Mb of creosote. See a quest on the opposite side for a more complete breakdown of values."
 				""
 				"&o&b 4L : I wish we could take a sip of the chemicals we make"
 				"&o&9 46 : mix some wurtz with molten zylon and degen rhenium"
 			]
 			id: "274F91C7EC72D531"
+			min_width: 220
+			optional: true
 			tasks: [{
 				id: "657F5580C744EFB0"
 				item: "modern_industrialization:creosote_bucket"
@@ -461,7 +502,7 @@
 			y: 11.0d
 		}
 		{
-			dependencies: ["41BA783FD2C150D0"]
+			dependencies: ["787BBBEB11A4718D"]
 			description: [
 				"Why all this effort to craft Coke Dust? Not only it is a more efficient fuel, but it's now necessary for both iron and steel production. Combine Coke and Iron Dust in a Create or MI mixer to craft Uncooked Steel Dust. Almost there... but time for another multiblock."
 				""
@@ -479,16 +520,17 @@
 				"&o&cNow they can all sleep soundly"
 				"&o&cAnd everything is alright"
 			]
-			icon: "modern_industrialization:uncooked_steel_dust"
+			icon: "modern_industrialization:coke_dust"
 			id: "4571CCE5C6A7EFC9"
+			shape: "rsquare"
 			tasks: [{
 				id: "18207DA6D499E9A6"
 				item: "modern_industrialization:coke_dust"
 				type: "item"
 			}]
 			title: "March of the Pigs"
-			x: -20.98809523809524d
-			y: 12.649999999999999d
+			x: -21.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["415F550A624CC08D"]
@@ -498,11 +540,13 @@
 				"Note that to obtain a Steel Ingot you still need to go through a simple Create assembly line to cool the ingot into an usable one."
 				""
 				"But the important part is what's next."
+				""
+				"&eMake sure to &lremove&r &ethe nugget from the blast furnace, that you used in the previous quest, and only insert one uncooked steel dust (and limestone), to get one ingot of steel. If up to this point you used another two to make the nugget mold, then you have 4 dusts left. The next quest will explain the shortest path, and what to do with the rest of those dusts."
 			]
 			id: "19A98DE71EE34CAA"
 			min_width: 260
 			shape: "octagon"
-			size: 1.3d
+			size: 2.0d
 			tasks: [{
 				id: "750D838B7E2E5194"
 				item: "modern_industrialization:steel_ingot"
@@ -510,7 +554,7 @@
 			}]
 			title: "Got Steel"
 			x: -21.0d
-			y: 17.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["19A98DE71EE34CAA"]
@@ -523,38 +567,40 @@
 				type: "item"
 			}]
 			x: -18.0d
-			y: 17.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["39754E37B49FAC5E"]
 			description: [
-				"For the Quarry, you'll need some invar. So mix up some Nickel and Iron and cook the result."
+				"Invar comes from a mix of iron and nickel, but it will require some steps to get there."
 				""
-				"Note that the recipe was changed (again). You need to obtain nickel dust from a macerator, then smelt it with coal in a Steam Blast Furnace for the ingot. Then iron and nickel ingots go into the bronze alloy smelter, for invar."
+				"You need to obtain nickel dust from a macerator, then smelt it with coal in a Steam Blast Furnace for the ingot. Then iron and nickel ingots go into the bronze alloy smelter, for invar."
+				""
+				"Both the blast furnace and the bronze alloy smelter will require a &esteel hatch&r in the multiblock structure for these specific recipes, if you look them up you'll see a small icon in the middle indicating this."
 			]
 			icon: "modern_industrialization:invar_ingot"
 			id: "5DAA5DF264D1E559"
 			min_width: 210
 			tasks: [
 				{
-					id: "6BC244A4FA4C4DA0"
-					item: "modern_industrialization:invar_dust"
+					id: "167EE502B9485236"
+					item: "modern_industrialization:nickel_dust"
 					type: "item"
 				}
 				{
-					id: "298E1BE8F31E20F7"
+					id: "55D492A6DCDD0138"
 					item: "modern_industrialization:invar_ingot"
 					type: "item"
 				}
 			]
 			title: "Invar"
-			x: -20.623809523809527d
-			y: 22.5d
+			x: -21.0d
+			y: 25.0d
 		}
 		{
 			dependencies: ["5DAA5DF264D1E559"]
 			description: [
-				"&o : Item pipes from MI have been moved to the assembler, and replaced with Modern Dynamic pipes, so use these instead."
+				"&o : regular item pipes from MI have been moved to the assembler, and replaced with Modern Dynamic pipes, so use these instead."
 				""
 				"Remember that MI machines have a button on the UI to auto-extract. This is usually from the back face, with the square overlay."
 				""
@@ -576,7 +622,7 @@
 			}]
 			title: "Pied Piper of Item Pipes"
 			x: -22.5d
-			y: 22.983333333333327d
+			y: 25.0d
 		}
 		{
 			dependencies: ["787BBBEB11A4718D"]
@@ -586,6 +632,7 @@
 				""
 				"&o : (oops...) :)"
 			]
+			icon: "kibe:cobblestone_generator_mk1"
 			id: "1313C557BD3AB3D8"
 			optional: true
 			tasks: [{
@@ -601,53 +648,39 @@
 				type: "item"
 			}]
 			title: "Next Gen Cobble Gen"
-			x: -23.0d
-			y: 7.5d
+			x: -19.5d
+			y: 12.5d
 		}
 		{
-			dependencies: ["1313C557BD3AB3D8"]
-			description: ["Remember to check the Storage tab to get some storage options for your machine outputs"]
-			id: "29DB175B5496205E"
-			tasks: [
-				{
-					id: "5CDB860BA74525E1"
-					item: "minecraft:cobblestone"
-					type: "item"
-				}
-				{
-					id: "3E8DE70CE1CCD124"
-					item: "minecraft:gravel"
-					type: "item"
-				}
-				{
-					id: "239D084FB4AEAFB8"
-					item: "minecraft:sand"
-					type: "item"
-				}
-			]
-			title: "Foregoing Cobbleworks"
-			x: -24.5d
-			y: 7.5d
-		}
-		{
-			dependencies: [
-				"29DB175B5496205E"
-				"787BBBEB11A4718D"
+			dependencies: ["787BBBEB11A4718D"]
+			description: [
+				"Worth mentioning here, in the perspective of the &aprimitive blast furnace&r here below, that you need the clay block to use a millstone and grind it into clay dusts."
+				""
+				"So you usually get clay balls, then have to compact five of them into a block, then grind the block for 3.5 clay dust. This makes this sequence quite lossy. "
+				""
+				"&eFor 100 clay balls, you'd get on average 70 clay dusts."
+				""
+				"Later, with a macerator unlocked, you'll be able to grind directly the clay balls into dusts."
+				""
+				"The alternative path, to get clay infinitely through its special quarry, produces clay dust directly (and tons of gravel). So it works the other way around, you'll have to compact the dust in case you need clay balls."
 			]
 			id: "1F2292593AA56656"
+			optional: true
 			tasks: [{
 				id: "038669BEB7A7071F"
 				item: "minecraft:clay"
 				type: "item"
 			}]
-			x: -26.0d
-			y: 7.5d
+			x: -22.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["1715FBF783F1B827"]
 			dependency_requirement: "one_completed"
 			description: [
-				"There are two ways you can go to create Coal Coke. You can drop Coal into the Coke Oven (quest below), or if you're macerating all your ores then you'll probably have some Coal Dust that can be dropped into the Coke Oven instead. Coal Dust is the intended route since you'll eventually need to grind down the coal coke anyway."
+				"There are two ways you can go to obtain Coal Coke. Either by using coal or coal dust, the Coke Oven will accept both with the same recipe."
+				""
+				"Coal Dust is the intended route since you'll eventually need to grind down the coal coke anyway. Especially for the production of steel."
 				""
 				"&o : You aren't going to macerate these, are you?"
 				""
@@ -664,7 +697,11 @@
 		}
 		{
 			dependencies: ["25BDF469C1F67959"]
-			description: ["Lubricant is made by combining Creosote and Redstone Dust in a Mixer."]
+			description: [
+				"Lubricant is made by combining Creosote and Redstone Dust in a Mixer, and is used here mainly for cutting machine recipes."
+				""
+				"Alternatively there's a Create mixer recipe that doesn't use creosote but it can be convenient for small amounts. Since the cutting machine doesn't consume all that much to function."
+			]
 			id: "4747C0805A5670D3"
 			optional: true
 			tasks: [{
@@ -672,8 +709,8 @@
 				item: "modern_industrialization:lubricant_bucket"
 				type: "item"
 			}]
-			x: -24.0d
-			y: 20.5d
+			x: -19.5d
+			y: 21.5d
 		}
 		{
 			id: "7960237A1360D9EA"
@@ -684,27 +721,36 @@
 				type: "item"
 			}]
 			x: -18.0d
-			y: 15.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["6D27859AE4185773"]
-			description: ["Multiple MI pipes can be placed in the same position, they need to be different colors to do so though. To create different colored pipes, you'll need dyes. Dyes can be found in world for the time being. When you work your way through electricity, you'll eventually get access to the Distillery and a means of producing infinite dyes. You shouldn't need too many different colored pipes in the short term however, so consider this an FYI more than anything!"]
+			description: [
+				"Whether motors used for these pipes or standard ones necessary later, making copper wires the convoluted way may be quite annoying."
+				""
+				"With a regular wiremill you get access to regular wire recipes. That means you get two wires for one plate, without any other odd steps in between."
+			]
+			icon: "modern_industrialization:steel_wiremill"
 			id: "75864282D1EC39E0"
-			min_width: 250
+			min_width: 220
+			optional: true
 			tasks: [{
-				id: "37245BBB982A4DD3"
-				title: "A Note on Pipes"
-				type: "checkmark"
+				id: "08FF567DA89F8C78"
+				item: "modern_industrialization:steel_wiremill"
+				type: "item"
 			}]
-			x: -24.5d
-			y: 24.983333333333327d
+			title: "Wiremill"
+			x: -24.0d
+			y: 25.0d
 		}
 		{
 			dependencies: ["5E6DE2BFC757029E"]
 			description: [
 				"Another distortion of space-time!"
 				""
-				"Or maybe just bad design. In any case, the macerator is \"optional\", because you might not have a diamond pickaxe to mine the &mtwo&r &lTHREE&r diamonds required, due to the iron \"shortage\". Same for the lack of glass."
+				"Or maybe just bad design... "
+				""
+				"The \"standard\" progression would require you to make a macerator, to turn coal (and more) into their dusts. But the macerator is now pushed later, because you may not have a diamond pickaxe to mine the &mtwo&r &lTHREE&r diamonds required, due to the iron \"shortage\". Same for the lack of glass."
 				""
 				"Rejoice! The end is near!"
 				"(...this sounds bad)"
@@ -719,7 +765,7 @@
 			y: 6.769047619047612d
 		}
 		{
-			dependencies: ["1DEDC34AE5197F09"]
+			dependencies: ["2A22D163ED1DC33B"]
 			description: [
 				"The Create Toolbox is a handy gadget that allows you to store Create components in a separate inventory. You can access this inventory when in range by holding down the Left Alt button. If it doesn't work, check your keybinds."
 				""
@@ -732,8 +778,8 @@
 				item: "create:brown_toolbox"
 				type: "item"
 			}]
-			x: -19.5d
-			y: 14.5d
+			x: -18.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["35160A40A89A768C"]
@@ -744,12 +790,16 @@
 				""
 				"Following Create standards, a block of limestone generates from the interaction of lava with... honey."
 				""
-				"Fluid honey &ebee&rhaves much like water and lava, so after it has been placed it can flow into lava, and at the point where they meet a limestone block will be generated. Harvest it, and this can be repeated endlessly."
+				"To get a bucket of honey you can simply put some fluid pipes under a beehive or bee nest, and pump the honey into a basin, when full, you can then scoop it up with a bucket."
+				""
+				"Fluid honey &ebee&rhaves much like water and lava, to produce cobble, so after it has been placed it can flow into lava, and at the point where they meet a limestone block will be generated. Harvest it, and this can be repeated endlessly. "
+				""
+				"Automating this with a mechanical drill is of course possible. Just put it on the side where the limestone block gets generated. By default the block gets broken and dropped down. If you place a chute under the limestone block, and a chest under the chute, you can collect those limestone blocks as they are broken progressively."
 				""
 				"Therefore, enjoy infinite limestone and the minor hassle of using it in steel production: use a millstone to turn it into dust with a generous recipe."
 			]
 			id: "1CCAE2EACCB9921B"
-			min_width: 250
+			min_width: 275
 			shape: "rsquare"
 			tasks: [{
 				id: "22203C96C119B187"
@@ -757,14 +807,14 @@
 				type: "item"
 			}]
 			x: -24.0d
-			y: 16.0d
+			y: 17.0d
 		}
 		{
 			dependencies: ["274F91C7EC72D531"]
 			description: [
 				"An early game refresher..."
 				""
-				"Drawers are an extension from chest and barrels, it's one whole nested recipe sequence, the way you &olove&r them. "
+				"Drawers are an extension from chest and barrels, it's one whole nested recipe sequence, the way you &o&clove&r them. "
 				""
 				"Since hardened planks are used through the steps, you can only start with drawers from this point."
 				""
@@ -826,9 +876,10 @@
 				"Now, the iron dust can be used with coke dust, to obtain &aPig Iron Ingots&r. Alternatively both coal and charcoal can be used, but with longer recipe times."
 				""
 				"Pig Iron can then be smelted in a vanilla Blast Furnace to get the standard &aIron Ingot&r. "
-				"Finally."
 				""
-				"The ratio of iron dust to ingot will be 3 to 2 for a while."
+				"Finally. &dMinecraft Day 1 is now complete."
+				""
+				"The ratio of iron dust to ingot will be 3 to 2, for a while."
 				""
 				"&o&cHey, pig"
 				"&o&cYeah, you"
@@ -861,24 +912,26 @@
 			]
 			title: "Piggy"
 			x: -21.0d
-			y: 16.0d
+			y: 17.0d
 		}
 		{
 			dependencies: ["628637F51350EFD3"]
 			description: [
-				"We got iron, but we'll need steel."
+				"You got iron, but you'll need steel."
 				""
 				"Steel can be tricky because it has a few different paths. The first problem is that it needs to be jumpstarted in a manual way. Then, having access to the first few steel pieces will open up better ways to organize and automate the process."
 				""
-				"The full process will require to smelt iron nuggets into wrought iron nuggets, and then crush those into dusts to mix with coke and some limestone, for the steel mix."
+				"The full process will require smelting iron nuggets into wrought iron nuggets, and then crush those into dusts to mix with coke and some limestone, for the steel mix."
 				""
 				"Let's proceed orderly..."
 				""
 				"At this stage you can only get iron nuggets by crushing the iron ore twice in a Create millstone. Then blend the dust with tiny coal dust. You should be familiar with this. "
 				""
-				"To craft the first batch of steel, you'll need 7 Wrough Iron Dusts, and stepping back through the process you'll need about... 112 iron nuggets. Or 37.33 raw iron ores at the current ratios."
+				"To craft the first batch of steel, you'll need 7 Wrough Iron Dusts, and stepping back through the process you'll need about... "
+				"&e112 iron nuggets&r. "
+				"Or 37.33 raw iron ores at the current ratios."
 				""
-				"It's kind of elaborate grindy, but this should be only required once (or twice, or...)."
+				"It's kind of an elaborate grind, but this should be only required once (or twice, or...)."
 			]
 			id: "35160A40A89A768C"
 			min_width: 250
@@ -890,7 +943,7 @@
 			}]
 			title: "Steeling Up"
 			x: -22.5d
-			y: 16.0d
+			y: 17.0d
 		}
 		{
 			dependencies: ["1CCAE2EACCB9921B"]
@@ -899,10 +952,12 @@
 				""
 				"You smelted the iron nuggets to their wrought iron version, then used a mortar to crush them into small dusts, and packed them up to get the &aWrought Iron Dust&r."
 				""
+				"If you came from the previous quests, preparing &e112 wrought nuggets&r, you can now place a mortar in the middle slot of a crafting table, with 14 wrought iron nuggets in each of the eight slots surrounding it. You obtain 28 small piles, that can then be manually compatcted into &e7 full dusts&r..."
+				""
 				"The important step is now the Bronze Mixer. "
 				"7 wrought iron dusts + 4 coke dusts + 3 limestone > 7 &aUncooked Steel Dusts"
 				""
-				"We only need the actual Steam Blast Furnace now."
+				"We only need the actual Steam Blast Furnace now. But &cwait before using any of these dusts.&r Make a wise use, following closely the next quests and crafting only what is indicated in each."
 			]
 			icon: "modern_industrialization:uncooked_steel_dust"
 			id: "6184A8F61049E433"
@@ -922,7 +977,7 @@
 			]
 			title: "Gaps"
 			x: -24.0d
-			y: 17.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["6184A8F61049E433"]
@@ -931,20 +986,26 @@
 				""
 				"Not yet. This step is more important."
 				""
-				"Since you're going to produce more steel, the priority is to smooth the processing. Unless you're really having fun manually crafting tiny dusts and nuggets, getting some molds will be helpful."
+				"Since you're going to produce more steel, the priority is to smooth the process. "
+				""
+				"Getting some molds will be helpful, unless you're really having fun manually crafting tiny dusts and nuggets."
 				""
 				"The Alloy Smelter is a Bronze tier machine that you could have easily built before, but not very useful without the use of steel molds."
 				""
 				"&cImportant&r: read the next page for more info. The Alloy Smelter is now a multiblock with a quirk..."
 				""
 				"Obtaining one can be a major help because it will let you skip the manual crafting of nuggets. With a normal iron ingot and a nugget mold you can get iron nuggets directly."
+				"&cYou need one nugget mold only, so make sure to only insert two dusts and not waste more."
 				""
 				"The recipe for the mold requires some type of nugget, but this is only needed to give the mold its shape, and is not consumed in the process."
+				""
+				"&eLook here nearby to the side, for a quest with a clearer breakdown of the various phases."
+				"&eTitle is: &lSteel Ball Runs"
 				""
 				"{@pagebreak}"
 				"This is now a multiblock... with a chimney."
 				""
-				"This multiblock has a fairly weird structure, so make sure you build and assemble the correct blocks. For example Bronze Machine Casing, and Bronze Plated Bricks can look quite similar."
+				"This multiblock has a fairly weird structure, so make sure you build and assemble the correct blocks. For example Bronze Machine Casing, and Bronze Plated Bricks can look quite similar. Hatches, four of them, replace the bronze machine casings, so this leaves five of those blocks to place."
 				""
 				"The real quirk is that you can craft both a \"clean\" or \"dirty\" chimney. But the structure will only validates when the chimney is dirty. This can be a problem because with an axe you can clean the chimney to also have a chance at a black dye, and since they are considered two different blocks, the structure would invalidate."
 				""
@@ -968,29 +1029,29 @@
 			]
 			title: "Mouldy Fun"
 			x: -22.5d
-			y: 17.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["19A98DE71EE34CAA"]
 			description: [
-				"Another recap:"
+				"Another recap, this is a longer explaination, please read all pages before doing anything:"
 				""
-				"So you crush iron ore down to dust, then blast the dust along with coke to get pig iron, to then blast again for standard iron ingots."
+				"So you crush iron ore down to dust, then blast the dust along with coke to get pig iron, to then vanilla-blast again for standard iron ingots."
 				""
 				"With the alloy smelter and a mold you can now transform the ingot into 9 nuggets. The part of the process that won't change is the smelting of nuggets into their wrought versions. But other parts of this whole process can be improved."
 				""
-				"With a Macerator you will be able to crush the raw iron to 1.5 dusts, it's a massive improvement. Then the macerator and the alloy smelter make another combo at the other end, because they'll let you smelt the 9 wrought iron nuggets into 1 wrought iron ingot, the same process but in reverse, requiring a nugget to ingot mold. Then you can place the wrought iron ingot into a macerator to get a wrought iron dust directly."
+				"With a Macerator you will be able to crush the raw iron to 1.5 dusts, it's a massive improvement. Then the macerator and the alloy smelter make another combo at the other end, because they'll let you smelt the 9 wrought iron nuggets into 1 wrought iron ingot, the same process but in reverse, requiring an ingot mold. Then you can place the wrought iron ingot into a macerator to get a wrought iron dust directly."
 				""
-				"But don't run to make the nuggets to ingot mold now. The macerator is a bronze tier machine... with steel components... and three diamonds."
+				"But don't run to make the ingot mold now. The macerator is a bronze tier machine... with steel components... and three diamonds."
 				""
-				"Well, now you have access to iron tools, so you can mine diamonds. But the regular diamonds only drop with a 30% chance."
+				"Well, now you have access to iron tools, so you can mine diamonds. But the &eregular diamonds only drop with a 30% chance."
 				""
 				"It's not all."
 				""
 				"{@pagebreak}"
-				"The macerator also requires a new type of fluid pipes, requiring reinforced glass. To make this and the standard type of glass, you need a block mold. So another two pieces of steel blend for that."
+				"The macerator also requires a new type of fluid pipes, requiring reinforced glass panes. To make these you need a plate mold. So another two pieces of steel dust for that."
 				""
-				"Even once you have the diamonds and pipes, you need the two steel gears. Every gear should be 5.5 steel ingots. So eleven in total."
+				"Even once you have the diamonds and pipes, you need the two steel gears. Each gear should be 5.5 steel ingots. So eleven in total."
 				""
 				"...But."
 				""
@@ -1000,58 +1061,76 @@
 				""
 				"So."
 				""
-				"From the beginning: 2 steel blends for the ingot to nugget mold, another 2 for the reverse, nugget to ingot, then yet another 2 for the block mold to make glass."
+				"From the beginning: 2 steel blends for the &enugget mold&r, another 2 for the &eingot mold&r (but skip this for now), then yet another 2 for the &eplate mold&r to make reinforced glass."
 				""
-				"6 steel blends, plus all the steel needed for the two gears, which should amount to another 11, for a grand total of 17... Before you can leave the manual process behind."
+				"6 steel dusts, plus all the steel needed for the two gears, which should amount to another 11, for a grand total of 17... Before you can leave the manual process behind."
 				""
-				"That can be quite annoying since the batches are made of 7 pieces each. Let's see..."
+				"This can be quite annoying since the batches are made of 7 pieces each. Let's see..."
 				""
 				"{@pagebreak}"
-				"I'll give you two steel rods for free."
+				"I'll eventually give you two steel rods for free."
 				""
-				"This means that if you use the rods properly, you can make two steel gears with just 10 pieces of steel. Another two for ingot to nuggets mold, and another two for the mold for glass."
+				"This means that if you use these rods properly, you can make two steel gears with just 10 pieces of steel. For a total of 14 (two batches) including the two molds you should now have..."
 				""
-				"14 steel dusts required to get a cutting machine, a macerator, and an ingot to nuggets mold. You'll need another two to complete the process and also get the nuggets to ingot mold, but this is already a step forward, since you can start using the macerator to get iron dusts directly."
+				"14 steel dusts required to get a cutting machine, a macerator, a nugget mold and a plate mold. You'll need another two to get the ingot mold and complete the process, but it will be a final step left to you, meanwhile you can start using the macerator to get iron dusts directly."
+				""
+				"For now just make the plate mold that is required in this quests, with the goal of crafting the glass panes required for MD fluid pipes."
 			]
+			icon: "geggy:mold_block"
 			id: "0178D6DCB4CE6448"
 			min_width: 250
+			shape: "rsquare"
+			tasks: [{
+				id: "6D2958A090443D76"
+				item: "geggy:mold_plate"
+				type: "item"
+			}]
+			title: "Recap"
+			x: -21.0d
+			y: 20.0d
+		}
+		{
+			dependencies: [
+				"5755418D20BDFFEB"
+				"3ACA6FD987823CFD"
+			]
+			description: [
+				"With reinforced glass panes you get access to Modern Dynamics fluid pipes and the Bronze Cutting Machine that is required to make steel rods and bolts. "
+				""
+				"If you followed closely these quests, you should have two molds (nuggets and plate), one unused steel ingot, and two uncooked steel dusts. To complete this stage you have to go through another batch of steel dusts, to get a total of 9, and then use the remaining steel ingot to get to 10. With those ten you have more than enough to craft one steel gear, complete the quest to get the two rods as reward, and so have just enough to complete also a second gear. "
+				""
+				"The quest close on the right side titled \"Steel Ball Runs\" will detail how you proceed properly through this second steel batch."
+				""
+				"Notice that the cutting machine produces two steel rods from one ingot, lowering the cost of a gear to 5.5 steel ingots (down from 7). You can't use the Create saw for steel rods. BUT, you can now use the cutting machine for bronze rods, as well other types, and so a more convenient recipe overall."
+			]
+			icon: "modern_industrialization:bronze_cutting_machine"
+			id: "25BDF469C1F67959"
+			min_required_dependencies: 1
+			min_width: 280
 			rewards: [{
 				count: 2
-				id: "27E4A8F8F72AACC4"
+				id: "567692434743F737"
 				item: "modern_industrialization:steel_rod"
 				type: "item"
 			}]
 			shape: "rsquare"
-			tasks: [{
-				id: "7F06B077DBA6624D"
-				type: "checkmark"
-			}]
-			title: "Recap"
-			x: -21.0d
-			y: 19.0d
-		}
-		{
-			dependencies: ["1FBDEA183EC8F33D"]
-			description: [
-				"With reinforced glass panes, you have access to Modern Dynamics fluid pipes and the Bronze Cutting Machine that is required to make steel rods and bolts. "
-				""
-				"These new fluid pipes are now on a Create assembly line, the recipe is a bit convoluted..."
-				""
-				"Note: fluid pipes require potin, that can now also be produced with the alloy smelter. The recipe was changed to bronze + lead to fit in the slots."
+			tasks: [
+				{
+					id: "043E7AC641143CBD"
+					item: "modern_industrialization:bronze_cutting_machine"
+					type: "item"
+				}
+				{
+					id: "2B73375548F6399A"
+					item: "modern_industrialization:steel_gear"
+					type: "item"
+				}
 			]
-			icon: "modern_industrialization:bronze_cutting_machine"
-			id: "25BDF469C1F67959"
-			shape: "rsquare"
-			tasks: [{
-				id: "043E7AC641143CBD"
-				item: "modern_industrialization:bronze_cutting_machine"
-				type: "item"
-			}]
-			x: -22.5d
-			y: 20.5d
+			x: -21.0d
+			y: 21.5d
 		}
 		{
-			dependencies: ["0178D6DCB4CE6448"]
+			dependencies: ["6184A8F61049E433"]
 			description: [
 				"Some overall numbers:"
 				""
@@ -1061,16 +1140,17 @@
 				""
 				"&d2nd run&r- got the alloy smelter + ingot to nuggets mold."
 				"6 raw iron ores > millstone to 3 iron dusts > Blast Furnace to 2 iron ingots > alloy smelted with mold to 18 nuggets > smelt to wrought iron nuggets > mortar to 4 small wrought iron dusts > packed back into 1 full wrought dust."
-				"The surplus of 2 nuggets for each of the 7 dusts isn't enough to give an extra. So this batch is 6 raw iron ores for every steel dusts, for a total of &a42 raw iron ores&r."
+				"The surplus of 2 nuggets for each of the 7 dusts isn't enough to give an extra. So this batch is 6 raw iron ores for each steel dust, for a total of &a42 raw iron ores&r."
 				"This batch actually \"costs\" more since it doesn't use the granularity of small dusts, but it makes the processing much faster and straightforward."
 				""
 				"&d3rd run&r- macerator."
 				"The use of macerator gives a major boosts to the early stage. One raw iron ore is now 1.5 full dusts (rather than 0.5). So another batch of steel will require around &a14 raw iron ores&r. "
 				""
 				"&donward&r- final stage at this tier."
-				"With a nuggets to iron mold and the alloy smelter again, conversion to wrought dust is now 1:1. But there's still a 3 to 2 iron dust to iron ingot ratio."
+				"With a nuggets to ingot mold and the alloy smelter again, conversion to wrought dust is now 1:1. But there's still a 3 to 2 iron dust to iron ingot ratio."
 				"The cost for a steel batch of 7 is now 12 iron dusts (four batches of three), converting to &a8 raw iron&r required... down from 42. "
 			]
+			hide_dependency_lines: true
 			id: "341FC03D72872AD7"
 			min_width: 320
 			optional: true
@@ -1080,7 +1160,7 @@
 				type: "checkmark"
 			}]
 			x: -19.5d
-			y: 19.0d
+			y: 20.0d
 		}
 		{
 			dependencies: ["1FBDEA183EC8F33D"]
@@ -1089,7 +1169,7 @@
 				""
 				"Note that to make standard glass you need a different mold, a block mold."
 				""
-				"Since this requires another two steel dusts, it's better to skip this part until later."
+				"Since this requires another two steel dusts, &eit's better to skip this part&r until later."
 			]
 			icon: "minecraft:glass"
 			id: "0B20B8041843FB6C"
@@ -1107,39 +1187,32 @@
 				}
 			]
 			x: -24.0d
-			y: 19.0d
+			y: 20.0d
 		}
 		{
 			dependencies: ["0178D6DCB4CE6448"]
 			description: [
-				"The &aPlate Mold&r can be used in the alloy smelter to get the &aReinforced Glass Pane&r, itself used for both Modern Dynamics fluid pipes and the Bronze Cutting Machine. "
+				"The &aPlate Mold&r from the previous quest can be used in the alloy smelter to get the &aReinforced Glass Pane&r, itself used for both Modern Dynamics fluid pipes and the Bronze Cutting Machine. "
 				""
 				"Glass comes from a mix of sand and flint, reinforced glass instead requires some quartz dust as well. Navigating these recipes should be straightforward at this point."
 			]
 			icon: "geggy:reinforced_glass_pane"
 			id: "1FBDEA183EC8F33D"
 			shape: "rsquare"
-			tasks: [
-				{
-					id: "3544F39D895E8067"
-					item: "geggy:mold_plate"
-					type: "item"
-				}
-				{
-					id: "79C41E063AEEB150"
-					item: "geggy:reinforced_glass_pane"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "79C41E063AEEB150"
+				item: "geggy:reinforced_glass_pane"
+				type: "item"
+			}]
 			x: -22.5d
-			y: 19.0d
+			y: 20.0d
 		}
 		{
 			dependencies: ["39754E37B49FAC5E"]
 			description: [
 				"Extra notes on fluid pipes:"
 				""
-				"As written in the \"Known Issues \\& Notes\" page, sometime when you reload a world fluid pipes show as not connected even if still working, or just look weird. This can be quickly fixed by pressing \"&aF3+t&r\" (reloading resources)."
+				"As written in the \"Known Issues \\& Notes\" page, sometime when you load a world fluid pipes show as not connected even if still working, or just look weird. This can be quickly fixed by pressing \"&aF3+t&r\" (reloading resources)."
 				""
 				"MI machines can usually auto-extract from the marked face (usually on the back, unless moved manually with a wrench and SHIFT + right click), but if you want to move things manually, even when using item pipes taking items from a barrel, you need to use an \"&eextractor&r\". A red and white item, look it up on REI/EMI. Just apply it to the end of the pipe connected to a barrel or tank you want to extract from."
 				""
@@ -1147,16 +1220,12 @@
 				""
 				"Let's say you are moving a fluid onto a very large tank. While this process of transfering fluid is ongoing, the level will increase in the tank, but the pipe will look empty, apparently doing nothing. Only after the destination tank is completely full you'll see the fluid pipe filling up with the corresponding fluid type, and the tooltip will also then show both the fluid and amount within."
 			]
+			icon: "moderndynamics:fluid_pipe"
 			id: "2D9FCCC50C86C0B7"
 			min_width: 260
-			tasks: [{
-				id: "5B82FE16164A9934"
-				item: "moderndynamics:fluid_pipe"
-				type: "item"
-			}]
 			title: "Incongrous Fluidification"
 			x: -19.5d
-			y: 20.5d
+			y: 23.0d
 		}
 		{
 			dependencies: ["2D9FCCC50C86C0B7"]
@@ -1182,6 +1251,7 @@
 			icon: "modern_industrialization:large_tank"
 			id: "62043941D20CCAE3"
 			min_width: 270
+			optional: true
 			shape: "rsquare"
 			tasks: [
 				{
@@ -1197,7 +1267,7 @@
 			]
 			title: "Larger than life"
 			x: -18.0d
-			y: 20.5d
+			y: 23.0d
 		}
 		{
 			dependencies: ["415F550A624CC08D"]
@@ -1224,8 +1294,8 @@
 				type: "item"
 			}]
 			title: "Underwater Farts"
-			x: -25.5d
-			y: 17.5d
+			x: -24.0d
+			y: 21.5d
 		}
 		{
 			dependencies: ["39754E37B49FAC5E"]
@@ -1239,6 +1309,8 @@
 				"If you upgrade the macerator to the steel version, you can also process the precious ore block for better yields."
 				""
 				"As you can see from the recipes, the next stage opens up when you can craft an electric autocalve, for better yields at the purified ore. Then the full processing will require first assemblers, to craft chemical reactors. Then a small setup will realize the full gold processing chain."
+				""
+				"We'll see all of this later..."
 			]
 			id: "05DA598C312DD133"
 			min_width: 250
@@ -1250,7 +1322,7 @@
 				type: "item"
 			}]
 			x: -19.5d
-			y: 22.0d
+			y: 24.5d
 		}
 		{
 			dependencies: ["7B7FBACCC734F3CB"]
@@ -1279,8 +1351,8 @@
 				type: "item"
 			}]
 			title: "Bark at a tree"
-			x: -27.0d
-			y: 17.5d
+			x: -25.5d
+			y: 21.5d
 		}
 		{
 			dependencies: ["0D2DBE919E04B100"]
@@ -1299,8 +1371,8 @@
 				type: "item"
 			}]
 			title: "Arale"
-			x: -28.5d
-			y: 17.5d
+			x: -27.0d
+			y: 21.5d
 		}
 		{
 			dependencies: ["47A1DC679D46C66F"]
@@ -1321,8 +1393,8 @@
 				type: "item"
 			}]
 			title: "Mixing shit and piss..."
-			x: -28.5d
-			y: 19.0d
+			x: -27.0d
+			y: 23.0d
 		}
 		{
 			dependencies: ["18C5A7C989DC445D"]
@@ -1339,8 +1411,8 @@
 				type: "item"
 			}]
 			title: "Turd"
-			x: -27.0d
-			y: 19.0d
+			x: -25.5d
+			y: 23.0d
 		}
 		{
 			dependencies: ["38862A3E3F13DC7C"]
@@ -1369,8 +1441,434 @@
 				}
 			]
 			title: "Smelly bottle"
+			x: -24.0d
+			y: 23.0d
+		}
+		{
+			dependencies: ["41BA783FD2C150D0"]
+			description: [
+				"The vanilla way of categorizing fuel is that 4k = 1 items burned, in a standard furnace."
+				""
+				"&ePlanks&r = &a6k EU&r, 1.5 items "
+				"&eCoal&r = &a32k EU&r, 8 items"
+				"&eCoke&r = &a64k EU&r, 16 items"
+				"&eCreosote bucket&r (1k fluid) = &a160k EU&r, 40 items"
+				"&eCoal Block&r = &a320k EU&r, 80 items"
+				"&eCoke Block&r = &a640k EU&r, 160 items"
+				"(blocks have +1 bonus)"
+				""
+				"(costs are for 1 hour of continuous runing)"
+				"&eBoiler Prototype&r: &a1 EU/t&r outgoing, burning 11.2 coal dusts"
+				"&eBronze Boiler&r: &a8 EU/t&r max, burning 18 coal or 9 coke"
+				"&eSteam Fluid Boiler&r: &a33.33 EU/t&r, burning 9000Mb creosote"
+				"&eLarge Steam Boiler&r: &a256 EU/t&r, burning both coke and creosote from a coke oven running without pause"
+			]
+			id: "53620CD40E9A1681"
+			min_width: 300
+			shape: "rsquare"
+			tasks: [{
+				id: "314E3DAED6F64213"
+				title: "The Powers That Be"
+				type: "checkmark"
+			}]
+			x: -22.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["274F91C7EC72D531"]
+			description: [
+				"This is an early option to use creosote from a coke oven to produce steam."
+				""
+				"In standard MI, creosote was relatively low on energy output, but was able to produce steam very quickly through a \"Large Steam Boiler\". Here the multiblock is only available later, but a custom fluid-only boiler has been added, even if clunky due to technical reasons."
+				""
+				"There's only one single recipe here, and it's been tuned to produce a max of &e33.33 EU/t&r. Being 4x higher than a boiler (&e8 EU/t&r), but significantly less than the standard large boiler (&e256 EU/t&r)."
+				""
+				"On the other hand, this recipe consumes significantly less creosote, and so lasting a longer time."
+				""
+				"{@pagebreak}"
+				"Since a run of recipe requires 120t, so 6 seconds, in an hour it would run up to 600 times. Every run uses 15 creosote and produces 4k steam, therefore, it consumes 9k creosote every hour, and produces 2.400.000 EU/steam."
+				""
+				"Remember that a coke oven needs 40 seconds to produce 250 creosote, and if you do the math, this boiler can only use 100 creosote in those 40 seconds."
+				""
+				"The formula hasn't been tuned to the time of the coke oven recipe, but, roughly, to the output of the second tier of a coal quarry..."
+				""
+				"As you can verify with the information on the quarry page, the second tier produces on average 37 coal/hour. That means a total of 9250 creosote, which is slightly more than the 9k consumed at max by the boiler here."
+				""
+				"It means you can make a boiler run full time, along with the quarry, whereas the coke oven will only activate in batches, when needed. "
+				""
+				"{@pagebreak}"
+				"The 3x3x3 structure only accepts hatches at the eight corners of the cube. You need three fluid input hatches because one is for steam being used to run the recipe (as this is a standard machine), one for the creosote, and one for the water. Then you need a single fluid output hatch for the outgoing steam..."
+				""
+				"Due to technical limits, a single run will fill the output hatch with 4k steam. This also means that the machine won't be able to run the recipe again until that hatch is completely empty (and so has enough space to accept another 4k of steam, when done). Again, you cannot simply add another output hatch, only one is being checked."
+				""
+				"The problem is how fast you can \"empty\" that hatch. If at this stage you can only use Create pump and pipes, then consider that a pump only transfers 0.5 of fluid for every \"t\" and 1 RPM."
+				""
+				"A simple way to look at that is you need double the amount RPM, for every unit of fluid. So, to keep this boiler always going, you need to match the 33.33 EU/t of its output. Meaning 67 RPM. But since you are only likely able to double the RPM every step, through cogwheels, you'll have to go to 128 RPM to match the speed required here..."
+				""
+				"Since the 4k of steam arrives inside the hatch all at once, it's &eIMPORTANT&r you set that hatch to auto-output (look at its UI), and then place a Create tank right on that output side. This allows the steam to be dumped immediately into the tank, so that the hatch is already free and the boiler can run its recipe without delay."
+			]
+			icon: "modern_industrialization:super_boiler"
+			id: "34496FAA1420FB0F"
+			min_width: 300
+			optional: true
+			tasks: [
+				{
+					id: "60E5324083F6F10E"
+					item: "modern_industrialization:super_boiler"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "4C56333C908F137D"
+					item: "modern_industrialization:bronze_machine_casing_pipe"
+					type: "item"
+				}
+				{
+					count: 20L
+					id: "69DC2C1ED687B82D"
+					item: "modern_industrialization:bronze_plated_bricks"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "33048C2A4881A335"
+					item: "modern_industrialization:bronze_fluid_input_hatch"
+					type: "item"
+				}
+				{
+					id: "000880FB9C695E77"
+					item: "modern_industrialization:bronze_fluid_output_hatch"
+					type: "item"
+				}
+			]
+			x: -18.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["4B64A02AD447ABAB"]
+			description: [
+				"As already said, the water pump checks the 8 blocks around itself, for water. Same as a 3x3 crafting grid seen from the top, with the pump taking the central slot. The amount of water depends on how many those 8 spaces are filled with water. But since water isn't actually consumed, there's no reason to not use the best setup. So to simplify calculations here we'll only consider all 8 blocks being used."
+				""
+				"&e1Mb of water converts to 16Mb of steam."
+				""
+				"&eWhen active, the pump takes 1 EU/t."
+				""
+				"&eThe pump will produce 1000Mb (one bucket) over 5 seconds&r, or 100 ticks (20 ticks a second). The 5 seconds are fixed, but the amount depends on the number of water blocks around the pump."
+				""
+				"If a standard boiler, as you'll see, produces 8 EU/t, and 1 EU = 1 steam, then over 100 ticks/5 seconds, it will output at its best 800Mb steam. Consuming only 50 Mb of water across those same 5 seconds (since you divide by 16, as seen above)."
+				""
+				"...But there are counter intuitive technicalities at play, so go to page 2 for more."
+				""
+				""
+				"{@pagebreak}"
+				"As far as I'm told, the boiler functions as expected, but the water pump... doesn't."
+				""
+				"The pump has its own internal tank producing and storing water. When you connect a pipe to it, to move that water into a different machine, the pipe will drain all the fluid, until the destination is full, and until the pipe internal storage itself is also full. The pump will then continue to fill its own tank, and when that's also full, it stops."
+				""
+				"The technicality is how it activates again. &eThe pump will turn on after it sees at least 125Mb free in its internal tank&r."
+				""
+				"The problem here is that the pump works in batches, and that means that it will eat the equivalent amount of steam to run for five seconds and produce one bucket of water. So &ethe pump will eat 100 EU of steam every time it turns on&r. If there's only 125Mb free in the tank, then the pump will fill those, and void the remaning 875Mb of water. It's not a big deal because water is infinite, but consider that every time it turns on, the pump will burn at least the full batch of 100EU steam."
+				""
+				"If used with a single boiler, 825Mb of water are voided, because the pump turns on when 125Mb are free in the tank, but it then will take 5 seconds before the pump delivers its output, and if the boiler keeps going, taking another 50Mb, then the level in the tank will be lowered further."
+				""
+				"Remember that when using Create or MB pipes you can only have one pipe on a single face. So you'll need two: one for steam coming in, and one for water going out. The pipes can be waterlogged, so the block they occupy still counts as a valid water block."
+			]
+			id: "7784638631D9BAFB"
+			min_width: 320
+			optional: true
+			tasks: [{
+				id: "3BCDD86A3ADE26BF"
+				title: "Technicality: water pumps"
+				type: "checkmark"
+			}]
+			x: -23.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["145CDC1CA15F6E15"]
+			description: [
+				"A pump operates through rotational force, so the speed (rpm) affects how much fluid is being moved. The faster the speed, the more fluid will go through."
+				""
+				"The formula is simple: "
+				"&e2 RPM to move 1Mb of fluid, for every tick. "
+				"So the amount you want to move each tick, needs to be doubled to get the necessary rpm. "
+				""
+				"You can of course measure speed precisely with a speedometer, which is given for free in one of the quests in the first page."
+				""
+				"The pipe itself has a delay to simulate the fluid progressively moving through, but this is only a fake animation effect. Once each end is connected, the fluid gets moved from the origin to end, at the amount given in the formula above, and &ethe pipes themselves cannot store any amount within."
+				""
+				"On the other end, MD (Modern Dynamics) pipes do have internal storage, but remember that this also behaves counter intuitively. At first the fluid is being moved from source to destination, only AFTER the destination tank is full the pipe internal storage will start filling up... It can be confusing because you could easily think the pipe isn't working since you can't see any fluid inside it, even if fluid is actually being moved from source to destination continuously."
+			]
+			id: "3CFEAB06203157B9"
+			min_width: 280
+			optional: true
+			tasks: [{
+				id: "3D503C724B6EA6D0"
+				title: "Technicality: Create pumps"
+				type: "checkmark"
+			}]
+			x: -18.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["20B7DAB8194CA924"]
+			description: [
+				"The Bronze Evaporation Tank can be used to more easily produce &ePacked Mud&r."
+				""
+				"Why would you need packed mud? For the Clay Quarry multiblock."
+				""
+				"It will be necessary if you want to start produce Andesite Alloy as a fully automated process, and to have easier access to Coke Ovens and Steam Blast Furnaces."
+				""
+				"In order to infinitely produce clay you will still need this evaporation tank, as one necessary step through the whole process. These quests are optional because you decide when they will be worth the investment to set everything up, and maybe try to automate Andesite Alloy fully."
+			]
+			id: "7FA13ECB870F1FDE"
+			optional: true
+			tasks: [{
+				id: "25E494528790377E"
+				item: "modern_industrialization:bronze_evaporation_tank"
+				type: "item"
+			}]
+			x: -22.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7FA13ECB870F1FDE"]
+			description: [
+				"This is machine multiblock, and first step to obtain clay through an automatic quarry."
+				""
+				"If you look the (U)ses of the controller, and switch to the wrench tab, you see all the blocks required to build it. Placing the controller in the world and holding a (MI) wrench will show an outline of how the machine has to be formed. With multiblocks you will then interact through the hatches directly, for all inputs and outputs."
+				""
+				"The Clay Quarry only has one recipe. But as you can see it needs:"
+				"- One &eBronze Fluid Input Hatch&r (for Steam)"
+				"- One &eBronze Fluid Input Hatch&r (for the water)"
+				"- One &eBronze Item Input Hatch&r (for the copper can)"
+				"- One &eBronze Item Output Hatch&r (for the output, the Clayed Copper Can)"
+				""
+				"That means you can remove 4 mud bricks from the structure (so you only need 3 of them in practice)."
+				""
+				"You still need 7 for the controller, 9 for the wall pieces, and 3 for the structure, so a total of &e19 mud bricks&r, plus 25 mud at the base of the machine."
+				""
+				"When fully automated this setup produces roughly 1 clay ball every minute, and a whole lot of gravel dust, that is then used to automate andesite."
+				""
+				""
+				"{@pagebreak}"
+				"Beware, if you are playing the large version of the modpack, the mod Immersive Weathering will dry the mud at the base of the machine into cracked mud, invalidating the structure: you have to specifically build the multiblock in a non-dry biome. I decided to go with this rule."
+				""
+				""
+				"{@pagebreak}"
+				">playing create with me and the boys (wholesome 100)"
+				">peek over and see normie playing 1.7.10"
+				""
+				"&b&o : ew wtf why are you still on that old sh*t are you fu**ing 30 or something"
+				"&b&o : watch this"
+				""
+				">download and make a create modpack"
+				">go through my 200 patreon subscriptions"
+				">acidentally download towel instead of quilt 1.23.5.1.2.95 papyrus version"
+				">boot up minecraft"
+				">pc starts making jet engine sounds"
+				">the cpu starts sizzling"
+				""
+				"&b&o : your old sh*tty version cant compare to how beautiful this looks"
+				""
+				">create new world"
+				">game freezes for a bit, computer starts screaming at this point"
+				">load in"
+				">move one block"
+				">im pretty sure one of my ram sticks just comitted suicide"
+				">build a simple farm "
+				""
+				"&b&o : check this out, solves the magic block problem, something YOU probably dont even get to expirence because your version is so old"
+				""
+				">immeadiatly place several gears belts and shafts"
+				">graphics card explodes"
+				">framerate is in the negatives"
+				">after essentially melting my pc and burning a hole in the desk, the contraption is done"
+				">the 1.7.10 player is still there somehow, watching it take 20 minutes to deliver a piece of wheat to the right storage column"
+				">before it even finishes a popup appears asking me to donate 14 dollars more to the patreon to coninue using"
+				""
+				"&b&o : this is why you should switch, ours is much more superiour in everyting, because its NEW!"
+				" "
+			]
+			id: "169A250A599D706D"
+			min_width: 290
+			optional: true
+			tasks: [{
+				id: "76D81364C145575C"
+				item: "modern_industrialization:clay_quarry"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["169A250A599D706D"]
+			description: [
+				"With the Clay Quarry built, using renewable water and steam, you solved another piece for the automation of Andesite Alloy."
+				""
+				"Clay coming from this quarry, Zinc and Quartz from their own ore quarries, what's left is Andesite."
+				""
+				"Andesite can be made in a mixer, with two flint pieces, one gravel block and some lava, it's a Create vanilla recipe. Since lava is renewable in some ways, and flint comes from crushing gravel, you just need a way to renew gravel as well."
+				""
+				"No, you can't crush cobblestone into gravel. But the process of producing clay from the quarry is very wasteful, and generates gravel dust as a byproduct. The same happens when you crush andesite into dust."
+				""
+				"The ratios and timings need more testing, but you should be more or less able to pack that gravel dust back into gravel blocks, and then loop it to produce more andesite..."
+			]
+			id: "6DF00170BEE642CB"
+			min_width: 250
+			optional: true
+			tasks: [{
+				id: "2E823406142704C5"
+				type: "checkmark"
+			}]
+			title: "Almost u-tomato"
 			x: -25.5d
-			y: 19.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["1FBDEA183EC8F33D"]
+			description: [
+				"Why is there another complication here?"
+				""
+				"Because the fluid pipes you'll need next require mechanical crafters. And if you care to automate steel production well enough, then you can delete lots of clutter by replacing the mess you probably have of Create pipes and pumps going in every direction, by using these new fluid pipes that don't need to be powered."
+				""
+				"Setting this up to craft the actual pipes isn't very complex, unless you want to automate it. The first and last line of crafters is just about curved plates, but the central row means delivering individual items, so it's probably much better to craft these pipes in batches, whenerver and how many you need, manually delivering the items in all those &eeleven slots/crafters&r."
+				""
+				"The problematic part is crafting eleven of them, since the recipe is quite expensive and requires some steps. But once you are done you can move on, and the layout for the item pipes is mostly the same, so you can reuse all of it."
+				""
+				"Item pipes will be the goal right after setting up steel properly."
+			]
+			icon: "moderndynamics:fluid_pipe"
+			id: "5755418D20BDFFEB"
+			min_width: 265
+			shape: "rsquare"
+			tasks: [
+				{
+					id: "1D65330E2D74C008"
+					item: "create:mechanical_crafter"
+					type: "item"
+				}
+				{
+					id: "77FF136B3E2898E3"
+					item: "moderndynamics:fluid_pipe"
+					type: "item"
+				}
+			]
+			x: -22.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["1DEDC34AE5197F09"]
+			description: [
+				"Coke dust + water in a mixer produces some &araw sythetic oil&r. You can the export this in a steam blast furnace to obtain &asynthetic oil&r."
+				""
+				"Synthetic oil can be used again in a mixer for better yields at rubber sheet, or into a steel mixer with sulfur for &asynthetic rubber&r."
+				""
+				"Synthetic rubber then can be used (later) in some assembler recipes, or again mixed with paper for a possibily more convenient yields at rubber sheets. But at the moment making paper is likely still a mostly manual process, so it's probably better to use this path later."
+				""
+				"You'll have to use some synthetic oil for the brass casings, to get mechanical crafters for example."
+			]
+			id: "2A22D163ED1DC33B"
+			min_width: 240
+			optional: true
+			tasks: [{
+				id: "5535081576B7DDAF"
+				item: "modern_industrialization:synthetic_oil_bucket"
+				type: "item"
+			}]
+			title: "Rubber paths"
+			x: -19.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["5755418D20BDFFEB"]
+			description: [
+				"You need &bdiamonds&r for the cutting machine and the macerator next. As already said, breaking a diamond ore block only has &e30-35% chance&r of dropping an usable diamond, in other cases you get some \"shards.\" "
+				""
+				"One more option is to use shards in a mixer with a filter. If you look up the recipe, consider that it is misleading: it only shows two outputs, with 15% chance of giving a diamond. But the actual recipe has THREE outputs, as it can also result in diamond tiny dusts. Either you lock one slot of the mixer to diamonds (losing the dusts), or you manually run SINGLE batches. If you simply drop a stack of shards in the machine, the first run will output shards and dusts, filling up both slots, and causing following runs to \"delete\" possible diamonds..."
+				""
+				"You can't do much with simple diamond dusts at this point, but maybe you want to keep them stored somewhere."
+			]
+			id: "3ACA6FD987823CFD"
+			min_width: 240
+			optional: true
+			tasks: [{
+				id: "4F1EAC7C6A08BA50"
+				item: "minecraft:diamond"
+				type: "item"
+			}]
+			x: -22.5d
+			y: 23.0d
+		}
+		{
+			dependencies: ["5DAA5DF264D1E559"]
+			description: [
+				"These three big round objects could be crafted relatively easily if you only considered their components..."
+				""
+				"...but it's the amount of mechanical crafters involved to gate the whole thing. Once you get over that major hurdle, using these water wheels can be quite convenient compared to windmills."
+				""
+				"And then on the right you get to the crushing wheels, that can have a major role in ore processing... But maybe not directly. It depends on progress through the quarry tiers."
+				""
+				"In previous versions of the mod there was some trickery involved with the use of water wheels, but it's all gone now: they just need contact with a block of non-flat \\& flowing water, and it's done."
+				""
+				"&e8 RPM&r produced through its central axis"
+				"&e256 Stress Units&r supporting connected contraptions"
+				""
+				"By nesting sideways more water wheels you add up the supported stress units, even if the rotational power stays the same."
+				""
+				"One water wheel corresponds to just &efour sails&r, for stress supported. But the convenience of using water wheels is because you can add more without affecting rotational speed, so without additional speed proportionally increasing stess and requiring to redesign parts of your contraptions..."
+			]
+			id: "713B5BEDCA64824F"
+			min_width: 280
+			tasks: [{
+				id: "6DD61F349975D9B4"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			x: -19.5d
+			y: 26.0d
+		}
+		{
+			dependencies: ["713B5BEDCA64824F"]
+			description: [
+				"The large water wheel is an even better attempt at supporting bigger contraptions."
+				""
+				"&e4 RPM&r"
+				"&e512 Stress Units&r"
+				""
+				"Compated to a standard water wheel, RPM is halved but stress units are doubled. Of course you shouldn't worry about RPM because a large wheel to small connection already solves that disadvantage."
+				""
+				"It's the support for twice the stress units to be relevant here, and again you can nest wheels sideways to add more and more stess support, without stressing about varying speeds."
+			]
+			id: "23104432919DDF16"
+			min_width: 250
+			tasks: [{
+				id: "287F61695B0D35EC"
+				item: "create:large_water_wheel"
+				type: "item"
+			}]
+			x: -18.0d
+			y: 26.0d
+		}
+		{
+			dependencies: ["23104432919DDF16"]
+			description: [
+				"You need two of these."
+				""
+				"The start of ore processing is here, because you get more raw ores from crushing blocks."
+				""
+				"There's a catch. Quarries, up to the fourth tier drop directly raw ores. And you can't crush these. Therefore crushing wheels only work if you somehow go manually mining with a silk touch pickaxe (you can simply craft a gold pickaxe for this but doing it still requires some advances into the next chapter)."
+				""
+				"Alternatively, you get some very small chances at ores by processing some common materials. These options are not remotely good enough to automate and rely on them. But it's a good way to recycle lots of useless materials into little value."
+			]
+			id: "139924C787ED9C3B"
+			tasks: [{
+				id: "57152A0D68AA6739"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: -16.5d
+			y: 26.0d
 		}
 	]
 	title: "1 - Steam"

@@ -6,6 +6,10 @@ ServerEvents.recipes(event => {
 		"byg:gold_ingot_from_blasting_brimstone_nether_gold_ore",
 		"byg:gold_ingot_from_blasting_blue_nether_gold_ore",
 		"betternether:paper",
+		"betternether:rail",
+		"betternether:piston",
+		"betternether:detector_rail",
+		"betternether:activator_rail",
 		"betterend:paper",
 		"betterend:sulphur_gunpowder",
 		"bclib:tag_bucket",
@@ -13,7 +17,14 @@ ServerEvents.recipes(event => {
 		"betternether:glass_bottle",
 		"betternether:shield",
 		"bclib:tag_shield",
+		"bclib:tag_rail",
 		"bclib:tag_hopper",
+		"bclib:tag_stonecutter",
+		"bclib:tag_smith_table",
+		"bclib:tag_piston",
+		"bclib:tag_minecart",
+		"bclib:tag_compass",
+		"bclib:tag_cauldron",
 		"betternether:sugar",
 		"betterend:sugar_from_root"
 	])
@@ -61,3 +72,21 @@ ServerEvents.tags('item', event => {
   event.remove('c:gold_ores', 'byg:brimstone_nether_gold_ore')
 
 })
+
+ServerEvents.blockLootTables(event => {
+
+  event.addBlock('byg:blue_nether_gold_ore', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [2, 8]) 
+    })
+  }) 
+
+  event.addBlock('byg:brimstone_nether_gold_ore', table => { 
+    table.addPool(pool => {
+      pool.rolls = 1 
+      pool.addItem('geghilarity:precious_nugget', 1, [2, 8]) 
+    })
+  })
+  
+}); 

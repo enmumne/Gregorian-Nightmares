@@ -14,60 +14,66 @@ ServerEvents.recipes(event => {
 	event.remove({id: 'minecraft:diamond_boots'})
 	
 	event.shaped('geggy:unfinished_iron_helmet', [
-		'AAA',
-		'A A',
+		'BAB',
+		'B B',
 		'   '
 	], {
-		A: 'minecraft:iron_ingot'
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
 	})
 	event.shaped('geggy:unfinished_iron_chestplate', [
-		'A A',
-		'AAA',
-		'AAA'
+		'B B',
+		'BAB',
+		'BAB'
 	], {
-		A: 'minecraft:iron_ingot'
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
 	})
 	event.shaped('geggy:unfinished_iron_leggings', [
-		'AAA',
-		'A A',
-		'A A'
+		'BAB',
+		'B B',
+		'B B'
 	], {
-		A: 'minecraft:iron_ingot'
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
 	})
 	event.shaped('geggy:unfinished_iron_boots', [
 		'A A',
 		'A A',
 		'   '
 	], {
-		A: 'minecraft:iron_ingot'
+		A: 'geggy:iron_curved_plate'
 	})
 	event.shaped('geggy:unfinished_gold_helmet', [
-		'AAA',
-		'A A',
+		'BAB',
+		'B B',
 		'   '
 	], {
-		A: 'minecraft:gold_ingot'
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
 	})
 	event.shaped('geggy:unfinished_gold_chestplate', [
-		'A A',
-		'AAA',
-		'AAA'
+		'B B',
+		'BAB',
+		'BAB'
 	], {
-		A: 'minecraft:gold_ingot'
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
 	})
 	event.shaped('geggy:unfinished_gold_leggings', [
-		'AAA',
-		'A A',
-		'A A'
+		'BAB',
+		'B B',
+		'B B'
 	], {
-		A: 'minecraft:gold_ingot'
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
 	})
 	event.shaped('geggy:unfinished_gold_boots', [
 		'A A',
 		'A A',
 		'   '
 	], {
-		A: 'minecraft:gold_ingot'
+		A: 'modern_industrialization:gold_curved_plate'
 	})
 	/*
 	event.shaped('geggy:unfinished_diamond_helmet', [
@@ -105,7 +111,7 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:diamond_plate", amount: 5},
-			{item: "geggy:selector_1", amount: 1}
+			{item: "geggy:selector_1", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:unfinished_diamond_helmet", amount: 1}
@@ -117,7 +123,7 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:diamond_plate", amount: 8},
-			{item: "geggy:selector_2", amount: 1}
+			{item: "geggy:selector_2", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:unfinished_diamond_chestplate", amount: 1}
@@ -129,7 +135,7 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:diamond_plate", amount: 7},
-			{item: "geggy:selector_3", amount: 1}
+			{item: "geggy:selector_3", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:unfinished_diamond_leggings", amount: 1}
@@ -141,7 +147,7 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:diamond_plate", amount: 4},
-			{item: "geggy:selector_4", amount: 1}
+			{item: "geggy:selector_4", amount: 1, probability: 0.0}
 		],
 		item_outputs: [
 			{item: "geggy:unfinished_diamond_boots", amount: 1}
@@ -243,7 +249,7 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 32,
+		eu: 8,
 		duration: 400,
 		fluid_inputs: [
 			{fluid: "geggy:molten_gold", amount: 288},
@@ -257,7 +263,7 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({ 
 		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 32,
+		eu: 8,
 		duration: 400,
 		fluid_inputs: [
 			{fluid: "geggy:molten_gold", amount: 144},
@@ -271,7 +277,7 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({ 
 		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 32,
+		eu: 8,
 		duration: 400,
 		fluid_inputs: [
 			{fluid: "geggy:molten_gold", amount: 432},
@@ -285,7 +291,7 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({ 
 		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 32,
+		eu: 8,
 		duration: 400,
 		fluid_inputs: [
 			{fluid: "geggy:molten_gold", amount: 288},
@@ -299,7 +305,7 @@ ServerEvents.recipes(event => {
 	})
 	event.custom({ 
 		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 32,
+		eu: 8,
 		duration: 400,
 		fluid_inputs: [
 			{fluid: "geggy:molten_gold", amount: 432},
@@ -317,6 +323,8 @@ ServerEvents.recipes(event => {
 	event.shapeless(Item.of('minecraft:golden_sword').enchant('minecraft:silk_touch', 1), ['geggy:gold_sword_head', 'geggy:j_tool_rod'])
 	event.shapeless(Item.of('minecraft:golden_hoe').enchant('minecraft:silk_touch', 1), ['geggy:gold_hoe_head', 'geggy:j_tool_rod'])
 	event.shapeless(Item.of('minecraft:golden_shovel').enchant('minecraft:silk_touch', 1), ['geggy:gold_shovel_head', 'geggy:j_tool_rod'])
+	
+	
 	
 
 })	

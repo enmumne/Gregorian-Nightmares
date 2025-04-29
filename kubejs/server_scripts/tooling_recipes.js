@@ -98,6 +98,11 @@ ServerEvents.tags('item', event => {
   event.add('c:hidden_from_recipe_viewers', 'ad_astra:steel_nugget')
   event.add('c:hidden_from_recipe_viewers', 'extended_drawers:connector')
   event.add('c:hidden_from_recipe_viewers', 'extended_drawers:access_point')
+  event.add('c:hidden_from_recipe_viewers', 'modern_industrialization:iron_hammer')
+  event.add('c:hidden_from_recipe_viewers', 'modern_industrialization:steel_hammer')
+  event.add('c:hidden_from_recipe_viewers', 'modern_industrialization:diamond_hammer')
+  event.add('c:hidden_from_recipe_viewers', 'modern_industrialization:netherite_hammer')
+  event.add('c:hidden_from_recipe_viewers', 'additionaladditions:rope')
   
   event.remove('c:steel_ingots', 'ad_astra:steel_ingot')
   event.remove('c:ingots', 'ad_astra:steel_ingot')
@@ -120,6 +125,8 @@ ServerEvents.tags('block', event => {
   event.remove('needs_iron_tool', 'minecraft:deepslate_redstone_ore')
   event.add('needs_stone_tool', 'minecraft:redstone_ore')
   event.add('needs_stone_tool', 'minecraft:deepslate_redstone_ore')
+  
+  event.add('needs_stone_tool', 'geggy:stibnite_ore')
   
   event.remove('needs_iron_tool', 'create:zinc_ore')
   event.remove('needs_iron_tool', 'create:deepslate_zinc_ore')
@@ -177,6 +184,12 @@ ServerEvents.tags('block', event => {
   event.add('brazier:brazier_base_blocks', 'geggy:gloom_block')
   event.add('brazier:brazier_stripe_blocks', 'geggy:gloom_block')
   event.add('needs_stone_tool', 'geggy:gloom_block')
+  
+  event.add('c:hidden_from_recipe_viewers', 'moderndynamics:lv_cable')
+  event.add('c:hidden_from_recipe_viewers', 'moderndynamics:mv_cable')
+  event.add('c:hidden_from_recipe_viewers', 'moderndynamics:hv_cable')
+  event.add('c:hidden_from_recipe_viewers', 'moderndynamics:ev_cable')
+  event.add('c:hidden_from_recipe_viewers', 'moderndynamics:superconductor_cable')
 
   
 });  
@@ -645,6 +658,73 @@ event.custom (
 	Z: 'minecraft:string'
   })
   
+  // bucket
+  
+  event.shaped('geggy:unfired_bucket_mold_side', [
+    'CA ',
+    'ABA',
+    ' A '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'geggy:wooden_form',
+	B: 'kibe:water_wooden_bucket'
+  }).damageIngredient('geggy:wooden_form').replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket').noMirror()
+  event.shaped('geggy:unfired_bucket_mold_side', [
+    'CA ',
+    'ABA',
+    ' A '
+  ], {
+    A: 'geggy:clay_dust',
+	C: 'geggy:wooden_form',
+	B: 'minecraft:water_bucket'
+  }).damageIngredient('geggy:wooden_form').replaceIngredient('minecraft:water_bucket', 'minecraft:bucket').noMirror()
+  
+  event.smelting('geggy:bucket_mold_side', 'geggy:unfired_bucket_mold_side').cookingTime(400)
+  
+  event.shaped('geggy:ready_unfinished_bucket_side', [
+    ' A ',
+    'ACB',
+    '   '
+  ], {
+    A: 'modern_industrialization:iron_dust',
+	C: 'geggy:bucket_mold_side',
+	B: 'modern_industrialization:coal_dust'
+  })
+  
+  event.blasting('geggy:smelted_unfinished_bucket_side', 'geggy:ready_unfinished_bucket_side').cookingTime(400)
+  
+  event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "geggy:smelted_unfinished_bucket_side"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{"item": "geggy:bucket_side", "count": 1}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+  event.shaped('geggy:raw_bucket', [
+    'AB ',
+    '   ',
+    '   '
+  ], {
+    A: 'geggy:bucket_side',
+	B: 'geggy:bucket_side'
+  })
+  event.custom({
+		type: "create:sandpaper_polishing",
+		ingredients: [
+			{"item": "geggy:raw_bucket"}
+		],
+		results: [
+			{"item": "minecraft:bucket"}
+		]
+	})
+	
+  
   // bronze tools 
   
   event.shaped('geggy:unfired_pickaxe_mold', [
@@ -798,24 +878,12 @@ event.custom (
 
 	event.remove({id: 'farmersdelight:cooking_pot'})
 	event.shaped('farmersdelight:cooking_pot', [
-		'BBB',
-		'ASA',
+		'B B',
 		'AAA'
 	], {
 		A: 'geggy:tempered_brick',
-		B: 'geggy:primitive_brick',
-		S: 'kibe:water_wooden_bucket'
-	}).replaceIngredient('kibe:water_wooden_bucket', 'kibe:wooden_bucket')
-	
-	event.shaped('farmersdelight:cooking_pot', [
-		'BBB',
-		'ASA',
-		'AAA'
-	], {
-		A: 'geggy:tempered_brick',
-		B: 'geggy:primitive_brick',
-		S: 'minecraft:water_bucket'
-	}).replaceIngredient('minecraft:water_bucket', 'minecraft:bucket')
+		B: 'geggy:primitive_brick'
+	})
 
 	event.custom({
 		"type": "farmersdelight:cooking",
@@ -843,11 +911,13 @@ event.custom (
 	})
 
 	event.shaped('geggy:copper_can', [
-		'A A',
-		' A ',
+		'CAC',
+		' B ',
 		'   '
 	], {
-		A: 'minecraft:copper_ingot'
+		A: 'modern_industrialization:copper_ring',
+		B: 'modern_industrialization:copper_plate',
+		C: 'modern_industrialization:copper_curved_plate'
 	})
 
 	event.remove({id: 'labels:label'})
@@ -1339,7 +1409,7 @@ event.custom({
 			}
 	})
 	
-	event.shaped('geggy:gloom_block', [
+	event.shaped('3x geggy:gloom_block', [
 		'CAC',
 		'ABA',
 		'CAC'
@@ -1348,6 +1418,331 @@ event.custom({
 		B: 'modern_industrialization:aluminum_gear',
 		C: 'modern_industrialization:aluminum_plate'
 	})
+	
+	// steel & galvanized
+	
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 900,
+		item_inputs : [
+			{item: "modern_industrialization:steel_ingot", amount: 3},
+			{item: "geggy:mold_pickaxe", amount: 1, probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:raw_steel_pickaxe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 900,
+		item_inputs : [
+			{item: "modern_industrialization:steel_ingot", amount: 3},
+			{item: "geggy:mold_axe", amount: 1, probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:raw_steel_axe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 600,
+		item_inputs : [
+			{item: "modern_industrialization:steel_ingot", amount: 2},
+			{item: "geggy:mold_sword", amount: 1, probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:raw_steel_sword_blade", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 600,
+		item_inputs : [
+			{item: "modern_industrialization:steel_ingot", amount: 2},
+			{item: "geggy:mold_hoe", amount: 1, probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:raw_steel_hoe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 4,
+		duration: 300,
+		item_inputs : [
+			{item: "modern_industrialization:steel_ingot", amount: 1},
+			{item: "geggy:mold_shovel", amount: 1, probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:raw_steel_shovel_head", amount: 1}
+		]
+	})
+	
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:raw_steel_pickaxe_head"},
+		transitionalItem: {"item": "geggy:incomplete_steel_pickaxe_head"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_steel_pickaxe_head"},
+					{"item": "create:sand_paper"}
+				],
+				results: [{
+					"item": "geggy:incomplete_steel_pickaxe_head"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:steel_pickaxe_head"
+		}],
+		loops: 5
+	  }
+	)
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:raw_steel_axe_head"},
+		transitionalItem: {"item": "geggy:incomplete_steel_axe_head"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_steel_axe_head"},
+					{"item": "create:sand_paper"}
+				],
+				results: [{
+					"item": "geggy:incomplete_steel_axe_head"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:steel_axe_head"
+		}],
+		loops: 5
+	  }
+	)
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:raw_steel_sword_blade"},
+		transitionalItem: {"item": "geggy:incomplete_steel_sword_blade"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_steel_sword_blade"},
+					{"item": "create:sand_paper"}
+				],
+				results: [{
+					"item": "geggy:incomplete_steel_sword_blade"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:steel_sword_blade"
+		}],
+		loops: 3
+	  }
+	)
+	event.custom({
+		type: "create:sequenced_assembly",
+		ingredient: {"item": "geggy:raw_steel_hoe_head"},
+		transitionalItem: {"item": "geggy:incomplete_steel_hoe_head"},
+		sequence: [
+			{
+				type: "create:deploying",
+				ingredients: [
+					{"item": "geggy:incomplete_steel_hoe_head"},
+					{"item": "create:sand_paper"}
+				],
+				results: [{
+					"item": "geggy:incomplete_steel_hoe_head"
+				}]
+			}
+		],
+		results: [{
+			"item": "geggy:steel_hoe_head"
+		}],
+		loops: 2
+	  }
+	)
+	event.custom({
+		type: "create:sandpaper_polishing",
+		ingredients: [
+			{"item": "geggy:raw_steel_shovel_head"}
+		],
+		results: [
+			{"item": "geggy:steel_shovel_head"}
+		]
+	})
+	
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:reinforced_tool_rod"},
+			{"amount": 12150, "fluid": "modern_industrialization:creosote",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:polished_tool_rod"
+		}]
+	})
+	event.shaped('5x geggy:polished_tool_rod', [
+		'ASS',
+		'SSS',
+		'   '
+	], {
+		S: 'geggy:reinforced_tool_rod',
+		A: 'modern_industrialization:creosote_bucket'
+	})
+	
+	event.shapeless(Item.of('geggy:steel_pickaxe'), ['geggy:steel_pickaxe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:steel_axe'), ['geggy:steel_axe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:steel_sword'), ['geggy:steel_sword_blade', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:steel_hoe'), ['geggy:steel_hoe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:steel_shovel'), ['geggy:steel_shovel_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:steel_pickaxe_head"},
+			{"amount": 3888, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_pickaxe_head"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:steel_axe_head"},
+			{"amount": 3888, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_axe_head"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:steel_sword_blade"},
+			{"amount": 2592, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_sword_blade"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:steel_hoe_head"},
+			{"amount": 2592, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_hoe_head"
+		}]
+	})
+	event.custom({
+		type: "create:filling",
+		ingredients: [
+			{"item": "geggy:steel_shovel_head"},
+			{"amount": 1296, "fluid": "geggy:liquid_zinc",
+			"nbt": {}}
+		],
+		results: [{
+			"item": "geggy:galvanized_steel_shovel_head"
+		}]
+	})
+	
+	event.shapeless(Item.of('geggy:galvanized_steel_pickaxe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_pickaxe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:galvanized_steel_axe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_axe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:galvanized_steel_sword').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_sword_blade', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:galvanized_steel_hoe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_hoe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shapeless(Item.of('geggy:galvanized_steel_shovel').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_shovel_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	
+	/// bronze & steel armor
+	
+	event.shaped('geggy:bronze_helmet', [
+		'BAB',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:bronze_plate',
+		B: 'modern_industrialization:bronze_curved_plate'
+	})
+	event.shaped('geggy:bronze_chestplate', [
+		'B B',
+		'BAB',
+		'BAB'
+	], {
+		A: 'modern_industrialization:bronze_plate',
+		B: 'modern_industrialization:bronze_curved_plate'
+	})
+	event.shaped('geggy:bronze_leggings', [
+		'BAB',
+		'B B',
+		'B B'
+	], {
+		A: 'modern_industrialization:bronze_plate',
+		B: 'modern_industrialization:bronze_curved_plate'
+	})
+	event.shaped('geggy:bronze_boots', [
+		'A A',
+		'A A',
+		'   '
+	], {
+		A: 'modern_industrialization:bronze_curved_plate'
+	})
+	
+	event.shaped('geggy:unfinished_steel_helmet', [
+		'BAB',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:steel_plate',
+		B: 'modern_industrialization:steel_curved_plate'
+	})
+	event.shaped('geggy:unfinished_steel_chestplate', [
+		'B B',
+		'BAB',
+		'BAB'
+	], {
+		A: 'modern_industrialization:steel_plate',
+		B: 'modern_industrialization:steel_curved_plate'
+	})
+	event.shaped('geggy:unfinished_steel_leggings', [
+		'BAB',
+		'B B',
+		'B B'
+	], {
+		A: 'modern_industrialization:steel_plate',
+		B: 'modern_industrialization:steel_curved_plate'
+	})
+	event.shaped('geggy:unfinished_steel_boots', [
+		'A A',
+		'A A',
+		'   '
+	], {
+		A: 'modern_industrialization:steel_curved_plate'
+	})
+	
+	event.shapeless('geggy:steel_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_steel_helmet'])
+	event.shapeless('geggy:steel_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_steel_chestplate'])
+	event.shapeless('geggy:steel_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_steel_leggings'])
+	event.shapeless('geggy:steel_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_steel_boots'])
 
 })
 

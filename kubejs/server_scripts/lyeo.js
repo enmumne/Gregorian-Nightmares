@@ -223,60 +223,17 @@ event.custom({
 		]
 	})
 	
-	//Processing Unit Rework
-	//remove processing unnit recipe
-	event.remove({id: "modern_industrialization:assembler_generated/electric_age/circuit/craft/processing_unit"})
 	
-	event.custom({
-			"type": "create:sequenced_assembly",
-			"ingredient": [{"item": `modern_industrialization:processing_unit_board`}],
-			"loops": 2,
-			"results": [{"item": `modern_industrialization:processing_unit`, "chance": 100.0}],
-			
-			"sequence":[
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:unfinished_processing_unit`}, {"item": 'modern_industrialization:digital_circuit'}],
-			"results": [{"item": `kubejs:unfinished_processing_unit`}]},
-			{"type": "create:filling",
-			"ingredients": [{"item": `kubejs:unfinished_processing_unit`}, {"amount":8100,"fluid":"modern_industrialization:soldering_alloy","nbt":{}}],
-			"results": [{"item": `kubejs:unfinished_processing_unit`}]},	
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:unfinished_processing_unit`}, {"item": 'modern_industrialization:random_access_memory'}],
-			"results": [{"item": `kubejs:unfinished_processing_unit`}]},
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:unfinished_processing_unit`}, {"item": 'modern_industrialization:arithmetic_logic_unit'}],
-			"results": [{"item": `kubejs:unfinished_processing_unit`}]},
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:unfinished_processing_unit`}, {"item": 'modern_industrialization:memory_management_unit'}],
-			"results": [{"item": `kubejs:unfinished_processing_unit`}]}
-
-			],						
-			"transitionalItem":{"item":`kubejs:unfinished_processing_unit`}
-	})
-	
-	//quantum circt
-		event.custom({
-			"type": "create:sequenced_assembly",
-			"ingredient": [{"item": `modern_industrialization:quantum_circuit_board`}],
-			"loops": 2,
-			"results": [{"item": `modern_industrialization:quantum_circuit`, "chance": 100.0}],
-			
-			"sequence":[
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_quantum_circuit`}, {"item": 'modern_industrialization:processing_unit'}],
-			"results": [{"item": `kubejs:incomplete_quantum_circuit`}]},
-			{"type": "create:filling",
-			"ingredients": [{"item": `kubejs:incomplete_quantum_circuit`}, {"amount":11664,"fluid":'geghilarity:liquid_ruthenium',"nbt":{}}],
-			"results": [{"item": `kubejs:incomplete_quantum_circuit`}]},	
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_quantum_circuit`}, {"item": 'modern_industrialization:cooling_cell'}],
-			"results": [{"item": `kubejs:incomplete_quantum_circuit`}]},
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_quantum_circuit`}, {"item": 'modern_industrialization:qbit'}],
-			"results": [{"item": `kubejs:incomplete_quantum_circuit`}]}
-			
-			],						
-			"transitionalItem":{"item":`kubejs:incomplete_quantum_circuit`}
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 640,
+		duration: 100,
+		item_inputs: [ 
+			{item: 'geghilarity:ruridit_dust', amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:liquid_ruridit", amount: 144}
+		]
 	})
 	
 
@@ -396,12 +353,6 @@ event.custom({
 		event.remove({id: "modern_industrialization:armor/smithing/quantum_helmet"})
 		event.remove({id: "modern_industrialization:armor/smithing/quantum_chestplate"})
 		event.remove({id: "modern_industrialization:armor/smithing/quantum_boots"})
-		
-	//AE gold processors
-	event.remove({id: "modern_industrialization:compat/ae2/printed_logic_processor"})
-	event.custom({ 
-		type: "modern_industrialization:packer",eu: 8, duration: 200,item_inputs: [{item: 'ad_astra:desh_ingot'}],
-			item_outputs: [{item: 'ae2:printed_logic_processor', amount: 1}]})	
 
 	//superdense metal
 	event.remove({id: "modern_industrialization:electric_age/component/craft/ultradense_metal_ball_asbl"})
@@ -537,19 +488,6 @@ event.custom({
 		
 		.fluidIn('modern_industrialization:uu_matter', 1000)
 		.fluidIn("modern_industrialization:cryofluid", 10000)
-		
-	//compressor steam	
-	
-
-		event.remove({id: 'modern_industrialization:assembler_generated/steam_age/bronze/compressor'})
-		event.recipes.modern_industrialization.assembler(8, 200)
-		.itemIn('modern_industrialization:bronze_machine_casing', 1)
-		.itemIn('2x modern_industrialization:copper_gear', 1)
-		.itemIn('2x modern_industrialization:copper_rod', 1)
-		.itemIn('3x #modern_industrialization:fluid_pipes', 1)
-		.itemIn('minecraft:smooth_stone', 1)
-		
-		.itemOut('modern_industrialization:bronze_compressor', 1)
 
 		
 	// lyeo

@@ -283,7 +283,7 @@ ServerEvents.recipes(event => {
 			{"amount": 34992, "fluid": "geggy:rubber"}
 		],
 		"results": [
-			{"item": "powah:energy_cable_starter"}
+			{"count": 2, "item": "powah:energy_cable_starter"}
 		]
 	})
 	event.custom({
@@ -312,7 +312,7 @@ ServerEvents.recipes(event => {
 			{item: "geggy:fine_red_alloy_wire", amount: 6}
 		],
 		item_outputs: [
-			{item: "powah:energy_cable_starter", amount: 1}
+			{item: "powah:energy_cable_starter", amount: 2}
 		]
 	})
 	
@@ -1009,6 +1009,7 @@ ServerEvents.recipes(event => {
 		"modern_industrialization:electric_age/hull/turbo_machine_hull_asbl", "modern_industrialization:assembler_generated/electric_age/hull/turbo_machine_hull",
 		"modern_industrialization:electric_age/circuit/craft/electronic_circuit_board_asbl", "modern_industrialization:assembler_generated/electric_age/circuit/craft/electronic_circuit_board",
 		"modern_industrialization:electric_age/circuit/assembler/digital_circuit_board",
+		"modern_industrialization:electric_age/circuit/assembler/processing_unit_board",
 		"modern_industrialization:electric_age/component/craft/robot_arm_asbl", "modern_industrialization:assembler_generated/electric_age/component/craft/robot_arm",
 		"modern_industrialization:electric_age/component/craft/piston_asbl", "modern_industrialization:assembler_generated/electric_age/component/craft/piston",
 		"modern_industrialization:electric_age/component/craft/motor_asbl", "modern_industrialization:assembler_generated/electric_age/component/craft/motor",
@@ -1026,7 +1027,10 @@ ServerEvents.recipes(event => {
 		"modern_industrialization:electric_age/component/craft/arithmetic_logic_unit_asbl",
 		"modern_industrialization:electric_age/component/craft/not_gate_asbl",
 		"modern_industrialization:electric_age/component/craft/or_gate_asbl",
-		"modern_industrialization:electric_age/component/craft/and_gate_asbl"
+		"modern_industrialization:electric_age/component/craft/and_gate_asbl",
+		"modern_industrialization:electric_age/component/chemical_reactor/random_acces_memory",
+		"modern_industrialization:assembler_generated/electric_age/battery/cadmium_battery",
+		"modern_industrialization:assembler_generated/electric_age/battery/plutonium_battery"
 	])
 	
 	event.shaped('4x modern_industrialization:steel_drill', [
@@ -1734,7 +1738,7 @@ ServerEvents.recipes(event => {
 	// components
 	
 	event.shaped('modern_industrialization:robot_arm', [
-		'CCC',
+		'HCH',
 		'DED',
 		'FGE'
 	], {
@@ -1742,14 +1746,16 @@ ServerEvents.recipes(event => {
 		D: 'modern_industrialization:motor',
 		E: 'modern_industrialization:steel_rod',
 		F: 'modern_industrialization:piston',
-		G: 'create:mechanical_arm'
+		G: 'create:mechanical_arm',
+		H: 'modern_industrialization:steel_curved_plate'
 	})
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
-			{item: "powah:energy_cable_basic", amount: 3},
+			{item: "powah:energy_cable_basic", amount: 1},
+			{item: "modern_industrialization:steel_curved_plate", amount: 2},
 			{item: "modern_industrialization:motor", amount: 2},
 			{item: "modern_industrialization:steel_rod", amount: 2},
 			{item: "modern_industrialization:piston", amount: 1},
@@ -1760,17 +1766,6 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.shaped('modern_industrialization:piston', [
-		'DDD',
-		'CEE',
-		'CFG'
-	], {
-		C: 'powah:energy_cable_starter',
-		D: 'geggy:galvanized_steel_plate',
-		E: 'geggy:galvanized_steel_rod',
-		F: 'modern_industrialization:motor',
-		G: 'geggy:galvanized_steel_gear'
-	})
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 8,
@@ -1779,7 +1774,7 @@ ServerEvents.recipes(event => {
 			{item: "powah:energy_cable_basic", amount: 2},
 			{item: "geggy:galvanized_steel_plate", amount: 3},
 			{item: "geggy:galvanized_steel_rod", amount: 2},
-			{item: "modern_industrialization:piston", amount: 1},
+			{item: "modern_industrialization:motor", amount: 1},
 			{item: "geggy:galvanized_steel_gear", amount: 1}
 		],
 		item_outputs: [
@@ -1787,16 +1782,6 @@ ServerEvents.recipes(event => {
 		]
 	})
 	
-	event.shaped('modern_industrialization:motor', [
-		'CFE',
-		'FDF',
-		'EFC'
-	], {
-		C: 'powah:energy_cable_starter',
-		D: 'modern_industrialization:steel_rod_magnetic',
-		E: 'geggy:galvanized_steel_rod',
-		F: 'modern_industrialization:copper_wire'
-	})
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 8,
@@ -1913,6 +1898,25 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:assembler",
+		eu: 32,
+		duration: 1200,
+		item_inputs: [ 
+			{item: "modern_industrialization:annealed_copper_cable", amount: 8},
+			{item: "modern_industrialization:cadmium_battery", amount: 2},
+			{item: "modern_industrialization:digital_circuit_board", amount: 1},
+			{item: "modern_industrialization:platinum_plate", amount: 4},
+			{item: "geghilarity:insane_circuit_board", amount: 1}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:polyvinyl_chloride", amount: 1500}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:processing_unit_board", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
 		eu: 30,
 		duration: 100,
 		item_inputs: [ 
@@ -1932,7 +1936,7 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "powah:energy_cable_blazing", amount: 2},
-			{item: "modern_industrialization:silicon_dust", amount: 2},
+			{item: "modern_industrialization:silicon_dust", amount: 3},
 			{item: "modern_industrialization:battery_alloy_curved_plate", amount: 4},
 			{item: "modern_industrialization:battery_alloy_plate", amount: 1}
 		],
@@ -1943,13 +1947,18 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:assembler",
-		eu: 8,
+		eu: 30,
 		duration: 100,
 		item_inputs: [ 
-			{item: "powah:energy_cable_hardened", amount: 2},
-			{item: "modern_industrialization:sodium_dust", amount: 2},
 			{item: "modern_industrialization:battery_alloy_curved_plate", amount: 4},
-			{item: "modern_industrialization:battery_alloy_plate", amount: 1}
+			{item: "modern_industrialization:battery_alloy_plate", amount: 1},
+			{item: "powah:energy_cable_hardened", amount: 2},
+			{item: "modern_industrialization:carbon_dust", amount: 2},
+			{item: "geghilarity:sodium_battery_cathode_alloy_dust", amount: 2}
+		],
+		fluid_inputs: [ 
+			{fluid: "geghilarity:dimethyl_carbonate", amount: 200},
+			{fluid: "modern_industrialization:soldering_alloy", amount: 100}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:sodium_battery", amount: 1}
@@ -2172,8 +2181,8 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.shaped('modern_industrialization:chemical_bath', [
-		'CEF',
-		'DEC',
+		'EFE',
+		'CDC',
 		'BAB'
 	], {
 		A: 'modern_industrialization:basic_machine_hull',
@@ -2788,6 +2797,66 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [
 			{item: "modern_industrialization:hv_storage_unit", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 20,
+		item_inputs: [ 
+			{item: "modern_industrialization:silicon_wafer", amount: 1},
+			{item: "geghilarity:high_purity_antimony_dust", amount: 1},
+			{item: "modern_industrialization:aluminum_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:argon", amount: 250},
+			{fluid: "modern_industrialization:styrene_butadiene_rubber", amount: 500}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:random_access_memory", amount: 2}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geggy:enhanced_battery_alloy_curved_plate", amount: 4},
+			{item: "geggy:enhanced_battery_alloy_plate", amount: 1},
+			{item: "modern_industrialization:annealed_copper_cable", amount: 2},
+			{item: "modern_industrialization:cadmium_dust", amount: 2},
+			{item: "geghilarity:lithium_cobalt_oxide_dust", amount: 2},
+			{item: "geghilarity:graphite_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:lithium_hexafluorophosphate_electrolyte", amount: 200},
+			{fluid: "modern_industrialization:polyethylene", amount: 432}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:cadmium_battery", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 32,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geggy:enhanced_battery_alloy_curved_plate", amount: 4},
+			{item: "geggy:enhanced_battery_alloy_plate", amount: 1},
+			{item: "modern_industrialization:superconductor_cable", amount: 2},
+			{item: "modern_industrialization:plutonium_dust", amount: 4},
+			{item: "geghilarity:zircaloy_2_ring", amount: 1},
+			{item: "geghilarity:dense_hafnium_curved_plate", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:soldering_alloy", amount: 500},
+			{fluid: "modern_industrialization:polyethylene", amount: 500}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:plutonium_battery", amount: 1}
 		]
 	})
 	

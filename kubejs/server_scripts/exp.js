@@ -32,12 +32,12 @@ function machineRecipe(recipeType, eu, duration) { return event.recipes.modern_i
 
 
 event.shaped(MI('clay_quarry'), ['BBB','BPB','BRB'], {B:'minecraft:mud_bricks',P:'create:fluid_pipe',R:'create:propeller'})
-machineRecipe('mine_clay', 2, 150).itemOut('geggy:clay_copper_can').fluidIn('minecraft:water', 1000).itemIn('geggy:copper_can')
+machineRecipe('mine_clay', 2, 50).itemOut('geggy:silty_copper_can').fluidIn('minecraft:water', 500).itemIn('geggy:copper_can')
 
 
 
 let evaporate = (duration) => machineRecipe('evaporation', 2, duration);
-    evaporate(600).itemOut('minecraft:packed_mud').itemIn('minecraft:mud')
+    evaporate(300).itemOut('minecraft:packed_mud').itemIn('minecraft:mud')
 
     event.shaped(MI('bronze_evaporation_tank'), [
         'C',

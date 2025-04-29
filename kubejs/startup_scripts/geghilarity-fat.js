@@ -78,6 +78,14 @@ let REACTIONFURNACE;
 let DISSOLUTIONTANK;
 let CRACKINGUNIT;
 
+let SMOKESTACK;
+
+let SMELTER;
+let CASTER;
+let ESMELTER;
+let ECASTER;
+
+let STEAMBOIL;
 let STEAMALLOY;
 let HSLA_BLAST;
 
@@ -171,6 +179,28 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidInputs()
         .withItemOutputs()		
 		.withFluidOutputs();	
+		
+	SMOKESTACK = event.register('smoke_stack')
+        .withFluidInputs()	
+		.withItemOutputs();
+		
+	SMELTER = event.register('smelter')
+		.withItemInputs()	
+		.withFluidOutputs();
+
+	CASTER = event.register('caster')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs();	
+		
+	ESMELTER = event.register('electric_smelter')
+		.withItemInputs()	
+		.withFluidOutputs();
+
+	ECASTER = event.register('electric_caster')
+		.withItemInputs()
+        .withFluidInputs()
+        .withItemOutputs();	
 	
 	POLYTANK = event.register('poly_tank')
 		.withItemInputs()
@@ -188,7 +218,11 @@ MIMachineEvents.registerRecipeTypes(event => {
 		.withItemInputs()
         .withFluidInputs()
         .withItemOutputs()		
-		.withFluidOutputs();	
+		.withFluidOutputs();
+
+	STEAMBOIL = event.register('super_boiler')
+        .withFluidInputs()
+        .withFluidOutputs();			
 		
 	STEAMALLOY = event.register('alloy_smelter')
 		.withItemInputs()
@@ -350,7 +384,7 @@ MIMachineEvents.registerMachines(event => {
 
     const clayQuarryCasing = 'mudbricks'
     const clayQuarryHatches = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output");
-    const clayQuarryMud = event.memberOfBlock('minecraft:packed_mud')
+    const clayQuarryMud = event.memberOfBlock('minecraft:mud')
     const clayQuarryMudBricks = event.memberOfBlock('minecraft:mud_bricks')
     const clayQuarryWall = event.memberOfBlock("minecraft:mud_brick_wall")
     const clayQuarryBuilder = event.startShape(clayQuarryCasing)
@@ -500,6 +534,30 @@ MIMachineEvents.registerMachines(event => {
         fluidInputs => fluidInputs.addSlot(54, 55), fluidOutputs => {},
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "bronze_plated_bricks", "steam_alloy", true, false, false,
+    );
+	
+	const steamboilHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
+    const steamboilShape = event.layeredShape("bronze_casing", [
+		[ "EHE", "HHH", "EHE",],
+		[ "HHH", "HCH", "HCH",],
+        [ "EHE", "H#H", "EHE",],	
+    ])
+        .key("H", bronzeplatedbricks, event.noHatch())
+		.key("E", bronzeplatedbricks, stalloyHatch)
+		.key("C", bronzepipe, event.noHatch())
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Steam Fluid Boiler", "super_boiler", STEAMBOIL, steamboilShape,
+        // REI progress bar
+        event.progressBar(91, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => {}, itemOutputs => {},
+        fluidInputs => fluidInputs.addSlots(54, 35, 2, 1), fluidOutputs => fluidOutputs.addSlot(115, 35),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "bronze_plated_bricks", "super_boiler", true, false, false,
     );
 	
     	
@@ -711,7 +769,8 @@ MIMachineEvents.registerMachines(event => {
         fluidInputs => fluidInputs.addSlots(54, 35, 2, 1), fluidOutputs => fluidOutputs.addSlots(142, 35, 2, 1),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
         "clean_stainless_steel_machine_casing", "cracking_unit", true, false, false,
-    );	
+    );
+
 	
 	const lvminerHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	
@@ -832,7 +891,104 @@ MIMachineEvents.registerMachines(event => {
         "steel_casing", "gas_driller", true, false, false,
     );
 	
-	const blastalloyHatch = event.hatchOf("item_input", "fluid_input", "fluid_output", "energy_input");
+	const smokeHatch = event.hatchOf("fluid_input", "item_output");
+	
+	const smokeShape = event.layeredShape("steel_casing", [
+		[ "X","#","B","A",],
+    ])
+		.key("A", tchimney, event.noHatch())
+		.key("B", steelpipe, event.noHatch())
+		.key("X", stdsteelcasing, smokeHatch)
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Smoke Stack", "smoke_stack", SMOKESTACK, smokeShape,
+        // REI progress bar
+        event.progressBar(59, 34, "extract"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs => {}, itemOutputs => itemOutputs.addSlot(89, 35),
+        fluidInputs => fluidInputs.addSlot(34, 35), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "steel_casing", "smoke_stack", true, false, true,
+    );
+	
+	const smelterHatch = event.hatchOf("item_input", "fluid_input", "fluid_output");
+
+    const smelterShape = event.layeredShape("bronze_casing", [
+		[ "HH", "HH", "C#", "BB", "DD",],
+	
+    ])
+        .key("H", bronzeplatedbricks, smelterHatch)
+		.key("B", normobrick, event.noHatch())
+		.key("C", bronzepipe, event.noHatch())
+		.key("D", tchimney, event.noHatch())
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Steam Smelter", "smelter", SMELTER, smelterShape,
+        // REI progress bar
+        event.progressBar(91, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => {},
+        fluidInputs => {}, fluidOutputs => fluidOutputs.addSlots(135, 54, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "bronze_plated_bricks", "smelter", true, false, false,
+    );
+	
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Electric Smelter", "electric_smelter", ESMELTER, smelterShape,
+        // REI progress bar
+        event.progressBar(91, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => {},
+        fluidInputs => {}, fluidOutputs => fluidOutputs.addSlots(135, 54, 2, 1),
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "steel_casing", "electric_smelter", true, false, false,
+    );
+	
+	const casterHatch = event.hatchOf("item_input", "item_output", "fluid_input");
+
+    const casterShape = event.layeredShape("bronze_casing", [
+		[ "HH", "HH", "H#", "BB", "DD",],	
+    ])
+        .key("H", bronzeplatedbricks, casterHatch)
+		.key("B", normobrick, event.noHatch())
+		.key("D", tchimney, event.noHatch())
+        .build();
+		
+	event.simpleSteamCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Steam Caster", "caster", CASTER, casterShape,
+        // REI progress bar
+        event.progressBar(91, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => itemOutputs.addSlots(115, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlots(54, 55, 2, 1), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "bronze_plated_bricks", "caster", true, false, false,
+    );
+	
+	event.simpleElectricCraftingMultiBlock(
+        // English name, internal name, recipe type, multiblock shape
+        "Electric Caster", "electric_caster", ECASTER, casterShape,
+        // REI progress bar
+        event.progressBar(91, 33, "furnace"),
+        // REI item inputs, item outputs, fluid inputs, fluid outputs
+		// rows, column
+        itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => itemOutputs.addSlots(115, 35, 2, 1),
+        fluidInputs => fluidInputs.addSlots(54, 55, 2, 1), fluidOutputs => {},
+        // casing, overlay folder, front overlay?, top overlay?, side overlay?
+        "steel_casing", "electric_caster", true, false, false,
+    );
+	
+	const blastalloyHatch = event.hatchOf("item_input", "item_output", "fluid_input", "energy_input");
 	
 	const blastcasing = event.memberOfBlock("geghilarity_fatmachines:blast_casing");
 	const heatvent = event.memberOfBlock("geghilarity_fatmachines:heat_vent");
@@ -864,7 +1020,7 @@ MIMachineEvents.registerMachines(event => {
         "blast_casing", "alloy_blast_smelter", true, false, false,
     );
 	
-	const elealloyHatch = event.hatchOf("item_input", "fluid_input", "fluid_output", "energy_input");
+	const elealloyHatch = event.hatchOf("item_input", "item_output", "fluid_input", "fluid_output", "energy_input");
 	
 	const elealloyShape = event.layeredShape("solid_steel", [
 		[ "HHH", "HHH",],
@@ -936,6 +1092,18 @@ MIMachineEvents.addMultiblockSlots("electric_blast_furnace_cupronickel_coil", ev
     event.fluidOutputs.addSlot(122, 53);
 })
 MIMachineEvents.addMultiblockSlots("electric_blast_furnace_kanthal_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_nicrome_coil", event => {
+	event.itemInputs.addSlot(56, 71);
+	event.itemOutputs.addSlot(102, 53);
+	event.itemOutputs.addSlot(102, 71);
+    event.fluidOutputs.addSlot(122, 53);
+})
+MIMachineEvents.addMultiblockSlots("electric_blast_furnace_rtm_alloy_coil", event => {
 	event.itemInputs.addSlot(56, 71);
 	event.itemOutputs.addSlot(102, 53);
 	event.itemOutputs.addSlot(102, 71);

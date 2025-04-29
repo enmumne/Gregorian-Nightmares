@@ -11,15 +11,11 @@
 		{
 			dependencies: ["5DAA5DF264D1E559"]
 			description: [
-				"Now that you've got some base resources generating, it's time to work towards electricity. This chapter will walk you through the steps involved in getting your first machine hull and first set of electronic machines, as well as some more advanced Create machinery."
+				"If you got to this point it's likely you have some quarries already set up, to keep with the amount of resources required. It's time to work towards biribiri. This chapter will walk you through the steps involved in getting your first machine hulls and first set of &bbiribiric&r machines, moving toward actual processing chains and some chemistry. Due to recipes borrowed from TJ and SuperSymmetry, complexity will escalate quickly."
 				""
-				"Up until now you've mostly been managing items. In this chapter we'll see a lot more fluids involved in crafting, be sure to check the Storage tab to see some storage options for your fluids. "
+				"From this point onward we accelerate."
 				""
-				"By the end of this chapter you'll have access to most basic machines, an electric quarry and oil drilling rig with even more resource generation options and a new source of power generation. Good Luck!"
-				""
-				"&o : Note that quests and progression are both in the process of being overhauled, so these are still mostly \"legacy\", as you can see from the Brass quest, considering you've had access to brass for quite a while..."
-				""
-				"&o&eDon't trust these quests. Just use them as an overall direction for progress."
+				"&o&eDon't fully trust these quests. Just use them as an overall direction for progression untill they'll be fully overhauled."
 				""
 				"&o&d 2T : 0C if you're still around lemme show you how you make your first electricity :trollge:"
 				"&o&d : first you need a burning box to make heat as HU. This is a steel one."
@@ -56,18 +52,6 @@
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
-			description: ["Get the wiremill up and running as soon as possible. You'll be using this pretty much the entire pack from here on out. To start with though you'll want some tin wires to get you through to your first few electric machines."]
-			id: "47168B3C491D0547"
-			tasks: [{
-				id: "4E24FFC5DDBB56B3"
-				item: "modern_industrialization:steel_wiremill"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["38B235167FCE0C80"]
 			description: ["Carbon dust isn't quite accessible yet, so you'll want to use some Coke Dust to get access to your first of many oil bucket. "]
 			id: "28B836571B0E67D1"
 			tasks: [
@@ -93,7 +77,7 @@
 				"&o&a 39 : I just set up the beginnings of a mall... and I can't get bots running because I can't get a delivery of gearboxes. Because I can't get a delivery of Fenix. Because I can't get a delivery of antimony oxide. Because I have no coke for the BOF. Because my Red-hot-coke planation is stuttering. Because it's not getting enough coal. Because it's out 30 seconds after my coal trains arrive."
 				"&o&7 : is that factorio?"
 				"&o&a 39 : yeah?"
-				"&o&7 : sir this is a wendy's"
+				"&o&7 : sir, this is a wendy's"
 				"&o&a 39 : oh."
 			]
 			id: "74F4734C56873B9A"
@@ -104,7 +88,7 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["28B836571B0E67D1"]
@@ -120,17 +104,19 @@
 		}
 		{
 			dependencies: [
-				"47168B3C491D0547"
 				"74F4734C56873B9A"
+				"38B235167FCE0C80"
 			]
 			description: [
-				"There &mare&r were 5 tiers of cables used throughout MI. Each having different power (EU) transfer rates so be sure to check REI/tooltips for information. "
+				"There &mare&r were 5 tiers of cables used throughout MI. Each having different power (EU) transfer rates so be sure to check REI/EMI/tooltips for information. "
 				""
-				"Moving into LV (Low Voltage), machines aren't anymore powered by steam, but will need electricity. That can be produced with turbines or Diesel generators burining a variety of fluids. In order to give power to the new machine tiers you need some energy cables, of course."
+				"Moving into LV (Low Violence), machines aren't anymore powered by steam, but will need &bbiribiri&r. That can be produced with turbines or Diesel generators burining a variety of fluids. In order to bring power around you need some energy cables, of course. "
 				""
-				"But this is a wild experiment, and &eall MI standard cables have been removed&r and pushed much later in the progression. So what options do you have? ...Powah Forge Energy (FE) cables."
+				"But this is a wild experiment, &eall MI standard cables have been removed&r and pushed much later in the progression. So what options do you have? ...Powah Fake Energy (FE) cables."
 				""
 				"The system is fairly simple to understand because whenever you see an FE number you can just assume it's EU. Same values. "
+				""
+				"1 Fake Energy = 1 EU"
 				""
 				"FE cables should work seamlessy with MI machines. You're supposed to move through tiers as they become available. Go to the next page for more technical information."
 				""
@@ -148,7 +134,7 @@
 				""
 				"At this stage you should be able to craft only the first tier. The second one is available as soon you have assemblers."
 				""
-				"The tiers are somewhat gated by rubber. The Blazing/electrum tier will require Isoprene rubber, that is produced through some petrochem. But petrochem overhaul is ongoing, so things could keep changing."
+				"The tiers are somewhat gated by rubber. The Blazing/electrum tier will require Isoprene rubber, that is produced through some petrochemistry. But petrochem overhaul is ongoing, so things could keep changing."
 				""
 				"The Niotic/black steel tier will also require PVC. Whereas all MI cables will be based on Styrene-Butadiene rubber."
 				""
@@ -158,11 +144,11 @@
 				"{@pagebreak}"
 				"There are some further repercussions coming from this different system:"
 				""
-				"- FE cables occupy the full block, so can't share space with pipes. This makes things more challenging to organize."
+				"- FE cables occupy the full block, so can't share space with pipes. This makes things more challenging to organize early on."
 				""
-				"- These cables IGNORE hulls. This is an unwanted side effect that can't be fixed at the moment. Ideally machine upgrades should be dependent on hulls, but in MI they are separate systems. For higher EU recipe you can simply add upgrades. Hulls in this case would only offer a bigger power \"buffer\", for energy that is stored in the machine, that can still be useful for smooth operation."
+				"- These cables IGNORE hulls. This is an unwanted side effect that can't be fixed at the moment. Ideally machine upgrades should be dependent on hulls, but in MI they are separate systems. For higher EU recipes you can simply add upgrades. Hulls in this case would only offer a bigger power \"buffer\", for energy that is stored in the machine, that can still be useful for smooth operation."
 				""
-				"- If you run \"out of faces\", to connect stuff to the machines, remember there are \"machine extenders\". That's the other item on this quest, note that it's optional to complete the quest. Machine extenders are blocks that can be placed on top of a MI machine (not under it), and can also be piled upwards infinitely. You can use these to connect to a machine as many cables and pipes you want. There's no limit."
+				"- If you run \"out of faces\", to connect stuff to the machines, remember there are \"machine extenders\". That's the other (optional) item on this quest. Machine extenders are blocks that can be placed on top of a MI machine (not under it), and can also be piled upwards infinitely. You can use these to connect to a machine as many cables and pipes you want. They virtually extend the faces available, and there's no limit."
 			]
 			icon: "powah:energy_cable_basic"
 			id: "276B9E79AF572E91"
@@ -181,8 +167,8 @@
 				}
 			]
 			title: "Cabble-Babble"
-			x: 1.5d
-			y: 4.5d
+			x: 2.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["4AC4679E7BE6841E"]
@@ -237,22 +223,6 @@
 			]
 			x: -1.0d
 			y: 7.5d
-		}
-		{
-			dependencies: ["38B235167FCE0C80"]
-			description: [
-				"To gain access to some more advanced Create machines, you'll want a steel mixer to mix up some brass dust. Smelt this up to get some create brass."
-				""
-				"&o(The questbook will be overhauled at some point. You already got brass in the first page of these quests. So from this point onward use the questbook as an overall guide, but don't trust it. At least as long development is focused on adding major content rather than polish.)"
-			]
-			id: "4611CABE90FC9DB9"
-			tasks: [{
-				id: "41A62C3517372B93"
-				item: "create:brass_ingot"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -329,7 +299,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 6.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["38B235167FCE0C80"]
@@ -340,8 +310,8 @@
 				item: "modern_industrialization:antimony_dust"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 0.0d
+			x: 4.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["382C198D85803B4A"]
@@ -352,8 +322,8 @@
 				item: "modern_industrialization:battery_alloy_ingot"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 1.5d
+			x: 4.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["12754417BF2759C0"]
@@ -376,7 +346,7 @@
 			y: 11.0d
 		}
 		{
-			dependencies: ["5B60A5DCEBD1E4FC"]
+			dependencies: ["2D7EE6C2ABAEA7EF"]
 			description: ["The Pump is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
 			id: "57E82D11C30C6800"
 			tasks: [{
@@ -384,8 +354,8 @@
 				item: "modern_industrialization:pump"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 15.0d
+			x: 0.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["5B60A5DCEBD1E4FC"]
@@ -400,8 +370,8 @@
 				item: "modern_industrialization:motor"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 15.0d
+			x: 1.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["03C555236DAB35BE"]
@@ -416,7 +386,7 @@
 			y: 18.0d
 		}
 		{
-			dependencies: ["5B60A5DCEBD1E4FC"]
+			dependencies: ["2D7EE6C2ABAEA7EF"]
 			description: ["The Piston is an important component in many LV machines, as well as a foundational component for higher tier machinery further into the pack."]
 			id: "03E47F8E6224D02E"
 			tasks: [{
@@ -425,7 +395,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: 15.0d
+			y: 15.5d
 		}
 		{
 			dependencies: [
@@ -475,7 +445,7 @@
 				item: "modern_industrialization:electric_compressor"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 4.5d
 			y: 15.5d
 		}
 		{
@@ -487,7 +457,7 @@
 				item: "modern_industrialization:electric_cutting_machine"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 6.5d
 			y: 15.5d
 		}
 		{
@@ -499,7 +469,7 @@
 				item: "modern_industrialization:electric_furnace"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 6.5d
 			y: 16.5d
 		}
 		{
@@ -511,7 +481,7 @@
 				item: "modern_industrialization:electric_macerator"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 6.5d
 			y: 17.5d
 		}
 		{
@@ -523,7 +493,7 @@
 				item: "modern_industrialization:electric_mixer"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 4.5d
 			y: 17.5d
 		}
 		{
@@ -535,8 +505,8 @@
 				item: "modern_industrialization:electric_wiremill"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 18.0d
+			x: 5.5d
+			y: 17.5d
 		}
 		{
 			dependencies: [
@@ -546,6 +516,7 @@
 			]
 			description: ["The previous components are integral ingredients in pretty much every useful machine going forward. Although you don't have access to AE2 \\& true autocrafting yet, there is a lot you can do with MI pipes and their filtering system. Try to keep a good stock of the components above and we advice batch crafting over crafting as needed. You'll use them eventually!"]
 			id: "03C555236DAB35BE"
+			min_required_dependencies: 1
 			min_width: 250
 			tasks: [{
 				id: "792FD069693004F3"
@@ -572,7 +543,7 @@
 				title: "Electric Machines"
 				type: "checkmark"
 			}]
-			x: 7.5d
+			x: 5.5d
 			y: 16.5d
 		}
 		{
@@ -591,23 +562,8 @@
 					type: "item"
 				}
 			]
-			x: 7.5d
-			y: 15.0d
-		}
-		{
-			dependencies: [
-				"717E4973C497B4C7"
-				"4611CABE90FC9DB9"
-			]
-			id: "24F3AC19B2959B84"
-			tasks: [{
-				count: 9L
-				id: "053AEFA12D3DBECC"
-				item: "create:mechanical_crafter"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 6.0d
+			x: 5.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["777C8BA4044899FB"]
@@ -700,7 +656,7 @@
 			]
 			title: "Infiniter Resources?"
 			x: -0.5d
-			y: 31.5d
+			y: 30.5d
 		}
 		{
 			dependencies: ["50522C08021350A6"]
@@ -711,6 +667,7 @@
 			]
 			id: "5EDB45EE3EACD5E1"
 			min_width: 300
+			shape: "rsquare"
 			tasks: [{
 				id: "068B409E486979DD"
 				item: "modern_industrialization:electronic_circuit"
@@ -796,6 +753,7 @@
 				"You'll need it for a lot more very soon however, so don't put this off for too long!"
 			]
 			id: "3BB6B056BD95F1A0"
+			shape: "rsquare"
 			tasks: [{
 				id: "5BF2083775D065F4"
 				item: "modern_industrialization:chemical_reactor"
@@ -856,7 +814,7 @@
 				type: "item"
 			}]
 			x: 0.5d
-			y: 29.5d
+			y: 29.0d
 		}
 		{
 			dependencies: ["0E1CAD3AF8127A47"]
@@ -886,7 +844,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 31.5d
+			y: 30.5d
 		}
 		{
 			dependencies: ["124651D35EA90053"]
@@ -898,7 +856,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 36.0d
+			y: 35.0d
 		}
 		{
 			dependencies: ["413D600339539350"]
@@ -910,7 +868,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 34.5d
+			y: 33.5d
 		}
 		{
 			dependencies: ["4351AC5A552EC29C"]
@@ -926,7 +884,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 33.0d
+			y: 32.0d
 		}
 		{
 			dependencies: ["777C8BA4044899FB"]
@@ -952,7 +910,7 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: 32.0d
+			y: 31.0d
 		}
 		{
 			dependencies: ["413D600339539350"]
@@ -968,7 +926,7 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: 33.5d
+			y: 32.5d
 		}
 		{
 			dependencies: ["4441E8BB7DC928B0"]
@@ -1006,7 +964,7 @@
 				}
 			]
 			x: 4.5d
-			y: 32.0d
+			y: 31.0d
 		}
 		{
 			dependencies: ["124651D35EA90053"]
@@ -1019,7 +977,7 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: 34.5d
+			y: 33.5d
 		}
 		{
 			description: [
@@ -1050,10 +1008,9 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 34.5d
+			y: 33.5d
 		}
 		{
-			dependencies: ["24F3AC19B2959B84"]
 			description: ["The Create Crushing Wheel is needed to get quartz dust from Diorite. For everything else, it's less efficient than MI's macerator, but it also runs on Rotational Power, so basically free."]
 			id: "2B2EF6D9FBEBF511"
 			tasks: [{
@@ -1075,42 +1032,6 @@
 			}]
 			x: -0.5d
 			y: 15.0d
-		}
-		{
-			dependencies: ["24F3AC19B2959B84"]
-			description: ["The brass funnel can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
-			id: "4527884A8FCB13FD"
-			tasks: [{
-				id: "6AF0B2A7A86B1978"
-				item: "create:brass_funnel"
-				type: "item"
-			}]
-			x: -9.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["24F3AC19B2959B84"]
-			description: ["The brass tunnel can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
-			id: "10E0647786BD0918"
-			tasks: [{
-				id: "09538317002519A3"
-				item: "create:brass_tunnel"
-				type: "item"
-			}]
-			x: -9.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["24F3AC19B2959B84"]
-			description: ["The smart chute can process more items at a time than it's andesite alternative. Check the Ponder screen for additional information."]
-			id: "42509339BDA59E10"
-			tasks: [{
-				id: "4C5B98E71AC7F528"
-				item: "create:smart_chute"
-				type: "item"
-			}]
-			x: -9.0d
-			y: 7.0d
 		}
 		{
 			dependencies: ["07DB471F85ADCCDA"]
@@ -1138,7 +1059,7 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: 36.0d
+			y: 35.0d
 		}
 		{
 			dependencies: ["3BB6B056BD95F1A0"]
@@ -1961,11 +1882,11 @@
 			description: [
 				"One of the main source of lag is mobs AI, rather than automation."
 				""
-				"Since this modpack pushed the amount of automation and number of machines (past) to the maximum, there needs to be a way to remove mobs from a base..."
+				"Since this modpack pushed the amount of automation and number of machines to (past) the maximum, there needs to be a way to remove mobs from a base..."
 				""
 				"This is done through the inclusion of &c@brazier&r mod."
 				""
-				"A \"brazier\" is a multiblock structure that prevents hostile mobs to spawn within a certain cylindrical area."
+				"A \"brazier\" is a multiblock structure that prevents hostile mobs from spawning within a certain cylindrical area."
 				""
 				"Recipes &eare going to change&r and better integrate with other magic mods."
 				""
@@ -2003,7 +1924,7 @@
 				""
 				"The brazier structure can go up to TEN level. So 210 gloom blocks if you want the max possible."
 				""
-				"The first level will cover an area (radius) of 20 blocks in all directions. From the second level, up to ten, every layer adds a +12 block radius. Therefore the total area will be 128 blocks."
+				"The first level will cover an area (radius) of 32 blocks in all directions. From the second level, up to ten, every layer adds a +16 block radius. Therefore the total area will be 192 blocks (roughly 12 chunks in every direction, corresponding to the default view range centered on the player)."
 				""
 				"If you find more living flames you can of course build more of these structures, and greatly extent the protected area."
 			]

@@ -5,6 +5,7 @@ ServerEvents.recipes(event => {
 	
 	event.remove([
 		"modern_industrialization:assembler_generated/vanilla_recipes/steel_forge_hammer",
+		"modern_industrialization:vanilla_recipes/macerator/gravel",
 		"modern_industrialization:vanilla_recipes/steel_forge_hammer_asbl", "modern_industrialization:forge_hammer",
 		"modern_industrialization:materials/coal/macerator/ore_to_crushed",
 		"create:crushing/raw_iron", "modern_industrialization:materials/iron/macerator/ore_to_raw",
@@ -92,6 +93,93 @@ ServerEvents.recipes(event => {
 			"processingTime":200,
 			"ingredients": [{"item": "minecraft:quartz"}],
 			"results": [{"item": "modern_industrialization:quartz_dust"}]
+	})
+	
+	// recycle?
+	
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:cobblestone"}],
+		"results": [
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:copper_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "modern_industrialization:tin_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "geghilarity:tiny_zinc_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:cobbled_deepslate"}],
+		"results": [
+			{"count": 1, "chance": 0.06, "item": "modern_industrialization:iron_tiny_dust"},
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:coal_tiny_dust"},
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:lead_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "modern_industrialization:manganese_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "modern_industrialization:antimony_tiny_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:diorite"}],
+		"results": [
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:nickel_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "magick:calcite_dust"},
+			{"count": 1, "chance": 0.02, "item": "geghilarity:biotite_dust"},
+			{"count": 1, "chance": 0.02, "item": "geghilarity:tiny_rock_salt_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:granite"}],
+		"results": [
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:iron_tiny_dust"},
+			{"count": 1, "chance": 0.04, "item": "modern_industrialization:redstone_tiny_dust"},
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:nickel_tiny_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:dripstone_block"}],
+		"results": [
+			{"count": 1, "chance": 0.2, "item": "geggy:clay_dust"},
+			{"count": 1, "chance": 0.1, "item": "geghilarity:tiny_rock_salt_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:tuff"}],
+		"results": [
+			{"count": 1, "chance": 0.1, "item": "geghilarity:dark_ashes"},
+			{"count": 1, "chance": 0.06, "item": "modern_industrialization:sulfur_tiny_dust"},
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:redstone_tiny_dust"},
+			{"count": 1, "chance": 0.01, "item": "minecraft:emerald"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "minecraft:smooth_basalt"}],
+		"results": [
+			{"count": 1, "chance": 0.06, "item": "modern_industrialization:redstone_tiny_dust"},
+			{"count": 1, "chance": 0.04, "item": "modern_industrialization:lignite_coal_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "geghilarity:precious_nugget"},
+			{"count": 1, "chance": 0.02, "item": "geggy:diamond_shards"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "create:scoria"}],
+		"results": [
+			{"count": 1, "chance": 0.08, "item": "modern_industrialization:lignite_coal_tiny_dust"},
+			{"count": 1, "chance": 0.06, "item": "modern_industrialization:redstone_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "geghilarity:precious_nugget"}
+		]
 	})
 
 	event.custom({ 
@@ -229,5 +317,20 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:liquid_fat", amount: 10}
 		]
 	})
+	
+	event.custom({ 
+		type: "modern_industrialization:smoke_stack",
+		eu: 2,
+		duration: 10,
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:steam", amount: 100}
+		],
+		item_outputs: [
+			{item: "geghilarity:tiny_ashes", amount: 1, probability: 0.01}
+			
+		]
+	})
+	
+	
 	
 })	

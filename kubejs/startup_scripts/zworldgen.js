@@ -5,6 +5,7 @@ StartupEvents.registry('block', event => {
 	
 	event.create('geggy:oleous_sand').material('sand').displayName('Oleous Sand').hardness(2).tagBlock('minecraft:mineable/shovel').requiresTool(false)
 	event.create('geggy:andesite_block').material('stone').displayName('Andesite Alloy Frame').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+	event.create('geggy:stibnite_ore').material('stone').displayName('Stibnite Ore').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_1', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_2', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_3', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
@@ -291,7 +292,13 @@ let andesiteblock5 = event.create('geggy:andesite_casing_5').material('stone').d
 	
 	event.create('geggy:oilsands_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
 	event.create('geggy:gaseous_corenode').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true)
-
+	
+	/*
+	event.create('gegology:gegology').material('stone').hardness(200).lightLevel(0.9).tagBlock('minecraft:needs_iron_tool').tagBlock('c:obsidian').requiresTool(true).textureJson({
+            layer0: "gegology:item/gt-refined",
+            layer1: "gegology:item/gt-purifiedtiny",
+        })
+	*/
 
 })
 
@@ -316,7 +323,7 @@ WorldgenEvents.remove(event => {
 
     // BlockStatePredicate to remove iron and copper ores from the given biomes
     // Note tags may NOT be used here, unfortunately...
-    props.blocks = ['create_new_age:magnetite_block', 'create_new_age:thorium_ore', 'modern_industrialization:iridium_ore', 'modern_industrialization:deepslate_iridium_ore', 'modern_industrialization:titanium_ore', 'modern_industrialization:deepslate_titanium_ore', 'minecraft:nether_gold_ore']
+    props.blocks = ['meadow:alpine_gold_ore', 'create_new_age:magnetite_block', 'create_new_age:thorium_ore', 'modern_industrialization:iridium_ore', 'modern_industrialization:deepslate_iridium_ore', 'modern_industrialization:titanium_ore', 'modern_industrialization:deepslate_titanium_ore', 'minecraft:nether_gold_ore']
   })
   
   /*

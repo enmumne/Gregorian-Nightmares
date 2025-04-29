@@ -1,6 +1,5 @@
 //Platform.mods.geghilarity.name = 'Geghilarity'
 //Platform.mods.modern_industrialization.name = 'Gregic Industrial'
-Platform.mods.modern_industrialization.name = 'SuckerSymphony'
 //Platform.mods.geghilarity_fatmachines.name = 'Geghilarity Fatmachines'
 
 //onEvent('fluid.registry', event => {
@@ -795,7 +794,7 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geghilarity:mcopper')
 	.displayName('Molten Copper')
-	.thinTexture(0xBD6207)
+	.thinTexture(0xFF825A)
     .noBucket
 	
 	event
@@ -3219,13 +3218,181 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x525355)
     .noBucket
 	
+	event
+	.create('geghilarity:impure_stibnite_slurry')
+	.thinTexture(0x3D3E3F)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodium_cyanide_solution')
+	.thinTexture(0x044524)
+    .noBucket
+	
+	event
+	.create('geghilarity:stibnite_slurry')
+	.thinTexture(0x3E3F40)
+    .noBucket
+	
+	event
+	.create('geghilarity:isobutyl_alcohol')
+	.thinTexture(0x879212)
+    .noBucket
+	
+	event
+	.create('geghilarity:carbon_disulfide')
+	.thinTexture(0x707109)
+    .noBucket
+	
+	event
+	.create('geghilarity:sodium_isobutyl_xanthanate_solution')
+	.thinTexture(0x49B82A)
+    .noBucket
+	
+	event
+	.create('geghilarity:liquid_antimony_trichloride')
+	.thinTexture(0x515794)
+    .noBucket
+	
+	event
+	.create('geghilarity:purified_antimony_trichloride')
+	.thinTexture(0x668D61)
+    .noBucket
+	
+	event
+	.create('geghilarity:liquid_crude_gallium_trichloride')
+	.thinTexture(0x4C528F)
+    .noBucket
+	
+	event
+	.create('geghilarity:gallium_trichloride')
+	.thinTexture(0x4D5393)
+    .noBucket
+	
+	event
+	.create('geghilarity:ethylene_carbonate')
+	.thinTexture(0x2A684E)
+    .noBucket
+	
+	event
+	.create('geghilarity:lithium_hexafluorophosphate_electrolyte')
+	.thinTexture(0x4F8175)
+    .noBucket
+	
+	event
+	.create('geghilarity:trinitrotoluene_slurry')
+	.thinTexture(0x9379AD)
+    .noBucket
+	
+	event
+	.create('geghilarity:glyceryl_trinitrate')
+	.thinTexture(0x034740)
+    .noBucket
+	
+	event
+	.create('geghilarity:dimethyl_carbonate')
+	.thinTexture(0x162C4C)
+    .noBucket
+	
+	event
+	.create('geghilarity:liquid_ruridit')
+	.thinTexture(0x64B277)
+    .noBucket
+	
+	event
+	.create('geghilarity:fluorinated_ethylene_propylene')
+	.displayName('Fluorinated Ethylene Propylene (FEP)')
+	.thinTexture(0xB0B0B0)
+    .noBucket
+	
+	event
+	.create('geghilarity:hexafluoropropylene')
+	.thinTexture(0x101113)
+    .noBucket
+	
+	event
+	.create('geghilarity:4-4_oxydianiline_pyromellitimide')
+	.displayName('4-4 Oxydianiline-Pyromellitimide')
+	.thinTexture(0xE07047)
+    .noBucket
+	
+	event
+	.create('geghilarity:polyamic_acid')
+	.displayName('Poly(amic acid)')
+	.thinTexture(0xDA963A)
+    .noBucket
+	
+	event
+	.create('geghilarity:oxydianiline')
+	.thinTexture(0xD3C52C)
+    .noBucket
+	
+	event
+	.create('geghilarity:aniline')
+	.thinTexture(0x427E1B)
+    .noBucket
+	
+	event
+	.create('geghilarity:nitro_benzene')
+	.thinTexture(0x6EAB46)
+    .noBucket
+	
+	event
+	.create('geghilarity:ortho_xylene')
+	.displayName('Ortho-Xylene')
+	.thinTexture(0xA44D55)
+    .noBucket
+	
+	event
+	.create('geghilarity:uncatalyzed_sulfurous_gases')
+	.thinTexture(0x9E9F64)
+    .noBucket
+	
+	event
+	.create('geghilarity:semi-heavy_water')
+	.displayName('Semi-Heavy Water')
+	.thinTexture(0x2F44A5)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_semi-heavy_water')
+	.displayName('Impure Semi-Heavy Water')
+	.thinTexture(0x1823BE)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_heavy_hydrogen_sulfide')
+	.thinTexture(0x9B5D79)
+    .noBucket
+	
+	event
+	.create('geghilarity:impure_semi-heavy_hydrogen_sulfide')
+	.displayName('Impure Semi-Heavy Hydrogen Sulfide')
+	.thinTexture(0xA15D7C)
+    .noBucket
+	
+	event
+	.create('geghilarity:semi-heavy_hydrogen_sulfide')
+	.displayName('Semi-Heavy Hydrogen Sulfide')
+	.thinTexture(0x8E7438)
+    .noBucket
+	
+	event
+	.create('geghilarity:hp_semi-heavy_hydrogen_sulfide')
+	.displayName('High Pressure Semi-Heavy Hydrogen Sulfide')
+	.thinTexture(0x65532B)
+    .noBucket
+	
+	event
+	.create('geghilarity:isotopically_pure_hydrogen_sulfide')
+	.thinTexture(0xB78158)
+    .noBucket
+	
    
 })
 
 //onEvent('item.registry', (event) => {
 StartupEvents.registry('item', event => {
 
-	event.create('geghilarity:ccf').displayName('Cheap Chinese Fan');
 	//event.create('geghilarity:sus_alloy_dust').displayName('Suspicious Alloy Dust');
 	//event.create('geghilarity:sus_alloy_ingot').displayName('Suspicious Alloy Ingot');
 	event.create('geghilarity:precious_ingot').displayName('Precious Metal Ingot');
@@ -3853,6 +4020,50 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:copper_ii_chloride_catalyst_pellet').displayName('Copper II Chloride Catalyst Pellet')
 	event.create('geghilarity:tantalum_catalyst_bed').displayName('Tantalum Catalyst Bed')
 	event.create('geghilarity:tantalum_catalyst_pellet').displayName('Tantalum Catalyst Pellet')
+	
+	event.create('geghilarity:sodium_isobutyl_xanthate_dust');
+	event.create('geghilarity:lead_nitrate_dust');
+	event.create('geghilarity:lead_oxide_dust');
+	event.create('geghilarity:antimony_trichloride_dust');
+	event.create('geghilarity:purified_antimony_trioxide_dust');
+	event.create('geghilarity:high_purity_antimony_dust');
+	event.create('geghilarity:sodium_amide_dust');	
+	event.create('geghilarity:crude_gallium_trichloride_dust');
+	event.create('geghilarity:high_purity_gallium_dust');
+	event.create('geghilarity:lithium_hexafluorophosphate_dust');
+	event.create('geghilarity:lithium_oxide_dust');
+	event.create('geghilarity:lithium_carbonate_dust');
+	event.create('geghilarity:cobalt_oxide_dust');
+	event.create('geghilarity:lithium_cobalt_oxide_dust');
+	event.create('geghilarity:ruridit_dust');
+	event.create('geghilarity:trinitrotoluene_dust').displayName('Trinitrotoluene (TNT) Dust')
+	event.create('geghilarity:sodium_battery_cathode_alloy_dust');
+	
+	event.create('geghilarity:dense_hafnium_plate');
+	event.create('geghilarity:zirconium_plate');
+	event.create('geghilarity:zircaloy_2_dust').displayName('Zircaloy-2 Dust')
+	event.create('geghilarity:zircaloy_2_hot_ingot').displayName('Hot Zircaloy-2 Ingot')
+	event.create('geghilarity:zircaloy_2_ingot').displayName('Zircaloy-2 Ingot')
+	event.create('geghilarity:zircaloy_2_rod').displayName('Zircaloy-2 Rod')
+	event.create('geghilarity:zircaloy_2_ring').displayName('Zircaloy-2 Ring')
+	event.create('geghilarity:zircaloy_4_dust').displayName('Zircaloy-4 Dust')
+	event.create('geghilarity:zircaloy_4_hot_ingot').displayName('Hot Zircaloy-4 Ingot')
+	event.create('geghilarity:zircaloy_4_ingot').displayName('Zircaloy-4 Ingot')
+	event.create('geghilarity:zircaloy_4_plate').displayName('Zircaloy-4 Plate')
+	
+	event.create('geghilarity:dense_hafnium_curved_plate')
+	
+	event.create('geghilarity:kapton_circuit_board')
+	event.create('geghilarity:insane_circuit_board')
+	event.create('geghilarity:vanadium-gallium_foil').displayName('Vanadium-Gallium Foil')
+	event.create('geghilarity:vanadium-gallium_plate').displayName('Vanadium-Gallium Plate')
+	event.create('geghilarity:vanadium-gallium_ingot').displayName('Vanadium-Gallium Ingot')
+	event.create('geghilarity:vanadium-gallium_hot_ingot').displayName('Hot Vanadium-Gallium Ingot')
+	event.create('geghilarity:vanadium-gallium_dust').displayName('Vanadium-Gallium Dust')
+	event.create('geghilarity:4-4_oxydianiline_pyromellitimide_sheet').displayName('4,4 Oxydianiline-Pyromellitimide Sheet')
+	event.create('geghilarity:pyromellitic_dianhydride')
+	event.create('geghilarity:durene')
+	event.create('geghilarity:black_ash_dust')
 
 })	
 

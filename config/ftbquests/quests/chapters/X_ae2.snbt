@@ -11,6 +11,8 @@
 		{
 			dependencies: ["07DB471F85ADCCDA"]
 			description: [
+				"&o : This whole chapter is a lie. You can ignore all of it until it's reworked..."
+				""
 				"Welcome to the Applied Energistics Chapter. This chapter will guide you through everything AE2. Recipes are modified and integrated with MI. By the end of this chapter you should have everything you need to set up a full autocrafting system for pretty much every crafting recipe in the game."
 				""
 				"NOTE: Channels are &mdisabled&r &c ENABLED&r in the pack &mso no need to craft the ME Controller or dense cables, unless you want them for aesthetic reasons!&r"
@@ -19,8 +21,6 @@
 				"&o : I'm gating it past fusion."
 				"&o&6 92 : oh."
 				"&o&6 92 : I didn't really like AE2 anyway"
-				""
-				"&o : Things are broken here due to a missing mod in 1.19. In due time they will be fixed..."
 			]
 			id: "4360FC0DFEEBFC39"
 			min_width: 290

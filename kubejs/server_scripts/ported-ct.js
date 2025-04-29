@@ -38,6 +38,7 @@ ServerEvents.recipes(event => {
 	event.shapeless('geggy:quartz_sand', ['#c:sand', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('3x geggy:clay_dust', ['minecraft:clay', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	event.shapeless('geggy:clay_dust', ['minecraft:clay_ball', 'minecraft:clay_ball', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('geggy:flint_dust_tiny', ['minecraft:flint', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
@@ -48,6 +49,8 @@ ServerEvents.recipes(event => {
 	event.shapeless('modern_industrialization:brick_dust', ['minecraft:bricks', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 
 	event.shapeless('geggy:small_brick_dust', ['minecraft:brick', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
+	
+	event.shapeless('minecraft:torch', ['geggy:unlit_torch', 'minecraft:flint_and_steel']).damageIngredient('minecraft:flint_and_steel')
 	
 	event.shapeless('modern_industrialization:coke_dust', ['modern_industrialization:coke', 'modern_industrialization:coke', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	
@@ -72,15 +75,6 @@ ServerEvents.recipes(event => {
 	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_3']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_3', 'geggy:andesite_casing_2')
 	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_2']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_2', 'geggy:andesite_casing_1')
 	event.shapeless('geggy:j_planks', ['#c:axes', 'geggy:andesite_casing_1']).damageIngredient('#c:axes').replaceIngredient('geggy:andesite_casing_1', 'geggy:andesite_block')
-
-	event.shaped('geggy:unfinished_bucket', [
-		'A A',
-		'ABA',
-		' A '
-	], {
-		A: 'modern_industrialization:iron_dust',
-		B: 'geggy:wooden_form'
-	}).damageIngredient('geggy:wooden_form')
 
 	// 1.19 grout > geggy
 	event.shapeless('geggy:uncooked_primitive_brick', ['geggy:craut', 'geggy:kelp_dust', 'geggy:wooden_form']).damageIngredient('geggy:wooden_form')
@@ -120,24 +114,13 @@ ServerEvents.recipes(event => {
 		D: 'geggy:primitive_brick_dust'
 	}).damageIngredient('geggy:wooden_form')
 	
-	event.shaped('4x geggy:unfired_clay_brick', [
+	event.shaped('2x geggy:unfired_clay_brick', [
 		'AAA',
 		'ABA',
 		'AAA'
 	], {
 		A: 'minecraft:clay_ball',
 		B: 'geggy:wooden_form'
-	}).damageIngredient('geggy:wooden_form')
-
-	event.shaped('3x geggy:unfired_coke_oven_brick', [
-		'AAA',
-		'CBC',
-		'DDD'
-	], {
-		A: 'minecraft:clay_ball',
-		B: 'geggy:wooden_form',
-		C: 'minecraft:gravel',
-		D: '#c:sand'
 	}).damageIngredient('geggy:wooden_form')
 	
 	event.shaped('geggy:wrought_dust', [

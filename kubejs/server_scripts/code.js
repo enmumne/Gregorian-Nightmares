@@ -38,7 +38,7 @@ function entitySnipSnip(event, entity, item, output, dropchance, amount){
 }}
 
 ItemEvents.entityInteracted(event =>{
-    entitySnipSnip(event, 'minecraft:zombie', 'minecraft:shears', 'minecraft:rotten_flesh', 85, 3)
+    entitySnipSnip(event, 'minecraft:zombie', 'minecraft:shears', 'minecraft:rotten_flesh', 85, 5)
 })
 
 /*

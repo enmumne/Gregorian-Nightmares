@@ -536,6 +536,111 @@
 			x: 0.5d
 			y: 4.0d
 		}
+		{
+			dependencies: ["6434DF2EDDFBAB8E"]
+			description: [
+				"[&4&lHEAVY &rversion only]"
+				""
+				"Low tech storage mod, gated at bronze..."
+				""
+				"But you won't do much with that beside wasting some resources to craft it."
+				""
+				"You can place this terminal by shift + right clicking aganist a chest. And it will let you access that chest content in a AE2-like terminal interface."
+				""
+				"Go figure, you can as well use the chest as you always did."
+			]
+			id: "4417346941591B9D"
+			tasks: [{
+				id: "12E7CEA5AF953A7F"
+				item: "toms_storage:ts.storage_terminal"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4417346941591B9D"]
+			description: [
+				"Slightly more useful..."
+				""
+				"This terminal at least lets you use a crafting table interface while accessing the chest."
+				""
+				"But you cannot skip the previous terminal because it is required to then craft this one."
+			]
+			id: "39249CA07609417F"
+			tasks: [{
+				id: "2C97AF629A493341"
+				item: "toms_storage:ts.crafting_terminal"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["39249CA07609417F"]
+			description: [
+				"Here it all starts making more sense... Beside the recipe itself, of course."
+				""
+				"As you can see, it's all gated at circuits and steel. This to avoid competing with already established item pipes."
+				""
+				"You only need to craft a single one to have a sort of limitless storage array. Once placed and connected directly to a terminal, you can then link as many storage blocks you want."
+				""
+				"It means that as long blocks are adjacent to this one, you can pile any number of chests or barrels, side by side, or one on top of the other, and their content will all be accessible directly from the terminal."
+				""
+				"The trim block can also be used to extend this network without linking just chests. It basically works as filler for spaces."
+			]
+			icon: "toms_storage:ts.inventory_connector"
+			id: "3ABD09D0DAA2B96D"
+			min_width: 230
+			tasks: [
+				{
+					id: "3C968C88725857EB"
+					item: "toms_storage:ts.inventory_connector"
+					type: "item"
+				}
+				{
+					id: "0D25B2F91B38CC3B"
+					item: "toms_storage:ts.trim"
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["3ABD09D0DAA2B96D"]
+			description: [
+				"But let's say you don't just want to have a compact immense stack of chests and trims... You can use these variations of pipes to create some separate networks."
+				""
+				"The concept is that there's still one main node and terminal, that connects to other secondary nodes."
+				""
+				"In practice this means you can access ALL the content in the whole network from the main terminal, whereas you can ONLY access the local nodes content from secondary access points."
+				""
+				"You can attach one inventory cable to a face of an inventory connector, then path it to where you need it to end, and you can then link other chests through an inventory cable connector. The main terminal at the other end will now see the connected chest."
+				""
+				"If you want another node, instead, you need to place a second inventory connector, and then place the inventory cable connector on it. Linking this sub-network to the main one."
+				""
+				"It's important that only the main inventory connector is directly connected to the cable, and all other branching segments instead end with connectors. Otherwise I don't think the system will do anything."
+			]
+			icon: "toms_storage:ts.inventory_cable"
+			id: "415D9459DA3A2894"
+			min_width: 260
+			tasks: [
+				{
+					id: "654ABF6CE7E37E9F"
+					item: "toms_storage:ts.inventory_cable"
+					type: "item"
+				}
+				{
+					id: "1557655FB5266CA9"
+					item: "toms_storage:ts.inventory_cable_connector"
+					type: "item"
+				}
+			]
+			title: "Sub-networks"
+			x: -8.5d
+			y: -2.5d
+		}
 	]
 	title: "Storage"
 }

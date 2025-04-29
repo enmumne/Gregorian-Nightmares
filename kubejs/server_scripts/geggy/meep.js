@@ -27,4 +27,6 @@ ServerEvents.recipes(event => {
 		B: 'modern_industrialization:steel_plate'
 	})
 	
+	event.smelting('geggy:unsavory_brain', 'neepmeat:brain_rough').cookingTime(150)
+	
 })

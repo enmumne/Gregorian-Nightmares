@@ -37,13 +37,15 @@
 			description: [
 				"You can start the process of setting up the very first, early game quarry by crafting a bucket. This is necessary because due to technical limitations you need steam to jumpstart the process."
 				""
-				"By design, iron ingots shouldn't be available early on. So I added an alternate recipe to craft the bucket."
+				"By design, iron ingots shouldn't be available early on. So there is an alternate recipe to craft the bucket. "
 				""
-				"If you look at recipes, you'll find that the bucket still needs three iron ingot on a crafting table. But if you switch to the (vanilla) blast furnace tab, you'll see that you can use an \"&aunfinished bucket&r\" to obtain a standard bucket."
+				"It probably doesn't make a lot of sense to use clay molds for iron, but that's the current compromise... Those molds in this case are single-use, so make two of them if you want to craft both \"halves\" of the bucket."
 				""
-				"As you can see, to craft the unfinished bucket you need iron dusts and a wooden form. If you've gone through the early quests you already know how."
+				"To fill the mold you need iron dust, four of them for a whole bucket."
 				""
-				"&7&oNote: the macerator is gated much later than usual, and you don't have any direct way to obtain a iron dust. Therefore figure out first how to get a \"&airon tiny dust&7&o\", so that you can also obtain a full dust with that. If you don't want to use looted iron nuggets, and since the chain of recipes may be tricky to navigate, look for vanilla blast furnace-only recipe that smelts &aTiny Iron Blend Dust&r &o&7to a iron nugget."
+				"&eTo check the steps, look up the standard bucket in the recipe browser, then switch to sandpaper polishing tab, work backwards from there."
+				""
+				"&7&oNote: the macerator is gated much later than usual. Therefore figure out first how to get a \"&airon tiny dust&7&o\", so that you can also obtain a full dust with that. The shortest way is to toss raw iron ore into a Create millstone for crushed raw iron, and then toss again that raw iron back in for tiny dusts..."
 			]
 			id: "47EA49CACF79FC68"
 			min_width: 280
@@ -59,15 +61,17 @@
 		{
 			dependencies: ["47EA49CACF79FC68"]
 			description: [
-				"The name of the item is misleading, to craft this quaint &cboiler prototype&r you only need some copper."
+				"The name of the item is misleading, to craft this quaint &aboiler prototype&r you only need some copper."
 				""
 				"Since you're meant to obtain and set up all this before you get any other MI machines, you should look for alternate processes through Create mod to obtain the required materials."
 				""
 				"I'll try to explain how the system works, since it's not very intuitive due to the technical limitations. But you're free to set it up as you prefer."
 				""
-				"This boiler is meant to \"run itself\" and also power a single quarry. For that reason you need a pipe that takes the steam the boiler is producing and moving it BACK to itself, so that it can use that same steam to produce more steam. Essentially, you need a pipe that \"loops\" the steam. So you need to place a pipe, going out of the boiler using the pump, and then doing a loop to push that steam again into the boiler from another face. This guarantees that steams come out of the boiler, only to get right back in, to be used as fuel..."
+				"This boiler is meant to \"run itself\" and also power a single quarry. For that reason you need a pipe that takes the steam the boiler is producing and moving it BACK to itself, so that it can use that same steam to produce more steam. Essentially, you need a pipe that \"loops\" the steam. So you need to place a pipe, going out of the boiler using the pump, and then doing a loop to push that steam again into the boiler from another face. This guarantees that steams come out of the boiler when produced, only to get right back in, to be used as fuel..."
 				""
 				"You then need a second pipe (and another pump), taking steam out from a different face, and then moving that steam to the quarry you want to power."
+				""
+				"Note: &ethese bronze-copper machines require a reinforced flint pickaxe (or better) to be broken and replaced. So either look at the quests in the first page to craft one, or... avoid making mistakes."
 			]
 			icon: "modern_industrialization:bronze_drill1"
 			id: "6BCEC770345AA722"
@@ -96,16 +100,22 @@
 		{
 			dependencies: ["6BCEC770345AA722"]
 			description: [
-				"Fluid valves need to be powered so that the Create pipes actually do something."
+				"Mechanical pumps need to be powered so that the Create pipes actually do something."
 				""
-				"You could of course use some cogwheels and an hand crank to turn that valve manually, but that would be silly since quarries are meant to do their work in the background, while you're busy doing something else."
+				"You could of course use some cogwheels and an hand crank to turn that pump manually, but that would be silly since quarries are meant to do their work in the background, while you're busy doing something else."
 				""
-				"That means you need some kind of self-powered system to keep active those valves, so that the boiler can keep going and steam being produced."
+				"That means you need some kind of self-powered system to keep active those pumps, so that the boiler can keep going and steam being produced and looped."
 				""
-				"Find your own solution, but if looking for suggestions, open up the ponder system ('w') on the Create \"&aWindmill Bearing&r\" item. Using Create sails and wind works well enough as a simple system that you can set up once and forget."
+				"Find your own solution, but if looking for suggestions, open up the ponder system ('w') on the Create \"&aWindmill Bearing&r\" item. Using Create sails and wind works well enough as a simple system that you can set up once and forget. If you followed the main quest progression you should already know how to proceed... It's likely you need to build separate set-ups for every quarry you want to use."
+				""
+				"Keep in mind that an autonomous quarry probably needs 4 large cogwheels and 3 small ones, plus two mechanical pumps (one for steam, the other to feed water, a quest down the path here will explain better), and some copper pipes. All connected to a windmill with at least 8 sails."
+				""
+				"So, the windmill, a large cogwheel right under it, linked to a small one, going from 1 to 2 rpm. Then a second large cogwheel plugged on the same shaft of the small one above it, then link another small to the large, going to 4 rpm, and another large linked perpendicular, to change the orientation of the shaft. So that you can now link a small to the large, going to 8 rpm, and linking that small right on the mechanical pump for the steam..."
+				""
+				"You need at least 8 rpm to push steam and water so that the contraption works properly with sufficient speed."
 			]
 			id: "1CCCB70AE6B4C2B9"
-			min_width: 280
+			min_width: 320
 			tasks: [{
 				id: "64711B4AD8833B6A"
 				type: "checkmark"
@@ -117,15 +127,13 @@
 		{
 			dependencies: ["6BCEC770345AA722"]
 			description: [
-				"Here comes another compromise: you need steam to begin producing steam."
+				"Here comes another compromise: you need steam to start producing steam."
 				""
 				"To fix this circular dependency, there's a simple recipe to craft a steam bucket by just using some water and a furnace."
 				""
-				"You shouldn't need to repeat this process, because as soon the recipe runs the boiler should have enough steam to self-power from that point onward. But this could also depend on how the steam is buffered around, since both the boiler and the driller have an internal tank capacity of 2k, so 4k total. Whereas one run of the boiler produces 2k. So it can also happen that you have to manually refill the boiler with steam until it's fully independent..."
+				"It is advised that you keep the \"token\" item off the driller, and let the boiler go through a few runs without the driller turning on. This way you'll be able to fill all tanks with steam. When the boiler turns off, because it runs out of space for steam, you can then put the token back into the driller machine, so that it can properly start its own process and consume steam. As soon there's enough space, the boiler will also start again, and will keep running from that point onward."
 				""
-				"In order to continue producing that steam, it still needs running its recipe. If you look it up you'll see that it needs a small quantity of coal and water. This part will likely be manual for now (but if you input enough it will keep going for quite a while)."
-				""
-				"At a later point, when you have bronze, you'll be able to craft an infinite water pump, so that this part will also become passive."
+				"In order to continue producing that steam, the boiler still needs running its recipe. If you look it up you'll see that it needs a small quantity of coal and water (the two tiny coal dusts now only have a 35% chance of being actually consumed). This part will likely be manual for now, but if you input enough it will keep going for quite a while."
 			]
 			icon: "modern_industrialization:steam_bucket"
 			id: "10701EF47839B7CE"
@@ -149,7 +157,7 @@
 		{
 			dependencies: ["10701EF47839B7CE"]
 			description: [
-				"If you got to this point then it means you have an automated contraption with a primitive boiler as its center, with a pipe coming out to power the whole goal here: a quarry (the quarry being named \"driller\", here)."
+				"If you got to this point then it means you have an automated contraption with a primitive boiler as its center, with a pipe coming out to power the whole goal here: a quarry (the quarry being named \"driller\")."
 				""
 				"Again, the name says \"bronze\" but is misleading because you still only need some copper to craft this."
 				""
@@ -181,9 +189,9 @@
 			description: [
 				"In the recipe you can see that you need a copper drill as ingredient, but also a \"token\". This token has no recipe and is otherwise unobtainable."
 				""
-				"The compromise here is that the token system limits how many quarries, and quarry types, you can run concurrently. See the \"design\" notes around here on the top right of the page for more details."
+				"The compromise is that the token system limits how many quarries, and quarry types, you can run concurrently. See the \"design\" notes around here on the top right of the page for more details."
 				""
-				"The copper drill has a consumption chance (when it breaks it needs to be replaced), the raw ores a preduction chance. You can also see a small pile-like experience object. That one is meant to be used as ingredient when you want to upgrade this quarry to the next tier."
+				"The copper drill has a consumption chance (when it breaks it needs to be replaced), the raw ores a production chance. You can also see a small pile-like experience object. That one is meant to be used as ingredient when you want to upgrade this quarry to the next tier."
 				""
 				"Look around this page for the quest that provides the tokens. That's the only way to obtain them. If for some reason you lose one, there's no other way than to cheat them back in."
 				""
@@ -212,7 +220,7 @@
 				"&cGroup Gas&r: gas (2, nether only)"
 				"&cGroup Oil&r: oil (2, overworld, spawns inside sand)"
 				""
-				"Note: &eAntimony is part of Redstone. Antimony nodes can be freely broken for raw antimony."
+				"Note: &eAntimony is part of Redstone. Antimony nodes can be freely broken for raw antimony. From the quarry, you now get Stibnite ore, to reprocess into antimony proper."
 				""
 				"This system of tokens is designed as a way to control how many quarries can run concurrently on the same ore type. The goal is to forbid spamming more than one type, and instead upgrade the quarry through tiers."
 				""
@@ -518,13 +526,20 @@
 		{
 			dependencies: ["5B9F3D94A95E2BD0"]
 			description: [
-				"Starting from this tier you're supposed to leave behind the boiler prototype."
+				"Starting from this tier you may be looking into the standard boiler type (shown here)."
 				""
-				"I don't have enough control on the power system, so both tier 2 and 3 still have the same power requirements of tier 1. But even if you can still reuse the boiler prototype, from this point onward you should move to a bronze water pump and standard bronze boiler."
+				"I don't have enough control on the power system, so both tier 2 and 3 still have the same power requirements of tier 1. That means you can simply upgrade the driller block (and the drills being used in recipes)."
 				""
-				"Note that there's an additional hicckup since the water pump requires glass, and glass is gated past \"steel\" (you need a steel mold, and an alloy smelter)."
+				"To use a regular boiler you probably also need a water pump, but that will require glass, and so steel molds and an alloy smelter (and at that point you'll also be able to transition to fluid pipes, and so remove the need for all Create and windmills)."
+				""
+				"The difference in practical terms (and due to technical constraints) is that the prototype boilers should use on average the equivalent of &e11.2 coal dusts&r for one hour. Whereas a standard boiler uses &eup to 18 coal pieces&r every hour at max, but when using it for a single quarry that's 144k EU required every hour, and the equivalent of just &e4.5 coal pieces&r. Much more convenient..."
+				""
+				"More importantly, you can also use coke (from coke ovens), doubling the efficiency of the whole thing. Whereas using the full output of the boiler, and the 18 coal pieces, you'd in theory able to fully power four quarries at the same time. But of course the quarries being usually scattered around would make this unification of power production impractical at this stage."
+				""
+				"Of course your can't use coke in the prototype boiler, making the alternative FAR more cost effective and useful."
 			]
 			id: "59174C8A4070D621"
+			min_width: 300
 			tasks: [{
 				id: "0C4699C006A6C350"
 				item: "modern_industrialization:bronze_boiler"
@@ -545,7 +560,7 @@
 				"Starting from Tier 2, you're supposed to move to more standardized ways of producing steam. See below the additional note linked to the Tier 2 quarry."
 			]
 			id: "0B65B240D5D30E87"
-			min_width: 250
+			min_width: 255
 			tasks: [{
 				id: "3F54C256BDACD1F7"
 				type: "checkmark"
@@ -558,23 +573,24 @@
 			description: [
 				"As explained above, the current \"corenodes\" generation is more the result of compromises than good design. Here below you can check where the nodes generate by type."
 				""
-				"&aCopper&r: &c0 to 80&r, chance 2 (also 90-180)"
-				"&aSalt&r: &c0 to 64&r, chance 1 (also -64 -20)"
+				"&aCopper&r: &c0 to 80&r, chance 1 (also 90-180)"
 				"&aTin&r: &c-8 to 48&r, chance 1 (also 60-160)"
-				"&aLead&r: &c0 to 56&r, chance 1 (also 70-200)"
-				"&aNickel&r: &c-16 to 40&r, chance 1"
-				"&aZinc&r: &c-24 to 48&r, chance 1"
-				"&aIron&r: &c-24 to 40&r, chance 1 (also 80-120)"
-				"&aAntimony&r: &c-32 to 40&r, chance 1/2"
-				"&aCoal&r: &c-40 to 0&r, chance 1 (also 32-128)"
-				"&aPrecious Ore&r: &c-56 to 0&r, chance 1"
-				"&aBauxite&r: &c-56 to -8&r, chance 1 (also 80-200)"
-				"&aTungsten&r: &c-56 to -32&r, chance 1/3"
-				"&aMozanite&r: &c-56 to -32&r, chance 1/2"
-				"&aUranium&r: &c-56 to -40&r, chance 1/3"
-				"&aRedstone&r: &c-64 to -40&r, chance 1/2"
-				"&aLignite&r: &c0 to 128&r, chance 2"
-				"&aQuartz&r: &c+/- 10&r from top or bottom, chance 5, &cNether&r"
+				"&aCoal&r: &c-40 to 0&r, chance 1/2 (also 32-128)"
+				"&aLignite&r: &c0 to 128&r, chance 1"
+				"&aIron&r: &c-24 to 40&r, chance 1/2 (also 80-120)"
+				"&aLead&r: &c0 to 56&r, chance 1/2 (also 70-200)"
+				"&aNickel&r: &c-16 to 40&r, chance 1/2"
+				"&aZinc&r: &c-24 to 48&r, chance 1/2"
+				"&aSalt&r: &c-64 to -20&r, chance 1/2 (also 0-64)"
+				"&aRedstone&r: &c-64 to -40&r, chance 1/3"
+				"&aPrecious Ore&r: &c-56 to 0&r, chance 1/2"
+				"&aBauxite&r: &c-56 to -8&r, chance 1/2 (also 80-200)"
+				"&aAntimony&r: &c-32 to 40&r, chance 1/3"
+				"&aTungsten&r: &c-56 to -32&r, chance 1/4"
+				"&aMozanite&r: &c-56 to -32&r, chance 1/3"
+				"&aUranium&r: &c-56 to -40&r, chance 1/4"
+				""
+				"&aQuartz&r: &c+/- 10&r from top or bottom, chance 4, &l&6Nether&r"
 				""
 				"Numbers indicate Y ranges, all uniformly generated. The blocks now &l&eEMIT LIGHT&r, therefore traveling through dark caves is the ideal way to spot them."
 				""
@@ -619,20 +635,20 @@
 				"A breakdown of the recipes for each tier. This should give you an idea of how many &6raw ores&r of the main type, for a full hour of continuous activity. No costs considered."
 				""
 				"&l&dTier 1"
-				"Copper &a34.8&r, Tin &a7.2&r, Coal &a21&r, Lignite &a16.8&r"
+				"Copper &a34.8&r, Tin &a7.2&r, Coal &a21&r, Lignite &a23.7&r"
 				"Quartz &a12.48&r, Zinc &a3.6&r"
 				""
 				"&l&dTier 2"
-				"Copper &a62.6&r, Tin &a14.4&r, Coal &a37.8&r, Lignite &a33.6&r"
-				"Quartz &a18.7&r, Zinc &a4.32&r, Lead &a4.8&r"
+				"Copper &a55.6&r, Tin &a14.4&r, Coal &a37.8&r, Lignite &a33.6&r"
+				"Quartz &a24.9&r, Zinc &a4.32&r, Lead &a4.8&r"
 				""
 				"&l&dTier 3"
 				"Copper &a73.8&r, Tin &a25.2&r, Coal &a50.4&r, Lignite &a37.4&r"
-				"Quartz &a25.8&r, Zinc &a9&r, Lead &a7.2&r, Iron &a9&r"
+				"Quartz &a30.9&r, Zinc &a9&r, Lead &a7.2&r, Iron &a16.8&r"
 				""
 				"&l&dTier 4"
 				"Copper &a84&r, Tin &a32.4&r, Coal &a62.4&r, Lignite &a41.4&r"
-				"Quartz &a32.76&r, Zinc &a14.4&r, Lead &a12&r, Iron &a50&r"
+				"Quartz &a37.4&r, Zinc &a14.4&r, Lead &a12&r, Iron &a50&r"
 				"Nickel &a14.4&r"
 				""
 				"At tier 4 you'll probably have a Macerator, that you can use to process raw ores and multiply dusts by 1.5."
@@ -738,6 +754,8 @@
 			description: [
 				"Due to recipe conflicts, now (almost) all quarry recipes require a \"selector\". The item is not consumed, just like a token, but it needs to be placed in the machine so that it will start."
 				""
+				"&eNote that now all tier 1 recipes can run without a selector. The requirement starts from tier 2."
+				""
 				"You can switch between \"selectors\" by placing a Create \"precision mechanism\" on a crafting table. Depending on the position, you craft a different selector."
 				""
 				"You can freely switch back and forth between selector types, by simply repeating the recipe and placing the item in a different position."
@@ -754,7 +772,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["553A119B22280B8D"]
+			dependencies: ["3837C1EFDD5F8D85"]
 			description: [
 				"This step assumes you already went through all the previous 4 Tiers, and that you have access to electricity (and one LV Alloy Smelter)."
 				""
@@ -1086,6 +1104,54 @@
 			}]
 			x: -11.0d
 			y: 8.0d
+		}
+		{
+			dependencies: ["553A119B22280B8D"]
+			description: [
+				"Through some survival tests the priority became placing the first quarry in the nether, because looking for quartz may be annoying, and right after that a second quarry for coal, surprisingly."
+				""
+				"The drills are of course annoying to produce, due to the cogwheel recipe, but they usually last a while. So what actually runs out quickly and stops the process is coal and water."
+				""
+				"Coal, as long you produce enough (and therefore the need for a coal quarry), is easy to solve: just put a Create chute right over the boiler, and a chest over the chute. It works like vanilla hoppers. So you can then just put a few stacks of tiny dusts into the chest, and this will buffer the processing for long enough."
+				""
+				"The other problem is... water. In overworld the solution is fairly simple, but trickier due to how Create is set up. With Create pipes and pump you can basically use the vanilla infinite water system to solve completely the water problem in the boiler."
+				""
+				"XOX"
+				""
+				"If you have three adjacent free spaces, and use buckets of water to place two source water blocks, where the \"X\" are, then the \"O\" will become an infinite water block. This is of course vanilla. You can pick up that water with just an open Create pipe, but you have to take the water from the side of that \"O\" block. Nothing else is required beside a pump to then move water into the boiler."
+				""
+				"{@pagebreak}"
+				"But, if you work in a cramped space, because you need a pump with steam going out to the driller, then a pipe looping back that steam to the boiler, then the upper side blocked by the chute for the coal, and now you need another space free to pump water in... The problem is that you'll fight the automatic connections between the pipes."
+				""
+				"To fix this mess you'll have to craft a Copper Casing. The recipe will require rubber, and the main quest progression should guide you through the steps."
+				""
+				"Copper casings can be used by right clicking on pipes and \"encasing\" them, effectively locking their connections to their current state. This will let you configure a single pipe, then lock it, and able to route a separate pipe close to it without the two starting to mess with each other."
+				""
+				"It's important to remember that copper casings used this way are not actually placed and consumed. That means you only need to craft one, and with it you'll be able to encase any number of pipes."
+				""
+				"{@pagebreak}"
+				"As a final consideration: of course the solution for the water won't work in the nether. Because you can't place water there."
+				""
+				"A good solution without going too far is to create a buffer. For example four joined Create tanks will contain a lot of water. You can't place water in the nether, but you can bring in buckets manually, empty them into a Create drain... pump the water from the drain into the tank, and then from the tank into the boiler."
+				""
+				"You can manage to solve this by only using one additional pump, but it will be a little tricky, due to the pump having to both push the water into the tank and the boiler. "
+				""
+				"Tinker long enough and you'll likely succeed..."
+				""
+				"A quarry will consume on average roughly the equivalent of 11.2 coal dusts for every hour it runs (if I haven't messed up the calculation once again). So, looking the numbers in the quest on the upper right side of this page, if a coal quarry produces 21 coal pieces/hour, then it means it's barely enough to keep two quarries going. Meaning you probably want to build a lignite one to work in parallel, and so have a surplus that will eventually let you move further in the progression."
+				""
+				"Either that, or you keep up with the demand by mining manually."
+			]
+			id: "3837C1EFDD5F8D85"
+			min_width: 300
+			tasks: [{
+				id: "20FF21671250A1A4"
+				item: "create:copper_casing"
+				type: "item"
+			}]
+			title: "Automation, part 2"
+			x: -8.5d
+			y: 3.5d
 		}
 	]
 	title: "The Quarry System"

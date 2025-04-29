@@ -269,46 +269,6 @@ function wired_redstone(event) {
 
 }
 
-function circuit_recipes(event, circuit_prefix, ingredient_1, ingredient_2, ingredient_3) {
-	event.remove({type: "modern_industrialization:assembler", output: `modern_industrialization:${circuit_prefix}_circuit`})
-	event.remove({type: "minecraft:crafting_shaped", output: `modern_industrialization:${circuit_prefix}_circuit`})
-	
-	event.custom({
-			"type": "create:sequenced_assembly",
-			"ingredient": [{"item": `modern_industrialization:${circuit_prefix}_circuit_board`}],
-			"loops": 2,
-			"results": [{"item": `modern_industrialization:${circuit_prefix}_circuit`, "chance": 100.0}],
-			
-			"sequence":[
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}, {"item": ingredient_1}],
-			"results": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}]},
-				{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}, {"item": ingredient_2}],
-			"results": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}]},
-			{"type": "create:deploying",
-			"ingredients": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}, {"item": ingredient_3}],
-			"results": [{"item": `kubejs:incomplete_${circuit_prefix}_circuit`}]}
-			],
-			
-			
-			"transitionalItem":{"item":`kubejs:incomplete_${circuit_prefix}_circuit`}
-	})
-		
-		/*	
-	event.recipes.createSequencedAssembly([
-		Item.of(`modern_industrialization:${circuit_prefix}_circuit`).withChance(100.0)
-	  ], 
-	  `modern_industrialization:${circuit_prefix}_circuit_board`, 
-	  [
-		event.recipes.createDeploying(`kubejs:incomplete_${circuit_prefix}_circuit`, [`kubejs:incomplete_${circuit_prefix}_circuit`, ingredient_1]),
-		event.recipes.createDeploying(`kubejs:incomplete_${circuit_prefix}_circuit`, [`kubejs:incomplete_${circuit_prefix}_circuit`, ingredient_2]),
-		event.recipes.createDeploying(`kubejs:incomplete_${circuit_prefix}_circuit`, [`kubejs:incomplete_${circuit_prefix}_circuit`, ingredient_3]),
-	  ]).transitionalItem(`kubejs:incomplete_${circuit_prefix}_circuit`).loops(2)
-	  */
-}
-
-
 
 	/*
 	event.recipes.createSplashing("modern_industrialization:bronze_drill", ["kubejs:dirty_bronze_drill"])
@@ -795,31 +755,31 @@ ServerEvents.recipes(event => {
 	// rod
 	event.custom({
 			"type": "create:cutting",
-			"ingredients": [{"item": "minecraft:iron_ingot"}],
-			"results": [{"item": "modern_industrialization:iron_rod",}]
-	})
-	event.custom({
-			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "minecraft:copper_ingot"}],
 			"results": [{"item": "modern_industrialization:copper_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "minecraft:gold_ingot"}],
 			"results": [{"item": "modern_industrialization:gold_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "modern_industrialization:tin_ingot"}],
 			"results": [{"item": "modern_industrialization:tin_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 75,
 			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
 			"results": [{"item": "modern_industrialization:bronze_rod"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 75,
 			"ingredients": [{"item": "modern_industrialization:nickel_ingot"}],
 			"results": [{"item": "geghilarity:nickel_rod"}]
 	})
@@ -832,28 +792,28 @@ ServerEvents.recipes(event => {
 	*/
 
 	// bolt
+
 	event.custom({
 			"type": "create:cutting",
-			"ingredients": [{"item": "modern_industrialization:iron_rod"}],
-			"results": [{count: 2, "item": "modern_industrialization:iron_bolt"}]
-	})
-	event.custom({
-			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "modern_industrialization:copper_rod"}],
 			"results": [{count: 2, "item": "modern_industrialization:copper_bolt"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "modern_industrialization:gold_rod"}],
 			"results": [{count: 2, "item": "modern_industrialization:gold_bolt"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "modern_industrialization:tin_rod"}],
 			"results": [{count: 2, "item": "modern_industrialization:tin_bolt"}]
 	})
 	event.custom({
 			"type": "create:cutting",
+			processingTime: 50,
 			"ingredients": [{"item": "modern_industrialization:bronze_rod"}],
 			"results": [{count: 2, "item": "modern_industrialization:bronze_bolt"}]
 	})
@@ -865,32 +825,8 @@ ServerEvents.recipes(event => {
 	event.recipes.createCutting(Item.of("modern_industrialization:bronze_bolt", 2), "modern_industrialization:bronze_rod")
 	*/
 
-	// ring
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:iron_rod"}],
-			"results": [{"item": "modern_industrialization:iron_ring"}]
-	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:copper_rod"}],
-			"results": [{"item": "modern_industrialization:copper_ring"}]
-	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:gold_rod"}],
-			"results": [{"item": "modern_industrialization:gold_ring"}]
-	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:tin_rod"}],
-			"results": [{"item": "modern_industrialization:tin_ring"}]
-	})
-	event.custom({
-			"type": "create:pressing",
-			"ingredients": [{"item": "modern_industrialization:bronze_rod"}],
-			"results": [{"item": "modern_industrialization:bronze_ring"}]
-	})
+	// ring on create rolling mill
+
 	/*
 	event.recipes.createPressing("modern_industrialization:iron_ring", "modern_industrialization:iron_rod")
 	event.recipes.createPressing("modern_industrialization:copper_ring", "modern_industrialization:copper_rod")
@@ -899,13 +835,7 @@ ServerEvents.recipes(event => {
 	event.recipes.createPressing("modern_industrialization:bronze_ring", "modern_industrialization:bronze_rod")
 	*/
 
-	// bronze machine casing
-	event.custom({
-			"type": "create:compacting",
-			"ingredients": [{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"},{"item": "modern_industrialization:bronze_plate"}, {"item": "modern_industrialization:bronze_gear"}],
-			//"ingredients": [{count: 8, "item": "modern_industrialization:bronze_plate"}, {"item": "modern_industrialization:bronze_gear"}],
-			"results": [{"item": "modern_industrialization:bronze_machine_casing"}]
-	})
+
 	/*
 	event.recipes.createCompacting("modern_industrialization:bronze_machine_casing", [
 		Item.of("modern_industrialization:bronze_plate", 8),
@@ -914,7 +844,6 @@ ServerEvents.recipes(event => {
 	*/
  
 	// hopper
-	event.replaceInput({type:"minecraft:crafting_shaped", output: "minecraft:hopper"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
 	//event.replaceInput({id: "minecraft", output: "minecraft:hopper"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
 
 	// uncooked steel (removed)
@@ -943,15 +872,9 @@ ServerEvents.recipes(event => {
 	
 	event.custom({
 			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "modern_industrialization:brick_dust"}],
-			"results": [{"item": "minecraft:brick"}]
-	})
-	event.custom({
-			"type": "create:milling",
-			"processingTime":200,
-			"ingredients": [{"item": "minecraft:terracotta"}],
-			"results": [{count: 4, "item": "modern_industrialization:brick_dust"}]
+			"processingTime":100,
+			"ingredients": [{"item": "minecraft:brick"}],
+			"results": [{"item": "modern_industrialization:brick_dust"}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -963,12 +886,6 @@ ServerEvents.recipes(event => {
 	//event.recipes.createMilling(Item.of("modern_industrialization:brick_dust", 4), "minecraft:terracotta")
 	//event.recipes.createMilling(Item.of("modern_industrialization:brick_dust", 4), "minecraft:bricks")
 
-	event.custom({
-			"type": "create:mixing",
-			"heatRequirement":"heated",
-			"ingredients": [{"item": "geggy:clay_dust"}, {"item": "geggy:clay_dust"}, {"item": "modern_industrialization:brick_dust"}, {"item": "magick:calcite_dust"}, {"item": "geggy:andesite_mix"}],
-			"results": [{count: 1, "item": "modern_industrialization:fire_clay_dust"}]
-	})
 	// pbf mixer
 	event.remove({type: "modern_industrialization:mixer", output: `modern_industrialization:fire_clay_dust`})
 	event.custom({ 
@@ -976,13 +893,13 @@ ServerEvents.recipes(event => {
 		eu: 2,
 		duration: 100,
 		item_inputs : [
-			{item: "geggy:clay_dust", amount: 2},
-			{item: "modern_industrialization:brick_dust", amount: 1},
-			{item: "magick:calcite_dust", amount: 1},
+			{item: "geggy:clay_dust", amount: 3},
+			{item: "modern_industrialization:brick_dust", amount: 2},
+			{item: "magick:calcite_dust", amount: 2},
 			{item: "geggy:andesite_mix"}
 		],
 		item_outputs :[
-			{item: "modern_industrialization:fire_clay_dust", amount: 1}
+			{item: "modern_industrialization:fire_clay_dust", amount: 2}
 		]
 	})
 	
@@ -1015,27 +932,12 @@ ServerEvents.recipes(event => {
 	// ELECTRIC AGE
 	// create belts
 	event.remove({mod: "create", output: "create:belt_connector"})
-	event.shaped("create:belt_connector", [
+	event.shaped("2x create:belt_connector", [
 		"RRR",
 		"RRR",
 		"   "
 	], {
 		R: "modern_industrialization:rubber_sheet",
-	})
-
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-		// changed to kelp from paper
-			{"item": "geggy:heated_rubber"},
-			{"item": "geggy:heated_rubber"},
-			{"amount": 8992, "fluid": "modern_industrialization:synthetic_oil", "nbt": {}}
-			//Fluid.of("modern_industrialization:synthetic_oil", fluid_volume_to_fabric(111.11)).toJson()
-		],
-		results: [
-		{"count" : 6, "item": "modern_industrialization:rubber_sheet"}
-		],
-		processingTime: 100
 	})
 	
 	event.custom({
@@ -1069,6 +971,129 @@ ServerEvents.recipes(event => {
 		],
 		result: {
 			"item": "create:crushing_wheel"
+		}
+	})
+	
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "modern_industrialization:bronze_curved_plate"},
+		"B": {"item": "modern_industrialization:bronze_rod"}
+		},
+		pattern: [
+			"A",
+			"B"
+		],
+		result: {
+			"item": "modern_industrialization:bronze_blade"
+		}
+	})
+	
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "geggy:polished_copper_plate"},
+		"B": {"item": "modern_industrialization:rubber_sheet"}
+		},
+		pattern: [
+			"B",
+			"A",
+			"B"
+		],
+		result: {
+			"item": "modern_industrialization:analog_circuit_board"
+		}
+	})
+	
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"C": {"item": "powah:energy_cable_starter"},
+		"D": {"item": "geggy:galvanized_steel_plate"},
+		"E": {"item": "geggy:galvanized_steel_rod"},
+		"F": {"item": "modern_industrialization:motor"},
+		"G": {"item": "geggy:galvanized_steel_gear"}
+		},
+		pattern: [
+			"DDD",
+			"CEE",
+			"CFG"
+		],
+		result: {
+			"item": "modern_industrialization:piston"
+		}
+	})
+	
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "modern_industrialization:steel_rod_magnetic"},
+		"E": {"item": "modern_industrialization:copper_wire"},
+		"F": {"item": "powah:energy_cable_starter"},
+		"G": {"item": "geggy:galvanized_steel_rod"}
+		},
+		pattern: [
+			"FEG",
+			"EAE",
+			"GEF"
+		],
+		result: {
+			"item": "modern_industrialization:motor"
+		}
+	})
+	
+	event.remove({id: 'modern_industrialization:electric_age/component/craft/pump'})
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "moderndynamics:fluid_pipe"},
+		"B": {"item": "modern_industrialization:tin_rotor"},
+		"C": {"item": "modern_industrialization:tin_bolt"},
+		"D": {"item": "modern_industrialization:motor"}
+		},
+		pattern: [
+			"AAA",
+			"BDB",
+			"CBC"
+		],
+		result: {
+			"item": "modern_industrialization:pump"
+		}
+	})
+	
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"A": {"item": "geggy:simple_pipe_motor"},
+		"G": {"item": "modern_industrialization:steel_gear"},
+		"X": {"item": "geggy:invar_curved_plate"},
+		"F": {"item": "geggy:reinforced_glass_pane"},
+		"H": {"item": "modern_industrialization:invar_rod"}
+		},
+		pattern: [
+			" XHX ",
+			"AFFFG",
+			" XHX "
+		],
+		result: {
+			"item": "moderndynamics:item_pipe", "count": 6
+		}
+	})
+	event.custom({
+		type: "create:mechanical_crafting",
+		key: {
+		"G": {"item": "modern_industrialization:bronze_rotor"},
+		"X": {"item": "geggy:potin_curved_plate"},
+		"F": {"item": "geggy:reinforced_glass_pane"},
+		"H": {"item": "modern_industrialization:rubber_sheet"}
+		},
+		pattern: [
+			" XXX ",
+			"HFGFH",
+			" XXX "
+		],
+		result: {
+			"item": "moderndynamics:fluid_pipe", "count": 6
 		}
 	})
 	
@@ -1227,9 +1252,6 @@ ServerEvents.recipes(event => {
 
 	// circuits
 	
-	circuit_recipes(event, "electronic", "modern_industrialization:diode", "modern_industrialization:transistor", "modern_industrialization:analog_circuit")
-	//circuit_recipes(event, "quantum", "modern_industrialization:processing_unit", "modern_industrialization:cooling_cell", "modern_industrialization:qbit")
-
 	event.remove({type: "modern_industrialization:assembler", output: "modern_industrialization:analog_circuit"})
 	event.remove({type: "minecraft:crafting_shaped", output: "modern_industrialization:analog_circuit"})
 
@@ -1274,153 +1296,7 @@ ServerEvents.recipes(event => {
 
 	// AE2
 
-	// remove ae2 standard silicon recipe and add MI silicon press recipe
-	event.remove({mod: "ae2", output: "ae2:inscriber"})
-	event.remove({id: "ae2:inscriber/silicon_print"})
-	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon"})
-	event.remove({id: "modern_industrialization:compat/ae2/printed_silicon_from_ingot"})
-	// temp lol gated
-	event.custom({ 
-		type: "ae2:inscriber",
-		"type": "ae2:inscriber",
-		"mode": "inscribe",
-		"result": {
-			"item": "ae2:printed_silicon",
-		},
-		"ingredients": {
-			"top": {
-			"item": "ae2:silicon_press",
-			},
-			"middle": {
-				"item": "modern_industrialization:iridium_plate"
-			}
-		}
-	});
 
-	// inscriber presses
-	event.custom({
-		type: "create:pressing",
-		ingredients: [{
-			"item": "ae2:quartz_block"
-		}],
-		results: [{
-			"item": "ae2:calculation_processor_press"
-		}]
-	})
-	event.custom({
-		type: "create:pressing",
-		ingredients: [{
-			"item": "minecraft:diamond_block"
-		}],
-		results: [{
-			"item": "ae2:calculation_processor_press"
-		}]
-	})
-	event.custom({
-		type: "create:pressing",
-		ingredients: [{
-			"item": "minecraft:gold_block"
-		}],
-		results: [{
-			"item": "ae2:logic_processor_press"
-		}]
-	})
-	event.custom({
-		type: "create:pressing",
-		ingredients: [{
-			"item": "modern_industrialization:silicon_block"
-		}],
-		results: [{
-			"item": "ae2:silicon_press"
-		}]
-	})
-	/*
-	event.recipes.createPressing("ae2:calculation_processor_press", "ae2:quartz_block")
-	event.recipes.createPressing("ae2:engineering_processor_press", "minecraft:diamond_block")
-	event.recipes.createPressing("ae2:logic_processor_press", "minecraft:gold_block")
-	event.recipes.createPressing("ae2:silicon_press", "modern_industrialization:silicon_block")
-	*/
-
-	// inscriber
-	// TO FIX ae2things missing
-	/*
-	event.replaceInput({mod: "ae2", output: "ae2things:advanced_inscriber"}, "ae2:engineering_processor", "modern_industrialization:electronic_circuit")
-	event.replaceInput({mod: "ae2", output: "ae2things:advanced_inscriber"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-	event.replaceInput({mod: "ae2", output: "ae2things:advanced_inscriber"}, "ae2:inscriber", "modern_industrialization:advanced_machine_hull")
-	*/
-
-	// charger
-	event.remove({mod: "ae2", output: "ae2:charger"})
-
-	// growth chamber
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:quartz_growth_accelerator"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:crystal_growth"})
-
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"I": {"item": "modern_industrialization:iron_plate"},
-		"F": {"item": "ae2:fluix_glass_cable"},
-		"G": {"item": "minecraft:glass"},
-		"B": {"item": "ae2:fluix_crystal"}
-		},
-		pattern: [
-			"IFI",
-			"GBG",
-			"IFI"
-		],
-		result: {
-			"item": "ae2:quartz_growth_accelerator"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:quartz_growth_accelerator", [
-		"IFI",
-		"GBG",
-		"IFI"
-	], {
-		I: "modern_industrialization:iron_plate",
-		F: "ae2:fluix_glass_cable",
-		G: "minecraft:glass",
-		B: "ae2:fluix_crystal"
-	})
-	*/
-
-	// TO FI1.19 missing ae2 things
-	/*
-	event.recipes.modern_industrialization.assembler(
-		{
-			eu: 8,
-			duration: 200,
-			item_inputs: [
-				{item: "ae2:quartz_growth_accelerator", amount: 6},
-				{item: "minecraft:chest", amount: 1},
-				{item: "minecraft:hopper", amount: 1}
-			],
-			fluid_inputs: [
-				{fluid: "modern_industrialization:soldering_alloy", amount: 100},
-			],
-			item_outputs: [
-				{item: "ae2things:crystal_growth"}
-			]
-		}
-	)
-	*/
-
-	// fluix glass cable
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:fluix_glass_cable"})
-	event.custom({ 
-		type: "modern_industrialization:wiremill",
-			eu: 2,
-			duration: 100,
-			item_inputs: [
-				{item: "ae2:fluix_crystal", amount: 1}
-			],
-			item_outputs: [
-				{item: "ae2:fluix_glass_cable", amount: 2}
-			]
-		}
-	)
 
 	event.custom({ 
 		type: "modern_industrialization:mixer",
@@ -1438,574 +1314,6 @@ ServerEvents.recipes(event => {
 		}
 	)
 
-	// energy cell
-	event.remove({mod: "ae2", output: "ae2:energy_cell"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"C": {"item": "ae2:fluix_glass_cable"},
-		"S": {"item": "modern_industrialization:silicon_battery"},
-		"E": {"item": "modern_industrialization:electronic_circuit"},
-		"R": {"item": "modern_industrialization:redstone_battery"},
-		"P": {"item": "ae2:calculation_processor"}
-		},
-		pattern: [
-			"SCS",
-			"EPE",
-			"RCR"
-		],
-		result: {
-			"item": "ae2:energy_cell"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:energy_cell", [
-		"SCS",
-		"EPE",
-		"RCR",
-	], {
-		C: "ae2:fluix_glass_cable",
-		S: "modern_industrialization:silicon_battery",
-		E: "modern_industrialization:electronic_circuit",
-		R: "modern_industrialization:redstone_battery",
-		P: "ae2:calculation_processor"
-	})
-	*/
-
-	event.remove({mod: "ae2", output: "ae2:energy_acceptor"})
-	event.shaped("ae2:energy_acceptor", [
-		"CCC",
-		"CHC",
-		"CCC"
-	], {
-		C: "ae2:fluix_glass_cable",
-		H: "modern_industrialization:mv_energy_input_hatch"
-	})
-
-	// quartz glass
-	event.remove({mod: "ae2", output: "ae2:quartz_glass"})
-	//event.recipes.createCompacting(Item.of("ae2:quartz_glass", 4), [Item.of("#c:glass", 4), Item.of("ae2:certus_quartz_dust", 4)])
-
-	// ae2 cards
-	// check 1.18, only shaped?
-	event.replaceInput({mod: "ae2", output: "ae2:basic_card"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-	event.replaceInput({mod: "ae2", output: "ae2:basic_card"}, "minecraft:redstone", "modern_industrialization:analog_circuit")
-	event.replaceInput({mod: "ae2", output: "ae2:basic_card"}, "minecraft:gold_ingot", "modern_industrialization:gold_plate")
-	event.replaceInput({mod: "ae2", output: "ae2:advanced_card"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-	event.replaceInput({mod: "ae2", output: "ae2:advanced_card"}, "minecraft:redstone", "modern_industrialization:electronic_circuit")
-
-	// card recipes in create
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:redstone_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:capacity_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:void_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:crafting_card"})
-
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:fuzzy_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:speed_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:inverter_card"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:energy_card"})
-	event.remove({type: "minecraft:crafting_shapeless", output: "ae2:equal_distribution_card"})
-
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:basic_card"},
-			{"item": "minecraft:redstone_torch"}
-		],
-		results: [
-			{"item": "ae2:redstone_card"}
-		]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:basic_card"},
-			{"tag": "ae2:all_certus_quartz"}
-		],
-		results: [
-			{"item": "ae2:capacity_card"}
-		]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:basic_card"},
-			{"item": "ae2:calculation_processor"}
-		],
-		results: [
-			{"item": "ae2:void_card"}
-		]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:basic_card"},
-			{"item": "minecraft:crafting_table"}
-		],
-		results: [
-			{"item": "ae2:crafting_card"}
-		]
-	})
-	//event.recipes.createCompacting("ae2:redstone_card", ["ae2:basic_card", "minecraft:redstone_torch"])
-	//event.recipes.createCompacting("ae2:capacity_card", ["ae2:basic_card", "#ae2:all_certus_quartz"])
-	//event.recipes.createCompacting("ae2:void_card", ["ae2:basic_card", "ae2:calculation_processor"])
-	//event.recipes.createCompacting("ae2:crafting_card", ["ae2:basic_card", "minecraft:crafting_table"])
-
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:advanced_card"},
-			{"tag": "minecraft:wool"}
-		],
-		results: [{
-			"item": "ae2:fuzzy_card"
-		}]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:advanced_card"},
-			{"item": "ae2:fluix_crystal"}
-		],
-		results: [{
-			"item": "ae2:speed_card"
-		}]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:advanced_card"},
-			{"item": "minecraft:redstone_torch"}
-		],
-		results: [{
-			"item": "ae2:inverter_card"
-		}]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:advanced_card"},
-			{"item": "ae2:dense_energy_cell"}
-		],
-		results: [{
-			"item": "ae2:energy_card"
-		}]
-	})
-	event.custom({
-		type: "create:compacting",
-		ingredients: [
-			{"item": "ae2:advanced_card"},
-			{"item": "ae2:calculation_processor"}
-		],
-		results: [{
-			"item": "ae2:equal_distribution_card"
-		}]
-	})
-	//event.recipes.createCompacting("ae2:fuzzy_card", ["ae2:advanced_card", "#minecraft:wool"])
-	//event.recipes.createCompacting("ae2:speed_card", ["ae2:advanced_card", "ae2:fluix_crystal"])
-	//event.recipes.createCompacting("ae2:inverter_card", ["ae2:advanced_card", "minecraft:redstone_torch"])
-	//event.recipes.createCompacting("ae2:energy_card", ["ae2:advanced_card", "ae2:dense_energy_cell"])
-	//event.recipes.createCompacting("ae2:equal_distribution_card", ["ae2:advanced_card", "ae2:calculation_processor"])
-
-	// ae2 drive
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:drive"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"C": {"item": "modern_industrialization:electronic_circuit"},
-		"F": {"item": "ae2:fluix_glass_cable"},
-		"P": {"item": "ae2:engineering_processor"}
-		},
-		pattern: [
-			"CPC",
-			"F F",
-			"CPC"
-		],
-		result: {
-			"item": "ae2:drive"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:drive", [
-		"CPC",
-		"F F",
-		"CPC"
-	], {
-		C: "modern_industrialization:electronic_circuit",
-		F: "ae2:fluix_glass_cable",
-		P: "ae2:engineering_processor",
-	})
-	*/
-
-	// check 1.18 storage cells no other recipes 
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_cell_housing"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_cell_housing"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:disk_housing"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_storage_cell_1k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_storage_cell_4k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_storage_cell_16k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_storage_cell_64k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:item_storage_cell_256k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:item_storage_cell_1024k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:item_storage_cell_4096k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_storage_cell_1k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_storage_cell_4k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_storage_cell_16k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_storage_cell_64k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:fluid_storage_cell_256k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:fluid_storage_cell_1024k"})
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2things:fluid_storage_cell_4096k"})
-	
-	event.custom({
-		type: "create:deploying",
-		ingredients: [
-			{"item": "modern_industrialization:iron_plate"},
-			{"item": "modern_industrialization:electronic_circuit_board"}
-		],
-		results: [{
-			"item": "ae2:item_cell_housing"
-		}]
-	})
-	event.custom({
-		type: "create:deploying",
-		ingredients: [
-			{"item": "modern_industrialization:copper_plate"},
-			{"item": "modern_industrialization:electronic_circuit_board"}
-		],
-		results: [{
-			"item": "ae2:fluid_cell_housing"
-		}]
-	})
-	//event.recipes.createDeploying("ae2:item_cell_housing", ["modern_industrialization:iron_plate", "modern_industrialization:electronic_circuit_board"])
-	//event.recipes.createDeploying("ae2:fluid_cell_housing", ["modern_industrialization:copper_plate", "modern_industrialization:electronic_circuit_board"])
-	
-	//TO FIX 1.19 missing ae things
-	/*
-	event.custom({
-		type: "create:filling",
-		ingredients: [
-			{"item": "ae2:item_cell_housing"},
-			{amount: 4050, "fluid": "modern_industrialization:sodium_hydroxide"}
-			//Ingredient.of("ae2:item_cell_housing", 1).toJson(),
-			//Ingredient.of(Fluid.of("modern_industrialization:sodium_hydroxide", fluid_volume_to_fabric(500))).toJson(),
-		],
-		results: [{
-			"item": "ae2things:disk_housing"
-		}]
-	})
-	*/
-
-	// replace sky stone recipes
-	event.replaceInput({mod: "ae2", output: "ae2:cell_component_256k"}, "ae2:sky_dust", "modern_industrialization:ruby_dust")
-	// 1.19 TO FIX missing ae things
-	//event.replaceInput({output: "ae2things:cell_component_1024k"}, "minecraft:glowstone_dust", "modern_industrialization:ruby_dust")
-	//event.replaceInput({output: "ae2things:cell_component_4096k"}, "minecraft:glowstone_dust", "modern_industrialization:ruby_dust")
-
-	// molecular assembler
-	event.remove({id: "ae2:molecular_assembler"})
-	event.remove({id: "ae2:network/crafting/molecular_assembler"})
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-
-			eu: 32,
-			duration: 500,
-			item_inputs: [
-				{item: "modern_industrialization:assembler", amount: 1},
-				{item: "ae2:formation_core", amount: 1},
-				{item: "ae2:annihilation_core", amount: 1},
-				{item: "ae2:quartz_vibrant_glass", amount: 6}
-			],
-			item_outputs: [
-				{item: "ae2:molecular_assembler"}
-			]
-		}
-	)
-
-	// ender dust
-	event.remove({mod: "ae2", output: "ae2:ender_dust"})
-	event.remove({mod: "create", output: "ae2:ender_dust"})
-	event.custom({ 
-		type: "modern_industrialization:macerator",
-		eu: 2,
-		duration: 100,
-		item_inputs:[{item: "minecraft:ender_pearl"}],
-		item_outputs:[{item: "ae2:ender_dust"}],
-
-	})
-
-	// pattern
-	event.remove({mod: "ae2", output: "ae2:blank_pattern"})
-	event.custom({
-		type: "create:sequenced_assembly",
-		ingredient: {"item": "modern_industrialization:iron_large_plate"},
-		//Ingredient.of("modern_industrialization:iron_large_plate").toJson(),
-		transitionalItem: {"item": "kubejs:incomplete_blank_pattern"},
-		//Ingredient.of("kubejs:incomplete_blank_pattern").toJson(),
-		sequence: [
-			{
-				type: "create:filling",
-				ingredients: [
-					{"item": "kubejs:incomplete_blank_pattern"},
-					{amount: 8100, "fluid": "modern_industrialization:soldering_alloy"}
-					//Ingredient.of("kubejs:incomplete_blank_pattern").toJson(),
-					//Ingredient.of(Fluid.of("modern_industrialization:soldering_alloy", fluid_volume_to_fabric(100))).toJson(),
-				],
-				results: [{
-					"item": "kubejs:incomplete_blank_pattern"
-					//Item.of("kubejs:incomplete_blank_pattern").toJson()
-				}]
-			},
-		  	{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "kubejs:incomplete_blank_pattern"},
-					{"tag": "ae2:all_certus_quartz"}
-					//Ingredient.of("kubejs:incomplete_blank_pattern").toJson(),
-					//Ingredient.of("#ae2:all_certus_quartz").toJson()
-				],
-				results: [{
-					"item": "kubejs:incomplete_blank_pattern"
-					//Item.of("kubejs:incomplete_blank_pattern").toJson()
-				}]
-		  	},
-		  
-		],
-		results: [{
-			"item": "ae2:blank_pattern"
-			//Item.of("ae2:blank_pattern").toJson()
-		}],
-		loops: 1
-	  }
-	)
-
-	// formation & annihilation core
-	event.remove({mod: "ae2", output: "ae2:formation_core"})
-	event.remove({mod: "ae2", output: "ae2:annihilation_core"})
-
-	event.custom({
-		type: "create:deploying",
-		ingredients: [
-			{"item": "modern_industrialization:iron_plate"},
-			{"item": "ae2:logic_processor"}
-		],
-		results: [
-			{count: 2, "item": "ae2:formation_core"}
-			//Item.of("ae2:formation_core", 2)
-		]
-	})
-	event.custom({
-		type: "create:deploying",
-		ingredients: [
-			{"item": "modern_industrialization:copper_plate"},
-			{"item": "ae2:logic_processor"}
-		],
-		results: [
-			{count: 2, "item": "ae2:annihilation_core"}
-			//Item.of("ae2:annihilation_core", 2)
-		]
-	})
-	//event.recipes.createDeploying(Item.of("ae2:formation_core", 2), ["modern_industrialization:iron_plate", "ae2:logic_processor"])
-	//event.recipes.createDeploying(Item.of("ae2:annihilation_core", 2), ["modern_industrialization:copper_plate", "ae2:logic_processor"])
-
-	// ae2 machines
-	event.replaceInput({mod: "ae2", output: "ae2:export_bus"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-	event.replaceInput({mod: "ae2", output: "ae2:export_bus"}, "minecraft:piston", "modern_industrialization:advanced_item_output_hatch")
-
-	event.replaceInput({mod: "ae2", output: "ae2:import_bus"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-	event.replaceInput({mod: "ae2", output: "ae2:import_bus"}, "minecraft:sticky_piston", "modern_industrialization:advanced_item_input_hatch")
-
-	// interface
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:interface"})
-	event.shaped("ae2:interface", [
-		"IGI",
-		"AHF",
-		"IGI"
-	], {
-		I: "modern_industrialization:iron_plate",
-		G: "minecraft:glass",
-		A: "ae2:annihilation_core",
-		H: "modern_industrialization:advanced_machine_hull",
-		F: "ae2:formation_core"
-	})
-
-	// pattern provider
-	event.remove({type: "minecraft:crafting_shaped", output: "ae2:pattern_provider"})
-	event.shaped("ae2:pattern_provider", [
-		"ICI",
-		"AHF",
-		"ICI"
-	], {
-		I: "modern_industrialization:iron_plate",
-		C: "minecraft:crafting_table",
-		A: "ae2:annihilation_core",
-		H: "modern_industrialization:advanced_machine_hull",
-		F: "ae2:formation_core"
-	})
-
-	event.replaceInput({mod: "ae2", output: "ae2:crafting_unit"}, "minecraft:iron_ingot", "modern_industrialization:iron_plate")
-
-	// screens
-	event.remove({mod: "ae2", output: "ae2:semi_dark_monitor"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"G": {"item": "minecraft:glowstone_dust"},
-		"Q": {"item": "ae2:quartz_glass"},
-		"I": {"item": "modern_industrialization:iron_large_plate"},
-		"C": {"item": "modern_industrialization:electronic_circuit"}
-		},
-		pattern: [
-			" GQ",
-			"ICQ",
-			" GQ"
-		],
-		result: {
-			"item": "ae2:semi_dark_monitor"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:semi_dark_monitor", [
-		" GQ",
-		"ICQ",
-		" GQ"
-	], {
-		G: "minecraft:glowstone_dust",
-		Q: "ae2:quartz_glass",
-		I: "modern_industrialization:iron_large_plate",
-		C: "modern_industrialization:electronic_circuit"
-	})
-	*/
-
-	// ae2 wireless
-	event.remove({mod: "ae2", output: "ae2:fluix_pearl"})
-	event.custom({
-			"type": "create:mixing",
-			"ingredients": [
-			{"item": "ae2:fluix_dust"}, {"item": "ae2:fluix_dust"},{"item": "ae2:fluix_dust"},{"item": "ae2:fluix_dust"},
-			{"item": "ae2:fluix_crystal"},{"item": "ae2:fluix_crystal"},{"item": "ae2:fluix_crystal"},{"item": "ae2:fluix_crystal"},
-			],
-			//"ingredients": [{count: 4, "item": "ae2:fluix_dust"}, {count: 4, "item": "ae2:fluix_crystal"}],
-			//"ingredients": [{"item": Item.of("ae2:fluix_dust", 4)}, {"item": Item.of("ae2:fluix_crystal", 4)}],
-			"results": [{"item": "ae2:fluix_pearl"}]
-	})
-	/*
-	event.recipes.createMixing("ae2:fluix_pearl", [
-		Item.of("ae2:fluix_dust", 4),
-		Item.of("ae2:fluix_crystal", 4),
-		"minecraft:ender_pearl"
-	])
-	*/
-
-	event.remove({mod: "ae2", output: "ae2:wireless_receiver"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"F": {"item": "ae2:fluix_pearl"},
-		"P": {"item": "modern_industrialization:iron_plate"},
-		"C": {"item": "modern_industrialization:electronic_circuit"}
-		},
-		pattern: [
-			" F ",
-			"PCP",
-			" P "
-		],
-		result: {
-			"item": "ae2:wireless_receiver"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:wireless_receiver", [
-		" F ",
-		"PCP",
-		" P "
-	], {
-		F: "ae2:fluix_pearl",
-		P: "modern_industrialization:iron_plate",
-		C: "modern_industrialization:electronic_circuit"
-	})
-	*/
-
-	event.remove({mod: "ae2", output: "ae2:security_station"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"P": {"item": "modern_industrialization:iron_plate"},
-		"C": {"item": "modern_industrialization:electronic_circuit"},
-		"S": {"item": "ae2:cell_component_16k"},
-		"E": {"item": "ae2:engineering_processor"}
-		},
-		pattern: [
-			"PCP",
-			"CSC",
-			"PEP"
-		],
-		result: {
-			"item": "ae2:security_station"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:security_station", [
-		"PCP",
-		"CSC",
-		"PEP",
-	], {
-		P: "modern_industrialization:iron_plate",
-		C: "modern_industrialization:electronic_circuit",
-		S: "ae2:cell_component_16k",
-		E: "ae2:engineering_processor"
-	})
-	*/
-
-	event.remove({mod: "ae2", output: "ae2:condenser"})
-	event.custom({
-		type: "create:mechanical_crafting",
-		key: {
-		"P": {"item": "modern_industrialization:iron_plate"},
-		"C": {"item": "modern_industrialization:processing_unit"},
-		"H": {"item": "modern_industrialization:highly_advanced_machine_hull"}
-		},
-		pattern: [
-			"PCP",
-			"CHC",
-			"PCP"
-		],
-		result: {
-			"item": "ae2:condenser"
-		}
-	})
-	/*
-	event.recipes.createMechanicalCrafting("ae2:condenser", [
-		"PCP",
-		"CHC",
-		"PCP",
-	], {
-		P: "modern_industrialization:iron_plate",
-		C: "modern_industrialization:processing_unit",
-		H: "modern_industrialization:highly_advanced_machine_hull",
-	})
-	*/
-
-	event.remove({mod: "ae2", output: "ae2:wireless_booster"})
-
-	event.custom({ 
-		type: "modern_industrialization:assembler",
-		eu: 8,
-		duration: 200,
-		item_inputs: [
-			{item: "ae2:ender_dust", amount: 1},
-			{item: "ae2:fluix_dust", amount: 1},
-			{item: "ae2:charged_certus_quartz_crystal", amount: 2},
-			{item: "modern_industrialization:iron_plate", amount: 3}
-		],
-		item_outputs: [
-			{item: "ae2:wireless_booster", amount: 2}
-		]
-	})
-
-	event.remove({mod: "ae2wtlib", output: "ae2wtlib:infinity_booster_card"})
-	//1.19 no idea, the mod is there, no object with name
-	//event.shapeless("ae2wtlib:infinity_booster_card", ["ae2:fluix_pearl", "ae2:singularity", "ae2:wireless_receiver"])
-
 	// END AE2
 
 	// DIGITAL AGE
@@ -2013,65 +1321,7 @@ ServerEvents.recipes(event => {
 	// TO FIX - fixed?
 	event.remove({mod: "modern_industrialization", output: "modern_industrialization:digital_circuit"})
 
-	event.custom({
-		type: "create:sequenced_assembly",
-		ingredient: {"item": "modern_industrialization:digital_circuit_board"},
-		transitionalItem: {"item": "kubejs:incomplete_digital_circuit"},
-		//transitionalItem: Ingredient.of("kubejs:incomplete_digital_circuit").toJson(),
-		sequence: [
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "kubejs:incomplete_digital_circuit"},
-					{"item": "modern_industrialization:electronic_circuit"},
-				],
-				results: [
-					{"item": "kubejs:incomplete_digital_circuit"}
-					//Item.of("kubejs:incomplete_digital_circuit").toJson()
-				]
-			},
-		  	{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "kubejs:incomplete_digital_circuit"},
-					{"item": "modern_industrialization:or_gate"}
-				],
-				results: [
-					{"item": "kubejs:incomplete_digital_circuit"}
-					//Item.of("kubejs:incomplete_digital_circuit").toJson()
-				]
-		  	},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "kubejs:incomplete_digital_circuit"},
-					{"item": "modern_industrialization:and_gate"}
-				],
-				results: [
-					{"item": "kubejs:incomplete_digital_circuit"}
-					//Item.of("kubejs:incomplete_digital_circuit").toJson()
-				]
-		  	},
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "kubejs:incomplete_digital_circuit"},
-					{"item": "modern_industrialization:not_gate"}
-				],
-				results: [
-					{"item": "kubejs:incomplete_digital_circuit"}
-					//Item.of("kubejs:incomplete_digital_circuit").toJson()
-				]
-		  	},
-		  
-		],
-		results: [
-			{"item": "modern_industrialization:digital_circuit"}
-			//Item.of("modern_industrialization:digital_circuit").withChance(100.0)
-		],
-		loops: 2
-	  }
-	)
+	
 	/*
 	event.recipes.createSequencedAssembly([
 		Item.of("modern_industrialization:digital_circuit").withChance(100.0)

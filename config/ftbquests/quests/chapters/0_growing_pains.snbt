@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "0_getting_started"
+	filename: "0_growing_pains"
 	group: "113481E7A031FCFE"
 	icon: "modern_industrialization:bronze_ingot"
 	id: "3E7D504604C837F5"
@@ -60,9 +60,9 @@
 				""
 				"You will need various things, but they should be relatively easy to get."
 				""
-				"Clay dust can be obtained with a mortar and a block of clay (craft it from clay balls)."
+				"Clay dust can be obtained with a mortar and a block of clay (craft it from clay balls and wooden form), or two clay balls directly."
 				""
-				"For andesite and quartz, same deal as with the clay. But andesite you'll have to find around the overworld, whereas you get quartz from the &cNether&r. Both the standard quartz ore and the infinite nodes spawn only in netherrack, but they should be both quite common."
+				"For andesite and quartz, same deal as with the clay. But andesite you'll have to find around the overworld, whereas you get quartz from the &6&lNether&r. Both the standard quartz ore and the infinite nodes spawn only in netherrack, but they should be both quite common. You can use a mortar for quartz dust, the process is similar to clay, as you need to reform a quartz block..."
 				""
 				"The zinc nugget requires a pickaxe and the cutting board. Zinc ore can be found spawning underground and smelts normally in a furnace."
 				""
@@ -134,7 +134,7 @@
 					type: "item"
 				}
 			]
-			x: -20.0d
+			x: -18.5d
 			y: 5.5d
 		}
 		{
@@ -143,6 +143,8 @@
 				"A Chute has an open top and will funnel items through and into the inventory attached below it. It's useful for funnelling input into machines and inventories."
 				""
 				"Can be set up diagonally by placing a second one to one side of the first."
+				""
+				"As ponder also shows, with a fan underneath you can push items straight up through chutes."
 				""
 				"Use wrench for alternate see-through version."
 			]
@@ -168,7 +170,7 @@
 				item: "create:andesite_funnel"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -14.0d
 			y: 5.5d
 		}
 		{
@@ -188,6 +190,17 @@
 				"Ancient history continues here:"
 				"&oCongratulations, you've got your first Bronze Ingot. Time to move on to the Steam chapter to start with your first few Modern Industrialization machines."
 				"&oFrom here on, recipes will become more expensive, expansive and complex. We recommend crafting more than you need, as often as you can. You'll eventually use everything up as you progress through the pack."
+				""
+				"{@pagebreak}"
+				"Problems may arise when you're trying to melt that bronze into a mixer..."
+				""
+				"5 bronze dusts become 585 units of molten bronze. What to do with this? You need to send the fluid over to a press and a basin, to compact it into ingots. But you can't pick that fluid with a bucket, because a bucket is a whole 1k unit and it cannot pick fractions. So you may try to melt two batches, 585 + 585 = 1170. That would exceed the 1k, and let you pick it up."
+				""
+				"But this mixer basin only holds 1k max. Therefore after you throw in the basin the second batch for bronze, the mixer won't even start making the recipe, because it doesn't have enough capacity left for all that fluid."
+				""
+				"If you also try to directly pump out the molten bronze, you'll likely find more problems."
+				""
+				"The not so intuitive solution is that you have to place a Create drain right next to the basin, but &eone block below&r (basically, next to the blaze burner). If done correctly, a funnel will automatically appear at the side of the basin, directed toward the drain. The molten bronze will then be automatically dumped into the drain, freeing the basin so you can process more. If from there you link a mechanical pump, leading out into a Create spout, and then you put a depot under the spout, with an empty bucket (iron bucket, of course), then the spout will be filled to 1k, and then fill the bucket, that you can then move to manually fill the basin + press, to get the ingots."
 				""
 				"{@pagebreak}"
 				"&6&o 7F : we need proper ore processing first"
@@ -266,7 +279,7 @@
 				item: "create:portable_storage_interface"
 				type: "item"
 			}]
-			x: -18.5d
+			x: -20.0d
 			y: 5.5d
 		}
 		{
@@ -298,9 +311,11 @@
 		{
 			dependencies: ["58D363F8AFFD66E9"]
 			description: [
-				"This row of quests on the left are leftovers from the old questbook, since these parts aren't strictly required for progression."
+				"This row of quests on the left are leftovers from the old questbook, since these parts aren't strictly required for progression, even if useful for automation."
 				""
 				"The filter here has been used before non-conventionally for fiber and paper, but it has its own use within Create since you can add and set up filters on the Create machines and have more control on their recipes."
+				""
+				"The main feature is that you can normally set a filter on the machines by \"copying\" an item you're holding. But using a proper filter, instead, lets you drag \\& drop an item from the item list. So being able to set it before you have the item available in your inventory."
 			]
 			hide_dependency_lines: true
 			id: "0F9C7A99C293B6C4"
@@ -330,7 +345,7 @@
 				item: "create:andesite_tunnel"
 				type: "item"
 			}]
-			x: -14.0d
+			x: -15.5d
 			y: 5.5d
 		}
 		{
@@ -394,9 +409,11 @@
 				""
 				"(actually during my early tests the real problem was finding granite, but heh)"
 				""
-				"Loot in chests should provide some backup, until nerfed. On the other hand, &aI almost doubled all the durability for both items and armors&r (applies to iron, gold, diamond and netherite), to compensate the pain of dealing with the crafting."
+				"Loot in chests should provide some backup, until nerfed. On the other hand, &eI almost doubled all the durability for both items and armors&r (applies to iron, gold, diamond and netherite), to compensate the pain of dealing with the crafting."
 				""
-				"&aAs a minor bonus, tools that break should drop a small amount of their original material..."
+				"&eAs a minor bonus, tools that break should drop a small amount of their original material..."
+				""
+				"This version of the modpack also has a key shortcut to parry with a sword (or shield). The timing for a successful parry is quite generous, 75% of a whole second (or 15 ticks). It may be not much, but you completely negate damage and push back enemies. You can also deflect arrows! You need to customize the \"parry\" key and if you have an extra button on your mouse it could work quite well. Sadly you can't use right click because it messes on basic Minecraft functions on this version."
 			]
 			icon: {
 				Count: 1b
@@ -406,7 +423,7 @@
 				}
 			}
 			id: "452458790435E9AF"
-			min_width: 250
+			min_width: 280
 			shape: "diamond"
 			size: 1.5d
 			subtitle: "made by a fool"
@@ -546,7 +563,7 @@
 				""
 				"Look up the recipe. Something's amiss?"
 				""
-				"Going back one step you find a crafting table recipe. One of the ingredients is Quartz Dust."
+				"There's only a vanilla blast furnace recipe. Going back one step you find a crafting table recipe. One of the ingredients is Quartz Dust."
 				""
 				"There is no Quartz to be found around the Overworld ( &o: or so I hope...). "
 				""
@@ -561,7 +578,7 @@
 			hide_dependency_lines: false
 			icon: "minecraft:quartz"
 			id: "0BDA0B805FF4FD59"
-			min_width: 220
+			min_width: 230
 			tasks: [
 				{
 					id: "6252B0041C001419"
@@ -982,7 +999,7 @@
 				"OF COURSE! That's what a macerator is for."
 				"Get those clay balls, then craft them back into a block, and use that (you can only manually do this with a wooden frame, the recipe is quite wasteful)."
 				""
-				"For a furnace you'll need just two of these clay dusts."
+				"For a furnace you'll need just two of these clay dusts, but I suggest you rise that number at least to six because you'll need more immediately after..."
 			]
 			hide: true
 			id: "31383C5328C516B1"
@@ -1023,7 +1040,7 @@
 				""
 				"Once you have that, right clicking while holding it on a lit campfire will place it to dry, and after a while the dried kelp will be automatically spitted out of the campfire..."
 				""
-				"To make a single furnace you'll need only 4 pieces of kelp."
+				"To make a single furnace you'll need only 4 pieces of kelp. Here too it's better if you collect more than what is strictly needed."
 				""
 				"&7&o : ...wait, is that kelp? I &lHATE&r&7&o kelp. Now I need to go out AGAIN! Why didn't you tell me from the beginning you needed kelp?"
 				"&o : I don't need it, you do."
@@ -1045,6 +1062,8 @@
 				"Set aside the kelp."
 				""
 				"Make some... &mgrout&r. Oh, here we are again, no Tinkers. Well, it's fine. It's now called Craut, same thing."
+				""
+				"You'll need four for a furnace, but better do it three times for a total of 12 blocks of craut."
 				""
 				"&7&o : TINKERS-AGAIN!"
 				"&o : weren't you sleeping? I enjoyed the momentary soothing calm."
@@ -1097,11 +1116,18 @@
 		{
 			dependencies: ["4777D48B96D99CD0"]
 			description: [
-				"Eventally, you'll be able to make a (vanilla) Blast Furnace ...But no, not with iron. We have a complex relationship with iron here. You'll see when you're ready."
+				"Eventally, you'll be able to make a (vanilla) Blast Furnace ...But no, not with iron ingots. We have a complex relationship with iron here. You'll see when you're ready."
 				""
-				"This unlocks a simpler recipe for more furnaces, since you just need to make primitive bricks directly from &mgrout&r ...craut, without the need to dry more kelp."
+				"Even if you return to the main progression path, you won't be able to skip this step. To make &aandesite alloy&r, to get into Create mod, you need a blast furnace."
 				""
-				"It's a good idea to delay this until you have a Create millstone. You need some iron dusts for the bricks used here, and you can simply grind iron nuggets into tiny dusts, and then form them into a dust. But unless you want to rely on looted nuggets, to craft them you'll need to grind the raw ore into &ecrushed raw iron&r, and from there you can get more tiny dusts..."
+				"So, here you should have six more primitive bricks to grind to dust with a mortar. Three more kelp dusts... and six iron dusts. This last part might be a problem."
+				""
+				"You could simply grind iron nuggets into tiny dusts, and then form them into a dust. But unless you want to rely on looted nuggets, to craft those dusts you'll need to grind the raw ore into &ecrushed raw iron&r."
+				""
+				"BUT... Until you have a Create millstone you'll have to do this manually. So go mine some iron ore, getting the raw iron. Place raw iron on your cutting board, and by right clicking while holding a pickaxe you should obtain some crushed raw iron, to then crush with a mortar into tiny dusts..."
+				""
+				"Note: the bricks used here need to be cooked twice. But if you use the blast furnace itself it's just one step and overall shorter duration. "
+				"You can also cook \"craut\" directly into primitive bricks, without the need of kelp."
 				""
 				"&7&o : is there a moment when you stop and think 'what have I done?'"
 				"&o&7 : look at this mess underneath."
@@ -1110,6 +1136,7 @@
 			hide: true
 			hide_dependency_lines: false
 			id: "255A21597101A1FA"
+			min_width: 310
 			tasks: [{
 				id: "3D4AFBDE1AED56F6"
 				item: "minecraft:blast_furnace"
@@ -1229,11 +1256,12 @@
 		{
 			dependencies: ["0A45060F0B7EB159"]
 			description: [
-				""
 				"Batch crafting is a solution to a problem that generated at a lower level."
 				"It doesn't work with machines, because it would simply mean producing a larger queue that doesn't speed the process in any way. So the reason why batch crafting exists is by exploiting the fact that the crafting table has no processing time."
 				""
 				"In proper versions, like GT6, Greg (&o : our lord and savior&r) made manual activities consume energy."
+				""
+				"(the same happens with Create machines, burning down satiety levels quickly if you manually operate them)"
 				""
 				"Good luck batch crafting plates on a anvil."
 			]
@@ -1327,6 +1355,24 @@
 				"And do not expect me to hand you stuff for free again."
 				""
 				"&o(I've started editing loot tables, so progression is a little more \"enforced\", even if it may still be easy finding ways around it. I patch up the holes as I find them but following the progression here should make sure you can move through things as they were designed.)"
+				"{@pagebreak}"
+				"Just in case you need further help..."
+				""
+				"You can go look for some lava pool. With a wooden bucket and water you can place the water nearby and let it flow over the lava, converting it into a floor of obsidian."
+				""
+				"A nether portal is a 2x3 \"empty\" box. 2 blocks wide, 3 tall. That means it needs to be made of four blocks at the bottom, five on each side going up, and another four at the top, closing this rectangle."
+				""
+				"&dOXXO"
+				"&dX   X"
+				"&dX   X"
+				"&dX   X"
+				"&dOXXO"
+				""
+				"Right? But the corners don't count. To make the structure use some cobblestone at the corners, that you can remove after you're done."
+				""
+				"That means that a working nether portal needs only 10 obsidian blocks. Look at that shape, remove the corners and you see you need two at the top and bottom, and three on each side."
+				""
+				"If you used a lava pool converted into obsidian, then the two lowest blocks are already set, and you can then use the blocks given by this quest for the remaining 8. Leaving you one extra to spare..."
 			]
 			hide: true
 			icon: {
@@ -1420,10 +1466,12 @@
 				""
 				"Note: there's a full set of flint tools, plus reinforced flint tools later on. These are already set up to work much better than vanilla stone tools, and break through deepslate."
 				""
+				"Oh, it's also a good idea to get a shovel and use it to make a dirt path. Your speed is increased when walking on it."
+				""
 				"&o&e 0A : a suggestion, don't fall into a bush"
 			]
 			id: "497612DF4D0FB9DE"
-			min_width: 250
+			min_width: 270
 			shape: "rsquare"
 			tasks: [{
 				id: "6BF7EE731EE02335"
@@ -1477,9 +1525,9 @@
 				""
 				"The first quarries only require copper, instead of bronze, and you can already gather copper ore and smelt it to ingots. What you miss is something to turn those ingots into plates."
 				""
-				"You need a &7Create Mechanical Press&r, and to make and use it, you need Andesite Casing. And more of that Andesite Alloy."
+				"You need a &aCreate Mechanical Press&r, and to make and use it, you need Andesite Casing. And more of that Andesite Alloy."
 				""
-				"Start crafting an Andesite Alloy Block (4x andesite alloy). Then you need 6 prepared planks. One for each face, that you can manually apply by right clicking on the block while holding the planks."
+				"Start crafting an Andesite Alloy Block (4x andesite alloy). Then you need 6 prepared planks. One for each face, that you can manually apply by placing the andesite block into the world, and by right clicking on it while holding the planks... Six times, until the block is fully converted to Andesite Casing."
 			]
 			icon: "create:andesite_casing"
 			id: "4190D1E5372DF336"
@@ -1504,11 +1552,20 @@
 		{
 			dependencies: ["4190D1E5372DF336"]
 			description: [
-				"The recipe here should be straightforward, but since you have no access to iron, you need to obtain some &7blackstone."
+				"The recipe here should be straightforward, but since you have no access to iron, you need to obtain some &7blackstone&r, that is also usually found in the Nether."
 				""
-				"Once this is done, you can place the Mechanical Press in the world and immediately start using it. During this initial phase Create machines can be powered \"manually\"."
+				"For the Piston Extension Pole (for the Press) and the Hand Crank you'll need a couple of shafts... And many more to start with actual automation later. "
 				""
-				"Make sure there's one empty block under the Press so that it can work. Then look at the side of the machine and you'll find a square shape. Right click on it while holding a Hand Crank to place it. Done."
+				"As you can see, there's no crafting table recipe. The standard way to make shafts is to use a Mechanical Saw, for a ratio of 1 Andesite Alloy to 4 Shaft."
+				""
+				"But until then you can use the good old cutting table, place one andesite alloy on top of it, and right click while holding an axe. The output use chance. One shaft at 90%, a second one at 40%, and a third at 20%, all three rolled separately (so it can happen you get three... or none at all if you are exceptionally unlucky)."
+				""
+				"Go to the second page here for more information on how to use the Press once you have crafted it."
+				""
+				"{@pagebreak}"
+				"The Mechanical Press can be placed in the world and you can immediately start using it. During this initial phase Create machines can be powered \"manually\"."
+				""
+				"Make sure there's one single empty block under the Press so that it can work. Then look at the side face of the machine and you'll find a smaller square outline. Right click on it while holding a Hand Crank to place it. Done."
 				""
 				"Now, by right clicking on the crank you just placed (or shift + right click, to go in the opposite direction, which will be useful in other cases), you can manually \"power\" the machine to do what it was meant to do."
 				""
@@ -1552,14 +1609,14 @@
 				""
 				"&aCopper rods&r can be made in a similar way, but using a Mechanical Saw instead of a Press."
 				""
-				"When placing the machine make sure the blade is upright. And break it and try to replace it until you get it right. Toss a copper ingot on top of it, and after powering it you should obtain a copper rod, as intended."
+				"When placing the machine make sure the blade is upright. It can be tricky since until you get a wrench you cannot manually rotate the block, but by aligning yourself and aiming down at the next block on the ground you should be able to place it correctly in one try. Toss a copper ingot on top of it, and after powering it (reusing the same hand crank you just used for the press, or making another) you should obtain a copper rod, as intended."
 				""
 				"Repeating the process again with that copper rod will give you two &acopper bolts&r, that you will need to craft a copper gear."
 				""
 				"But here are a few problems... Turn the page here for more."
 				""
 				"{@pagebreak}"
-				"The recipe for the Mechanical Press adds two problems. The first is about a suspicious \"&aInternal Cogwheel&r\" looking like the one from Create, and the second is producing those &aSharp Plates&r that are made with lead plate joined with iron nuggets."
+				"The recipe for the Mechanical Saw adds two problems. The first is about a suspicious \"&aInternal Cogwheel&r\" looking like the one from Create, and the second is producing those &aSharp Plates&r that are made with lead plate joined with iron nuggets."
 				""
 				"The difference between a legit Create cogwheel and this one, is that the legit one has a very convoluted crafting process, whereas this one here has the easier classic recipe."
 				""
@@ -1567,28 +1624,49 @@
 				""
 				"Note that this cogwheel is only used in recipes, and doesn't operate as a standard one. It's just a passive block."
 				""
-				"&cImportant&r: a new option opens after producing a Mechanical Saw. You can now have better yields for &aShafts&r, by cutting the Andesite Alloy rather than going through a crafting table. From 3 to 1, to 1 to 2."
-				""
-				"Since Andesite Alloy can have different outputs when used with the saw, use the slot filter next to the blade to explicitly select what to produce."
-				""
 				"{@pagebreak}"
 				"Finally, the Sharp Plates. On their own they don't look like a problem that needs an extensive explanation, but due to non standard recipes some handholding here might be useful."
 				""
-				"There isn't anymore a direct smelting recipes for iron nuggets. The path is the following:"
+				"There isn't anymore a direct smelting recipes for iron nuggets (unless you ment things like rails). "
+				"The path is the following:"
 				"Place the Raw Iron Ore on a Cutting Board and right click on it with a pickaxe to get &aCrushed Iron Ores&r > then use a Mortar to get &aTiny Iron Dusts&r."
 				""
 				"These also cannot be smelted, yet. But you can assemble three of them with two Tiny Coal Dust to get two &aTiny Iron Blend Dusts&r. These go in a vanilla Blast Furnace to obtain standard Iron Nuggets."
 				""
+				"Notice that with a saw you can obviously process wood in a normal way without going through the cutting table, especially later when you can automate this production. Logs get cut into stripped log, then stripped logs are turned into planks, four of them like the old times! Continuing onward you can obtain prepared plans, and then sticks. It's all one chain."
+				""
 				"The next target shall be a Create Millstone. That will offer better yields for crushing things, as an alternative to the mortar, and will also be necessary to move toward actual automation..."
+				""
+				"{@pagebreak}"
+				"&cImportant&r: a new option opens after producing a Mechanical Saw. You can now have better yields for &aShafts&r, by cutting the Andesite Alloy rather than going through a crafting table. From 1 to 0-3 (with rng), to 1 to 4."
+				""
+				"&eAndesite Alloy can have different outputs when used with the saw, so use the slot filter next to the blade to explicitly select what to produce. "
+				""
+				"&eIf you don't have a shaft available to \"copy\" into the slot, then craft a Create \"list filter\" (iron nuggets and wool). By holding it and right clicking, you bring up an interface where you can drag \\& drop items from REI/EMI item list, so without the item present in your inventory."
+				""
+				"&eBy adding a number of possible outputs to the same list filter, as long they don't conflict with each other, you can set a single mechanical saw to automatically select the correct recipes for pretty much everything you need in this early phase. In particular copper rods, copper bolts and shafts."
 			]
+			icon: "create:mechanical_saw"
 			id: "753F20F4B28BEFDF"
 			min_width: 280
 			shape: "rsquare"
-			tasks: [{
-				id: "69E7F591B86CEA56"
-				item: "create:mechanical_saw"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "3DE6A70603B44793"
+					item: "geggy:tiny_iron_blend_dust"
+					type: "item"
+				}
+				{
+					id: "21121798349E8C9E"
+					item: "create:mechanical_saw"
+					type: "item"
+				}
+				{
+					id: "319577BB07B7C16A"
+					item: "create:filter"
+					type: "item"
+				}
+			]
 			title: "Bleeding and Edgy"
 			x: -12.5d
 			y: -2.0d
@@ -1602,13 +1680,13 @@
 			description: [
 				"In the previous quest the target for a Millstone was set, but here comes a convoluted spin."
 				""
-				"You see... Crafting the Millstone itself is something you can do already. But operating it, is a different matter. You can't simply shove a Hand Crank into it as you've done up to this point. The Millstone requires to be linked to a cogwheel, and only then you can link the cogwheel to an hand crank so that you can power it."
+				"You see... Crafting the Millstone itself is something you can do already (not anymore, you need a proper cogwheel to avoid skips...). But operating it, is a different matter. You can't simply shove a Hand Crank onto it as you've done up to this point. The Millstone requires to be linked to a cogwheel, and only then you can link the cogwheel to an hand crank so that you can power it."
 				""
 				"The recipe for a proper Create cogwheel doesn't require fancy resources, but it does have multiple steps... and needs a Deployer. The deployer needs a Brass Hand, itself requiring Brass, and brass requiring a Mixer."
 				""
 				"And then you need Sand Paper to polish the Rose Quartz. So let's start... from &cPaper, please&r."
 				""
-				"Paper can be automated through a certain process, but for now you have to stick to the manual path. I can see you already squirming with &ajoy&r."
+				"Paper can be automated through a certain process, but for now you have to stick to the manual path. I can see you already squirming with &djoy&r."
 				""
 				"{@pagebreak}"
 				"If you look up the recipe for paper you can see it requires a campfire and &aPressed Fiber&r. Going back one step you have the two different paths I was mentioning: a crafting table recipe, and a Compacting one."
@@ -1618,7 +1696,7 @@
 				"This \"split\" of resources means you need Sugar Cane on one side and Flax from the other. I hope you found &eWild Flax&r by now, so that you can replant those seeds and obtain the regular flax."
 				""
 				"Flax > Fiber > campfire > Dried Fiber. "
-				"Sugar Cane produces Chad by using a mortar. But hey... Look better and you'll see that you can reuse the Press to get one Chad from one Sugar Cane already."
+				"Sugar Cane produces Chad by using a mortar. But hey... Look better and you'll see that you can reuse the Press to get one Chad from one Sugar Cane already. Throw some sugar canes under it and by keeping rotating the hand crank you'll be able to convert all of them to chad, one by one. A whole lot of chads."
 				""
 				"You should now know all the steps to get all the way to Sand Paper, plus an additional step, since you need to craft &aQuartz Sand&r by using a mortar and a block of sand. Quartz Sand will be eventually used for Glass... But that's not something to worry about at this point."
 				" "
@@ -1667,7 +1745,7 @@
 				""
 				"You don't need flax. You can simply use the very commonly available Wheat as replacement."
 				""
-				"Use shears with wheat on a crafting table to obtain &aStraw&r. Then use the Filter to get Dried Fiber... Well, that's only a 8% chance."
+				"Use shears with wheat on a crafting table to obtain &aStraw&r. Then use the Filter to get Dried Fiber... Well, that's only a 16% chance."
 				""
 				"But we'll take advantage of this path here to show something else useful. Once you get the Dried Fiber you open up the path to make paper, but if you instead place 4 dried fibers on their own on the crafting table, you get &aTwine&r."
 				""
@@ -1800,7 +1878,7 @@
 				""
 				"Look up on the item list the Create Cogwheel, not the Geggy internal one. By pressing 'R' you look up its recipe."
 				""
-				"As you can see there's only a Deploying recipe, that plugs a Shaft onto a ugly drawn weird object. This means that this is only the last step of a more elaborate process. So you need to move back until you see something you can work with."
+				"As you can see there's only a Deploying recipe, that plugs a Shaft onto a ugly drawn weird object. This means this is only the last step of a more elaborate process. So you need to move back until you see something you can work with."
 				""
 				"By pressing 'R' again on the inputs you can see there's a \"recipe sequence\" thing, going back from there there's a sawing recipe, then cutting board (and spout, but you don't currently have one), and then AGAIN another sequence."
 				""
@@ -1808,12 +1886,16 @@
 				""
 				"Four steps total."
 				""
+				"&eA suggestion&r: while going through the individual steps on the path to craft the first cogwheel, it could be a good idea to repeat them, so that when you get to the end you have three cogwheels done (or more)."
+				""
+				"This because you'll need one to power the machines, one to craft a millstone and one to craft a mixer."
+				""
 				"{@pagebreak}"
 				"The recipe sequence you're looking at assumes automation, but at this stage you don't have access to it."
 				""
 				"Yet the recipe is still valid. Even if you see three deployers required, one next to the other, you can simply reuse the same one, as long you respect the order of the recipe."
 				""
-				"These steps with deployers require them to be placed over a &aCreate Depot&r, so this is the time to craft one if you haven't (requires a lead plate, and you know that to make plates you use a press). Once you have it, place it on the world. Then aim at the top, and by shift right-clicking while holding the deployer you should be able to place it, hovering the depot."
+				"These steps with deployers require them to be placed over a &aCreate Depot&r, so this is the time to craft one if you haven't (requires a tin ring, start from smelting to a tin ingot, then saw for rod and then press to get the ring). Once you have it, place it on the world. Then aim at the top, and by shift right-clicking while holding the deployer you should be able to place it, hovering the depot."
 				""
 				"What's left to do is to right click the top of the depot while holding one copper plate. The plate should be correctly positioned on the depot. Then, hold a second copper plate and aim instead at the lower face of the deployer's box. If done correctly you will have 'handed' the plate to the brass hand. One plate held by the deployer, another laying down on the depot..."
 				""
@@ -1824,7 +1906,7 @@
 				"{@pagebreak}"
 				"Repeat the process, by handing the same (now empty) deployer one or two iron nuggets."
 				""
-				"Repeat one or two times to complete the next two steps. Every time what you're doing is successful, you'll hear a 'pop' sound. If you instead don't hear nothing it means something isn't correctly working, or that you are in a different step of the sequence."
+				"Repeat one or two times to complete the next two steps. Every time that what you're doing is completed successfully, you'll hear a 'pop' sound. If you instead don't hear anything it means something isn't correctly working, or that you are in a different step of the sequence."
 				""
 				"Note: the quest for the Mechanical Saw should have already told you the current best path to get iron nuggets."
 				""
@@ -1836,7 +1918,7 @@
 				" "
 			]
 			id: "24C6F46269CB96C4"
-			min_width: 295
+			min_width: 305
 			shape: "rsquare"
 			tasks: [{
 				id: "6F2144238C4C9655"
@@ -1852,16 +1934,16 @@
 			description: [
 				"You have a wheel! Well, not just yet, but this quest here should easily guide you there."
 				""
-				"This time you shouldn't really require any hand-holding. After you got the Small Copper Frame from the previous quest, the cutting board recipe is straightforward."
+				"This time you shouldn't really require any hand-holding. After you got the Small Copper Frame from the previous quest, the cutting board recipe is straightforward (the optional filling recipe is used to automate the whole process, but will be only available later)."
 				""
-				"Then use the mechanical saw. After that, you have another recipe sequence, using just a deployer again. But look closely and you'll see there's a &dx8&r under it. That means you need to hand the deployer 8 Copper nuggets, and plug them those eight times onto the &aRound Small Copper Frame&r."
+				"Then use the mechanical saw. After that, you have another recipe sequence, using just a deployer again. But look closely and you'll see there's a &dx8&r under it. That means you need to hand the deployer 8 copper nuggets, and plug them those eight times onto the &aRound Small Copper Frame&r."
 				""
 				"Do that, and you have just one final deployment for your enjoyment. "
 				""
 				"You got wheels."
 			]
 			id: "7944A0F4BEDBE0C9"
-			min_width: 260
+			min_width: 250
 			shape: "rsquare"
 			tasks: [{
 				id: "0C44DD3D58C49447"
@@ -1877,20 +1959,22 @@
 			description: [
 				"Back on track."
 				""
-				"All this long detour was to obtain a cogwheel and power a &aMillstone&r. Why is this important? Because crafting these handful of machines should have annoyed you enough, providing all that andesite alloy."
+				"All this long detour was to obtain a cogwheel and power a &aMillstone&r (hopefully you followed the suggestion and made three of those cogs). Why is this important? Because crafting these handful of machines should have annoyed you enough, providing all that andesite alloy."
 				""
 				"With a Millstone you can now start replacing the mortar for better yields."
 				""
 				"Obviously this still isn't automation in any way, but it's the first speed up of the process."
 				""
-				"Place the millstone in the world, then while holding the cogwheel you previously crafted, aim at the stone wheel part of the millstone. You should see the \"ghost\" of a cogwheel. By right-clicking you can place it. And then you can also add the usual hand crank to the cogwheel itself."
+				"Place the millstone in the world, then while holding the cogwheel you previously crafted, aim at the stone wheel part of the millstone. You should see the \"ghost\" of a cogwheel. By right-clicking you can place it. And then you can also shove the usual hand crank onto the cogwheel itself."
 				""
-				"By turning the hand crank you can now make the cogwheel turn, and the millstone too."
+				"&eImportant&r: the recipe for the millstone requires an encased cogwheel. This is a simple crafting table recipe, look it up. But REMEMBER TO NOT PLACE that block in the world. Because due to how Create works internally only a cogwheel will be returned, and the casing will be lost."
 				""
 				"{@pagebreak}"
-				"To grind some items, just toss them into the hole of the millstone, for example a piece of raw iron ore. If the item is accepted, it will disappear inside. While powering the millstone you should see some particles coming out. If they don't this usually indicates something isn't working. But if they do, and then stop, it means the recipe is done. You can now right click on that hole with an empty hand to retrieve the output."
+				"By turning the hand crank you can now make the cogwheel turn, and the millstone too."
 				""
-				"If you look at the recipe for andesite alloy, you'll see that you can now obtain andesite, clay, and quartz dusts through a millstone. Note that andesite will also produces some &aGravel Dust&r. Collect 4 pieces of this, and you can assemble them on a crafting table for... a block of gravel."
+				"To grind some items, just toss them into the hole of the millstone, for example a piece of raw iron ore. If the item is accepted, it will disappear inside. While powering the millstone you should see some particles coming out. If they don't, this usually indicates something isn't working. But if they do, and then stop, it means the recipe is done. You can now right click on that hole with an empty hand to retrieve the output."
+				""
+				"If you look at the recipe for andesite alloy, you'll see that you can now obtain andesite, clay, and quartz dusts through a millstone (you can also grind netherrack blocks for a small chance at quartz, look up the recipe). Note that andesite will also produce some &aGravel Dust&r. Collect 4 pieces of this, and you can assemble them on a crafting table for... a block of gravel."
 				""
 				"This gravel dust comes from processing andesite, but also clay, later on. This is important because gravel is a necessary ingredient to produce andesite. Without having to go find and mine it."
 				""
@@ -1917,7 +2001,7 @@
 				""
 				"This works much like the Deployer and the Depot, but in this case you need a &aBasin&r."
 				""
-				"Place the Basin, place the Mixer on top. Don't worry if the &aWhisk&r's blades don't touch the basin, they will be lowered when a recipe starts. You can toss all the ingredients inside the basin, and remember that the mixer too needs a cohwheel to operate."
+				"Place the Basin in the world, then place the Mixer on top. Don't worry if the &aWhisk&r's blades don't touch the basin, they will be lowered when a recipe starts. You can toss all the ingredients inside the basin, and remember that the mixer too needs a cohwheel to operate."
 				""
 				"Now you need less handholding: it's your choice to reuse the same cogwheel by breaking and replacing it every step, of if you want to craft a second one (and a third, and a fourth...)."
 				""
@@ -1946,9 +2030,19 @@
 				""
 				"But the quarry system itself needs power. So you'll have to solve it no matter the path you choose."
 				""
-				"&aLarge Cogwheels&r have a different crafting process than small ones, but mostly the same. You will have to produce four quadrants separately and then join them. These are useful along with small ones to change the speed ratios."
+				"&aLarge Cogwheels&r have a different crafting process than small ones, but mostly the same. You will have to produce four quadrants separately and then join them. These are useful, when used in combination with the small ones, to change the speed ratios."
 				""
-				"While small cogwheels connect to each other only side by side, large + small connect only diagonally. Going from a large cogwheel to small doubles the speed, as the \"ponder\" screen says. Large cogwheels then connect to each other only at 45 degrees, letting you change the axis of the shaft."
+				"While small cogwheels connect to each other only side by side, large + small connect only diagonally. Going from a large cogwheel to small doubles the speed, as the \"ponder\" screen says. Large cogwheels then connect to each other only at 45 degrees, &eletting you change the axis of the shaft."
+				""
+				""
+				"{@pagebreak}"
+				"Beware the process here, if you craft in batches more than one large cogwheel."
+				""
+				"The tricky part is after you make dented quadrants. For example if you want to have four large cogwheels you will be planning of having 16 dented quadrants ready. One starts the sequence and then three get applied, until complete."
+				""
+				"BUT, if you throw half of them on a depot, and the other half to the deployer hand, what you'll get is 8 quadrants joined at that step. This is WRONG."
+				""
+				"You need to place four quadrants on the depot, and another four to the deployer. Then move to the following step (with nuggets). The other quadrants need to be manually set aside, to be used LATER in the process."
 			]
 			id: "60B2EE6591C28C1E"
 			min_width: 280
@@ -1971,9 +2065,11 @@
 				""
 				"No water wheel at this point, because crafting it requires some hardened wood planks, and you need Creosote oil for that. You won't have it until you have a Coke Oven running..."
 				""
+				"The windmill bearing block has a widget in the center to change the rotation direction, but to actually \"power\" the system you can simply right click with an empty hand anywhere else on that block (and you can stop it the same way, if you want to add more sails)."
+				""
 				"The quest on the right linked to this one will give you the technical details to use the system. Beware, it looks simpler than it actually is..."
 				""
-				"{@pagebreak}"
+				"&eIt will be a good idea if you prepare to craft at least 16 sails, 4 large cogwheels, and 4 small ones, in order to start some automation and have a mixer going. Drying fiber on a campfire could take way too long, so it's suggested to craft a vanilla Smoker, even if it will consume fuel..."
 			]
 			icon: "create:windmill_bearing"
 			id: "62C683BE3EFE075E"
@@ -2075,7 +2171,7 @@
 				""
 				"We've previously skipped this part by using a crafting table recipe and some Blaze Powder. But... it's time now."
 				""
-				"You have to go to the Nether again, and fight not a Blaze once... But enough time to collect TWELVE Blaze Rods."
+				"You have to go to the Nether again, and fight not a Blaze once... But enough times to collect TWELVE Blaze Rods."
 				""
 				"The recipe for an Empty Blaze Burner has two options. One is a sequence, but it requires steel, which is currently out of grasp. There's no way to get there without going through a Bronze phase. So you need the crafting table recipe, and to get those &aBlackened Rods and Plates&r you need Blaze Rods and Powders."
 				""
@@ -2107,7 +2203,7 @@
 				""
 				"Put the cooking pot over a campfire and you'll be all set."
 				""
-				"Get a &aCopper Can&r (three copper ingots) and put it inside the pot along with six green dyes, same as the recipe says. If everything works correctly, you should obtain a &aMulch Copper Can&r."
+				"Get a &aCopper Can&r (now requires a copper ring, look at a quest on the left for the rolling mill) and put it inside the pot along with six green dyes, same as the recipe says. If everything works correctly, you should obtain a &aMulch Copper Can&r."
 			]
 			icon: "farmersdelight:cooking_pot"
 			id: "03EF27D44D13A9D8"
@@ -2141,9 +2237,9 @@
 				""
 				"The hand crank you used up to this point produces 32 RPM, which is just enough for most machines. But you'll have to be mindful of speed when you want to automate that power, for example by using a windmill."
 				""
-				"The windmill is easy to build. As long you attach some sails to it, it will spin. The way those sails are arranged, or their angle, is functionally meaningless. Just arrange them in a way that pleases you. The important aspect is how much RPM they generate."
+				"The windmill is easy to build. As long you attach some sails to it, it will spin (the sails themselves CANNOT be directly attached to the windmill bearing block, rather, you can place some wood planks on top of it, and then you can add sails to its sides). The way those sails are arranged, or their angle, is functionally meaningless. Just arrange them in a way that pleases you. The important aspect is how much RPM they generate."
 				""
-				"...And it's not much. You get just &e1 RPM for 8 sails&r. You cannot use more 128 of them. That means that even a huge and maxed contraption would only produce a disappointing total of 16 RPM. For example, a single Mixer requires 32 to work. So it's obvious you won't go very far with this system. Right?"
+				"...And it's not much. You get just &e1 RPM for 8 sails&r. You cannot use more 128 of them. That means that even a huge and maxed contraption would only produce a disappointing total of 16 RPM. For example, &aa single Mixer requires 32 to work&r. So it's obvious you won't go very far with this system. Right?"
 				""
 				"Wrong. The next page will explain how to break this limit."
 				""
@@ -2152,9 +2248,9 @@
 				""
 				"You've probably figured out that if linking a large to a small cogwheel you get double speed. But if you then add another small one to the large... the speed returns to its original value. So it's a one time only speed up."
 				""
-				"But only if you think in one dimension. You need to mentally expand. You need to think &lACROSS&r the spectrum. Laws of physics are meant to be broken."
+				"But only if you think in one dimension. You need to mentally expand. You need to think &l&dACROSS&r the spectrum. Laws of physics are meant to be broken."
 				""
-				"Think of what might happen if, rather than keep adding cogwheels one next to the other, you plug one onto the same axis. You aren't following?"
+				"Think of what might happen if, rather than keep adding cogwheels one next to the other, you plug one onto the same axis... You aren't following?"
 				""
 				"Cogwheels turn on their central axis. In fact you can extend them at will, by just piling up more shafts. That's actually how you move power and deliver it somewhere else. What you should think now is, just within the rules you already know: what happens if a LARGE cogwheel shares the same shaft/pivot of a small one?"
 				""
@@ -2163,20 +2259,27 @@
 				"Let's waste yet another page on this..."
 				""
 				"{@pagebreak}"
-				"Let's say that you built a windmill with just 8 sails, and it produces 1 RPM accordingly to our rules. You attach a large cogwheel right under it, and it will share the same speed. Now you link the large to a small. And, again by the rules, you get double the speed. So 2 RPM."
+				"Let's say that you built a windmill with just 16 sails, and it produces 2 RPM accordingly to our rules. You attach a large cogwheel right under it, and it will share the same speed. Now you link the large to a small to the side. And, again by the rules, the small one gets double the speed. So 4 RPM."
 				""
-				"Now let's move ACROSS. Extend the small cogwheel shaft and place onto that same pivot a large cogwheel. So that small and large are, like, one under the other, stacked. If they share the same shaft and speed then it means this large cogwheel will turn at 2 RPM."
+				"Now let's move ACROSS. Extend the small cogwheel shaft and place onto that same pivot a large cogwheel, making sure it doesn't collide with already placed cogs. So that small and large are, like, one under the other, stacked (or sideways, if that's the axis you are working with). If they share the same shaft and speed then it means this large cogwheel will turn at 4 RPM too."
 				""
-				"And what happens if you now link another small cogwheel to the 2 RPM large one? Speed doubles going large to small, right? Exactly. You now have 4 RPM. Even if you started from just 1."
+				"And what happens if you now link another small cogwheel to the 4 RPM large one? Speed doubles going large to small, right? Exactly. You now have 8 RPM. Even if you started from just 2."
 				""
-				"It goes without saying that as long you're willing to spam these cogwheels, and have space to place them, &dyou can increase power production for \"free\"&r."
+				"It goes without saying that as long you're willing to spam these cogwheels, and have space to place them, &dyou can increase rotation speed for \"free\"&r."
 				""
-				"With rotational speed doubling every time, powering some machines becomes a reasonable goal. As long you have resources..."
+				"{@pagebreak}"
+				"With rotational speed doubling every time, powering some machines becomes a reasonable goal. As long you have resources... For a mixer you will need 32 RPM. If you start from 2, then it means 4 > 8 > 16 > 32, four \"shifts\" total."
+				""
+				"That's a minimum of four large cogwheels starting from the bottom of the windmill bearing, and another four small ones, with the last linking to a mixer. And you can then cleverly place a millstone in contact with that upper block of the mixer, so that the wheel in the mixer will ALSO spin the millstone."
+				""
+				"Doing that will have permanently, infinitely powered two machines. You can now toss a stack of stuff to process in the millstone and go do something else, returning later to collect the result."
+				""
+				"This is not full automation, but it's a start. Real automation will depend on automating multiple step processes, rather than one single machine. A system where you don't need to manually place and retrieve ingredients..."
 				""
 				"But we need another page for an additional note."
 				""
 				"{@pagebreak}"
-				"While sails are easy to produce, they require tons of andesite alloy. Cogwheels are more efficient in cost and value, but their processing is more complex. That's why you should start automating production."
+				"As you slowly ease into automated production all these costs will become more tolerable. The cogwheels themselves are not especially expensive, but they have more complex processing."
 				""
 				"Yet, production isn't the only limit, and there's an additional aspect that plays a role."
 				""
@@ -2303,7 +2406,7 @@
 				""
 				"Note that with a cooking pot you can now cook &eSeagrass&r turning it into dried kelp. Seagrass is all over the place, but the recipe isn't very convenient, due to its long time."
 				""
-				"The spout itself, as the name says, is used to spurt liquid into something else. For example it can fill buckets, but it will be also used in recipe sequences where fluids are involved. So if you wanted to automate treated planks you could use a spout. But you still miss a step, to extract the tannin fluid from the mulch copper can..."
+				"The spout itself, as the name says, is used to spurt liquid onto something else. For example it can fill buckets, but it will be also used in recipe sequences where fluids are involved. So if you wanted to automate treated planks you could use a spout. But you still miss a step, to extract the tannin fluid from the mulch copper can..."
 				""
 				"&oNote: same as with Mechanical Belts, Copper Casing now requires some rubber."
 			]
@@ -2329,7 +2432,7 @@
 				""
 				"Buf if you press \"r\" on tannin... it doesn't seem obtainable. It only leads you to a dead end with a spout recipe to fill a bucket."
 				""
-				"This is just a problem of REI: in some cases the \"outputs\" of a recipe aren't indexed, only the main one is. You could always verify these cases by checking EMI, since it doesn't have this problem."
+				"This is just a problem of REI: in some cases the \"outputs\" of a recipe aren't indexed, only the main one is. You could always verify these cases by checking EMI, since it doesn't have this problem. (again, this is a Create + REI integration problem that should be fixed now)."
 				""
 				"The &eItem Drain&r is what you use here. You right click with the mulch copper can on the item drain, and the liquid tannin it contains will fill the drain, whereas the copper can will become empty, so that you can reuse and refill it."
 				""
@@ -2441,13 +2544,18 @@
 				""
 				"You can of course craft &eMechanical Belts&r to carry stuff around. Much like fluid pipes, these too require power to move. You can place a hand crank directly on a shaft but if you are doing manual work then you could just pick up and deliver the items yourself..."
 				""
-				"You can't place a belt directly. first place a shaft horizontally at the starting point, and another at the end. Then, while holding belts, right click on the shaft. There should be red particles. Move over to aim at the other end, and particles should turn green. Right click again and the belt will be placed."
+				"You can't place a belt directly. first place a shaft horizontally at the starting point, and another at the end. Then, while holding a belt, right click on the shaft. There should be red particles. Move over to aim at the other end, and particles should turn green. Right click again and the belt will be placed."
 				""
-				"Holding a wrench and right clicking on the side of the last block of a belt will shorten it. If you right click while holding a belt, you'll extend it by one instead."
+				"Holding a wrench and right clicking on the side of the last block of a belt will shorten it. If you right click while holding a belt, you'll extend it by one instead (without consuming the belt)."
 				""
 				"The material \"cost\" of a belt doesn't depend on its length, but the maximum is 10 blocks. (or 20 if I can't find a way to enforce a server default)"
 				""
 				"&o : Last minute, the recipe has been significantly cursed."
+				""
+				"{@pagebreak}"
+				"Looking up the recipe for rubber you can see it uses dandelion flowers. "
+				""
+				"While they are very easy to find, also remember that they are renewable as well: craft a standard composter and you can right click on it while holding seeds or saplings, and after filling it up it will produce one bone meal. You can then use the bone meal on grass blocks to randomly spawn the different varieties of flowers."
 			]
 			id: "22FAA2382818DE74"
 			min_width: 250
@@ -2481,123 +2589,15 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["3F5ACCA0FDC6ADB6"]
-			description: [
-				"The Bronze Evaporation Tank can be used to more easily produce &ePacked Mud&r."
-				""
-				"Why would you need packed mud? For the Clay Quarry multiblock."
-				""
-				"It will be necessary if you want to start produce Andesite Alloy, and to have easier access to Coke Ovens and Steam Blast Furnaces."
-				""
-				"(This will use steam and mud, look to the Quarry page for a way to produce steam very early.)"
-			]
-			id: "7FA13ECB870F1FDE"
-			tasks: [{
-				id: "25E494528790377E"
-				item: "modern_industrialization:bronze_evaporation_tank"
-				type: "item"
-			}]
-			x: -11.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["7FA13ECB870F1FDE"]
-			description: [
-				"Craft a Bronze Wrench."
-				""
-				"After you made the Clay Quarry controller and placed it in the world, holding the wrench will show you an outline for how the multiblock needs to be arranged."
-				""
-				"To check instead the number of blocks and their type, look again for the controller recipe, and a tab with a bronze wrench icon. That will show you what you need to build."
-				""
-				"Consider that it's not 100% accurate: you'll need to replace some of the blocks of the structure with hatches. To get stuff in and out. When you deal with multiblocks you only use the controller to check if the structure was formed correctly."
-				""
-				"The Clay Quarry only has one recipe. But as you can see it needs:"
-				"- One &eBronze Fluid Input Hatch&r (for Steam)"
-				"- One &eBronze Fluid Input Hatch&r (for the water)"
-				"- One &eBronze Item Input Hatch&r (for the copper can)"
-				"- One &eBronze Item Output Hatch&r (for the Clayed Copper Can)"
-				""
-				"That means you can remove 4 mud bricks from the structure."
-				""
-				""
-				"{@pagebreak}"
-				">playing create with me and the boys (wholesome 100)"
-				">peek over and see normie playing 1.7.10"
-				""
-				"&b&o : ew wtf why are you still on that old sh*t are you fu**ing 30 or something"
-				"&b&o : watch this"
-				""
-				">download and make a create modpack"
-				">go through my 200 patreon subscriptions"
-				">acidentally download towel instead of quilt 1.23.5.1.2.95 papyrus version"
-				">boot up minecraft"
-				">pc starts making jet engine sounds"
-				">the cpu starts sizzling"
-				""
-				"&b&o : your old sh*tty version cant compare to how beautiful this looks"
-				""
-				">create new world"
-				">game freezes for a bit, computer starts screaming at this point"
-				">load in"
-				">move one block"
-				">im pretty sure one of my ram sticks just comitted suicide"
-				">build a simple farm "
-				""
-				"&b&o : check this out, solves the magic block problem, something YOU probably dont even get to expirence because your version is so old"
-				""
-				">immeadiatly place several gears belts and shafts"
-				">graphics card explodes"
-				">framerate is in the negatives"
-				">after essentially melting my pc and burning a hole in the desk, the contraption is done"
-				">the 1.7.10 player is still there somehow, watching it take 20 minutes to deliver a piece of wheat to the right storage column"
-				">before it even finishes a popup appears asking me to donate 14 dollars more to the patreon to coninue using"
-				""
-				"&b&o : this is why you should switch, ours is much more superiour in everyting, because its NEW!"
-				" "
-			]
-			id: "169A250A599D706D"
-			min_width: 290
-			tasks: [{
-				id: "76D81364C145575C"
-				item: "modern_industrialization:clay_quarry"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 8.5d
-		}
-		{
-			dependencies: ["169A250A599D706D"]
-			description: [
-				"With the Clay Quarry built, using renewable water and steam, you solved another piece for the automation of Andesite Alloy."
-				""
-				"Clay coming from this quarry, Zinc and Quartz from their own ore quarries, what's left is Andesite."
-				""
-				"Andesite can be made in a mixer, with two flint pieces, one gravel block and some lava, it's a Create vanilla recipe. Since lava is renewable in some ways, and flint comes from crushing gravel, you just need a way to renew gravel as well."
-				""
-				"No, you can't crush cobblestone into gravel. But the process of producing clay from the quarry is very wasteful, and generates gravel dust as a byproduct. The same happens when you crush andesite into dust."
-				""
-				"The ratios and timings need more testing, but you should be more or less able to pack that gravel dust back into gravel blocks, and then loop it to produce more andesite..."
-			]
-			id: "6DF00170BEE642CB"
-			min_width: 250
-			tasks: [{
-				id: "2E823406142704C5"
-				type: "checkmark"
-			}]
-			title: "Almost u-tomato"
-			x: -8.0d
-			y: 8.5d
-		}
-		{
 			dependencies: ["452FA12909D423D5"]
 			description: [
 				"Some sulfur now required for early rubber, which may be a problem since sulfur generally comes from macerating lignite coal. You don't have a macerator, and won't have one for some time."
 				""
-				"This is another case where if you look for the recipe of this ingredient... you won't find anything usable."
-				""
-				"As in similar cases, it's a REI problem."
+				"This is another case where if you look for the recipe of this ingredient... you won't find anything usable (due to a Create bug that might be fixed now)."
 				""
 				"Go the other way, get lignite coal, use a millstone for crushed, then wash with a create fan + water the crushed dust. You should see a recipe there, a 75% chance at 3 sulfur tiny dusts."
+				""
+				"The rubber recipe now requires crafting a full dust from those tiny ones."
 				""
 				"Create fan is explained a bit better in a quest further down."
 			]
@@ -2676,10 +2676,13 @@
 				"Yeah, there's no need to mutter under your breath."
 				""
 				"One resin for one tool."
+				""
+				"You'll have to use an item drain, to get tannin from a mulch copper can, and then use a mechanical pump and a fluid pipe to move the tannin from the drain and into a basin, for a mixer."
 			]
 			icon: "geggy:reinforced_tool_rod"
 			id: "229E4CD94769D382"
 			min_width: 250
+			optional: true
 			tasks: [
 				{
 					id: "0E51F892908D60FC"
@@ -2697,7 +2700,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["7FA13ECB870F1FDE"]
+			dependencies: ["3F5ACCA0FDC6ADB6"]
 			description: [
 				"&o &c85 : &lAAARGH!"
 				""
@@ -2719,10 +2722,10 @@
 				type: "checkmark"
 			}]
 			x: -11.0d
-			y: 10.0d
+			y: 8.5d
 		}
 		{
-			dependencies: ["7FA13ECB870F1FDE"]
+			dependencies: ["3F5ACCA0FDC6ADB6"]
 			description: [
 				"As hinted at the top of this page, you should have access to SOME gold at this stage."
 				""
@@ -2777,7 +2780,11 @@
 		{
 			dependencies: ["475B033D69E635A8"]
 			description: [
-				"And finally you put the purified precious ore on a cutting board and use manually a filter to get an 80% chance at a standard gold nugget."
+				"And &mfinally&r you put the purified precious ore on a cutting board and use manually a filter to get an 80% chance at &ma standard gold nugget&r."
+				""
+				"Nope, you just get some precious ones, same that you can find more easily in the Nether, if you haven't noticed already. To get to actual gold nuggets you need a further step now: have an heated mixer, and use three of those precious nuggets to get one... gold chip?"
+				""
+				"Well, three of those, and you get a really precious one. Actual gold."
 				""
 				"The next stage for gold will unlock when you have access to steel, that will also let you process nuggets into a full ingot. But only with electrical machines you'll be able to produce gold in the intended way, and get TWO gold dusts for every purified ore."
 				""
@@ -2808,7 +2815,8 @@
 				""
 				"To craft a deployer you'll need redstone, and amethyst shards. For this reason amethyst geodes have been moved slightly upwards."
 				""
-				"Amethyst geodes: from Y &a-52 to 42&r"
+				"Amethyst geodes: from Y &a-52 to 42&r "
+				"rarity is the same as vanilla"
 				"(even when they generate below deepslate, you should be able to find passages through caves)"
 				""
 				"For redstone, vanilla generation is untouched, but there are extra veins that appear further up, between Y &a100 and 200&r."
@@ -2871,7 +2879,7 @@
 		{
 			dependencies: ["229E4CD94769D382"]
 			description: [
-				"Yeah, you have to squint, there are TWO items there on the task list..."
+				"Yeah, you have to squint, there is one item there on the task list..."
 				""
 				"A reinforced flint pickaxe is special in the sense it needs a few additional steps, compared to other reinforced flint tools."
 				""
@@ -2883,13 +2891,12 @@
 				""
 				"But... it will say \"click with item to set\", but how can you click with the item, if you need to craft it in the first place?"
 				""
-				"You'll need to craft the list filter, and use that."
-				""
-				"By right clicking on the list filter, you bring up an UI, you can then use either REI or EMI to find the item on the list, and simply drag \\& drop the item. Then, when it's set, you can place the list filter on the filter slot of the Create saw. And it will guarantee that only that output is used."
+				"You'll need to use again the list filter that was explained back in the quest about the mechanical saw."
 			]
 			icon: "geggy:dull_flint_pickaxe_head"
 			id: "24BD91BF5834689A"
 			min_width: 260
+			optional: true
 			shape: "rsquare"
 			tasks: [
 				{
@@ -2898,8 +2905,14 @@
 					type: "item"
 				}
 				{
-					id: "6A1AEF5FA1671640"
-					item: "create:filter"
+					id: "344C32A058AEC83C"
+					item: {
+						Count: 1b
+						id: "geggy:reinforced_flint_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
 					type: "item"
 				}
 			]
@@ -2921,9 +2934,11 @@
 				"You'll find quests further down the page. Flax won't stop progression, but it can be a lot more convenient."
 				""
 				"Note: &oyou can harvest plants without fully breaking them, by right clicking. But this only works while &eholding a hoe&r."
+				""
+				"&oThe flax is also a weird plant, so make sure you target the lowest block when harvesting."
 			]
 			id: "63353C4077724405"
-			min_width: 220
+			min_width: 240
 			tasks: [{
 				id: "320B8CA900D42D0A"
 				item: "supplementaries:flax_seeds"
@@ -2946,12 +2961,14 @@
 				""
 				"Coke will eventually give 6 torches, and there's even a recipe for using creosote."
 				""
-				"At least there aren't further survival-esque mechanics that I'm always tempted to add, like torches getting extinguished by rain :)"
+				"&eTorches will be crafted unlit by default, you can use a furnace, a campfire, flint and steel, or just a standard torch on a crafting table.&r At least there aren't further survival-esque mechanics that I'm always tempted to add, like torches getting extinguished by rain :)"
+				""
+				"&eImportant:&r A coal dust would normally be converted into 9 tiny dusts if placed in the first slot. To get the small ones, used for torches, you need to place the dust into the SECOND crafting slot. But, on a crafting table, due to technical limits of modern Minecraft, there's a recipe conflict if you use the second slot, so in this case use the third slot..."
 			]
 			hide: true
 			hide_dependency_lines: true
 			id: "6FF7D9BE5E9A73B7"
-			min_width: 240
+			min_width: 270
 			shape: "rsquare"
 			tasks: [{
 				id: "1042DB94C46CDD44"
@@ -2989,6 +3006,355 @@
 			x: -8.0d
 			y: -8.0d
 		}
+		{
+			dependencies: ["6490A6DBDBCFBEAC"]
+			description: [
+				"&oAn exception to the rule! You made it this far, so you can have a speedometer and stressometer. The required item comes from quarries (you need to click the item here and press \"submit\", the item will be consumed)."
+				""
+				"From the wiki so you don't have to look it up."
+				""
+				"First number is the number of \"sails\". You need at least 8 for the thing to work, from there, every step requires +8 sails, and increases &a&lRPM&r by one."
+				""
+				"(not all tiers shown)"
+				""
+				"00-07 0000su 0"
+				"08-15 &e0512&rsu &a1"
+				"16-23 &e1024&rsu &a2"
+				"24-31 &e1536&rsu &a3"
+				"32-39 &e2048&rsu &a4"
+				"40-47 &e2560&rsu &a5"
+				"48-55 &e3072&rsu &a6"
+				"56-63 &e3584&rsu &a7"
+				"64-71 &e4096&rsu &a8"
+				""
+				"96-103 6144su &a12"
+				""
+				"128+ 8192su &a16 "
+				""
+				"Keep in mind that when you want to add sails to unlock more stress and so expand the number of powered machines, you'll also end up increasing speed. This has the side effect of INCREASING the stress of the current machines, because more speed is also more stress produced by each machine."
+				""
+				"In some cases adding sails won't actually buy more stress capacity, because the load increased in proportion. Your option is to reduce the cogwheels to reduce speed as well but BEWARE: while +8 sails increase the immediate speed by +1, cogwheel combos DOUBLE speed. So you could end up in a situation where you remove just one large to small cogwheel step, and your mixer stops working because the overall speed went under 32..."
+			]
+			icon: "create:stressometer"
+			id: "7E077CAAE87CB7E8"
+			min_width: 320
+			optional: true
+			rewards: [
+				{
+					id: "2208D0E35A6AB3E9"
+					item: "create:speedometer"
+					type: "item"
+				}
+				{
+					id: "72EC4902F8CF4E56"
+					item: "create:stressometer"
+					type: "item"
+				}
+			]
+			tasks: [{
+				consume_items: true
+				id: "4FBEEF3344B90874"
+				item: "drilly:whole_tier1_experience"
+				type: "item"
+			}]
+			title: "Not Enough Tutorials"
+			x: -8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["62C683BE3EFE075E"]
+			description: [
+				"Trying to arrange and rotate sails on a windmill without a tool can be quite enraging."
+				""
+				"While crafting a proper Create wrench requires a waste of more blaze powder, the \"Supplementaries\" variation of the wrench seems to work well enough on those sails... and only requires copper."
+				""
+				"As you can see from the recipe, it uses differently shaped copper pieces, but worry not, they are all different combinations of recipes going through saw and press."
+			]
+			id: "61D6AE32B2D6DB98"
+			min_width: 220
+			tasks: [{
+				id: "74A10F7C1730C301"
+				item: {
+					Count: 1b
+					id: "supplementaries:wrench"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7E077CAAE87CB7E8"]
+			description: [
+				"While the rest of the quests continue on the path of showing how to get more stuff, depending on your experience you may not know how to pull the pieces together."
+				""
+				"At this point in the progress you can aim at full passive power for the Create machines. So that you don't need to operate them manually with an hand crank."
+				""
+				"If you have a windmill going and some cogwheels arranged to speed up rotation, as described in previous steps, then you likely have a shaft going down perpendicular, ending with a small cogwheel, itself powering passively a mixer. Next to the mixer a millstone, since it can connect directly to the mixer and get its own rotational power as well."
+				""
+				"The problem may arise if you also want to power the rest. A mechanical saw, a deployer, and a press (with or without the variant for compacting recipes, that uses a basin but still works with the same press component)."
+				""
+				"All these machines need a shaft that goes horizontally, rather than vertically. They don't need cogwheels attached to them directly, but still need rotational power through a shaft. Even in this case you can put one mechine right next to the other, so that this power will be transferred between all of them, you just need an origin that is powered passively."
+				""
+				"{@pagebreak}"
+				"To achive that, you can go back to the quest that explained the large cogwheels: if you attach a large coghwheel to the small one powering the mixer, and then another large one perpendicular, connected to the other, you will produce a change in the shaft, than now goes horizontally and so ready to plug into the other machines."
+				""
+				"This way of doing things takes a whole lot of space. The tricky part of Create automation is that it is bulky, and when you'll try to assemble different pieces together you'll keep having problems because you don't have enough space to fit the machines in that specific arrangement that would be required..."
+				""
+				"That's why there are blocks like gearboxes (and the vertical variant) to spare some space. The recipe is... somewhat accessible at this point, but quite a pain to make. So the choice is yours, either to make the useful blocks, or go the way of the tangle of gears until you are better placed in the progression."
+				""
+				"In any case, if you do everything correctly, you'll get to this point with all machines passively powered, but none of this is actual \"automation.\" To properly automate things you need infrastructure where machines transfer items (and fluids) between each other so that a whole processing line can be performed from a starting point to its ideal end."
+				""
+				"{@pagebreak}"
+				"Yet again, you may have troubles setting up automation for the mixer. Let's say that cursed Andesite Alloy. In a mixer, you need two pieces of andesite dust, one of clay dust, one of quartz dust, and a zinc nugget. It's a ratio of 2 + 1 + 1 + 1."
+				""
+				"If any of these ingredients gets to 16 while waiting on the basin for the mixer, the block will stop accepting more items of that type. This has the consequence of \"clogging\" the process. Because the mixer may be waiting for all the four ingredients, but the other types can't get in because that path becomes blocked."
+				""
+				"So... Setting up a list filter and placing it on the basin, with andesite alloy selected, will make sure that the mixer will try to do that recipe. If you then place on one side of the basin a belt transporting items out, then automatically (or toggled with a wrench) the basin will produce a kind of chute on its side, meant to unload the finished product. In general you use a Create funnel to insert or extract items from a basin, but if you push items on one side with a funnel, and then place a funnel on the other side, the result will be that items come out as soon they get in from the other side. And nothing stays inside the mixer long enough for it to work."
+				""
+				"Using that \"built-in\" chute will instead be reserved to only extract the finished product (defined in the filter), without requiring \"smart\" components. And that chute will appear specifically if it has a belt under it."
+				""
+				"{@pagebreak}"
+				"But this also means that one side of that basin is occupied by that chute, leaving only three other sides to work with. You also need to deal with the fact that andesite alloy has the odd ratio of requiring two of andesite dust, and just one for the other ingredients."
+				""
+				"A solution that worked is: have a chest with one source ingredient (like andesite dust), have a funnel attached to the side of the chest, dropping items onto a belt, guiding these items one by one into another funnel placed on one free side of the basin. Since only one item type is placed in the chest, that means that the mixer-basin will be filled with a stack of 16 dusts, and then stop, as it will be out of space."
+				""
+				"On another free side of the basin you repeat this process. So that you also have a funnel going in, dedicated to one ingredient. This leaves ony one side of the mixer free, and yet still TWO ingredients that need to reach the mixer-basin."
+				""
+				"{@pagebreak}"
+				"Maybe you can figure out a clever solution, but a simple and intuitive way to solve this problem is to make a structure with belts that looks like a \"&dT&r\". The central pillar of that letter is a belt going into the free side of the basin. The two small arms of the letter, instead, are two other belts, of the same length and speed, that drop items onto the main belt. If you then place a chest and funnel on EACH end of these two small arms of the letter, then they'll meet together as they reach the main one, and this should achieve a regular alternation of items on the main belt: A - B - A - B."
+				""
+				"If you do this correctly the mixer will never clog, because it will always contain a stack big enough to still run a recipe while waiting for the alternation of ingredients going into that side."
+				""
+				"On the image section of the modpack page, on CurseForge, scrolling to the bottom you should be able to find a poorly assembed thing that can still be used as a general reference of what I just described."
+				""
+				"Ideally, as long you have the same ratios, you can expand the \"T\" setup by placing two more \"T\"s sideways. So rather than being two to one, it becomes four to two and then two into one. Letting you insert four different ingredients by using just one side of the basin. Beware that if the recipe needs a fluid, then you'll always have one side fully occupied, since you need a pipe there."
+			]
+			id: "4F48407FEADA9186"
+			min_width: 290
+			optional: true
+			tasks: [{
+				id: "3A3806E47CE6A46E"
+				title: "It's much worse than you think"
+				type: "checkmark"
+			}]
+			x: -6.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["62C683BE3EFE075E"]
+			description: [
+				"New addition..."
+				""
+				"This is now mainly required for rings, until a compressor is available. Itself requiring a ring (for bronze casing, since it uses a bronze gear), so it's not optional."
+				""
+				"For that reason the use of rings before this point has been removed."
+				""
+				"The use is straightoward, but not entirely: this is one machine that you can't power manually. That's why it was plugged here at this point in the progression, since you'll have to use a windmill to obtain enough stress support for this."
+				""
+				"The usage is also quirky. It will only accepts items if thrown precisely from the top, and the output will stay inside and needs to be retrieved with a right click with empty hand. Either that, or you automate it through funnels, as ponder states."
+			]
+			id: "0C0CA03C41E9EF67"
+			tasks: [{
+				id: "05CD4C5A49A5E3B8"
+				item: "createaddition:rolling_mill"
+				type: "item"
+			}]
+			title: "Rolling Bill"
+			x: -9.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0C0CA03C41E9EF67"]
+			description: [
+				"While looking at ways to start automating things, I realized that without the use of smart filters it would be hard to accomplish things..."
+				""
+				"Let's say you wanted to fully automate cogwheels. If you need a deployer plugging one nugget eight times, and then move on, to do this you'd need to craft eight deployers and place them in a sequence."
+				""
+				"At this stage where making stuff feels quite expensive, it's an option, but not a good one."
+				""
+				"With a smart funnel (brass funnel) you could instead place a filter at the side of a looping belt, and so you could just use ONE deployer and the funnel would then redirect the item only when it fully completed the cycle. That's how things were supposed to work."
+				""
+				"If you look at the recipe for a brass funnel you'll see it needs brass, and okay, but also a &ecapacitor&r."
+				""
+				"That too doesn't seem beyond reach, look further down and there are quests you can already read, to craft gold nuggets. The problem is the copper wire. But a special kind of copper wire that now has its own dedicated but very silly process. And here we go."
+				""
+				"To craft an empty spool you need a reinforced rod and treated planks that are described on the left side of this quest page. The base copper wire is what you get from the rolling mill, from a copper plate."
+			]
+			icon: "createaddition:copper_spool"
+			id: "371AD00A9445F0A8"
+			min_width: 300
+			tasks: [
+				{
+					id: "46EB40B5478E2825"
+					item: "createaddition:copper_wire"
+					type: "item"
+				}
+				{
+					id: "319A4880DAC08D86"
+					item: "createaddition:copper_spool"
+					type: "item"
+				}
+			]
+			title: "Wired Cop"
+			x: -9.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["371AD00A9445F0A8"]
+			description: [
+				"You need to set up some fake electricity. Fake because you shouldn't expect it to work to power MI machines."
+				""
+				"The copper spools from the previous quest are needed here for the &aGenerator Coil&r. Crafting one is probably enough since you aren't going to use this as a source of actual power any time soon. Engines are gated much later."
+				""
+				"Magnetite from the mod has also been removed now as a worldgen block, so you'll craft directly the second tier: the &aRedstone Magnet&r."
+				""
+				"The idea is that you place the coil and then redstone magnets around it, as the ponder shows. The possible positions are twelve in total since it's three blocks on every side and the corners don't count... similar to a nather portal. Here you probably need at least two or three blocks in total to make it work, you don't need to surround it fully."
+				""
+				"I tried to figure out the math, but it's too convoluted. What you should know is that the energy produced comes out of three variables: rpm speed, magnet blocks and the overall stress. And you need to go beyond a certain treshold so that you actually generate some energy rather than nothing. So either by crafting more magnets, by increasing stress capacity by adding more sails to a windmill, or by using cogwheels trickery to make it rotate faster."
+				""
+				"Because the principle is that it converts the rotation energy taken from a windmill, into electrical power..."
+			]
+			icon: "create_new_age:generator_coil"
+			id: "301E1B81064881CA"
+			min_width: 280
+			tasks: [
+				{
+					id: "4E5673666ACFEF2E"
+					item: "create_new_age:generator_coil"
+					type: "item"
+				}
+				{
+					id: "1FAA985D4964683B"
+					item: "create_new_age:redstone_magnet"
+					type: "item"
+				}
+			]
+			title: "Wheels within wheels within wheels..."
+			x: -8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["301E1B81064881CA"]
+			description: [
+				"If you set up the previous stuff, you probably saw it not doing much."
+				""
+				"You have the generator coil, the magnet blocks around it, and rotational energy coming from a windmill and into the coil itself."
+				""
+				"To actually produce energy you need &aCarbon Brushes&r. Nothing too complex. This block goes on the other side of the coil, on one side you have a shaft that gives it rotation, and on the other the carbon brushes that accumulate energy. "
+			]
+			id: "2D7B6ECE53E623F5"
+			tasks: [{
+				id: "7FBC76079875FFCE"
+				item: "create_new_age:carbon_brushes"
+				type: "item"
+			}]
+			title: "William T. Vollmann's Carbon Ideologies"
+			x: -6.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2D7B6ECE53E623F5"]
+			description: [
+				"This recipe for an &aElectrical Connector&r is divided in two steps but is otherwise straightforward."
+				""
+				"You need two of these, one attaches to the carbon brushes, and the other where you actually need it, on the &aBasic Energizer&r."
+				""
+				"Then you need this other type of copper wire, that is converted directly from a copper spool. While holding it, right click once on connector on the corbon brushes, and then again on the connector placed over the basic energizer. This way you should see an actual wire line connecing the two."
+				""
+				"If your contraption works well enough to produce some amount of energy, you should see the basic energize charging in its in-world tooltip."
+				""
+				"The recipe to get the MI copper wire is a relatively simple sequence where you need to \"zap\" the transitional item a couple of times, requiring the energizer to have accumulated enough energy..."
+			]
+			icon: "create_new_age:energiser_t1"
+			id: "1D05552BF49D4E8C"
+			min_width: 280
+			tasks: [
+				{
+					id: "5BAC6C7E17CEFD9F"
+					item: "create_new_age:electrical_connector"
+					type: "item"
+				}
+				{
+					id: "60B08EDFEA4E46EB"
+					item: "create_new_age:copper_wire"
+					type: "item"
+				}
+				{
+					id: "62FA906D523EA0C9"
+					item: "create_new_age:energiser_t1"
+					type: "item"
+				}
+				{
+					id: "660D0BAA126BA6CA"
+					item: "modern_industrialization:copper_wire"
+					type: "item"
+				}
+			]
+			title: "Zzap!64"
+			x: -5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1D05552BF49D4E8C"]
+			description: [
+				"And here we are."
+				""
+				"All other ingredients required here should be already available, even if inconvenient."
+				""
+				"With a \"smart\" funnel you can use its built-in slot to place a filter and so select specifically a type of item that the funnel will either pull from (like a chest), or push to. "
+				""
+				"Same for being placed at the side of a belt. This can be easily used for automation, where you send an item around until the item will match the funnel filter, and so getting sucked out of that belt, and onto a new path."
+			]
+			icon: "create:brass_funnel"
+			id: "0EE4B3D8D47F94C9"
+			tasks: [
+				{
+					id: "12982265956F79B6"
+					item: "modern_industrialization:capacitor"
+					type: "item"
+				}
+				{
+					id: "7E430935613EA231"
+					item: "create:brass_funnel"
+					type: "item"
+				}
+			]
+			title: "Incapacitated"
+			x: -3.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4611AB2F817DA820"]
+			description: [
+				"As you come further down this page, the progression could start feeling messier, and an optimal path quite blurry. Things in Create continue to be too expensive to effectively automate."
+				""
+				"Far from offering ideal suggestions, my own path was this:"
+				""
+				"- &eStart a quarry in the nether&r, for quartz"
+				"- &eStart a quarry for coal&r (because you'll need lots of fuel)"
+				"- Quarries stop too quicky, &ebuffer coal and water&r, as described in the dedicated page for the quarry system"
+				"- &eAutomate cogwheels&r. This is major hurdle. Need to expand windmill system, make 5 deployers, craft a brass funnel so that it's possible to loop the deploy step for the 8 copper nuggets."
+				"- After that, you may either be looking for &ea lignite quarry&r, then &ecopper&r and eventually &etin&r, to keep up with demands without having to go mine. "
+				""
+				"It will take a long time getting there. But the stuggle is required to progressively make things... eaiser."
+				""
+				"Probably only after these steps it will become more reasonable to progress over to the real bronze age."
+			]
+			hide_dependency_lines: true
+			id: "4D6AF7C14A78ED75"
+			min_width: 280
+			tasks: [{
+				id: "5088130E79415BC0"
+				title: "A sequence of mistakes"
+				type: "checkmark"
+			}]
+			x: -9.5d
+			y: 7.0d
+		}
 	]
-	title: "0 - Getting Started"
+	title: "0 - Growing Pains"
 }

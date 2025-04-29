@@ -9,12 +9,12 @@ PlayerEvents.loggedIn(event => {
 	if (!data2.contains("loadedfog")) {
 		event.server.runCommandSilent('function watching:config/start_delay/add')
 		event.server.runCommandSilent('function watching:config/start_delay/add')
-		event.server.runCommandSilent('function watching:config/sighting_chance/3_rare')
-		event.server.runCommandSilent('function watching:config/randomize_skins/true')
-		event.server.runCommandSilent('function watching:config/nametag/off')
-		event.server.runCommandSilent('function watching:config/burning_base/true')
 		data2.putBoolean("loadedfog", true)
     }
+	event.server.runCommandSilent('function watching:config/sighting_chance/3_rare')
+	event.server.runCommandSilent('function watching:config/randomize_skins/true')
+	event.server.runCommandSilent('function watching:config/nametag/off')
+	event.server.runCommandSilent('function watching:config/burning_base/true')
 });	
 
 

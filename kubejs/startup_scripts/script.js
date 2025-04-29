@@ -1,5 +1,11 @@
 // priority: 0
 
+Platform.mods.modern_industrialization.name = 'SuckerSymphony'
+Platform.mods.moderndynamics.name = 'Metaphoric Destinations'
+Platform.mods.ae2.name = 'Mistaken Energistics 2'
+Platform.mods.powah.name = 'Protagoras'
+//Platform.mods.botania.name = 'Britannia'
+
 console.info('Hello, World! (You will only see this line once in console, during startup)')
 
 function incomplete_circuit(event, circuit_prefix) {
@@ -16,11 +22,7 @@ StartupEvents.registry('item', event => {
 	event.create("zinc_dust")
 
 	incomplete_circuit(event, "analog")
-	incomplete_circuit(event, "electronic")
-	incomplete_circuit(event, "digital")
-	incomplete_circuit(event, "quantum")
 
-	event.create("incomplete_processing_unit_board")
 	event.create("incomplete_blank_pattern")
 
 	event.create("mob_slaughtering_drill_head")

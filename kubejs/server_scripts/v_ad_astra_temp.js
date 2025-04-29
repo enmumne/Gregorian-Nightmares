@@ -1,6 +1,9 @@
 ServerEvents.recipes(event => {
 	
 	event.remove([
+		"create:pressing/steel_ingot",
+		"ad_astra:recipes/steel_cable",
+		"ad_astra:recipes/desh_cable",
 		"ad_astra:recipes/rocket_nose_cone",
 	    "ad_astra:recipes/rocket_fin",
 		"ad_astra:recipes/wheel",

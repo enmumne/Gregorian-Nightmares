@@ -410,7 +410,7 @@ MIMachineEvents.registerMachines(event => {
 		// English name, internal name, recipe type (see above), list of tiers (can be bronze/steel/electric)
 		"Vacuum Chamber", "vacuum_chamber", VACUUM, ["steel", "electric"],
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
-		175, event.progressBar(84, 33, "extract"), event.efficiencyBar(28, 65), event.energyBar(15, 33),
+		175, event.progressBar(79, 43, "extract"), event.efficiencyBar(28, 65), event.energyBar(15, 33),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
 		4, 4, 0, 0,
 		// Capacity for fluid slots

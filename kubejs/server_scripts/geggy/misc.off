@@ -1,6 +1,93 @@
 ServerEvents.recipes(event => {
 
 	event.remove([
+		"betternether:cincinnasite_pickaxe",
+		"betternether:nether_ruby_pickaxe",
+		
+		"oxidized:rose_gold_pickaxe",
+		
+		"soulsweapons:moonstone_pickaxe",
+		
+		"twilightforest:equipment/ironwood_pickaxe",
+		"twilightforest:equipment/fiery_pickaxe",
+		"twilightforest:equipment/steeleaf_pickaxe",
+		"twilightforest:equipment/knightmetal_pickaxe",
+		"twilightforest:equipment/giant_pickaxe",
+		
+		"betternether:cincinnasite_axe",
+		"betternether:nether_ruby_axe",
+		
+		"oxidized:rose_gold_axe",
+		
+		"betternether:cincinnasite_sword",
+		"betternether:nether_ruby_sword",
+		
+		"oxidized:rose_gold_sword",
+		"oxidized:rose_gold_hoe",
+		"oxidized:rose_gold_shovel",
+		
+		"betternether:cincinnasite_shovel",
+		"betternether:cincinnasite_hoe",
+		"farmersknives:cincinnasite_knife",
+		
+		"betternether:nether_ruby_axe",
+		"betternether:nether_ruby_shovel",
+		"betternether:nether_ruby_hoe",
+		"farmersknives:nether_ruby_knife",
+		
+		"betternether:cincinnasite_chestplate",
+		"betternether:cincinnasite_helmet",
+		"betternether:cincinnasite_boots",
+		"betternether:cincinnasite_leggings",
+		"betternether:nether_ruby_chestplate",
+		"betternether:nether_ruby_helmet",
+		"betternether:nether_ruby_boots",
+		"betternether:nether_ruby_leggings",
+		"betterend:thallasium_chestplate",
+		"betterend:thallasium_helmet",
+		"betterend:thallasium_boots",
+		"betterend:thallasium_leggings",
+		"betterend:terminite_chestplate",
+		"betterend:terminite_helmet",
+		"betterend:terminite_boots",
+		"betterend:terminite_leggings",
+		
+		"betternether:nether_reed_crafting_table",
+		"betternether:stalagnate_crafting_table",
+		"betternether:willow_crafting_table",
+		"betternether:wart_crafting_table",
+		"betternether:crafting_table_crimson",
+		"betternether:crafting_table_warped",
+		"betternether:rubeus_crafting_table",
+		"betternether:mushroom_fir_crafting_table",
+		"betternether:nether_mushroom_crafting_table",
+		"betternether:anchor_tree_crafting_table",
+		"betternether:nether_sakura_crafting_table",
+		
+		"betternether:nether_reed_boat",
+		"betternether:stalagnate_boat",
+		"betternether:willow_boat",
+		"betternether:wart_boat",
+		"betternether:crimson_boat",
+		"betternether:warped_boat",
+		"betternether:rubeus_boat",
+		"betternether:mushroom_fir_boat",
+		"betternether:nether_mushroom_boat",
+		"betternether:anchor_tree_boat",
+		"betternether:nether_sakura_boat",
+		
+		"betterend:mossy_glowshroom_crafting_table",
+		"betterend:pythadendron_crafting_table",
+		"betterend:end_lotus_crafting_table",
+		"betterend:lacugrove_crafting_table",
+		"betterend:dragon_tree_crafting_table",
+		"betterend:tenanea_crafting_table",
+		"betterend:helix_tree_crafting_table",
+		"betterend:umbrella_tree_crafting_table",
+		"betterend:jellyshroom_crafting_table",
+		"betterend:lucernia_crafting_table",
+	
+		"betterend:additional_iron",
 		"betternether:shield",
 		"betternether:nether_reed_chest",
 		"betternether:stalagnate_chest",
@@ -31,10 +118,374 @@ ServerEvents.recipes(event => {
 		"byg:byg_chest",
 		"byg:rainbow_eucalpytus_door",
 		"oxidized:coppper_ingot_from_nuggets",
+		"oxidized:brick_kiln_smelting",
 		"vinery:cooking_pot",
 		"twilightforest:equipment/knightmetal_shield"
 	])
 	
+	event.shaped('betternether:nether_reed_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:nether_reed_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:stalagnate_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:stalagnate_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:willow_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:willow_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:wart_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:wart_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:crafting_table_crimson', [
+		'ABA'
+	], {
+		A: 'minecraft:crimson_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:crafting_table_warped', [
+		'ABA'
+	], {
+		A: 'minecraft:warped_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:rubeus_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:rubeus_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:mushroom_fir_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:mushroom_fir_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:nether_mushroom_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:nether_mushroom_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:anchor_tree_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:anchor_tree_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betternether:nether_sakura_crafting_table', [
+		'ABA'
+	], {
+		A: 'betternether:nether_sakura_planks',
+		B: 'minecraft:crafting_table'
+	})
+	
+	event.shaped('betternether:nether_reed_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:nether_reed_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:stalagnate_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:stalagnate_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:willow_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:willow_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:wart_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:wart_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:crimson_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'minecraft:crimson_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:warped_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'minecraft:warped_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:rubeus_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:rubeus_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:mushroom_fir_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:mushroom_fir_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:nether_mushroom_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:nether_mushroom_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:anchor_tree_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:anchor_tree_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	event.shaped('betternether:nether_sakura_boat', [
+		'ACA',
+		'FFF'
+	], {
+		A: 'betternether:nether_sakura_planks',
+		C: 'supplementaries:rope',
+		F: 'geggy:j_planks'
+	})
+	
+	event.shaped('betterend:mossy_glowshroom_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:mossy_glowshroom_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:pythadendron_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:pythadendron_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:end_lotus_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:end_lotus_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:lacugrove_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:lacugrove_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:dragon_tree_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:dragon_tree_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:tenanea_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:tenanea_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:helix_tree_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:helix_tree_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:umbrella_tree_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:umbrella_tree_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:jellyshroom_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:jellyshroom_planks',
+		B: 'minecraft:crafting_table'
+	})
+	event.shaped('betterend:lucernia_crafting_table', [
+		'ABA'
+	], {
+		A: 'betterend:lucernia_planks',
+		B: 'minecraft:crafting_table'
+	})
+	
+	event.smithing(
+		'betternether:cincinnasite_pickaxe',                     
+		'minecraft:iron_pickaxe',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_sword',                     
+		'minecraft:iron_sword',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_axe',                     
+		'minecraft:iron_axe',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_hoe',                     
+		'minecraft:iron_hoe',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_shovel',                     
+		'minecraft:iron_shovel',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'farmersknives:cincinnasite_knife',                     
+		'farmersdelight:iron_knife',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	
+	event.smithing(
+		'betternether:nether_ruby_pickaxe',                     
+		'minecraft:netherite_pickaxe',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_sword',                     
+		'minecraft:netherite_sword',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_axe',                     
+		'minecraft:netherite_axe',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_hoe',                     
+		'minecraft:netherite_hoe',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_shovel',                     
+		'minecraft:netherite_shovel',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'farmersknives:nether_ruby_knife',                     
+		'farmersdelight:netherite_knife',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	
+	event.smithing(
+		'betternether:cincinnasite_chestplate',                     
+		'minecraft:iron_chestplate',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_helmet',                     
+		'minecraft:iron_helmet',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_leggings',                     
+		'minecraft:iron_leggings',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	event.smithing(
+		'betternether:cincinnasite_boots',                     
+		'minecraft:iron_boots',                       
+		'expert_armor:betternether/cincinnasite_plate'       
+	)
+	
+	event.smithing(
+		'betternether:nether_ruby_chestplate',                     
+		'minecraft:diamond_chestplate',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_helmet',                     
+		'minecraft:diamond_helmet',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_leggings',                     
+		'minecraft:diamond_leggings',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	event.smithing(
+		'betternether:nether_ruby_boots',                     
+		'minecraft:diamond_boots',                       
+		'expert_armor:betternether/nether_ruby_plate'       
+	)
+	
+	event.smithing(
+		'betterend:thallasium_chestplate',                     
+		'minecraft:iron_chestplate',                       
+		'expert_armor:betterend/thallasium_plate'       
+	)
+	event.smithing(
+		'betterend:thallasium_helmet',                     
+		'minecraft:iron_helmet',                       
+		'expert_armor:betterend/thallasium_plate'       
+	)
+	event.smithing(
+		'betterend:thallasium_leggings',                     
+		'minecraft:iron_leggings',                       
+		'expert_armor:betterend/thallasium_plate'       
+	)
+	event.smithing(
+		'betterend:thallasium_boots',                     
+		'minecraft:iron_boots',                       
+		'expert_armor:betterend/thallasium_plate'       
+	)
+	
+	event.smithing(
+		'betterend:terminite_chestplate',                     
+		'minecraft:diamond_chestplate',                       
+		'expert_armor:betterend/terminite_plate'       
+	)
+	event.smithing(
+		'betterend:terminite_helmet',                     
+		'minecraft:diamond_helmet',                       
+		'expert_armor:betterend/terminite_plate'       
+	)
+	event.smithing(
+		'betterend:terminite_leggings',                     
+		'minecraft:diamond_leggings',                       
+		'expert_armor:betterend/terminite_plate'       
+	)
+	event.smithing(
+		'betterend:terminite_boots',                     
+		'minecraft:diamond_boots',                       
+		'expert_armor:betterend/terminite_plate'       
+	)
+		
 	event.shaped('vinery:barrel', [
 		'ABA',
 		'   ',
@@ -826,6 +1277,43 @@ ServerEvents.recipes(event => {
 			{item: "ecologics:flowering_azalea_planks", amount: 6}
 		]
 	})
+	
+	// recycle
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "byg:soapstone"}],
+		"results": [
+			{"count": 1, "chance": 0.1, "item": "geghilarity:mica_dust"},
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:lead_tiny_dust"},
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:tin_tiny_dust"},
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:coal_tiny_dust"}
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "byg:dacite_cobblestone"}],
+		"results": [
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:iron_tiny_dust"},
+			{"count": 1, "chance": 0.05, "item": "modern_industrialization:nickel_tiny_dust"},
+			{"count": 1, "chance": 0.03, "item": "modern_industrialization:salt_tiny_dust"},
+			{"count": 1, "chance": 0.02, "item": "modern_industrialization:antimony_tiny_dust"}
+			
+		]
+	})
+	event.custom({
+		"type": "create:crushing",
+		"processingTime": 100,
+		"ingredients": [{"item": "byg:travertine"}],
+		"results": [
+			{"count": 1, "chance": 0.1, "item": "magick:calcite_dust"},
+			{"count": 1, "chance": 0.05, "item": "geggy:limestone_dust"},
+			{"count": 1, "chance": 0.05, "item": "geghilarity:tiny_zinc_dust"},
+			{"count": 1, "chance": 0.02, "item": "modern_industrialization:antimony_tiny_dust"}
+		]
+	})
+	
 	
 })
 
