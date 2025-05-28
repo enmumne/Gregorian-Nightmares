@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	["WWW",
+	 "W W",
+	 "WWW"],
+	"key":
+	{
+		"W":
+		{
+			"tag": "c:wires/iron"
+		}
+	},
+	"result":{
+		"item": "createaddition:barbed_wire",
+		"count": 1
+	}
+}

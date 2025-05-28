@@ -568,7 +568,7 @@ ServerEvents.recipes(event => {
 	
 	// blaze mixer section, sequence with steel, crafting table tin + blaze rod
 	
-	event.shaped('geggy:blackened_rod', [
+	event.shaped('2x geggy:blackened_rod', [
 		'AB ',
 		'   ',
 		'   '
@@ -578,9 +578,9 @@ ServerEvents.recipes(event => {
 
 	})
 	event.shaped('geggy:blackened_plate', [
-		'B B',
-		' A ',
-		'B B'
+		'BAB',
+		'   ',
+		'   '
 	], {
 		A: 'modern_industrialization:tin_plate',
 		B: 'minecraft:blaze_powder'
@@ -1733,13 +1733,23 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:compacting",
 		"ingredients": [
-			{"item": "modern_industrialization:copper_dust"},
-			{"item": "kubejs:zinc_dust"},
+			{"item": "kubejs:brass_dust"}, {"item": "kubejs:brass_dust"},
 			{"item": "minecraft:blaze_powder"}
 		],
 		"results": [
-			{"count": 2, "item": "create:brass_ingot"}
+			{"item": "geggy:brass_lump"}
 		]
+	})
+	
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:brass_lump"}
+		],
+		processingTime: 150,
+		results: [{
+			"count": 2, "item": "create:brass_ingot"
+		}]
 	})
 	
 	// coal
@@ -2470,18 +2480,7 @@ ServerEvents.recipes(event => {
 		"ingredients": [{"item": "create:raw_zinc"}],
 		"results": [{"amount": 10368, "fluid": "geggy:liquid_zinc"}]
 	})
-	event.custom({
-		"type": "create:mixing",
-		"heatRequirement": "heated",
-		"ingredients": [{"item": "create:zinc_ingot"}],
-		"results": [{"amount": 11016, "fluid": "geggy:liquid_zinc"}]
-	})
-	event.custom({
-		"type": "create:mixing",
-		"heatRequirement": "heated",
-		"ingredients": [{"item": "create:zinc_nugget"}],
-		"results": [{"amount": 1215, "fluid": "geggy:liquid_zinc"}]
-	})
+
 	event.custom({
 		"type": "create:mixing",
 		"heatRequirement": "heated",
@@ -2828,7 +2827,6 @@ ServerEvents.recipes(event => {
 		"type": "create:mixing",
 		"heatRequirement": "heated",
 		"ingredients": [{"item": "minecraft:blaze_powder"},{"item": "minecraft:blaze_powder"},
-			{"item": "minecraft:blaze_powder"},{"item": "minecraft:blaze_powder"},
 			{"item": "modern_industrialization:tin_plate"}, {"item": "modern_industrialization:tin_plate"},
 			{"item": "modern_industrialization:tin_plate"}, {"item": "modern_industrialization:tin_plate"}	
 			],
@@ -2838,8 +2836,7 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:mixing",
 		"heatRequirement": "heated",
-		"ingredients": [{"item": "minecraft:blaze_rod"}, {"item": "minecraft:blaze_rod"},
-			{"item": "modern_industrialization:tin_rod"}, {"item": "modern_industrialization:tin_rod"},
+		"ingredients": [{"item": "minecraft:blaze_rod"}, {"item": "modern_industrialization:tin_rod"},
 			{"item": "modern_industrialization:tin_rod"}, {"item": "modern_industrialization:tin_rod"}],
 		"results": [{"count": 4, "item": "geggy:blackened_rod"}] 
 	})

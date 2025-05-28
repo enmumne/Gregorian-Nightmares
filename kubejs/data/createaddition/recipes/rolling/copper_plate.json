@@ -1,0 +1,10 @@
+{
+	"type":"createaddition:rolling",
+	"input": {
+      	"item": "geggy:polished_copper_plate"
+	},
+	"result": {
+		"item": "createaddition:copper_wire",
+		"count": 2
+	}
+}

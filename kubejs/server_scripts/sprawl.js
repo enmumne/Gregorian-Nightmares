@@ -153,6 +153,14 @@ ServerEvents.recipes(event => {
 		'B  ',
 		'   '
 	], {
+		A: 'gegology:phosphor_dust',
+		B: 'minecraft:stick'
+	})
+	event.shaped('6x geggy:unlit_torch', [
+		'A  ',
+		'B  ',
+		'   '
+	], {
 		A: 'modern_industrialization:coke_dust',
 		B: 'minecraft:stick'
 	})
@@ -5764,7 +5772,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geghilarity:alumina", amount: 1}
 		],
 		fluid_outputs: [	
-			{fluid: "geghilarity:molten_alumina", amount: 144}
+			{fluid: "geghilarity:molten_alumina", amount: 504}
 		]
 	})
 	event.custom({ 
@@ -6068,7 +6076,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "modern_industrialization:inductor", amount: 2},
 			{item: "powah:energy_cable_hardened", amount: 3},
 			{item: "geggy:magnetic_iron_rod", amount: 1},
-			{item: "kibe:express_conveyor_belt", amount: 1},
+			{item: "modern_industrialization:conveyor", amount: 1},
 			{item: "modern_industrialization:electronic_circuit", amount: 1},
 			{item: "modern_industrialization:advanced_machine_hull", amount: 1}
 		],
@@ -8017,11 +8025,12 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	event.shaped('geggy:simple_pipe_motor', [
 		'CB ',
 		'BAB',
-		' BC'
+		'DBC'
 	], {
 		A: 'geggy:magnetic_iron_rod',
 		B: 'modern_industrialization:copper_wire',
-		C: 'modern_industrialization:tin_curved_plate'
+		C: 'modern_industrialization:tin_curved_plate',
+		D: 'geghilarity:cobalt_dust'
 	})
 	
 	event.custom({ 

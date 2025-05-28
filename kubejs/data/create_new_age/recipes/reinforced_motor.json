@@ -1,0 +1,36 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": true,
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "D": {
+      "item": "create_new_age:overcharged_diamond"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "c": {
+      "item": "create:brass_casing"
+    },
+    "I": {
+      "tag": "c:iron_plates"
+    },
+	"L": {
+      "item": "create_new_age:advanced_motor"
+    }
+  },
+  "pattern": [
+    "dDIId",
+    "DcRLS",
+    "dDIId"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:reinforced_motor"
+  }
+}

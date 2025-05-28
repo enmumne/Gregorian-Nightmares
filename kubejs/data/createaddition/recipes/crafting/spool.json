@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	["P",
+	 "N",
+	 "P"],
+	"key":
+	{
+		"P":
+		{
+			"item": "geggy:treated_plank"
+		},
+		"N":
+		{
+			"item": "geggy:reinforced_tool_rod"
+		}
+	},
+	"result":{
+		"item": "createaddition:spool",
+		"count": 1
+	}
+}

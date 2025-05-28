@@ -165,25 +165,38 @@ Ingredient.of('@chipped').stacks.forEach(item => {
 const HID = [
  "minecraft:wooden_pickaxe",
  "minecraft:stone_pickaxe",
- "extended_drawers:connector",
- "extended_drawers:access_point",
- "modern_industrialization:forge_hammer",
- "modern_industrialization:copper_nugget", 
+ "modern_industrialization:forge_hammer",	
+ "modern_industrialization:iron_hammer",
+ "modern_industrialization:steel_hammer",
+ "modern_industrialization:diamond_hammer",
+ "modern_industrialization:netherite_hammer",
+ "additionaladditions:rope",
  "vinery:cooking_pot",
  "create:copper_sheet",
  "create:iron_sheet",
  "create:golden_sheet",
+ "createaddition:electrum_ingot",
+ "createaddition:electrum_nugget",
+ "createaddition:electrum_sheet",
+ "createaddition:zinc_sheet",
+ "createaddition:copper_rod",
+ "createaddition:iron_rod",
+ "createaddition:gold_rod",
+ "createaddition:electrum_rod",
+ "createaddition:brass_rod",
+ "createaddition:electrum_amulet",
+ "moderndynamics:lv_cable",
+ "moderndynamics:mv_cable",
+ "moderndynamics:hv_cable",
+ "moderndynamics:ev_cable",
+ "moderndynamics:superconductor_cable",
  "kibe:trash_can",
  "kibe:entangled_bag",
- "kibe:entangled_chest",
  "kibe:entangled_tank",
  "kibe:entangled_bucket",
  "kibe:void_bucket",
  "kibe:big_torch",
- "oxidized:copper_nugget",
- "twilightforest:uncrafting_table",
  "ad_astra:steel_plate",
- "ad_astra:steel_ingot",
  "ad_astra:iron_rod",
  "ad_astra:iron_plate",
  "ad_astra:steel_nugget"
@@ -196,7 +209,6 @@ const HID = [
 REIEvents.removeCategories(event => {
     event.remove('vinery:cooking_pot_display')
 	event.remove('vinery:cooking_pot')
-	event.remove('twilightforest:uncrafting_table')
 })
 
 //ClientEvents.loggedIn(e => e.server.runCommandSilent('/kubejs reload client_scripts'))

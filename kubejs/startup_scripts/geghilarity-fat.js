@@ -80,9 +80,9 @@ let CRACKINGUNIT;
 
 let SMOKESTACK;
 
-let SMELTER;
+let MELTER;
 let CASTER;
-let ESMELTER;
+let EMELTER;
 let ECASTER;
 
 let STEAMBOIL;
@@ -184,7 +184,7 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidInputs()	
 		.withItemOutputs();
 		
-	SMELTER = event.register('smelter')
+	MELTER = event.register('melter')
 		.withItemInputs()	
 		.withFluidOutputs();
 
@@ -193,7 +193,7 @@ MIMachineEvents.registerRecipeTypes(event => {
         .withFluidInputs()
         .withItemOutputs();	
 		
-	ESMELTER = event.register('electric_smelter')
+	EMELTER = event.register('electric_melter')
 		.withItemInputs()	
 		.withFluidOutputs();
 
@@ -914,13 +914,13 @@ MIMachineEvents.registerMachines(event => {
         "steel_casing", "smoke_stack", true, false, true,
     );
 	
-	const smelterHatch = event.hatchOf("item_input", "fluid_input", "fluid_output");
+	const melterHatch = event.hatchOf("item_input", "fluid_input", "fluid_output");
 
-    const smelterShape = event.layeredShape("bronze_casing", [
+    const melterShape = event.layeredShape("bronze_casing", [
 		[ "HH", "HH", "C#", "BB", "DD",],
 	
     ])
-        .key("H", bronzeplatedbricks, smelterHatch)
+        .key("H", bronzeplatedbricks, melterHatch)
 		.key("B", normobrick, event.noHatch())
 		.key("C", bronzepipe, event.noHatch())
 		.key("D", tchimney, event.noHatch())
@@ -928,7 +928,7 @@ MIMachineEvents.registerMachines(event => {
 		
 	event.simpleSteamCraftingMultiBlock(
         // English name, internal name, recipe type, multiblock shape
-        "Steam Smelter", "smelter", SMELTER, smelterShape,
+        "Steam Melter", "melter", MELTER, melterShape,
         // REI progress bar
         event.progressBar(91, 33, "furnace"),
         // REI item inputs, item outputs, fluid inputs, fluid outputs
@@ -936,12 +936,12 @@ MIMachineEvents.registerMachines(event => {
         itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => {},
         fluidInputs => {}, fluidOutputs => fluidOutputs.addSlots(135, 54, 2, 1),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "bronze_plated_bricks", "smelter", true, false, false,
+        "bronze_plated_bricks", "melter", true, false, false,
     );
 	
 	event.simpleElectricCraftingMultiBlock(
         // English name, internal name, recipe type, multiblock shape
-        "Electric Smelter", "electric_smelter", ESMELTER, smelterShape,
+        "Electric Melter", "electric_melter", EMELTER, melterShape,
         // REI progress bar
         event.progressBar(91, 33, "furnace"),
         // REI item inputs, item outputs, fluid inputs, fluid outputs
@@ -949,7 +949,7 @@ MIMachineEvents.registerMachines(event => {
         itemInputs => itemInputs.addSlots(54, 35, 2, 1), itemOutputs => {},
         fluidInputs => {}, fluidOutputs => fluidOutputs.addSlots(135, 54, 2, 1),
         // casing, overlay folder, front overlay?, top overlay?, side overlay?
-        "steel_casing", "electric_smelter", true, false, false,
+        "steel_casing", "electric_melter", true, false, false,
     );
 	
 	const casterHatch = event.hatchOf("item_input", "item_output", "fluid_input");

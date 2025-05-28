@@ -12,6 +12,13 @@ StartupEvents.registry('block', event => {
 	event.create('geggy:andesite_casing_4', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_5', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	
+	event.create('gegology:saphirite_ore', 'cardinal').material('stone').displayName('Saphirite Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').tagBlock('c:obsidian').requiresTool(true)
+	event.create('gegology:jivolite_ore', 'cardinal').material('stone').displayName('Jivolite Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).tagBlock('c:obsidian').requiresTool(true)
+	event.create('gegology:stiratite_ore', 'cardinal').material('stone').displayName('Stiratite Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).tagBlock('c:obsidian').requiresTool(true)
+	event.create('gegology:crotinium_ore', 'cardinal').material('stone').displayName('Crotinum Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).tagBlock('c:obsidian').requiresTool(true)
+	event.create('gegology:rubyte_ore', 'cardinal').material('stone').displayName('Rubyte Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).tagBlock('c:obsidian').requiresTool(true)
+	event.create('gegology:sheldon_ore', 'cardinal').material('stone').displayName('Sheldonite Ore').hardness(200).tagBlock('minecraft:mineable/pickaxe').requiresTool(true).tagBlock('c:obsidian').requiresTool(true)
+	
 	/*
 	let andesiteblock = event.create('geggy:andesite_block').material('stone').displayName('Andesite Block').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	
@@ -956,6 +963,122 @@ WorldgenEvents.add(event => {
 				
         ore.size = 9 
         ore.noSurface = 0.0 
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	///////////////
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_sa'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:saphirite_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:saphirite_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(105),
+					anchors.absolute(230)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_ji'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:jivolite_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:jivolite_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(85),
+					anchors.absolute(200)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_sti'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:stiratite_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:stiratite_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(65),
+					anchors.absolute(180)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_cro'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:crotinium_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:crotinium_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(45),
+					anchors.absolute(150)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_ru'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:rubyte_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:rubyte_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(25),
+					anchors.absolute(120)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
+        ore.worldgenLayer = "underground_ores"		
+	})
+	
+	event.addOre((ore) => {
+		ore.id = 'geggy:eden_sh'
+		ore.biomes = /^edenring:.*/
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'gegology:sheldon_ore'),
+		ore.addTarget('#minecraft:deepslate_ore_replaceables', 'gegology:sheldon_ore'),
+		
+		ore.count([1])
+				.squared()
+				.triangleHeight(
+					anchors.absolute(5),
+					anchors.absolute(100)	 
+				)								 
+				
+        ore.size = 4 
+		ore.chance = 5
+        ore.noSurface = 1.0  
         ore.worldgenLayer = "underground_ores"		
 	})
 	

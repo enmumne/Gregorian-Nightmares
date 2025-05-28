@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	[" C ",
+	 "AZA",
+	 " T "],
+	"key":
+	{
+		"Z":
+		{
+			"item": "createdeco:gold_coinstack"
+		},
+		"C":
+		{
+			"item": "geggy:galvanized_steel_plate"
+		},
+		"A":
+		{
+			"item": "geggy:galvanized_steel_curved_plate"
+		},
+		"T":
+		{
+			"item": "minecraft:redstone_torch"
+		}
+	},
+	"result":{
+		"item": "createaddition:capacitor",
+		"count": 1
+	}
+}

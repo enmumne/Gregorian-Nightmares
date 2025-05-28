@@ -1,0 +1,10 @@
+{
+	"type":"createaddition:rolling",
+	"input": {
+      	"tag": "c:electrum_plates"
+	},
+	"result": {
+		"item": "createaddition:electrum_wire",
+		"count": 2
+	}
+}

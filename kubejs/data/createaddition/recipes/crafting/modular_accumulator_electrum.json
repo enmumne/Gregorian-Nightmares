@@ -1,0 +1,34 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern":
+	[" R ",
+	 "CBC",
+	 "DWD"],
+	"key":
+	{
+		"R":
+		{
+			"item": "modern_industrialization:analog_circuit"
+		},
+		"B":
+		{
+			"item": "create:brass_casing"
+		},
+		"C":
+		{
+			"item": "createaddition:capacitor"
+		},
+		"D":
+		{
+			"item": "modern_industrialization:sodium_battery"
+		},
+		"W":
+		{
+			"item": "modern_industrialization:electrum_wire"
+		}
+	},
+	"result":{
+		"item": "createaddition:modular_accumulator",
+		"count": 1
+	}
+}

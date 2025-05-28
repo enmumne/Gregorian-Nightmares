@@ -1,0 +1,10 @@
+{
+	"type":"createaddition:rolling",
+	"input": {
+      	"item": "modern_industrialization:copper_rod"
+	},
+	"result": {
+		"item": "modern_industrialization:copper_ring",
+		"count": 1
+	}
+}

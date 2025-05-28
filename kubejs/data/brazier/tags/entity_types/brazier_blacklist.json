@@ -10,10 +10,6 @@
     "minecraft:cod",
     "minecraft:squid",
     "minecraft:glow_squid",
-    "minecraft:tadpole",
-	"charm:coral_squid",
-	"minecraft:bat",
-	"minecraft:dolphin"
-	
+    "minecraft:tadpole"
   ]
 }

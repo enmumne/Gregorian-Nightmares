@@ -1030,12 +1030,13 @@ ServerEvents.recipes(event => {
 		"A": {"item": "modern_industrialization:steel_rod_magnetic"},
 		"E": {"item": "modern_industrialization:copper_wire"},
 		"F": {"item": "powah:energy_cable_starter"},
-		"G": {"item": "geggy:galvanized_steel_rod"}
+		"G": {"item": "geggy:galvanized_steel_rod"},
+		"H": {"item": "geghilarity:cobalt_dust"}
 		},
 		pattern: [
 			"FEG",
 			"EAE",
-			"GEF"
+			"GEH"
 		],
 		result: {
 			"item": "modern_industrialization:motor"
@@ -1186,17 +1187,26 @@ ServerEvents.recipes(event => {
 
 
 	event.smelting("create:zinc_ingot", "kubejs:zinc_dust")
+	
+	event.shaped("3x kubejs:brass_dust", [
+		"BB ",
+		"BA ",
+		"   ",
+	], {
+		B: "modern_industrialization:copper_dust",
+		A: "kubejs:zinc_dust"
+	})
 
 	event.custom({ 
 		type: "modern_industrialization:mixer",
 			eu: 2,
 			duration: 100,
 			item_inputs: [
-				{item: "modern_industrialization:copper_dust", amount: 1},
+				{item: "modern_industrialization:copper_dust", amount: 3},
 				{item: "kubejs:zinc_dust", amount: 1}
 			],
 			item_outputs: [
-				{item: "kubejs:brass_dust"}
+				{item: "kubejs:brass_dust", amount: 4}
 			]
 		}
 	) 
@@ -1204,9 +1214,14 @@ ServerEvents.recipes(event => {
 	//event.smelting("create:brass_ingot", ["kubejs:brass_dust"])
 	event.custom({
 			"type": "create:mixing",
+			"ingredients": [{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},{"item": "modern_industrialization:copper_dust"},
+			{"item": "kubejs:zinc_dust"}],
+			"results": [{"count": 3, "item": "kubejs:brass_dust"}]
+	})
+	event.custom({
+			"type": "create:mixing",
 			"heatRequirement": "heated",
-			"ingredients": [{"item": "modern_industrialization:copper_dust"},{"item": "kubejs:zinc_dust"}],
-			//"ingredients": [{count: 2, "item": "modern_industrialization:iron_dust"}, {"item": "modern_industrialization:nickel_dust"}],
+			"ingredients": [{"item": "kubejs:brass_dust"}],
 			"results": [{"item": "create:brass_ingot"}]
 	})
 
@@ -1352,10 +1367,10 @@ ServerEvents.recipes(event => {
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 8,
-		duration: 6000,
+		duration: 3000,
 		item_inputs: [
 			{item: "create:empty_blaze_burner", amount: 1},
-			{item: "minecraft:blaze_powder", amount: 10}
+			{item: "minecraft:blaze_powder", amount: 4}
 		],
 		fluid_inputs: [
 			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000}

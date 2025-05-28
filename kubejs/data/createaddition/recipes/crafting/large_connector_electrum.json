@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+		    "item": "modern_industrialization:gold_rod"
+		},
+		{
+		    "item": "modern_industrialization:electrum_wire"
+		},
+		{
+		    "item": "create:andesite_alloy"
+		},
+		{
+		    "item": "geggy:sticky_resin"
+		}
+	],
+	"result":{
+		"item": "createaddition:large_connector",
+		"count": 1
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "type": "create:mechanical_crafting",
+  "pattern": [
+  	"  A  ",
+  	" IGI ",
+    "ZSRSZ",
+    " ZCZ "
+  ],
+  "key": {
+    "C": {
+      "item": "createaddition:capacitor"
+    },
+    "I": {
+      "tag": "c:iron_plates"
+    },
+    "R": {
+      "item": "modern_industrialization:redstone_battery"
+    },
+    "S": {
+      "item": "modern_industrialization:cupronickel_coil"
+    },
+	"G": {
+      "item": "modern_industrialization:electrum_fine_wire"
+    },
+	"Z": {
+      "item": "geggy:galvanized_steel_plate"
+    },
+    "A": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "result": {
+    "item": "createaddition:alternator"
+  }
+}

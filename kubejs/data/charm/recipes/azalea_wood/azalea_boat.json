@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "key": {
+    "#": {
+      "item": "charm:azalea_planks"
+    },
+	"F": {
+		"item": "geggy:j_planks"
+	},
+	"C": {
+		"item": "supplementaries:rope"
+	}		
+  },
+  "pattern": [
+    "#C#",
+    "FFF"
+  ],
+  "result": {
+    "item": "charm:azalea_boat"
+  }
+}

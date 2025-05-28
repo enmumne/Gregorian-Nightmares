@@ -1,0 +1,32 @@
+{
+  "type": "create:mechanical_crafting",
+  "pattern": [
+  	"  A  ",
+    " BSB ",
+    "ZSRSZ",
+    " ZCZ "
+  ],
+  "key": {
+  	"A": {
+      "item": "create:andesite_alloy"
+    },
+    "C": {
+      "item": "createaddition:capacitor"
+    },
+    "B": {
+      "tag": "c:brass_plates"
+    },
+    "R": {
+      "item": "modern_industrialization:redstone_battery"
+    },
+	"Z": {
+      "item": "modern_industrialization:steel_plate"
+    },
+    "S": {
+      "item": "createaddition:copper_spool"
+    }
+  },
+  "result": {
+    "item": "createaddition:electric_motor"
+  }
+}

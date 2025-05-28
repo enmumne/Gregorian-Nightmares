@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+		    "item": "modern_industrialization:copper_rod"
+		},
+		{
+		    "item": "create:andesite_alloy"
+		},
+		{
+		    "item": "geggy:sticky_resin"
+		}
+	],
+	"result":{
+		"item": "createaddition:connector",
+		"count": 1
+	}
+}

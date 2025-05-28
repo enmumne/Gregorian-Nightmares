@@ -1787,10 +1787,11 @@ ServerEvents.recipes(event => {
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
-			{item: "powah:energy_cable_basic", amount: 2},
+			{item: "powah:energy_cable_basic", amount: 1},
 			{item: "modern_industrialization:steel_rod_magnetic", amount: 1},
 			{item: "geggy:galvanized_steel_rod", amount: 2},
-			{item: "modern_industrialization:copper_wire", amount: 4}
+			{item: "modern_industrialization:copper_wire", amount: 4},
+			{item: "geghilarity:cobalt_dust", amount: 1}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:motor", amount: 1}
@@ -1922,8 +1923,10 @@ ServerEvents.recipes(event => {
 		item_inputs: [ 
 			{item: "modern_industrialization:stainless_steel_rod_magnetic", amount: 1},
 			{item: "modern_industrialization:stainless_steel_rod", amount: 2},
-			{item: "powah:energy_cable_blazing", amount: 2},
-			{item: "modern_industrialization:annealed_copper_wire", amount: 4}
+			{item: "powah:energy_cable_blazing", amount: 1},
+			{item: "modern_industrialization:annealed_copper_wire", amount: 4},
+			{item: "geghilarity:cobalt_dust", amount: 1}
+			
 		],
 		item_outputs: [
 			{item: "modern_industrialization:advanced_motor", amount: 1}

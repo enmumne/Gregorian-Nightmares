@@ -459,11 +459,6 @@ StartupEvents.registry('fluid', event => {
     .noBucket
 	
 	event
-    .create('geghilarity:tin')
-	.thinTexture(0x9C9C9C)
-    .noBucket
-	
-	event
     .create('geghilarity:aluminium')
 	.thinTexture(0x5B8EAB)
     .noBucket
@@ -783,12 +778,6 @@ StartupEvents.registry('fluid', event => {
 	.create('geghilarity:liquid_osmium')
   	.displayName('Molten Osmium') 
 	.thinTexture(0x3C3DBD)
-    .noBucket
-	
-	event
-	.create('geghilarity:mtin')
-	.displayName('Molten Tin')
-	.thinTexture(0xA1A1A2)
     .noBucket
 	
 	event
@@ -3387,6 +3376,11 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0xB78158)
     .noBucket
 	
+	event
+	.create('geghilarity:nitrogen_monoxide')
+	.thinTexture(0x5185C1)
+    .noBucket
+	
    
 })
 
@@ -3470,12 +3464,11 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:rutile_dust').displayName('Rutile Dust');
 	
 	event.create('geghilarity:magnesium_dust').displayName('Magnesium Dust');
-	event.create('geghilarity:magnesium_chloride_dust').displayName('Magnesium Chloride Dust');
+	event.create('geghilarity:magnesium_chloride_dust')
 	
 	event.create('geghilarity:tungstate_dust').displayName('Tungstate Dust');
-	event.create('geghilarity:lithium_hydroxide_dust').displayName('Lithium Hydroxide Dust');
-	event.create('geghilarity:calcium_hydroxide_dust').displayName('Calcium Hydroxide Dust');
-	event.create('geghilarity:tungsten_trioxide_dust').displayName('Tungsten Trioxide Dust');
+	event.create('geghilarity:calcium_hydroxide_dust')
+	event.create('geghilarity:tungsten_trioxide_dust')
 	event.create('geghilarity:lithium_dust').displayName('Lithium Dust');
 	event.create('geghilarity:crushed_nickel').displayName('Crushed Nickel Ore');
 	event.create('geghilarity:purified_nickel_ore').displayName('Purified Nickel Ore');
@@ -3488,7 +3481,6 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:epoxy_circuit_board').displayName('Epoxy Circuit Board');
 	event.create('geghilarity:electrum_foil').displayName('Electrum Foil');
 	event.create('geghilarity:advanced_circuit_board').displayName('Advanced Circuit Board');
-	event.create('geghilarity:pyrite_dust').displayName('Pyrite Dust');
 	
 	//part 4
 	event.create('geghilarity:tiny_rock_salt_dust').displayName('Tiny Pile of Rock Salt');
@@ -3605,7 +3597,6 @@ StartupEvents.registry('item', event => {
 	
 	event.create('geghilarity:thorium-uranium_sludge_dust').displayName('Thorium-Uranium Sludge');
 	event.create('geghilarity:thorium_oxide_dust');
-	event.create('geghilarity:tiny_thorium_dust').displayName('Tiny Pile of Thorium Dust');
 	event.create('geghilarity:thorium_dust');
 	event.create('geghilarity:neodymium_oxide_dust');
 	event.create('geghilarity:yttrium_oxide_dust');
@@ -3870,7 +3861,6 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:ammonium_dimolybdate_dust')
 	event.create('geghilarity:purified_molybdenum_trioxide_dust')
 	event.create('geghilarity:potash_dust')
-	event.create('geghilarity:crushed_bastnasite_ore')
 	event.create('geghilarity:gangue_dust')
 	event.create('geghilarity:bastnasite_rare_earth_oxides_dust')
 	event.create('geghilarity:acid-leached_bastnasite_rare_earth_oxides_dust').displayName('Acid-Leached Bastnasite Rare Earth Oxides Dust')
@@ -3903,7 +3893,6 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:paraffin_wax')
 	event.create('geghilarity:cupric_oxide_dust')
 	event.create('geghilarity:impregnated_copper_oxide_catalyst_dust')
-	event.create('geghilarity:bastnasite_dust')
 	event.create('geghilarity:polyvinyl_acetate_dust')
 	event.create('geghilarity:polycarbonate_pulp')
 	event.create('geghilarity:polyvinyl_butyral_plate')

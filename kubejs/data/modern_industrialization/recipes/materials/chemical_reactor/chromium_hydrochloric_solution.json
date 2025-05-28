@@ -1,0 +1,17 @@
+{
+  "type": "modern_industrialization:chemical_reactor",
+  "eu": 8,
+  "duration": 200,
+  "item_inputs" : [
+    {"item" :  "gegology:crushed_chromite_ore",
+      "amount": 1}
+  ],
+  "fluid_inputs" : {
+    "fluid" : "modern_industrialization:hydrochloric_acid",
+    "amount": 9000
+  },
+  "fluid_outputs" : {
+    "fluid" : "modern_industrialization:chromium_hydrochloric_solution",
+    "amount" : 9000
+  }
+}
