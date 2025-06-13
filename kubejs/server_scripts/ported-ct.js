@@ -143,6 +143,66 @@ ServerEvents.recipes(event => {
 	
 	event.remove({id: 'create:crafting/materials/sand_paper'})
 	event.shapeless('create:sand_paper', ['geggy:quartz_sand', 'minecraft:paper'])
+	
+	event.shaped('geggy:clay_mold', [
+		'ABA',
+		'AAA',
+		'   '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form'
+	}).damageIngredient('geggy:wooden_form')
+	
+	event.shaped('geggy:clay_ingot_mold', [
+		'ABA',
+		'AAA',
+		'C  '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form',
+		C: 'modern_industrialization:bronze_ingot'
+	}).damageIngredient('geggy:wooden_form').replaceIngredient('modern_industrialization:bronze_ingot', 'modern_industrialization:bronze_ingot')
+	
+	event.shaped('geggy:clay_plate_mold', [
+		'ABA',
+		'AAA',
+		'C  '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form',
+		C: 'modern_industrialization:bronze_plate'
+	}).damageIngredient('geggy:wooden_form').replaceIngredient('modern_industrialization:bronze_plate', 'modern_industrialization:bronze_plate')
+	
+	event.shaped('geggy:clay_rod_mold', [
+		'ABA',
+		'AAA',
+		'C  '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form',
+		C: 'modern_industrialization:bronze_rod'
+	}).damageIngredient('geggy:wooden_form').replaceIngredient('modern_industrialization:bronze_rod', 'modern_industrialization:bronze_rod')
+	
+	event.shaped('geggy:clay_ring_mold', [
+		'ABA',
+		'AAA',
+		'C  '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form',
+		C: 'modern_industrialization:bronze_ring'
+	}).damageIngredient('geggy:wooden_form').replaceIngredient('modern_industrialization:bronze_ring', 'modern_industrialization:bronze_ring')
+	
+	event.shaped('geggy:clay_gear_mold', [
+		'ABA',
+		'AAA',
+		'C  '
+	], {
+		A: 'minecraft:clay_ball',
+		B: 'geggy:wooden_form',
+		C: 'modern_industrialization:bronze_gear'
+	}).damageIngredient('geggy:wooden_form').replaceIngredient('modern_industrialization:bronze_gear', 'modern_industrialization:bronze_gear')
+
 
 
 });	

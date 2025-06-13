@@ -3381,6 +3381,72 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0x5185C1)
     .noBucket
 	
+	//////////////
+	
+	event
+	.create('geghilarity:cobalt_sulfate_solution')
+	.thinTexture(0x53A6B3)
+    .noBucket
+	
+	event
+	.create('geghilarity:potassium_hydroxide_solution')
+	.thinTexture(0x288A66)
+    .noBucket
+	
+	event
+	.create('geghilarity:diluted_rock_salt_solution')
+	.thinTexture(0x42387C)
+    .noBucket
+	
+	event
+	.create('geghilarity:zinc_flue_gas')
+	.thinTexture(0x25242D)
+    .noBucket
+	
+	event
+	.create('geghilarity:zinc_leach')
+	.thinTexture(0x806550)
+    .noBucket
+	
+	event
+	.create('geghilarity:hot_zinc_leach')
+	.thinTexture(0xA8907E)
+    .noBucket
+	
+	event
+	.create('geghilarity:reprecipitated_zinc_leach')
+	.thinTexture(0x6B644C)
+    .noBucket
+	
+	event
+	.create('geghilarity:precipitated_zinc_leach')
+	.thinTexture(0x615A47)
+    .noBucket
+	
+	event
+	.create('geghilarity:zinc_cementation_slurry')
+	.thinTexture(0x484E5A)
+    .noBucket
+	
+	event
+	.create('geghilarity:hot_precipitated_zinc_leach')
+	.thinTexture(0x817B64)
+    .noBucket
+	
+	event
+	.create('geghilarity:reduced_zinc_leach')
+	.thinTexture(0x9E7858)
+    .noBucket
+	
+	event
+	.create('geghilarity:cadmium_sulfate_solution')
+	.thinTexture(0x3B8656)
+    .noBucket
+	
+	event
+	.create('geghilarity:purified_cadmium_solution')
+	.thinTexture(0x49AA6D)
+    .noBucket
    
 })
 
@@ -3582,7 +3648,6 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:lithium_nitride_dust');
 	event.create('geghilarity:lithium_fluoride_dust');
 	event.create('geghilarity:lithium_bistriflimide_dust');
-	event.create('geghilarity:lithium_chloride_dust');
 	event.create('geghilarity:sodium_peroxide_dust');
 	event.create('geghilarity:twoethylanthraquinone_dust').displayName('2-Ethylanthraquinone Dust');
 	event.create('geghilarity:phthalic_anhydride_dust');
@@ -4053,6 +4118,17 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:pyromellitic_dianhydride')
 	event.create('geghilarity:durene')
 	event.create('geghilarity:black_ash_dust')
+	
+	event.create('geghilarity:cadmium_sponge')
+	event.create('geghilarity:high_purity_cobalt_oxide_dust')
+	event.create('geghilarity:high_purity_cobalt_dust')
+	event.create('geghilarity:nickel_oxide_hydroxide_dust')
+	event.create('geghilarity:nickel_hydroxide_dust')
+	event.create('geghilarity:cobalt_residue_dust')
+	event.create('geghilarity:anglesite_dust')
+	event.create('geghilarity:lead-silica_residue_dust').displayName('Lead-Silica Residue Dust')
+	event.create('geghilarity:zinc_leach_residue_dust')
+	event.create('geghilarity:copper_cadmium_residue_dust')
 
 })	
 

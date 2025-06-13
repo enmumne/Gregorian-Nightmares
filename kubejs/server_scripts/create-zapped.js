@@ -97,19 +97,11 @@ ServerEvents.recipes(event => {
 		"ingredient": {
 			"item": "createaddition:copper_spool"
 		},
-		"results": [{"count": 1,"item": "modern_industrialization:copper_wire"}
+		"results": [
+			{"count": 2,"item": "modern_industrialization:copper_wire"}
 		],
 		"loops": 2,
 		"sequence": [
-			{
-				"type": "create:cutting",
-				processingTime: 200,
-				"ingredients": [
-				{"item": "create_new_age:incomplete_wire"}
-				],
-			"results": 
-				[{"item": "create_new_age:incomplete_wire"}]
-			},
 		{
 			"type": "create_new_age:energising",
 			"energy_needed": 2500,

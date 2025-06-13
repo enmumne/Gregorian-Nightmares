@@ -390,6 +390,8 @@ event.create('geggy:mold_ingot').displayName('Ingot Mold');
 event.create('geggy:mold_nugget').displayName('Nugget Mold');
 event.create('geggy:mold_plate').displayName('Plate Mold');
 event.create('geggy:mold_rod').displayName('Rod Mold');
+event.create('geggy:mold_ring').displayName('Ring Mold');
+event.create('geggy:mold_gear').displayName('Gear Mold');
 
 event.create('geggy:invar_curved_plate');
 
@@ -512,7 +514,7 @@ event.create('geggy:diamond_hoe_head');
 
 event.create('geggy:unrefined_clay');
 event.create('geggy:silty_copper_can').displayName('Silty Copper Can');
-event.create('geggy:gravel_dust');
+event.create('geggy:stone_dust');
 event.create('geggy:andesite_dust');
 event.create('geggy:andesite_mix');
 
@@ -885,7 +887,7 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
     return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
-	let gegologyore = (name, hex) => {
+	let gegologyore = (name, hex, nu) => {
 		event.create('gegology:'+name+'_ore')
 			.displayName(capitalize(name)+' Ore').texture('gegology:item/gt-ore').color(hex);
         event.create('gegology:crushed_'+name+'_ore')
@@ -903,98 +905,101 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 		event.create('gegology:'+name+'_dust')
 			.displayName(capitalize(name)+' Dust').texture('gegology:item/gt-dust').color(hex);
 		event.create('gegology:small_'+name+'_dust')
-			.displayName('Small '+capitalize(name)+' Dust').texture('gegology:item/gt-dustsmall').color(hex);	
+			.displayName('Small '+capitalize(name)+' Dust').texture('gegology:item/gt-dustsmall').color(hex);
 		event.create('gegology:tiny_'+name+'_dust')
-			.displayName('Tiny '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);	
+			.displayName('Tiny '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);		
+			
+		if (nu)	{	
 		event.create('gegology:purified_'+name+'_dust')
 			.displayName('Purified '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddust').color(hex);
 		event.create('gegology:tiny_purified_'+name+'_dust')
-			.displayName('Tiny Purified '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddusttiny').color(hex);	
+			.displayName('Tiny Purified '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddusttiny').color(hex);
+		}		
 
     };
 
 	// 78
-	gegologyore('alumina', 0x5890AD)
-	gegologyore('apatite', 0x5885B8)
-	gegologyore('arsenopyrite', 0xBEB717)
-	gegologyore('azurite', 0x537DBC)
-	gegologyore('barite', 0xA0A4B2)
-	gegologyore('bastnasite', 0x935121)
-	gegologyore('bauxite', 0x934A00)
-	gegologyore('biotite', 0x0C120C)
-	gegologyore('bromargyrite', 0x422107)
-	gegologyore('calcite', 0xB8AAA2)
-	gegologyore('cassiterite', 0xA2A2A2)
-	gegologyore('chalcopyrite', 0x76581D)
-	gegologyore('chromite', 0x170D0A)
-	gegologyore('chrysotile', 0xAAAAAA)
-	gegologyore('cinnabar', 0x850000)
-	gegologyore('clay', 0x9898A7)
-	gegologyore('cobaltite', 0x2F3191)
-	gegologyore('diatomite', 0xA6A6A6)
-	gegologyore('ferberite', 0x29251A)
-	gegologyore('fluorite', 0xAB8D6A)
-	gegologyore('galena', 0x462A46)
-	gegologyore('garnierite', 0x259334)
-	gegologyore('gibbsite', 0x8C8C93)
-	gegologyore('glowstone', 0xBCBC00)
-	gegologyore('gloomstone', 0x0EB8BC)
-	gegologyore('gypsum', 0xB1B1B1)
-	gegologyore('hematite', 0x674040)
-	gegologyore('huebnerite', 0x29251A)
-	gegologyore('ilmenite', 0x3E312C)
-	gegologyore('jade', 0x4ABC5C)
-	gegologyore('kaolinite', 0xB5ADAD)
-	gegologyore('kesterite', 0x5B875B)
-	gegologyore('magnesite', 0xB7B0B0)
-	gegologyore('malachite', 0x055C05)
-	gegologyore('mica', 0x909097)
-	gegologyore('mirabilite', 0xB1B89B)
-	gegologyore('molybdenite', 0x121212)
-	gegologyore('monazite', 0x253425)
-	gegologyore('nikolite', 0x2C8593)
-	gegologyore('opal', 0x0000BC)
-	gegologyore('pentlandite', 0x7A6F04)
-	gegologyore('peridot', 0x6FBC6F)
-	gegologyore('perlite', 0x160F16)
-	gegologyore('phosphate', 0xC2C200)
-	gegologyore('phosphorus', 0xBCBC00)
-	gegologyore('phosphorite', 0x252530)
-	gegologyore('powellite', 0xBCBC00)
-	gegologyore('pyrite', 0xBCAA3B)
-	gegologyore('pyrolusite', 0x323246)
-	gegologyore('quartzite', 0xA39191)
-	gegologyore('radium', 0xFFFFCD)
-	gegologyore('realgar', 0x9D2123)
-	gegologyore('redstone', 0x930000)
-	gegologyore('ruby', 0xBC4A4A)
-	gegologyore('rutile', 0x6E5078)
-	gegologyore('sapphire', 0x4A4A93)
-	gegologyore('scheelite', 0x93670F)
-	gegologyore('selenium', 0x4F0E0E)
-	gegologyore('sheldonite', 0x5C72A3)
-	gegologyore('smithsonite', 0x54AAA0)
-	gegologyore('soapstone', 0x466B46)
-	gegologyore('soda', 0xAAADB1)
-	gegologyore('sperrylite', 0x4B4B4B)
-	gegologyore('sphalerite', 0xA4A400)
-	gegologyore('stannite', 0x988E36)
-	gegologyore('stibnite', 0x343434)
-	gegologyore('sulfur', 0xA6A600)
-	gegologyore('tanzanite', 0x2F0093)
-    gegologyore('tetrahedrite', 0xC01E00)
-	gegologyore('thorium', 0x001E00)
-	gegologyore('topaz', 0xBB5E00)
-	gegologyore('trona', 0x636346)
-	gegologyore('tungstate', 0x29251A)
-	gegologyore('uraninite', 0x191919)
-	gegologyore('vermiculite', 0x93850B)
-	gegologyore('wolframite', 0x211E15)
-	gegologyore('wulfenite', 0xBC5E00)
-	gegologyore('zircon', 0x5E171C)
+	gegologyore('alumina', 0x5890AD, 1)
+	gegologyore('apatite', 0x5885B8, 0)
+	gegologyore('arsenopyrite', 0xBEB717, 0)
+	gegologyore('azurite', 0x537DBC, 1)
+	gegologyore('barite', 0xA0A4B2, 0)
+	gegologyore('bastnasite', 0x935121, 0)
+	gegologyore('bauxite', 0x934A00, 1)
+	gegologyore('biotite', 0x0C120C, 0)
+	gegologyore('bromargyrite', 0x422107, 1)
+	gegologyore('calcite', 0xB8AAA2, 0)
+	gegologyore('cassiterite', 0xA2A2A2, 1)
+	gegologyore('chalcopyrite', 0x76581D, 1)
+	gegologyore('chromite', 0x170D0A, 1)
+	gegologyore('chrysotile', 0xAAAAAA, 0)
+	gegologyore('cinnabar', 0x850000, 0)
+	gegologyore('clay', 0x9898A7, 0)
+	gegologyore('cobaltite', 0x2F3191, 1)
+	gegologyore('diatomite', 0xA6A6A6, 0)
+	gegologyore('ferberite', 0x29251A, 0)
+	gegologyore('fluorite', 0xAB8D6A, 0)
+	gegologyore('galena', 0x462A46, 0)
+	gegologyore('garnierite', 0x259334, 1)
+	gegologyore('gibbsite', 0x8C8C93, 0)
+	gegologyore('glowstone', 0xBCBC00, 0)
+	gegologyore('gloomstone', 0x0EB8BC, 0)
+	gegologyore('gypsum', 0xB1B1B1, 0)
+	gegologyore('hematite', 0x674040, 1)
+	gegologyore('huebnerite', 0x29251A, 1)
+	gegologyore('ilmenite', 0x3E312C, 1)
+	gegologyore('jade', 0x4ABC5C, 0)
+	gegologyore('kaolinite', 0xB5ADAD, 0)
+	gegologyore('kesterite', 0x5B875B, 1)
+	gegologyore('magnesite', 0xB7B0B0, 1)
+	gegologyore('malachite', 0x055C05, 1)
+	gegologyore('mica', 0x909097, 0)
+	gegologyore('mirabilite', 0xB1B89B, 0)
+	gegologyore('molybdenite', 0x121212, 0)
+	gegologyore('monazite', 0x253425, 0)
+	gegologyore('nikolite', 0x2C8593, 1)
+	gegologyore('opal', 0x0000BC, 0)
+	gegologyore('pentlandite', 0x7A6F04, 1)
+	gegologyore('peridot', 0x6FBC6F, 1)
+	gegologyore('perlite', 0x160F16, 0)
+	gegologyore('phosphate', 0xC2C200, 0)
+	gegologyore('phosphorus', 0xBCBC00, 0)
+	gegologyore('phosphorite', 0x252530, 0)
+	gegologyore('powellite', 0xBCBC00, 0)
+	gegologyore('pyrite', 0xBCAA3B, 1)
+	gegologyore('pyrolusite', 0x323246, 1)
+	gegologyore('quartzite', 0xA39191, 0)
+	gegologyore('radium', 0xFFFFCD, 0)
+	gegologyore('realgar', 0x9D2123, 0)
+	gegologyore('redstone', 0x930000, 0)
+	gegologyore('ruby', 0xBC4A4A, 0)
+	gegologyore('rutile', 0x6E5078, 0)
+	gegologyore('sapphire', 0x4A4A93, 0)
+	gegologyore('scheelite', 0x93670F, 1)
+	gegologyore('selenium', 0x4F0E0E, 0)
+	gegologyore('sheldonite', 0x5C72A3, 1)
+	gegologyore('smithsonite', 0x54AAA0, 1)
+	gegologyore('soapstone', 0x466B46, 0)
+	gegologyore('soda', 0xAAADB1, 0)
+	gegologyore('sperrylite', 0x4B4B4B, 1)
+	gegologyore('sphalerite', 0xA4A400, 1)
+	gegologyore('stannite', 0x988E36, 1)
+	gegologyore('stibnite', 0x343434, 1)
+	gegologyore('sulfur', 0xA6A600, 0)
+	gegologyore('tanzanite', 0x2F0093, 0)
+    gegologyore('tetrahedrite', 0xC01E00, 1)
+	gegologyore('thorium', 0x001E00, 0)
+	gegologyore('topaz', 0xBB5E00, 0)
+	gegologyore('trona', 0x636346, 0)
+	gegologyore('tungstate', 0x29251A, 1)
+	gegologyore('uraninite', 0x191919, 0)
+	gegologyore('vermiculite', 0x93850B, 0)
+	gegologyore('wolframite', 0x211E15, 1)
+	gegologyore('wulfenite', 0xBC5E00, 0)
+	gegologyore('zircon', 0x5E171C, 0)
 
 	
-	let gegologycompore = (namepr, name, hex) => {
+	let gegologycompore = (namepr, name, hex, nu) => {
 		event.create('gegology:'+namepr+'_'+name+'_ore')
 			.displayName(''+capitalize(namepr)+' '+capitalize(name)+' Ore').texture('gegology:item/gt-ore').color(hex);
         event.create('gegology:crushed_'+namepr+'_'+name+'_ore')
@@ -1014,59 +1019,61 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 		event.create('gegology:small_'+namepr+'_'+name+'_dust')
 			.displayName('Small '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dustsmall').color(hex);	
 		event.create('gegology:tiny_'+namepr+'_'+name+'_dust')
-			.displayName('Tiny '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);	
+			.displayName('Tiny '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-dusttiny').color(hex);
+
+		if (nu)	{		
 		event.create('gegology:purified_'+namepr+'_'+name+'_dust')
 			.displayName('Purified '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddust').color(hex);
 		event.create('gegology:tiny_purified_'+namepr+'_'+name+'_dust')
 			.displayName('Tiny Purified '+capitalize(namepr)+' '+capitalize(name)+' Dust').texture('gegology:item/gt-purifieddusttiny').color(hex);	
+		}	
 
     };
 	
 	// 28
-	gegologycompore('native', 'antimony', 0xA0A0AF)
-	gegologycompore('native', 'arsenic', 0x676756)
-	gegologycompore('native', 'barium', 0x616038)
-	gegologycompore('native', 'cadmium', 0x25252C)
-	gegologycompore('native', 'cerium', 0xBCBC8C)
-	gegologycompore('native', 'cobalt', 0x3B3BB8)
-	gegologycompore('native', 'copper', 0xBA5F42)
-	gegologycompore('native', 'gallium', 0xA7A7C2)
-	gegologycompore('native', 'germanium', 0xD0D0D0)
-	gegologycompore('native', 'gold', 0xC2AF3D)
-	gegologycompore('native', 'hafnium', 0x67676F)
-	gegologycompore('native', 'indium', 0x2F005E)
-	gegologycompore('native', 'iridium', 0xB1B1B5)
-	gegologycompore('native', 'lead', 0x2B1C4E)
-	gegologycompore('native', 'lithium', 0xA6A2BC)
-	gegologycompore('native', 'neodymium', 0x4A4A4A)
-	gegologycompore('native', 'nickel', 0xB8B893)
-	gegologycompore('native', 'osmium', 0x1E1E99)
-	gegologycompore('native', 'palladium', 0x4D4D4D)
-	gegologycompore('native', 'platinum', 0x4A85B8)
-	gegologycompore('native', 'rhenium', 0xBCBC93)
-	gegologycompore('native', 'rhodium', 0x6A6A6A)
-	gegologycompore('native', 'ruthenium', 0x727272)
-	gegologycompore('native', 'silver', 0xA7A7C2)
-	gegologycompore('native', 'sodium', 0x01016E)
-	gegologycompore('native', 'tin', 0xA7A7A7)
-	gegologycompore('native', 'yttrium', 0xA7BEA7)
-	gegologycompore('native', 'zinc', 0xB4ADAD)
+	gegologycompore('native', 'antimony', 0xA0A0AF, 1)
+	gegologycompore('native', 'arsenic', 0x676756, 0)
+	gegologycompore('native', 'barium', 0x616038, 0)
+	gegologycompore('native', 'cadmium', 0x25252C, 0)
+	gegologycompore('native', 'cerium', 0xBCBC8C, 0)
+	gegologycompore('native', 'cobalt', 0x3B3BB8, 1)
+	gegologycompore('native', 'copper', 0xBA5F42, 1)
+	gegologycompore('native', 'gallium', 0xA7A7C2, 0)
+	gegologycompore('native', 'germanium', 0xD0D0D0, 0)
+	gegologycompore('native', 'gold', 0xC2AF3D, 1)
+	gegologycompore('native', 'hafnium', 0x67676F, 0)
+	gegologycompore('native', 'indium', 0x2F005E, 0)
+	gegologycompore('native', 'iridium', 0xB1B1B5, 1)
+	gegologycompore('native', 'lead', 0x2B1C4E, 0)
+	gegologycompore('native', 'lithium', 0xA6A2BC, 0)
+	gegologycompore('native', 'neodymium', 0x4A4A4A, 0)
+	gegologycompore('native', 'nickel', 0xB8B893, 1)
+	gegologycompore('native', 'osmium', 0x1E1E99, 1)
+	gegologycompore('native', 'palladium', 0x4D4D4D, 1)
+	gegologycompore('native', 'platinum', 0x4A85B8, 1)
+	gegologycompore('native', 'rhenium', 0xBCBC93, 0)
+	gegologycompore('native', 'rhodium', 0x6A6A6A, 1)
+	gegologycompore('native', 'ruthenium', 0x727272, 1)
+	gegologycompore('native', 'silver', 0xA7A7C2, 0)
+	gegologycompore('native', 'sodium', 0x01016E, 0)
+	gegologycompore('native', 'tin', 0xA7A7A7, 1)
+	gegologycompore('native', 'yttrium', 0xA7BEA7, 0)
+	gegologycompore('native', 'zinc', 0xB4ADAD, 1)
 	
 	// 7
-	gegologycompore('brown', 'limonite', 0xD87000)
-	gegologycompore('yellow', 'limonite', 0x939300)
-	gegologycompore('certus', 'quartz', 0x9B9BAA)
-	gegologycompore('granitic', 'sand', 0x1C2A2A)
-	gegologycompore('lithium', 'chloride', 0xA4A4B8)
-	gegologycompore('platinum', 'sludge', 0x25253B)
-	gegologycompore('rare', 'earth', 0x5E5E4A)
+	gegologycompore('brown', 'limonite', 0xD87000, 0)
+	gegologycompore('yellow', 'limonite', 0x939300, 0)
+	gegologycompore('certus', 'quartz', 0x9B9BAA, 0)
+	gegologycompore('granitic', 'sand', 0x1C2A2A, 1)
+	gegologycompore('lithium', 'chloride', 0xA4A4B8, 0)
+	gegologycompore('platinum', 'sludge', 0x25253B, 1)
+	gegologycompore('rare', 'earth', 0x5E5E4A, 0)
 	
 	
 	event.create('gegology:sluice_sand');
 	event.create('gegology:tiny_sluice_sand').displayName('Tiny Pile of Sluice Sand');
 	event.create('geghilarity:tiny_cobalt_dust').displayName('Tiny Pile of Cobalt Dust');
 	
-	//event.create('gegology:selenium_dust');
 	event.create('gegology:selenium_dioxide_dust');
 	event.create('gegology:small_manganese_chloride_dust').displayName('Small Pile of Manganese Chloride');
 	event.create('gegology:manganese_chloride_dust')
@@ -1083,6 +1090,56 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 	event.create('gegology:small_lithium_hydroxide_dust')
 	
 	event.create('gegology:uranium_tetrafluoride_dust')
+	
+	event.create('geggy:clay_mold')
+	event.create('geggy:clay_ingot_mold')
+	event.create('geggy:clay_plate_mold')
+	event.create('geggy:clay_rod_mold')
+	event.create('geggy:clay_ring_mold')
+	event.create('geggy:clay_gear_mold')
+	event.create('geggy:ceramic_ingot_mold')
+	event.create('geggy:ceramic_plate_mold')
+	event.create('geggy:ceramic_rod_mold')
+	event.create('geggy:ceramic_ring_mold')
+	event.create('geggy:ceramic_gear_mold')
+	
+	event.create('geggy:copper_filled_ingot_mold')
+	event.create('geggy:copper_filled_plate_mold')
+	event.create('geggy:copper_filled_rod_mold')
+	event.create('geggy:copper_filled_ring_mold')
+	event.create('geggy:copper_filled_gear_mold')
+	
+	event.create('geggy:tin_filled_ingot_mold')
+	event.create('geggy:tin_filled_plate_mold')
+	event.create('geggy:tin_filled_rod_mold')
+	event.create('geggy:tin_filled_ring_mold')
+	event.create('geggy:tin_filled_gear_mold')
+	
+	event.create('geggy:bronze_filled_ingot_mold')
+	event.create('geggy:bronze_filled_plate_mold')
+	event.create('geggy:bronze_filled_rod_mold')
+	event.create('geggy:bronze_filled_ring_mold')
+	event.create('geggy:bronze_filled_gear_mold')
+	
+	event.create('geggy:lead_filled_ingot_mold')
+	event.create('geggy:lead_filled_plate_mold')
+	
+	event.create('geggy:zinc_filled_ingot_mold')
+	event.create('geggy:zinc_filled_plate_mold')
+	event.create('geggy:zinc_filled_rod_mold')
+	event.create('geggy:zinc_filled_ring_mold')
+	
+	event.create('geggy:cobalt_matte_ingot')
+	event.create('geggy:kovar_dust')
+	event.create('geggy:kovar_ingot')
+	event.create('geggy:kovar_rod')
+	event.create('geggy:kovar_ring')
+	event.create('geggy:kovar_mix')
+	event.create('geggy:cobalt_matte_dust').texture('gegology:item/gt-dust').color(0x5656A5)
+	event.create('geggy:cobalt_ingot')
+	event.create('geggy:cobalt_rod')
+	event.create('geggy:cobalt_ring')
+	
 	
 event.create('geggy:uncooked_iron_mix')	
 event.create('geghilarity:tiny_molybdenum_dust').texture('gegology:item/gt-dusttiny').color(0x2F2A40).displayName('Tiny Pile of Molybdenum Dust');

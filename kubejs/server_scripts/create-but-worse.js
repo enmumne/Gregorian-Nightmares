@@ -1454,16 +1454,17 @@ ServerEvents.recipes(event => {
 		"processingTime": 50,
 		"results": [
 			{"item": "geggy:clay_dust", "chance": 0.08},
-			{"item": "geggy:gravel_dust", "chance": 0.82},
-			{"item": "geggy:sand_dust", "chance": 0.1}
+			{"item": "geggy:stone_dust", "chance": 0.82},
+			{"item": "geggy:sand_dust", "chance": 0.1},
+			{"item": "gegology:tiny_crushed_granitic_sand_ore", "chance": 0.05}
 		]
 	})
 	event.shaped('minecraft:gravel', [
-		'AA ',
-		'AA ',
-		'   '
+		'AAA',
+		'AAA',
+		'AAA'
 	], {
-		A: 'geggy:gravel_dust'
+		A: 'geggy:stone_dust'
 	})
 	event.shaped('minecraft:sand', [
 		'AA ',
@@ -1475,8 +1476,10 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "create:compacting",
 		"ingredients": [
-			{"item": "geggy:gravel_dust"},{"item": "geggy:gravel_dust"},
-			{"item": "geggy:gravel_dust"},{"item": "geggy:gravel_dust"}
+			{"item": "geggy:stone_dust"},{"item": "geggy:stone_dust"},
+			{"item": "geggy:stone_dust"},{"item": "geggy:stone_dust"},
+			{"item": "geggy:stone_dust"},{"item": "geggy:stone_dust"},
+			{"item": "geggy:stone_dust"},{"item": "geggy:stone_dust"},{"item": "geggy:stone_dust"}
 		],
 		"results": [
 			{"item": "minecraft:gravel"}
@@ -1511,7 +1514,7 @@ ServerEvents.recipes(event => {
 		"results": [
 			{"item": "geggy:andesite_dust"},
 			{"item": "geggy:andesite_dust", "chance": 0.5},
-			{"count": 4, "item": "geggy:gravel_dust", "chance": 0.8}
+			{"count": 4, "item": "geggy:stone_dust", "chance": 0.8}
 		]
 	})
 	event.shapeless('geggy:andesite_dust', ['minecraft:andesite', 'minecraft:andesite', 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
@@ -1656,6 +1659,36 @@ ServerEvents.recipes(event => {
 		],
 		"results": [
 			{"item": "modern_industrialization:tin_ingot"}
+		]
+	})
+	
+	event.remove({id: 'modern_industrialization:materials/lead/craft/ingot_from_nugget'})
+	event.remove({id: 'modern_industrialization:materials/lead/craft/nugget_from_ingot'})
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "modern_industrialization:lead_ingot"}
+		],
+		"tool": 
+			{"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"},
+		"result": [
+			{ "item": "modern_industrialization:lead_nugget", "count": 6},
+			{"chance": 0.5, "count": 3, "item": "modern_industrialization:lead_nugget"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"item": "modern_industrialization:lead_nugget"},{"item": "modern_industrialization:lead_nugget"},
+			{"item": "modern_industrialization:lead_nugget"},{"item": "modern_industrialization:lead_nugget"},
+			{"item": "modern_industrialization:lead_nugget"},{"item": "modern_industrialization:lead_nugget"},
+			{"item": "modern_industrialization:lead_nugget"},{"item": "modern_industrialization:lead_nugget"},
+			{"item": "modern_industrialization:lead_nugget"}
+		],
+		"results": [
+			{"item": "modern_industrialization:lead_ingot"}
 		]
 	})
 	
@@ -1819,7 +1852,7 @@ ServerEvents.recipes(event => {
 		"processingTime": 300,
 		"results": [
 			{"count": 4, "item": "geggy:limestone_dust"},
-			{"chance": 0.75, "count": 2, "item": "geggy:gravel_dust"}
+			{"chance": 0.75, "count": 2, "item": "geggy:stone_dust"}
 		]
 	})
 	
@@ -1994,7 +2027,7 @@ ServerEvents.recipes(event => {
 		"results": [
 			{"count": 3, "item": "geggy:clay_dust"},
 			{"count": 1, "item": "geggy:clay_dust","chance": 0.5},
-			{"count": 1, "item": "geggy:gravel_dust", "chance": 0.5}
+			{"count": 1, "item": "geggy:stone_dust", "chance": 0.5}
 		]
 	})
 	event.custom({
@@ -2274,7 +2307,7 @@ ServerEvents.recipes(event => {
 		"processingTime": 200,
 		"results": [
 			{"item": "geggy:netherrack_dust"},
-			{"item": "modern_industrialization:quartz_tiny_dust", "chance": 0.14}
+			{"item": "modern_industrialization:quartz_tiny_dust", "chance": 0.12}
 		]
 	})
 	event.custom({
@@ -2284,7 +2317,7 @@ ServerEvents.recipes(event => {
 		],
 		"processingTime": 200,
 		"results": [
-			{"item": "modern_industrialization:quartz_tiny_dust", "chance": 0.05},
+			{"item": "modern_industrialization:quartz_tiny_dust", "chance": 0.03},
 			{"item": "modern_industrialization:sulfur_tiny_dust", "chance": 0.01}
 		]
 	})

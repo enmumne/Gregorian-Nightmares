@@ -1031,7 +1031,7 @@ ServerEvents.recipes(event => {
 		"E": {"item": "modern_industrialization:copper_wire"},
 		"F": {"item": "powah:energy_cable_starter"},
 		"G": {"item": "geggy:galvanized_steel_rod"},
-		"H": {"item": "geghilarity:cobalt_dust"}
+		"H": {"item": "geggy:cobalt_ring"}
 		},
 		pattern: [
 			"FEG",

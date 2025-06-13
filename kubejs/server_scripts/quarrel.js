@@ -623,7 +623,7 @@ ServerEvents.recipes(event => {
 				type: "create:filling",
 				ingredients: [
 					{"item": "drilly:incomplete_bronze_refined_drill"},
-					{"amount": 1620, "fluid": "modern_industrialization:lubricant"}
+					{"amount": 810, "fluid": "modern_industrialization:lubricant"}
 				],
 				results: [{
 					"item": "drilly:incomplete_bronze_refined_drill"
@@ -715,7 +715,7 @@ ServerEvents.recipes(event => {
 				type: "create:filling",
 				ingredients: [
 					{"item": "drilly:incomplete_iron_refined_drill"},
-					{"amount": 3240, "fluid": "modern_industrialization:lubricant"}
+					{"amount": 1620, "fluid": "modern_industrialization:lubricant"}
 				],
 				results: [{
 					"item": "drilly:incomplete_iron_refined_drill"
@@ -1069,8 +1069,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:copper_drill", 0.1)
 		.itemIn("drilly:drill_group2", 0.00)
 		//.itemIn("geggy:selector_1", 0.00)
-        .itemOut("5x minecraft:coal", 0.38)
-		.itemOut("6x modern_industrialization:lignite_coal",  0.33)
+        .itemOut("5x minecraft:coal", 0.39)
+		.itemOut("5x modern_industrialization:lignite_coal",  0.33)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
@@ -1080,8 +1080,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:copper_drill", 0.15)
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
-        .itemOut("5x minecraft:coal", 0.44)
-		.itemOut("6x modern_industrialization:lignite_coal",  0.39)
+        .itemOut("5x minecraft:coal", 0.45)
+		.itemOut("5x modern_industrialization:lignite_coal",  0.39)
 		.itemOut("drilly:tiny_tier1_experience", 0.3)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
@@ -1241,8 +1241,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:bronze_base_drill", 0.11)
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
-        .itemOut("9x minecraft:coal", 0.39)
-		.itemOut("8x modern_industrialization:lignite_coal",  0.35)
+        .itemOut("9x minecraft:coal", 0.41)
+		.itemOut("7x modern_industrialization:lignite_coal",  0.35)
 		.itemOut("drilly:tiny_tier2_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
@@ -1252,8 +1252,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:bronze_base_drill", 0.24)
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_2", 0.00)
-		.itemOut("9x minecraft:coal", 0.36)
-		.itemOut("8x modern_industrialization:lignite_coal",  0.32)
+		.itemOut("9x minecraft:coal", 0.38)
+		.itemOut("7x modern_industrialization:lignite_coal",  0.32)
 		.itemOut("drilly:tiny_tier2_experience", 0.16)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
@@ -1398,8 +1398,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:bronze_base_drill", 0.18)
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
-        .itemOut("9x minecraft:coal", 0.43)
-		.itemOut("8x modern_industrialization:lignite_coal",  0.39)
+        .itemOut("9x minecraft:coal", 0.45)
+		.itemOut("7x modern_industrialization:lignite_coal",  0.39)
 		.itemOut("drilly:tiny_tier2_experience", 0.28)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")
@@ -1409,8 +1409,8 @@ ServerEvents.recipes(event => {
         .itemIn("drilly:bronze_base_drill", 0.37)
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_2", 0.00)
-		.itemOut("9x minecraft:coal", 0.40)
-		.itemOut("8x modern_industrialization:lignite_coal",  0.36)
+		.itemOut("9x minecraft:coal", 0.42)
+		.itemOut("7x modern_industrialization:lignite_coal",  0.36)
 		.itemOut("drilly:tiny_tier2_experience", 0.16)
         .dimension("overworld")
         .adjacentBlock("geggy:coal_corenode", "below")	
@@ -1549,7 +1549,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
 		.itemOut("drilly:dirty_bronze_refined_drill", 0.91)
-        .itemOut("15x minecraft:coal", 0.31)
+        .itemOut("15x minecraft:coal", 0.32)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.26)
 		.itemOut("drilly:tiny_tier3_experience", 0.25)
         .dimension("overworld")
@@ -1561,7 +1561,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("drilly:dirty_bronze_refined_drill", 0.79)
-		.itemOut("15x minecraft:coal", 0.28)
+		.itemOut("15x minecraft:coal", 0.29)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.23)
 		.itemOut("drilly:tiny_tier3_experience", 0.14)
         .dimension("overworld")
@@ -1765,7 +1765,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
 		.itemOut("drilly:dirty_bronze_refined_drill", 0.85)
-        .itemOut("15x minecraft:coal", 0.36)
+        .itemOut("15x minecraft:coal", 0.38)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.3)
 		.itemOut("drilly:tiny_tier3_experience", 0.25)
         .dimension("overworld")
@@ -1777,7 +1777,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("drilly:dirty_bronze_refined_drill", 0.65)
-		.itemOut("15x minecraft:coal", 0.33)
+		.itemOut("15x minecraft:coal", 0.35)
 		.itemOut("12x modern_industrialization:lignite_coal",  0.27)
 		.itemOut("drilly:tiny_tier3_experience", 0.14)
         .dimension("overworld")
@@ -1949,7 +1949,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_1", 0.00)
 		.itemOut("drilly:dirty_iron_refined_drill", 0.89)
-        .itemOut("20x minecraft:coal", 0.29)
+        .itemOut("20x minecraft:coal", 0.31)
 		.itemOut("15x modern_industrialization:lignite_coal", 0.23)
 		.itemOut("drilly:tiny_tier4_experience", 0.24)
         .dimension("overworld")
@@ -1961,7 +1961,7 @@ ServerEvents.recipes(event => {
 		.itemIn("drilly:drill_group2", 0.00)
 		.itemIn("geggy:selector_2", 0.00)
 		.itemOut("drilly:dirty_iron_refined_drill", 0.75)
-		.itemOut("20x minecraft:coal", 0.26)
+		.itemOut("20x minecraft:coal", 0.28)
 		.itemOut("15x modern_industrialization:lignite_coal", 0.2)
 		.itemOut("drilly:tiny_tier4_experience", 0.14)
         .dimension("overworld")

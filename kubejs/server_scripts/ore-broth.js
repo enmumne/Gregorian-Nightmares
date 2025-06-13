@@ -41,7 +41,7 @@ ServerEvents.recipes(event => {
 			"type": "create:milling",
 			"processingTime":250,
 			"ingredients": [{"item": "minecraft:raw_iron"}],
-			"results": [{"count": 2, "item": "create:crushed_raw_iron"},{"item": "create:crushed_raw_iron", "chance": 0.50},{"count": 1, "item": "geggy:gravel_dust"}]
+			"results": [{"count": 2, "item": "create:crushed_raw_iron"},{"item": "create:crushed_raw_iron", "chance": 0.50},{"count": 1, "item": "geggy:stone_dust"}]
 	})
 	event.custom({
 			"type": "create:milling",
@@ -241,7 +241,7 @@ ServerEvents.recipes(event => {
 		"results": [
 			{"count": 1, "item": "modern_industrialization:salt_dust"},
 			{"count": 3, "item": "geghilarity:tiny_rock_salt_dust"},
-			{"count": 1, "item": "magick:stone_dust"}
+			{"count": 1, "item": "geggy:stone_dust"}
 		]	
 	})
 	
