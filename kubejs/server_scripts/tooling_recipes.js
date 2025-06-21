@@ -207,6 +207,65 @@ ServerEvents.recipes(e => {
 //onEvent('recipes', event => {
 ServerEvents.recipes(event => {
 	
+	event.remove([
+		"minecraft:wooden_sword",
+		"minecraft:wooden_shovel",
+		"minecraft:wooden_hoe",
+		"minecraft:stone_sword",
+		"minecraft:stone_shovel",
+		"minecraft:stone_hoe"
+	])
+	
+	event.shaped('minecraft:wooden_sword', [
+    'S  ',
+    'S  ',
+    'A  '
+	], {
+		S: '#minecraft:planks',
+		A: 'geggy:j_tool_rod'
+	})
+	event.shaped('minecraft:wooden_shovel', [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: '#minecraft:planks',
+		A: 'geggy:j_tool_rod'
+	})
+	event.shaped('minecraft:wooden_hoe', [
+    'SS ',
+    ' A ',
+    '   '
+	], {
+		S: '#minecraft:planks',
+		A: 'geggy:j_tool_rod'
+	})
+	
+	event.shaped('minecraft:stone_sword', [
+    'S  ',
+    'S  ',
+    'A  '
+	], {
+		S: 'minecraft:stone',
+		A: 'geggy:j_tool_rod'
+	})
+	event.shaped('minecraft:stone_shovel', [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'minecraft:stone',
+		A: 'geggy:j_tool_rod'
+	})
+	event.shaped('minecraft:stone_hoe', [
+    'SS ',
+    ' A ',
+    '   '
+	], {
+		S: 'minecraft:stone',
+		A: 'geggy:j_tool_rod'
+	})
+	
 	//attempt
 	///////////event.remove({type: 'minecraft:crafting_shapeless', output: '#minecraft:planks'})
 	event.remove({type: 'minecraft:crafting_shaped', output: 'minecraft:stick'})
@@ -515,7 +574,7 @@ event.custom (
     'S  ',
     '   '
   ], {
-    S: '#minecraft:stone_tool_materials'
+    S: 'minecraft:stone'
   })
   /*
   event.shaped('geggy:j_wooden_pickaxe_head', [
@@ -539,10 +598,6 @@ event.custom (
   event.shapeless('minecraft:iron_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_iron_chestplate'])
   event.shapeless('minecraft:iron_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_iron_leggings'])
   event.shapeless('minecraft:iron_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_iron_boots'])
-  event.shapeless('minecraft:golden_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_gold_helmet'])
-  event.shapeless('minecraft:golden_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_gold_chestplate'])
-  event.shapeless('minecraft:golden_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_gold_leggings'])
-  event.shapeless('minecraft:golden_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_gold_boots'])
   event.shapeless('minecraft:diamond_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_diamond_helmet'])
   event.shapeless('minecraft:diamond_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_diamond_chestplate'])
   event.shapeless('minecraft:diamond_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_diamond_leggings'])
@@ -867,10 +922,6 @@ event.custom (
 	B: 'modern_industrialization:rubber_sheet'
   })
   
-  
-
-	//event.shapeless('minecraft:wooden_pickaxe', ['geggy:j_wooden_pickaxe_head', 'geggy:j_tool_rod'])
-	//event.shapeless('minecraft:stone_pickaxe', ['geggy:j_stone_pickaxe_head', 'geggy:j_tool_rod'])
 	event.shapeless('minecraft:wooden_axe', ['geggy:j_wooden_axe_head', 'geggy:j_tool_rod'])
 	event.shapeless('minecraft:stone_axe', ['geggy:j_stone_axe_head', 'geggy:j_tool_rod'])	
 
@@ -1137,22 +1188,10 @@ event.custom (
 			{item: "geggy:mold_hoe", amount: 1}
 		]
 	})
-
-	event.custom({ 
-		type: "modern_industrialization:fextract",
-		eu: 38,
-		duration: 400,
-		item_inputs: [ 
-			{item: "modern_industrialization:diamond_dust", amount: 1}
-		],
-		fluid_outputs: [
-			{fluid: "geggy:molten_diamond", amount: 144}
-		]
-	})
 	
 	event.custom({ 
 		type: "modern_industrialization:fextract",
-		eu: 30,
+		eu: 8,
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:gold_dust", amount: 1}
@@ -1161,34 +1200,7 @@ event.custom (
 			{fluid: "geggy:molten_gold", amount: 144}
 		]
 	})
-	//shards
-	/*
-	event.custom({ 
-		type: "modern_industrialization:fextract",
-		eu: 42,
-		duration: 600,
-		item_inputs: [ 
-			{item: "geggy:diamond_shards", amount: 5}
-		],
-		fluid_outputs: [
-			{fluid: "geggy:molten_diamond", amount: 144}
-		]
-	})
-	*/
-	event.custom({ 
-		type: "modern_industrialization:electric_alloy_smelter",
-		eu: 38,
-		duration: 400,
-		item_inputs: [ 
-			{item: "geggy:mold_plate", amount: 1, probability: 0.0}
-		],
-		fluid_inputs: [ 
-			{fluid: "geggy:molten_diamond", amount: 144}
-		],
-		item_outputs: [
-			{item: "modern_industrialization:diamond_plate", amount: 1}
-		]
-	})
+
 	
 	event.remove({id: "modern_industrialization:materials/diamond/macerator/ore_to_crushed"})
 event.custom({ 
@@ -1321,8 +1333,8 @@ event.custom({
 		]
 	})
 	event.custom({ 
-		type: "modern_industrialization:centrifuge",
-		eu: 500,
+		type: "modern_industrialization:advanced_centrifuge",
+		eu: 480,
 		duration: 400,
 		fluid_inputs : [
 			{fluid: "geggy:ancient_debris_slurry", amount: 3000}
@@ -1351,7 +1363,7 @@ event.custom({
 	})
 	event.custom({ 
 		type: "modern_industrialization:blast_furnace",
-		eu: 1900,
+		eu: 480,
 		duration: 300,
 		item_inputs : [
 			{item: "geggy:netherite_dust", amount: 1}
@@ -1365,7 +1377,7 @@ event.custom({
 	})
 	event.custom({ 
 		type: "modern_industrialization:vacuum_freezer",
-		eu: 600,
+		eu: 256,
 		duration: 250,
 		item_inputs : [
 			{item: "geggy:netherite_hot_ingot", amount: 1}
@@ -1605,11 +1617,51 @@ event.custom({
 		A: 'modern_industrialization:creosote_bucket'
 	})
 	
-	event.shapeless(Item.of('geggy:steel_pickaxe'), ['geggy:steel_pickaxe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:steel_axe'), ['geggy:steel_axe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:steel_sword'), ['geggy:steel_sword_blade', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:steel_hoe'), ['geggy:steel_hoe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:steel_shovel'), ['geggy:steel_shovel_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shaped('geggy:steel_pickaxe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:steel_pickaxe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('geggy:steel_axe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:steel_axe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('geggy:steel_hoe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:steel_hoe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('geggy:steel_sword', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:steel_sword_blade',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('geggy:steel_shovel', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:steel_shovel_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
 	
 	event.custom({
 		type: "create:filling",
@@ -1667,16 +1719,57 @@ event.custom({
 		}]
 	})
 	
-	event.shapeless(Item.of('geggy:galvanized_steel_pickaxe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_pickaxe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:galvanized_steel_axe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_axe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:galvanized_steel_sword').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_sword_blade', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:galvanized_steel_hoe').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_hoe_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
-	event.shapeless(Item.of('geggy:galvanized_steel_shovel').enchant('minecraft:sharpness', 2), ['geggy:galvanized_steel_shovel_head', 'geggy:polished_tool_rod', 'modern_industrialization:rubber_sheet'])
+	event.shaped(Item.of('geggy:galvanized_steel_pickaxe').enchant('minecraft:sharpness', 2), [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:galvanized_steel_pickaxe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped(Item.of('geggy:galvanized_steel_axe').enchant('minecraft:sharpness', 2), [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:galvanized_steel_axe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped(Item.of('geggy:galvanized_steel_hoe').enchant('minecraft:sharpness', 2), [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:galvanized_steel_hoe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped(Item.of('geggy:galvanized_steel_sword').enchant('minecraft:sharpness', 2), [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:galvanized_steel_sword_blade',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped(Item.of('geggy:galvanized_steel_shovel').enchant('minecraft:sharpness', 2), [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:galvanized_steel_shovel_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+
 	
 	/// bronze & steel armor
 	
 	event.shaped('geggy:bronze_helmet', [
-		'BAB',
+		'AAA',
 		'B B',
 		'   '
 	], {
@@ -1684,7 +1777,7 @@ event.custom({
 		B: 'modern_industrialization:bronze_curved_plate'
 	})
 	event.shaped('geggy:bronze_chestplate', [
-		'B B',
+		'A A',
 		'BAB',
 		'BAB'
 	], {
@@ -1692,7 +1785,7 @@ event.custom({
 		B: 'modern_industrialization:bronze_curved_plate'
 	})
 	event.shaped('geggy:bronze_leggings', [
-		'BAB',
+		'ABA',
 		'B B',
 		'B B'
 	], {
@@ -1701,14 +1794,15 @@ event.custom({
 	})
 	event.shaped('geggy:bronze_boots', [
 		'A A',
-		'A A',
+		'B B',
 		'   '
 	], {
-		A: 'modern_industrialization:bronze_curved_plate'
+		A: 'modern_industrialization:bronze_plate',
+		B: 'modern_industrialization:bronze_curved_plate'
 	})
 	
 	event.shaped('geggy:unfinished_steel_helmet', [
-		'BAB',
+		'AAA',
 		'B B',
 		'   '
 	], {
@@ -1716,7 +1810,7 @@ event.custom({
 		B: 'modern_industrialization:steel_curved_plate'
 	})
 	event.shaped('geggy:unfinished_steel_chestplate', [
-		'B B',
+		'A A',
 		'BAB',
 		'BAB'
 	], {
@@ -1724,7 +1818,7 @@ event.custom({
 		B: 'modern_industrialization:steel_curved_plate'
 	})
 	event.shaped('geggy:unfinished_steel_leggings', [
-		'BAB',
+		'ABA',
 		'B B',
 		'B B'
 	], {
@@ -1733,16 +1827,606 @@ event.custom({
 	})
 	event.shaped('geggy:unfinished_steel_boots', [
 		'A A',
-		'A A',
+		'B B',
 		'   '
 	], {
-		A: 'modern_industrialization:steel_curved_plate'
+		A: 'modern_industrialization:steel_plate',
+		B: 'modern_industrialization:steel_curved_plate'
 	})
 	
 	event.shapeless('geggy:steel_helmet', [ 'minecraft:leather_helmet', 'geggy:unfinished_steel_helmet'])
 	event.shapeless('geggy:steel_chestplate', [ 'minecraft:leather_chestplate', 'geggy:unfinished_steel_chestplate'])
 	event.shapeless('geggy:steel_leggings', [ 'minecraft:leather_leggings', 'geggy:unfinished_steel_leggings'])
 	event.shapeless('geggy:steel_boots', [ 'minecraft:leather_boots', 'geggy:unfinished_steel_boots'])
+	
+	event.remove({id: 'minecraft:iron_helmet'})
+	event.remove({id: 'minecraft:iron_chestplate'})
+	event.remove({id: 'minecraft:iron_leggings'})
+	event.remove({id: 'minecraft:iron_boots'})
+	event.remove({id: 'minecraft:golden_helmet'})
+	event.remove({id: 'minecraft:golden_chestplate'})
+	event.remove({id: 'minecraft:golden_leggings'})
+	event.remove({id: 'minecraft:golden_boots'})
+	event.remove({id: 'minecraft:diamond_helmet'})
+	event.remove({id: 'minecraft:diamond_chestplate'})
+	event.remove({id: 'minecraft:diamond_leggings'})
+	event.remove({id: 'minecraft:diamond_boots'})
+	event.remove({id: 'minecraft:iron_sword'})
+	event.remove({id: 'minecraft:iron_axe'})
+	event.remove({id: 'minecraft:iron_pickaxe'})
+	event.remove({id: 'minecraft:iron_hoe'})
+	event.remove({id: 'minecraft:iron_shovel'})
+	
+	event.shaped('geggy:iron_sword_blade', [
+		'A  ',
+		'A  ',
+		'B  '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'modern_industrialization:iron_rod'
+	})
+	event.shaped('geggy:iron_pickaxe_head', [
+		'ACA',
+		' B ',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'modern_industrialization:iron_rod',
+		C: 'minecraft:iron_ingot'
+	})
+	event.shaped('geggy:iron_axe_head', [
+		'AA ',
+		'AB ',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'modern_industrialization:iron_rod'
+	})
+	event.shaped('geggy:iron_shovel_head', [
+		' A ',
+		' B ',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'modern_industrialization:iron_rod'
+	})
+	event.shaped('geggy:iron_hoe_head', [
+		'AA ',
+		' B ',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'modern_industrialization:iron_rod'
+	})
+	event.shapeless('minecraft:iron_sword', [ 'geggy:reinforced_tool_rod', 'geggy:iron_sword_blade'])
+	event.shapeless('minecraft:iron_axe', [ 'geggy:reinforced_tool_rod', 'geggy:iron_axe_head'])
+	event.shapeless('minecraft:iron_pickaxe', [ 'geggy:reinforced_tool_rod', 'geggy:iron_pickaxe_head'])
+	event.shapeless('minecraft:iron_shovel', [ 'geggy:reinforced_tool_rod', 'geggy:iron_shovel_head'])
+	event.shapeless('minecraft:iron_hoe', [ 'geggy:reinforced_tool_rod', 'geggy:iron_hoe_head'])
+	
+	event.shaped('geggy:unfinished_iron_helmet', [
+		'AAA',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
+	})
+	event.shaped('geggy:unfinished_iron_chestplate', [
+		'A A',
+		'BAB',
+		'BAB'
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
+	})
+	event.shaped('geggy:unfinished_iron_leggings', [
+		'ABA',
+		'B B',
+		'B B'
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
+	})
+	event.shaped('geggy:unfinished_iron_boots', [
+		'A A',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:iron_plate',
+		B: 'geggy:iron_curved_plate'
+	})
+	event.shaped('minecraft:golden_helmet', [
+		'AAA',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
+	})
+	event.shaped('minecraft:golden_chestplate', [
+		'A A',
+		'BAB',
+		'BAB'
+	], {
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
+	})
+	event.shaped('minecraft:golden_leggings', [
+		'ABA',
+		'B B',
+		'B B'
+	], {
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
+	})
+	event.shaped('minecraft:golden_boots', [
+		'A A',
+		'B B',
+		'   '
+	], {
+		A: 'modern_industrialization:gold_plate',
+		B: 'modern_industrialization:gold_curved_plate'
+	})
+
+
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 10,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_plate", amount: 5},
+			{item: "geggy:selector_1", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:unfinished_diamond_helmet", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_plate", amount: 8},
+			{item: "geggy:selector_2", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:unfinished_diamond_chestplate", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 14,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_plate", amount: 7},
+			{item: "geggy:selector_3", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:unfinished_diamond_leggings", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_plate", amount: 4},
+			{item: "geggy:selector_4", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:unfinished_diamond_boots", amount: 1}
+		]
+	})
+	
+	// diamond tools
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 400,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 2},
+			{item: "geggy:steel_sword_blade", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:diamond_sword_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 1},
+			{item: "geggy:steel_shovel_head", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:diamond_shovel_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 600,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 3},
+			{item: "geggy:steel_pickaxe_head", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:diamond_pickaxe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 400,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 2},
+			{item: "geggy:steel_hoe_head", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:diamond_hoe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 600,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 3},
+			{item: "geggy:steel_axe_head", amount: 1}
+		],
+		item_outputs: [
+			{item: "geggy:diamond_axe_head", amount: 1}
+		]
+	})
+	
+	// plate
+	event.custom({ 
+		type: "modern_industrialization:electric_alloy_smelter",
+		eu: 16,
+		duration: 400,
+		item_inputs: [ 
+			{item: "modern_industrialization:diamond_dust", amount: 1},
+			{item: "modern_industrialization:steel_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:diamond_plate", amount: 1}
+		]
+	})
+	
+	event.remove([
+		"minecraft:diamond_sword",
+	    "minecraft:diamond_pickaxe",
+		"minecraft:diamond_axe",
+		"minecraft:diamond_hoe",
+		"minecraft:diamond_shovel",
+		"minecraft:golden_sword",
+	    "minecraft:golden_pickaxe",
+		"minecraft:golden_axe",
+		"minecraft:golden_hoe",
+		"minecraft:golden_shovel"
+	])
+	
+	event.shaped('minecraft:diamond_pickaxe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:diamond_pickaxe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('minecraft:diamond_axe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:diamond_axe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('minecraft:diamond_hoe', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:diamond_hoe_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('minecraft:diamond_sword', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:diamond_sword_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	event.shaped('minecraft:diamond_shovel', [
+    '  S',
+    ' A ',
+    'B  '
+	], {
+		S: 'geggy:diamond_shovel_head',
+		A: 'geggy:polished_tool_rod',
+		B: 'modern_industrialization:rubber_sheet'
+	})
+	
+	// gold tool rework
+	
+	event.custom({ 
+		type: "modern_industrialization:melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:gold_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:gold_dust", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:gold_tiny_dust", amount: 9}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:gold_tiny_dust", amount: 9}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "minecraft:gold_ingot", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_melter",
+		eu: 4,
+		duration: 200,
+		item_inputs: [ 
+			{item: "minecraft:gold_ingot", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 144}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:melter",
+		eu: 4,
+		duration: 30,
+		item_inputs: [ 
+			{item: "minecraft:gold_nugget", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 16}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_melter",
+		eu: 4,
+		duration: 30,
+		item_inputs: [ 
+			{item: "minecraft:gold_nugget", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:molten_gold", amount: 16}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 288},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_sword", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_sword_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 144},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_shovel", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_shovel_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 432},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_pickaxe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_pickaxe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 288},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_hoe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_hoe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 432},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_axe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_axe_head", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 288},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_sword", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_sword_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 144},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_shovel", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_shovel_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 432},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_pickaxe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_pickaxe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 400,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 288},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_hoe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_hoe_head", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 600,
+		fluid_inputs: [
+			{fluid: "geggy:molten_gold", amount: 432},
+		],
+		item_inputs: [ 
+			{item: "geggy:mold_axe", amount: 1, probability: 0.0}
+		],
+		item_outputs: [
+			{item: "geggy:gold_axe_head", amount: 1}
+		]
+	})
+	
+	event.shaped(Item.of('minecraft:golden_pickaxe').enchant('minecraft:silk_touch', 1), [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'geggy:gold_pickaxe_head',
+		A: 'geggy:reinforced_tool_rod'
+	})
+	event.shaped(Item.of('minecraft:golden_axe').enchant('minecraft:silk_touch', 1), [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'geggy:gold_axe_head',
+		A: 'geggy:reinforced_tool_rod'
+	})
+	event.shaped(Item.of('minecraft:golden_hoe').enchant('minecraft:silk_touch', 1), [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'geggy:gold_hoe_head',
+		A: 'geggy:reinforced_tool_rod'
+	})
+	event.shaped(Item.of('minecraft:golden_sword').enchant('minecraft:silk_touch', 1), [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'geggy:gold_sword_head',
+		A: 'geggy:reinforced_tool_rod'
+	})
+	event.shaped(Item.of('minecraft:golden_shovel').enchant('minecraft:silk_touch', 1), [
+    'S  ',
+    'A  ',
+    '   '
+	], {
+		S: 'geggy:gold_shovel_head',
+		A: 'geggy:reinforced_tool_rod'
+	})
 
 })
 

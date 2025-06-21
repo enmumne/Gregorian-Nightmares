@@ -195,6 +195,19 @@ ServerEvents.recipes(event => {
 			{item: "geggy:mold_gear", amount: 1}
 		]
 	})
+	event.custom({ 
+		type: "modern_industrialization:blast_furnace",
+		eu: 2,
+		duration: 400,
+		item_inputs : [
+			{item: "modern_industrialization:uncooked_steel_dust", amount: 2},
+			{item: "geggy:dented_quadrant", probability: 0.0}
+		],
+		item_outputs :
+		[
+			{item: "geggy:mold_quadrant", amount: 1}
+		]
+	})
 	
 	event.remove({type: "modern_industrialization:packer", output: `modern_industrialization:fire_clay_bricks`})
 	event.custom({ 

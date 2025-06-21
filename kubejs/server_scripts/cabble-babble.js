@@ -2292,9 +2292,23 @@ ServerEvents.recipes(event => {
 		'BDB'
 	], {
 		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:steel_plate',
+		B: 'geggy:galvanized_steel_plate',
 		C: 'powah:energy_cable_starter',
 		D: 'modern_industrialization:inductor'
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 8,
+		duration: 100,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "geggy:galvanized_steel_plate", amount: 4},
+			{item: "powah:energy_cable_starter", amount: 2},
+			{item: "modern_industrialization:inductor", amount: 2}
+		],
+		item_outputs: [
+			{item: "moderndynamics:machine_extender", amount: 1}
+		]
 	})
 	
 	event.custom({ 

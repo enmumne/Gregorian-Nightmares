@@ -40,8 +40,13 @@ ItemEvents.modification(event => {
 /*   uses  
 	Wooden: 60 > 50
     Stone: 132 > 100
-    Iron: 251 > 400 
-    Golden: 33 > 52
+	Golden: 33 > 52
+	flint: 140
+	reinforced flint: 220
+	bronze: 280
+    Iron: 251 > 400 > 320 
+    steel: 500
+	galvanized: 600
     Diamond: 1562 > 2000 > reset
     Netherite: 2032 > 2500 > reset
 	
@@ -104,11 +109,18 @@ ItemEvents.toolTierRegistry (event => {
 })	
 
 // feet / leg / chest / head
-// durability multiplies 13,15,16,11
+// durability multiplies 13,15,16,11 [FEET, LEGS, BODY, HEAD]
+// slot protection is number of shields for each piece
+// leather 5 > 7
+// golden 7 > 9
+// bronze 12
+// iron 15
+// steel 20
+// diamond 33
 
 ItemEvents.armorTierRegistry(event => {
     event.add('steel', tier => {
-        tier.durabilityMultiplier = 27;
+        tier.durabilityMultiplier = 20; 
         tier.slotProtections = [2, 5, 7, 2];
         tier.enchantmentValue = 0;
         tier.equipSound = 'minecraft:item.armor.equip_iron';
@@ -118,7 +130,7 @@ ItemEvents.armorTierRegistry(event => {
     })
 	
 	event.add('bronze', tier => {
-        tier.durabilityMultiplier = 8;
+        tier.durabilityMultiplier = 12; 
         tier.slotProtections = [1, 3, 4, 1];
         tier.enchantmentValue = 15;
         tier.equipSound = 'minecraft:item.armor.equip_iron';
@@ -147,6 +159,7 @@ ItemEvents.modification(event => {
         pickaxe.setMaxDamage(50)
     })
 	
+	
 	event.modify('minecraft:stone_pickaxe', pickaxe => {
         pickaxe.setMaxDamage(100)
     })
@@ -165,39 +178,33 @@ ItemEvents.modification(event => {
 	
 	
     event.modify('minecraft:iron_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(400)
+        pickaxe.setMaxDamage(320)
     })
-    event.modify('minecraft:golden_pickaxe', pickaxe => {
-        pickaxe.setMaxDamage(52)
-    })
-
-
     event.modify('minecraft:iron_axe', axe => {
-        axe.setMaxDamage(400)
+        axe.setMaxDamage(320)
+    })
+	event.modify('minecraft:iron_sword', sword => {
+        sword.setMaxDamage(320)
+	})
+	event.modify('minecraft:iron_hoe', hoe => {
+        hoe.setMaxDamage(320)
+    })
+	event.modify('minecraft:iron_shovel', shovel => {
+        shovel.setMaxDamage(320)
+    })
+	
+	
+	event.modify('minecraft:golden_pickaxe', pickaxe => {
+        pickaxe.setMaxDamage(52)
     })
     event.modify('minecraft:golden_axe', axe => {
         axe.setMaxDamage(52)
     })
-
-
-    event.modify('minecraft:iron_sword', sword => {
-        sword.setMaxDamage(400)
-    })
     event.modify('minecraft:golden_sword', sword => {
         sword.setMaxDamage(52)
     })
-	
-
-    event.modify('minecraft:iron_hoe', hoe => {
-        hoe.setMaxDamage(400)
-    })
     event.modify('minecraft:golden_hoe', hoe => {
         hoe.setMaxDamage(52)
-    })
-	
-
-    event.modify('minecraft:iron_shovel', shovel => {
-        shovel.setMaxDamage(400)
     })
     event.modify('minecraft:golden_shovel', shovel => {
         shovel.setMaxDamage(52)
@@ -209,31 +216,25 @@ ItemEvents.modification(event => {
 
 
     event.modify('minecraft:turtle_helmet', helmet => {
-        helmet.setMaxDamage(350)
+        helmet.setMaxDamage(320)
     })
 
 
 
-// leather 55, 80 75 65
+// leather 55, 80 75 65 >> 7
 
 
     event.modify('minecraft:leather_helmet', helmet => {
-        helmet.setMaxDamage(80)
+        helmet.setMaxDamage(77)
     })
-
-
     event.modify('minecraft:leather_chestplate', chestplate => {
-        chestplate.setMaxDamage(120)
+        chestplate.setMaxDamage(112)
     })
-
-
     event.modify('minecraft:leather_leggings', leggings => {
-        leggings.setMaxDamage(100)
+        leggings.setMaxDamage(105)
     })
-
-
     event.modify('minecraft:leather_boots', boots => {
-        boots.setMaxDamage(85)
+        boots.setMaxDamage(91)
     })
 
 
@@ -243,53 +244,23 @@ ItemEvents.modification(event => {
 // chainmail 165, 240, 225, 195
 // bop??
 
-
-// iron 165, 240, 225, 195 
-
-
-    event.modify('minecraft:iron_helmet', helmet => {
-        helmet.setMaxDamage(220)
-    })
-
-
-    event.modify('minecraft:iron_chestplate', chestplate => {
-        chestplate.setMaxDamage(360)
-    })
-
-
-    event.modify('minecraft:iron_leggings', leggings => {
-        leggings.setMaxDamage(320)
-    })
-
-
-    event.modify('minecraft:iron_boots', boots => {
-        boots.setMaxDamage(260)
-    })
-
-
 // netherite 407, 592, 555, 481
 
 
-// golden 77, 112, 105, 91
+// golden 77, 112, 105, 91 >> 9 [13, 15, 16, 11] [FEET, LEGS, BODY, HEAD]
 
 
     event.modify('minecraft:golden_helmet', helmet => {
-        helmet.setMaxDamage(100)
+        helmet.setMaxDamage(99)
     })
-
-
     event.modify('minecraft:golden_chestplate', chestplate => {
-        chestplate.setMaxDamage(150)
+        chestplate.setMaxDamage(144)
     })
-
-
     event.modify('minecraft:golden_leggings', leggings => {
-        leggings.setMaxDamage(130)
+        leggings.setMaxDamage(135)
     })
-
-
     event.modify('minecraft:golden_boots', boots => {
-        boots.setMaxDamage(110)
+        boots.setMaxDamage(117)
     })
 	
 	
@@ -341,9 +312,7 @@ event.create('geggy:j_planks').displayName('Prepared Planks');
 event.create('geggy:j_crafting_base').displayName('Crafting Base');
 event.create('geggy:j_crafting_top').displayName('Crafting Top');
 
-event.create('geggy:j_wooden_pickaxe_head').displayName('Wooden Pickaxe Head');
 event.create('geggy:j_wooden_axe_head').displayName('Wooden Axe Head');
-event.create('geggy:j_stone_pickaxe_head').displayName('Stone Pickaxe Head');
 event.create('geggy:j_stone_axe_head').displayName('Stone Axe Head');
 
 event.create('geggy:wooden_form', 'basic').displayName('Wooden Form').maxDamage(128);
@@ -392,6 +361,7 @@ event.create('geggy:mold_plate').displayName('Plate Mold');
 event.create('geggy:mold_rod').displayName('Rod Mold');
 event.create('geggy:mold_ring').displayName('Ring Mold');
 event.create('geggy:mold_gear').displayName('Gear Mold');
+event.create('geggy:mold_quadrant').displayName('Quadrant Mold');
 
 event.create('geggy:invar_curved_plate');
 
@@ -476,10 +446,6 @@ event.create('geggy:unfinished_iron_helmet');
 event.create('geggy:unfinished_iron_chestplate');
 event.create('geggy:unfinished_iron_leggings');
 event.create('geggy:unfinished_iron_boots');
-event.create('geggy:unfinished_gold_helmet');
-event.create('geggy:unfinished_gold_chestplate');
-event.create('geggy:unfinished_gold_leggings');
-event.create('geggy:unfinished_gold_boots');
 event.create('geggy:unfinished_diamond_helmet');
 event.create('geggy:unfinished_diamond_chestplate');
 event.create('geggy:unfinished_diamond_leggings');
@@ -554,9 +520,6 @@ event.create('geggy:potin_dust');
 event.create('geggy:potin_ingot');
 event.create('geggy:potin_plate');
 event.create('geggy:potin_curved_plate');
-
-event.create('geggy:incomplete_fluid_pipe');
-event.create('geggy:incomplete_item_pipe');
 
 event.create('geggy:pitch_binder');
 event.create('geggy:fluid_filter');
@@ -770,7 +733,6 @@ event.create('geggy:iron_screw')
 event.create('geggy:magnetic_iron_bolt')
 event.create('geggy:red_alloy_rod')
 event.create('geggy:red_alloy_bolt')
-event.create('geggy:zinc_rod')
 event.create('geggy:zinc_ring')
 event.create('geggy:round_glass_pane')
 event.create('geggy:small_coal_dust').displayName('Small Pile of Coal Dust')
@@ -1121,12 +1083,14 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 	event.create('geggy:bronze_filled_ring_mold')
 	event.create('geggy:bronze_filled_gear_mold')
 	
+	event.create('geggy:brass_filled_ingot_mold')
+	event.create('geggy:brass_filled_plate_mold')
+	
 	event.create('geggy:lead_filled_ingot_mold')
 	event.create('geggy:lead_filled_plate_mold')
 	
 	event.create('geggy:zinc_filled_ingot_mold')
 	event.create('geggy:zinc_filled_plate_mold')
-	event.create('geggy:zinc_filled_rod_mold')
 	event.create('geggy:zinc_filled_ring_mold')
 	
 	event.create('geggy:cobalt_matte_ingot')
@@ -1143,6 +1107,12 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 	
 event.create('geggy:uncooked_iron_mix')	
 event.create('geghilarity:tiny_molybdenum_dust').texture('gegology:item/gt-dusttiny').color(0x2F2A40).displayName('Tiny Pile of Molybdenum Dust');
+
+event.create('geggy:iron_sword_blade');
+event.create('geggy:iron_pickaxe_head');
+event.create('geggy:iron_axe_head');
+event.create('geggy:iron_shovel_head');
+event.create('geggy:iron_hoe_head');
 	
 event.create('geggy:raw_steel_sword_blade');
 event.create('geggy:raw_steel_pickaxe_head');
@@ -1222,11 +1192,6 @@ StartupEvents.registry('fluid', event => {
     .create('geggy:tannin')
   	//.displayName('Nitrogen Dioxide') 
 	.thinTexture(0x613E34)
-    .noBucket
-	
-	event
-    .create('geggy:molten_diamond')
-	.thinTexture(0x45DDCA)
     .noBucket
 	
 	event
@@ -1449,15 +1414,19 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0xA0A0AF)
     .noBucket
 	
-	//////	
+	event
+    .create('gegology:molten_brass')
+	.thinTexture(0xF8CA67)
+    .noBucket
+	
 	event
     .create('gegology:molten_uranium_tetrafluoride')
-	.thinTexture(0xD8DADD)
+	.thinTexture(0x4F6B64)
     .noBucket
 	
 	event
     .create('gegology:molten_fluorite')
-	.thinTexture(0xD8DADD)
+	.thinTexture(0xC0A17F)
     .noBucket
 	
 	// GT6 vitriols

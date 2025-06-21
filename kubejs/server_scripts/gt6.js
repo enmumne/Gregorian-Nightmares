@@ -2525,7 +2525,7 @@ ServerEvents.recipes(event => {
 		"type": "create:compacting",
 		"ingredients": [{"amount": 11745, "fluid": "gegology:molten_lead"}],
 		"results": [{"item": "modern_industrialization:lead_ingot"}]
-	})
+	})	
 	
 	let castmetal = (eu, time, mold, fluid, out, mat) => {
 		
@@ -2607,7 +2607,6 @@ ServerEvents.recipes(event => {
 	
 	castmetal( 2, 100, 'ingot', 'geggy:liquid_zinc', 'create:zinc_ingot', 'zinc')
 	castmetal( 2, 100, 'plate', 'geggy:liquid_zinc', 'createdeco:zinc_sheet', 'zinc')
-	castmetal( 2, 70, 'rod', 'geggy:liquid_zinc', 'geggy:zinc_rod', 'zinc')
 	castmetal( 2, 70, 'ring', 'geggy:liquid_zinc', 'geggy:zinc_ring', 'zinc')
 	
 	castmetal( 2, 100, 'ingot', 'gegology:molten_lead', 'modern_industrialization:lead_ingot', 'lead')
@@ -2618,6 +2617,56 @@ ServerEvents.recipes(event => {
 	castmetal( 2, 120, 'rod', 'geghilarity:molten_bronze', 'modern_industrialization:bronze_rod', 'bronze')
 	castmetal( 2, 120, 'ring', 'geghilarity:molten_bronze', 'modern_industrialization:bronze_ring', 'bronze')
 	castmetal( 2, 600, 'gear', 'geghilarity:molten_bronze', 'modern_industrialization:bronze_gear', 'bronze')
+	
+	castmetal( 2, 100, 'ingot', 'gegology:molten_brass', 'create:brass_ingot', 'brass')
+	castmetal( 2, 100, 'plate', 'gegology:molten_brass', 'create:brass_sheet', 'brass')
+	
+	let castmetal2 = (eu, time, mold, fluid, out) => {
+		
+		let quant;
+		if (mold == 'plate' || mold == 'ingot') {
+			quant = 144;
+		} else if (mold == 'rod' || mold == 'ring')	{
+			quant = 72;
+		} else quant = 576;
+		
+		event.custom({ 
+			type: "modern_industrialization:caster",
+			eu: eu,
+			duration: time,
+			item_inputs: [ 
+				{item: 'geggy:mold_'+mold, amount: 1, probability: 0.0}
+			],
+			fluid_inputs: [ 
+				{fluid: fluid, amount: quant}
+			],
+			item_outputs: [
+				{item: out, amount: 1}
+			]
+		})
+		
+		event.custom({ 
+			type: "modern_industrialization:electric_caster",
+			eu: eu,
+			duration: time,
+			item_inputs: [ 
+				{item: 'geggy:mold_'+mold, amount: 1, probability: 0.0}
+			],
+			fluid_inputs: [ 
+				{fluid: fluid, amount: quant}
+			],
+			item_outputs: [
+				{item: out, amount: 1}
+			]
+		})
+		
+	}
+	
+	castmetal2( 4, 200, 'ingot', 'geggy:molten_gold', 'minecraft:gold_ingot')
+	castmetal2( 4, 200, 'plate', 'geggy:molten_gold', 'modern_industrialization:gold_plate')
+	castmetal2( 4, 120, 'rod', 'geggy:molten_gold', 'modern_industrialization:gold_rod')
+	castmetal2( 4, 120, 'ring', 'geggy:molten_gold', 'modern_industrialization:gold_ring')
+	castmetal2( 4, 600, 'gear', 'geggy:molten_gold', 'modern_industrialization:gold_gear')
 
 	
 	event.custom({ 

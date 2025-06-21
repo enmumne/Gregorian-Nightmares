@@ -2785,6 +2785,16 @@ ServerEvents.recipes(event => {
 	})
 	
 	event.custom({
+		type: "create:sandpaper_polishing",
+		ingredients: [
+			{"item": "modern_industrialization:copper_gear"}
+		],
+		results: [
+			{"item": "geggy:dented_small_copper_frame"}
+		]
+	})
+	
+	event.custom({
 		type: "create:mechanical_crafting",
 		key: {
 		"A": {"item": "create:metal_bracket"},
@@ -2872,6 +2882,31 @@ ServerEvents.recipes(event => {
 		"ingredients": [{"item": "minecraft:blaze_rod"}, {"item": "modern_industrialization:tin_rod"},
 			{"item": "modern_industrialization:tin_rod"}, {"item": "modern_industrialization:tin_rod"}],
 		"results": [{"count": 4, "item": "geggy:blackened_rod"}] 
+	})
+	
+	// cast
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"amount": 34992, "fluid": 'geghilarity:mcopper'},
+				{"amount": 11664, "fluid": 'gegology:molten_tin'}],
+			"results": [{"amount": 46656, "fluid":'geghilarity:molten_bronze'}] 
+		})
+	event.custom({
+			"type": "create:mixing",
+			"heatRequirement": "heated",
+			"ingredients": [{"amount": 34992, "fluid": 'geghilarity:mcopper'},
+				{"amount": 11664, "fluid": 'geggy:liquid_zinc'}],
+			"results": [{"amount": 46656, "fluid":'gegology:molten_brass'}] 
+		})
+	event.custom({
+		"type": "create:compacting",
+		"ingredients": [
+			{"amount": 23328, "fluid":'gegology:molten_brass'}
+		],
+		"results": [
+			{"item": "geggy:brass_lump"}
+		]
 	})
 	
 })	

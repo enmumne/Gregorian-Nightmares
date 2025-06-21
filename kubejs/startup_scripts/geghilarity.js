@@ -4129,6 +4129,8 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:lead-silica_residue_dust').displayName('Lead-Silica Residue Dust')
 	event.create('geghilarity:zinc_leach_residue_dust')
 	event.create('geghilarity:copper_cadmium_residue_dust')
+	event.create('geghilarity:gallium_arsenide_dust')
+	event.create('geghilarity:small_gallium_arsenide_dust').displayName('Small Pile of Gallium Arsenide Dust');
 
 })	
 

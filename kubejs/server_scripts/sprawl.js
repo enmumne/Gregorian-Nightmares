@@ -1098,16 +1098,6 @@ ServerEvents.recipes(event => {
 				results: [{
 					"item": "geggy:incomplete_basic_hull"
 				}]
-			},	
-			{
-				type: "create:deploying",
-				ingredients: [
-					{"item": "geggy:incomplete_basic_hull"},
-					{"item": "create:brass_sheet"}
-				],
-				results: [{
-					"item": "geggy:incomplete_basic_hull"
-				}]
 			}
 		],
 		results: [{
@@ -1124,8 +1114,7 @@ ServerEvents.recipes(event => {
 			{item: "modern_industrialization:analog_circuit", amount: 1},
 			{item: "powah:energy_cable_basic", amount: 3},
 			{item: "modern_industrialization:redstone_battery", amount: 2},
-			{item: "geghilarity:galvanized_steel_machine_casing", amount: 1},
-			{item: "create:brass_sheet", amount: 1}
+			{item: "geghilarity:galvanized_steel_machine_casing", amount: 1}
 		],
 		fluid_inputs: [ 
 			{fluid: "modern_industrialization:soldering_alloy", amount: 100}
@@ -1406,11 +1395,10 @@ ServerEvents.recipes(event => {
 	event.shaped('modern_industrialization:steel_upgrade', [
 		'ADA',
 		'BEB',
-		'CFC'
+		'AFA'
 	], {
 		A: 'modern_industrialization:bronze_rod',
 		B: 'modern_industrialization:bronze_gear',
-		C: 'moderndynamics:fluid_pipe',
 		D: 'modern_industrialization:bronze_rotor',
 		E: 'modern_industrialization:steel_machine_casing',
 		F: 'geggy:clay_bricks'
@@ -1420,9 +1408,8 @@ ServerEvents.recipes(event => {
 		eu: 8,
 		duration: 100,
 		item_inputs: [ 
-			{item: "modern_industrialization:bronze_rod", amount: 2},
+			{item: "modern_industrialization:bronze_rod", amount: 4},
 			{item: "modern_industrialization:bronze_gear", amount: 2},
-			{item: "moderndynamics:fluid_pipe", amount: 2},
 			{item: "modern_industrialization:bronze_rotor", amount: 1},
 			{item: "modern_industrialization:steel_machine_casing", amount: 1},
 			{item: "geggy:clay_bricks", amount: 1}
@@ -7017,31 +7004,6 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		eu: 2,
 		duration: 200,
 		item_inputs: [ 
-			{item: "create:zinc_ingot", amount: 1},
-		],
-		fluid_inputs: [ 
-			{fluid: "modern_industrialization:lubricant", amount: 1},
-		],
-		item_outputs: [
-			{item: "geggy:zinc_rod", amount: 2}
-		]
-	})
-	event.custom({ 
-		type: "modern_industrialization:compressor",
-		eu: 2,
-		duration: 200,
-		item_inputs: [ 
-			{item: "geggy:zinc_rod", amount: 1}
-		],
-		item_outputs: [	
-			{item: "geggy:zinc_ring", amount: 1}
-		]
-	})
-	event.custom({ 
-		type: "modern_industrialization:cutting_machine",
-		eu: 2,
-		duration: 200,
-		item_inputs: [ 
 			{item: "minecraft:glass_pane", amount: 1},
 		],
 		fluid_inputs: [ 
@@ -8023,7 +7985,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	})
 	
 	event.shaped('2x geggy:simple_pipe_motor', [
-		'CB ',
+		'CBD',
 		'BAB',
 		'DBC'
 	], {
@@ -8358,6 +8320,51 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	event.blasting('geggy:ceramic_rod_mold', 'geggy:clay_rod_mold').cookingTime(600)
 	event.blasting('geggy:ceramic_ring_mold', 'geggy:clay_ring_mold').cookingTime(600)
 	event.blasting('geggy:ceramic_gear_mold', 'geggy:clay_gear_mold').cookingTime(600)
+	
+	// large cog extra
+	event.custom({ 
+			type: "modern_industrialization:caster",
+			eu: 2,
+			duration: 300,
+			item_inputs: [ 
+				{item: 'geggy:mold_quadrant', amount: 1, probability: 0.0}
+			],
+			fluid_inputs: [ 
+				{fluid: 'geghilarity:mcopper', amount: 288}
+			],
+			item_outputs: [
+				{item: 'geggy:dented_quadrant', amount: 1}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_caster",
+			eu: 2,
+			duration: 300,
+			item_inputs: [ 
+				{item: 'geggy:mold_quadrant', amount: 1, probability: 0.0}
+			],
+			fluid_inputs: [ 
+				{fluid: 'geghilarity:mcopper', amount: 288}
+			],
+			item_outputs: [
+				{item: 'geggy:dented_quadrant', amount: 1}
+			]
+		})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 8,
+		duration: 150,
+		item_inputs: [ 
+			{item: "geggy:dented_quadrant", amount: 4},
+			{item: "create:shaft", amount: 1}
+		],
+		fluid_inputs: [ 
+			{fluid: "modern_industrialization:soldering_alloy", amount: 50}
+		],
+		item_outputs: [
+			{item: "create:large_cogwheel", amount: 1}
+		]
+	})
 	
 })
 

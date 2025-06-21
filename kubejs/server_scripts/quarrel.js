@@ -556,12 +556,13 @@ ServerEvents.recipes(event => {
 	
 	event.shaped('drilly:bronze_base_drill', [
 		' D ',
-		'BCB',
+		'ECE',
 		' B '
 	], {
 		B: 'modern_industrialization:bronze_plate',
 		C: 'modern_industrialization:bronze_gear',
-		D: 'create:andesite_encased_cogwheel'
+		D: 'create:andesite_encased_cogwheel',
+		E: 'modern_industrialization:bronze_curved_plate'
 	})
 	
 	event.custom({
