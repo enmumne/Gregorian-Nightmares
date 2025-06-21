@@ -191,6 +191,11 @@ eu: 4, duration: 100,item_inputs: [{item: "geghilarity:tiny_platinum_metallic_po
 	event.custom({ 
 		type: "modern_industrialization:unpacker", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:potassium_persulfate_dust", amount: 1}],
 			item_outputs: [{item: "geghilarity:tiny_potassium_persulfate_dust", amount: 9}]})	
+			
+	event.shapeless('4x geghilarity:small_gallium_arsenide_dust', [ 'geghilarity:gallium_arsenide_dust'])		
+	event.custom({ 
+		type: "modern_industrialization:unpacker", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:gallium_arsenide_dust", amount: 1}],
+			item_outputs: [{item: "geghilarity:small_gallium_arsenide_dust", amount: 4}]})		
 
 	event.custom({ 
 		type: "modern_industrialization:packer", eu: 2, duration: 100,item_inputs: [{item: "geghilarity:tiny_chromite_dust", amount: 9}],

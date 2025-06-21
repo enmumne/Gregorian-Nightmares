@@ -1871,9 +1871,10 @@ ServerEvents.recipes(event => {
 		duration: 100,
 		item_inputs: [ 
 			{item: "modern_industrialization:analog_circuit_board", amount: 1},
-			{item: "modern_industrialization:aluminum_plate", amount: 3},
+			{item: "modern_industrialization:aluminum_plate", amount: 2},
 			{item: "powah:energy_cable_hardened", amount: 4},
-			{item: "modern_industrialization:redstone_battery", amount: 1}
+			{item: "modern_industrialization:redstone_battery", amount: 1},
+			{item: "geghilarity:good_circuit_board", amount: 1}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:electronic_circuit_board", amount: 1}

@@ -3447,6 +3447,32 @@ StartupEvents.registry('fluid', event => {
 	.create('geghilarity:purified_cadmium_solution')
 	.thinTexture(0x49AA6D)
     .noBucket
+	
+	event
+	.create('geghilarity:black_liquor')
+	.thinTexture(0x26241D)
+    .noBucket
+	
+	event
+	.create('geghilarity:concentrated_black_liquor')
+	.thinTexture(0x1B1A18)
+    .noBucket
+	
+	event
+	.create('geghilarity:green_liquor')
+	.thinTexture(0x263C30)
+    .noBucket
+	
+	event
+	.create('geghilarity:white_liquor')
+	.thinTexture(0xB1AC9E)
+    .noBucket
+	
+	event
+	.create('geghilarity:high-grade_resin')
+	.displayName('High-Grade Resin')
+	.thinTexture(0x8D7E29)
+    .noBucket
    
 })
 
@@ -4129,8 +4155,13 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:lead-silica_residue_dust').displayName('Lead-Silica Residue Dust')
 	event.create('geghilarity:zinc_leach_residue_dust')
 	event.create('geghilarity:copper_cadmium_residue_dust')
+	
 	event.create('geghilarity:gallium_arsenide_dust')
 	event.create('geghilarity:small_gallium_arsenide_dust').displayName('Small Pile of Gallium Arsenide Dust');
+	event.create('geghilarity:raw_cellulose_dust')
+	event.create('geghilarity:cellulose_dust')
+	event.create('geghilarity:good_circuit_board')
+	event.create('geghilarity:phenolic_circuit_board')
 
 })	
 

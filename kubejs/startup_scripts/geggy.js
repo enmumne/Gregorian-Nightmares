@@ -1429,6 +1429,11 @@ StartupEvents.registry('fluid', event => {
 	.thinTexture(0xC0A17F)
     .noBucket
 	
+	event
+    .create('geggy:liquid_quartz_glass')
+	.thinTexture(0xA1A5AB)
+    .noBucket
+	
 	// GT6 vitriols
 	event.create('gegology:black_vitriol').thinTexture(0x3B3B3B).noBucket
 	event.create('gegology:blue_vitriol').thinTexture(0x3B3BC6).noBucket

@@ -967,14 +967,14 @@ ServerEvents.recipes(event => {
 	// 24
 	event.custom({ 
 		type: "modern_industrialization:electrolyzer",
-			eu: 60,
-			duration: 448,
+			eu: 30,
+			duration: 150,
 			item_inputs: [
-				{item: "geghilarity:sodium_bisulfate_dust", amount: 14}
+				{item: "geghilarity:sodium_bisulfate_dust", amount: 7}
 			],
 			fluid_outputs: [
-				{fluid: "geghilarity:sodium_persulfate", amount: 1000},
-				{fluid: "modern_industrialization:hydrogen", amount: 2000}
+				{fluid: "geghilarity:sodium_persulfate", amount: 500},
+				{fluid: "modern_industrialization:hydrogen", amount: 1000}
 			]
 		})		
 
@@ -2272,9 +2272,9 @@ ServerEvents.recipes(event => {
 	// E7
 	// DEPP MAGICK
 	event.custom({ 
-		type: "modern_industrialization:chemical_reactor",
+		type: "modern_industrialization:roaster",
 			eu: 30,
-			duration: 240,
+			duration: 80,
 			item_inputs: [ 
 				{item: "magick:calcite_dust", amount: 5}
 			],
@@ -8995,7 +8995,7 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:arc_furnace",
-		eu: 60,
+		eu: 56,
 		duration: 300,
 		item_inputs: [ 
 			{item: "geghilarity:silicon_dioxide_dust", amount: 3},
@@ -9014,7 +9014,7 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:arc_furnace",
-		eu: 60,
+		eu: 56,
 		duration: 300,
 		item_inputs: [ 
 			{item: "geghilarity:silicon_dioxide_dust", amount: 3},
@@ -9033,7 +9033,7 @@ ServerEvents.recipes(event => {
 	
 	event.custom({ 
 		type: "modern_industrialization:arc_furnace",
-		eu: 60,
+		eu: 56,
 		duration: 270,
 		item_inputs: [ 
 			{item: "geghilarity:silicon_carbide_dust", amount: 2}
@@ -18480,6 +18480,184 @@ ServerEvents.recipes(event => {
 		fluid_outputs: [	
 			{fluid: "modern_industrialization:nitrogen", amount: 40},
 			{fluid: "modern_industrialization:oxygen", amount: 40}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 30,
+		duration: 15,
+		fluid_inputs: [
+			{fluid: "geghilarity:high-grade_resin", amount: 100}
+		],
+		fluid_outputs: [	
+			{fluid: "geggy:refined_glue", amount: 75}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillation_tower",
+		eu: 30,
+		duration: 200,
+		fluid_inputs: [
+			{fluid: "geghilarity:black_liquor", amount: 1250}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:concentrated_black_liquor", amount: 1000},
+			{fluid: "geghilarity:high-grade_resin", amount: 250}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:distillery",
+		eu: 7,
+		duration: 40,
+		fluid_inputs: [
+			{fluid: "geghilarity:black_liquor", amount: 125}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:high-grade_resin", amount: 25}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:carbon_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:concentrated_black_liquor", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:carbon_dioxide", amount: 1000},
+			{fluid: "geghilarity:green_liquor", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:quicklime_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:green_liquor", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "magick:calcite_dust", amount: 5}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:white_liquor", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:autoclave",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "modern_industrialization:wood_pulp", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:white_liquor", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:raw_cellulose_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:black_liquor", amount: 1000}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:chemical_bath",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:raw_cellulose_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 250}
+		],
+		item_outputs: [	
+			{item: "geghilarity:cellulose_dust", amount: 1}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:black_liquor", amount: 250}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:chemical_bath",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:cellulose_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "minecraft:paper", amount: 9}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 30,
+		duration: 200,
+		item_inputs: [
+			{item: "geghilarity:sodium_sulfide_dust", amount: 3},
+			{item: "geghilarity:sodium_hydroxide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 1000}
+		],
+		fluid_outputs: [	
+			{fluid: "geghilarity:white_liquor", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:batch_reactor",
+		eu: 30,
+		duration: 100,
+		item_inputs: [
+			{item: "geghilarity:sodium_hydroxide_dust", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:sulfuric_acid", amount: 1000}
+		],
+		item_outputs: [	
+			{item: "geghilarity:sodium_bisulfate_dust", amount: 7}
+		],
+		fluid_outputs: [	
+			{fluid: "minecraft:water", amount: 1000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:chemical_reactor",
+		eu: 30,
+		duration: 300,
+		item_inputs: [
+			{item: "modern_industrialization:silver_wire", amount: 2},
+			{item: "geghilarity:phenolic_circuit_board", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geghilarity:sodium_persulfate", amount: 200}
+		],
+		item_outputs: [	
+			{item: "geghilarity:good_circuit_board", amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 30,
+		duration: 150,
+		item_inputs: [
+			{item: "modern_industrialization:wood_pulp", amount: 3}
+		],
+		fluid_inputs: [
+			{fluid: "geggy:refined_glue", amount: 50}
+		],
+		item_outputs: [	
+			{item: "geghilarity:phenolic_circuit_board", amount: 1}
 		]
 	})
 	

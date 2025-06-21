@@ -3319,17 +3319,6 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		]
 	})
 	
-	event.shaped('modern_industrialization:arc_furnace', [
-		'EDE',
-		'BAB',
-		'CCC'
-	], {
-		A: 'modern_industrialization:basic_machine_hull',
-		B: 'modern_industrialization:electronic_circuit',
-		C: 'modern_industrialization:steel_large_plate',
-		D: 'geghilarity_fatmachines:carbon_electrode_assembly',
-		E: 'modern_industrialization:pump'
-	})
 	event.custom({ 
 		type: "modern_industrialization:assembler",
 		eu: 30,
@@ -3337,7 +3326,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		item_inputs: [ 
 			{item: "modern_industrialization:basic_machine_hull", amount: 1},
 			{item: "modern_industrialization:steel_large_plate", amount: 3},
-			{item: "modern_industrialization:electronic_circuit", amount: 2},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
 			{item: "modern_industrialization:pump", amount: 2},
 			{item: "geghilarity_fatmachines:carbon_electrode_assembly", amount: 1}
 		],
@@ -3584,10 +3573,12 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 200,
 		item_inputs: [ 
 			{item: "modern_industrialization:silicon_n_doped_plate", amount: 1},
-			{item: "ae2:quartz_glass", amount: 1},
 			{item: "modern_industrialization:electrum_fine_wire", amount: 1},
 			{item: "modern_industrialization:steel_curved_plate", amount: 2},
-			{item: "geghilarity:tiny_gallium_dust", amount: 2}
+			{item: "geghilarity:small_gallium_arsenide_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geggy:liquid_quartz_glass", amount: 144}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:diode", amount: 1}
@@ -3598,11 +3589,13 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		eu: 8,
 		duration: 200,
 		item_inputs: [ 
-			{item: "modern_industrialization:silicon_plate", amount: 1},
-			{item: "ae2:quartz_glass", amount: 3},
+			{item: "modern_industrialization:silicon_plate", amount: 2},
 			{item: "modern_industrialization:electrum_fine_wire", amount: 3},
 			{item: "modern_industrialization:steel_curved_plate", amount: 2},
-			{item: "geghilarity:gallium_dust", amount: 1}
+			{item: "geghilarity:gallium_arsenide_dust", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "geggy:liquid_quartz_glass", amount: 144}
 		],
 		item_outputs: [
 			{item: "modern_industrialization:diode", amount: 1}
@@ -4750,7 +4743,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		duration: 200,
 		item_inputs: [ 
 			{item: "modern_industrialization:electronic_circuit_board", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 4},
+			{item: "modern_industrialization:analog_circuit", amount: 3},
 			{item: "modern_industrialization:diode", amount: 2},
 			{item: "modern_industrialization:transistor", amount: 2}
 		],
@@ -8363,6 +8356,32 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		],
 		item_outputs: [
 			{item: "create:large_cogwheel", amount: 1}
+		]
+	})
+	
+	// misc MV fix
+	event.custom({ 
+		type: "modern_industrialization:fextract",
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "ae2:quartz_glass", amount: 1}
+		],
+		fluid_outputs: [
+			{fluid: "geggy:liquid_quartz_glass", amount: 144}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 7,
+		duration: 200,
+		item_inputs: [ 
+			{item: "geghilarity:gallium_dust", amount: 1},
+			{item: "geghilarity:arsenic_dust", amount: 1}
+		],
+		item_outputs: [
+			{item: "geghilarity:gallium_arsenide_dust", amount: 2}
 		]
 	})
 	
