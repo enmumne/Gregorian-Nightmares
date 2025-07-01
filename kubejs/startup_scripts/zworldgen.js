@@ -5,7 +5,6 @@ StartupEvents.registry('block', event => {
 	
 	event.create('geggy:oleous_sand').material('sand').displayName('Oleous Sand').hardness(2).tagBlock('minecraft:mineable/shovel').requiresTool(false)
 	event.create('geggy:andesite_block').material('stone').displayName('Andesite Alloy Frame').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
-	event.create('geggy:stibnite_ore').material('stone').displayName('Stibnite Ore').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_1', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_2', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 	event.create('geggy:andesite_casing_3', 'cardinal').material('stone').displayName('Unfinished Andesite Casing').hardness(8).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)

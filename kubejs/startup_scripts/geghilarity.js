@@ -3781,7 +3781,7 @@ StartupEvents.registry('item', event => {
 	event.create('geghilarity:small_silver_oxide_dust').displayName('Small Pile of Silver Oxide Dust');
 	event.create('geghilarity:silver_oxide_dust')
 	
-	event.create('geghilarity:nickel_rod')
+	event.create('geghilarity:nickel_rod').texture('gegology:item/mi-rod').color(0xDDDDB1)
 	
 	event.create('geghilarity:graphite_dust')
 	event.create('geghilarity:graphite_ingot')

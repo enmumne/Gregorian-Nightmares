@@ -8,12 +8,6 @@ ServerEvents.recipes(event => {
 		
 		"soulsweapons:moonstone_pickaxe",
 		
-		"twilightforest:equipment/ironwood_pickaxe",
-		"twilightforest:equipment/fiery_pickaxe",
-		"twilightforest:equipment/steeleaf_pickaxe",
-		"twilightforest:equipment/knightmetal_pickaxe",
-		"twilightforest:equipment/giant_pickaxe",
-		
 		"betternether:cincinnasite_axe",
 		"betternether:nether_ruby_axe",
 		
@@ -120,7 +114,6 @@ ServerEvents.recipes(event => {
 		"oxidized:coppper_ingot_from_nuggets",
 		"oxidized:brick_kiln_smelting",
 		"vinery:cooking_pot",
-		"twilightforest:equipment/knightmetal_shield"
 	])
 	
 	event.shaped('betternether:nether_reed_crafting_table', [
@@ -343,147 +336,147 @@ ServerEvents.recipes(event => {
 	event.smithing(
 		'betternether:cincinnasite_pickaxe',                     
 		'minecraft:iron_pickaxe',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_sword',                     
 		'minecraft:iron_sword',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_axe',                     
 		'minecraft:iron_axe',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_hoe',                     
 		'minecraft:iron_hoe',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_shovel',                     
 		'minecraft:iron_shovel',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'farmersknives:cincinnasite_knife',                     
 		'farmersdelight:iron_knife',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	
 	event.smithing(
 		'betternether:nether_ruby_pickaxe',                     
 		'minecraft:netherite_pickaxe',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_sword',                     
 		'minecraft:netherite_sword',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_axe',                     
 		'minecraft:netherite_axe',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_hoe',                     
 		'minecraft:netherite_hoe',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_shovel',                     
 		'minecraft:netherite_shovel',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'farmersknives:nether_ruby_knife',                     
 		'farmersdelight:netherite_knife',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	
 	event.smithing(
 		'betternether:cincinnasite_chestplate',                     
 		'minecraft:iron_chestplate',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_helmet',                     
 		'minecraft:iron_helmet',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_leggings',                     
 		'minecraft:iron_leggings',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	event.smithing(
 		'betternether:cincinnasite_boots',                     
 		'minecraft:iron_boots',                       
-		'expert_armor:betternether/cincinnasite_plate'       
+		'betternether:cincinnasite_ingot'       
 	)
 	
 	event.smithing(
 		'betternether:nether_ruby_chestplate',                     
 		'minecraft:diamond_chestplate',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_helmet',                     
 		'minecraft:diamond_helmet',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_leggings',                     
 		'minecraft:diamond_leggings',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	event.smithing(
 		'betternether:nether_ruby_boots',                     
 		'minecraft:diamond_boots',                       
-		'expert_armor:betternether/nether_ruby_plate'       
+		'betternether:nether_ruby'       
 	)
 	
 	event.smithing(
 		'betterend:thallasium_chestplate',                     
 		'minecraft:iron_chestplate',                       
-		'expert_armor:betterend/thallasium_plate'       
+		'betterend:thallasium_ingot'       
 	)
 	event.smithing(
 		'betterend:thallasium_helmet',                     
 		'minecraft:iron_helmet',                       
-		'expert_armor:betterend/thallasium_plate'       
+		'betterend:thallasium_ingot'       
 	)
 	event.smithing(
 		'betterend:thallasium_leggings',                     
 		'minecraft:iron_leggings',                       
-		'expert_armor:betterend/thallasium_plate'       
+		'betterend:thallasium_ingot'       
 	)
 	event.smithing(
 		'betterend:thallasium_boots',                     
 		'minecraft:iron_boots',                       
-		'expert_armor:betterend/thallasium_plate'       
+		'betterend:thallasium_ingot'       
 	)
 	
 	event.smithing(
 		'betterend:terminite_chestplate',                     
 		'minecraft:diamond_chestplate',                       
-		'expert_armor:betterend/terminite_plate'       
+		'betterend:terminite_ingot'       
 	)
 	event.smithing(
 		'betterend:terminite_helmet',                     
 		'minecraft:diamond_helmet',                       
-		'expert_armor:betterend/terminite_plate'       
+		'betterend:terminite_ingot'       
 	)
 	event.smithing(
 		'betterend:terminite_leggings',                     
 		'minecraft:diamond_leggings',                       
-		'expert_armor:betterend/terminite_plate'       
+		'betterend:terminite_ingot'       
 	)
 	event.smithing(
 		'betterend:terminite_boots',                     
 		'minecraft:diamond_boots',                       
-		'expert_armor:betterend/terminite_plate'       
+		'betterend:terminite_ingot'       
 	)
 		
 	event.shaped('vinery:barrel', [
@@ -686,16 +679,6 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'betternether:nether_reed_slab',
 		B: 'minecraft:barrel'
-	})
-	
-	event.shaped('twilightforest:knightmetal_shield', [
-		'AAA',
-		'BCB',
-		' C '
-	], {
-		A: 'twilightforest:knightmetal_ingot',
-		B: 'twilightforest:towerwood',
-		C: 'modern_industrialization:titanium_ring'
 	})
 	
 	event.custom({ 
@@ -1319,13 +1302,10 @@ ServerEvents.recipes(event => {
 
 ServerEvents.tags('item', event => { 
   
-  event.add('c:ingots/fiery', 'twilightforest:fiery_ingot')
-  event.add('c:ingots/ironwood', 'twilightforest:ironwood_ingot')
-  event.add('c:ingots/knightmetal', 'twilightforest:knightmetal_ingot')
-  event.add('c:ingots/steeleaf', 'twilightforest:steeleaf_ingot')
+
   
   event.add('c:hidden_from_recipe_viewers', 'vinery:cooking_pot')
   event.add('c:hidden_from_recipe_viewers', 'oxidized:copper_nugget')
-  event.add('c:hidden_from_recipe_viewers', 'twilightforest:uncrafting_table')
+
   
 });

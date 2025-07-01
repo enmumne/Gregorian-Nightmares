@@ -777,19 +777,7 @@ ServerEvents.recipes(event => {
 			"ingredients": [{"item": "modern_industrialization:bronze_ingot"}],
 			"results": [{"item": "modern_industrialization:bronze_rod"}]
 	})
-	event.custom({
-			"type": "create:cutting",
-			processingTime: 75,
-			"ingredients": [{"item": "modern_industrialization:nickel_ingot"}],
-			"results": [{"item": "geghilarity:nickel_rod"}]
-	})
-	/*
-	event.recipes.createCutting(Item.of("modern_industrialization:iron_rod", 2), "minecraft:iron_ingot")
-	event.recipes.createCutting(Item.of("modern_industrialization:copper_rod", 2), "minecraft:copper_ingot")
-	event.recipes.createCutting(Item.of("modern_industrialization:gold_rod", 2), "minecraft:gold_ingot")
-	event.recipes.createCutting(Item.of("modern_industrialization:tin_rod", 2), "modern_industrialization:tin_ingot")
-	event.recipes.createCutting(Item.of("modern_industrialization:bronze_rod", 2), "modern_industrialization:bronze_ingot")
-	*/
+
 
 	// bolt
 

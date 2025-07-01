@@ -140,7 +140,7 @@ ServerEvents.recipes(event => {
 		'BCB',
 		'ADA'
 	], {
-		A: 'create:andesite_alloy',
+		A: 'geggy:hardened_alloy',
 		B: 'create:shaft',
 		C: 'minecraft:coal_block',
 		D: 'modern_industrialization:tin_ring'

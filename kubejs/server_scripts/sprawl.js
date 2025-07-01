@@ -1891,7 +1891,7 @@ ServerEvents.recipes(event => {
 	event.custom({
 		"type": "farmersdelight:cutting",
 		"ingredients": [
-			{"item": "geggy:andesite_alloy_slice"}
+			{"item": "geggy:hardened_andesite_alloy"}
 		],
 		"tool": {
 			"type": "farmersdelight:tool",
@@ -1901,6 +1901,21 @@ ServerEvents.recipes(event => {
 			{"chance": 0.9, "count": 1, "item": "create:shaft"},
 			{"chance": 0.8, "count": 1, "item": "create:shaft"},
 			{"chance": 0.6, "count": 1, "item": "create:shaft"}
+		],
+		"sound": "minecraft:entity.item.break"
+	})
+	
+	event.custom({
+		"type": "farmersdelight:cutting",
+		"ingredients": [
+			{"item": "minecraft:dripstone_block"}
+		],
+		"tool": {
+			"type": "farmersdelight:tool",
+			"tag": "c:tools/pickaxes"
+		},
+		"result": [
+			{"count": 2, "item": "magick:calcite_dust"}
 		],
 		"sound": "minecraft:entity.item.break"
 	})
@@ -2961,6 +2976,14 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		S: 'modern_industrialization:iron_tiny_dust',
 		B: 'modern_industrialization:coal_tiny_dust'
 	})
+	event.shaped('geggy:tiny_iron_blend_dust', [
+		'SSS',
+		'B  ',
+		'   '
+	], {
+		S: 'gegology:tiny_granitic_sand_dust',
+		B: 'modern_industrialization:coal_tiny_dust'
+	})
 	event.blasting('minecraft:iron_nugget', 'geggy:tiny_iron_blend_dust').cookingTime(200)
 	event.custom({ 
 		type: "modern_industrialization:blast_furnace",
@@ -3925,7 +3948,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 	})
 	event.custom({ 
 		type: "modern_industrialization:compressor",
-		eu: 12,
+		eu: 8,
 		duration: 150,
 		item_inputs: [ 
 			{item: "minecraft:sand", amount: 4}
@@ -6904,7 +6927,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geghilarity:precious_ingot", amount: 1}
 		],
 		item_outputs: [	
-			{item: "minecraft:gold_nugget", amount: 1}
+			{item: "minecraft:gold_nugget", amount: 3}
 		]
 	})
 	
@@ -7482,20 +7505,7 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		]
 	})
 	
-	event.custom({ 
-		type: "modern_industrialization:macerator",
-		eu: 2,
-		duration: 100,
-		item_inputs: [
-			{item: "geggy:stibnite_ore", amount: 1}
-		],
-		item_outputs: [
-			{item: "geggy:raw_stibnite", amount: 1},
-			{item: "geggy:raw_stibnite", amount: 1, probability: 0.5}
-		]
-	})
-	event.blasting('modern_industrialization:antimony_ingot', 'geggy:raw_stibnite').cookingTime(200)
-	event.blasting('modern_industrialization:antimony_ingot', 'geggy:stibnite_dust').cookingTime(100)
+	event.blasting('modern_industrialization:antimony_ingot', 'geggy:refined_stibnite_dust').cookingTime(100)
 	
 	event.custom({ 
 		type: "modern_industrialization:alloy_smelter",
@@ -7883,6 +7893,19 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 		],
 		item_outputs: [
 			{item: "geggy:unrefined_clay", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:evaporation",
+		eu: 2,
+		duration: 400,
+		fluid_inputs: [ 
+			{fluid: "gegology:sluice_juice", amount: 450}
+		],
+		item_outputs: [
+			{item: "geggy:stone_dust", amount: 1, probability: 0.4},
+			{item: "geggy:sand_dust", amount: 1, probability: 0.1}
 		]
 	})
 	
@@ -8384,6 +8407,33 @@ event.remove({id: "modern_industrialization:vanilla_recipes/centrifuge/lava"})
 			{item: "geghilarity:gallium_arsenide_dust", amount: 2}
 		]
 	})
+	
+	event.custom({ 
+		type: "modern_industrialization:cutting_machine",
+		eu: 2,
+		duration: 400,
+		item_inputs: [ 
+			{item: "minecraft:diamond", amount: 1}
+		],
+		fluid_inputs: [
+			{fluid: "modern_industrialization:lubricant", amount: 10}
+		],
+		item_outputs: [	
+			{item: "geggy:crystalline_diamond_plate", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+			type: "modern_industrialization:shredder",
+			eu: 4,
+			duration: 200,
+			item_inputs: [ 
+				{item: 'minecraft:cobblestone', amount: 1}
+			],
+			item_outputs: [
+				{item: 'geggy:stone_dust', amount: 9}
+			]
+		})
 	
 })
 

@@ -16991,13 +16991,13 @@ ServerEvents.recipes(event => {
 		eu: 120,
 		duration: 200,
 		item_inputs: [
-			{item: "geggy:raw_stibnite", amount: 2}
+			{item: "gegology:stibnite_dust", amount: 2}
 		],
 		fluid_inputs: [
 			{fluid: "modern_industrialization:nitrogen", amount: 8000, probability: 0.0}
 		],
 		item_outputs: [	
-			{item: "geggy:stibnite_dust", amount: 3},
+			{item: "geggy:refined_stibnite_dust", amount: 3},
 			{item: "geghilarity:pegmatite_tailing_dust", amount: 1}
 		]
 	})
@@ -17007,7 +17007,7 @@ ServerEvents.recipes(event => {
 		eu: 480,
 		duration: 80,
 		item_inputs: [
-			{item: "geggy:raw_stibnite", amount: 8}
+			{item: "gegology:stibnite_dust", amount: 8}
 		],
 		fluid_inputs: [
 			{fluid: "geghilarity:distilled_water", amount: 2000}
@@ -17043,7 +17043,7 @@ ServerEvents.recipes(event => {
 			{fluid: "geghilarity:stibnite_slurry", amount: 1000}
 		],
 		item_outputs: [	
-			{item: "geggy:stibnite_dust", amount: 16}
+			{item: "geggy:refined_stibnite_dust", amount: 16}
 		],
 		fluid_outputs: [	
 			{fluid: "geghilarity:wastewater", amount: 1000}
@@ -17055,7 +17055,7 @@ ServerEvents.recipes(event => {
 		eu: 120,
 		duration: 200,
 		item_inputs: [
-			{item: "geggy:stibnite_dust", amount: 1}
+			{item: "geggy:refined_stibnite_dust", amount: 1}
 		],
 		fluid_inputs: [
 			{fluid: "modern_industrialization:oxygen", amount: 9000}
@@ -18651,7 +18651,8 @@ ServerEvents.recipes(event => {
 		eu: 30,
 		duration: 150,
 		item_inputs: [
-			{item: "modern_industrialization:wood_pulp", amount: 3}
+			{item: "modern_industrialization:wood_pulp", amount: 2},
+			{item: "geghilarity:raw_cellulose_dust", amount: 1}
 		],
 		fluid_inputs: [
 			{fluid: "geggy:refined_glue", amount: 50}

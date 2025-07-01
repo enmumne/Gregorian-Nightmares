@@ -527,11 +527,11 @@ MIMachineEvents.registerMachines(event => {
 		// Background height (or -1 for default value), progress bar, efficiency bar, energy bar
 		170, event.progressBar(78, 32, "arrow"), event.efficiencyBar(38, 106), event.energyBar(14, 34),
 		// Number of slots: item inputs, item outputs, fluid inputs, fluid outputs
-		4, 6, 0, 0,
+		2, 6, 0, 0,
 		// Capacity for fluid slots
 		16,
 		// Slot positions: items and fluids.
-		items => items.addSlots(36, 35, 2, 2).addSlots(106, 35, 3, 2), fluids => {},
+		items => items.addSlots(36, 35, 2, 1).addSlots(106, 35, 3, 2), fluids => {},
 		// front overlay?, top overlay?, side overlay?
 		true, true, true,
 	);

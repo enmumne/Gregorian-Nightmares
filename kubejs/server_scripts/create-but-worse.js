@@ -169,7 +169,7 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'create:andesite_casing',
 		B: 'minecraft:stick',
-		C: 'create:andesite_alloy'
+		C: 'geggy:hardened_andesite_alloy'
 	})
 	event.shaped('create:encased_fan', [
 		'DC ',
@@ -206,7 +206,7 @@ ServerEvents.recipes(event => {
 	], {
 		A: 'modern_industrialization:steel_plate',
 		B: 'modern_industrialization:steel_ingot',
-		C: 'create:andesite_alloy'
+		C: 'geggy:hardened_alloy'
 	})
 	event.shaped('create:goggles', [
 		' A ',
@@ -2842,21 +2842,32 @@ ServerEvents.recipes(event => {
 	event.custom({
 		type: "create:cutting",
 		ingredients: [
-			{"item": "geggy:andesite_alloy_slice"}
+			{"item": "geggy:hardened_andesite_alloy"}
 		],
 		processingTime: 100,
 		results: [{
 			"count": 3, "item": "create:shaft"
 		}]
 	})
+	event.custom({
+		type: "create:cutting",
+		ingredients: [
+			{"item": "geggy:hardened_alloy"}
+		],
+		processingTime: 150,
+		results: [{
+			"count": 2, "item": "geggy:hardened_andesite_alloy"
+		}]
+	})
 	event.blasting('geggy:hardened_andesite_alloy', 'geggy:andesite_alloy_slice').cookingTime(100)
+	event.blasting('geggy:hardened_alloy', 'create:andesite_alloy').cookingTime(150)
 	event.shaped('create:basin', [
 		'A A',
 		'ABA',
 		'   '
 	], {
 		A: 'geggy:hardened_andesite_alloy',
-		B: 'create:andesite_alloy'
+		B: 'geggy:hardened_alloy'
 	})
 	
 	event.shaped('2x create:display_board', [

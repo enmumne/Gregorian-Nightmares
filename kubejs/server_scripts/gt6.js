@@ -2317,7 +2317,7 @@ ServerEvents.recipes(event => {
 	meltore('native_tin', 16, 144, 12, 29, 116, 'gegology:molten_tin')
 	meltore('native_zinc', 16, 144, 12, 29, 116, 'geggy:liquid_zinc')
 	
-	
+	// 8 ref 16 pure dust
 	let meltoret1 = (name, tpur, pur, tref, ref, tdust, sdust, dust, tpdust, pdust, output) => {
 		event.custom({ 
 			type: "modern_industrialization:melter",
@@ -2480,8 +2480,8 @@ ServerEvents.recipes(event => {
 	}
 	
 	// tpur,pur / tref,ref / t,s,dust / t,purdust
-	// pure is pure - Xx, same for ref
-	// pur dust is (tiny+small+small+dust) tiny pdust is /9 (difetto)
+	// start from raw dust, purified is purified - Xx, same for ref
+	// pure dust is (tiny+small+small+dust) tiny pdust is /9 (difetto)
 	meltoret1('tetrahedrite', 4, 41, 5, 45, 4, 9, 36, 6, 58, 'geghilarity:mcopper') // 41 > 45 / 45 > 49 / 58
 	meltoret1('malachite', 3, 27, 3, 29, 2, 6, 24, 4, 38, 'geghilarity:mcopper') // 27 > 30 / 29 > 32 / 38
 	meltoret1('azurite', 2, 18, 2, 19, 1, 4, 16, 2, 25, 'geghilarity:mcopper') // 18 > 20 / 19 > 21 / 25
@@ -2495,13 +2495,333 @@ ServerEvents.recipes(event => {
 	
 	meltoret1('nikolite', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_nikolite')
 	
-	meltoret1('native_antimony', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_antimony')
-	
-	meltoret1('native_nickel', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_nickel')
-	
 	meltoret1('native_tin', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_tin')
 	meltoret1('native_zinc', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'geggy:liquid_zinc')
 	meltoret1('native_copper', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'geghilarity:mcopper')
+	meltoret1('native_cobalt', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_cobalt')
+	
+	meltoret1('hematite', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_hematite')
+	
+	meltoret1('cobaltite', 4, 41, 5, 45, 4, 9, 36, 6, 58, 'gegology:molten_cobalt')
+	
+	let meltorenopur = (name, tpur, pur, tref, ref, tdust, sdust, dust, output) => {
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 2,
+			duration: 25,
+			item_inputs: [ 
+				{item: 'gegology:tiny_purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tpur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 2,
+			duration: 25,
+			item_inputs: [ 
+				{item: 'gegology:tiny_purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tpur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 2,
+			duration: 200,
+			item_inputs: [ 
+				{item: 'gegology:purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: pur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 2,
+			duration: 200,
+			item_inputs: [ 
+				{item: 'gegology:purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: pur}
+			]
+		})
+
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 8,
+			duration: 20,
+			item_inputs: [ 
+				{item: 'gegology:tiny_refined_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tref}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 8,
+			duration: 150,
+			item_inputs: [ 
+				{item: 'gegology:refined_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: ref}
+			]
+		})
+		
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 2,
+			duration: 7,
+			item_inputs: [ 
+				{item: 'gegology:tiny_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 2,
+			duration: 7,
+			item_inputs: [ 
+				{item: 'gegology:tiny_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 2,
+			duration: 30,
+			item_inputs: [ 
+				{item: 'gegology:small_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: sdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 2,
+			duration: 30,
+			item_inputs: [ 
+				{item: 'gegology:small_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: sdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 2,
+			duration: 100,
+			item_inputs: [ 
+				{item: 'gegology:'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: dust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 2,
+			duration: 100,
+			item_inputs: [ 
+				{item: 'gegology:'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: dust}
+			]
+		})
+		
+	}
+	
+	meltorenopur('cinnabar', 6, 54, 6, 59, 5, 12, 48, 'geghilarity:mercury')
+	
+	meltorenopur('galena', 6, 54, 6, 59, 5, 12, 48, 'gegology:molten_lead')
+	
+	meltorenopur('native_lead', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_lead')
+	
+	meltorenopur('brown_limonite', 9, 81, 9, 89, 8, 18, 72, 'gegology:molten_hematite')
+	meltorenopur('yellow_limonite', 9, 81, 9, 89, 8, 18, 72, 'gegology:molten_hematite')
+	
+	let meltoresteel = (name, tpur, pur, tref, ref, tdust, sdust, dust, tpdust, pdust, output) => {
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 4,
+			duration: 25,
+			item_inputs: [ 
+				{item: 'gegology:tiny_purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tpur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 4,
+			duration: 25,
+			item_inputs: [ 
+				{item: 'gegology:tiny_purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tpur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 4,
+			duration: 200,
+			item_inputs: [ 
+				{item: 'gegology:purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: pur}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 4,
+			duration: 200,
+			item_inputs: [ 
+				{item: 'gegology:purified_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: pur}
+			]
+		})
+
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 8,
+			duration: 20,
+			item_inputs: [ 
+				{item: 'gegology:tiny_refined_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tref}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 8,
+			duration: 150,
+			item_inputs: [ 
+				{item: 'gegology:refined_'+name+'_ore', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: ref}
+			]
+		})
+		
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 4,
+			duration: 7,
+			item_inputs: [ 
+				{item: 'gegology:tiny_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 4,
+			duration: 7,
+			item_inputs: [ 
+				{item: 'gegology:tiny_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 4,
+			duration: 30,
+			item_inputs: [ 
+				{item: 'gegology:small_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: sdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 4,
+			duration: 30,
+			item_inputs: [ 
+				{item: 'gegology:small_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: sdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:melter",
+			eu: 4,
+			duration: 100,
+			item_inputs: [ 
+				{item: 'gegology:'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: dust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 4,
+			duration: 100,
+			item_inputs: [ 
+				{item: 'gegology:'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: dust}
+			]
+		})
+		
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 16,
+			duration: 10,
+			item_inputs: [ 
+				{item: 'gegology:tiny_purified_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: tpdust}
+			]
+		})
+		event.custom({ 
+			type: "modern_industrialization:electric_melter",
+			eu: 16,
+			duration: 100,
+			item_inputs: [ 
+				{item: 'gegology:purified_'+name+'_dust', amount: 1}
+			],
+			fluid_outputs: [
+				{fluid: output, amount: pdust}
+			]
+		})
+		
+	}
+	
+	// 16 nugget
+	// start from dust,small tiny, then (dust+small+small+tiny) for purified dust and /9 tiny
+	// purified ore is dust+small -index
+	// refined 
+	meltoresteel('pentlandite', 6, 54, 6, 59, 5, 12, 48, 8, 77, 'gegology:molten_nickel')
+	meltoresteel('garnierite', 13, 122, 14, 133, 12, 27, 108, 19, 174, 'gegology:molten_nickel')
+	meltoresteel('native_nickel', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_nickel')
+	
+	meltoresteel('stibnite', 4, 41, 5, 45, 4, 9, 36, 6, 58, 'gegology:molten_antimony')
+	meltoresteel('native_antimony', 18, 162, 19, 177, 16, 36, 144, 25, 232, 'gegology:molten_antimony')
 		
 	event.custom({
 		"type": "create:compacting",
@@ -2667,7 +2987,14 @@ ServerEvents.recipes(event => {
 	castmetal2( 4, 120, 'rod', 'geggy:molten_gold', 'modern_industrialization:gold_rod')
 	castmetal2( 4, 120, 'ring', 'geggy:molten_gold', 'modern_industrialization:gold_ring')
 	castmetal2( 4, 600, 'gear', 'geggy:molten_gold', 'modern_industrialization:gold_gear')
-
+	
+	castmetal2( 4, 200, 'ingot', 'gegology:molten_nickel', 'modern_industrialization:nickel_ingot')
+	castmetal2( 4, 200, 'plate', 'gegology:molten_nickel', 'modern_industrialization:nickel_plate')
+	castmetal2( 4, 120, 'rod', 'gegology:molten_nickel', 'geghilarity:nickel_rod')
+	
+	castmetal2( 2, 200, 'ingot', 'gegology:molten_cobalt', 'geggy:cobalt_ingot')
+	castmetal2( 2, 120, 'rod', 'gegology:molten_cobalt', 'geggy:cobalt_rod')
+	castmetal2( 2, 120, 'ring', 'gegology:molten_cobalt', 'geggy:cobalt_ring')
 	
 	event.custom({ 
 		type: "modern_industrialization:ore_centrifuge",
@@ -2967,9 +3294,11 @@ ServerEvents.recipes(event => {
 				{item: oup, amount: ouc}
 			]
 		})
+		
+		event.shapeless(oup, [inp, 'geggy:stone_mortar']).damageIngredient('geggy:stone_mortar')
 	}	
 		
-	let meltorepu1 = (name, tpur, pur, tref, ref, tdust, sdust, dust, output) => {	
+	let meltorele = (name, tpur, pur, tref, ref, tdust, sdust, dust, output) => {	
 
 		event.custom({ 
 			type: "modern_industrialization:electric_melter",
@@ -3060,21 +3389,15 @@ ServerEvents.recipes(event => {
 	// dust is (std dust)
 		
 	// alumina 56/126/504
-	meltorepu1('alumina', 63, 567, 68, 618, 56, 126, 504, 'geghilarity:molten_alumina')
-	meltorepu1('gibbsite', 22, 203, 24, 221, 20, 45, 180, 'geghilarity:molten_alumina')
-	meltorepu1('ruby', 48, 433, 52, 471, 42, 94, 387, 'geghilarity:molten_alumina')
-	meltorepu1('sapphire', 48, 433, 52, 471, 42, 94, 387, 'geghilarity:molten_alumina')
-	meltorepu1('realgar', 6, 54, 6, 59, 5, 12, 48, 'gegology:molten_arsenic')
+	meltorele('alumina', 63, 567, 68, 618, 56, 126, 504, 'geghilarity:molten_alumina')
+	meltorele('gibbsite', 22, 203, 24, 221, 20, 45, 180, 'geghilarity:molten_alumina')
+	meltorele('ruby', 48, 433, 52, 471, 42, 94, 387, 'geghilarity:molten_alumina')
+	meltorele('sapphire', 48, 433, 52, 471, 42, 94, 387, 'geghilarity:molten_alumina')
+	meltorele('realgar', 6, 54, 6, 59, 5, 12, 48, 'gegology:molten_arsenic')
 	
-	meltorepu1('cinnabar', 6, 54, 6, 59, 5, 12, 48, 'geghilarity:mercury')
+	meltorele('native_silver', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_silver')
 	
-	meltorepu1('galena', 6, 54, 6, 59, 5, 12, 48, 'gegology:molten_lead')
-	
-	meltorepu1('native_lead', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_lead')
-	
-	meltorepu1('native_silver', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_silver')
-	
-	meltorepu1('native_arsenic', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_arsenic')
+	meltorele('native_arsenic', 18, 162, 19, 177, 16, 36, 144, 'gegology:molten_arsenic')
 	
 	generify('gegology:alumina_dust', 'geghilarity:alumina', 1, 1);
 	
@@ -3221,6 +3544,55 @@ ServerEvents.recipes(event => {
 	
 	// bauxite
 	generify('gegology:bauxite_dust', 'modern_industrialization:bauxite_dust', 1, 1);
+	
+	event.custom({ 
+		type: "modern_industrialization:mixer",
+		eu: 30,
+		duration: 240,
+		item_inputs: [ 
+			{item: "gegology:purified_bauxite_dust", amount: 24}
+		],
+		fluid_inputs: [
+				{fluid: "modern_industrialization:sodium_hydroxide", amount: 24000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:sodium_hydroxide_bauxite", amount: 24000}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:electrolyzer",
+			eu: 60,
+			duration: 2496,
+			item_inputs: [ 
+				{item: "gegology:purified_bauxite_dust", amount: 24}
+			],
+			item_outputs: [
+				{item: "geghilarity:rutile_dust", amount: 6},
+				{item: "geghilarity:alumina", amount: 16}
+			],
+			fluid_outputs: [
+				{fluid: "modern_industrialization:hydrogen", amount: 10000},
+				{fluid: "modern_industrialization:oxygen", amount: 11000}
+			]
+		})
+	
+	event.custom({ 
+		type: "modern_industrialization:roaster",
+		eu: 30,
+		duration: 200,
+		item_inputs: [ 
+			{item: "gegology:purified_bauxite_dust", amount: 3},
+			{item: "modern_industrialization:sodium_dust", amount: 2}
+		],
+		fluid_inputs: [
+			{fluid: "minecraft:water", amount: 1000},	
+			{fluid: "modern_industrialization:hydrogen", amount: 2000}
+		],
+		fluid_outputs: [
+			{fluid: "geghilarity:impure_sodium_aluminate_solution", amount: 3000}
+		]
+	})
 	
 	event.custom({ 
 		type: "modern_industrialization:autoclave",
@@ -3657,9 +4029,6 @@ ServerEvents.recipes(event => {
 	})
 	
 	// garnierite
-	event.smelting('gegology:nickel_chunk', 'gegology:crushed_garnierite_ore').cookingTime(200)
-	event.smelting('gegology:nickel_chunk', 'gegology:purified_garnierite_ore').cookingTime(150)
-	event.smelting('modern_industrialization:nickel_ingot', 'gegology:refined_garnierite_ore').cookingTime(200)
 	
 	event.custom({ 
 		type: "modern_industrialization:ore_electrolyzer",
@@ -4201,9 +4570,6 @@ ServerEvents.recipes(event => {
 	})
 	
 	// pentlandite
-	event.smelting('gegology:nickel_chunk', 'gegology:crushed_pentlandite_ore').cookingTime(200)
-	event.smelting('gegology:nickel_chunk', 'gegology:purified_pentlandite_ore').cookingTime(150)
-	event.smelting('gegology:nickel_chunk', 'gegology:refined_pentlandite_ore').cookingTime(100)
 	
 	event.custom({ 
 		type: "modern_industrialization:roaster",
@@ -5090,6 +5456,11 @@ ServerEvents.recipes(event => {
 	generify('gegology:certus_quartz_dust', 'ae2:certus_quartz_dust', 1, 1);
 	
 	// granitic_sand
+	event.custom({ 
+			type: "modern_industrialization:unpacker", eu: 4, duration: 40, item_inputs: [{item: 'gegology:granitic_sand_dust', amount: 1}], item_outputs: [{item: 'gegology:tiny_granitic_sand_dust', amount: 9}]})
+	event.shapeless('9x gegology:tiny_granitic_sand_dust', [ 'gegology:granitic_sand_dust'])
+	
+	
 	event.custom({  
 		type: "modern_industrialization:em_separator",
 		eu: 16,
@@ -5204,6 +5575,54 @@ ServerEvents.recipes(event => {
 	
 	// rare_earth
 	generify('gegology:rare_earth_dust', 'geghilarity:rare_earth_dust', 1, 1);
+	
+	
+	
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 2,
+		duration: 150,
+		fluid_inputs: [ 
+			{fluid: 'gegology:molten_hematite', amount: 144}
+		],
+		item_outputs: [
+			{item: 'gegology:hematite_dust', amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 2,
+		duration: 150,
+		fluid_inputs: [ 
+			{fluid: 'gegology:molten_hematite', amount: 144}
+		],
+		item_outputs: [
+			{item: 'gegology:hematite_dust', amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:caster",
+		eu: 4,
+		duration: 150,
+		fluid_inputs: [ 
+			{fluid: 'gegology:molten_antimony', amount: 144}
+		],
+		item_outputs: [
+			{item: 'modern_industrialization:antimony_dust', amount: 1}
+		]
+	})
+	event.custom({ 
+		type: "modern_industrialization:electric_caster",
+		eu: 4,
+		duration: 150,
+		fluid_inputs: [ 
+			{fluid: 'gegology:molten_antimony', amount: 144}
+		],
+		item_outputs: [
+			{item: 'modern_industrialization:antimony_dust', amount: 1}
+		]
+	})
 	
 })	
 

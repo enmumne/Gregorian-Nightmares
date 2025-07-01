@@ -766,8 +766,7 @@ event.create('geggy:bucket_side');
 
 event.create('geggy:base_connector');
 
-event.create('geggy:raw_stibnite');
-event.create('geggy:stibnite_dust');
+event.create('geggy:refined_stibnite_dust');
 event.create('geggy:enhanced_battery_alloy_plate');
 event.create('geggy:enhanced_battery_alloy_curved_plate');
 event.create('geggy:polished_copper_plate');
@@ -776,6 +775,7 @@ event.create('geggy:unlit_torch');
 event.create('geggy:cathode_mix');
 event.create('geggy:andesite_alloy_slice');
 event.create('geggy:hardened_andesite_alloy');
+event.create('geggy:hardened_alloy');
 event.create('geggy:simple_pipe_motor');
 
 event.create('geggy:copper_blade_part');
@@ -1103,6 +1103,8 @@ event.create('gegology:antimony_chunk').texture('gegology:item/gt-chunk').color(
 	event.create('geggy:cobalt_ingot')
 	event.create('geggy:cobalt_rod')
 	event.create('geggy:cobalt_ring')
+	
+	event.create('geggy:crystalline_diamond_plate')
 	
 	
 event.create('geggy:uncooked_iron_mix')	
@@ -1432,6 +1434,16 @@ StartupEvents.registry('fluid', event => {
 	event
     .create('geggy:liquid_quartz_glass')
 	.thinTexture(0xA1A5AB)
+    .noBucket
+	
+	event
+    .create('gegology:molten_hematite')
+	.thinTexture(0x7A5050)
+    .noBucket
+	
+	event
+    .create('gegology:molten_cobalt')
+	.thinTexture(0x4949E4)
     .noBucket
 	
 	// GT6 vitriols

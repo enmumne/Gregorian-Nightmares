@@ -1507,7 +1507,7 @@ ServerEvents.recipes(event => {
 	event.shaped('modern_industrialization:electric_furnace', [
 		'DBD',
 		'DAD',
-		'CBC'
+		'CCC'
 	], {
 		A: 'modern_industrialization:basic_machine_hull',
 		B: 'modern_industrialization:analog_circuit',
@@ -1520,8 +1520,8 @@ ServerEvents.recipes(event => {
 		duration: 200,
 		item_inputs: [ 
 			{item: "modern_industrialization:basic_machine_hull", amount: 1},
-			{item: "modern_industrialization:analog_circuit", amount: 2},
-			{item: "powah:energy_cable_basic", amount: 2},
+			{item: "modern_industrialization:analog_circuit", amount: 1},
+			{item: "powah:energy_cable_basic", amount: 3},
 			{item: "modern_industrialization:cupronickel_wire_magnetic", amount: 4}
 		],
 		item_outputs: [
@@ -2881,6 +2881,203 @@ ServerEvents.recipes(event => {
 		],
 		item_outputs: [
 			{item: "modern_industrialization:plutonium_battery", amount: 1}
+		]
+	})
+	
+	// ore proc
+	event.shaped('modern_industrialization:smoke_stack', [
+		'C C',
+		'BAB',
+		'CDC'
+	], {
+		A: 'modern_industrialization:steel_machine_casing',
+		B: 'modern_industrialization:bronze_rotor',
+		C: 'modern_industrialization:steel_rod',
+		D: 'modern_industrialization:steel_gear'
+	})
+	
+	event.shaped('modern_industrialization:bronze_shredder', [
+		'CBC',
+		'BAB',
+		'CDC'
+	], {
+		A: 'modern_industrialization:bronze_machine_casing',
+		B: 'modern_industrialization:bronze_gear',
+		C: 'modern_industrialization:bronze_plate',
+		D: 'geggy:crystalline_diamond_plate'
+	})
+	event.shaped('modern_industrialization:steel_shredder', [
+		'CBC',
+		'BAB',
+		'CDC'
+	], {
+		A: 'modern_industrialization:steel_machine_casing',
+		B: 'modern_industrialization:steel_gear',
+		C: 'modern_industrialization:steel_plate',
+		D: 'geggy:crystalline_diamond_plate'
+	})
+	event.shaped('modern_industrialization:electric_shredder', [
+		'CBC',
+		'BAB',
+		'CDC'
+	], {
+		A: 'geghilarity:galvanized_steel_machine_casing',
+		B: 'modern_industrialization:steel_gear',
+		C: 'geggy:galvanized_steel_plate',
+		D: 'modern_industrialization:diamond_plate'
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 8,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:steel_gear", amount: 3},
+			{item: "geggy:galvanized_steel_plate", amount: 4},
+			{item: "modern_industrialization:diamond_plate", amount: 1}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_shredder", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 1},
+			{item: "modern_industrialization:large_motor", amount: 2},
+			{item: "modern_industrialization:piston", amount: 2},
+			{item: "powah:energy_cable_basic", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:ore_centrifuge", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 2},
+			{item: "modern_industrialization:electrum_fine_wire", amount: 4},
+			{item: "powah:energy_cable_hardened", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:ore_electrolyzer", amount: 1}
+		]
+	})
+	
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:electronic_circuit", amount: 1},
+			{item: "modern_industrialization:pump", amount: 1},
+			{item: "modern_industrialization:invar_large_plate", amount: 4},
+			{item: "powah:energy_cable_hardened", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:steam_cracking", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:bronze_sluice', [
+		'CEC',
+		'BAB',
+		'CDC'
+	], {
+		A: 'modern_industrialization:bronze_machine_casing',
+		B: 'modern_industrialization:bronze_rotor',
+		C: 'modern_industrialization:bronze_large_plate',
+		D: 'create:basin',
+		E: 'modern_industrialization:bronze_gear'
+	})
+	event.shaped('modern_industrialization:steel_sluice', [
+		'CEC',
+		'BAB',
+		'CDC'
+	], {
+		A: 'modern_industrialization:steel_machine_casing',
+		B: 'modern_industrialization:bronze_rotor',
+		C: 'modern_industrialization:steel_large_plate',
+		D: 'minecraft:cauldron',
+		E: 'modern_industrialization:steel_gear'
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:analog_circuit", amount: 1},
+			{item: "modern_industrialization:aluminum_rotor", amount: 2},
+			{item: "geggy:galvanized_steel_plate", amount: 2},
+			{item: "minecraft:cauldron", amount: 1},
+			{item: "powah:energy_cable_basic", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_sluice", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:melter', [
+		'CEC',
+		'CAC',
+		'BDB'
+	], {
+		A: 'minecraft:blast_furnace',
+		B: 'modern_industrialization:fire_clay_bricks',
+		C: 'modern_industrialization:bronze_large_plate',
+		D: 'create:basin',
+		E: 'modern_industrialization:bronze_rotor'
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:bronze_rotor", amount: 2},
+			{item: "modern_industrialization:steel_large_plate", amount: 2},
+			{item: "minecraft:cauldron", amount: 1},
+			{item: "powah:energy_cable_starter", amount: 3}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_melter", amount: 1}
+		]
+	})
+	
+	event.shaped('modern_industrialization:caster', [
+		'CEC',
+		'CAC',
+		'BDB'
+	], {
+		A: 'modern_industrialization:bronze_machine_casing',
+		B: 'modern_industrialization:fire_clay_bricks',
+		C: 'modern_industrialization:bronze_large_plate',
+		D: 'geggy:bronze_piston',
+		E: 'modern_industrialization:bronze_gear'
+	})
+	event.custom({ 
+		type: "modern_industrialization:assembler",
+		eu: 16,
+		duration: 200,
+		item_inputs: [ 
+			{item: "modern_industrialization:basic_machine_hull", amount: 1},
+			{item: "modern_industrialization:steel_gear", amount: 2},
+			{item: "modern_industrialization:steel_large_plate", amount: 2},
+			{item: "modern_industrialization:piston", amount: 2},
+			{item: "powah:energy_cable_starter", amount: 2}
+		],
+		item_outputs: [
+			{item: "modern_industrialization:electric_caster", amount: 1}
 		]
 	})
 	
